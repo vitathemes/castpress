@@ -1,0 +1,39 @@
+/*------------------------------------*\
+  #Copy
+\*------------------------------------*/
+/* All */
+* {
+  word-wrap: break-word;
+  white-space: normal;
+  transition: $global-transition;
+}
+
+/* p */
+p,
+.p {
+  font-family: $makemeup_font_regular;
+  font-size: 18px;
+  line-height: 25px;
+
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+
+  color: $makemeup_neutral_dark_gray_color;
+}
+
+/* span */
+span,
+.span {
+  font-family: $makemeup_font_regular;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.span--sm {
+  font-size: 10px;
+  line-height: 13px;
+}
+
+.span-lh--bg {
+  line-height: 20px;
+}

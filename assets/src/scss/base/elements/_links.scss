@@ -1,0 +1,22 @@
+/* My link */
+
+a {
+  text-decoration: none;
+  color: $color_link;
+
+  &:hover {
+    color: $color_link_hover;
+  }
+
+  &:focus {
+    color: $color_link_hover;
+  }
+}
+
+.a--secondary {
+  color: $color_link_secondary;
+
+  &:hover {
+    color: $color_link_hover_secondary;
+  }
+}

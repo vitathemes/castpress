@@ -1,0 +1,20 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: none;
+  background-color: $makemeup_fourth_color;
+  color: $makemeup_neutral_gray_light_color;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: $global-transition;
+  font-family: $makemeup_font_regular;
+
+  min-width: 133px;
+  height: 40px;
+
+  &:hover {
+    background-color: $makemeup_button_primary_hover_color;
+    color: $makemeup_fourth_color;
+  }
+}

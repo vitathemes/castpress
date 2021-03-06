@@ -1,0 +1,17 @@
+.c-post__header {
+  margin-bottom: 40px;
+  color: $makemeup_primary_color;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.c-post__content {
+  font-size: 18px;
+  color: $makemeup_neutral_dark_gray_color;
+
+  li {
+    margin-bottom: 8px;
+  }
+}

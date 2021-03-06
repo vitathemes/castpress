@@ -1,0 +1,23 @@
+.c-footer {
+  background-color: $color_background_body;
+  margin-top: auto;
+
+  min-height: 105px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  border-top: 1px solid $makemeup_neutral_gray_light_second_color;
+
+  color: white;
+  line-height: 50px;
+  padding: 0 17px;
+}
+
+.c-footer__context {
+  color: $makemeup_primary_color;
+}
+
+.c-footer__link {
+  color: $makemeup_second_color;
+}
