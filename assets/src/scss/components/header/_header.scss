@@ -31,6 +31,7 @@
   position: relative;
 
   width: max-content;
+  min-width: 0px;
   height: max-content;
 
   @include media(tablet) {

@@ -1,9 +1,26 @@
+.c-post {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 39px;
+
+  @include media(tablet) {
+    margin-bottom: 24px;
+  }
+}
 .c-post__header {
-  margin-bottom: 40px;
+  width: 100%;
+  // margin-bottom: 40px;
+
   color: $makemeup_primary_color;
 
   &::first-letter {
     text-transform: uppercase;
+  }
+
+  @include media(tablet) {
+    width: calc(100% - 180px);
+    padding-left: 39px;
   }
 }
 
@@ -14,4 +31,45 @@
   li {
     margin-bottom: 8px;
   }
+}
+
+.c-post__title {
+  padding-bottom: 16px;
+
+  a {
+    color: $makemeup_primary_color;
+  }
+}
+
+.c-post__date {
+  a {
+    color: $makemeup_primary_color;
+  }
+}
+
+.c-post__entry-meta {
+  padding-bottom: 16px;
+
+  @include media(tablet) {
+    padding-bottom: 39px;
+  }
+}
+
+.c-post__thumbnail {
+  width: 180px;
+  height: 180px;
+  max-height: 180px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+
+  @include media(tablet) {
+    margin-bottom: 0px;
+  }
+}
+
+.c-post__read-more {
+  color: $makemeup_fourth_color;
+}
+.c-post__page-links {
+  margin: 16px 0px 0px 0px;
 }

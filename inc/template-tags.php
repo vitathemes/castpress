@@ -27,11 +27,11 @@ if ( ! function_exists( 'makemeup_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'makemeup' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			esc_html( '%s', 'makemeup' ),
+			'<a  href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="c-post__date h5 h5-lh--sm font--regular posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -133,6 +133,12 @@ if ( ! function_exists( 'makemeup_post_thumbnail' ) ) :
 
 <?php else : ?>
 
+<?php 
+
+	if ( has_post_thumbnail() ) {
+		
+	?>
+
 <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
     <?php
 					the_post_thumbnail(
@@ -147,7 +153,12 @@ if ( ! function_exists( 'makemeup_post_thumbnail' ) ) :
 					);
 				?>
 </a>
-
+<?php 
+	}
+	else {
+		echo '<img src="' . esc_url(get_bloginfo( 'stylesheet_directory' )). '/assets/images/no-thumbnail.png" />';
+	}
+?>
 <?php
 		endif; // End is_singular().
 	}
@@ -164,7 +175,7 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	}
 endif;
 
-
+/* qa- */
 if (! function_exists('makemeup_get_page_name')) :
 	/**
 	 * get current page name (slug)
@@ -176,5 +187,51 @@ if (! function_exists('makemeup_get_page_name')) :
 		$post_slug = str_replace("-", " ", $post_slug);
 		echo esc_html(esc_html($post_slug));
 		
+	}
+endif;
+
+if (! function_exists('makemeup_archive_page_name')) :
+	/**
+	 * get archive page name
+	 */
+	function makemeup_archive_page_name() {
+		if ( !is_front_page() && is_home() ) {
+			echo "blog";
+		}
+
+		if( is_archive() ){
+			echo "archives";
+		}
+
+	}
+endif;
+
+
+if (! function_exists('makemeup_get_thumbnail')) :
+	/**
+	 * Return thumbnail if exist
+	 */
+	function makemeup_get_thumbnail() {
+		if ( has_post_thumbnail() ) {
+			the_post_thumbnail();
+		}
+		else{
+			echo '<img src="' . esc_url(get_bloginfo( 'stylesheet_directory' )). '/assets/images/no-thumbnail.png" />';
+		}
+}
+endif;
+
+
+if (! function_exists('makemeup_get_tags')) :
+	/**
+	 * Return Post tags
+	 */
+	function makemeup_get_tags() {
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'makemeup' )  );
+		if ( $tags_list ) {
+			/* translators: 1: list of tags. */
+			echo wp_kses_post( '<span class="c-single__tags">' . $tags_list . '</span>' );
+		}
 	}
 endif;

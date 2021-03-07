@@ -6,58 +6,42 @@
  *
  * @package makemeup
  */
-
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+<article id="post-<?php the_ID(); ?>" <?php post_class('c-post'); ?>>
 
+    <div class="c-post__thumbnail">
+        <a href=<?php esc_url(the_permalink()) ?> rel="bookmark">
+            <?php makemeup_get_thumbnail(); ?>
+        </a>
+    </div>
+
+    <header class="c-post__header">
+        <?php
+		the_title( '<h2 class="c-post__title entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				makemeup_posted_on();
-				makemeup_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+        ?>
 
-	<?php makemeup_post_thumbnail(); ?>
+        <div class="c-post__entry-meta">
+            <?php makemeup_posted_on(); ?>
+        </div><!-- .entry-meta -->
 
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'makemeup' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
+        <?php endif; ?>
+        <a class="c-post__read-more h5" href=" <?php esc_url( get_permalink() ) ?> " rel="bookmark">
+            <?php esc_html_e( 'Read More', 'makemeup' ); ?>
+        </a>
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'makemeup' ),
-				'after'  => '</div>',
-			)
-		);
+
+        <?php
+			wp_link_pages(
+				array(
+					'before' => '<div class="c-post__page-links">' . esc_html__( 'Pages:', 'makemeup' ),
+					'after'  => '</div>',
+				)
+			);
 		?>
-	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php makemeup_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+    </header><!-- .entry-header -->
+
+
 </article><!-- #post-<?php the_ID(); ?> -->

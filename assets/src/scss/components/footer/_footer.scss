@@ -1,6 +1,5 @@
 .c-footer {
   background-color: $color_background_body;
-  margin-top: auto;
 
   min-height: 105px;
   display: flex;
@@ -12,6 +11,10 @@
   color: white;
   line-height: 50px;
   padding: 0 17px;
+
+  @include media(tablet) {
+    margin-top: auto;
+  }
 }
 
 .c-footer__context {

@@ -518,7 +518,10 @@ html {
 --------------------------------------------- */
 img {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+  object-position: center; }
 
 /*--------------------------------------------------------------
 # components
@@ -552,6 +555,7 @@ img {
   border: none;
   position: relative;
   width: max-content;
+  min-width: 0px;
   height: max-content; }
   @media only screen and (min-width: 980px) {
     .c-header__menu {
@@ -641,9 +645,15 @@ img {
 .c-main {
   min-height: 100%;
   height: max-content;
-  padding: 48px 0px;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  padding: 48px 0px; }
+  @media only screen and (min-width: 980px) {
+    .c-main {
+      padding: 96px 0px 64px 0px; } }
+
+.c-main__header {
+  margin-bottom: 40px; }
 
 .c-main__content {
   width: calc(100% - 16px);
@@ -656,10 +666,12 @@ img {
 
 .c-main__error {
   text-align: center;
-  min-height: 50vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; }
+  @media only screen and (min-width: 980px) {
+    .c-main__error {
+      min-height: 50vh; } }
 
 .c-main__error--error .c-main__page-header {
   width: 100%;
@@ -669,8 +681,10 @@ img {
 
 .c-main__error--error .c-main__page-title {
   font-size: 144px;
-  line-height: 144px;
-  margin-top: 48px; }
+  line-height: 144px; }
+  @media only screen and (min-width: 980px) {
+    .c-main__error--error .c-main__page-title {
+      margin-top: 48px; } }
 
 .c-main__error--error .c-main__page-content {
   width: 100%; }
@@ -700,8 +714,7 @@ img {
 --------------------------------------------------------------*/
 .c-social-share {
   width: 100%;
-  height: 50px;
-  background-color: rgba(255, 140, 0, 0.349); }
+  height: 50px; }
 
 /*--------------------------------------------------------------
 # Search form
@@ -758,11 +771,24 @@ img {
   justify-content: center;
   background-color: darkviolet; }
 
+.c-post {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 39px; }
+  @media only screen and (min-width: 980px) {
+    .c-post {
+      margin-bottom: 24px; } }
+
 .c-post__header {
-  margin-bottom: 40px;
+  width: 100%;
   color: var(--primary-color); }
   .c-post__header::first-letter {
     text-transform: uppercase; }
+  @media only screen and (min-width: 980px) {
+    .c-post__header {
+      width: calc(100% - 180px);
+      padding-left: 39px; } }
 
 .c-post__content {
   font-size: 18px;
@@ -770,9 +796,76 @@ img {
   .c-post__content li {
     margin-bottom: 8px; }
 
+.c-post__title {
+  padding-bottom: 16px; }
+  .c-post__title a {
+    color: var(--primary-color); }
+
+.c-post__date a {
+  color: var(--primary-color); }
+
+.c-post__entry-meta {
+  padding-bottom: 16px; }
+  @media only screen and (min-width: 980px) {
+    .c-post__entry-meta {
+      padding-bottom: 39px; } }
+
+.c-post__thumbnail {
+  width: 180px;
+  height: 180px;
+  max-height: 180px;
+  margin-bottom: 16px;
+  border-radius: 4px; }
+  @media only screen and (min-width: 980px) {
+    .c-post__thumbnail {
+      margin-bottom: 0px; } }
+
+.c-post__read-more {
+  color: var(--fourth-color); }
+
+.c-post__page-links {
+  margin: 16px 0px 0px 0px; }
+
+.c-single {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 39px; }
+  @media only screen and (min-width: 980px) {
+    .c-single {
+      margin-bottom: 24px; } }
+
+.c-single__thumbnail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 39px; }
+
+.c-single__image {
+  width: 180px;
+  height: 180px; }
+
+.c-single__header {
+  width: 100%;
+  text-align: center; }
+
+.c-single__title {
+  margin-bottom: 14px; }
+  @media only screen and (min-width: 980px) {
+    .c-single__title {
+      margin-bottom: 8px; } }
+
+.c-single__entry-content {
+  margin-top: 64px; }
+  @media only screen and (min-width: 980px) {
+    .c-single__entry-content {
+      margin-top: 96px; } }
+
+.c-single__tags a::before {
+  content: "#"; }
+
 .c-footer {
   background-color: #ffffff;
-  margin-top: auto;
   min-height: 105px;
   display: flex;
   flex-wrap: wrap;
@@ -781,6 +874,9 @@ img {
   color: white;
   line-height: 50px;
   padding: 0 17px; }
+  @media only screen and (min-width: 980px) {
+    .c-footer {
+      margin-top: auto; } }
 
 .c-footer__context {
   color: var(--primary-color); }
@@ -841,6 +937,11 @@ input[type="submit"] {
   input[type="submit"]:hover {
     background-color: #f5f5f7;
     color: var(--fourth-color); }
+
+.wp-block-gallery {
+  width: 100%;
+  margin-left: 0px;
+  max-width: 100%; }
 
 /*--------------------------------------------------------------
 # Typography
@@ -955,7 +1056,7 @@ p,
   font-family: "SourceSerifPro-regular";
   font-size: 18px;
   line-height: 25px;
-  margin-top: 1.25rem;
+  margin-top: 0px;
   margin-bottom: 1.5rem;
   color: #555555; }
 

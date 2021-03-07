@@ -16,7 +16,7 @@
     <div class="c-episode__head">
         <div class="c-episode__image">
 
-            <img src="<?php echo get_stylesheet_directory_uri(). '/assets/images/featured_image.jpg'  ?>" />
+            <img src="<?php echo esc_url(get_stylesheet_directory_uri()). '/assets/images/featured_image.jpg'  ?>" />
 
         </div>
 

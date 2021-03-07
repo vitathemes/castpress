@@ -1,0 +1,50 @@
+.c-single {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 39px;
+
+  @include media(tablet) {
+    margin-bottom: 24px;
+  }
+}
+
+.c-single__thumbnail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 39px;
+}
+
+.c-single__image {
+  width: 180px;
+  height: 180px;
+}
+
+.c-single__header {
+  width: 100%;
+  text-align: center;
+}
+
+.c-single__title {
+  margin-bottom: 14px;
+  @include media(tablet) {
+    margin-bottom: 8px;
+  }
+}
+
+.c-single__entry-content {
+  margin-top: 64px;
+
+  @include media(tablet) {
+    margin-top: 96px;
+  }
+}
+
+.c-single__tags {
+  a {
+    &::before {
+      content: "#";
+    }
+  }
+}
