@@ -1,8 +1,8 @@
 // kirki variables
-$makemeup_primary_color: var(--primary-color);
-$makemeup_second_color: var(--second-color);
-$makemeup_third_color: var(--third-color);
-$makemeup_fourth_color: var(--fourth-color);
+$makemeup_primary_color: var(--primary-color); //222222
+$makemeup_second_color: var(--second-color); //555555
+$makemeup_third_color: var(--third-color); //979797
+$makemeup_fourth_color: var(--fourth-color); //7247ca
 
 // Main color
 $makemeup_main_primary_color: #222222;
@@ -18,7 +18,7 @@ $makemeup_service_error_color: #ff3636;
 // background
 $color_background_body: #ffffff;
 $color_background_screen: #f1f1f1;
-$color_background_hr: #e1e1e1;
+$color_background_hr: #eaeaee;
 $color_background_button: #e6e6e6;
 $color_background_pre: #eee;
 $color_background_ins: #fff9c0;
@@ -29,13 +29,15 @@ $color_text_input: #666;
 $color_text_input_focus: rgb(65, 65, 65);
 
 // link
-$color_link: $makemeup_main_accent_color;
-$color_link_secondary: $makemeup_primary_color;
+$color_link: $makemeup_main_accent_color; //7247ca
+$color_link_secondary: $makemeup_primary_color; //222222
+$color_link_third: $makemeup_neutral_gray_color; //979797
 
 // link hover
 $color_link_visited: $makemeup_main_accent_color;
 $color_link_hover: $makemeup_neutral_gray_color;
 $color_link_hover_secondary: $makemeup_main_accent_color;
+$color_link_hover_third: $makemeup_main_primary_color;
 
 // button color
 $makemeup_button_primary_color: $makemeup_fourth_color;

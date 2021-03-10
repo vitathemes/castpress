@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<main id="primary" class="c-main">
+<main id="primary" class="c-main c-main--single">
 
     <div class="c-main__content">
 

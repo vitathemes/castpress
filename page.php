@@ -17,8 +17,6 @@ get_header();
 
 <main id="primary" class="c-main">
 
-
-
     <div class="c-main__content">
 
         <?php

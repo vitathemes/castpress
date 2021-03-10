@@ -11,10 +11,25 @@ if ( ! function_exists( 'makemeup_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function makemeup_posted_on() {
+	function makemeup_posted_on( $is_bold = false , $is_single = false ) {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		if( $is_bold ){
+			$is_bold = "font--semibold";
+		}else{
+			$is_bold = "font--regular";
+		}
+
+		if($is_single){
+
+			$is_single = "a--third";
+
+		}
+		else{
+			$is_single = "a--secondary";
 		}
 
 		$time_string = sprintf(
@@ -28,10 +43,10 @@ if ( ! function_exists( 'makemeup_posted_on' ) ) :
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
 			esc_html( '%s', 'makemeup' ),
-			'<a  href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			'<a class="'. esc_html($is_single) .'" href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="c-post__date h5 h5-lh--sm font--regular posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="c-post__date h5 h5-lh--sm '. esc_html($is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -40,14 +55,20 @@ if ( ! function_exists( 'makemeup_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function makemeup_posted_by() {
+	function makemeup_posted_by( $is_bold = false) {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'makemeup' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			esc_html_x( 'By %s', 'post author', 'makemeup' ),
+			'<span class="author vcard h5 h5-lh--sm"><a class="url fn n c-post__author__link a--third" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		if( $is_bold ){
+			$is_bold = "font--semibold";
+		}else{
+			$is_bold = "font--regular";
+		}
+
+		echo '<span class="byline h5 h5-lh--sm c-post__author '. esc_html($is_bold) .'"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -190,6 +211,7 @@ if (! function_exists('makemeup_get_page_name')) :
 	}
 endif;
 
+
 if (! function_exists('makemeup_archive_page_name')) :
 	/**
 	 * get archive page name
@@ -227,11 +249,100 @@ if (! function_exists('makemeup_get_tags')) :
 	 * Return Post tags
 	 */
 	function makemeup_get_tags() {
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'makemeup' )  );
-		if ( $tags_list ) {
-			/* translators: 1: list of tags. */
-			echo wp_kses_post( '<span class="c-single__tags">' . $tags_list . '</span>' );
+	
+		$post_tags = get_the_tags();
+		if ($post_tags) {
+			foreach($post_tags as $post_tag) {
+				echo '<a class="c-post__tags h4" href="'.  esc_url( get_tag_link( $post_tag->term_id ) ) .'" title="'.  esc_attr( $post_tag->name ) .'">#'. esc_html( $post_tag->name ). '</a>';
+			}
 		}
+	}
+endif;
+
+
+if (! function_exists('makemeup_get_category')) :
+	/**
+	 * Return Post category
+	 */
+	function makemeup_get_category() {
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( esc_html__( ', ', 'makemeup' ) );
+		if ( $categories_list ) {
+			/* translators: 1: list of categories. */
+
+			echo '<span class="c-episode__category h5 h5-lh--sm">' .$categories_list. '</span>';
+		}
+	}
+endif;
+
+
+
+if (! function_exists('makemeup_get_category_seperator')) :
+	/**
+	 * Return Post category
+	 */
+	function makemeup_get_category_seperator() {
+		
+
+		if( ! empty( get_the_category() ) ){
+			/* get category */
+			$categories = get_the_category();
+			$separator = ', ';
+			$output = '';
+			$category_counter = 0;
+			if ( ! empty( $categories ) ) {
+			
+				foreach( $categories as $category ) {
+
+					if( $isLimited === true && $category_counter === 3){
+						break;
+					}
+
+					$category_counter++;
+					/* translators: used between list items, there is a space after the comma */
+					$output .= '<a class="c-post__meta__link" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+				}
+				echo  wp_kses_post(trim( $output, $separator ));
+			}
+		}
+	}
+endif;
+
+
+
+if (! function_exists('makemeup_get_default_pagination')) :
+	/**
+	* Show numeric pagination
+	*/
+	function makemeup_get_default_pagination() {
+		echo'  <div class="c-pagination">' . wp_kses_post(paginate_links(
+				array(
+				'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
+				'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
+				)
+			)) . '</div>';
+	}
+endif;
+
+
+if (! function_exists('makemeup_get_featured_episode')) :
+	/**
+	  * Get Featured Episode
+	  */
+	function makemeup_get_featured_episode() {
+		$args = array(
+			'posts_per_page' => 1, 
+			'offset' => 0,
+			'orderby' => 'post_date',
+			'order' => 'DESC',
+			'post_type' => 'episodes', 
+			'post_status' => 'publish'
+		);
+		$query = new WP_Query($args);
+		if ($query->have_posts()) :
+			while ($query->have_posts()) : $query->the_post();			
+				get_template_part( 'template-parts/content', 'single' );
+			endwhile;
+		endif;
 	}
 endif;

@@ -1,0 +1,135 @@
+/*------------------------------------*\
+  #navigation
+\*------------------------------------*/
+
+.c-nav {
+  width: 100%;
+  @include media(tablet) {
+    display: block;
+  }
+}
+
+.s-nav {
+  padding: 0px;
+  margin: 0px;
+  margin-top: 32px;
+
+  @include media(tablet) {
+    margin-top: 0px;
+  }
+
+  li {
+    display: block;
+    margin-bottom: 16px;
+
+    @include media(tablet) {
+      display: inline-block;
+      margin-left: 39px;
+      margin-bottom: 0px;
+
+      &:hover {
+        .sub-menu {
+          display: block;
+        }
+      }
+    }
+
+    &:hover {
+      .sub-menu {
+        display: block;
+      }
+    }
+
+    &:focus-within {
+      .sub-menu {
+        display: block;
+      }
+    }
+
+    &:last-child {
+      .sub-menu {
+        .sub-menu {
+          left: 50px;
+          top: 20px;
+          background-color: $color_background_body;
+          z-index: 5;
+        }
+      }
+    }
+  }
+}
+
+.menu-item {
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $makemeup_primary_color;
+    font-family: $makemeup_font_semibold;
+
+    &:hover {
+      color: $makemeup_main_accent_color;
+    }
+  }
+}
+
+.sub-menu {
+  display: none;
+  height: max-content;
+  position: relative;
+  text-align: left;
+  left: -20px;
+  top: -15px;
+  background-color: $color_background_body;
+  min-width: 179px;
+  max-width: max-content;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s all;
+
+  border: 1px solid $makemeup_neutral_gray_light_second_color;
+
+  li {
+    margin-left: 16px;
+    padding-top: 16px;
+    display: block;
+  }
+
+  .sub-menu {
+    top: -20px;
+    left: 140px;
+    display: none !important;
+
+    @include media(tablet) {
+      display: block !important;
+    }
+  }
+
+  @include media(tablet) {
+    position: absolute;
+    display: block;
+    top: 7px;
+    padding-bottom: 16px;
+  }
+}
+
+.menu-item {
+  position: relative;
+  list-style-type: none;
+
+  &:hover > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:focus-within > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.c-nav__arrow {
+  margin-top: 5px;
+  &:hover {
+    background-color: transparent !important;
+  }
+}

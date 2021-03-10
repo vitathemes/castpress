@@ -38,20 +38,19 @@ add_action( 'wp_head', 'makemeup_pingback_header' );
 
 
 function makemeup_branding() { 
-
+	
 	if ( has_custom_logo() ) {
 		the_custom_logo();
 	} 
 	else {	
+		
 	?>
-<h1 class="site-title">
+<h1 class="c-header__title site-title">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 </h1>
-<?php
-		
+<?php	
+		}
 	}
-
-}
 
 
 // Kirki color variables

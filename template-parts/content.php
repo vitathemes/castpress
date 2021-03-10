@@ -16,9 +16,10 @@
         </a>
     </div>
 
+
     <header class="c-post__header">
         <?php
-		the_title( '<h2 class="c-post__title entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		the_title( '<h2 class="c-post__title c-main__entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		if ( 'post' === get_post_type() ) :
         ?>
 
@@ -26,10 +27,11 @@
             <?php makemeup_posted_on(); ?>
         </div><!-- .entry-meta -->
 
-        <?php endif; ?>
-        <a class="c-post__read-more h5" href=" <?php esc_url( get_permalink() ) ?> " rel="bookmark">
+        <a class="c-post__read-more h5" href=" <?php esc_url( the_permalink(  ) )  ?> " rel="bookmark">
             <?php esc_html_e( 'Read More', 'makemeup' ); ?>
         </a>
+
+        <?php endif; ?>
 
 
         <?php

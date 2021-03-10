@@ -5,8 +5,20 @@
   justify-content: center;
   padding: 48px 0px;
   @include media(tablet) {
-    padding: 96px 0px 64px 0px;
+    padding: 96px 0px 24px 0px;
   }
+}
+
+.c-main--blog {
+  padding-bottom: 48px;
+
+  @include media(tablet) {
+    padding-bottom: 64px;
+  }
+}
+
+.c-main--single {
+  padding-bottom: 0px;
 }
 
 .c-main__header {
@@ -33,6 +45,10 @@
   @include media(tablet) {
     min-height: 50vh;
   }
+
+  .c-main__button-arrow {
+    color: $color_background_body;
+  }
 }
 
 .c-main__error--error {
@@ -48,7 +64,7 @@
     line-height: 144px;
 
     @include media(tablet) {
-      margin-top: 48px;
+      // margin-top: 48px;
     }
   }
 
@@ -73,8 +89,20 @@
   }
 }
 
+.c-main__featured-episode--home {
+  .c-single__entry-content {
+    display: none;
+  }
+}
+
 .dashicons {
   padding-left: 8px;
   font-size: 15px !important;
   vertical-align: baseline;
+}
+
+.c-main__entry-title {
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }

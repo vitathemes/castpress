@@ -1,0 +1,62 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+.tnp-email,
+textarea {
+  width: 100%;
+  margin-top: 8px;
+  color: $makemeup_neutral_dark_gray_color;
+  border: none;
+  border-radius: $global-radius;
+  background-color: $makemeup_neutral_gray_light_color;
+  padding-right: 8px;
+  padding-left: 14px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  font-size: 0.75rem;
+  line-height: 1.5em;
+
+  &::placeholder {
+    color: $makemeup_main_primary_color;
+    opacity: 1;
+    // outline: #4caf50 solid 10px;
+  }
+
+  &:focus {
+    color: $makemeup_neutral_gray_color;
+    outline: $makemeup_neutral_gray_color solid 2px;
+  }
+}
+
+select {
+  //   color: $wp-meliora__main-primary-light-color;
+  border: none;
+  border-radius: $global-radius;
+  //   background-color: $wp-meliora__neutral-gray-light-color;
+  padding: 10px 14px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 150px;
+}
+
+input[type="checkbox"] {
+  margin: 0px 8px 0px 0px;
+
+  @include media(tablet) {
+    margin: 0px 8px 0px 0px;
+  }
+}

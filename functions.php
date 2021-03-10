@@ -63,6 +63,35 @@ function cavatina_dashicons(){
 add_action('wp_enqueue_scripts', 'cavatina_dashicons', 999);
 
 
+function wpb_widgets_init() {
+ 	/**
+	 * Footer widget area
+	 */
+    register_sidebar( array(
+        'name'          => 'Footer Widget',
+        'id'            => 'custom-footer-widget',
+        'before_widget' => '<div class="c-footer__widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="c-footer__widget__title">',
+        'after_title'   => '</h2>',
+    ) );
+ 
+}
+add_action( 'widgets_init', 'wpb_widgets_init' );
+
+
+//Exclude pages from WordPress Search
+if (!is_admin()) {
+	function wpb_search_filter($query) {
+	if ($query->is_search) {
+	$query->set('post_type', 'post');
+	}
+	return $query;
+	}
+	add_filter('pre_get_posts','wpb_search_filter');
+}
+
+
 /**
  * Theme setup
  */
@@ -72,6 +101,17 @@ require get_template_directory() . '/inc/setup.php';
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Nav menu walker
+ */
+require get_template_directory() . '/classes/class_makemeup_walker_nav_menu.php';
+
+
+/**
+ * Comments walker
+ */
+require get_template_directory() . '/classes/class_makemeup_walker_comment.php';
 
 /**
  * Custom template tags for this theme.

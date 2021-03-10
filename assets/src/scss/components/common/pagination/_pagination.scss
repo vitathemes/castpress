@@ -1,0 +1,114 @@
+.nav-links {
+  display: none !important;
+}
+
+.nav-previous {
+  font-size: 1.8em;
+  border-bottom: 1px solid grey;
+  transition: 1s all;
+}
+.nav-next {
+  font-size: 1.8em;
+  border-bottom: 1px solid grey;
+  transition: 1s all;
+}
+
+/*------------------------------------*\
+    #Pagination
+  \*------------------------------------*/
+
+.c-pagination {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.c-pagination__load-more {
+  width: 100%;
+
+  border-radius: 2px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px 0;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+.c-pagination--load-more {
+  @include media(tablet) {
+    padding-right: 0px;
+  }
+}
+
+/*------------------------------------*\
+    #Page Numbers (Word Press pagination)
+  \*------------------------------------*/
+
+.page-numbers {
+  color: $makemeup_neutral_dark_gray_color !important;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 2px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $makemeup_neutral_gray_light_color;
+  &:hover {
+    background-color: $makemeup_neutral_gray_light_second_color !important;
+  }
+}
+
+.page-numbers.current {
+  background-color: $makemeup_neutral_gray_light_second_color;
+  color: $makemeup_neutral_dark_gray_color !important;
+}
+.dashicons {
+  color: $makemeup_third_color;
+  font-family: dashicons !important;
+  &:hover {
+    background-color: $makemeup_neutral_gray_light_second_color;
+    // color: $cavatina__main-primary-light-color;
+  }
+}
+
+.next.page-numbers,
+.prev.page-numbers {
+  &:hover {
+    background-color: unset;
+  }
+}
+
+.dashicons-arrow-right-alt2:before {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.dashicons {
+  font-family: dashicons;
+  display: inline-block;
+  line-height: 1;
+  font-weight: 400;
+  font-style: normal;
+  speak: never;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 26px !important;
+  height: 20px;
+  font-size: 20px;
+  vertical-align: top;
+  text-align: left;
+  transition: color 0.1s ease-in;
+}

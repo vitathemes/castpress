@@ -4,3 +4,24 @@
 
   max-width: 100%;
 }
+
+.wpcf7-response-output {
+  text-align: left;
+  color: $makemeup_service_error_color;
+  padding-left: 0px;
+  font-size: 12px;
+}
+
+.wpcf7-not-valid-tip {
+  margin-top: 16px;
+  color: $makemeup_service_error_color;
+  font-size: 12px;
+}
+
+.c-spacer__blog {
+  margin-top: 64px;
+}
+
+.c-spacer--md {
+  margin-top: 48px;
+}

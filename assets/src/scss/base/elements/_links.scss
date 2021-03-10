@@ -1,11 +1,12 @@
 /* My link */
 
-a {
+a,
+.a {
   text-decoration: none;
-  color: $color_link;
+  color: $color_link; //7247ca
 
   &:hover {
-    color: $color_link_hover;
+    color: $color_link_hover; //979797
   }
 
   &:focus {
@@ -14,9 +15,25 @@ a {
 }
 
 .a--secondary {
-  color: $color_link_secondary;
+  color: $color_link_secondary; //222222
 
   &:hover {
-    color: $color_link_hover_secondary;
+    color: $color_link_hover_secondary; //7247ca
+  }
+}
+
+.a--third {
+  color: $color_link_third; //979797
+
+  &:hover {
+    color: $color_link_hover_third; //222222
+  }
+}
+
+.a--fourth {
+  color: $color_link; //979797
+
+  &:hover {
+    color: $color_link_secondary; //222222
   }
 }

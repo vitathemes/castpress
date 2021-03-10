@@ -18,3 +18,106 @@ input[type="submit"] {
     color: $makemeup_fourth_color;
   }
 }
+
+.btn--sm {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+}
+
+.mejs-play > button {
+  min-width: max-content;
+}
+
+.mejs-horizontal-volume-slider {
+  min-width: max-content;
+}
+
+.mejs-controls {
+  * {
+    min-width: max-content !important;
+  }
+}
+
+/* qa-*/
+
+.mejs-controls .mejs-time-rail .mejs-time-current {
+  background: #222222 !important;
+}
+
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background: #222222 !important;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-total {
+  background: #f5f5f7 !important;
+  border-radius: 2px;
+}
+
+.mejs-currenttime,
+.mejs-duration {
+  color: #222222 !important ;
+}
+
+.mejs-container,
+.mejs-container .mejs-controls,
+.mejs-embed,
+.mejs-embed body {
+  background-color: rgba(133, 133, 133, 0) !important;
+}
+
+.asi-player-icon {
+  text-shadow: 1px 1px 1px black;
+}
+.asi-player-icon {
+  color: black !important;
+}
+
+.ai-wrap {
+  background: red;
+}
+.ai-wrap .ai-track-time {
+  color: red;
+}
+.ai-wrap .ai-track-name {
+  color: blue;
+}
+.ai-track-info {
+  color: yellow;
+}
+
+.mejs-button > button {
+  background-color: transparent;
+  background-image: url("../images/mejs-controls.svg") !important;
+}
+
+.wp-playlist-dark button:hover,
+.wp-playlist-dark button:focus {
+  background-color: transparent;
+  background-image: url("../images/mejs-controls.svg") !important;
+}
+
+.wp-playlist-dark .mejs-controls .mejs-button button:focus {
+  outline: 1px solid white;
+}
+
+.wp-playlist-dark .mejs-fullscreen-button > button {
+  background-position: -80px 0;
+}
+
+.wp-playlist-dark .mejs-unfullscreen > button {
+  background-position: -100px 0;
+}
+
+.wp-playlist-dark .mejs-mute > button {
+  background-position: -60px 0;
+}
+
+.wp-playlist-dark .mejs-unmute > button {
+  background-position: -40px 0;
+}
+
+.wp-playlist-dark .mejs-pause > button {
+  background-position: -20px 0;
+}

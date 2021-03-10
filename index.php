@@ -15,13 +15,13 @@
 get_header();
 ?>
 
-<main id="primary" class="c-main">
+<main id="primary" class="c-main c-main--blog">
 
     <div class="c-main__content">
 
         <?php //qa- ?>
         <header class="c-main__header">
-            <h1 class="entry-title h1-lh--bg">
+            <h1 class="c-main__entry-title h1-lh--bg">
                 <?php makemeup_archive_page_name() ?>
             </h1>
         </header><!-- .entry-header -->
@@ -30,7 +30,7 @@ get_header();
         <?php
 		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
+		if ( is_home() && ! is_front_page() ) :
 		?>
         <header>
             <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
@@ -50,8 +50,8 @@ get_header();
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
-
-			the_posts_navigation();
+				echo '<div class="c-spacer__blog qa-"></div>';
+			 	makemeup_get_default_pagination();
 
 		else :
 

@@ -1,0 +1,149 @@
+/*------------------------------------*\
+  #Comments Form 
+\*------------------------------------*/
+.comments-area {
+  //   padding-top: 48px;
+  border-top: 1px solid $color_background_hr;
+  ol {
+    margin: 0px;
+  }
+}
+
+.comment-respond {
+  padding-bottom: 48px;
+  padding-top: 48px;
+}
+
+.c-comments__desc {
+  color: $makemeup_third_color;
+  margin-bottom: 24px;
+
+  @include media(tablet) {
+    margin-bottom: 39px;
+  }
+}
+
+.c-comment__cookie {
+  display: flex;
+  margin-top: 24px;
+  margin-bottom: 39px;
+
+  @include media(tablet) {
+    margin-top: 23px;
+  }
+}
+
+.comments-title {
+  width: 100%;
+  border-top: 1px solid $color_background_hr;
+  padding-top: 48px;
+
+  @include media(tablet) {
+    padding-top: 68px;
+  }
+}
+
+/*------------------------------------*\
+  #Comments List
+\*------------------------------------*/
+.comment-list {
+}
+
+.children {
+  padding-left: 80px;
+
+  &:nth-child(n + 2) {
+    .children {
+      padding-left: 40px;
+      @include media(mobile-only) {
+        padding-left: 0px;
+      }
+    }
+  }
+}
+
+.comment {
+  ol {
+    list-style-type: none;
+  }
+}
+
+.comment-body {
+  padding-bottom: 39px;
+}
+
+.comment.depth-1 {
+  border-bottom: 1px solid $color_background_hr;
+  margin-top: 24px;
+
+  @include media(tablet) {
+    margin-top: 39px;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+.c-comments__title {
+  color: $makemeup_primary_color;
+}
+
+.comment-reply-link {
+  padding-top: 16px;
+
+  &::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);'%3E%3Cpath d='M12 9.059V6.5a1.001 1.001 0 0 0-1.707-.708L4 12l6.293 6.207a.997.997 0 0 0 1.414 0A.999.999 0 0 0 12 17.5v-2.489c2.75.068 5.755.566 8 3.989v-1c0-4.633-3.5-8.443-8-8.941z' fill='%23626262'/%3E%3Crect x='0' y='0' width='24' height='24' fill='rgba(0, 0, 0, 0)' /%3E%3C/svg%3E");
+    cursor: pointer;
+    vertical-align: top;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: 28px 28px;
+    margin-right: 12px;
+  }
+}
+
+.comment-list {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+.comment-meta {
+  width: 100%;
+  display: flex;
+}
+
+.comment-avatar {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.comment-header {
+  margin-bottom: 16px;
+}
+
+.comment-content {
+  width: calc(100% - 50px);
+  padding-left: 24px;
+}
+
+.comment-author {
+  display: inline-block;
+  padding-right: 16px;
+  margin-bottom: 8px;
+  color: $makemeup_second_color;
+
+  @include media(tablet) {
+    margin-bottom: 0px;
+  }
+
+  a {
+    color: $makemeup_second_color;
+  }
+}
+
+.time {
+  display: inline-block;
+  color: $makemeup_third_color;
+}

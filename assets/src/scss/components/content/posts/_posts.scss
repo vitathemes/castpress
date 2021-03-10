@@ -11,7 +11,6 @@
 .c-post__header {
   width: 100%;
   // margin-bottom: 40px;
-
   color: $makemeup_primary_color;
 
   &::first-letter {
@@ -21,6 +20,36 @@
   @include media(tablet) {
     width: calc(100% - 180px);
     padding-left: 39px;
+  }
+}
+
+.c-post__header--home {
+  width: 100%;
+  // margin-bottom: 40px;
+  color: $makemeup_primary_color;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  @include media(tablet) {
+    width: 100%;
+    padding-left: 0px;
+  }
+}
+
+.c-post__header--page {
+  padding-left: 0px;
+  margin-bottom: 40px;
+}
+
+.c-post__author {
+  color: $makemeup_third_color;
+}
+
+.c-post__author__link {
+  &::first-letter {
+    text-transform: uppercase;
   }
 }
 
@@ -36,12 +65,6 @@
 .c-post__title {
   padding-bottom: 16px;
 
-  a {
-    color: $makemeup_primary_color;
-  }
-}
-
-.c-post__date {
   a {
     color: $makemeup_primary_color;
   }
@@ -69,7 +92,23 @@
 
 .c-post__read-more {
   color: $makemeup_fourth_color;
+
+  &:hover {
+    color: $makemeup_fourth_color;
+
+    text-decoration: underline;
+  }
 }
 .c-post__page-links {
   margin: 16px 0px 0px 0px;
+}
+
+.c-post__tags {
+  padding-right: 24px;
+
+  color: $makemeup_neutral_dark_gray_color !important;
+
+  &:hover {
+    color: $makemeup_main_accent_color !important;
+  }
 }

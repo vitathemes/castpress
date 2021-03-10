@@ -2,11 +2,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 39px;
-
-  @include media(tablet) {
-    margin-bottom: 24px;
-  }
+  margin-bottom: 24px;
 }
 
 .c-single__thumbnail {
@@ -28,6 +24,7 @@
 
 .c-single__title {
   margin-bottom: 14px;
+
   @include media(tablet) {
     margin-bottom: 8px;
   }
@@ -35,6 +32,8 @@
 
 .c-single__entry-content {
   margin-top: 64px;
+
+  width: 100%;
 
   @include media(tablet) {
     margin-top: 96px;
