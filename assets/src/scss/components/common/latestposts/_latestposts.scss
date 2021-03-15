@@ -1,3 +1,9 @@
+.c-latest-posts__content {
+  @include media(tablet) {
+    padding-bottom: 24px;
+  }
+}
+
 .c-latest-posts {
   width: 100%;
 }

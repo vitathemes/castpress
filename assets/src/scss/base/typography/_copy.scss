@@ -16,7 +16,7 @@ p,
   line-height: 25px;
   margin-top: 0px;
   margin-bottom: 1.5rem;
-  color: $makemeup_neutral_dark_gray_color;
+  color: $makemeup_second_color;
 }
 
 /* span */
@@ -34,4 +34,8 @@ span,
 
 .span-lh--bg {
   line-height: 20px;
+}
+
+.seprator {
+  color: $makemeup_third_color !important;
 }

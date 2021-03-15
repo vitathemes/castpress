@@ -38,7 +38,7 @@
   border-radius: 3px !important;
   position: absolute;
   right: 5px;
-  top: 5px;
+  top: 7px;
   cursor: pointer;
 
   .dashicons {
@@ -47,9 +47,15 @@
     color: $color_background_body !important;
     font-size: 1.5em !important;
 
+    &::before {
+      color: $color_background_body;
+    }
+
     &:hover {
-      color: $makemeup_neutral_dark_gray_color !important;
-      background: transparent !important;
+      &::before {
+        color: $makemeup_main_primary_color !important;
+        background: transparent !important;
+      }
     }
   }
 }

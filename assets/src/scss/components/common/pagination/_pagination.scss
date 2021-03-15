@@ -14,8 +14,8 @@
 }
 
 /*------------------------------------*\
-    #Pagination
-  \*------------------------------------*/
+  #Pagination
+\*------------------------------------*/
 
 .c-pagination {
   width: 100%;
@@ -53,7 +53,7 @@
   \*------------------------------------*/
 
 .page-numbers {
-  color: $makemeup_neutral_dark_gray_color !important;
+  color: $makemeup_second_color !important;
   border-radius: 3px;
   cursor: pointer;
   margin: 2px;
@@ -70,26 +70,46 @@
 
 .page-numbers.current {
   background-color: $makemeup_neutral_gray_light_second_color;
-  color: $makemeup_neutral_dark_gray_color !important;
+  color: $makemeup_second_color !important;
 }
+
 .dashicons {
-  color: $makemeup_third_color;
   font-family: dashicons !important;
-  &:hover {
-    background-color: $makemeup_neutral_gray_light_second_color;
-    // color: $cavatina__main-primary-light-color;
+
+  &::before {
+    color: $makemeup_second_color;
+    transition: $global-transition;
+  }
+}
+
+.next.page-numbers {
+  .dashicons {
+    height: 30px;
+    padding-left: 0px;
+
+    &::before {
+      vertical-align: middle;
+    }
   }
 }
 
 .next.page-numbers,
 .prev.page-numbers {
+  background: transparent;
   &:hover {
-    background-color: unset;
+    background-color: transparent !important;
+  }
+
+  .dashicons {
+    color: $makemeup_neutral_dark_gray_color;
+    &:hover {
+      background: transparent;
+      color: $makemeup_neutral_gray_color !important;
+    }
   }
 }
 
 .dashicons-arrow-right-alt2:before {
-  vertical-align: middle;
   text-align: center;
 }
 

@@ -8,30 +8,27 @@
  */
 ?>
 
+
+<?php $postNumber = cavatina_deciaml_post_number(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-episode'); ?>>
 
     <section class="c-episode__header">
 
         <?php 
-              makemeup_get_category();
-              echo " <span class='h5 a--secondary'> | </span> ";
-              makemeup_posted_on( true , true );
+
+            makemeup_get_category();
+            echo '<span class="seprator h5 a--secondary"> | </span>';
+            echo '<span class="c-episode__date h5 h5-lh--sm">'.esc_html( get_the_date( "M d, Y" ) ).'</span>'; 
+            
         ?>
 
-        <?php
-		the_title( '<h2 class="c-episode__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		if ( 'post' === get_post_type() ) :
-        ?>
-
-        <div class="c-episode__entry-meta">
-            <?php makemeup_posted_on(); ?>
-        </div><!-- .entry-meta -->
-
-        <?php endif; ?>
+        <div class="c-episode__titles">
+            <?php  the_title('<h2 class="c-episode__title"><a class="a--secondary" href="'.esc_url( get_permalink() ).'" rel="bookmark">'.$postNumber.' - ', '</a></h2>' ); ?>
+        </div>
 
 
         <div class="c-episode__entry-content h4">
-            <?php the_excerpt(); ?>
+            <p class="c-episode__entry-context h4"><?php echo get_the_excerpt(); ?></h4>
         </div>
 
         <a class="c-episode__read-more span font--semibold a--fourth" href=" <?php esc_url( the_permalink() ) ?> "
@@ -39,7 +36,6 @@
             <span class="c-episode__play"></span>
             <?php esc_html_e( 'Listen Now', 'makemeup' ); ?>
         </a>
-
 
         <?php
 			wp_link_pages(
@@ -50,7 +46,6 @@
 			);
 		?>
 
-    </section><!-- -->
-
+    </section>
 
 </article><!-- #post-<?php the_ID(); ?> -->

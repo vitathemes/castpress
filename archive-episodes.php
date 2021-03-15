@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<main id="primary" class="c-main">
+<main id="primary" class="c-main c-main--episode">
     <div class="c-main__content">
         <header class="c-post__header c-post__header--page">
             <h1 class="c-main__entry-title h1-lh--bg">Episodes</h1>

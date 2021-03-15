@@ -24,10 +24,10 @@ h1,
 }
 
 .h1-lh--bg {
-  line-height: 33px;
+  line-height: 33px !important;
 }
 .h1-lh--sm {
-  line-height: 25px;
+  line-height: 25px !important;
 }
 
 /* H2 */
@@ -56,11 +56,11 @@ h4,
   margin-bottom: 10px; // Paragraph Spacing
 }
 .h4-lh--bg {
-  line-height: 27px;
+  line-height: 27px !important;
 }
 
 .h4-lh--sm {
-  line-height: 20px;
+  line-height: 20px !important;
 }
 
 /* H5 */
@@ -72,7 +72,7 @@ h5,
 }
 
 .h5-lh--sm {
-  line-height: 18px;
+  line-height: 18px !important;
 }
 
 /* H6 */

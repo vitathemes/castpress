@@ -11,25 +11,16 @@ if ( ! function_exists( 'makemeup_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function makemeup_posted_on( $is_bold = false , $is_single = false ) {
+	function makemeup_posted_on( $is_bold = false , $link_class = " " ) {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		if( $is_bold ){
+		if( $is_bold ) {
 			$is_bold = "font--semibold";
-		}else{
+		} else {
 			$is_bold = "font--regular";
-		}
-
-		if($is_single){
-
-			$is_single = "a--third";
-
-		}
-		else{
-			$is_single = "a--secondary";
 		}
 
 		$time_string = sprintf(
@@ -43,7 +34,7 @@ if ( ! function_exists( 'makemeup_posted_on' ) ) :
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
 			esc_html( '%s', 'makemeup' ),
-			'<a class="'. esc_html($is_single) .'" href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			'<a class="a--tertiary" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
 		echo '<span class="c-post__date h5 h5-lh--sm '. esc_html($is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -59,7 +50,7 @@ if ( ! function_exists( 'makemeup_posted_by' ) ) :
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'By %s', 'post author', 'makemeup' ),
-			'<span class="author vcard h5 h5-lh--sm"><a class="url fn n c-post__author__link a--third" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard h5 h5-lh--sm"><a class="url fn n c-post__author__link a--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 		if( $is_bold ){
@@ -260,6 +251,10 @@ if (! function_exists('makemeup_get_tags')) :
 endif;
 
 
+
+
+
+
 if (! function_exists('makemeup_get_category')) :
 	/**
 	 * Return Post category
@@ -315,12 +310,13 @@ if (! function_exists('makemeup_get_default_pagination')) :
 	* Show numeric pagination
 	*/
 	function makemeup_get_default_pagination() {
-		echo'  <div class="c-pagination">' . wp_kses_post(paginate_links(
+		echo'  <div class="c-pagination">' . wp_kses_post(
+			paginate_links(
 				array(
 				'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
 				'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
 				)
-			)) . '</div>';
+			)) .'</div>';
 	}
 endif;
 
@@ -329,7 +325,7 @@ if (! function_exists('makemeup_get_featured_episode')) :
 	/**
 	  * Get Featured Episode
 	  */
-	function makemeup_get_featured_episode() {
+	function makemeup_get_featured_episode( $isMetaActive = false ) {
 		$args = array(
 			'posts_per_page' => 1, 
 			'offset' => 0,
@@ -340,8 +336,9 @@ if (! function_exists('makemeup_get_featured_episode')) :
 		);
 		$query = new WP_Query($args);
 		if ($query->have_posts()) :
+			$isMetaActive = $isMetaActive; 
 			while ($query->have_posts()) : $query->the_post();			
-				get_template_part( 'template-parts/content', 'single' );
+			include( locate_template( 'template-parts/components/latest-episode.php', false, false ) ); 
 			endwhile;
 		endif;
 	}

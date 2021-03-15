@@ -1,4 +1,5 @@
 button,
+.btn,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -9,9 +10,9 @@ input[type="submit"] {
   cursor: pointer;
   transition: $global-transition;
   font-family: $makemeup_font_regular;
-
-  min-width: 133px;
-  height: 40px;
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 18px;
 
   &:hover {
     background-color: $makemeup_button_primary_hover_color;
@@ -19,12 +20,113 @@ input[type="submit"] {
   }
 }
 
-.btn--sm {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
+.btn--secondary {
+  background-color: $makemeup_neutral_gray_light_color;
+  color: $makemeup_main_accent_color;
+
+  .dashicons {
+    padding-left: 0px;
+    width: max-content;
+
+    &::before {
+      color: $makemeup_main_accent_color;
+    }
+  }
+
+  &:hover {
+    background-color: $makemeup_main_accent_color;
+    color: $makemeup_neutral_gray_light_color !important;
+
+    .dashicons {
+      &::before {
+        color: $makemeup_neutral_gray_light_color !important;
+      }
+    }
+  }
 }
 
+.btn--arrow {
+  .dashicons {
+    padding-left: 4px;
+    width: max-content !important;
+    font-size: 11px;
+    padding-top: 4px;
+    &:before {
+      color: $color_background_body;
+      width: max-content !important;
+    }
+  }
+
+  &:hover {
+    .dashicons {
+      &::before {
+        color: $makemeup_main_accent_color;
+      }
+    }
+  }
+}
+
+.btn--play {
+  background-color: $makemeup_neutral_gray_light_color;
+  color: $makemeup_main_accent_color;
+}
+
+.btn--sm {
+  padding: 8px 14px;
+}
+
+.btn--error {
+  color: $color_background_body !important;
+
+  // hover
+  &:hover {
+    background-color: #f5f5f7;
+    color: $makemeup_main_accent_color !important;
+
+    .dashicons {
+      &::before {
+        color: $makemeup_main_accent_color;
+      }
+    }
+  }
+
+  .dashicons {
+    font-size: 15px !important;
+    padding-left: 0px;
+    width: max-content !important;
+    &::before {
+      color: $color_background_body;
+    }
+  }
+}
+
+.comment-form-arrow {
+  .dashicons {
+    padding-left: 4px;
+    width: max-content !important;
+    font-size: 11px;
+    padding-top: 4px;
+    height: 0px !important;
+
+    &::before {
+      color: $color_background_body;
+    }
+  }
+
+  &:hover {
+    .dashicons {
+      &::before {
+        color: $makemeup_main_accent_color !important;
+      }
+    }
+  }
+}
+
+/*------------------------------------*\
+#Player
+\*------------------------------------*/
+
+/* qa- */
 .mejs-play > button {
   min-width: max-content;
 }
@@ -38,8 +140,6 @@ input[type="submit"] {
     min-width: max-content !important;
   }
 }
-
-/* qa-*/
 
 .mejs-controls .mejs-time-rail .mejs-time-current {
   background: #222222 !important;

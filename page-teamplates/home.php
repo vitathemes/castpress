@@ -1,15 +1,13 @@
 <?php
 /**
- * 
  *  Template Name: Home
- * 
  * 
  */
 
 get_header();
 ?>
 
-<main id="primary" class="c-main">
+<main id="primary" class="c-main c-main--home">
 
     <div class="c-main__content">
 
@@ -19,26 +17,46 @@ get_header();
 
         <div class="spacer"></div>
 
-        <?php
-		   $loop = new WP_Query( array( 'post_type' => 'episodes', 'paged' => $paged ) );
-		   if ( $loop->have_posts() ) :
-			   while ( $loop->have_posts() ) : $loop->the_post();
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-			endwhile;
-				makemeup_get_default_pagination();
-		else :
-			return;
-		endif;
-		?>
+        <div class="posts">
+            <?php
+            
+                if( get_query_var( 'paged' ) )
+                    $my_page = get_query_var( 'paged' );
+                else {
+                if( get_query_var( 'page' ) )
+                    $my_page = get_query_var( 'page' );
+                else
+                    $my_page = 1;
+                    set_query_var( 'paged', $my_page );
+                    $paged = $my_page;
+                }
 
-        <?php
-			get_template_part( 'template-parts/components/latest-posts');
-		?>
+                global $post;
+                $tmp_post = $post;
+                $paged = ( get_query_var("paged") ) ? get_query_var("paged") : 1;
+                
+                $args = array (
+                    "post_status"            => "publish",
+                    "post_type"              => "episodes",
+                    "paged"                  =>  $paged,
+                    "posts_per_page"         =>  get_option("posts_per_page"),
+                );
+                
+                $wp_query = null;
+                $wp_query = new WP_Query();
+                $wp_query->query( $args );
+                
+                if ( $wp_query->have_posts() ) :
+                while ( $wp_query->have_posts() ) : $wp_query->the_post();
+                    get_template_part( 'template-parts/content', get_post_type() );	
+                endwhile;
+                    makemeup_get_default_pagination();
+                    $post = $tmp_post; 
+                endif;
+                
+            ?>
+        </div>
+        <?php get_template_part( 'template-parts/components/latest-posts'); ?>
     </div>
 
 </main><!-- #main -->

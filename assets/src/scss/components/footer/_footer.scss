@@ -6,19 +6,22 @@
   justify-content: center;
   color: white;
   line-height: 50px;
-
   width: 100%;
+  margin-bottom: 24px;
+  padding-top: 48px;
 
   @include media(tablet) {
     margin-top: auto;
-    padding: 0 17px;
+    padding: 0px 17px;
+    margin-bottom: 39px;
   }
 }
 
 .c-footer__content {
   border-top: 1px solid $makemeup_neutral_gray_light_second_color;
   width: 100%;
-  padding: 0 17px;
+  padding: 0 0px;
+  padding-top: 48px;
 
   @include media(tablet) {
     width: 670px;
@@ -36,11 +39,15 @@
 }
 
 .c-footer__context {
-  color: $makemeup_primary_color;
+  color: $makemeup_primary_color !important;
 }
 
 .c-footer__link {
-  color: $makemeup_second_color;
+  color: $makemeup_third_color !important;
+
+  &:hover {
+    color: $makemeup_primary_color !important;
+  }
 }
 
 .c-footer__widgets {
@@ -51,6 +58,7 @@
   justify-content: center;
 
   flex-wrap: wrap;
+  padding: 0px 17px;
 
   @include media(tablet) {
     padding-top: 64px;
@@ -66,6 +74,12 @@
 
     li {
       margin-bottom: 16px;
+
+      a {
+        color: $makemeup_second_color;
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
   }
 }
@@ -85,7 +99,7 @@
   // font-size: 12px;
   // line-height: 15px;
 
-  margin-bottom: 39px;
+  margin-bottom: 23px;
   position: relative;
 
   .sub-menu {
@@ -102,4 +116,46 @@
   line-height: 20px;
   letter-spacing: 0.16em;
   margin-bottom: 8px;
+}
+
+.c-footer__widget__desc {
+  margin-bottom: 16px;
+  color: $makemeup_second_color !important ;
+}
+
+.c-footer__newsletter-submit {
+  width: 36px;
+  height: 36px;
+  background-color: #7247ca;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 3px !important;
+  position: absolute;
+  right: 4px;
+  top: 3px;
+  cursor: pointer;
+
+  @include media(tablet) {
+    right: 7px;
+  }
+
+  &::before {
+    content: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3536 4.35355C10.5488 4.15829 10.5488 3.84171 10.3536 3.64645L7.17157 0.464466C6.97631 0.269204 6.65973 0.269204 6.46447 0.464466C6.2692 0.659728 6.2692 0.976311 6.46447 1.17157L9.29289 4L6.46447 6.82843C6.2692 7.02369 6.2692 7.34027 6.46447 7.53553C6.65973 7.7308 6.97631 7.7308 7.17157 7.53553L10.3536 4.35355ZM0 4.5H10V3.5H0V4.5Z' fill='white'/%3E%3C/svg%3E%0A");
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-size: 21px 21px;
+    position: absolute;
+  }
+
+  &:hover {
+    background-color: #7247ca;
+    &::before {
+      right: 0;
+    }
+  }
 }

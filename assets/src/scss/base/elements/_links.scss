@@ -1,4 +1,6 @@
-/* My link */
+/*------------------------------------*\
+  #Links
+\*------------------------------------*/
 
 a,
 .a {
@@ -22,7 +24,7 @@ a,
   }
 }
 
-.a--third {
+.a--tertiary {
   color: $color_link_third; //979797
 
   &:hover {
@@ -35,5 +37,12 @@ a,
 
   &:hover {
     color: $color_link_secondary; //222222
+  }
+}
+
+
+.btn--secondary{
+  .dashicons{
+    width: max-content !important;
   }
 }

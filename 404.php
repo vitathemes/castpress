@@ -20,7 +20,7 @@ get_header();
                 <?php esc_html_e( 'Page not found!', 'makemeup' ); ?>
             </h1>
             <a href=<?php echo esc_url( home_url() ); ?>>
-                <button class="h5">
+                <button class="btn--error h5">
                     <?php esc_html_e( 'HOMEPAGE', 'makemeup' ); ?>
                     <span class="c-main__button-arrow dashicons dashicons-arrow-right-alt2"></span>
                 </button>

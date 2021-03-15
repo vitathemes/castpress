@@ -1,0 +1,31 @@
+/*------------------------------------*\
+  #Animations
+\*------------------------------------*/
+
+/* Transcript Animation  */
+@keyframes transcript {
+  0% {
+    display: block;
+  }
+
+  5% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+@-webkit-keyframes transcript {
+  0% {
+    display: block;
+  }
+
+  5% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}

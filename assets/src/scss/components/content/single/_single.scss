@@ -38,12 +38,92 @@
   @include media(tablet) {
     margin-top: 96px;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 24px;
+  }
 }
 
 .c-single__tags {
   a {
     &::before {
       content: "#";
+    }
+  }
+}
+
+.c-single__transcript {
+  width: 100%;
+  border: 1px solid $color_background_hr;
+  padding: 24px 24px 24px 24px;
+  height: max-content;
+  .dashicons {
+    vertical-align: text-top;
+  }
+}
+
+.c-single__transcript__title {
+  display: inline-block;
+}
+
+.c-single__transcript__more {
+  cursor: pointer;
+}
+
+.c-single__transcript__content {
+  width: 100%;
+
+  display: none;
+  transform-origin: top;
+}
+
+.c-single__transcript__context {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.c-single__transcript__wrapper {
+  overflow: auto;
+  max-height: 100%;
+}
+
+.c-single__transcript__content.is-open {
+  border-left: 1px solid $color_background_hr;
+  border-right: 1px solid $color_background_hr;
+  border-bottom: 1px solid $color_background_hr;
+
+  height: 352px;
+  max-height: 352px;
+  padding: 24px;
+  display: block;
+  .c-single__transcript__context {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.c-single__social-media {
+  width: 100%;
+  padding-top: 39px;
+  padding-bottom: 15px;
+
+  border-top: 1px solid #eaeaee;
+  margin-top: 24px;
+}
+
+.c-social-media__item--github {
+  path {
+    fill: $makemeup_primary_color;
+  }
+
+  &:hover {
+    path {
+      fill: $color_link_hover_secondary;
     }
   }
 }

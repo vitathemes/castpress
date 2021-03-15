@@ -23,6 +23,11 @@
   }
 }
 
+.c-post__date {
+  color: $makemeup_third_color !important;
+  font-family: "SourceSerifPro-semibold" !important; //qa-
+}
+
 .c-post__header--home {
   width: 100%;
   // margin-bottom: 40px;
@@ -40,14 +45,15 @@
 
 .c-post__header--page {
   padding-left: 0px;
-  margin-bottom: 40px;
+  margin-bottom: 40px; //qa-
 }
 
 .c-post__author {
-  color: $makemeup_third_color;
+  color: $makemeup_third_color !important;
 }
 
-.c-post__author__link {
+.c-post__author__link,
+.author {
   &::first-letter {
     text-transform: uppercase;
   }
@@ -59,6 +65,15 @@
 
   li {
     margin-bottom: 8px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 24px;
   }
 }
 
@@ -91,11 +106,10 @@
 }
 
 .c-post__read-more {
-  color: $makemeup_fourth_color;
+  color: $makemeup_fourth_color !important;
 
   &:hover {
-    color: $makemeup_fourth_color;
-
+    color: $makemeup_primary_color !important;
     text-decoration: underline;
   }
 }

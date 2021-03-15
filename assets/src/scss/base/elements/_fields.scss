@@ -26,12 +26,13 @@ textarea {
   padding-top: 13px;
   padding-bottom: 13px;
   font-size: 0.75rem;
-  line-height: 1.5em;
+  line-height: 27px;
 
   &::placeholder {
-    color: $makemeup_main_primary_color;
+    color: $makemeup_neutral_gray_color;
     opacity: 1;
-    // outline: #4caf50 solid 10px;
+    font-size: 12px;
+    line-height: 27px !important;
   }
 
   &:focus {
@@ -41,10 +42,8 @@ textarea {
 }
 
 select {
-  //   color: $wp-meliora__main-primary-light-color;
   border: none;
   border-radius: $global-radius;
-  //   background-color: $wp-meliora__neutral-gray-light-color;
   padding: 10px 14px;
 }
 
@@ -59,4 +58,8 @@ input[type="checkbox"] {
   @include media(tablet) {
     margin: 0px 8px 0px 0px;
   }
+}
+
+.search-field {
+  padding: 10px 8px 13px 14px !important;
 }

@@ -34,7 +34,7 @@ get_header();
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
-			echo "<div class='c-spacer'></div>"
+			echo "<div class='c-spacer'></div>";
 			   makemeup_get_default_pagination();
 
 		else :

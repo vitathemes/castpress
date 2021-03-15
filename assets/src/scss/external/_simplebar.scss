@@ -1,0 +1,56 @@
+/*--------------------------------------------------------------
+  # Custom Simplebar
+  --------------------------------------------------------------*/
+
+.simplebar-track {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  margin-top: 12%;
+  background: #e1e1e1;
+  border-radius: 15px;
+  width: 12px;
+  max-width: 1px;
+  padding: 1px;
+}
+
+.simplebar-scrollbar {
+  background-color: $makemeup_main_primary_color;
+  padding: 0.5px;
+  width: 7px;
+}
+
+.simplebar-content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+
+/**/
+.c-single__transcript__wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+.c-single__transcript__wrapper::-webkit-scrollbar-track {
+  background: #eaeaee;
+  border-radius: 5px;
+  transform: 0.5s all;
+}
+
+/* Handle */
+.c-single__transcript__wrapper::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 5px;
+  transform: 0.5s all;
+}
+
+/* Handle on hover */
+.c-single__transcript__wrapper::-webkit-scrollbar-thumb:hover {
+  background: #979797;
+  transform: 0.5s all;
+}

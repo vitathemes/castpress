@@ -121,8 +121,8 @@ if (function_exists('LibWp')) {
         ->setArgument('publicly_queryable' , true)
         ->setArgument('capability_type' , 'post')
         ->setArgument('show_in_rest' , true)
-		->setArgument('taxonomies' ,  array('category'))
-        ->setArgument('supports' , array('title', 'editor' , 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'))
+		->setArgument('taxonomies' ,  array('category' , 'post_tag'))
+        ->setArgument('supports' , array('title', 'editor' , 'comments', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'))
         ->register();
 
 

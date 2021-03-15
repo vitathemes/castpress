@@ -5,10 +5,15 @@
 .c-header {
   width: 100%;
   padding-top: 23px;
-  padding-bottom: 24px;
+  padding-bottom: 9px;
   display: flex;
   border-bottom: 1px solid $makemeup_neutral_gray_light_second_color;
   background-color: white;
+
+  @include  media(tablet){
+    padding-bottom: 24px;
+  }
+
 }
 
 .c-header__main {
@@ -34,17 +39,14 @@
   width: max-content;
   min-width: 0px;
   height: max-content;
-
-  @include media(tablet) {
-    display: none;
-  }
+  padding: 8px 12px;
 
   &:before {
     content: " ";
     position: absolute;
     width: 100%;
     height: 1px;
-    border: 1px solid #000000;
+    border-top: 1px solid #1A1A1A;
     top: 0;
     left: 0;
   }
@@ -53,9 +55,13 @@
     position: absolute;
     width: 100%;
     height: 1px;
-    border: 1px solid #000000;
+    border-bottom: 1px solid #1A1A1A;
     bottom: 0;
     left: 0;
+  }
+
+  @include media(tablet) {
+    display: none;
   }
 }
 
@@ -136,7 +142,6 @@
 
 .custom-logo-link {
   width: 89px;
-  // min-height: 28px;
   height: max-content;
 }
 
@@ -146,6 +151,7 @@
 
 .c-header__main.toggled {
   .c-header__menu {
+
     &::before {
       content: " ";
       transform: rotate(50deg);
@@ -154,7 +160,7 @@
     &::after {
       content: " ";
       transform: rotate(-50deg);
-      bottom: 40%;
+      bottom: 45%;
     }
   }
 

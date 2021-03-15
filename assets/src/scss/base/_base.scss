@@ -1,4 +1,10 @@
 /*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/fonts";
+@import "typography/headings";
+@import "typography/copy";
+/*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
 @import "elements/body";
@@ -7,10 +13,3 @@
 @import "elements/lists";
 @import "elements/buttons";
 @import "elements/blocks";
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-@import "typography/fonts";
-@import "typography/headings";
-@import "typography/copy";

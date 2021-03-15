@@ -3,8 +3,15 @@ ul {
   padding: 0px;
   margin-left: 20px;
   margin: 26px 0px 16px 20px;
+
+  color: $makemeup_second_color;
 }
 
 li {
   line-height: 25px;
+  color: $makemeup_second_color;
+}
+
+ol {
+  color: $makemeup_second_color;
 }

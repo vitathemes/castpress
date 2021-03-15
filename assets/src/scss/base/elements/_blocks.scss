@@ -1,27 +1,71 @@
 .wp-block-gallery {
   width: 100%;
   margin-left: 0px;
-
   max-width: 100%;
 }
 
 .wpcf7-response-output {
   text-align: left;
   color: $makemeup_service_error_color;
-  padding-left: 0px;
+  padding-left: 0px !important;
   font-size: 12px;
+  line-height: 10px;
+  margin: 0px !important;
+  color: $color_background_body;
+  background-color: $makemeup_service_error_color;
+  border-radius: 4px;
+  padding: 8px 13px !important;
+  border: none !important;
+  letter-spacing: 0.1em;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  max-width: max-content;
+
+  @include media(mobile-only) {
+    line-height: 20px;
+    min-height: max-content;
+    padding: 26px 13px !important;
+  }
 }
 
 .wpcf7-not-valid-tip {
-  margin-top: 16px;
   color: $makemeup_service_error_color;
   font-size: 12px;
 }
 
 .c-spacer__blog {
-  margin-top: 64px;
+  margin-top: 39;
+
+  @include media(tablet) {
+    margin-top: 64px;
+  }
 }
 
 .c-spacer--md {
   margin-top: 48px;
+}
+
+.c-episode__player {
+  display: flex;
+  align-items: center;
+
+  &::after {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    content: "";
+    cursor: pointer;
+
+    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
+      no-repeat 50% 50%;
+    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
+      no-repeat 50% 50%;
+
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-color: $makemeup_primary_color;
+  }
 }

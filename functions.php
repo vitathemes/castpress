@@ -80,16 +80,138 @@ function wpb_widgets_init() {
 add_action( 'widgets_init', 'wpb_widgets_init' );
 
 
-//Exclude pages from WordPress Search
+//Exclude pages from WordPress Search //qa- 
 if (!is_admin()) {
 	function wpb_search_filter($query) {
-	if ($query->is_search) {
-	$query->set('post_type', 'post');
-	}
-	return $query;
-	}
+		if ($query->is_search) {
+			$query->set('post_type', 'post');
+		}
+			return $query;
+		}
 	add_filter('pre_get_posts','wpb_search_filter');
 }
+
+
+
+function add_additional_class_on_li($classes, $item, $args) {
+	/**
+	 *	Add class to menu items 
+	 */
+    if(isset($args->add_li_class)) {
+        $classes[] = $args->add_li_class;
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+
+function cavatina_total_post_types( $isText = true ) {	
+	/**
+	 * count number of posts types (episodes) in a page
+	 */
+
+	if($isText === true){
+		printf(esc_html($count_posts = wp_count_posts( 'episodes' )->publish));
+	}
+	else{
+		return $count_posts = wp_count_posts( 'episodes' )->publish;
+	}	
+}
+
+
+function cavatina_get_inverse_post_number(){
+	/**
+	 * Auto decrement number per posts ( in pages like archive-projects... )
+	 */
+	global $wp_query;
+    $posts_per_page 	= get_option('posts_per_page');
+	$paged          	= (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$offset         	= ($paged - 1) * $posts_per_page;
+	$loop           	= $wp_query->current_post + 1;
+	$posts_in_page	    = $offset + $loop;
+	$total_post_numbers = cavatina_total_post_types(false) + 1;
+	$posts_counter 	    = $total_post_numbers - $posts_in_page;
+
+	return $posts_counter;
+}
+
+
+function cavatina_deciaml_post_number(){
+	/**
+	 * Add zero to the post numbers
+	 */
+	
+    // get post number (auto increment)
+    $decimalCounter = "0";
+    $postNumber = cavatina_get_inverse_post_number();
+    // Remove zero when reaching 10
+    if($postNumber >= 10){
+        $decimalCounter = "";
+		$postNumber = $postNumber;
+		return $postNumber;
+    }
+    else{
+		$postNumber = $decimalCounter.$postNumber;
+		return $postNumber;
+	}
+}
+
+
+
+
+if ( ! function_exists( 'pietergoosen_pagination' ) ) :
+
+    function pietergoosen_pagination($pages = '', $range = 2) {   
+       $showitems = ($range * 2)+1;  
+
+      global $paged;
+      if(empty($paged)) $paged = 1;
+
+          if($pages == '')
+          {
+             global $wp_query;
+             $pages = $wp_query->max_num_pages;
+                if(!$pages)
+                {
+                $pages = 1;
+                }
+            }   
+
+           if(1 != $pages)
+          {
+            $string = _x( 'Page %1$s of %2$s' , '%1$s = current page, %2$s = all pages' , 'pietergoosen' );
+            echo "<div class='pagination'><span>" . sprintf( $string, $paged, $pages ) . "</span>";
+              if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>" . __( '&laquo; First', 'pietergoosen' ) . "</a>";
+             if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>" . __( '&lsaquo; Previous', 'pietergoosen' ) . "</a>";
+
+                for ($i=1; $i <= $pages; $i++)
+                {
+                   if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+                   {
+                        echo ($paged == $i)? "<span class=\"current\">".$i."</span>":"<a href='".get_pagenum_link($i)."' class=\"inactive\">".$i."</a>";
+                   }
+               }
+
+               if ($paged < $pages && $showitems < $pages) echo "<a href='" . get_pagenum_link($paged + 1)."'>" . __( 'Next &rsaquo;', 'pietergoosen' ) . "</a>";
+               if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>" . __( 'Last &raquo;', 'pietergoosen' ) . "</a>";
+               echo "</div>\n";
+         }
+        } //  pietergoosen_pagination
+
+endif;
+
+
+add_filter( 'comment_form_defaults', function( $defaults ){
+    // Edit this to your needs:
+
+	$button = '<button name="%1$s" type="submit" id="%2$s" class="%3$s comment-form-arrow" value="%4$s"> Submit<span class="dashicons dashicons-arrow-right-alt2"></span></button>';
+
+
+    // Override the default submit button:
+    $defaults['submit_button'] = $button;
+
+    return $defaults;
+} );
 
 
 /**

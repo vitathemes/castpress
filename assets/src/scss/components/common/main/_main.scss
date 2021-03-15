@@ -1,16 +1,26 @@
+/*------------------------------------*\
+  #Main
+\*------------------------------------*/
 .c-main {
   min-height: 100%;
   height: max-content;
   display: flex;
   justify-content: center;
-  padding: 48px 0px;
+  padding: 48px 16px;
+  padding-bottom: 0px; //qa-
   @include media(tablet) {
-    padding: 96px 0px 24px 0px;
+    padding: 96px 0px 48px 0px;
   }
 }
 
+/*------------------------------------*\
+  #Main Modifier
+\*------------------------------------*/
+.c-main--home {
+  margin-bottom: 16px;
+}
 .c-main--blog {
-  padding-bottom: 48px;
+  padding-bottom: 0px;
 
   @include media(tablet) {
     padding-bottom: 64px;
@@ -21,6 +31,22 @@
   padding-bottom: 0px;
 }
 
+.c-main--page {
+  padding-bottom: 0px;
+}
+
+.c-main--episode {
+  padding-bottom: 0px;
+
+  @include media(tablet) {
+    padding-bottom: 64px;
+  }
+}
+
+/*------------------------------------*\
+  #Main Content
+\*------------------------------------*/
+
 .c-main__header {
   margin-bottom: 40px;
 }
@@ -28,7 +54,6 @@
 .c-main__content {
   width: calc(100% - 16px);
   height: max-content;
-  margin: 0px 16px;
 
   @include media(tablet) {
     width: 670px;
@@ -36,6 +61,47 @@
   }
 }
 
+.c-main__desc {
+  padding-bottom: 24px;
+}
+
+.c-main__button-arrow {
+  padding-left: 16px;
+  font-size: 5px;
+
+  &::before {
+    content: "\f345";
+    font-size: 15px;
+    vertical-align: middle;
+    text-align: left;
+  }
+}
+
+/*------------------------------------*\
+  #Main Featured Episode
+\*------------------------------------*/
+.c-main__featured-episode--home {
+  .c-single__entry-content {
+    display: none;
+  }
+}
+
+.c-main__entry-title {
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.dashicons {
+  //qa-
+  padding-left: 8px;
+  font-size: 15px;
+  vertical-align: baseline;
+}
+
+/*------------------------------------*\
+  #Main Error
+\*------------------------------------*/
 .c-main__error {
   text-align: center;
   display: flex;
@@ -62,47 +128,10 @@
   .c-main__page-title {
     font-size: 144px;
     line-height: 144px;
-
-    @include media(tablet) {
-      // margin-top: 48px;
-    }
+    margin-bottom: 24px;
   }
 
   .c-main__page-content {
     width: 100%;
-  }
-}
-
-.c-main__desc {
-  padding-bottom: 24px;
-}
-
-.c-main__button-arrow {
-  padding-left: 16px;
-  font-size: 5px;
-
-  &::before {
-    content: "\f345";
-    font-size: 15px;
-    vertical-align: middle;
-    text-align: left;
-  }
-}
-
-.c-main__featured-episode--home {
-  .c-single__entry-content {
-    display: none;
-  }
-}
-
-.dashicons {
-  padding-left: 8px;
-  font-size: 15px !important;
-  vertical-align: baseline;
-}
-
-.c-main__entry-title {
-  &::first-letter {
-    text-transform: uppercase;
   }
 }

@@ -1,7 +1,5 @@
 .c-episode__featured {
   width: 100%;
-
-  background-color: darkorchid;
 }
 
 .c-episode__head {
@@ -15,7 +13,6 @@
     height: 180px;
     justify-content: flex-start;
   }
-  background-color: lightblue;
 }
 
 .c-episode__image {
@@ -35,12 +32,6 @@
     padding-left: 39px;
     text-align: left;
   }
-
-  background-color: lightcoral;
-}
-
-.c-episode__category {
-  padding-bottom: 8px;
 }
 
 .c-episode__palyer {
@@ -49,12 +40,11 @@
   height: max-content;
   display: flex;
   justify-content: center;
-
-  background-color: darkviolet;
 }
 
 .c-episode__category {
-  color: $makemeup_third_color;
+  padding-bottom: 8px;
+  color: $makemeup_third_color !important;
 
   &:hover {
     color: $makemeup_primary_color;
@@ -66,6 +56,14 @@
       color: $makemeup_primary_color;
     }
   }
+}
+
+.c-episode__date {
+  color: $makemeup_third_color !important;
+}
+
+.c-episode__entry-context {
+  color: $makemeup_second_color !important;
 }
 
 .c-episode {
@@ -133,9 +131,14 @@
   }
 }
 
+.c-episode__titles {
+  width: 100%;
+}
+
 .c-episode__title {
   padding-bottom: 12px;
   margin-top: 14px;
+  display: inline-block;
 
   a {
     color: $makemeup_primary_color;
@@ -163,10 +166,14 @@
 }
 
 .c-episode__read-more {
-  color: $makemeup_fourth_color;
+  color: $makemeup_fourth_color !important;
   font-family: $makemeup_font_semibold !important;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+
+  &:hover {
+    color: $makemeup_primary_color !important; //qa-
+  }
 
   &:hover > .c-episode__play::before {
     filter: brightness(0.3);
@@ -192,6 +199,9 @@
   margin-top: 39px;
   margin-bottom: 12px;
   width: 100%;
+  color: $makemeup_primary_color !important;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .c-episode__play {
@@ -205,7 +215,7 @@
     width: 28px;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 }
 
@@ -246,9 +256,12 @@
 }
 
 .spacer {
-  margin-top: 99px;
+  margin-top: 64px;
+  @include media(tablet) {
+    margin-top: 96px;
+  }
 }
 
 .c-episode__player {
-  margin-top: 48px;
+  margin-top: 39px;
 }

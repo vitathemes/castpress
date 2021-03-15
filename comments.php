@@ -15,26 +15,20 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() ) {
-	return;
-}
-
-
-			$makemeup_comment_counter = get_comments_number();
-			if ( '1' <= $makemeup_comment_counter ) {
-
+		if ( post_password_required() ) {
+			return;
+		}
+		
+		$makemeup_comment_counter = get_comments_number();
 ?>
 
 <div id="comments" class="comments-area">
 
 
     <?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		
 
 		//Declare Vars
-		$comment_send = 'Send';
+		$comment_send = 'Submit';
 		$comment_reply = 'Leave a Reply';
 		$comment_reply_to = 'Reply';
 
@@ -78,9 +72,16 @@ if ( post_password_required() ) {
 			'comment_notes_after' => '',
 			//Submit Button ID
 			'id_submit' => __( 'comment-submit' ),
+			'class_submit' => __( 'makemeup-comment-submit' ),
 		);
-			comment_form( $comments_args );
+		
 
+		comment_form( $comments_args );
+
+
+		// You can start editing here -- including this comment!
+		if ( have_comments() ) :
+		
 ?>
 
     <h2 class="comments-title">
@@ -104,12 +105,6 @@ if ( post_password_required() ) {
     </h2><!-- .comments-title -->
 
     <?php the_comments_navigation(); ?>
-
-
-
-
-
-
 
     <ol class="comment-list">
         <?php
@@ -135,8 +130,8 @@ if ( post_password_required() ) {
 		endif;
 
 	endif; // Check for have_comments().
+	
 
-}
 	?>
 
 </div><!-- #comments -->

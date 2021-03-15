@@ -12,15 +12,50 @@
 .s-nav {
   padding: 0px;
   margin: 0px;
-  margin-top: 32px;
+  margin-top: 45px;
+  text-align: center;
 
   @include media(tablet) {
     margin-top: 0px;
   }
 
+  .heart {
+    // qa-
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      &:before {
+        background-color: $makemeup_fourth_color;
+      }
+    }
+
+    &::before {
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      content: "";
+
+      -webkit-mask: url(https://api.iconify.design/akar-icons:heart.svg?height=24)
+        no-repeat 50% 50%;
+      mask: url(https://api.iconify.design/akar-icons:heart.svg?height=24)
+        no-repeat 50% 50%;
+
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      margin-right: 10px;
+      vertical-align: middle;
+      background-color: $makemeup_primary_color;
+    }
+  }
+
   li {
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 39px;
+    text-transform: uppercase;
+
+    position: relative;
 
     @include media(tablet) {
       display: inline-block;
@@ -35,8 +70,21 @@
     }
 
     &:hover {
+      margin-bottom: 0px;
+
       .sub-menu {
         display: block;
+        margin-bottom: 24px;
+
+        @include media(tablet) {
+          margin-bottom: 32px;
+        }
+
+        li {
+          @include media(tablet) {
+            margin-bottom: 16px;
+          }
+        }
       }
     }
 
@@ -59,60 +107,135 @@
   }
 }
 
-.menu-item {
-  a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $makemeup_primary_color;
-    font-family: $makemeup_font_semibold;
-
-    &:hover {
-      color: $makemeup_main_accent_color;
-    }
-  }
-}
-
 .sub-menu {
   display: none;
   height: max-content;
   position: relative;
   text-align: left;
-  left: -20px;
-  top: -15px;
-  background-color: $color_background_body;
+  left: 30%;
+  top: -5px;
   min-width: 179px;
   max-width: max-content;
   opacity: 0;
   visibility: hidden;
   transition: 0.5s all;
 
-  border: 1px solid $makemeup_neutral_gray_light_second_color;
+  padding-left: 20px;
+
+  @include media(tablet) {
+    position: absolute;
+
+    text-align: left !important;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    top: 7px;
+    left: -20px;
+    padding-right: 16px;
+    background-color: $color_background_body;
+    border: 1px solid $makemeup_neutral_gray_light_second_color;
+    padding: 0px;
+  }
 
   li {
-    margin-left: 16px;
-    padding-top: 16px;
+    margin-left: 0px;
+    padding-top: 0px;
     display: block;
+    line-height: 0px;
+    margin-bottom: 16px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    @include media(tablet) {
+      padding-top: 16px;
+      margin-bottom: 0px;
+      padding-bottom: 16px;
+      margin-bottom: 0px !important;
+      width: 100%;
+      padding: 16px 16px;
+
+      display: flex;
+      justify-content: space-between;
+
+      .c-nav__arrow {
+        margin-top: 0px;
+      }
+
+      &:hover {
+        background-color: #f4f4f4;
+        margin-bottom: 16px;
+      }
+    }
+
+    //.menu-item__link{
+    //  .dashicons{
+    //    margin-top: 0px;
+    //    padding-left: 0px;
+    //  }
+    //}
+  }
+
+  .menu-item__link {
+    text-transform: none;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  .c-nav__arrow {
+    display: none;
+
+    @include media(tablet) {
+      display: inline-block;
+    }
   }
 
   .sub-menu {
-    top: -20px;
-    left: 140px;
+    //top: -20px;
+    //left: 140px;
+
+    top: -25px;
+    left: 158px;
     display: none !important;
 
     @include media(tablet) {
       display: block !important;
     }
   }
-
-  @include media(tablet) {
-    position: absolute;
-    display: block;
-    top: 7px;
-    padding-bottom: 16px;
-  }
 }
 
 .menu-item {
+  &::first-letter {
+    text-transform: uppercase;
+  }
+  a {
+    text-decoration: none;
+    color: $makemeup_primary_color;
+    font-family: $makemeup_font_semibold;
+
+    &:hover {
+      color: $makemeup_main_accent_color;
+    }
+
+    &:hover {
+      color: $makemeup_fourth_color !important;
+      .dashicons {
+        &::before {
+          //color: $makemeup_primary_color;
+          content: "\f347" !important;
+
+          @include media(tablet) {
+            content: "\f347";
+          }
+        }
+      }
+    }
+  }
+
   position: relative;
   list-style-type: none;
 
@@ -127,9 +250,39 @@
   }
 }
 
+.menu-item__link {
+  letter-spacing: 0.16em;
+  &:hover {
+    .c-nav__arrow.dashicons {
+      color: black !important;
+    }
+  }
+}
+
 .c-nav__arrow {
   margin-top: 5px;
   &:hover {
     background-color: transparent !important;
+  }
+}
+
+.c-nav__arrow.dashicons {
+  &::before {
+    color: $makemeup_primary_color;
+    content: "\f345";
+
+    @include media(tablet) {
+      content: "\f347";
+    }
+  }
+}
+
+.menu-item {
+  &:hover {
+    .dashicons {
+      &:before {
+        content: "\f347";
+      }
+    }
   }
 }
