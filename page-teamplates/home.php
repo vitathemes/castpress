@@ -19,7 +19,6 @@ get_header();
 
         <div class="posts">
             <?php
-            
                 if( get_query_var( 'paged' ) )
                     $my_page = get_query_var( 'paged' );
                 else {
@@ -56,7 +55,9 @@ get_header();
                 
             ?>
         </div>
+
         <?php get_template_part( 'template-parts/components/latest-posts'); ?>
+
     </div>
 
 </main><!-- #main -->

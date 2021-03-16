@@ -866,6 +866,9 @@ img {
     .c-nav__arrow.dashicons::before {
       content: "\f347"; } }
 
+.menu-item:hover .c-nav__arrow::before {
+  color: var(--fourth-color) !important; }
+
 .menu-item:hover .dashicons:before {
   content: "\f347"; }
 
@@ -1127,7 +1130,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f5f5f7; }
+  background-color: #f5f5f7;
+  font-size: 12px !important;
+  line-height: 15px !important; }
   .page-numbers:hover {
     background-color: #eaeaee !important; }
 
@@ -1494,6 +1499,8 @@ img {
   .c-post__content h5,
   .c-post__content h6 {
     margin-bottom: 24px; }
+  .c-post__content p {
+    margin-bottom: 39px; }
 
 .c-post__title {
   padding-bottom: 16px; }
@@ -1570,6 +1577,8 @@ img {
   .c-single__entry-content h5,
   .c-single__entry-content h6 {
     margin-bottom: 24px; }
+  .c-single__entry-content p {
+    margin-bottom: 39px; }
 
 .c-single__tags a::before {
   content: "#"; }
@@ -1581,6 +1590,10 @@ img {
   height: max-content; }
   .c-single__transcript .dashicons {
     vertical-align: text-top; }
+    .c-single__transcript .dashicons::before {
+      color: var(--fourth-color) !important; }
+  .c-single__transcript:hover .dashicons::before {
+    color: var(--third-color) !important; }
 
 .c-single__transcript__title {
   display: inline-block; }
@@ -1778,7 +1791,7 @@ img {
     .c-footer {
       margin-top: auto;
       padding: 0px 17px;
-      margin-bottom: 39px; } }
+      margin-bottom: 15px; } }
 
 .c-footer__content {
   border-top: 1px solid #eaeaee;
@@ -2254,17 +2267,18 @@ input[type="submit"] {
     .btn--secondary:hover .dashicons::before {
       color: #f5f5f7 !important; }
 
-.btn--arrow .dashicons {
-  padding-left: 4px;
-  width: max-content !important;
-  font-size: 11px;
-  padding-top: 4px; }
-  .btn--arrow .dashicons:before {
-    color: #ffffff;
-    width: max-content !important; }
-
-.btn--arrow:hover .dashicons::before {
-  color: #7247ca; }
+.btn--arrow {
+  padding-bottom: 6px; }
+  .btn--arrow .dashicons {
+    padding-left: 4px;
+    width: max-content !important;
+    font-size: 11px;
+    padding-top: 4px; }
+    .btn--arrow .dashicons:before {
+      color: #ffffff;
+      width: max-content !important; }
+  .btn--arrow:hover .dashicons::before {
+    color: #7247ca; }
 
 .btn--play {
   background-color: #f5f5f7;
@@ -2298,6 +2312,14 @@ input[type="submit"] {
 
 .comment-form-arrow:hover .dashicons::before {
   color: #7247ca !important; }
+
+.btn--blog-more .dashicons {
+  padding-left: 4px;
+  width: max-content !important;
+  font-size: 11px;
+  padding-top: 5px; }
+  .btn--blog-more .dashicons::before {
+    width: max-content !important; }
 
 /*------------------------------------*\
 #Player
@@ -2378,6 +2400,10 @@ input[type="submit"] {
 .wp-playlist-dark .mejs-pause > button {
   background-position: -20px 0; }
 
+.mejs-time.mejs-currenttime-container,
+.mejs-time.mejs-duration-container {
+  padding-top: 14px; }
+
 .wp-block-gallery {
   width: 100%;
   margin-left: 0px;
@@ -2408,7 +2434,8 @@ input[type="submit"] {
 
 .wpcf7-not-valid-tip {
   color: #ff3636;
-  font-size: 12px; }
+  font-size: 12px;
+  margin-top: 8px; }
 
 .c-spacer__blog {
   margin-top: 39; }

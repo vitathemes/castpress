@@ -279,6 +279,11 @@
 
 .menu-item {
   &:hover {
+    .c-nav__arrow {
+      &::before {
+        color: $makemeup_fourth_color !important;
+      }
+    }
     .dashicons {
       &:before {
         content: "\f347";

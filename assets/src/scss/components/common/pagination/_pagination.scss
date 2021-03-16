@@ -63,6 +63,9 @@
   align-items: center;
   justify-content: center;
   background-color: $makemeup_neutral_gray_light_color;
+
+  font-size: 12px !important;
+  line-height: 15px !important;
   &:hover {
     background-color: $makemeup_neutral_gray_light_second_color !important;
   }

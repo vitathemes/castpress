@@ -87,7 +87,7 @@
             <h2 class="c-single__transcript__title">Listening time: 86 minutes </h2>
             <span class="h2">|</span>
             <a class="c-single__transcript__more js-single__transcript__more">View transcript</a>
-            <span class="dashicons dashicons-arrow-right-alt2"></span>
+            <span class="dashicons dashicons-arrow-right-alt"></span>
 
         </div>
 

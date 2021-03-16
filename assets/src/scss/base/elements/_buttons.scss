@@ -46,6 +46,7 @@ input[type="submit"] {
 }
 
 .btn--arrow {
+  padding-bottom: 6px;
   .dashicons {
     padding-left: 4px;
     width: max-content !important;
@@ -122,6 +123,18 @@ input[type="submit"] {
   }
 }
 
+.btn--blog-more {
+  .dashicons {
+    padding-left: 4px;
+    width: max-content !important;
+    font-size: 11px;
+    padding-top: 5px;
+
+    &::before {
+      width: max-content !important;
+    }
+  }
+}
 /*------------------------------------*\
 #Player
 \*------------------------------------*/
@@ -220,4 +233,9 @@ input[type="submit"] {
 
 .wp-playlist-dark .mejs-pause > button {
   background-position: -20px 0;
+}
+
+.mejs-time.mejs-currenttime-container,
+.mejs-time.mejs-duration-container {
+  padding-top: 14px;
 }

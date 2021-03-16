@@ -23,5 +23,6 @@
 
     </div>
 
-    <a class="btn btn--secondary" href="/blog">View Blog <span class="dashicons dashicons-arrow-right-alt2"></span></a>
+    <a class="btn--blog-more btn btn--secondary" href="/blog">View Blog <span
+            class="dashicons dashicons-arrow-right-alt2"></span></a>
 </div>

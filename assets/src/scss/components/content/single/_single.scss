@@ -47,6 +47,10 @@
   h6 {
     margin-bottom: 24px;
   }
+
+  p {
+    margin-bottom: 39px;
+  }
 }
 
 .c-single__tags {
@@ -64,6 +68,17 @@
   height: max-content;
   .dashicons {
     vertical-align: text-top;
+    &::before {
+      color: $makemeup_fourth_color !important;
+    }
+  }
+
+  &:hover {
+    .dashicons {
+      &::before {
+        color: $makemeup_third_color !important;
+      }
+    }
   }
 }
 
