@@ -186,6 +186,10 @@
     .menu-item__link {
       font-size: 12px !important; //qa-
       line-height: 15px !important; //qa
+
+      @include media(tablet) {
+        line-height: 20px !important;
+      }
     }
   }
 

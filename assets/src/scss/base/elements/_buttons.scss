@@ -126,7 +126,7 @@ input[type="submit"] {
 
     &::before {
       width: max-content !important;
-      transform: 0s all;
+      transition: 0s all !important;
     }
   }
 }

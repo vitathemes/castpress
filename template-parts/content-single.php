@@ -27,7 +27,7 @@
 				}	
 			?>
 
-            <span class="c-post__date h5 h5-lh--sm font--semibold posted-on">
+            <span class="c-post__date h5--secondary h5-lh--sm posted-on">
                 <?php echo esc_html( get_the_date( "M d, Y" ) ) ?>
             </span>
 

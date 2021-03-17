@@ -37,7 +37,7 @@ if ( ! function_exists( 'makemeup_posted_on' ) ) :
 			'<a class="a--tertiary" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="c-post__date h5 h5-lh--sm '. esc_html($is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="c-post__date h5--secondary h5-lh--sm '. esc_html($is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -46,20 +46,15 @@ if ( ! function_exists( 'makemeup_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function makemeup_posted_by( $is_bold = false) {
+	function makemeup_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'By %s', 'post author', 'makemeup' ),
-			'<span class="author vcard h5 h5-lh--sm"><a class="url fn n c-post__author__link a--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard h5--secondary h5-lh--sm"><a class="url fn n c-post__author__link a--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		if( $is_bold ){
-			$is_bold = "font--semibold";
-		}else{
-			$is_bold = "font--regular";
-		}
 
-		echo '<span class="byline h5 h5-lh--sm c-post__author '. esc_html($is_bold) .'"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="byline h5--secondary h5-lh--sm c-post__author "> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -341,5 +336,34 @@ if (! function_exists('makemeup_get_featured_episode')) :
 			include( locate_template( 'template-parts/components/latest-episode.php', false, false ) ); 
 			endwhile;
 		endif;
+	}
+endif;
+
+
+if ( ! function_exists( 'makemeup_socials_links' ) ) :
+	/**
+	 * Display Social Networks
+	 */
+	function makemeup_socials_links() {
+		$makemeup_facebook  = get_theme_mod( 'facebook', "" );
+		$makemeup_twitter   = get_theme_mod( 'twitter', "" );
+		$makemeup_instagram = get_theme_mod( 'instagram', "" );
+		$makemeup_linkedin  = get_theme_mod( 'linkedin', "" );
+
+		if ( $makemeup_facebook ) {
+			echo sprintf( '<a href="%s" aria-label="%s" class="social-link" target="_blank"><span class="dashicons dashicons-facebook-alt"></span></a>', esc_url( $makemeup_facebook ), esc_html__( 'Facebook', 'wp-meliora' ) );
+		}
+
+		if ( $makemeup_twitter ) {
+			echo sprintf( '<a href="%s" aria-label="%s" class="social-link" target="_blank"><span class="dashicons dashicons-twitter"></span></a>', esc_url( $makemeup_twitter ), esc_html__( 'Twitter', 'wp-meliora' ) );
+		}
+
+		if ( $makemeup_instagram ) {
+			echo sprintf( '<a href="%s" aria-label="%s" class="social-link" target="_blank"><span class="dashicons dashicons-instagram"></span></a>', esc_url( $makemeup_instagram ), esc_html__( 'Instagram', 'wp-meliora' ) );
+		}
+
+		if ( $makemeup_linkedin ) {
+			echo sprintf( '<a href="%s" aria-label="%s" class="social-link" target="_blank"><span class="dashicons dashicons-linkedin"></span></a>', esc_url( $makemeup_linkedin ), esc_html__( 'Linkedin', 'wp-meliora' ) );
+		}
 	}
 endif;

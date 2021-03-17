@@ -71,8 +71,8 @@
         </div><!-- .site-info -->
 
         <div class="c-social-share">
-            <div class="c-social-media__item">
 
+            <div class="c-social-media__item">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24"
                     height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"
                     style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);">
@@ -81,10 +81,9 @@
                         fill="#000000" />
                     <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" />
                 </svg>
-
             </div>
-            <div class="c-social-media__item">
 
+            <div class="c-social-media__item">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24"
                     height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"
                     style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);">
@@ -93,10 +92,9 @@
                         fill="#000000" />
                     <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" />
                 </svg>
-
             </div>
-            <div class="c-social-media__item">
 
+            <div class="c-social-media__item">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24"
                     height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"
                     style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);">
@@ -105,8 +103,8 @@
                         fill="#000000" />
                     <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" />
                 </svg>
-
             </div>
+
         </div>
     </div>
 </footer><!-- #colophon -->

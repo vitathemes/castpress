@@ -49,6 +49,10 @@
 
 .c-post__author {
   color: $makemeup_third_color !important;
+
+  &:first {
+    text-transform: uppercase;
+  }
 }
 
 .c-post__author__link,
