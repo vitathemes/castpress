@@ -41,7 +41,6 @@
         no-repeat 50% 50%;
       mask: url(https://api.iconify.design/akar-icons:heart.svg?height=24)
         no-repeat 50% 50%;
-
       -webkit-mask-size: cover;
       mask-size: cover;
       margin-right: 10px;
@@ -70,8 +69,7 @@
     }
 
     &:hover {
-      margin-bottom: 0px;
-
+      //margin-bottom: 0px; //qa-
       .sub-menu {
         display: block;
         margin-bottom: 24px;
@@ -114,22 +112,30 @@
   text-align: left;
   left: 30%;
   top: -5px;
-  min-width: 179px;
+  min-width: 100%;
   max-width: max-content;
   opacity: 0;
   visibility: hidden;
   transition: 0.5s all;
 
-  padding-left: 20px;
+  position: static;
+
+  margin-left: 0px;
+  margin-top: 24px;
+
+  padding-left: 0px;
+  padding-right: 23px;
+
+  text-align: center;
 
   @include media(tablet) {
     position: absolute;
-
-    text-align: left !important;
+    min-width: 179px; //qa-
     display: flex;
     justify-content: space-between;
+    text-align: left;
     flex-wrap: wrap;
-
+    margin-left: 20px;
     top: 7px;
     left: -20px;
     padding-right: 16px;
@@ -144,6 +150,13 @@
     display: block;
     line-height: 0px;
     margin-bottom: 16px;
+
+    a {
+      color: $makemeup_third_color;
+      @include media(tablet) {
+        color: $makemeup_primary_color;
+      }
+    }
 
     &::first-letter {
       text-transform: uppercase;
@@ -170,12 +183,10 @@
       }
     }
 
-    //.menu-item__link{
-    //  .dashicons{
-    //    margin-top: 0px;
-    //    padding-left: 0px;
-    //  }
-    //}
+    .menu-item__link {
+      font-size: 12px !important; //qa-
+      line-height: 15px !important; //qa
+    }
   }
 
   .menu-item__link {
@@ -252,6 +263,15 @@
 
 .menu-item__link {
   letter-spacing: 0.16em;
+
+  font-size: 14px !important;
+  line-height: 18px !important;
+
+  @include media(tablet) {
+    font-size: 12px !important;
+    line-height: 15px !important;
+  }
+
   &:hover {
     .c-nav__arrow.dashicons {
       color: black !important;
@@ -282,11 +302,11 @@
     .c-nav__arrow {
       &::before {
         color: $makemeup_fourth_color !important;
-      }
-    }
-    .dashicons {
-      &:before {
-        content: "\f347";
+        content: "\f343";
+
+        @include media(tablet) {
+          content: "\f347";
+        }
       }
     }
   }

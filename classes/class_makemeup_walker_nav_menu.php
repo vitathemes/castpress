@@ -14,7 +14,7 @@ class Makemeup_walker_nav_menu extends Walker_Nav_Menu {
 
 		//Add SPAN if no Permalink
 		if ( $permalink ) {
-			$output .= '<a class="menu-item__link span" href="' . $permalink . '">';
+			$output .= '<a class="menu-item__link h5" href="' . $permalink . '">';
 		}
 
 		$output .= $title;

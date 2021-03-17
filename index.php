@@ -19,7 +19,6 @@ get_header();
 
     <div class="c-main__content">
 
-        <?php //qa- ?>
         <header class="c-main__header">
             <h1 class="c-main__entry-title h1-lh--bg">
                 <?php makemeup_archive_page_name() ?>

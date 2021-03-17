@@ -170,16 +170,17 @@
   font-family: $makemeup_font_semibold !important;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  transition: 0.5s all;
 
   &:hover {
-    color: $makemeup_primary_color !important; //qa-
+    color: #58379b !important; //qa-
   }
 
   &:hover > .c-episode__play::before {
-    filter: brightness(0.3);
+    background-image: url("../images/play-hover.svg");
   }
   &:focus > .c-episode__play::before {
-    filter: brightness(0.3);
+    background-image: url("../images/play-hover.svg");
   }
 }
 .c-episode__page-links {

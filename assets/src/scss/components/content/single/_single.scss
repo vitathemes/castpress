@@ -64,8 +64,12 @@
 .c-single__transcript {
   width: 100%;
   border: 1px solid $color_background_hr;
-  padding: 24px 24px 24px 24px;
+  padding: 24px 5px 24px 10px;
   height: max-content;
+
+  @include media(tablet) {
+    padding: 24px 24px 0px 24px;
+  }
   .dashicons {
     vertical-align: text-top;
     &::before {
@@ -76,7 +80,7 @@
   &:hover {
     .dashicons {
       &::before {
-        color: $makemeup_third_color !important;
+        color: $makemeup_primary_color !important;
       }
     }
   }
@@ -84,10 +88,19 @@
 
 .c-single__transcript__title {
   display: inline-block;
+  margin-bottom: 0px !important;
+
+  @include media(tablet) {
+    margin-bottom: 24px !important;
+  }
 }
 
 .c-single__transcript__more {
   cursor: pointer;
+
+  &:hover {
+    color: $makemeup_primary_color !important; //qa-
+  }
 }
 
 .c-single__transcript__content {
@@ -102,9 +115,25 @@
   opacity: 0;
 }
 
+.c-single__transcript__row {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin-bottom: 24px;
+  }
+}
+
 .c-single__transcript__wrapper {
-  overflow: auto;
+  // overflow: auto;
   max-height: 100%;
+  padding-right: 15px;
 }
 
 .c-single__transcript__content.is-open {
@@ -114,8 +143,12 @@
 
   height: 352px;
   max-height: 352px;
-  padding: 24px;
   display: block;
+  padding: 10px;
+
+  @include media(tablet) {
+    padding: 24px;
+  }
   .c-single__transcript__context {
     visibility: visible;
     opacity: 1;

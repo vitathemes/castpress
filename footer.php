@@ -31,8 +31,7 @@
 
                         <div class="tnp-field tnp-field-email">
                             <label for="tnp-email"></label>
-
-                            <input class="tnp-email" type="email" name="ne" value="" required=""
+                            <input class="c-tnp-email" type="email" name="ne" value="" required=""
                                 placeholder="Email  address..." />
                         </div>
 
@@ -48,21 +47,21 @@
         <?php endif; ?>
 
         <div class="c-footer__site-info">
-            <span class="c-footer__context h5 h5-lh--sm font--regular">
+            <span class="c-footer__context h5--secondary h5-lh--sm font--regular">
                 <?php
             /* translators: %s: CMS name, i.e. WordPress. */
             printf( esc_html__( 'PodcastTheme by', 'makemeup' ), 'WordPress' );
             ?>
             </span>
-            <a class="c-footer__link h5 h5-lh--sm font--regular a--tertiary"
+            <a class="c-footer__link h5--secondary h5-lh--sm font--regular a--tertiary"
                 href="<?php echo esc_url( __( 'https://vitathemes.com/', 'makemeup' ) ); ?>">
                 <?php 
             /* translators: %s: CMS name, i.e. WordPress. */
                     printf( esc_html__( 'VitaThemes', 'makemeup' ) );
             ?>
             </a>
-            <span class="c-footer__context h5 h5-lh--sm sep a--tertiary"> | </span>
-            <a class="c-footer__link h5 h5-lh--sm font--regular a--tertiary"
+            <span class="c-footer__context h5--secondary h5-lh--sm sep a--tertiary"> | </span>
+            <a class="c-footer__link h5--secondary h5-lh--sm font--regular a--tertiary"
                 href="<?php echo esc_url( get_privacy_policy_url() ); ?>">
                 <?php
 				/* translators: 1: Theme name, 2: Theme author. */

@@ -61,6 +61,7 @@
   padding: 0px 17px;
 
   @include media(tablet) {
+    padding: 0px 0px;
     padding-top: 64px;
     flex-wrap: nowrap;
   }
@@ -134,12 +135,12 @@
   color: #fff;
   border-radius: 3px !important;
   position: absolute;
-  right: 4px;
+  right: 3px;
   top: 3px;
   cursor: pointer;
 
   @include media(tablet) {
-    right: 7px;
+    right: 3px;
   }
 
   &::before {

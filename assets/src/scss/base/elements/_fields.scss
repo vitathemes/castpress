@@ -13,7 +13,6 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
-.tnp-email,
 textarea {
   width: 100%;
   margin-top: 8px;
@@ -21,10 +20,12 @@ textarea {
   border: none;
   border-radius: $global-radius;
   background-color: $makemeup_neutral_gray_light_color;
+
   padding-right: 8px;
   padding-left: 14px;
   padding-top: 13px;
   padding-bottom: 13px;
+
   font-size: 0.75rem;
   line-height: 27px;
 

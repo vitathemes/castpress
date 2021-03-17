@@ -9,18 +9,24 @@
   bottom: 0;
   pointer-events: none;
   overflow: hidden;
-  margin-top: 12%;
   background: #e1e1e1;
   border-radius: 15px;
   width: 12px;
-  max-width: 1px;
+  max-width: 6px;
   padding: 1px;
+  border-radius: 6px;
 }
 
 .simplebar-scrollbar {
-  background-color: $makemeup_main_primary_color;
-  padding: 0.5px;
-  width: 7px;
+  background-color: $makemeup_neutral_gray_color;
+  left: 0;
+  width: 8px;
+  border-radius: 6px;
+  border: none;
+
+  &::before {
+    background: $makemeup_neutral_gray_color;
+  }
 }
 
 .simplebar-content-wrapper {
@@ -28,9 +34,11 @@
   width: 100%;
   height: 100%;
   z-index: 20;
+  border-radius: 6px;
 }
 
-/**/
+/* Default Scroll bar ( Only on Chrome and Opera )*/
+
 .c-single__transcript__wrapper::-webkit-scrollbar {
   width: 6px;
 }
@@ -44,7 +52,7 @@
 
 /* Handle */
 .c-single__transcript__wrapper::-webkit-scrollbar-thumb {
-  background: #000000;
+  background: #979797;
   border-radius: 5px;
   transform: 0.5s all;
 }

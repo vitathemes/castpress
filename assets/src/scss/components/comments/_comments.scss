@@ -52,6 +52,13 @@
   #Comments List
 \*------------------------------------*/
 .comment-list {
+  .comment-respond {
+    margin-bottom: 48px;
+
+    @include media(tablet) {
+      margin-bottom: 0px;
+    }
+  }
 }
 
 .children {
@@ -97,6 +104,9 @@
 .comment-reply-link {
   padding-top: 16px;
   color: $makemeup_third_color;
+
+  font-size: 14px;
+  line-height: 18px;
 
   &:hover {
     color: $makemeup_primary_color;
@@ -149,6 +159,10 @@
     margin-bottom: 0px;
   }
 
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
   a {
     color: $makemeup_second_color;
   }
@@ -180,4 +194,26 @@
 
 .form-submit {
   margin-bottom: 0px;
+}
+
+.comment-form-arrow {
+  .dashicons {
+    padding-left: 4px;
+    width: max-content !important;
+    font-size: 11px;
+    padding-top: 4px;
+    height: 0px !important;
+
+    &::before {
+      color: $color_background_body;
+    }
+  }
+
+  &:hover {
+    .dashicons {
+      &::before {
+        color: $makemeup_neutral_gray_light_color !important;
+      }
+    }
+  }
 }

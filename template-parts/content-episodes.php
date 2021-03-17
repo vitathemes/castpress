@@ -9,7 +9,7 @@
 ?>
 
 
-<?php $postNumber = cavatina_deciaml_post_number(); ?>
+<?php $postNumber = makemeup_deciaml_post_number(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-episode'); ?>>
 
     <section class="c-episode__header">
@@ -18,7 +18,7 @@
 
             makemeup_get_category();
             echo '<span class="seprator h5 a--secondary"> | </span>';
-            echo '<span class="c-episode__date h5 h5-lh--sm">'.esc_html( get_the_date( "M d, Y" ) ).'</span>'; 
+            echo '<span class="c-episode__date h5--secondary h5-lh--sm">'.esc_html( get_the_date( "M d, Y" ) ).'</span>'; 
             
         ?>
 

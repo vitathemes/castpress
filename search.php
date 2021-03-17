@@ -18,7 +18,7 @@ get_header();
 
         <header class="c-main__header">
             <h1 class="c-main__entry-title h1-lh--bg">
-                <?php makemeup_archive_page_name() ?>
+                Search Result
             </h1>
         </header><!-- .entry-header -->
 
@@ -31,7 +31,7 @@ get_header();
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'blog' );
+				get_template_part( 'template-parts/content', '' );
 
 			endwhile;
 

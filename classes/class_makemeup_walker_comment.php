@@ -37,16 +37,16 @@ class Makemeup_walker_comment extends Walker_Comment
                 <div class="comment-header">
                     <?php
                         if (get_comment_author_url($comment) != "") {
-	                        printf('<div class="comment-author"><a href="%s">%s</a></div>', esc_html(esc_url(get_comment_author_url($comment))), esc_html(esc_html(get_comment_author($comment))));
+	                        printf('<div class="comment-author h5--secondary h5-lh--sm"><a href="%s">%s</a></div>', esc_html(esc_url(get_comment_author_url($comment))), esc_html(esc_html(get_comment_author($comment))));
                         } else {
-	                        printf('<div class="comment-author">%s</div>', esc_html(get_comment_author($comment)));
+	                        printf('<div class="comment-author h5--secondary h5-lh--sm">%s</div>', esc_html(get_comment_author($comment)));
                         }
 	                    ?>
 
-                    <div class="time">
+                    <div class="time h5--secondary h5-lh--sm">
                         <time datetime="<?php comment_time('c'); ?>">
                             <?php
-			                    printf('%1$s', esc_html(get_comment_date('', $comment)));
+			                    printf('%1$s', esc_html(get_comment_date('M d.Y', $comment)));
 			                    ?>
                         </time>
                     </div>

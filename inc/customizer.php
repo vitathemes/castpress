@@ -291,7 +291,7 @@ if( function_exists( 'kirki' ) ) {
 		'section'     => 'typography_headings',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '18px',
+			'font-size'          => '16px',
 			'line-height'        => '25px',
 			'variant'         	 => 'regular',
 			'color'         	 => '#222222',
@@ -329,30 +329,70 @@ if( function_exists( 'kirki' ) ) {
 			],
 		],
 	] );
-
-
-	// Secondary Links
-//	Kirki::add_field( 'makemeup_theme', [
-//		'type'        => 'typography',
-//		'settings'    => 'secondary_links',
-//		'label'       => esc_html__( 'Secondary Links', 'makemeup' ),
-//		'section'     => 'typography_headings',
-//		'default'     => [
-//			'font-family'   	 => 'Source Serif Pro',
-//			'font-size'          => '14px',
-//			'line-height'        => '17px',
-//			'variant'         	 => 'regular',
-//			'color'         	 => '#222222',
-//		],
-//		'priority'    => 19,
-//		'transport'   => 'auto',
-//		'output'      => [
-//			[
-//				'element' => array( '.h4-lh--sm' , ".s-nav > .menu-item a", ".c-aside__category__link h4" ),
-//			],
-//		],
-//	] );
 	
+
+	// A Primary
+	Kirki::add_field( 'makemeup_theme', [
+		'type'        => 'typography',
+		'settings'    => 'typography_link',
+		'label'       => esc_html__( 'Link Primary', 'makemeup' ),
+		'section'     => 'typography_headings',
+		'default'     => [
+			'color'		=> '#7247ca',
+		],
+		'priority'    => 20,
+		'transport'   => 'auto',
+		
+		'output'      => [
+			[
+				'element' => array( 'a' , '.a' ),
+			],
+		],
+	] );
+
+	
+	
+	// A Secondary
+	Kirki::add_field( 'makemeup_theme', [
+		'type'        => 'typography',
+		'settings'    => 'typography_link_secondary',
+		'label'       => esc_html__( 'Link Secondary', 'makemeup' ),
+		'section'     => 'typography_headings',
+		'default'     => [
+			'color'		=> '#222222',
+		],
+		'priority'    => 20,
+		'transport'   => 'auto',
+		
+		'output'      => [
+			[
+				'element' => array( '.a--secondary' ),
+			],
+		],
+	] );
+
+
+	
+	// A Tertiary
+	Kirki::add_field( 'makemeup_theme', [
+		'type'        => 'typography',
+		'settings'    => 'typography_link_tertiary',
+		'label'       => esc_html__( 'Link Tertiary', 'makemeup' ),
+		'section'     => 'typography_headings',
+		'default'     => [
+			'color'		=> '#979797',
+		],
+		'priority'    => 20,
+		'transport'   => 'auto',
+		
+		'output'      => [
+			[
+				'element' => array( '.a--tertiary' , '.a--fourth' ),
+			],
+		],
+	] );
+
+
 
 	// Social Media
 	Kirki::add_field( 'makemeup', [

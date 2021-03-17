@@ -1,15 +1,7 @@
 <?php 
 /**
- * 
- * 
  *  Featured episode 
- * 
- * 
- * 
- * 
  */
-
-
 ?>
 
 <div class="c-episode__featured">

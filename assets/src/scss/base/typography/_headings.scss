@@ -23,6 +23,14 @@ h1,
   line-height: 32px;
 }
 
+.h1--secondary {
+  //qa-
+  //qa-
+  font-family: $makemeup_font_regular;
+  font-size: 26px;
+  line-height: 32px;
+}
+
 .h1-lh--bg {
   line-height: 33px !important;
 }
@@ -38,10 +46,25 @@ h2,
   line-height: 25px;
 }
 
+.h2--secondary {
+  //qa-
+  font-family: $makemeup_font_regular;
+  font-size: 21px;
+  line-height: 25px;
+}
+
 /* H3 */
 h3,
 .h3 {
   font-family: $makemeup_font_regular;
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 10px; // Paragraph Spacing
+}
+
+.h3--secondary {
+  //qa-
+  font-family: $makemeup_font_semibold;
   font-size: 18px;
   line-height: 25px;
   margin-bottom: 10px; // Paragraph Spacing
@@ -55,6 +78,15 @@ h4,
   line-height: 25px;
   margin-bottom: 10px; // Paragraph Spacing
 }
+
+.h4--secondary {
+  //qa-
+  font-family: $makemeup_font_semibold;
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 10px; // Paragraph Spacing
+}
+
 .h4-lh--bg {
   line-height: 27px !important;
 }
@@ -71,6 +103,13 @@ h5,
   line-height: 25px;
 }
 
+.h5--secondary {
+  //qa-
+  font-family: $makemeup_font_regular;
+  font-size: 14px;
+  line-height: 25px;
+}
+
 .h5-lh--sm {
   line-height: 18px !important;
 }
@@ -79,6 +118,13 @@ h5,
 h6,
 .h6 {
   font-family: $makemeup_font_semibold;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+}
+
+.h6--secondary {
+  //qa-
+  font-family: $makemeup_font_regular;
   font-size: 12px;
   letter-spacing: 0.16em;
 }

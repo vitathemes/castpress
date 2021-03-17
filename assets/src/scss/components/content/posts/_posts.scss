@@ -25,7 +25,6 @@
 
 .c-post__date {
   color: $makemeup_third_color !important;
-  font-family: "SourceSerifPro-semibold" !important; //qa-
 }
 
 .c-post__header--home {
@@ -112,7 +111,7 @@
   color: $makemeup_fourth_color !important;
 
   &:hover {
-    color: $makemeup_primary_color !important;
+    color: $makemeup_fourth_color !important;
     text-decoration: underline;
   }
 }

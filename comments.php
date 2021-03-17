@@ -67,7 +67,7 @@
 			// Redefine your own textarea (the comment body).
 			'comment_field' => '<p class="comment-form-comment h4 h4-lh--bg">Comment *<br /><textarea id="comment" name="comment" aria-required="true" ></textarea></p>',
 			//Message Before Comment
-			'comment_notes_before' =>'<p class="c-comments__desc h5 h5-lh--sm font--regular">'. $comment_before .'</p>',
+			'comment_notes_before' =>'<p class="c-comments__desc h5--secondary h5-lh--sm font--regular">'. $comment_before .'</p>',
 			// Remove "Text or HTML to be displayed after the set of comment fields".
 			'comment_notes_after' => '',
 			//Submit Button ID
@@ -84,7 +84,7 @@
 		
 ?>
 
-    <h2 class="comments-title">
+    <h2 class="comments-title h4--secondary h4-lh--sm">
         <?php
 			$makemeup_comment_count = get_comments_number();
 			if ( '1' === $makemeup_comment_count ) {

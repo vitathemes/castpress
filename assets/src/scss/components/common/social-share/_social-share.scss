@@ -24,7 +24,6 @@
     .dashicons {
       padding-left: 0px;
       &::before {
-        // color: $makemeup_primary_color;
         color: $makemeup_main_accent_color;
       }
     }
@@ -33,7 +32,7 @@
   cursor: pointer;
   &:hover {
     path {
-      fill: $makemeup_neutral_gray_color;
+      fill: $makemeup_main_accent_color;
       cursor: pointer;
     }
   }

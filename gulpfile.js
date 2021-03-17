@@ -22,7 +22,10 @@ const sassTask = (cb) => {
 
 const cssConcatTask = (cb) => {
   return gulp
-    .src(["assets/src/css/*.css"])
+    .src([
+      "./node_modules/simplebar/dist/simplebar.css",
+      "assets/src/css/*.css",
+    ])
     .pipe(concat("main.css"))
     .pipe(gulp.dest("assets/css"))
     .pipe(browserSync.stream());

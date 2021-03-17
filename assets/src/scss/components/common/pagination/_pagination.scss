@@ -68,6 +68,19 @@
   line-height: 15px !important;
   &:hover {
     background-color: $makemeup_neutral_gray_light_second_color !important;
+
+    .dashicons {
+      &::before {
+        color: $makemeup_third_color !important;
+      }
+    }
+  }
+
+  .dashicons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.2em;
   }
 }
 

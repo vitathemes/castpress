@@ -265,7 +265,7 @@ if (! function_exists('makemeup_get_category')) :
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
 
-			echo '<span class="c-episode__category h5 h5-lh--sm">' .$categories_list. '</span>';
+			echo '<span class="c-episode__category h5--secondary h5-lh--sm">' .$categories_list. '</span>';
 		}
 	}
 endif;
@@ -295,7 +295,7 @@ if (! function_exists('makemeup_get_category_seperator')) :
 
 					$category_counter++;
 					/* translators: used between list items, there is a space after the comma */
-					$output .= '<a class="c-post__meta__link" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'cavatina' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+					$output .= '<a class="c-post__meta__link" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'makemeup' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
 				}
 				echo  wp_kses_post(trim( $output, $separator ));
 			}

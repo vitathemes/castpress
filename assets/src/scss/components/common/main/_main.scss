@@ -19,6 +19,7 @@
 .c-main--home {
   margin-bottom: 16px;
 }
+
 .c-main--blog {
   padding-bottom: 0px;
 
@@ -33,6 +34,10 @@
 
 .c-main--page {
   padding-bottom: 0px;
+
+  @include media(tablet) {
+    padding-bottom: 40px;
+  }
 }
 
 .c-main--episode {
@@ -52,7 +57,8 @@
 }
 
 .c-main__content {
-  width: calc(100% - 16px);
+  // width: calc(100% - 16px);//qa-
+  width: 100%;
   height: max-content;
 
   @include media(tablet) {
