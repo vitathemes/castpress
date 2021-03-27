@@ -18,26 +18,25 @@
     </div>
 
     <header class="c-single__header">
-        <?php
-		the_title( '<h1 class="c-single__title c-main__entry-title"><a class="a--secondary h1 h1-lh--bg" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
-        ?>
+
+        <?php the_title( '<h1 class="c-single__title c-main__entry-title"><a class="a--secondary h1 h1-lh--bg" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );?>
+
         <div class="c-single__entry-meta">
-            <?php 
-               if($isMetaActive === true){
-                    if ( 'episodes' == get_post_type() ){
-                        makemeup_get_category();
-                        echo " <span class='h5 a--secondary'> | </span> ";
-                    }	 
-                    makemeup_posted_on( true , true );
-                    echo '<span class="h5 a--secondary"> | </span>';
-                    makemeup_posted_by( true );
-                } 
-                
-                if ( 'episodes' == get_post_type() ){
-                    echo "<div class='c-episode__player'>";
-                    echo do_shortcode('[audio mp3="https://chtbl.com/track/G2F3EG/api.spreaker.com/download/episode/16457419/suspicion_ep_10_the_final_verdict.mp3" ][/audio]');
-                    echo "</div>";
-                }	
+            <?php    
+
+				if( $episode_player ){
+					
+					echo "<div class='c-episode__player'>";
+					echo do_shortcode('[audio mp3="https://chtbl.com/track/G2F3EG/api.spreaker.com/download/episode/16457419/suspicion_ep_10_the_final_verdict.mp3" ][/audio]');
+					echo "</div>";
+
+				}
+				else{
+					echo "<div class='c-episode__player c-episode__player--button'>";
+					echo "<button> Play </button>";
+					echo "</div>";
+				}
+            
 			?>
 
         </div><!-- .entry-meta -->
@@ -74,7 +73,7 @@
 		);
 
 		// Show post tags 
-		echo "<div class='c-spacer--md -qa'></div>";
+		echo "<div class='c-spacer--md qa-'></div>";
 		makemeup_get_tags();
 
 		?>

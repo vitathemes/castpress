@@ -17,11 +17,6 @@ function makemeup_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'no-sidebar';
-	}
-
 	return $classes;
 }
 add_filter( 'body_class', 'makemeup_body_classes' );
@@ -104,4 +99,18 @@ function makemeup_theme_settings() {
 ?>
 </style>
 <?php
+}
+
+
+
+function makemeup_home_components(){
+
+	// Get the parts.
+	$template_parts = get_theme_mod( 'home_component', array( 'components/latest-episode/latest-episode-player', 'components/episodes', 'components/latest-posts' ) );
+
+	// Loop parts.
+	foreach ( $template_parts as $template_part ) {
+		get_template_part( 'template-parts/' . $template_part );
+	}
+
 }

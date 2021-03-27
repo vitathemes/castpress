@@ -1,0 +1,11 @@
+.c-related-posts {
+  border-top: 1px solid $color_background_hr;
+  padding-top: 48px;
+  margin-top: 24px;
+
+  .c-post__header {
+    h2 {
+      margin-bottom: 0px;
+    }
+  }
+}

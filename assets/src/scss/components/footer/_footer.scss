@@ -32,6 +32,7 @@
 .c-footer__site-info {
   text-align: center;
   margin-top: 25px;
+  line-height: 0px;
 
   @include media(tablet) {
     margin-top: 96px;

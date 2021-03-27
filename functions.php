@@ -132,7 +132,7 @@ function makemeup_comment_button($defaults) {
 	 */
 	
    	// Edit this to your needs:
-	$button = '<button name="%1$s" type="submit" id="%2$s" class="%3$s comment-form-arrow" value="%4$s"> Submit<span class="dashicons dashicons-arrow-right-alt2"></span></button>';
+	$button = '<button name="%1$s" type="submit" id="%2$s" class="%3$s comment-form-arrow" value="%4$s"> Submit <span class="dashicons dashicons-arrow-right-alt2"></span></button>';
     // Override the default submit button:
     $defaults['submit_button'] = $button;
     return $defaults;
@@ -153,8 +153,7 @@ function makemeup_add_custom_types( $query ) {
 		  ));
 	  }
   }
-  add_action( 'pre_get_posts', 'makemeup_add_custom_types' );
-
+add_action( 'pre_get_posts', 'makemeup_add_custom_types' );
 
 
 /**

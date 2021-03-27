@@ -71,12 +71,22 @@ if( function_exists( 'kirki' ) ) {
 		'capability'    => 'edit_theme_options',
 		'option_type'   => 'theme_mod',
 	) );
-	
+
+	/*
+	 *	Kirki -> Panels
+	 */
+
+	// Footer
+	Kirki::add_panel( 'footer', array(
+		'priority' => 180,
+		'title'    => esc_html__( 'Footer', 'makemeup' ),
+	) );
+
 	/*
 	 *	Kirki -> Sections
 	 */
 
-	// typography settings  
+	/* typography settings  */
 	Kirki::add_section( 'typography_headings', array(
 		'title'          => esc_html__( 'Typography Setting', 'makemeup' ),
 		'description'    => esc_html__( 'Change Typography color and customize them.', 'makemeup' ),
@@ -91,17 +101,24 @@ if( function_exists( 'kirki' ) ) {
 		'panel'          => '',
 		'priority'       => 160,
 	) );
-
-	/*  */
-	Kirki::add_section( 'social_media', array(
-		'title'          => esc_html__( 'Social Media', 'makemeup' ),
-		'description'    => esc_html__( 'Add social media links.', 'makemeup' ),
-		'panel'          => '',
-		'priority'       => 160,
+	
+	/* Social medias */
+	Kirki::add_section( 'socials', array(
+		'title'    => esc_html__( 'Socials', 'makemeup' ),
+		'panel'    => 'footer',
+		'priority' => 6,
 	) );
-	/*
-	 *	Kirki -> fields
-	 */
+
+	/* Home Components */
+	Kirki::add_section( 'home_components', array(
+		'title'    => esc_html__( 'Home Components', 'makemeup' ),
+		'panel'    => '',
+		'priority' => 6,
+	) );
+	
+    /*
+    *	Kirki -> fields
+	*/
 	/* Typography Settings */
 	Kirki::add_field( 'makemeup', [
 		'type'     => 'color',
@@ -331,7 +348,7 @@ if( function_exists( 'kirki' ) ) {
 	] );
 	
 
-	// A Primary
+	// A Primary color
 	Kirki::add_field( 'makemeup_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_link',
@@ -349,10 +366,9 @@ if( function_exists( 'kirki' ) ) {
 			],
 		],
 	] );
-
 	
 	
-	// A Secondary
+	// A Secondary color
 	Kirki::add_field( 'makemeup_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_link_secondary',
@@ -371,9 +387,8 @@ if( function_exists( 'kirki' ) ) {
 		],
 	] );
 
-
 	
-	// A Tertiary
+	// A Tertiary color
 	Kirki::add_field( 'makemeup_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_link_tertiary',
@@ -393,41 +408,64 @@ if( function_exists( 'kirki' ) ) {
 	] );
 
 
-
-	// Social Media
+	// -- Socials --
 	Kirki::add_field( 'makemeup', [
 		'type'     => 'link',
-		'settings' => 'linkedin_link',
-		'label'    => __( 'Linkedin', 'makemeup' ),
-		'section'  => 'social_media',
-		'default'  => '',
+		'settings' => 'facebook',
+		'label'    => esc_html__( 'Facebook', 'makemeup' ),
+		'section'  => 'socials',
 		'priority' => 10,
 	] );
 
 	Kirki::add_field( 'makemeup', [
 		'type'     => 'link',
-		'settings' => 'facebook_link',
-		'label'    => __( 'Facebook', 'makemeup' ),
-		'section'  => 'social_media',
-		'default'  => '',
-		'priority' => 11,
+		'settings' => 'twitter',
+		'label'    => esc_html__( 'Twitter', 'makemeup' ),
+		'section'  => 'socials',
+		'priority' => 10,
 	] );
 
 	Kirki::add_field( 'makemeup', [
 		'type'     => 'link',
-		'settings' => 'github_link',
-		'label'    => __( 'Github', 'makemeup' ),
-		'section'  => 'social_media',
-		'default'  => '',
-		'priority' => 12,
+		'settings' => 'instagram',
+		'label'    => esc_html__( 'Instagram', 'makemeup' ),
+		'section'  => 'socials',
+		'priority' => 10,
 	] );
 
 	Kirki::add_field( 'makemeup', [
 		'type'     => 'link',
-		'settings' => 'twitter_link',
-		'label'    => __( 'Twitter', 'makemeup' ),
-		'section'  => 'social_media',
-		'default'  => '',
-		'priority' => 13,
+		'settings' => 'linkedin',
+		'label'    => esc_html__( 'Linkedin', 'makemeup' ),
+		'section'  => 'socials',
+		'priority' => 10,
 	] );
+	
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'github',
+		'label'    => esc_html__( 'Github', 'makemeup' ),
+		'section'  => 'socials',
+		'priority' => 10,
+	] );
+
+	// -- Home components --
+	Kirki::add_field( 'makemeup', [
+		'type'        => 'sortable',
+		'settings'    => 'home_component',
+		'label'       => esc_html__( 'Home Components', 'makemeup' ),
+		'section'     => 'home_components',
+		'default'     => [
+			'components/latest-episode/latest-episode-player',
+			'components/episodes',
+			'components/latest-posts'
+		],
+		'choices'     => [
+			'components/latest-episode/latest-episode-player' => esc_html__( 'Latest Episode with player', 'makemeup' ),
+			'components/episodes' => esc_html__( 'Latest Episodes', 'makemeup' ),
+			'components/latest-posts' => esc_html__( 'Latest posts from blog', 'makemeup' ),
+		],
+		'priority'    => 10,
+	] );
+
 }

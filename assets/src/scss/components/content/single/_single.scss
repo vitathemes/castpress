@@ -154,24 +154,3 @@
     opacity: 1;
   }
 }
-
-.c-single__social-media {
-  width: 100%;
-  padding-top: 39px;
-  padding-bottom: 15px;
-
-  border-top: 1px solid #eaeaee;
-  margin-top: 24px;
-}
-
-.c-social-media__item--github {
-  path {
-    fill: $makemeup_primary_color;
-  }
-
-  &:hover {
-    path {
-      fill: $color_link_hover_secondary;
-    }
-  }
-}

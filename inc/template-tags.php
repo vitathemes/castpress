@@ -246,10 +246,6 @@ if (! function_exists('makemeup_get_tags')) :
 endif;
 
 
-
-
-
-
 if (! function_exists('makemeup_get_category')) :
 	/**
 	 * Return Post category
@@ -305,37 +301,13 @@ if (! function_exists('makemeup_get_default_pagination')) :
 	* Show numeric pagination
 	*/
 	function makemeup_get_default_pagination() {
-		echo'  <div class="c-pagination">' . wp_kses_post(
+		echo'<div class="c-pagination">' . wp_kses_post(
 			paginate_links(
 				array(
 				'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
 				'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
 				)
 			)) .'</div>';
-	}
-endif;
-
-
-if (! function_exists('makemeup_get_featured_episode')) :
-	/**
-	  * Get Featured Episode
-	  */
-	function makemeup_get_featured_episode( $isMetaActive = false ) {
-		$args = array(
-			'posts_per_page' => 1, 
-			'offset' => 0,
-			'orderby' => 'post_date',
-			'order' => 'DESC',
-			'post_type' => 'episodes', 
-			'post_status' => 'publish'
-		);
-		$query = new WP_Query($args);
-		if ($query->have_posts()) :
-			$isMetaActive = $isMetaActive; 
-			while ($query->have_posts()) : $query->the_post();			
-			include( locate_template( 'template-parts/components/latest-episode.php', false, false ) ); 
-			endwhile;
-		endif;
 	}
 endif;
 
@@ -349,21 +321,45 @@ if ( ! function_exists( 'makemeup_socials_links' ) ) :
 		$makemeup_twitter   = get_theme_mod( 'twitter', "" );
 		$makemeup_instagram = get_theme_mod( 'instagram', "" );
 		$makemeup_linkedin  = get_theme_mod( 'linkedin', "" );
+		$makemeup_github    = get_theme_mod( 'github', "" );
 
 		if ( $makemeup_facebook ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="social-link" target="_blank"><span class="dashicons dashicons-facebook-alt"></span></a>', esc_url( $makemeup_facebook ), esc_html__( 'Facebook', 'wp-meliora' ) );
+			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-facebook-alt"></span></a>', esc_url( $makemeup_facebook ), esc_html__( 'Facebook', 'makemeup' ) );
 		}
 
 		if ( $makemeup_twitter ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="social-link" target="_blank"><span class="dashicons dashicons-twitter"></span></a>', esc_url( $makemeup_twitter ), esc_html__( 'Twitter', 'wp-meliora' ) );
+			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-twitter"></span></a>', esc_url( $makemeup_twitter ), esc_html__( 'Twitter', 'makemeup' ) );
 		}
 
 		if ( $makemeup_instagram ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="social-link" target="_blank"><span class="dashicons dashicons-instagram"></span></a>', esc_url( $makemeup_instagram ), esc_html__( 'Instagram', 'wp-meliora' ) );
+			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-instagram"></span></a>', esc_url( $makemeup_instagram ), esc_html__( 'Instagram', 'makemeup' ) );
 		}
 
 		if ( $makemeup_linkedin ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="social-link" target="_blank"><span class="dashicons dashicons-linkedin"></span></a>', esc_url( $makemeup_linkedin ), esc_html__( 'Linkedin', 'wp-meliora' ) );
+			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-linkedin"></span></a>', esc_url( $makemeup_linkedin ), esc_html__( 'Linkedin', 'makemeup' ) );
+		}
+
+		if ( $makemeup_github ) {
+			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-share__icon--github"></span></a>', esc_url( $makemeup_github ), esc_html__( 'Github', 'makemeup' ) );
 		}
 	}
 endif;
+
+
+if ( ! function_exists( 'makemeup_share_links' ) ) {
+	/**
+	 * Display Share icons 
+	 */
+	function makemeup_share_links() {
+		if ( get_theme_mod( 'show_share_icons', true ) ) {
+			$makemeup_linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" . get_permalink() . "&title=" . get_the_title();
+			$makemeup_twitter_url  = "https://twitter.com/intent/tweet?url=" . get_permalink() . "&title=" . get_the_title();
+			$makemeup_facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
+
+			echo sprintf( '<span class="c-social-share__title h4 h4-lh--sm">%s</span>', esc_html_e( 'Share:', 'makemeup' ) );
+			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-facebook-alt c-social-share__item__icon"></span></a>', esc_url( $makemeup_facebook_url ) );
+			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-twitter c-social-share__item__icon"></span></a>', esc_url( $makemeup_twitter_url ) );
+			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $makemeup_linkedin_url ) );
+		}
+	}
+}

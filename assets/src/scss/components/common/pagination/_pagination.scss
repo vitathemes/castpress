@@ -129,6 +129,7 @@
   text-align: center;
 }
 
+// qa- dashicons position
 .dashicons {
   font-family: dashicons;
   display: inline-block;
@@ -141,7 +142,7 @@
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 26px !important;
+  width: max-content !important;
   height: 20px;
   font-size: 20px;
   vertical-align: top;

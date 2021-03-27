@@ -2,6 +2,26 @@
   #Animations
 \*------------------------------------*/
 
+/* Menu Animation  */
+@keyframes menuOpen {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+@-webkit-keyframes menuOpen {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
 /* Transcript Animation  */
 @keyframes transcript {
   0% {
