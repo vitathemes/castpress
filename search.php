@@ -11,14 +11,11 @@ get_header();
 ?>
 
 <main id="primary" class="c-main">
-
     <div class="c-main__content">
-
         <?php if ( have_posts() ) : ?>
-
         <header class="c-main__header">
             <h1 class="c-main__entry-title h1-lh--bg">
-                Search Result
+                <?php esc_html_e( 'Search Result', 'makemeup' ); ?>
             </h1>
         </header><!-- .entry-header -->
 
@@ -32,17 +29,13 @@ get_header();
 				 * called content-search.php and that will be used instead.
 				 */
 				get_template_part( 'template-parts/content' );
-
 			endwhile;
-
 				makemeup_get_default_pagination();
-
 		else :
-
 			get_template_part( 'template-parts/content', 'none' );
-
 		endif;
 		?>
+
     </div>
 </main><!-- #main -->
 <?php

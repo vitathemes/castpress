@@ -33,6 +33,9 @@ add_action( 'widgets_init', 'makemeup_footer_widgets_init' );
 
 
 function makemeup_scripts() {
+
+	wp_enqueue_script('jquery');
+
 	/**
 	 * Enqueue scripts and styles.
 	 */
