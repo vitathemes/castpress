@@ -1,0 +1,53 @@
+/*------------------------------------*\
+  #Latest Episode
+\*------------------------------------*/
+.c-latest-episode {
+  padding-top: 16px;
+  @include media(tablet) {
+    padding-top: 24px;
+  }
+}
+
+/*------------------------------------*\
+  #Latest EpisodeS
+\*------------------------------------*/
+.c-latest-episodes {
+  padding-top: 24px;
+}
+
+.c-latest-episode--home {
+  .c-single__entry-content {
+    display: none;
+  }
+}
+
+.c-latest-episodes--row {
+  margin: 60px 0px 0px 0px;
+
+  .c-episode {
+    background-color: $makemeup_neutral_gray_light_color;
+    min-height: 145px;
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 4px;
+  }
+
+  .c-episode__head {
+    max-height: max-content;
+
+    @include media(tablet) {
+      height: 145px;
+    }
+  }
+}
+
+.c-latest-episodes--column {
+  width: 895px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: lightcyan;
+
+  .c-episode {
+    width: 50%;
+  }
+}

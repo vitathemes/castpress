@@ -8,7 +8,7 @@
   padding-bottom: 24px;
   display: flex;
   border-bottom: 1px solid $makemeup_neutral_gray_light_second_color;
-  background-color: white;
+  background-color: #ffffff;
 
   @include media(tablet) {
     padding-top: 38.5px;
@@ -20,10 +20,9 @@
   width: 100%;
   min-height: 29px;
   padding: 0px 16px;
-
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 
   @include media(tablet) {
@@ -42,7 +41,7 @@
   padding: 8px 12px;
 
   &:before {
-    content: " ";
+    content: "";
     position: absolute;
     width: 100%;
     height: 1px;
@@ -51,7 +50,7 @@
     left: 0;
   }
   &:after {
-    content: " ";
+    content: "";
     position: absolute;
     width: 100%;
     height: 1px;
@@ -71,10 +70,10 @@
 
 .c-header__navigation {
   width: 100%;
-  max-height: 0px;
+  // max-height: 0px;
   // visibility: hidden;
   // opacity: 0;
-  display: none;
+  display: block;
 
   @include media(tablet) {
     visibility: visible;
@@ -138,7 +137,6 @@
 /*------------------------------------*\
   #toggle
 \*------------------------------------*/
-
 .c-header__main.toggled {
   .c-header__menu {
     &::before {
@@ -181,4 +179,8 @@
       background-color: $makemeup_primary_color;
     }
   }
+}
+
+.c-header__navigation.is-close {
+  height: 0;
 }

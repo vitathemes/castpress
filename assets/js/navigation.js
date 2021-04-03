@@ -6,7 +6,11 @@
  */
 (function () {
   const siteNavigation = document.getElementById("site-navigation");
-  const mainHeader = document.querySelector(".c-header__main");
+
+  const headerNavigation = document.querySelector(".c-header__navigation");
+  let headerNavigationHeight = headerNavigation.offsetHeight;
+
+  headerNavigation.classList.add("is-close");
 
   // Return early if the navigation don't exist.
   if (!siteNavigation) {
@@ -35,7 +39,14 @@
   // Toggle the .toggled class and the aria-expanded value each time the button is clicked.
   button.addEventListener("click", function () {
     siteNavigation.classList.toggle("toggled");
-    console.log(mainHeader.clientHeight);
+
+    console.log("clicked");
+
+    if (headerNavigation.classList.contains("is-close")) {
+      while (headerNavigation.style.height < headerNavigationHeight) {
+        headerNavigation.style.height += 0.1;
+      }
+    }
 
     if (button.getAttribute("aria-expanded") === "true") {
       button.setAttribute("aria-expanded", "false");
@@ -47,6 +58,8 @@
   // Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
   document.addEventListener("click", function (event) {
     const isClickInside = siteNavigation.contains(event.target);
+
+    console.log(menu);
 
     if (!isClickInside) {
       siteNavigation.classList.remove("toggled");

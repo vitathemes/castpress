@@ -235,7 +235,6 @@ if (! function_exists('makemeup_get_tags')) :
 	 * Return Post tags
 	 */
 	function makemeup_get_tags() {
-	
 		$post_tags = get_the_tags();
 		if ($post_tags) {
 			foreach($post_tags as $post_tag) {
@@ -250,13 +249,15 @@ if (! function_exists('makemeup_get_category')) :
 	/**
 	 * Return Post category
 	 */
-	function makemeup_get_category() {
+	function makemeup_get_category( $is_bold = false ) {
+
+		($is_bold) ? $is_bold = 'h5' : $is_bold = 'h5--secondary';
+
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'makemeup' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-
-			echo '<span class="c-episode__category h5--secondary h5-lh--sm">' .$categories_list. '</span>';
+			echo '<span class="c-episode__category '. $is_bold .' h5-lh--sm">' .$categories_list. '</span>';
 		}
 	}
 endif;

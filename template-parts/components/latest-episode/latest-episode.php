@@ -9,7 +9,7 @@
 ?>
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('c-single'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('c-single c-single--latest-episode'); ?>>
 
     <div class="c-single__thumbnail">
         <div class="c-single__image">

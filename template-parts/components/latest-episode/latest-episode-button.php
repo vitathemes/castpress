@@ -12,9 +12,9 @@
     
     if ($query->have_posts()) :
         $episode_player = false;
-        echo '<div class="c-main__featured-episode c-main__featured-episode--home">';
+        echo '<div class="c-latest-episode c-latest-episode--home">';
         while ( $query->have_posts() ) : $query->the_post();			
-        include( locate_template( 'template-parts/components/content-episode.php', false, false ) ); 
+        include( locate_template( 'template-parts/components/latest-episode/latest-episode.php', false, false ) ); 
         endwhile;
         echo '</div>';
     endif;

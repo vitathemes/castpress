@@ -1,18 +1,3 @@
-.nav-links {
-  display: none !important;
-}
-
-.nav-previous {
-  font-size: 1.8em;
-  border-bottom: 1px solid grey;
-  transition: 1s all;
-}
-.nav-next {
-  font-size: 1.8em;
-  border-bottom: 1px solid grey;
-  transition: 1s all;
-}
-
 /*------------------------------------*\
   #Pagination
 \*------------------------------------*/
@@ -49,8 +34,23 @@
 }
 
 /*------------------------------------*\
-    #Page Numbers (Word Press pagination)
-  \*------------------------------------*/
+  #Page Numbers (Word Press pagination)
+\*------------------------------------*/
+
+.nav-links {
+  display: none !important;
+}
+
+.nav-previous {
+  font-size: 1.8em;
+  border-bottom: 1px solid grey;
+  transition: 1s all;
+}
+.nav-next {
+  font-size: 1.8em;
+  border-bottom: 1px solid grey;
+  transition: 1s all;
+}
 
 .page-numbers {
   color: $makemeup_second_color !important;

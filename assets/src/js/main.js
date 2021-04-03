@@ -7,11 +7,11 @@ headerSearchIcon.addEventListener("click", function () {
 });
 
 // Toggle Transcript
-const transcript = document.querySelector(".js-single__transcript__more");
-const transcriptBlock = document.querySelector(
-  ".c-single__transcript__content"
-);
+// const transcript = document.querySelector(".js-single__transcript__more");
+// const transcriptBlock = document.querySelector(
+//   ".c-single__transcript__content"
+// );
 
-transcript.addEventListener("click", function () {
-  transcriptBlock.classList.toggle("is-open");
-});
+// transcript.addEventListener("click", function () {
+//   transcriptBlock.classList.toggle("is-open");
+// });

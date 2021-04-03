@@ -48,13 +48,13 @@ const concatJs = (cb) => {
   cb();
 };
 
-const uglifyTask = (cb) => {
-  return gulp
-    .src(["assets/js/*.js", "!assets/js/navigation.js"])
-    .pipe(uglify())
-    .pipe(gulp.dest("assets/js"));
-  cb();
-};
+// const uglifyTask = (cb) => {
+//   return gulp
+//     .src(["assets/js/*.js", "!assets/js/navigation.js"])
+//     .pipe(uglify())
+//     .pipe(gulp.dest("assets/js"));
+//   cb();
+// };
 
 exports.default = () =>
   gulp
@@ -71,13 +71,13 @@ const browserSyncTask = (cb) => {
 
 const watchTask = () => {
   gulp.watch("./assets/src/scss/**/*.scss", series(sassTask, cssConcatTask));
-  gulp.watch("./assets/src/js/*.js", series(concatJs, uglifyTask));
+  gulp.watch("./assets/src/js/*.js", series(concatJs));
   gulp.watch("./**/*.php", browserSync.reload);
 };
 
 exports.default = parallel(
   series(sassTask, cssConcatTask),
-  series(concatJs, uglifyTask),
+  series(concatJs),
   series(browserSyncTask, watchTask)
 );
 

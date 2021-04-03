@@ -6,10 +6,9 @@
   height: max-content;
   display: flex;
   justify-content: center;
-  padding: 48px 16px;
-  padding-bottom: 0px; //qa-
+  padding: 32px 16px 48px 16px;
   @include media(tablet) {
-    padding: 96px 0px 48px 0px;
+    padding: 72px 0px 48px 0px;
   }
 }
 
@@ -18,6 +17,11 @@
 \*------------------------------------*/
 .c-main--home {
   margin-bottom: 16px;
+  padding-bottom: 0px;
+
+  @include media(tablet) {
+    padding-bottom: 48px;
+  }
 }
 
 .c-main--blog {
@@ -57,7 +61,6 @@
 }
 
 .c-main__content {
-  // width: calc(100% - 16px);//qa-
   width: 100%;
   height: max-content;
 
@@ -86,11 +89,6 @@
 /*------------------------------------*\
   #Main Featured Episode
 \*------------------------------------*/
-.c-main__featured-episode--home {
-  .c-single__entry-content {
-    display: none;
-  }
-}
 
 .c-main__entry-title {
   &::first-letter {
