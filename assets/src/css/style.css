@@ -638,7 +638,8 @@ img {
       visibility: visible;
       opacity: 1;
       display: block;
-      width: max-content; } }
+      width: max-content;
+      height: max-content; } }
 
 .c-header__title a {
   color: #222222; }

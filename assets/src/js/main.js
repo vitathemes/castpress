@@ -1,22 +1,18 @@
-let isCollapsed = false;
-function slidetoggle() {
-  const headerMain = document.querySelector(".c-header__main");
+// let isCollapsed = false;
+// function slidetoggle() {
+//   const headerMain = document.querySelector(".c-header__main");
 
-  const clientHeight = headerMain.clientHeight;
-  const scrollerHeight = headerMain.scrollHeight;
+//   const clientHeight = headerMain.clientHeight;
+//   const scrollerHeight = headerMain.scrollHeight;
 
-  isCollapsed = !isCollapsed;
-  const noHeightSet = !headerMain.style.height;
+//   isCollapsed = !isCollapsed;
+//   const noHeightSet = !headerMain.style.height;
 
-  console.log(
-    clientHeight + " | " + scrollerHeight + " | " + isCollapsed + " | " + noHeightSet
-  );
+//   headerMain.style.height = (isCollapsed || noHeightSet ? 0 : scrollerHeight) + "px";
+//   if (noHeightSet) return slidetoggle.call(this);
+// }
 
-  headerMain.style.height = (isCollapsed || noHeightSet ? 0 : scrollerHeight) + "px";
-  if (noHeightSet) return slidetoggle.call(this);
-}
-
-document.querySelector(".c-header__menu").addEventListener("click", slidetoggle);
+// document.querySelector(".c-header__menu").addEventListener("click", slidetoggle);
 
 // Toggle Class
 const headerSearch = document.querySelector(".c-header__search");
