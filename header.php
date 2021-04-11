@@ -18,14 +18,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php wp_head(); ?>
-    <noscript>
-        <style>
-        /*Reinstate scrolling for non-JS clients*/
-        .simplebar-content-wrapper {
-            overflow: auto;
-        }
-        </style>
-    </noscript>
 </head>
 
 <body <?php body_class(); ?>>
@@ -36,13 +28,14 @@
         </a>
 
         <header id="masthead" class="c-header site-header">
-            <div class="c-header__main" id="site-navigation">
+            <div class="c-header__main js-header__main" id="site-navigation">
                 <div class="c-header__branding">
                     <?php makemeup_branding(); ?>
                 </div><!-- .c-header__branding -->
 
-                <button class="c-header__menu" aria-label="<?php esc_attr_e('Toggle menu', 'makemeup'); ?>"
-                    aria-controls="primary-menu" aria-expanded="false">
+                <button class="c-header__menu js-header__menu"
+                    aria-label="<?php esc_attr_e('Primary menu', 'makemeup'); ?>" aria-controls="primary-menu"
+                    aria-expanded="false">
                 </button>
 
                 <nav class="c-header__navigation">
@@ -62,7 +55,7 @@
                 </nav><!-- #site-navigation -->
 
                 <div class="c-header__search">
-                    <a class="c-header__search-icon" aria-label="<?php esc_attr_e('Toggle menu', 'makemeup'); ?>"
+                    <a class="c-header__search-icon" aria-label="<?php esc_attr_e('Toggle Search', 'makemeup'); ?>"
                         aria-controls="primary-menu" aria-expanded="false">
                     </a>
                     <div class="c-header__search-form">

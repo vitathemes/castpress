@@ -14,21 +14,16 @@
 
 get_header();
 ?>
-
 <main id="primary" class="c-main c-main--blog">
-
     <div class="c-main__content">
-
         <header class="c-main__header">
             <h1 class="c-main__entry-title h1-lh--bg">
                 <?php makemeup_archive_page_name() ?>
             </h1>
         </header>
         <!-- .entry-header -->
-
         <?php
 			if ( have_posts() ) :
-
 			if ( is_home() && ! is_front_page() ) :
 		?>
         <header>
@@ -36,33 +31,17 @@ get_header();
         </header>
         <?php
 			endif;
-
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
 				get_template_part( 'template-parts/content', get_post_type() );
-
 			endwhile;
 			 	makemeup_get_default_pagination();
-
 		else :
-
 			get_template_part( 'template-parts/content', 'none' );
-
 		endif;
 		?>
-
     </div>
-
-
-
 </main><!-- #main -->
-
 <?php
 get_footer();

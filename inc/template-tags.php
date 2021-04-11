@@ -182,7 +182,7 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	}
 endif;
 
-/* qa- */
+
 if (! function_exists('makemeup_get_page_name')) :
 	/**
 	 * get current page name (slug)
@@ -200,17 +200,15 @@ endif;
 
 if (! function_exists('makemeup_archive_page_name')) :
 	/**
-	 * get archive page name
-	 */
+	  * Get archive page name
+	  */
 	function makemeup_archive_page_name() {
 		if ( !is_front_page() && is_home() ) {
 			echo "blog";
-		}
-
+		}	
 		if( is_archive() ){
 			echo "archives";
 		}
-
 	}
 endif;
 
@@ -230,15 +228,36 @@ if (! function_exists('makemeup_get_thumbnail')) :
 endif;
 
 
+if (! function_exists('makemeup_get_single_thumbnail')) :
+	/**
+	 * Return thumbnail in single page
+	 */
+	function makemeup_get_single_thumbnail( $makemeup_DefaultThumbnail = true ) {
+		if ( has_post_thumbnail() ) {
+			echo '<div class="'.esc_attr( 'c-single__thumbnail' ).'"><div class="'.esc_attr( 'c-single__image c-single__image--single' ).'">';
+				the_post_thumbnail();
+			echo '</div></div>';
+		}
+		else{
+			if($makemeup_DefaultThumbnail){
+				echo '<div class="'.esc_attr( 'c-single__thumbnail' ).'"><div class="'.esc_attr( 'c-single__image c-single__image--single' ).'">';
+					echo '<img src="' . esc_url(get_bloginfo( 'stylesheet_directory' )). '/assets/images/no-thumbnail.png" />';
+				echo '</div></div>';
+			}
+		}
+}
+endif;
+
+
 if (! function_exists('makemeup_get_tags')) :
 	/**
 	 * Return Post tags
 	 */
-	function makemeup_get_tags() {
+	function makemeup_get_tags( $makemeup_className = 'c-post__tag' ) {
 		$post_tags = get_the_tags();
 		if ($post_tags) {
 			foreach($post_tags as $post_tag) {
-				echo '<a class="c-post__tags h4" href="'.  esc_url( get_tag_link( $post_tag->term_id ) ) .'" title="'.  esc_attr( $post_tag->name ) .'">#'. esc_html( $post_tag->name ). '</a>';
+				echo '<a class="'.esc_attr( $makemeup_className ).' h4" href="'.  esc_url( get_tag_link( $post_tag->term_id ) ) .'" title="'.  esc_attr( $post_tag->name ) .'">'. esc_html( $post_tag->name ). '</a>';
 			}
 		}
 	}
@@ -250,18 +269,15 @@ if (! function_exists('makemeup_get_category')) :
 	 * Return Post category
 	 */
 	function makemeup_get_category( $is_bold = false ) {
-
 		($is_bold) ? $is_bold = 'h5' : $is_bold = 'h5--secondary';
-
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'makemeup' ) );
 		if ( $categories_list ) {
-			/* translators: 1: list of categories. */
-			echo '<span class="c-episode__category '. $is_bold .' h5-lh--sm">' .$categories_list. '</span>';
+			/* translators: 1: $categories_list list of categories. Rendered from category section that client set in categories. $is_bold check if should render text bold or not ( Will add class) */
+			echo '<span class="c-episode__category '. esc_attr( $is_bold ) .' h5-lh--sm">'. $categories_list .'</span>';// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;
-
 
 
 if (! function_exists('makemeup_get_category_seperator')) :
@@ -362,5 +378,40 @@ if ( ! function_exists( 'makemeup_share_links' ) ) {
 			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-twitter c-social-share__item__icon"></span></a>', esc_url( $makemeup_twitter_url ) );
 			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $makemeup_linkedin_url ) );
 		}
+	}
+}
+
+
+
+if ( ! function_exists( 'makemeup_render_newsletter' ) ) {
+	/**
+	 * Display Share icons 
+	 */
+	function makemeup_render_newsletter() {
+	
+
+		echo '<div class="c-footer__widget">
+
+		<h2 class="c-footer__widget__title">NEWSLETTER</h2>
+		<p class="c-footer__widget__desc span">Sign up now; get closer to our action.</p>
+
+		<div class="tnp tnp-widget">
+			<form method="post" action="//localhost:3000/?na=s">
+				<input type="hidden" name="nr" value="widget" />
+				<input type="hidden" name="nlang" value="" />
+						<div class="tnp-field tnp-field-email">
+							<label for="tnp-email"></label>
+							<input class="c-tnp-email" type="email" name="ne" value="" required=""
+								placeholder="Email  address..." />
+						</div>
+						<button onclick="window.alert("Submit button clicked")" aria-label="Search" type="submit"
+							class="btn c-footer__newsletter-submit">
+						</button>
+					</form>
+				</div>
+
+			</div>
+		</div>';
+
 	}
 }

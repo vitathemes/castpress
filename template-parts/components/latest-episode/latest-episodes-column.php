@@ -38,7 +38,7 @@
             </div>
 
             <div class="c-episode__entry-content h4">
-                <p class="c-episode__entry-context h4"><?php echo get_the_excerpt(); ?></h4>
+                <p class="c-episode__entry-context h4"><?php echo esc_html(get_the_excerpt()); ?></h4>
             </div>
 
         </div>

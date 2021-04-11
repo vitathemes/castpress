@@ -13,7 +13,9 @@
 
     <div class="c-single__thumbnail">
         <div class="c-single__image">
-            <?php makemeup_get_thumbnail(); ?>
+            <a href="<?php esc_url( the_permalink() ) ?>">
+                <?php makemeup_get_thumbnail(); ?>
+            </a>
         </div>
     </div>
 
@@ -71,11 +73,6 @@
 				wp_kses_post( get_the_title() )
 			)
 		);
-
-		// Show post tags 
-		echo "<div class='c-spacer--md qa-'></div>";
-		makemeup_get_tags();
-
 		?>
 
     </div><!-- .entry-content -->

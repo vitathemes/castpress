@@ -1,5 +1,5 @@
 <div class="c-latest-posts">
-    <h1 class="c-latest-posts__title h1-lh--bg">Latest Posts</h1>
+    <h1 class="c-latest-posts__title h1-lh--bg"><?php esc_html_e( 'Latest Posts', 'makemeup' ); ?></h1>
     <div class="c-latest-posts__content">
         <?php  
         $args = array(
@@ -15,12 +15,12 @@
                 while ($query->have_posts()) : $query->the_post();
                     get_template_part( 'template-parts/content', get_post_type() );
                 endwhile; 
-            else : 
-        endif;
+            endif;
         ?>
     </div>
-    <a class="btn--blog-more btn btn--secondary" href="/blog">
-        View Blog
+    <a class="btn btn--blog-more btn--secondary"
+        href="<?php echo esc_url(get_permalink( get_option( 'page_for_posts' ) )); ?>">
+        <?php esc_html_e( 'View Blog', 'makemeup' ); ?>
         <span class="dashicons dashicons-arrow-right-alt2"></span>
     </a>
 </div>

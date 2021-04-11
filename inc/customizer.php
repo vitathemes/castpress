@@ -126,7 +126,7 @@ if( function_exists( 'kirki' ) ) {
 		'label'    => __( 'Primary Color', 'makemeup' ),
 		'section'  => 'typography_headings',
 		'default'  => '#222222',
-		'priority'    => 9,
+		'priority' => 9,
 		
 	] );
 
@@ -137,7 +137,7 @@ if( function_exists( 'kirki' ) ) {
 		'label'    => __( 'Secondary Color', 'makemeup' ),
 		'section'  => 'typography_headings',
 		'default'  => '#555555',
-		'priority'    => 9,
+		'priority' => 9,
 		
 	] );
 
@@ -147,7 +147,7 @@ if( function_exists( 'kirki' ) ) {
 		'label'    => __( 'Tertiary Color', 'makemeup' ),
 		'section'  => 'typography_headings',
 		'default'  => '#979797',
-		'priority'    => 10,
+		'priority' => 10,
 		
 	] );
 
@@ -157,10 +157,24 @@ if( function_exists( 'kirki' ) ) {
 		'label'    => __( 'Quaternary Color', 'makemeup' ),
 		'section'  => 'typography_headings',
 		'default'  => '#7247ca',
-		'priority'    => 11,
+		'priority' => 11,
 		
 	] );
 	
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'color',
+		'settings' => 'typography_headings_color',
+		'label'    => __( 'Typography Headings Color', 'makemeup' ),
+		'section'  => 'typography_headings',
+		'default'  => '#222222',
+		'priority' => 11.5,
+		'output'      => [
+			[
+				'element' => array('h1' , 'h2' ,'h3' ,'h4' ,'h5' ,'h6'),
+			],
+		],
+		
+	] );
 
 	// Headings typography h1
 	Kirki::add_field( 'makemeup_theme', [
@@ -173,7 +187,7 @@ if( function_exists( 'kirki' ) ) {
 			'font-size'          => '26px',
 			'line-height'     	 => '32px',
 			'variant'         	 => '600',
-			'color'         	 => '#222222',
+			
 		],
 		'priority'    => 12,
 		'transport'   => 'auto',
@@ -196,7 +210,7 @@ if( function_exists( 'kirki' ) ) {
 			'font-size'          => '21px',
 			'line-height'     	 => '25px',
 			'variant'         	 => '600',
-			'color'         	 => '#222222',
+			
 		],
 		'priority'    => 13,
 		'transport'   => 'auto',
@@ -219,7 +233,6 @@ if( function_exists( 'kirki' ) ) {
 			'font-size'          => '18px',
 			'line-height'     	 => '25px',
 			'variant'         	 => 'regular',
-			'color'         	  => '#222222',
 		],
 		'priority'    => 14,
 		'transport'   => 'auto',
@@ -242,7 +255,7 @@ if( function_exists( 'kirki' ) ) {
 			'font-size'          => '16px',
 			'line-height'     	 => '25px',
 			'variant'         	 => 'regular',
-			'color'         	 => '#222222',
+			
 		],
 		'priority'    => 15,
 		'transport'   => 'auto',
@@ -265,7 +278,7 @@ if( function_exists( 'kirki' ) ) {
 			'font-size'          => '14px',
 			'line-height'     	 => '25px',
 			'variant'         	 => '600',
-			'color'         	 => '#222222',
+			
 		],
 		'priority'    => 16,
 		'transport'   => 'auto',
@@ -288,7 +301,7 @@ if( function_exists( 'kirki' ) ) {
 			'font-size'          => '12px',
 			'line-height'     	 => '25px',
 			'variant'         	 => '600',
-			'color'         	 => '#222222',
+			
 		],
 		'priority'    => 17,
 		'transport'   => 'auto',
@@ -323,12 +336,12 @@ if( function_exists( 'kirki' ) ) {
 		],
 	] );
 
-
+	
 	// Span typography
 	Kirki::add_field( 'makemeup_theme', [
 		'type'        => 'typography',
-		'settings'    => 'typography_paragraph',
-		'label'       => esc_html__( 'Paragraph', 'makemeup' ),
+		'settings'    => 'span_paragraph',
+		'label'       => esc_html__( 'Span Color', 'makemeup' ),
 		'section'     => 'typography_headings',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',

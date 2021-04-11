@@ -17,32 +17,12 @@
  */
 		if ( post_password_required() ) {
 			return;
-		}
-		
+		}		
 		$makemeup_comment_counter = get_comments_number();
 ?>
-
 <div id="comments" class="comments-area">
 
-
     <?php
-
-		//Declare Vars
-		$comment_send = 'Submit';
-		$comment_reply = 'Leave a Reply';
-		$comment_reply_to = 'Reply';
-
-		$comment_author = 'Name';
-		$comment_email = 'E-Mail';
-		$comment_body = 'Comment';
-		$comment_url = 'Website';
-		$comment_cookies_1 = ' Save my name, email, and website in this browser for the next time I comment';
-		$comment_cookies_2 = ' Privacy Policy';
-
-		$comment_before = 'Required fields are marked *';
-
-		$comment_cancel = 'Cancel Reply';
-
 		//Custom comment form 
 		$comments_args = array(
 			//Define Fields
@@ -54,34 +34,30 @@
 				//URL Field
 				'url' => '<p class="comment-form-url h4 h4-lh--bg">Website<br /><input type="url" id="url" name="url" ></input></p>',
 				//Cookies
-				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="c-comments__cookie">' . $comment_cookies_1 .'</span></div>',
+				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'makemeup' ) .'</span></div>',
 			),
 			// Change the title of send button
-			'label_submit' => __( $comment_send ),
+			'label_submit' => __( 'Submit', 'makemeup'),
 			// Change the title of the reply section
-			'title_reply' => '<p class="c-comments__title h4 h4-lh--sm font--semibold">'.$comment_reply .'</p>',
+			'title_reply' => '<p class="c-comments__title h4 h4-lh--sm font--semibold">'. __( 'Leave a Reply' , 'makemeup') .'</p>',
 			// Change the title of the reply section
-			'title_reply_to' => __( $comment_reply_to ),
+			'title_reply_to' =>  __( 'Reply' , 'makemeup'),
 			//Cancel Reply Text
-			'cancel_reply_link' => __( $comment_cancel ),
+			'cancel_reply_link' =>  __( 'Cancel Reply', 'makemeup' ),
 			// Redefine your own textarea (the comment body).
 			'comment_field' => '<p class="comment-form-comment h4 h4-lh--bg">Comment *<br /><textarea id="comment" name="comment" aria-required="true" ></textarea></p>',
 			//Message Before Comment
-			'comment_notes_before' =>'<p class="c-comments__desc h5--secondary h5-lh--sm font--regular">'. $comment_before .'</p>',
+			'comment_notes_before' =>'<p class="c-comments__desc h5--secondary h5-lh--sm font--regular">'. __( 'Required fields are marked *' , 'makemeup') .'</p>',
 			// Remove "Text or HTML to be displayed after the set of comment fields".
 			'comment_notes_after' => '',
 			//Submit Button ID
-			'id_submit' => __( 'comment-submit' ),
-			'class_submit' => __( 'makemeup-comment-submit' ),
+			'id_submit' =>  __( 'comment-submit' , 'makemeup'),
+			'class_submit' =>  __( 'makemeup-comment-submit' , 'makemeup'),
 		);
-		
-
 		comment_form( $comments_args );
-
 
 		// You can start editing here -- including this comment!
 		if ( have_comments() ) :
-		
 ?>
 
     <h2 class="comments-title h4--secondary h4-lh--sm">
@@ -128,10 +104,7 @@
     <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'makemeup' ); ?></p>
     <?php
 		endif;
-
 	endif; // Check for have_comments().
-	
-
 	?>
 
 </div><!-- #comments -->

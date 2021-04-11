@@ -69,16 +69,6 @@
       .sub-menu {
         display: block;
         margin-bottom: 24px;
-
-        @include media(tablet) {
-          margin-bottom: 32px;
-        }
-
-        li {
-          @include media(tablet) {
-            margin-bottom: 16px;
-          }
-        }
       }
     }
 
@@ -154,6 +144,7 @@
   padding-left: 0px;
   padding-right: 23px;
   text-align: center;
+  z-index: 90;
 
   @include media(tablet) {
     position: absolute;
@@ -163,7 +154,7 @@
     justify-content: space-between;
     text-align: left;
     margin-left: 20px;
-    top: 7px;
+    top: 16px;
     left: -20px;
     background-color: $color_background_body;
     border: 1px solid $makemeup_neutral_gray_light_second_color;
@@ -171,11 +162,30 @@
   }
 
   li {
-    margin-left: 0px;
+    margin-left: 15px;
     padding-top: 0px;
     display: block;
     line-height: 0px;
     margin-bottom: 16px;
+
+    @include media(tablet) {
+      padding-top: 16px;
+      padding-bottom: 16px;
+      margin-left: 0px;
+      margin-bottom: 0px;
+      width: 100%;
+      padding: 16px 16px;
+      display: flex;
+      justify-content: space-between;
+
+      .c-nav__arrow {
+        margin-top: 0px;
+      }
+
+      &:hover {
+        background-color: #f4f4f4;
+      }
+    }
 
     a {
       color: $makemeup_third_color;
@@ -188,33 +198,14 @@
       text-transform: uppercase;
     }
 
-    @include media(tablet) {
-      padding-top: 16px;
-      margin-bottom: 0px;
-      padding-bottom: 16px;
-      margin-bottom: 0px !important;
-      width: 100%;
-      padding: 16px 16px;
-
-      display: flex;
-      justify-content: space-between;
-
-      .c-nav__arrow {
-        margin-top: 0px;
-      }
-
-      &:hover {
-        background-color: #f4f4f4;
-        margin-bottom: 16px;
-      }
-    }
-
     .menu-item__link {
-      font-size: 12px !important; //qa-
-      line-height: 15px !important; //qa
+      font-size: 14px !important; //qa-
+      line-height: 18px !important; //qa
 
       @include media(tablet) {
         line-height: 20px !important;
+        font-size: 12px !important; //qa-
+        color: $makemeup_primary_color !important;
       }
     }
   }
@@ -272,6 +263,7 @@
 
         @include media(tablet) {
           content: "\f347";
+          color: $makemeup_primary_color !important;
         }
       }
     }
@@ -294,11 +286,14 @@
   color: $makemeup_primary_color;
   font-family: $makemeup_font_semibold;
   letter-spacing: 0.16em;
-  line-height: 15px !important;
 
-  @include media(mobile-only) {
-    font-size: 14px !important;
-    line-height: 18px !important;
+  font-size: 14px !important;
+  line-height: 18px !important;
+
+  @include media(tablet) {
+    font-size: 12px !important;
+    line-height: 15px !important;
+    letter-spacing: 0.1em;
   }
 
   &:hover {

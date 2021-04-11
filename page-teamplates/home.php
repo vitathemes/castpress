@@ -11,7 +11,6 @@ get_header();
 
     <div class="c-main__content">
         <?php makemeup_home_components(); ?>
-        <?php //get_template_part( 'template-parts/components/latest-episode/latest', 'episodes-column'); ?>
     </div>
 
 </main><!-- #main -->

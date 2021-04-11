@@ -190,7 +190,7 @@
   transition: 0.5s all;
 
   &:hover {
-    color: #58379b !important; //qa-
+    color: $makemeup_main_accent_second_color !important; //qa-
   }
 
   &:hover > .c-episode__play::before {
@@ -293,8 +293,8 @@
 
     -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
       no-repeat 50% 50%;
-    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
-      no-repeat 50% 50%;
+    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat
+      50% 50%;
 
     -webkit-mask-size: cover;
     mask-size: cover;

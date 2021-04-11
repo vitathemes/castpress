@@ -1,6 +1,4 @@
 <?php
-
-
 class Makemeup_walker_nav_menu extends Walker_Nav_Menu {
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$object      = $item->object;
@@ -14,17 +12,14 @@ class Makemeup_walker_nav_menu extends Walker_Nav_Menu {
 
 		//Add SPAN if no Permalink
 		if ( $permalink ) {
-			$output .= '<a class="menu-item__link h6" href="' . $permalink . '">';
+			$output .= '<a class="menu-item__link h5" href="' . $permalink . '">';
 		}
-
 		$output .= $title;
-
 		if ( $permalink ) {
 			$output .= '</a>';
 		}
-
 		if ( $args->walker->has_children ) {
-			$output .= sprintf('<span aria-label="%s" role="button" class="c-nav__arrow dashicons dashicons-arrow-down-alt2 js-toggle-submenu span"></span>', esc_attr__('Toggle sub menu', 'makemeup'));
+			$output .= sprintf('<span aria-label="%s" role="button" class="c-nav__arrow js-nav__arrow dashicons dashicons-arrow-down-alt2 js-toggle-submenu span"></span>', esc_attr__('Toggle sub menu', 'makemeup'));
 		}
 	}
 }

@@ -98,8 +98,6 @@
 
 .c-footer__widget {
   color: $makemeup_neutral_dark_gray_color;
-  // font-size: 12px;
-  // line-height: 15px;
 
   margin-bottom: 23px;
   position: relative;
@@ -128,7 +126,7 @@
 .c-footer__newsletter-submit {
   width: 36px;
   height: 36px;
-  background-color: #7247ca;
+  // background-color: #7247ca;
   padding: 0;
   display: flex;
   align-items: center;
@@ -140,10 +138,6 @@
   top: 3px;
   cursor: pointer;
 
-  @include media(tablet) {
-    right: 3px;
-  }
-
   &::before {
     content: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3536 4.35355C10.5488 4.15829 10.5488 3.84171 10.3536 3.64645L7.17157 0.464466C6.97631 0.269204 6.65973 0.269204 6.46447 0.464466C6.2692 0.659728 6.2692 0.976311 6.46447 1.17157L9.29289 4L6.46447 6.82843C6.2692 7.02369 6.2692 7.34027 6.46447 7.53553C6.65973 7.7308 6.97631 7.7308 7.17157 7.53553L10.3536 4.35355ZM0 4.5H10V3.5H0V4.5Z' fill='white'/%3E%3C/svg%3E%0A");
     cursor: pointer;
@@ -152,12 +146,19 @@
     display: block;
     background-size: 21px 21px;
     position: absolute;
+    top: 9px;
+    animation-name: arrowRightBack;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
   }
 
   &:hover {
-    background-color: #7247ca;
+    // background-color: #7247ca;
     &::before {
-      right: 0;
+      // right: 0;
+      animation-name: arrowRight;
+      animation-duration: 0.2s;
+      animation-fill-mode: forwards;
     }
   }
 }

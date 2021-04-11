@@ -28,7 +28,7 @@ Makemeup is a a minimal & mobile-first theme. The best choice for people who wan
 * Support 1 level menu
 * …and much more
 
-See a working example at [demo.vitathemes.com/cavatina](https://demo.vitathemes.com/cavatina/).
+See a working example at [demo.vitathemes.com/makemeup](https://demo.vitathemes.com/makemeup/).
 
 == Installation ==
 
@@ -71,3 +71,19 @@ Makemeup bundles the following third-party resources:
 Dashicons by WordPress
 License: GNU GPLv2, https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Source: https://developer.wordpress.org/resource/dashicons/
+
+Social Icons, Arrow icons, Reply Icons,Magnifier Icons & close icons by iconify
+License: Apache 2.0, http://www.apache.org/licenses/LICENSE-2.0
+Source: https://iconify.design/
+
+Source Serif Pro Font by Frank Grießhammer
+License: Apache, http://www.apache.org/licenses/LICENSE-2.0
+Source: https://fonts.google.com/specimen/Source+Serif+Pro?query=Source+Serif+Pro#about
+
+TGMPA by Thomas Griffin, Gary Jones, Juliette
+License: GNU GPLv2, https://opensource.org/licenses/GPL-2.0
+Source: http://tgmpluginactivation.com/
+
+Image for theme screenshot, Copyright VitaThemes
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://vitathemes.com/theme/cavatina/

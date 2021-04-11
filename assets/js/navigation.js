@@ -5,6 +5,37 @@
  * navigation support for dropdown menus.
  */
 (function () {
+  // Detect
+  let makemeup_clientWindowSize = window.matchMedia("(max-width: 979px)");
+  function makemeup_isMobile(makemeup_clientWindowSize) {
+    if (makemeup_clientWindowSize.matches) {
+      // If media query matches
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  makemeup_isMobile(makemeup_clientWindowSize); // Call listener function at run time
+  makemeup_clientWindowSize.addListener(makemeup_isMobile); // Attach listener function on state changes
+
+  // Menu header animation (Based on max-content)
+  let makemeup_isCollapsed = false;
+  function makemeup_slidetoggle() {
+    const headerMain = document.querySelector(".js-header__main");
+
+    const clientHeight = headerMain.clientHeight;
+    const scrollerHeight = headerMain.scrollHeight;
+
+    makemeup_isCollapsed = !makemeup_isCollapsed;
+    const noHeightSet = !headerMain.style.height;
+
+    headerMain.style.height =
+      (makemeup_isCollapsed || noHeightSet ? 0 : scrollerHeight) + "px";
+
+    if (noHeightSet) return makemeup_slidetoggle.call(this);
+  }
+
   const siteNavigation = document.getElementById("site-navigation");
 
   const headerNavigation = document.querySelector(".c-header__navigation");
@@ -16,7 +47,7 @@
     return;
   }
 
-  const button = siteNavigation.getElementsByTagName("button")[0];
+  const button = siteNavigation.querySelector(".c-header__menu");
 
   // Return early if the button don't exist.
   if ("undefined" === typeof button) {
@@ -39,7 +70,7 @@
   button.addEventListener("click", function () {
     siteNavigation.classList.toggle("toggled");
 
-    console.log("clicked");
+    makemeup_slidetoggle();
 
     if (button.getAttribute("aria-expanded") === "true") {
       button.setAttribute("aria-expanded", "false");
@@ -50,12 +81,17 @@
 
   // Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
   document.addEventListener("click", function (event) {
-    const isClickInside = siteNavigation.contains(event.target);
-
-    if (!isClickInside) {
-      siteNavigation.classList.remove("toggled");
-      button.setAttribute("aria-expanded", "false");
-    }
+    // const isClickInside = siteNavigation.contains(event.target);
+    // if (!isClickInside) {
+    //   siteNavigation.classList.remove("toggled");
+    //   button.setAttribute("aria-expanded", "false");
+    // if (makemeup_isMobile(makemeup_clientWindowSize) === true) {
+    //   if (makemeup_isCollapsed === true) {
+    //
+    //     makemeup_slidetoggle();
+    //   }
+    // }
+    // }
   });
 
   // Get all the link elements within the menu.

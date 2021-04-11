@@ -7,17 +7,20 @@
   display: flex;
   align-content: center;
   justify-content: flex-start;
+  margin-top: 48px;
+
+  @include media(tablet) {
+    margin-top: 64px;
+  }
 }
 
 .c-pagination__load-more {
   width: 100%;
-
   border-radius: 2px;
   display: block;
   text-align: center;
   font-size: 14px;
   font-size: 0.875rem;
-
   font-weight: 800;
   letter-spacing: 1px;
   cursor: pointer;

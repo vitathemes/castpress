@@ -79,11 +79,10 @@ add_filter('nav_menu_css_class', 'makemeup_add_additional_class_on_li', 1, 3);
 
 function makemeup_total_post_types( $isText = true ) {	
 	/**
-	 * count number of posts types (episodes) in a page
+	 * count number of posts types ( episodes ) in a page
 	 */
-
 	if($isText === true){
-		printf(esc_html($count_posts = wp_count_posts( 'episodes' )->publish));
+		printf( esc_html($count_posts = wp_count_posts( 'episodes' )->publish));
 	}
 	else{
 		return $count_posts = wp_count_posts( 'episodes' )->publish;
@@ -93,7 +92,7 @@ function makemeup_total_post_types( $isText = true ) {
 
 function makemeup_get_inverse_post_number(){
 	/**
-	 * Auto decrement number per posts ( in pages like archive-projects... )
+	 * Auto decrement number per posts ( in pages like archive-episodes... )
 	 */
 	global $wp_query;
     $posts_per_page 	= get_option('posts_per_page');
@@ -110,12 +109,13 @@ function makemeup_get_inverse_post_number(){
 
 function makemeup_deciaml_post_number(){
 	/**
-	 * Add zero to the post numbers
-	 */
+	  * Add zero to the post numbers
+	  */
 	
-    // get post number (auto increment)
+    // get post number ( auto increment )
     $decimalCounter = "0";
     $postNumber = makemeup_get_inverse_post_number();
+	
     // Remove zero when reaching 10
     if($postNumber >= 10){
         $decimalCounter = "";
@@ -131,8 +131,8 @@ function makemeup_deciaml_post_number(){
 
 function makemeup_comment_button($defaults) {
 	/**
-	 *	Change comment button type
-	 */
+	  *	Change comment button type
+	  */
 	
    	// Edit this to your needs:
 	$button = '<button name="%1$s" type="submit" id="%2$s" class="%3$s comment-form-arrow" value="%4$s"> Submit <span class="dashicons dashicons-arrow-right-alt2"></span></button>';
@@ -157,6 +157,78 @@ function makemeup_add_custom_types( $query ) {
 	  }
   }
 add_action( 'pre_get_posts', 'makemeup_add_custom_types' );
+
+
+/**
+ * Modify LibWP post type name
+ */
+function makemeup_modify_libwp_post_type_name($postTypeName){
+	$postTypeName = 'episodes';
+    return $postTypeName;
+}
+add_filter( 'libwp_post_type_1_name' , 'makemeup_modify_libwp_post_type_name');
+
+
+/**
+ * Modify LibWP post type arguments
+ */
+function makemeup_modify_post_type_argument($postTypeArguments){
+	$postTypeArguments['labels'] = [
+        'name'          => _x('Episodes', 'Post type general name', 'makemeup'),
+        'singular_name' => _x('Episode', 'Post type singular name', 'makemeup'),
+        'menu_name'     => _x('Episodes', 'Admin Menu text', 'makemeup'),
+        'add_new'       => __('Add New', 'makemeup'),
+        'edit_item'     => __('Edit Episode', 'makemeup'),
+        'view_item'     => __('View Episode', 'makemeup'),
+        'all_items'     => __('All Episodes', 'makemeup'),
+    ];
+    $postTypeArguments['rewrite']['slug'] 	  = 'episodes';
+	$postTypeArguments['menu_position'] 	  = 5;
+	$postTypeArguments['taxonomies']	      = array('category' , 'post_tag');
+	$postTypeArguments['show_in_admin_bar']   = true;
+	$postTypeArguments['show_in_admin_bar']   = true;
+	$postTypeArguments['hierarchical'] 		  = true;
+	$postTypeArguments['can_export'] 		  = true;
+	$postTypeArguments['has_archive'] 		  = true;
+	$postTypeArguments['exclude_from_search'] = false;
+	$postTypeArguments['publicly_queryable']  = true;
+	$postTypeArguments['capability_type'] 	  = 'post';
+	$postTypeArguments['show_in_rest'] 		  = true;
+	$postTypeArguments['supports'] 			  = array('title', 'editor' , 'comments', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' ) ;	
+    return $postTypeArguments;
+}
+add_filter('libwp_post_type_1_arguments', 'makemeup_modify_post_type_argument');
+
+/**
+ * Modify LibWP taxonomy name
+ */
+function makemeup_modify_libwp_taxonomy_name($taxonomyName){
+	$taxonomyName = 'episodes';
+    return $taxonomyName;
+}
+add_filter('libwp_taxonomy_1_name', 'makemeup_modify_libwp_taxonomy_name');
+
+/**
+ * Modify LibWP taxonomy name
+ */
+function makemeup_modify_libwp_taxonomy_arguments($taxonomyArguments){
+
+	$taxonomyArguments['labels'] = [
+        'name'          => _x('Episode Categories', 'taxonomy general name', 'makemeup'),
+        'singular_name' => _x('Episode Category', 'taxonomy singular name', 'makemeup'),
+        'search_items'  => __('Search Episode Categories', 'makemeup'),
+        'all_items'     => __('All Episode Categories', 'makemeup'),
+        'edit_item'     => __('Edit Episode Category', 'makemeup'),
+        'add_new_item'  => __('Add New Episode Category', 'makemeup'),
+        'new_item_name' => __('New Episode Category Name', 'makemeup'),
+        'menu_name'     => __('Episode Categories', 'makemeup'),
+    ];
+    $taxonomyArguments['rewrite']['slug'] = 'episodes';
+    return $taxonomyArguments;
+	
+}
+add_filter('libwp_taxonomy_1_arguments', 'makemeup_modify_libwp_taxonomy_arguments');
+
 
 
 /**

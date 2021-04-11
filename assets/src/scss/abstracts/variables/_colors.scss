@@ -1,12 +1,15 @@
 // kirki variables
-$makemeup_primary_color: var(--primary-color); //222222
-$makemeup_second_color: var(--second-color); //555555
-$makemeup_third_color: var(--third-color); //979797
-$makemeup_fourth_color: var(--fourth-color); //7247ca
+$makemeup_primary_color: var(--makemeup_primary-color); //222222
+$makemeup_second_color: var(--makemeup_second-color); //555555
+$makemeup_third_color: var(--makemeup_third-color); //979797
+$makemeup_fourth_color: var(--makemeup_fourth-color); //7247ca
+
+$makemeup_headings_color: var(--makemeup_headings-color); //222222
 
 // Main color
 $makemeup_main_primary_color: #222222;
 $makemeup_main_accent_color: #7247ca;
+$makemeup_main_accent_second_color: #58379b;
 
 // Neutral colors
 $makemeup_neutral_dark_gray_color: #555555;

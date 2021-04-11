@@ -38,28 +38,20 @@
   border-radius: 3px !important;
   position: absolute;
   right: 5px;
-  top: 7px;
+  top: 5px;
   cursor: pointer;
 
-  .dashicons {
-    height: 25px;
-    padding-left: 0px;
-    color: $color_background_body !important;
-    font-size: 1.5em !important;
-
-    &::before {
-      color: $color_background_body;
-    }
-
-    &:hover {
-      &::before {
-        color: $makemeup_neutral_gray_light_color !important;
-        background: transparent !important;
-      }
-    }
+  &::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20' height='20' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);'%3E%3Cg fill='none'%3E%3Cpath d='M10 2.5a7.5 7.5 0 0 1 5.964 12.048l4.743 4.745a1 1 0 0 1-1.32 1.497l-.094-.083l-4.745-4.743A7.5 7.5 0 1 1 10 2.5zm0 2a5.5 5.5 0 1 0 0 11a5.5 5.5 0 0 0 0-11z' fill='%23ffffff'/%3E%3C/g%3E%3Crect x='0' y='0' width='24' height='24' fill='rgba(0, 0, 0, 0)' /%3E%3C/svg%3E");
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-size: 21px 21px;
   }
 }
 
 .search-field {
   margin-top: 0px !important;
+  color: $makemeup_neutral_dark_gray_color !important;
 }

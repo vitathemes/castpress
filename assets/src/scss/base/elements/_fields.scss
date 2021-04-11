@@ -34,6 +34,7 @@ textarea {
     opacity: 1;
     font-size: 12px;
     line-height: 27px !important;
+    font-weight: 400 !important;
   }
 
   &:focus {
@@ -62,5 +63,10 @@ input[type="checkbox"] {
 }
 
 .search-field {
-  padding: 10px 8px 13px 14px !important;
+  padding: 10px 30px 10px 14px !important;
+}
+
+//qa-
+.c-contact-form_title {
+  color: #555555 !important;
 }

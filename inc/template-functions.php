@@ -51,6 +51,13 @@ function makemeup_branding() {
 // Kirki color variables
 function makemeup_typography() {
 	
+
+	if ( get_theme_mod( 'typography_headings_color' ) == "" ) {
+		$makemeup_headings_color = "#222222";
+	} else {
+		$makemeup_headings_color = get_theme_mod( 'typography_headings_color' );
+	}
+
 	if ( get_theme_mod( 'typography_primary_color' ) == "" ) {
 		$makemeup_primary_color = "#222222";
 	} else {
@@ -77,10 +84,11 @@ function makemeup_typography() {
 	
 	
 	$html = ':root {	
-	            --primary-color: '. $makemeup_primary_color .';
-	            --second-color: ' . $makemeup_second_color . ';
-				--third-color: ' . $makemeup_third_color . ';
-				--fourth-color: ' . $makemeup_fourth_color . ';
+				--makemeup_headings-color: ' . $makemeup_headings_color . ';
+				--makemeup_primary-color: '. $makemeup_primary_color .';
+	            --makemeup_second-color: ' . $makemeup_second_color . ';
+				--makemeup_third-color: ' . $makemeup_third_color . ';
+				--makemeup_fourth-color: ' . $makemeup_fourth_color . ';
 			}';
 						
 	return $html;
@@ -104,7 +112,7 @@ function makemeup_theme_settings() {
 
 
 function makemeup_home_components(){
-
+	
 	// Get the parts.
 	$template_parts = get_theme_mod( 'home_component' , array( 'components/latest-episode/latest-episode-player', 'components/episodes', 'components/latest-posts' ));
 	
@@ -112,5 +120,5 @@ function makemeup_home_components(){
 	foreach ( $template_parts as $template_part ) {
 		get_template_part( 'template-parts/' . $template_part );
 	}
-
+	
 }

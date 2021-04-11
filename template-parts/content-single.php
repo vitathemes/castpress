@@ -11,11 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-single'); ?>>
 
-    <div class="c-single__thumbnail">
-        <div class="c-single__image">
-            <?php makemeup_get_thumbnail(); ?>
-        </div>
-    </div>
+    <?php makemeup_get_single_thumbnail( false ); ?>
 
     <header class="c-single__header">
         <?php the_title( '<h1 class="c-single__title c-main__entry-title"><a class="a--secondary h1 h1-lh--bg" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
@@ -28,7 +24,9 @@
 			?>
 
             <span class="c-post__date h5--secondary h5-lh--sm posted-on">
-                <?php echo esc_html( get_the_date( "M d, Y" ) ) ?>
+                <a class="a--tertiary" href="<?php esc_url( the_permalink() ) ?>">
+                    <?php echo esc_html( get_the_date( "M d, Y" ) ) ?>
+                </a>
             </span>
 
             <span class="seprator h5 a--secondary"> | </span>
@@ -74,10 +72,11 @@
         <?php if ( 'episodes' == get_post_type() ) { ?>
         <div class="c-single__transcript">
 
-            <h2 class="c-single__transcript__title">Listening time: 86 minutes </h2>
-            <span class="h2">|</span>
-            <a class="c-single__transcript__more js-single__transcript__more  h2 a">View transcript</a>
-            <span class="dashicons dashicons-arrow-right-alt"></span>
+            <h2 class="c-single__transcript__title">Listening time: 86 minutes</h2>
+            <span class="c-single__transcript__sep h2">|</span>
+            <a class="c-single__transcript__more js-single__transcript__more h2">View transcript
+                <span class="c-single__transcript__icon dashicons dashicons-arrow-right-alt"></span>
+            </a>
 
         </div>
         <div class="c-single__transcript__content">
@@ -100,25 +99,39 @@
                             massa.
                             Proin ultricies, arcu ac dignissim sollicitudin, nibh nibh fermentum eros,
                         </p>
+
+                        <p>
+                            Vivamus et aliquet neque. Mauris feugiat blandit augue a vestibulum. Class aptent taciti
+                            sociosqu ad
+                            litora torquent per conubia nostra, per inceptos himenaeos. Aliquam a luctus magna, a
+                            finibus
+                            massa.
+                            Proin ultricies, arcu ac dignissim sollicitudin, nibh nibh fermentum eros,
+                        </p>
+
                     </div>
                 </div>
             </div>
         </div>
         <?php } ?>
-        <?php
 
-			// Show post tags 
-			echo "<div class='c-spacer--md qa-'></div>";
-			makemeup_get_tags();
-            
-		?>
+        <div class="c-single__tags">
+            <?php
+			    // Show post tags 
+			    makemeup_get_tags('c-single__tag');  
+		    ?>
+        </div>
+
         <div class="c-social-share c-social-share--single">
 
             <?php makemeup_share_links(); ?>
 
         </div>
 
-        <?php get_template_part( 'template-parts/components/related-posts' ); ?>
+        <?php 
+            if ( 'episodes' !== get_post_type() ){
+                    get_template_part( 'template-parts/components/related-posts' ); 
+            }
+        ?>
 
-    </div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

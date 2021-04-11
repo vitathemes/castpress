@@ -23,8 +23,6 @@
             "posts_per_page"         =>  get_option("posts_per_page"),
         );
         
-        $wp_query = null;
-        $wp_query = new WP_Query();
         $wp_query->query( $args );
         
         if ( $wp_query->have_posts() ) :

@@ -3,36 +3,35 @@
 /**
  * Register Post-type and Taxonomy
  */
-if (function_exists('LibWp')) {
-    LibWp()->postType()
-        ->setName('episodes')
-        ->setLabels([
-            'name'          => _x('Episodes', 'Post type general name', 'makemeup'),
-            'singular_name' => _x('Episode', 'Post type singular name', 'makemeup'),
-            'menu_name'     => _x('Episodes', 'Admin Menu text', 'makemeup'),
-            'add_new'       => __('Add New', 'makemeup'),
-            'edit_item'     => __('Edit Episode', 'makemeup'),
-            'view_item'     => __('View Episode', 'makemeup'),
-            'all_items'     => __('All Episodes', 'makemeup'),
-        ])
-        ->setArgument('public' , true)
-        ->setArgument('show_ui', true)
-		->setArgument('taxonomies' ,  array('category' , 'post_tag'))
-        ->setArgument('menu_position' , 5)
-        ->setArgument('show_in_nav_menus' , true)
-        ->setArgument('show_in_admin_bar' , true)
-        ->setArgument('hierarchical' , true)
-        ->setArgument('can_export' , true)
-        ->setArgument('has_archive' , true)
-        ->setArgument('exclude_from_search' , false)
-        ->setArgument('publicly_queryable' , true)
-        ->setArgument('capability_type' , 'post')
-        ->setArgument('show_in_rest' , true)
-        ->setArgument('supports' , array('title', 'editor' , 'comments', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'))
-        ->register();
+// if (function_exists('LibWp')) {
+//     LibWp()->postType()
+//         ->setName('episodes')
+//         ->setLabels([
+//             'name'          => _x('Episodes', 'Post type general name', 'makemeup'),
+//             'singular_name' => _x('Episode', 'Post type singular name', 'makemeup'),
+//             'menu_name'     => _x('Episodes', 'Admin Menu text', 'makemeup'),
+//             'add_new'       => __('Add New', 'makemeup'),
+//             'edit_item'     => __('Edit Episode', 'makemeup'),
+//             'view_item'     => __('View Episode', 'makemeup'),
+//             'all_items'     => __('All Episodes', 'makemeup'),
+//         ])
+//         ->setArgument('public' , true)
+//         ->setArgument('show_ui', true)
+// 		->setArgument('taxonomies' ,  array('category' , 'post_tag'))
+//         ->setArgument('menu_position' , 5)
+//         ->setArgument('show_in_nav_menus' , true)
+//         ->setArgument('show_in_admin_bar' , true)
+//         ->setArgument('hierarchical' , true)
+//         ->setArgument('can_export' , true)
+//         ->setArgument('has_archive' , true)
+//         ->setArgument('exclude_from_search' , false)
+//         ->setArgument('publicly_queryable' , true)
+//         ->setArgument('capability_type' , 'post')
+//         ->setArgument('show_in_rest' , true)
+//         ->setArgument('supports' , array('title', 'editor' , 'comments', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'))
+//         ->register();
 
-
-}
+// }
 
 if ( ! function_exists( 'makemeup_setup' ) ) :
 	/**
