@@ -745,14 +745,18 @@ img {
     .c-header__search {
       display: block; } }
 
-.c-header__search-icon::before {
-  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.331 11.0715L15.8859 14.6313C16.0447 14.8079 16.0368 15.0783 15.8681 15.2454L15.246 15.8684C15.1626 15.9526 15.049 16 14.9305 16C14.812 16 14.6985 15.9526 14.615 15.8684L11.0601 12.3085C10.9618 12.21 10.8726 12.1028 10.7935 11.9881L10.127 11.0982C9.02413 11.9801 7.6546 12.4602 6.24327 12.4598C3.33502 12.4699 0.807867 10.461 0.157951 7.62231C-0.491966 4.78365 0.90881 1.87288 3.53098 0.613257C6.15315 -0.646363 9.29689 0.0813446 11.101 2.36555C12.9052 4.64977 12.8882 7.88086 11.0601 10.1459L11.9489 10.76C12.0877 10.849 12.2159 10.9535 12.331 11.0715ZM1.79968 6.23008C1.79968 8.68763 3.78915 10.6799 6.24329 10.6799C7.42181 10.6799 8.55206 10.2111 9.3854 9.37656C10.2187 8.54206 10.6869 7.41024 10.6869 6.23008C10.6869 3.77252 8.69743 1.78027 6.24329 1.78027C3.78915 1.78027 1.79968 3.77252 1.79968 6.23008Z' fill='%23222222'/%3E%3C/svg%3E%0A");
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  display: block;
-  background-size: 21px 21px;
-  margin-top: 5px; }
+.c-header__search-icon {
+  background-color: transparent; }
+  .c-header__search-icon::before {
+    content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.331 11.0715L15.8859 14.6313C16.0447 14.8079 16.0368 15.0783 15.8681 15.2454L15.246 15.8684C15.1626 15.9526 15.049 16 14.9305 16C14.812 16 14.6985 15.9526 14.615 15.8684L11.0601 12.3085C10.9618 12.21 10.8726 12.1028 10.7935 11.9881L10.127 11.0982C9.02413 11.9801 7.6546 12.4602 6.24327 12.4598C3.33502 12.4699 0.807867 10.461 0.157951 7.62231C-0.491966 4.78365 0.90881 1.87288 3.53098 0.613257C6.15315 -0.646363 9.29689 0.0813446 11.101 2.36555C12.9052 4.64977 12.8882 7.88086 11.0601 10.1459L11.9489 10.76C12.0877 10.849 12.2159 10.9535 12.331 11.0715ZM1.79968 6.23008C1.79968 8.68763 3.78915 10.6799 6.24329 10.6799C7.42181 10.6799 8.55206 10.2111 9.3854 9.37656C10.2187 8.54206 10.6869 7.41024 10.6869 6.23008C10.6869 3.77252 8.69743 1.78027 6.24329 1.78027C3.78915 1.78027 1.79968 3.77252 1.79968 6.23008Z' fill='%23222222'/%3E%3C/svg%3E%0A");
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-size: 21px 21px;
+    margin-top: 5px; }
+  .c-header__search-icon:hover {
+    background-color: transparent; }
 
 .c-header__search-form {
   display: none;
@@ -857,11 +861,21 @@ img {
       margin-bottom: 24px; }
     .s-nav li:focus-within .sub-menu {
       display: block; }
-    .s-nav li:last-child .sub-menu .sub-menu {
-      left: 50px;
-      top: 20px;
-      background-color: #ffffff;
-      z-index: 5; }
+    .s-nav li:last-child .sub-menu {
+      background-color: lightcyan !important; }
+      .s-nav li:last-child .sub-menu .sub-menu {
+        z-index: 5;
+        background-color: lightcoral !important; }
+        .s-nav li:last-child .sub-menu .sub-menu .sub-menu {
+          background-color: lightblue !important;
+          margin-left: 0px;
+          display: block !important;
+          position: absolute;
+          top: 100%;
+          left: 0% !important;
+          transform: translate(0%, 0%); }
+          .s-nav li:last-child .sub-menu .sub-menu .sub-menu .sub-menu {
+            margin-left: 0px; }
 
 /*------------------------------------*\
   #Heart icon (Primary menu)
@@ -913,9 +927,8 @@ img {
       flex-wrap: wrap;
       justify-content: space-between;
       text-align: left;
-      margin-left: 20px;
       top: 16px;
-      left: -20px;
+      left: 0%;
       background-color: #ffffff;
       border: 1px solid #eaeaee;
       padding: 0px; } }
@@ -964,12 +977,31 @@ img {
       .sub-menu .c-nav__arrow {
         display: inline-block; } }
   .sub-menu .sub-menu {
-    top: -25px;
-    left: 158px;
-    display: none !important; }
+    top: 20px;
+    left: 100% !important;
+    transform: translate(0%, 0%);
+    margin-top: 0px;
+    margin-left: 0px;
+    display: none !important;
+    background-color: lightcoral !important; }
     @media only screen and (min-width: 980px) {
       .sub-menu .sub-menu {
         display: block !important; } }
+    .sub-menu .sub-menu .sub-menu {
+      background-color: darkgoldenrod !important; }
+      .sub-menu .sub-menu .sub-menu .sub-menu {
+        z-index: 5;
+        background-color: lightgreen !important;
+        top: 100% !important;
+        left: 0%;
+        transform: translate(0%, 0%); }
+        .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
+          display: block !important;
+          position: absolute;
+          background-color: lightskyblue !important;
+          margin-left: 0px; }
+          .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
+            margin-left: 0px; }
 
 /*------------------------------------*\
   #Menu items (li)
@@ -1644,17 +1676,22 @@ img {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 12px; }
+  .c-episodes__share a {
+    transition: 0.2s all;
+    color: var(--makemeup_primary-color); }
 
 .c-episodes__social-share__icons {
   display: inline-block;
-  width: 24px;
-  height: 24px;
-  margin: 0px 15px;
-  vertical-align: middle; }
+  margin: 0px 15px 32px 15px;
+  vertical-align: middle;
+  font-size: 32px; }
   .c-episodes__social-share__icons:hover {
     color: #7247ca; }
     .c-episodes__social-share__icons:hover path {
       fill: #7247ca; }
+
+.c-episodes__social-share__icons--big {
+  font-size: 45px; }
 
 .icon--md {
   width: 30px;
@@ -1876,7 +1913,7 @@ img {
   width: 100%; }
   @media only screen and (min-width: 980px) {
     .c-single__entry-content {
-      margin-top: 96px; } }
+      margin-top: 81px; } }
   .c-single__entry-content h1,
   .c-single__entry-content h2,
   .c-single__entry-content h3,
@@ -1889,6 +1926,8 @@ img {
   .c-single__entry-content figure {
     max-width: 100%;
     width: auto !important; }
+  .c-single__entry-content .mejs-container {
+    display: none; }
 
 .c-single__tags a::before {
   content: "#"; }
@@ -2594,7 +2633,8 @@ textarea {
   padding-top: 13px;
   padding-bottom: 13px;
   font-size: 0.75rem;
-  line-height: 27px; }
+  line-height: 27px;
+  position: relative; }
   input[type="text"]::placeholder,
   input[type="email"]::placeholder,
   input[type="url"]::placeholder,
@@ -2671,9 +2711,10 @@ ol {
   color: var(--makemeup_second-color); }
 
 /*------------------------------------*\
-  #Button
+  #Button ( Primary )
 \*------------------------------------*/
 button,
+.wp-block-button__link,
 .btn,
 input[type="button"],
 input[type="reset"],
@@ -2689,6 +2730,7 @@ input[type="submit"] {
   font-size: 14px;
   line-height: 18px; }
   button:hover,
+  .wp-block-button__link:hover,
   .btn:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
@@ -2714,7 +2756,7 @@ input[type="submit"] {
       color: #f5f5f7 !important; }
 
 /*------------------------------------*\
-  #Button Tertiary
+  #Button With Arrow
 \*------------------------------------*/
 .btn--arrow {
   padding-bottom: 6px; }
@@ -2729,12 +2771,12 @@ input[type="submit"] {
   .btn--arrow:hover .dashicons::before {
     color: #f5f5f7; }
 
+/*------------------------------------*\
+  #Button Play
+\*------------------------------------*/
 .btn--play {
   background-color: #f5f5f7;
   color: #7247ca; }
-
-.btn--sm {
-  padding: 8px 14px; }
 
 /*------------------------------------*\
   #Button Error
@@ -2765,9 +2807,14 @@ input[type="submit"] {
       transition: 0.2s all; }
 
 /*------------------------------------*\
-#Player
+  #Button Size
 \*------------------------------------*/
-/* qa- */
+.btn--sm {
+  padding: 8px 14px; }
+
+/*------------------------------------------*\
+  #Wordpress default Player (Default classes)
+\*------------------------------------------*/
 .mejs-play > button {
   min-width: max-content; }
 
@@ -2797,24 +2844,17 @@ input[type="submit"] {
 .mejs-embed,
 .mejs-embed body {
   background-color: rgba(133, 133, 133, 0) !important; }
+  .mejs-container:focus,
+  .mejs-container .mejs-controls:focus,
+  .mejs-embed:focus,
+  .mejs-embed body:focus {
+    border: 1px solid #000; }
 
 .asi-player-icon {
   text-shadow: 1px 1px 1px black; }
 
 .asi-player-icon {
   color: black !important; }
-
-.ai-wrap {
-  background: red; }
-
-.ai-wrap .ai-track-time {
-  color: red; }
-
-.ai-wrap .ai-track-name {
-  color: blue; }
-
-.ai-track-info {
-  color: yellow; }
 
 .mejs-button > button {
   background-color: transparent;

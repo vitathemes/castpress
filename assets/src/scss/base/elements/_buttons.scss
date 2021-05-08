@@ -1,7 +1,8 @@
 /*------------------------------------*\
-  #Button
+  #Button ( Primary )
 \*------------------------------------*/
 button,
+.wp-block-button__link,
 .btn,
 input[type="button"],
 input[type="reset"],
@@ -51,9 +52,9 @@ input[type="submit"] {
 }
 
 /*------------------------------------*\
-  #Button Tertiary
+  #Button With Arrow
 \*------------------------------------*/
-
+// qa-
 .btn--arrow {
   padding-bottom: 6px;
   .dashicons {
@@ -76,19 +77,18 @@ input[type="submit"] {
   }
 }
 
+/*------------------------------------*\
+  #Button Play
+\*------------------------------------*/
+// qa-
 .btn--play {
   background-color: $makemeup_neutral_gray_light_color;
   color: $makemeup_main_accent_color;
 }
 
-.btn--sm {
-  padding: 8px 14px;
-}
-
 /*------------------------------------*\
   #Button Error
 \*------------------------------------*/
-
 .btn--error {
   padding: 11px 22px;
   .c-main__button-arrow {
@@ -129,10 +129,15 @@ input[type="submit"] {
 }
 
 /*------------------------------------*\
-#Player
+  #Button Size
 \*------------------------------------*/
+.btn--sm {
+  padding: 8px 14px;
+}
 
-/* qa- */
+/*------------------------------------------*\
+  #Wordpress default Player (Default classes)
+\*------------------------------------------*/
 .mejs-play > button {
   min-width: max-content;
 }
@@ -171,6 +176,10 @@ input[type="submit"] {
 .mejs-embed,
 .mejs-embed body {
   background-color: rgba(133, 133, 133, 0) !important;
+
+  &:focus {
+    border: 1px solid #000;
+  }
 }
 
 .asi-player-icon {
@@ -178,19 +187,6 @@ input[type="submit"] {
 }
 .asi-player-icon {
   color: black !important;
-}
-
-.ai-wrap {
-  background: red;
-}
-.ai-wrap .ai-track-time {
-  color: red;
-}
-.ai-wrap .ai-track-name {
-  color: blue;
-}
-.ai-track-info {
-  color: yellow;
 }
 
 .mejs-button > button {

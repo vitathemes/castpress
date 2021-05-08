@@ -54,10 +54,11 @@
                         ?>
                 </nav><!-- #site-navigation -->
 
-                <div class="c-header__search">
-                    <a class="c-header__search-icon" aria-label="<?php esc_attr_e('Toggle Search', 'makemeup'); ?>"
-                        aria-controls="primary-menu" aria-expanded="false">
-                    </a>
+                <div class="c-header__search js-header__search">
+                    <button class="c-header__search-icon js-header__search-icon"
+                        aria-label="<?php esc_attr_e('Toggle Search', 'makemeup'); ?>" aria-controls="primary-menu"
+                        aria-expanded="false">
+                    </button>
                     <div class="c-header__search-form">
                         <?php get_search_form(); ?>
                     </div>

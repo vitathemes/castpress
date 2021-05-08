@@ -46,6 +46,8 @@ function makemeup_scripts() {
 	wp_enqueue_style( 'makemeup-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), MAKEMEUP_VERSION );
 	// enqueue js
 	wp_enqueue_script( 'makemeup-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array( ), MAKEMEUP_VERSION, true );
+	// Vendor
+	wp_enqueue_script( 'makemeup-vendor-scripts', get_template_directory_uri() . '/assets/js/vendor.js', array( ), MAKEMEUP_VERSION, true );
 
 	wp_enqueue_script( 'makemeup-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), MAKEMEUP_VERSION, true );
 

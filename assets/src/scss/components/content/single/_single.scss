@@ -44,11 +44,10 @@
 
 .c-single__entry-content {
   margin-top: 64px;
-
   width: 100%;
 
   @include media(tablet) {
-    margin-top: 96px;
+    margin-top: 81px;
   }
 
   h1,
@@ -67,6 +66,10 @@
   figure {
     max-width: 100%;
     width: auto !important;
+  }
+
+  .mejs-container {
+    display: none;
   }
 }
 

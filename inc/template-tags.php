@@ -11,16 +11,16 @@ if ( ! function_exists( 'makemeup_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function makemeup_posted_on( $is_bold = false , $link_class = " " ) {
+	function makemeup_posted_on( $makemeup_is_bold = false , $link_class = " " ) {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		if( $is_bold ) {
-			$is_bold = "font--semibold";
+		if( $makemeup_is_bold ) {
+			$makemeup_is_bold = "font--semibold";
 		} else {
-			$is_bold = "font--regular";
+			$makemeup_is_bold = "font--regular";
 		}
 
 		$time_string = sprintf(
@@ -37,7 +37,7 @@ if ( ! function_exists( 'makemeup_posted_on' ) ) :
 			'<a class="a--tertiary" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="c-post__date h5--secondary h5-lh--sm '. esc_html($is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="c-post__date h5--secondary h5-lh--sm '. esc_html($makemeup_is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -251,8 +251,8 @@ endif;
 
 if (! function_exists('makemeup_get_tags')) :
 	/**
-	 * Return Post tags
-	 */
+	  * Return Post tags
+	  */
 	function makemeup_get_tags( $makemeup_className = 'c-post__tag' ) {
 		$post_tags = get_the_tags();
 		if ($post_tags) {
@@ -266,16 +266,35 @@ endif;
 
 if (! function_exists('makemeup_get_category')) :
 	/**
-	 * Return Post category
-	 */
-	function makemeup_get_category( $is_bold = false ) {
-		($is_bold) ? $is_bold = 'h5' : $is_bold = 'h5--secondary';
+	  * Return Post category
+	  */
+	function makemeup_get_category( $makemeup_is_bold = false , $makemeup_have_seprator = false ) {
+		($makemeup_is_bold) ? $makemeup_is_bold = 'h5' : $makemeup_is_bold = 'h5--secondary';
+		($makemeup_have_seprator) ? $makemeup_have_seprator = "<span class='seprator h5 a--secondary'> | </span>" : $makemeup_have_seprator = "";
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'makemeup' ) );
 		if ( $categories_list ) {
-			/* translators: 1: $categories_list list of categories. Rendered from category section that client set in categories. $is_bold check if should render text bold or not ( Will add class) */
-			echo '<span class="c-episode__category '. esc_attr( $is_bold ) .' h5-lh--sm">'. $categories_list .'</span>';// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			/* translators: 1: $categories_list list of categories. Rendered from category section that client set in categories. $makemeup_is_bold check if should render text bold or not ( Will add class) */
+			echo '<span class="c-episode__category '. esc_attr( $makemeup_is_bold ) .' h5-lh--sm">'. $categories_list .'</span>' . $makemeup_have_seprator;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
+	}
+endif;
+
+
+if (! function_exists('makemeup_get_audio_podcast')) :
+	/**
+	 * Return Post category
+	 */
+	function makemeup_get_audio_podcast($post) {
+		
+		$podcast_audio = get_post_meta( $post->ID, 'podcast_audio_file', true ); 
+		$makemeup_podcast_audio_shortcode = '[audio mp3="'.$podcast_audio.'" ][/audio]';
+		$makemeup_podcast_audio_shortcode = strval( $makemeup_podcast_audio_shortcode);
+
+		echo "<div class='c-episode__player'>";
+		echo do_shortcode($makemeup_podcast_audio_shortcode);
+		echo "</div>";
+
 	}
 endif;
 
@@ -383,9 +402,197 @@ if ( ! function_exists( 'makemeup_share_links' ) ) {
 
 
 
+if (! function_exists('makemeup_get_podcast_player_link')) :
+	/**
+	* get social media 
+	*/
+	function makemeup_get_podcast_player_link() {
+
+
+		echo '<div class="c-episodes__share"> <span class="c-episode__social-share__title font--semibold">Listen on</span>';
+
+		// Spotify
+		if ( get_theme_mod('p_spotify_link') != null) { 
+		
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_spotify_link')) .'">
+			<span class="iconify c-episodes__social-share__icons" data-icon="bx-bxl-spotify" data-inline="false"></span>
+			</a>';
+			
+		}
+
+		// Soundcloud
+		if ( get_theme_mod('p_soundcloud_link') != null) { 
+	
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_soundcloud_link')) .'">
+				<span class="iconify c-episodes__social-share__icons c-episodes__social-share__icons--big" data-icon="ion-logo-soundcloud" data-inline="false"></span>
+			</a>';
+			
+		}
+		
+		// Podcasts (Apple Podcasts)
+		if ( get_theme_mod('p_apple_link') != null) { 
+		
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_apple_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="ant-design:apple-filled" data-inline="false"></span>
+			</a>';
+			
+		}
+
+		// Youtube
+		if ( get_theme_mod('p_youtube_link') != null) { 
+	
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_youtube_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="ant-design:youtube-filled" data-inline="false"></span>
+			</a>';
+			
+		}
+		
+		
+		// Stitcher
+		if ( get_theme_mod('p_stitcher_link') != null) { 
+		
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_stitcher_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:stitcher" data-inline="false"></span>
+			</a>';
+			
+		}
+
+		// Deezer
+		if ( get_theme_mod('p_deezer_link') != null) { 
+	
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_deezer_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="fa-brands:deezer" data-inline="false"></span>
+			</a>';
+			
+		}
+		
+		// Google podcasts
+		if ( get_theme_mod('p_google_podcasts_link') != null) { 
+		
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_google_podcasts_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="cib-google-podcasts" data-inline="false"></span>
+			</a>';
+			
+		}
+
+		// I heart radio
+		if ( get_theme_mod('p_iheartradio_link') != null) { 
+	
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_iheartradio_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:iheartradio" data-inline="false"></span>
+			</a>';
+			
+		}
+		
+		// Overcast
+		if ( get_theme_mod('p_overcast_link') != null) { 
+		
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_overcast_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="cib-overcast" data-inline="false"></span>
+			</a>';
+			
+		}
+
+		// Pandora
+		if ( get_theme_mod('p_pandora_link') != null) { 
+	
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_pandora_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="cib-pandora" data-inline="false"></span>
+			</a>';
+			
+		}
+		
+		// Pocket casts
+		if ( get_theme_mod('p_pocketcasts_link') != null) { 
+		
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_pocketcasts_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:pocketcasts" data-inline="false"></span>
+			</a>';
+			
+		}
+
+		// Radio public
+		if ( get_theme_mod('p_radiopublic_link') != null) { 
+	
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_radiopublic_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="cib:radiopublic" data-inline="false"></span>
+			</a>';
+			
+		}
+
+		
+		// Rss Feed
+		if ( get_theme_mod('p_rss_link') != null) { 
+	
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_rss_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="ic-baseline-rss-feed" data-inline="false"></span>
+			</a>';
+			
+		}
+	
+		// Spreaker
+		if ( get_theme_mod('p_spreaker_link') != null) { 
+
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_spreaker_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="cib-spreaker" data-inline="false"></span>
+			</a>';
+			
+		}
+
+		// Audible
+		if ( get_theme_mod('p_castro_link') != null) { 
+
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_castro_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="cib-castro" data-inline="false"></span>
+			</a>';
+			
+		}
+
+		// Castbox
+		if ( get_theme_mod('p_castbox_link') != null) { 
+
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_castbox_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:castbox" data-inline="false"></span>
+			</a>';
+			
+		}
+
+		// audible
+		if ( get_theme_mod('p_audible_link') != null) { 
+
+			echo '
+			<a href="'. esc_url(get_theme_mod('p_audible_link')) .'">
+				<span class="iconify c-episodes__social-share__icons" data-icon="la-audible" data-inline="false"></span>
+			</a>';
+			
+		}
+
+		echo '</div>';	
+
+	}
+
+endif;
+
+
 if ( ! function_exists( 'makemeup_render_newsletter' ) ) {
 	/**
-	 * Display Share icons 
+	 * Display Share icons qa-
 	 */
 	function makemeup_render_newsletter() {
 	

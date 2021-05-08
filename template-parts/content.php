@@ -11,9 +11,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-post'); ?>>
 
     <div class="c-post__thumbnail">
+
         <a href=<?php esc_url(the_permalink()) ?> rel="bookmark">
             <?php makemeup_get_thumbnail(); ?>
         </a>
+
     </div><!-- .c-post__thumbnail -->
 
     <header class="c-post__header">

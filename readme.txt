@@ -86,4 +86,4 @@ Source: http://tgmpluginactivation.com/
 
 Image for theme screenshot, Copyright VitaThemes
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://vitathemes.com/theme/cavatina/
+Source: https://vitathemes.com/theme/makemeup/

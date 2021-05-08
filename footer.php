@@ -22,27 +22,33 @@
 
 
             <?php endif; ?>
+
             <div class="c-footer__site-info">
                 <span class="c-footer__context h5--secondary h5-lh--sm font--regular">
+
                     <?php
-            /* translators: %s: CMS name, i.e. WordPress. */
-            printf( esc_html__( 'PodcastTheme by', 'makemeup' ), 'makemeup' );
-            ?>
+                        /* translators: %s: Theme creator name by */
+                        printf( esc_html__( 'PodcastTheme by', 'makemeup' ), 'makemeup' );
+                    ?>
+
                 </span>
+
                 <a class="c-footer__link h5--secondary h5-lh--sm font--regular a--tertiary"
                     href="<?php echo esc_url( __( 'https://vitathemes.com/', 'makemeup' ) ); ?>">
                     <?php 
-            /* translators: %s: CMS name, i.e. WordPress. */
-                    printf( esc_html__( 'VitaThemes', 'makemeup' ) );
-            ?>
+                        /* translators: %s: Vita themes is the creator of the theme */
+                        printf( esc_html__( 'VitaThemes', 'makemeup' ) );
+                    ?>
                 </a>
+
                 <span class="c-footer__context h5--secondary h5-lh--sm sep a--tertiary"> | </span>
+
                 <a class="c-footer__link h5--secondary h5-lh--sm font--regular a--tertiary"
                     href="<?php echo esc_url( get_privacy_policy_url() ); ?>">
                     <?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Privacy Policy', 'makemeup' ), 'makemeup');
-				?>
+                        /* translators: Privacy Policy Link */
+                        printf( esc_html__( 'Privacy Policy', 'makemeup' ), 'makemeup');
+                    ?>
                 </a>
             </div><!-- .site-info -->
             <div class="c-social-share c-social-share--footer">

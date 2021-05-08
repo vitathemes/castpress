@@ -81,11 +81,22 @@
     &:last-child {
       // Edit position of last sub menu items
       .sub-menu {
+        background-color: lightcyan !important;
         .sub-menu {
-          left: 50px;
-          top: 20px;
-          background-color: $color_background_body;
           z-index: 5;
+          background-color: lightcoral !important;
+          .sub-menu {
+            background-color: lightblue !important;
+            margin-left: 0px;
+            display: block !important;
+            position: absolute;
+            top: 100%;
+            left: 0% !important;
+            transform: translate(0%, 0%);
+            .sub-menu {
+              margin-left: 0px;
+            }
+          }
         }
       }
     }
@@ -153,9 +164,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     text-align: left;
-    margin-left: 20px;
     top: 16px;
-    left: -20px;
+    left: 0%;
     background-color: $color_background_body;
     border: 1px solid $makemeup_neutral_gray_light_second_color;
     padding: 0px;
@@ -227,12 +237,39 @@
   }
 
   .sub-menu {
-    top: -25px;
-    left: 158px;
+    top: 20px;
+    left: 100% !important;
+    transform: translate(0%, 0%);
+    margin-top: 0px;
+    margin-left: 0px;
     display: none !important;
+
+    background-color: lightcoral !important;
 
     @include media(tablet) {
       display: block !important;
+    }
+
+    .sub-menu {
+      background-color: darkgoldenrod !important;
+
+      .sub-menu {
+        z-index: 5;
+        background-color: lightgreen !important;
+        top: 100% !important;
+        left: 0%;
+        transform: translate(0%, 0%);
+        .sub-menu {
+          display: block !important;
+          position: absolute;
+          background-color: lightskyblue !important;
+          margin-left: 0px;
+
+          .sub-menu {
+            margin-left: 0px;
+          }
+        }
+      }
     }
   }
 }

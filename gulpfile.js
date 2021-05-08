@@ -22,10 +22,7 @@ const sassTask = (cb) => {
 
 const cssConcatTask = (cb) => {
   return gulp
-    .src([
-      "./node_modules/simplebar/dist/simplebar.css",
-      "assets/src/css/*.css",
-    ])
+    .src(["./node_modules/simplebar/dist/simplebar.css", "assets/src/css/*.css"])
     .pipe(concat("main.css"))
     .pipe(gulp.dest("assets/css"))
     .pipe(browserSync.stream());
@@ -40,21 +37,24 @@ const cleanCssTask = (cb) => {
   cb();
 };
 
-const concatJs = (cb) => {
+const concatVendorJs = (cb) => {
   return gulp
-    .src(["./node_modules/simplebar/dist/simplebar.js", "./assets/src/js/*.js"])
-    .pipe(concat("main.js"))
+    .src([
+      "./assets/src/js/iconify.js",
+      "./node_modules/simplebar/dist/simplebar.js",
+    ])
+    .pipe(concat("vendor.js"))
     .pipe(gulp.dest("assets/js"));
   cb();
 };
 
-// const uglifyTask = (cb) => {
-//   return gulp
-//     .src(["assets/js/*.js", "!assets/js/navigation.js"])
-//     .pipe(uglify())
-//     .pipe(gulp.dest("assets/js"));
-//   cb();
-// };
+const concatJs = (cb) => {
+  return gulp
+    .src(["./assets/src/js/*.js"])
+    .pipe(concat("main.js"))
+    .pipe(gulp.dest("assets/js"));
+  cb();
+};
 
 exports.default = () =>
   gulp
@@ -71,13 +71,13 @@ const browserSyncTask = (cb) => {
 
 const watchTask = () => {
   gulp.watch("./assets/src/scss/**/*.scss", series(sassTask, cssConcatTask));
-  gulp.watch("./assets/src/js/*.js", series(concatJs));
+  gulp.watch("./assets/src/js/*.js", series(concatJs, concatVendorJs));
   gulp.watch("./**/*.php", browserSync.reload);
 };
 
 exports.default = parallel(
   series(sassTask, cssConcatTask),
-  series(concatJs),
+  series(concatJs, concatVendorJs),
   series(browserSyncTask, watchTask)
 );
 

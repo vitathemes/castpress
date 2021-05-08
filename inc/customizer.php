@@ -116,6 +116,14 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 6,
 	) );
 	
+
+	/* Podcast Player Link */
+	Kirki::add_section( 'podcast_player_link', array(
+		'title'    => esc_html__( 'Podcast PLayer Links', 'makemeup' ),
+		'panel'    => '',
+		'priority' => 7,
+	) );
+
     /*
     *	Kirki -> fields
 	*/
@@ -481,4 +489,159 @@ if( function_exists( 'kirki' ) ) {
 		'priority'    => 10,
 	] );
 
+	
+	// -- Podcast Player Links --
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_spotify_link',
+		'label'    => __( 'Spotify', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 12,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_soundcloud_link',
+		'label'    => __( 'Soundcloud', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 13,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_apple_link',
+		'label'    => __( 'Podcasts (Apple Podcasts)', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 14,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_youtube_link',
+		'label'    => __( 'Youtube', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 15,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_stitcher_link',
+		'label'    => __( 'Stitcher', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 16,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_deezer_link',
+		'label'    => __( 'Deezer', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 17,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_google_podcasts_link',
+		'label'    => __( 'Google podcasts', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 18,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_iheartradio_link',
+		'label'    => __( 'I heart radio', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 19,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_overcast_link',
+		'label'    => __( 'Overcast', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 20,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_pandora_link',
+		'label'    => __( 'Pandora', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 21,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_pocketcasts_link',
+		'label'    => __( 'Pocket casts', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 22,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_radiopublic_link',
+		'label'    => __( 'Radio public', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 23,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_rss_link',
+		'label'    => __( 'Rss Feed', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 24,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_spreaker_link',
+		'label'    => __( 'Spreaker', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 24,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_castro_link',
+		'label'    => __( 'Castro', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 24,
+	] );
+
+	
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_audible_link',
+		'label'    => __( 'Audible', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 24,
+	] );
+
+	Kirki::add_field( 'makemeup', [
+		'type'     => 'link',
+		'settings' => 'p_castbox_link',
+		'label'    => __( 'Castbox', 'makemeup' ),
+		'section'  => 'podcast_player_link',
+		'default'  => '',
+		'priority' => 24,
+	] );
 }

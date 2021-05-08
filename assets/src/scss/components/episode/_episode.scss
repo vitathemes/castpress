@@ -244,14 +244,18 @@
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 12px;
+
+  a {
+    transition: 0.2s all;
+    color: $makemeup_primary_color;
+  }
 }
 
 .c-episodes__social-share__icons {
   display: inline-block;
-  width: 24px;
-  height: 24px;
-  margin: 0px 15px;
+  margin: 0px 15px 32px 15px;
   vertical-align: middle;
+  font-size: 32px;
 
   &:hover {
     color: $makemeup_main_accent_color;
@@ -260,6 +264,10 @@
       fill: $makemeup_main_accent_color;
     }
   }
+}
+
+.c-episodes__social-share__icons--big {
+  font-size: 45px;
 }
 
 .icon--md {
