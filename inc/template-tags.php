@@ -442,10 +442,8 @@ if (! function_exists('makemeup_get_podcast_player_link')) :
 		$makemeup_publisher_flag = 0;		
 		foreach($makemeup_all_publishers as $makemeup_publisher){
 			if(empty($makemeup_publisher)){
-				echo "<script>console.log('empty')</script>";
 			}
 			else{
-				echo "<script>console.log('no empty')</script>";
 				$makemeup_publisher_flag = 1;
 			}
 		}

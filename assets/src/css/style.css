@@ -1598,7 +1598,7 @@ img {
 
 .c-episode__title {
   padding-bottom: 12px;
-  margin-top: 14px;
+  margin-top: 0px;
   display: inline-block; }
   .c-episode__title a {
     color: var(--makemeup_primary-color); }
@@ -1904,7 +1904,7 @@ img {
   width: 100%; }
   @media only screen and (min-width: 980px) {
     .c-single__entry-content {
-      margin-top: 81px; } }
+      margin-top: 55px; } }
   .c-single__entry-content h1,
   .c-single__entry-content h2,
   .c-single__entry-content h3,
@@ -2307,8 +2307,10 @@ h2.c-single__transcript__title {
   border-radius: 3px !important;
   position: absolute;
   right: 3px;
-  top: 3px;
-  cursor: pointer; }
+  top: 50%;
+  cursor: pointer;
+  left: 98%;
+  transform: translate(-100%, -40%); }
   .c-footer__newsletter-submit::before {
     content: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3536 4.35355C10.5488 4.15829 10.5488 3.84171 10.3536 3.64645L7.17157 0.464466C6.97631 0.269204 6.65973 0.269204 6.46447 0.464466C6.2692 0.659728 6.2692 0.976311 6.46447 1.17157L9.29289 4L6.46447 6.82843C6.2692 7.02369 6.2692 7.34027 6.46447 7.53553C6.65973 7.7308 6.97631 7.7308 7.17157 7.53553L10.3536 4.35355ZM0 4.5H10V3.5H0V4.5Z' fill='white'/%3E%3C/svg%3E%0A");
     cursor: pointer;
@@ -2781,7 +2783,7 @@ input[type="submit"] {
   height: max-content;
   padding: 0px;
   height: 40px;
-  width: 5%;
+  width: 10%;
   display: flex;
   align-items: center;
   justify-content: center; }

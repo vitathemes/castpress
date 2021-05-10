@@ -114,7 +114,7 @@ function makemeup_theme_settings() {
 function makemeup_home_components(){
 
 	// Get the parts.
-	$template_parts = get_theme_mod( 'home_component' , array( 'components/latest-episode/latest-episode-player', 'components/episodes', 'components/latest-posts' ));
+	$template_parts = get_theme_mod( 'home_component' , array( 'components/featured-episode/featured-episode', 'components/episodes', 'components/latest-posts' ));
 	// Loop parts.
 	foreach ( $template_parts as $template_part ) {
 		get_template_part( 'template-parts/' . $template_part );

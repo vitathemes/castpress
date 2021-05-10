@@ -45,9 +45,7 @@
 
         <?php 
             if ( 'episodes' == get_post_type() ){
-                
                 makemeup_get_podcast_player_link();
-                
             }
 		?>
 

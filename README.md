@@ -1,6 +1,6 @@
-# Makemeup - [Demo](https://demo.vitathemes.com/makemeup/)
+# Castpress - [Demo](https://demo.vitathemes.com/castpress/)
 
-Makemeup is a minimal & mobile-first theme. The best choice for people who want to introduce their projects.
+Castpress is a minimal & mobile-first theme. The best choice for people who want to introduce their projects.
 
 ![Home Page](screenshot.png)
 
@@ -20,7 +20,7 @@ Makemeup is a minimal & mobile-first theme. The best choice for people who want 
 - Support 1 level menu
 - …and much more
 
-See a working example at [demo.vitathemes.com/makemeup](https://demo.vitathemes.com/makemeup/).
+See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes.com/castpress/).
 
 ## Theme installation
 
@@ -31,7 +31,7 @@ See a working example at [demo.vitathemes.com/makemeup](https://demo.vitathemes.
 ## Theme structure
 
 ```shell
-themes/makemeup/                 # → Root of your theme
+themes/castpress/                 # → Root of your theme
 │── assets/                      # → Theme internal assets
 │   ├── css/                     # → Compressed css file
 │   ├── fonts/                   # → Theme default fonts ( Customizable from kirki )
@@ -62,14 +62,10 @@ Edit `functions.php` to enable or disable theme features, setup navigation menus
 - Run `npm install` from the theme directory to install dependencies
 - Run `gulp` from the root of theme directory and it's starting to watch any changes in scss files from the `sass` folder
 
-## Contributing
-
-Contributions are welcome from everyone. We have [contributing guidelines](CONTRIBUTING.md) to help you get started.
-
 ## Changelog
 
 See the [Changelog](CHANGELOG.md)
 
 ## License
 
-Makemeup is licensed under [GNU GPL](LICENSE).
+Castpress is licensed under [GNU GPL](LICENSE).

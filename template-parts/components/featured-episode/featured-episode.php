@@ -13,9 +13,6 @@
         </div>
 
         <div class="c-episode__context">
-            <div class="c-episode__category">
-                <h5 class="h5-lh--sm">Education</h5>
-            </div>
 
             <div class="c-episode__title">
                 <h2>Makemeup Podcast Theme; launch an audio podcast website</h2>
