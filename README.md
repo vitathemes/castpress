@@ -31,7 +31,7 @@ See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes
 ## Theme structure
 
 ```shell
-themes/castpress/                 # → Root of your theme
+themes/castpress/                # → Root of your theme
 │── assets/                      # → Theme internal assets
 │   ├── css/                     # → Compressed css file
 │   ├── fonts/                   # → Theme default fonts ( Customizable from kirki )
@@ -42,7 +42,7 @@ themes/castpress/                 # → Root of your theme
 ├── inc/                         # → Theme functions
 │   ├── tgmpa/                   # → Tgmpa plugin recommendation
 │   ├── customizer.php           # → All codes related to WordPress Customizer (We use Kirki Framework)
-│   ├── custom-header.php           # → All codes related to WordPress Customizer (We use Kirki Framework)
+│   ├── custom-header.php        # → All codes related to WordPress Customizer (We use Kirki Framework)
 │   ├── template-functions.php   # → Custom template tweaks
 │   └── template-tags.php        # → Custom template tags
 │   └── setup.php                # → Theme Setup
@@ -60,6 +60,7 @@ Edit `functions.php` to enable or disable theme features, setup navigation menus
 ## Theme development
 
 - Run `npm install` from the theme directory to install dependencies
+- Change browserSyncTask from `localhost/` to whatever address that your project folder is
 - Run `gulp` from the root of theme directory and it's starting to watch any changes in scss files from the `sass` folder
 
 ## Changelog

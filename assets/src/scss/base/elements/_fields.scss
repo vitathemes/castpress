@@ -16,10 +16,10 @@ input[type="color"],
 textarea {
   width: 100%;
   margin-top: 8px;
-  color: $makemeup_neutral_dark_gray_color;
+  color: $castpress_neutral_dark_gray_color;
   border: none;
   border-radius: $global-radius;
-  background-color: $makemeup_neutral_gray_light_color;
+  background-color: $castpress_neutral_gray_light_color;
 
   padding-right: 8px;
   padding-left: 14px;
@@ -32,7 +32,7 @@ textarea {
   position: relative;
 
   &::placeholder {
-    color: $makemeup_neutral_gray_color;
+    color: $castpress_neutral_gray_color;
     opacity: 1;
     font-size: 12px;
     line-height: 27px !important;
@@ -40,8 +40,8 @@ textarea {
   }
 
   &:focus {
-    color: $makemeup_neutral_gray_color;
-    outline: $makemeup_neutral_gray_color solid 2px;
+    color: $castpress_neutral_gray_color;
+    outline: $castpress_neutral_gray_color solid 2px;
   }
 }
 

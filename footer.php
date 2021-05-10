@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package makemeup
+ * @package castpress
  */
 
 ?>
@@ -18,7 +18,7 @@
 
             <?php dynamic_sidebar( 'custom-footer-widget' ); ?>
 
-            <?php //makemeup_render_newsletter(); //qa- ?>
+            <?php //castpress_render_newsletter(); //qa- ?>
 
             <?php endif; ?>
 
@@ -30,16 +30,16 @@
 
                 <?php
                         /* translators: %s: Theme creator name by */
-                        printf( esc_html__( 'PodcastTheme by', 'makemeup' ), 'makemeup' );
+                        printf( esc_html__( 'PodcastTheme by', 'castpress' ), 'castpress' );
                     ?>
 
             </span>
 
             <a class="c-footer__link h5--secondary h5-lh--sm font--regular u-link--tertiary"
-                href="<?php echo esc_url( __( 'https://vitathemes.com/', 'makemeup' ) ); ?>">
+                href="<?php echo esc_url( __( 'https://vitathemes.com/', 'castpress' ) ); ?>">
                 <?php 
                         /* translators: %s: Vita themes is the creator of the theme */
-                        printf( esc_html__( 'VitaThemes', 'makemeup' ) );
+                        printf( esc_html__( 'VitaThemes', 'castpress' ) );
                     ?>
             </a>
 
@@ -49,12 +49,12 @@
                 href="<?php echo esc_url( get_privacy_policy_url() ); ?>">
                 <?php
                         /* translators: Privacy Policy Link */
-                        printf( esc_html__( 'Privacy Policy', 'makemeup' ), 'makemeup');
+                        printf( esc_html__( 'Privacy Policy', 'castpress' ), 'castpress');
                     ?>
             </a>
         </div><!-- .site-info -->
         <div class="c-social-share c-social-share--footer">
-            <?php makemeup_socials_links(); ?>
+            <?php castpress_socials_links(); ?>
         </div>
 
 </footer><!-- #colophon -->

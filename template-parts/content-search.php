@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package makemeup
+ * @package castpress
  */
 
 ?>
@@ -15,20 +15,20 @@
         <?php if ( 'post' === get_post_type() ) : ?>
         <div class="entry-meta">
             <?php
-				makemeup_posted_on();
-				makemeup_posted_by();
+				castpress_posted_on();
+				castpress_posted_by();
 			?>
         </div><!-- .entry-meta -->
         <?php endif; ?>
     </header><!-- .entry-header -->
 
-    <?php makemeup_post_thumbnail(); ?>
+    <?php castpress_post_thumbnail(); ?>
 
     <div class="entry-summary">
         <?php the_excerpt(); ?>
     </div><!-- .entry-summary -->
 
     <footer class="entry-footer">
-        <?php makemeup_entry_footer(); ?>
+        <?php castpress_entry_footer(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

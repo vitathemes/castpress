@@ -1,8 +1,8 @@
 <?php
 /**
- * makemeup Theme Customizer
+ * castpress Theme Customizer
  *
- * @package makemeup
+ * @package castpress
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function makemeup_customize_register( $wp_customize ) {
+function castpress_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -20,26 +20,26 @@ function makemeup_customize_register( $wp_customize ) {
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'makemeup_customize_partial_blogname',
+				'render_callback' => 'castpress_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'makemeup_customize_partial_blogdescription',
+				'render_callback' => 'castpress_customize_partial_blogdescription',
 			)
 		);
 	}
 }
-add_action( 'customize_register', 'makemeup_customize_register' );
+add_action( 'customize_register', 'castpress_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function makemeup_customize_partial_blogname() {
+function castpress_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -48,17 +48,17 @@ function makemeup_customize_partial_blogname() {
  *
  * @return void
  */
-function makemeup_customize_partial_blogdescription() {
+function castpress_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function makemeup_customize_preview_js() {
-	wp_enqueue_script( 'makemeup-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), MAKEMEUP_VERSION, true );
+function castpress_customize_preview_js() {
+	wp_enqueue_script( 'castpress-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), CASTPRESS_VERSION, true );
 }
-add_action( 'customize_preview_init', 'makemeup_customize_preview_js' );
+add_action( 'customize_preview_init', 'castpress_customize_preview_js' );
 
 
 
@@ -67,7 +67,7 @@ if( function_exists( 'kirki' ) ) {
 	/*
 	 *	Kirki - Config
 	 */
-	Kirki::add_config( 'makemeup_theme', array(
+	Kirki::add_config( 'castpress_theme', array(
 		'capability'    => 'edit_theme_options',
 		'option_type'   => 'theme_mod',
 	) );
@@ -79,7 +79,7 @@ if( function_exists( 'kirki' ) ) {
 	// Footer
 	Kirki::add_panel( 'footer', array(
 		'priority' => 180,
-		'title'    => esc_html__( 'Footer', 'makemeup' ),
+		'title'    => esc_html__( 'Footer', 'castpress' ),
 	) );
 
 	/*
@@ -88,30 +88,30 @@ if( function_exists( 'kirki' ) ) {
 
 	/* typography settings  */
 	Kirki::add_section( 'typography_headings', array(
-		'title'          => esc_html__( 'Typography Setting', 'makemeup' ),
-		'description'    => esc_html__( 'Change Typography color and customize them.', 'makemeup' ),
+		'title'          => esc_html__( 'Typography Setting', 'castpress' ),
+		'description'    => esc_html__( 'Change Typography color and customize them.', 'castpress' ),
 		'panel'          => '',
 		'priority'       => 160,
 	) );
 
 	/* Load more selection */
 	Kirki::add_section( 'loadmore_pagination', array(
-		'title'          => esc_html__( 'Pagination', 'makemeup' ),
-		'description'    => esc_html__( 'You can add load more button to page that you want.', 'makemeup' ),
+		'title'          => esc_html__( 'Pagination', 'castpress' ),
+		'description'    => esc_html__( 'You can add load more button to page that you want.', 'castpress' ),
 		'panel'          => '',
 		'priority'       => 160,
 	) );
 	
 	/* Social medias */
 	Kirki::add_section( 'socials', array(
-		'title'    => esc_html__( 'Socials', 'makemeup' ),
+		'title'    => esc_html__( 'Socials', 'castpress' ),
 		'panel'    => 'footer',
 		'priority' => 6,
 	) );
 
 	/* Home Components */
 	Kirki::add_section( 'home_components', array(
-		'title'    => esc_html__( 'Home Components', 'makemeup' ),
+		'title'    => esc_html__( 'Home Components', 'castpress' ),
 		'panel'    => '',
 		'priority' => 6,
 	) );
@@ -119,7 +119,7 @@ if( function_exists( 'kirki' ) ) {
 
 	/* Podcast Player Link */
 	Kirki::add_section( 'podcast_player_link', array(
-		'title'    => esc_html__( 'Podcast PLayer Links', 'makemeup' ),
+		'title'    => esc_html__( 'Podcast PLayer Links', 'castpress' ),
 		'panel'    => '',
 		'priority' => 7,
 	) );
@@ -128,10 +128,10 @@ if( function_exists( 'kirki' ) ) {
     *	Kirki -> fields
 	*/
 	/* Typography Settings */
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'color',
 		'settings' => 'typography_primary_color',
-		'label'    => __( 'Primary Color', 'makemeup' ),
+		'label'    => __( 'Primary Color', 'castpress' ),
 		'section'  => 'typography_headings',
 		'default'  => '#222222',
 		'priority' => 9,
@@ -139,40 +139,40 @@ if( function_exists( 'kirki' ) ) {
 	] );
 
 	
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'color',
 		'settings' => 'typography_secondary_color',
-		'label'    => __( 'Secondary Color', 'makemeup' ),
+		'label'    => __( 'Secondary Color', 'castpress' ),
 		'section'  => 'typography_headings',
 		'default'  => '#555555',
 		'priority' => 9,
 		
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'color',
 		'settings' => 'typography_third_color',
-		'label'    => __( 'Tertiary Color', 'makemeup' ),
+		'label'    => __( 'Tertiary Color', 'castpress' ),
 		'section'  => 'typography_headings',
 		'default'  => '#979797',
 		'priority' => 10,
 		
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'color',
 		'settings' => 'typography_fourth_color',
-		'label'    => __( 'Quaternary Color', 'makemeup' ),
+		'label'    => __( 'Quaternary Color', 'castpress' ),
 		'section'  => 'typography_headings',
 		'default'  => '#7247ca',
 		'priority' => 11,
 		
 	] );
 	
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'color',
 		'settings' => 'typography_headings_color',
-		'label'    => __( 'Typography Headings Color', 'makemeup' ),
+		'label'    => __( 'Typography Headings Color', 'castpress' ),
 		'section'  => 'typography_headings',
 		'default'  => '#222222',
 		'priority' => 11.5,
@@ -185,10 +185,10 @@ if( function_exists( 'kirki' ) ) {
 	] );
 
 	// Headings typography h1
-	Kirki::add_field( 'makemeup_theme', [
+	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_h1',
-		'label'       => esc_html__( 'H1', 'makemeup' ),
+		'label'       => esc_html__( 'H1', 'castpress' ),
 		'section'     => 'typography_headings',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
@@ -208,10 +208,10 @@ if( function_exists( 'kirki' ) ) {
 
 	
 	// Headings typography h2
-	Kirki::add_field( 'makemeup_theme', [
+	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_h2',
-		'label'       => esc_html__( 'H2', 'makemeup' ),
+		'label'       => esc_html__( 'H2', 'castpress' ),
 		'section'     => 'typography_headings',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
@@ -231,10 +231,10 @@ if( function_exists( 'kirki' ) ) {
 
 	
 	// Headings typography h3
-	Kirki::add_field( 'makemeup_theme', [
+	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_h3',
-		'label'       => esc_html__( 'H3', 'makemeup' ),
+		'label'       => esc_html__( 'H3', 'castpress' ),
 		'section'     => 'typography_headings',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
@@ -253,10 +253,10 @@ if( function_exists( 'kirki' ) ) {
 
 
 	// Headings typography h4
-	Kirki::add_field( 'makemeup_theme', [
+	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_h4',
-		'label'       => esc_html__( 'H4', 'makemeup' ),
+		'label'       => esc_html__( 'H4', 'castpress' ),
 		'section'     => 'typography_headings',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
@@ -276,10 +276,10 @@ if( function_exists( 'kirki' ) ) {
 
 
 	// Headings typography h5
-	Kirki::add_field( 'makemeup_theme', [
+	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_h5',
-		'label'       => esc_html__( 'H5', 'makemeup' ),
+		'label'       => esc_html__( 'H5', 'castpress' ),
 		'section'     => 'typography_headings',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
@@ -299,10 +299,10 @@ if( function_exists( 'kirki' ) ) {
 
 	
 	// Headings typography h6
-	Kirki::add_field( 'makemeup_theme', [
+	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_h6',
-		'label'       => esc_html__( 'H6', 'makemeup' ),
+		'label'       => esc_html__( 'H6', 'castpress' ),
 		'section'     => 'typography_headings',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
@@ -322,10 +322,10 @@ if( function_exists( 'kirki' ) ) {
 
 	
 	// Paragraph typography
-	Kirki::add_field( 'makemeup_theme', [
+	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_paragraph',
-		'label'       => esc_html__( 'Paragraph', 'makemeup' ),
+		'label'       => esc_html__( 'Paragraph', 'castpress' ),
 		'section'     => 'typography_headings',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
@@ -346,10 +346,10 @@ if( function_exists( 'kirki' ) ) {
 
 	
 	// Span typography
-	Kirki::add_field( 'makemeup_theme', [
+	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
 		'settings'    => 'span_paragraph',
-		'label'       => esc_html__( 'Span Color', 'makemeup' ),
+		'label'       => esc_html__( 'Span Color', 'castpress' ),
 		'section'     => 'typography_headings',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
@@ -370,10 +370,10 @@ if( function_exists( 'kirki' ) ) {
 	
 
 	// A Primary color
-	Kirki::add_field( 'makemeup_theme', [
+	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_link',
-		'label'       => esc_html__( 'Link Primary', 'makemeup' ),
+		'label'       => esc_html__( 'Link Primary', 'castpress' ),
 		'section'     => 'typography_headings',
 		'default'     => [
 			'color'		=> '#7247ca',
@@ -390,10 +390,10 @@ if( function_exists( 'kirki' ) ) {
 	
 	
 	// A Secondary color
-	Kirki::add_field( 'makemeup_theme', [
+	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_link_secondary',
-		'label'       => esc_html__( 'Link Secondary', 'makemeup' ),
+		'label'       => esc_html__( 'Link Secondary', 'castpress' ),
 		'section'     => 'typography_headings',
 		'default'     => [
 			'color'		=> '#222222',
@@ -410,10 +410,10 @@ if( function_exists( 'kirki' ) ) {
 
 	
 	// A Tertiary color
-	Kirki::add_field( 'makemeup_theme', [
+	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_link_tertiary',
-		'label'       => esc_html__( 'Link Tertiary', 'makemeup' ),
+		'label'       => esc_html__( 'Link Tertiary', 'castpress' ),
 		'section'     => 'typography_headings',
 		'default'     => [
 			'color'		=> '#979797',
@@ -430,51 +430,51 @@ if( function_exists( 'kirki' ) ) {
 
 
 	// -- Socials --
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'facebook',
-		'label'    => esc_html__( 'Facebook', 'makemeup' ),
+		'label'    => esc_html__( 'Facebook', 'castpress' ),
 		'section'  => 'socials',
 		'priority' => 10,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'twitter',
-		'label'    => esc_html__( 'Twitter', 'makemeup' ),
+		'label'    => esc_html__( 'Twitter', 'castpress' ),
 		'section'  => 'socials',
 		'priority' => 10,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'instagram',
-		'label'    => esc_html__( 'Instagram', 'makemeup' ),
+		'label'    => esc_html__( 'Instagram', 'castpress' ),
 		'section'  => 'socials',
 		'priority' => 10,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'linkedin',
-		'label'    => esc_html__( 'Linkedin', 'makemeup' ),
+		'label'    => esc_html__( 'Linkedin', 'castpress' ),
 		'section'  => 'socials',
 		'priority' => 10,
 	] );
 	
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'github',
-		'label'    => esc_html__( 'Github', 'makemeup' ),
+		'label'    => esc_html__( 'Github', 'castpress' ),
 		'section'  => 'socials',
 		'priority' => 10,
 	] );
 
 	// -- Home components --
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'        => 'sortable',
 		'settings'    => 'home_component',
-		'label'       => esc_html__( 'Home Components', 'makemeup' ),
+		'label'       => esc_html__( 'Home Components', 'castpress' ),
 		'section'     => 'home_components',
 		'default'     => [
 			'components/latest-episode/latest-episode-player',
@@ -482,164 +482,164 @@ if( function_exists( 'kirki' ) ) {
 			'components/latest-posts'
 		],
 		'choices'     => [
-			'components/latest-episode/latest-episode-player' => esc_html__( 'Latest Episode with player', 'makemeup' ),
-			'components/episodes' => esc_html__( 'Latest Episodes', 'makemeup' ),
-			'components/latest-posts' => esc_html__( 'Latest posts from blog', 'makemeup' ),
+			'components/latest-episode/latest-episode-player' => esc_html__( 'Latest Episode with player', 'castpress' ),
+			'components/episodes' => esc_html__( 'Latest Episodes', 'castpress' ),
+			'components/latest-posts' => esc_html__( 'Latest posts from blog', 'castpress' ),
 		],
 		'priority'    => 10,
 	] );
 
 	
 	// -- Podcast Player Links --
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_spotify_link',
-		'label'    => __( 'Spotify', 'makemeup' ),
+		'label'    => __( 'Spotify', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 12,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_soundcloud_link',
-		'label'    => __( 'Soundcloud', 'makemeup' ),
+		'label'    => __( 'Soundcloud', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 13,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_apple_link',
-		'label'    => __( 'Podcasts (Apple Podcasts)', 'makemeup' ),
+		'label'    => __( 'Podcasts (Apple Podcasts)', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 14,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_youtube_link',
-		'label'    => __( 'Youtube', 'makemeup' ),
+		'label'    => __( 'Youtube', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 15,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_stitcher_link',
-		'label'    => __( 'Stitcher', 'makemeup' ),
+		'label'    => __( 'Stitcher', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 16,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_deezer_link',
-		'label'    => __( 'Deezer', 'makemeup' ),
+		'label'    => __( 'Deezer', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 17,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_google_podcasts_link',
-		'label'    => __( 'Google podcasts', 'makemeup' ),
+		'label'    => __( 'Google podcasts', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 18,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_iheartradio_link',
-		'label'    => __( 'I heart radio', 'makemeup' ),
+		'label'    => __( 'I heart radio', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 19,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_overcast_link',
-		'label'    => __( 'Overcast', 'makemeup' ),
+		'label'    => __( 'Overcast', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 20,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_pandora_link',
-		'label'    => __( 'Pandora', 'makemeup' ),
+		'label'    => __( 'Pandora', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 21,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_pocketcasts_link',
-		'label'    => __( 'Pocket casts', 'makemeup' ),
+		'label'    => __( 'Pocket casts', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 22,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_radiopublic_link',
-		'label'    => __( 'Radio public', 'makemeup' ),
+		'label'    => __( 'Radio public', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 23,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_rss_link',
-		'label'    => __( 'Rss Feed', 'makemeup' ),
+		'label'    => __( 'Rss Feed', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 24,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_spreaker_link',
-		'label'    => __( 'Spreaker', 'makemeup' ),
+		'label'    => __( 'Spreaker', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 24,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_castro_link',
-		'label'    => __( 'Castro', 'makemeup' ),
+		'label'    => __( 'Castro', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 24,
 	] );
 
 	
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_audible_link',
-		'label'    => __( 'Audible', 'makemeup' ),
+		'label'    => __( 'Audible', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 24,
 	] );
 
-	Kirki::add_field( 'makemeup', [
+	Kirki::add_field( 'castpress', [
 		'type'     => 'link',
 		'settings' => 'p_castbox_link',
-		'label'    => __( 'Castbox', 'makemeup' ),
+		'label'    => __( 'Castbox', 'castpress' ),
 		'section'  => 'podcast_player_link',
 		'default'  => '',
 		'priority' => 24,

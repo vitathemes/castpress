@@ -56,7 +56,7 @@
 }
 
 .page-numbers {
-  color: $makemeup_second_color !important;
+  color: $castpress_second_color !important;
   border-radius: 3px;
   cursor: pointer;
   margin: 2px;
@@ -65,16 +65,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $makemeup_neutral_gray_light_color;
+  background-color: $castpress_neutral_gray_light_color;
 
   font-size: 12px !important;
   line-height: 15px !important;
   &:hover {
-    background-color: $makemeup_neutral_gray_light_second_color !important;
+    background-color: $castpress_neutral_gray_light_second_color !important;
 
     .dashicons {
       &::before {
-        color: $makemeup_third_color !important;
+        color: $castpress_third_color !important;
       }
     }
   }
@@ -88,15 +88,15 @@
 }
 
 .page-numbers.current {
-  background-color: $makemeup_neutral_gray_light_second_color;
-  color: $makemeup_second_color !important;
+  background-color: $castpress_neutral_gray_light_second_color;
+  color: $castpress_second_color !important;
 }
 
 .dashicons {
   font-family: dashicons !important;
 
   &::before {
-    color: $makemeup_second_color;
+    color: $castpress_second_color;
     transition: $global-transition;
   }
 }
@@ -120,10 +120,10 @@
   }
 
   .dashicons {
-    color: $makemeup_neutral_dark_gray_color;
+    color: $castpress_neutral_dark_gray_color;
     &:hover {
       background: transparent;
-      color: $makemeup_neutral_gray_color !important;
+      color: $castpress_neutral_gray_color !important;
     }
   }
 }

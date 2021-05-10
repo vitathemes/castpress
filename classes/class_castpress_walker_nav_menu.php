@@ -1,5 +1,5 @@
 <?php
-class Makemeup_walker_nav_menu extends Walker_Nav_Menu {
+class Castpress_walker_nav_menu extends Walker_Nav_Menu {
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$object      = $item->object;
 		$type        = $item->type;
@@ -19,7 +19,7 @@ class Makemeup_walker_nav_menu extends Walker_Nav_Menu {
 			$output .= '</a>';
 		}
 		if ( $args->walker->has_children ) {
-			$output .= sprintf('<span aria-label="%s" role="button" class="c-nav__arrow js-nav__arrow dashicons dashicons-arrow-down-alt2 js-toggle-submenu span"></span>', esc_attr__('Toggle sub menu', 'makemeup'));
+			$output .= sprintf('<span aria-label="%s" role="button" class="c-nav__arrow js-nav__arrow dashicons dashicons-arrow-down-alt2 js-toggle-submenu span"></span>', esc_attr__('Toggle sub menu', 'castpress'));
 		}
 	}
 }

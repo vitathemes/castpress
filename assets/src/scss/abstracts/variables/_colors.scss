@@ -1,22 +1,22 @@
 // kirki variables
-$makemeup_primary_color: var(--makemeup_primary-color); //222222
-$makemeup_second_color: var(--makemeup_second-color); //555555
-$makemeup_third_color: var(--makemeup_third-color); //979797
-$makemeup_fourth_color: var(--makemeup_fourth-color); //7247ca
+$castpress_primary_color: var(--castpress_primary-color); //222222
+$castpress_second_color: var(--castpress_second-color); //555555
+$castpress_third_color: var(--castpress_third-color); //979797
+$castpress_fourth_color: var(--castpress_fourth-color); //7247ca
 
-$makemeup_headings_color: var(--makemeup_headings-color); //222222
+$castpress_headings_color: var(--castpress_headings-color); //222222
 
 // Main color
-$makemeup_main_primary_color: #222222;
-$makemeup_main_accent_color: #7247ca;
-$makemeup_main_accent_second_color: #58379b;
+$castpress_main_primary_color: #222222;
+$castpress_main_accent_color: #7247ca;
+$castpress_main_accent_second_color: #58379b;
 
 // Neutral colors
-$makemeup_neutral_dark_gray_color: #555555;
-$makemeup_neutral_gray_color: #979797;
-$makemeup_neutral_gray_light_color: #f5f5f7;
-$makemeup_neutral_gray_light_second_color: #eaeaee;
-$makemeup_service_error_color: #ff3636;
+$castpress_neutral_dark_gray_color: #555555;
+$castpress_neutral_gray_color: #979797;
+$castpress_neutral_gray_light_color: #f5f5f7;
+$castpress_neutral_gray_light_second_color: #eaeaee;
+$castpress_service_error_color: #ff3636;
 
 // background
 $color_background_body: #ffffff;
@@ -32,20 +32,20 @@ $color_text_input: #666;
 $color_text_input_focus: rgb(65, 65, 65);
 
 // link
-$color_link: $makemeup_main_accent_color; //7247ca
-$color_link_secondary: $makemeup_primary_color; //222222
-$color_link_third: $makemeup_neutral_gray_color; //979797
+$color_link: $castpress_main_accent_color; //7247ca
+$color_link_secondary: $castpress_primary_color; //222222
+$color_link_third: $castpress_neutral_gray_color; //979797
 
 // link hover
-$color_link_visited: $makemeup_main_accent_color;
-$color_link_hover: $makemeup_neutral_gray_color;
-$color_link_hover_secondary: $makemeup_main_accent_color;
-$color_link_hover_third: $makemeup_main_primary_color;
+$color_link_visited: $castpress_main_accent_color;
+$color_link_hover: $castpress_neutral_gray_color;
+$color_link_hover_secondary: $castpress_main_accent_color;
+$color_link_hover_third: $castpress_main_primary_color;
 
 // button color
-$makemeup_button_primary_color: $makemeup_fourth_color;
-$makemeup_button_second_color: $makemeup_neutral_gray_light_color;
+$castpress_button_primary_color: $castpress_fourth_color;
+$castpress_button_second_color: $castpress_neutral_gray_light_color;
 
 // button hover color
-$makemeup_button_primary_hover_color: $makemeup_neutral_gray_light_color;
-$makemeup_button_second_hover_color: $makemeup_fourth_color;
+$castpress_button_primary_hover_color: $castpress_neutral_gray_light_color;
+$castpress_button_second_hover_color: $castpress_fourth_color;

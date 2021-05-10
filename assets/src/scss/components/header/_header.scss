@@ -7,7 +7,7 @@
   padding-top: 23px;
   padding-bottom: 24px;
   display: flex;
-  border-bottom: 1px solid $makemeup_neutral_gray_light_second_color;
+  border-bottom: 1px solid $castpress_neutral_gray_light_second_color;
   background-color: #ffffff;
 
   @include media(tablet) {
@@ -94,9 +94,9 @@
 
 .c-header__title {
   a {
-    color: $makemeup_main_primary_color;
+    color: $castpress_main_primary_color;
     &:hover {
-      color: $makemeup_main_accent_color;
+      color: $castpress_main_accent_color;
     }
   }
 }
@@ -144,7 +144,7 @@
 
   input[type="search"] {
     &::placeholder {
-      color: $makemeup_second_color;
+      color: $castpress_second_color;
       font-size: 12px;
       line-height: 15px;
     }
@@ -202,7 +202,7 @@
       -webkit-mask-size: cover;
       mask-size: cover;
       vertical-align: middle;
-      background-color: $makemeup_primary_color;
+      background-color: $castpress_primary_color;
       margin-top: 0px;
     }
   }

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package makemeup
+ * @package castpress
  */
 ?>
 
@@ -13,7 +13,7 @@
     <div class="c-post__thumbnail">
 
         <a href=<?php esc_url(the_permalink()) ?> rel="bookmark">
-            <?php makemeup_get_thumbnail(); ?>
+            <?php castpress_get_thumbnail(); ?>
         </a>
 
     </div><!-- .c-post__thumbnail -->
@@ -28,13 +28,13 @@
         </div><!-- .entry-meta -->
 
         <a class="c-post__read-more h5" href=" <?php esc_url( the_permalink() )  ?> " rel="bookmark">
-            <?php esc_html_e( 'Read More', 'makemeup' ); ?>
+            <?php esc_html_e( 'Read More', 'castpress' ); ?>
         </a><!-- .c-post__read-more -->
 
         <?php
 			wp_link_pages(
 				array(
-					'before' => '<div class="c-post__page-links">' . esc_html__( 'Pages:', 'makemeup' ),
+					'before' => '<div class="c-post__page-links">' . esc_html__( 'Pages:', 'castpress' ),
 					'after'  => '</div>',
 				)
 			);

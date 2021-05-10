@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package makemeup
+ * @package castpress
  */
 
 get_header();
@@ -15,7 +15,7 @@ get_header();
         <?php if ( have_posts() ) : ?>
         <header class="c-main__header">
             <h1 class="c-main__entry-title h1-lh--bg">
-                <?php esc_html_e( 'Search Result', 'makemeup' ); ?>
+                <?php esc_html_e( 'Search Result', 'castpress' ); ?>
             </h1>
         </header><!-- .entry-header -->
 
@@ -26,7 +26,7 @@ get_header();
 				
 				get_template_part( 'template-parts/content' );
 			endwhile;
-				makemeup_get_default_pagination();
+				castpress_get_default_pagination();
 		else :
 			get_template_part( 'template-parts/content', 'none' );
 		endif;

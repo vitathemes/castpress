@@ -31,7 +31,7 @@
   .dashicons {
     padding-left: 0px;
     &::before {
-      color: $makemeup_primary_color;
+      color: $castpress_primary_color;
     }
   }
 
@@ -39,7 +39,7 @@
     .dashicons {
       padding-left: 0px;
       &::before {
-        color: $makemeup_main_accent_color;
+        color: $castpress_main_accent_color;
       }
     }
   }
@@ -47,7 +47,7 @@
   cursor: pointer;
   &:hover {
     path {
-      fill: $makemeup_main_accent_color;
+      fill: $castpress_main_accent_color;
       cursor: pointer;
     }
   }
@@ -71,13 +71,13 @@
     -webkit-mask-size: cover;
     mask-size: cover;
     vertical-align: middle;
-    background-color: $makemeup_primary_color;
+    background-color: $castpress_primary_color;
     transition: 0.5s all;
   }
 
   &:hover {
     &::before {
-      background-color: $makemeup_main_accent_color;
+      background-color: $castpress_main_accent_color;
     }
   }
 }

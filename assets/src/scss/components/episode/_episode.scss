@@ -70,31 +70,31 @@
 
 .c-episode__category {
   padding-bottom: 8px;
-  color: $makemeup_third_color !important;
+  color: $castpress_third_color !important;
 
   &:hover {
-    color: $makemeup_primary_color;
+    color: $castpress_primary_color;
   }
   a {
-    color: $makemeup_third_color;
+    color: $castpress_third_color;
 
     &:hover {
-      color: $makemeup_primary_color;
+      color: $castpress_primary_color;
     }
   }
 }
 
 .c-episode__date {
-  color: $makemeup_third_color !important;
+  color: $castpress_third_color !important;
 }
 
 .c-episode__entry-context {
-  color: $makemeup_second_color !important;
+  color: $castpress_second_color !important;
 }
 
 .c-episode__header {
   width: 100%;
-  color: $makemeup_primary_color;
+  color: $castpress_primary_color;
 
   &::first-letter {
     text-transform: uppercase;
@@ -112,7 +112,7 @@
 }
 
 .c-episode__author {
-  color: $makemeup_third_color;
+  color: $castpress_third_color;
 }
 
 .c-episode__author__link {
@@ -123,7 +123,7 @@
 
 .c-episode__header {
   width: 100%;
-  color: $makemeup_primary_color;
+  color: $castpress_primary_color;
 
   &::first-letter {
     text-transform: uppercase;
@@ -137,7 +137,7 @@
 
 .c-episode__content {
   font-size: 18px;
-  color: $makemeup_neutral_dark_gray_color;
+  color: $castpress_neutral_dark_gray_color;
 
   li {
     margin-bottom: 8px;
@@ -154,7 +154,7 @@
   display: inline-block;
 
   a {
-    color: $makemeup_primary_color;
+    color: $castpress_primary_color;
   }
 }
 
@@ -183,21 +183,21 @@
 }
 
 .c-episode__read-more {
-  color: $makemeup_fourth_color !important;
-  font-family: $makemeup_font_semibold !important;
+  color: $castpress_fourth_color !important;
+  font-family: $castpress_font_semibold !important;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   transition: 0.5s all;
 
   &:hover {
-    color: $makemeup_main_accent_second_color !important; //qa-
+    color: $castpress_main_accent_second_color !important; //qa-
   }
 
   &:hover > .c-episode__play::before {
-    background-color: $makemeup_main_accent_second_color;
+    background-color: $castpress_main_accent_second_color;
   }
   &:focus > .c-episode__play::before {
-    background-color: $makemeup_main_accent_second_color;
+    background-color: $castpress_main_accent_second_color;
   }
 }
 .c-episode__page-links {
@@ -206,10 +206,10 @@
 
 .c-episode__tags {
   padding-right: 24px;
-  color: $makemeup_neutral_dark_gray_color !important;
+  color: $castpress_neutral_dark_gray_color !important;
 
   &:hover {
-    color: $makemeup_main_accent_color !important;
+    color: $castpress_main_accent_color !important;
   }
 }
 
@@ -217,7 +217,7 @@
   margin-top: 39px;
   margin-bottom: 12px;
   width: 100%;
-  color: $makemeup_primary_color !important;
+  color: $castpress_primary_color !important;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -236,7 +236,7 @@
     mask-size: cover;
     vertical-align: middle;
     display: inline-block;
-    background-color: $makemeup_fourth_color;
+    background-color: $castpress_fourth_color;
   }
 }
 
@@ -250,7 +250,7 @@
 
   a {
     transition: 0.2s all;
-    color: $makemeup_primary_color;
+    color: $castpress_primary_color;
   }
 }
 
@@ -261,10 +261,10 @@
   font-size: 32px;
 
   &:hover {
-    color: $makemeup_main_accent_color;
+    color: $castpress_main_accent_color;
 
     path {
-      fill: $makemeup_main_accent_color;
+      fill: $castpress_main_accent_color;
     }
   }
 }

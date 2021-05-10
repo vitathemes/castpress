@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package makemeup
+ * @package castpress
  */
 
 /*
@@ -18,7 +18,7 @@
 		if ( post_password_required() ) {
 			return;
 		}		
-		$makemeup_comment_counter = get_comments_number();
+		$castpress_comment_counter = get_comments_number();
 ?>
 <div id="comments" class="comments-area">
 
@@ -34,25 +34,25 @@
 				//URL Field
 				'url' => '<p class="comment-form-url h4 h4-lh--bg">Website<br /><input type="url" id="url" name="url" ></input></p>',
 				//Cookies
-				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'makemeup' ) .'</span></div>',
+				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'castpress' ) .'</span></div>',
 			),
 			// Change the title of send button
-			'label_submit' => __( 'Submit', 'makemeup'),
+			'label_submit' => __( 'Submit', 'castpress'),
 			// Change the title of the reply section
-			'title_reply' => '<p class="c-comments__title h4 h4-lh--sm font--semibold">'. __( 'Leave a Reply' , 'makemeup') .'</p>',
+			'title_reply' => '<p class="c-comments__title h4 h4-lh--sm font--semibold">'. __( 'Leave a Reply' , 'castpress') .'</p>',
 			// Change the title of the reply section
-			'title_reply_to' =>  __( 'Reply' , 'makemeup'),
+			'title_reply_to' =>  __( 'Reply' , 'castpress'),
 			//Cancel Reply Text
-			'cancel_reply_link' =>  __( 'Cancel Reply', 'makemeup' ),
+			'cancel_reply_link' =>  __( 'Cancel Reply', 'castpress' ),
 			// Redefine your own textarea (the comment body).
 			'comment_field' => '<p class="comment-form-comment h4 h4-lh--bg">Comment *<br /><textarea id="comment" name="comment" aria-required="true" ></textarea></p>',
 			//Message Before Comment
-			'comment_notes_before' =>'<p class="c-comments__desc h5--secondary h5-lh--sm font--regular">'. __( 'Required fields are marked *' , 'makemeup') .'</p>',
+			'comment_notes_before' =>'<p class="c-comments__desc h5--secondary h5-lh--sm font--regular">'. __( 'Required fields are marked *' , 'castpress') .'</p>',
 			// Remove "Text or HTML to be displayed after the set of comment fields".
 			'comment_notes_after' => '',
 			//Submit Button ID
-			'id_submit' =>  __( 'comment-submit' , 'makemeup'),
-			'class_submit' =>  __( 'makemeup-comment-submit' , 'makemeup'),
+			'id_submit' =>  __( 'comment-submit' , 'castpress'),
+			'class_submit' =>  __( 'castpress-comment-submit' , 'castpress'),
 		);
 		comment_form( $comments_args );
 
@@ -62,18 +62,18 @@
 
     <h2 class="comments-title h4--secondary h4-lh--sm">
         <?php
-			$makemeup_comment_count = get_comments_number();
-			if ( '1' === $makemeup_comment_count ) {
+			$castpress_comment_count = get_comments_number();
+			if ( '1' === $castpress_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'Comments', 'makemeup' ),
+					esc_html__( 'Comments', 'castpress' ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
 				printf( 
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( 'Comments', 'Comments', $makemeup_comment_count, 'comments title', 'makemeup' ) ),
-					number_format_i18n( $makemeup_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					esc_html( _nx( 'Comments', 'Comments', $castpress_comment_count, 'comments title', 'castpress' ) ),
+					number_format_i18n( $castpress_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			}
@@ -86,7 +86,7 @@
         <?php
 			wp_list_comments(
 				array(
-					'walker'      => new Makemeup_walker_comment(),
+					'walker'      => new Castpress_walker_comment(),
 					'style'      => 'ol',
 					'short_ping' => true,
 					'avatar_size' => 144,
@@ -101,7 +101,7 @@
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-    <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'makemeup' ); ?></p>
+    <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'castpress' ); ?></p>
     <?php
 		endif;
 	endif; // Check for have_comments().

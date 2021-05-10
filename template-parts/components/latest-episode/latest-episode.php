@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package makemeup
+ * @package castpress
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-single c-single--latest-episode'); ?>>
@@ -12,7 +12,7 @@
     <div class="c-single__thumbnail">
         <div class="c-single__image">
             <a href="<?php esc_url( the_permalink() ) ?>">
-                <?php makemeup_get_thumbnail(); ?>
+                <?php castpress_get_thumbnail(); ?>
             </a>
         </div>
     </div>
@@ -24,12 +24,12 @@
         <div class="c-single__podcast-audio">
             <?php 
                     if ( 'episodes' == get_post_type() ){
-                        makemeup_get_podcast_audio( $post , "c-single__audio" );
+                        castpress_get_podcast_audio( $post , "c-single__audio" );
                     }	
 			    ?>
         </div>
 
-        <?php makemeup_get_podcast_player_link(); ?>
+        <?php castpress_get_podcast_player_link(); ?>
 
     </header><!-- .entry-header -->
 
@@ -40,7 +40,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'makemeup' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'castpress' ),
 					array(
 						'span' => array(
 							'class' => array(),

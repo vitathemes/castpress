@@ -72,7 +72,7 @@ msgid "comment-submit"
 msgstr ""
 
 #: comments.php:55
-msgid "makemeup-comment-submit"
+msgid "castpress-comment-submit"
 msgstr ""
 
 #: comments.php:69
@@ -195,15 +195,15 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: classes/class_makemeup_walker_comment.php:57
+#: classes/class_castpress_walker_comment.php:57
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: classes/class_makemeup_walker_comment.php:64
+#: classes/class_castpress_walker_comment.php:64
 msgid "Edit"
 msgstr ""
 
-#: classes/class_makemeup_walker_nav_menu.php:22
+#: classes/class_castpress_walker_nav_menu.php:22
 msgid "Toggle sub menu"
 msgstr ""
 

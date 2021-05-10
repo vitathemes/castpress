@@ -18,14 +18,14 @@
 }
 
 .simplebar-scrollbar {
-  background-color: $makemeup_neutral_gray_color;
+  background-color: $castpress_neutral_gray_color;
   left: 0;
   width: 8px;
   border-radius: 6px;
   border: none;
 
   &::before {
-    background: $makemeup_neutral_gray_color;
+    background: $castpress_neutral_gray_color;
   }
 }
 

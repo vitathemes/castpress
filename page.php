@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package makemeup
+ * @package castpress
  */
 
 get_header();

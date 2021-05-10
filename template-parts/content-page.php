@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package makemeup
+ * @package castpress
  */
 
 ?>
@@ -15,7 +15,7 @@
         <?php the_title('<h1 class="c-main__entry-title h1-lh--bg">','</h1>'); ?>
     </header><!-- .entry-header -->
 
-    <?php makemeup_post_thumbnail(); ?>
+    <?php castpress_post_thumbnail(); ?>
 
     <div class="c-post__content">
         <?php
@@ -23,7 +23,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'makemeup' ),
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'castpress' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -36,7 +36,7 @@
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'makemeup' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'castpress' ),
 					'after'  => '</div>',
 				)
 			);
@@ -50,7 +50,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'makemeup' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'castpress' ),
 						array(
 							'span' => array(
 								'class' => array(),

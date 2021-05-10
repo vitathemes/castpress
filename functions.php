@@ -1,19 +1,19 @@
 <?php
 /**
- * makemeup functions and definitions
+ * castpress functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package makemeup
+ * @package castpress
  */
 
-if ( ! defined( 'MAKEMEUP_VERSION' ) ) {
+if ( ! defined( 'CASTPRESS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	$MAKEMEUP_theme_data = wp_get_theme();
-	define( 'MAKEMEUP_VERSION', $MAKEMEUP_theme_data->get( 'Version' ));
+	$CASTPRESS_theme_data = wp_get_theme();
+	define( 'CASTPRESS_VERSION', $CASTPRESS_theme_data->get( 'Version' ));
 }
 
-function makemeup_footer_widgets_init() {
+function castpress_footer_widgets_init() {
 	/**
 	 * Register widget area.
 	 *
@@ -29,45 +29,45 @@ function makemeup_footer_widgets_init() {
    ) );
 
 }
-add_action( 'widgets_init', 'makemeup_footer_widgets_init' );
+add_action( 'widgets_init', 'castpress_footer_widgets_init' );
 
 
-function makemeup_scripts() {
+function castpress_scripts() {
 
 	wp_enqueue_script('jquery');
 
 	/**
 	 * Enqueue scripts and styles.
 	 */
-	wp_enqueue_style( 'makemeup-style', get_stylesheet_uri(), array(), MAKEMEUP_VERSION );
-	wp_style_add_data( 'makemeup-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'castpress-style', get_stylesheet_uri(), array(), CASTPRESS_VERSION );
+	wp_style_add_data( 'castpress-style', 'rtl', 'replace' );
 
 	// enqueue css
-	wp_enqueue_style( 'makemeup-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), MAKEMEUP_VERSION );
+	wp_enqueue_style( 'castpress-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), CASTPRESS_VERSION );
 	// enqueue js
-	wp_enqueue_script( 'makemeup-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array( ), MAKEMEUP_VERSION, true );
+	wp_enqueue_script( 'castpress-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array( ), CASTPRESS_VERSION, true );
 	// Vendor
-	wp_enqueue_script( 'makemeup-vendor-scripts', get_template_directory_uri() . '/assets/js/vendor.js', array( ), MAKEMEUP_VERSION, true );
+	wp_enqueue_script( 'castpress-vendor-scripts', get_template_directory_uri() . '/assets/js/vendor.js', array( ), CASTPRESS_VERSION, true );
 
-	wp_enqueue_script( 'makemeup-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), MAKEMEUP_VERSION, true );
+	wp_enqueue_script( 'castpress-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), CASTPRESS_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'makemeup_scripts' );
+add_action( 'wp_enqueue_scripts', 'castpress_scripts' );
 
 
-function makemeup_dashicons(){
+function castpress_dashicons(){
 	/**
 	 * Enable Dashicons
 	 */
     wp_enqueue_style('dashicons');
 }
-add_action('wp_enqueue_scripts', 'makemeup_dashicons', 999);
+add_action('wp_enqueue_scripts', 'castpress_dashicons', 999);
 
 
-function makemeup_add_additional_class_on_li($classes, $item, $args) {
+function castpress_add_additional_class_on_li($classes, $item, $args) {
 	/**
 	 *	Add class to menu items 
 	 */
@@ -76,10 +76,10 @@ function makemeup_add_additional_class_on_li($classes, $item, $args) {
     }
     return $classes;
 }
-add_filter('nav_menu_css_class', 'makemeup_add_additional_class_on_li', 1, 3);
+add_filter('nav_menu_css_class', 'castpress_add_additional_class_on_li', 1, 3);
 
 
-function makemeup_total_post_types( $isText = true ) {	
+function castpress_total_post_types( $isText = true ) {	
 	/**
 	 * count number of posts types ( episodes ) in a page
 	 */
@@ -92,7 +92,7 @@ function makemeup_total_post_types( $isText = true ) {
 }
 
 
-function makemeup_get_inverse_post_number(){
+function castpress_get_inverse_post_number(){
 	/**
 	 * Auto decrement number per posts ( in pages like archive-episodes... )
 	 */
@@ -102,21 +102,21 @@ function makemeup_get_inverse_post_number(){
 	$offset         	= ($paged - 1) * $posts_per_page;
 	$loop           	= $wp_query->current_post + 1;
 	$posts_in_page	    = $offset + $loop;
-	$total_post_numbers = makemeup_total_post_types(false) + 1;
+	$total_post_numbers = castpress_total_post_types(false) + 1;
 	$posts_counter 	    = $total_post_numbers - $posts_in_page;
 
 	return $posts_counter;
 }
 
 
-function makemeup_deciaml_post_number(){
+function castpress_deciaml_post_number(){
 	/**
 	  * Add zero to the post numbers
 	  */
 	
     // get post number ( auto increment )
     $decimalCounter = "0";
-    $postNumber = makemeup_get_inverse_post_number();
+    $postNumber = castpress_get_inverse_post_number();
 	
     // Remove zero when reaching 10
     if($postNumber >= 10){
@@ -131,7 +131,7 @@ function makemeup_deciaml_post_number(){
 }
 
 
-function makemeup_comment_button($defaults) {
+function castpress_comment_button($defaults) {
 	/**
 	  *	Change comment button type
 	  */
@@ -143,10 +143,10 @@ function makemeup_comment_button($defaults) {
     return $defaults;
 	
 }
-add_filter('comment_form_defaults', 'makemeup_comment_button');
+add_filter('comment_form_defaults', 'castpress_comment_button');
 
 
-function makemeup_add_custom_types( $query ) {
+function castpress_add_custom_types( $query ) {
 	/**
 	 *	Add custom post type into archives
 	 *
@@ -158,31 +158,31 @@ function makemeup_add_custom_types( $query ) {
 		  ));
 	  }
   }
-add_action( 'pre_get_posts', 'makemeup_add_custom_types' );
+add_action( 'pre_get_posts', 'castpress_add_custom_types' );
 
 
 /**
  * Modify LibWP post type name
  */
-function makemeup_modify_libwp_post_type_name($postTypeName){
+function castpress_modify_libwp_post_type_name($postTypeName){
 	$postTypeName = 'episodes';
     return $postTypeName;
 }
-add_filter( 'libwp_post_type_1_name' , 'makemeup_modify_libwp_post_type_name');
+add_filter( 'libwp_post_type_1_name' , 'castpress_modify_libwp_post_type_name');
 
 
 /**
  * Modify LibWP post type arguments
  */
-function makemeup_modify_post_type_argument($postTypeArguments){
+function castpress_modify_post_type_argument($postTypeArguments){
 	$postTypeArguments['labels'] = [
-        'name'          => _x('Episodes', 'Post type general name', 'makemeup'),
-        'singular_name' => _x('Episode', 'Post type singular name', 'makemeup'),
-        'menu_name'     => _x('Episodes', 'Admin Menu text', 'makemeup'),
-        'add_new'       => __('Add New', 'makemeup'),
-        'edit_item'     => __('Edit Episode', 'makemeup'),
-        'view_item'     => __('View Episode', 'makemeup'),
-        'all_items'     => __('All Episodes', 'makemeup'),
+        'name'          => _x('Episodes', 'Post type general name', 'castpress'),
+        'singular_name' => _x('Episode', 'Post type singular name', 'castpress'),
+        'menu_name'     => _x('Episodes', 'Admin Menu text', 'castpress'),
+        'add_new'       => __('Add New', 'castpress'),
+        'edit_item'     => __('Edit Episode', 'castpress'),
+        'view_item'     => __('View Episode', 'castpress'),
+        'all_items'     => __('All Episodes', 'castpress'),
     ];
     $postTypeArguments['rewrite']['slug'] 	  = 'episodes';
 	$postTypeArguments['menu_position'] 	  = 5;
@@ -199,37 +199,37 @@ function makemeup_modify_post_type_argument($postTypeArguments){
 	$postTypeArguments['supports'] 			  = array('title', 'editor' , 'comments', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' ) ;	
     return $postTypeArguments;
 }
-add_filter('libwp_post_type_1_arguments', 'makemeup_modify_post_type_argument');
+add_filter('libwp_post_type_1_arguments', 'castpress_modify_post_type_argument');
 
 /**
  * Modify LibWP taxonomy name
  */
-function makemeup_modify_libwp_taxonomy_name($taxonomyName){
+function castpress_modify_libwp_taxonomy_name($taxonomyName){
 	$taxonomyName = 'episodes';
     return $taxonomyName;
 }
-add_filter('libwp_taxonomy_1_name', 'makemeup_modify_libwp_taxonomy_name');
+add_filter('libwp_taxonomy_1_name', 'castpress_modify_libwp_taxonomy_name');
 
 /**
  * Modify LibWP taxonomy name
  */
-function makemeup_modify_libwp_taxonomy_arguments($taxonomyArguments){
+function castpress_modify_libwp_taxonomy_arguments($taxonomyArguments){
 
 	$taxonomyArguments['labels'] = [
-        'name'          => _x('Episode Categories', 'taxonomy general name', 'makemeup'),
-        'singular_name' => _x('Episode Category', 'taxonomy singular name', 'makemeup'),
-        'search_items'  => __('Search Episode Categories', 'makemeup'),
-        'all_items'     => __('All Episode Categories', 'makemeup'),
-        'edit_item'     => __('Edit Episode Category', 'makemeup'),
-        'add_new_item'  => __('Add New Episode Category', 'makemeup'),
-        'new_item_name' => __('New Episode Category Name', 'makemeup'),
-        'menu_name'     => __('Episode Categories', 'makemeup'),
+        'name'          => _x('Episode Categories', 'taxonomy general name', 'castpress'),
+        'singular_name' => _x('Episode Category', 'taxonomy singular name', 'castpress'),
+        'search_items'  => __('Search Episode Categories', 'castpress'),
+        'all_items'     => __('All Episode Categories', 'castpress'),
+        'edit_item'     => __('Edit Episode Category', 'castpress'),
+        'add_new_item'  => __('Add New Episode Category', 'castpress'),
+        'new_item_name' => __('New Episode Category Name', 'castpress'),
+        'menu_name'     => __('Episode Categories', 'castpress'),
     ];
     $taxonomyArguments['rewrite']['slug'] = 'episodes';
     return $taxonomyArguments;
 	
 }
-add_filter('libwp_taxonomy_1_arguments', 'makemeup_modify_libwp_taxonomy_arguments');
+add_filter('libwp_taxonomy_1_arguments', 'castpress_modify_libwp_taxonomy_arguments');
 
 
 
@@ -246,12 +246,12 @@ require get_template_directory() . '/inc/custom-header.php';
 /**
  * Nav menu walker
  */
-require get_template_directory() . '/classes/class_makemeup_walker_nav_menu.php';
+require get_template_directory() . '/classes/class_castpress_walker_nav_menu.php';
 
 /**
  * Comments walker
  */
-require get_template_directory() . '/classes/class_makemeup_walker_comment.php';
+require get_template_directory() . '/classes/class_castpress_walker_comment.php';
 
 /**
  * Custom template tags for this theme.

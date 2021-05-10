@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package makemeup
+ * @package castpress
  */
 ?>
 <!doctype html>
@@ -21,17 +21,17 @@
     <?php wp_body_open(); ?>
     <div id="page" class="o-page">
         <a class="skip-link screen-reader-text" href="#primary">
-            <?php esc_html_e( 'Skip to content', 'makemeup' ); ?>
+            <?php esc_html_e( 'Skip to content', 'castpress' ); ?>
         </a>
 
         <header id="masthead" class="c-header site-header">
             <div class="c-header__main js-header__main" id="site-navigation">
                 <div class="c-header__branding">
-                    <?php makemeup_branding(); ?>
+                    <?php castpress_branding(); ?>
                 </div><!-- .c-header__branding -->
 
                 <button class="c-header__menu js-header__menu"
-                    aria-label="<?php esc_attr_e('Primary menu', 'makemeup'); ?>" aria-controls="primary-menu"
+                    aria-label="<?php esc_attr_e('Primary menu', 'castpress'); ?>" aria-controls="primary-menu"
                     aria-expanded="false">
                 </button>
 
@@ -40,7 +40,7 @@
                         if ( has_nav_menu( 'primary-menu' ) ) {
                             wp_nav_menu(
                                 array(
-                                    'walker'          => new Makemeup_walker_nav_menu(),
+                                    'walker'          => new Castpress_walker_nav_menu(),
                                     'theme_location'  => 'primary-menu',
                                     'menu_id'         => 'primary-menu',
                                     "menu_class"      => "s-nav nav-menu",
@@ -53,7 +53,7 @@
 
                 <div class="c-header__search js-header__search">
                     <button class="c-header__search-icon js-header__search-icon"
-                        aria-label="<?php esc_attr_e('Toggle Search', 'makemeup'); ?>" aria-controls="primary-menu"
+                        aria-label="<?php esc_attr_e('Toggle Search', 'castpress'); ?>" aria-controls="primary-menu"
                         aria-expanded="false">
                     </button>
                     <div class="c-header__search-form">

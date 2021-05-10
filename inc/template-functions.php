@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package makemeup
+ * @package castpress
  */
 
 /**
@@ -11,7 +11,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function makemeup_body_classes( $classes ) {
+function castpress_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -19,20 +19,20 @@ function makemeup_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'makemeup_body_classes' );
+add_filter( 'body_class', 'castpress_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function makemeup_pingback_header() {
+function castpress_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
-add_action( 'wp_head', 'makemeup_pingback_header' );
+add_action( 'wp_head', 'castpress_pingback_header' );
 
 
-function makemeup_branding() { 
+function castpress_branding() { 
 	
 	if ( has_custom_logo() ) {
 		the_custom_logo();
@@ -49,68 +49,68 @@ function makemeup_branding() {
 
 
 // Kirki color variables
-function makemeup_typography() {
+function castpress_typography() {
 	
 
 	if ( get_theme_mod( 'typography_headings_color' ) == "" ) {
-		$makemeup_headings_color = "#222222";
+		$castpress_headings_color = "#222222";
 	} else {
-		$makemeup_headings_color = get_theme_mod( 'typography_headings_color' );
+		$castpress_headings_color = get_theme_mod( 'typography_headings_color' );
 	}
 
 	if ( get_theme_mod( 'typography_primary_color' ) == "" ) {
-		$makemeup_primary_color = "#222222";
+		$castpress_primary_color = "#222222";
 	} else {
-		$makemeup_primary_color = get_theme_mod( 'typography_primary_color' );
+		$castpress_primary_color = get_theme_mod( 'typography_primary_color' );
 	}
 
 	if ( get_theme_mod( 'typography_secondary_color' ) == "" ) {
-		$makemeup_second_color = "#555555";
+		$castpress_second_color = "#555555";
 	} else {
-		$makemeup_second_color = get_theme_mod( 'typography_secondary_color' );
+		$castpress_second_color = get_theme_mod( 'typography_secondary_color' );
 	}
 	
 	if ( get_theme_mod( 'typography_third_color' ) == "" ) {
-		$makemeup_third_color = "#979797";
+		$castpress_third_color = "#979797";
 	} else {
-		$makemeup_third_color = get_theme_mod( 'typography_third_color' );
+		$castpress_third_color = get_theme_mod( 'typography_third_color' );
 	}
 
 	if ( get_theme_mod( 'typography_fourth_color' ) == "" ) {
-		$makemeup_fourth_color = "#7247ca";
+		$castpress_fourth_color = "#7247ca";
 	} else {
-		$makemeup_fourth_color = get_theme_mod( 'typography_fourth_color' );
+		$castpress_fourth_color = get_theme_mod( 'typography_fourth_color' );
 	}
 	
 	
 	$html = ':root {	
-				--makemeup_headings-color: ' . $makemeup_headings_color . ';
-				--makemeup_primary-color: '. $makemeup_primary_color .';
-	            --makemeup_second-color: ' . $makemeup_second_color . ';
-				--makemeup_third-color: ' . $makemeup_third_color . ';
-				--makemeup_fourth-color: ' . $makemeup_fourth_color . ';
+				--castpress_headings-color: ' . $castpress_headings_color . ';
+				--castpress_primary-color: '. $castpress_primary_color .';
+	            --castpress_second-color: ' . $castpress_second_color . ';
+				--castpress_third-color: ' . $castpress_third_color . ';
+				--castpress_fourth-color: ' . $castpress_fourth_color . ';
 			}';
 						
 	return $html;
 	
 }
 
-add_action( 'admin_head', 'makemeup_theme_settings' );
-add_action( 'wp_head', 'makemeup_theme_settings' );
+add_action( 'admin_head', 'castpress_theme_settings' );
+add_action( 'wp_head', 'castpress_theme_settings' );
 
-function makemeup_theme_settings() {
-	$makemeup_theme_typography = makemeup_typography();
+function castpress_theme_settings() {
+	$castpress_theme_typography = castpress_typography();
 
 ?>
 <style>
-<?php echo esc_html($makemeup_theme_typography);
+<?php echo esc_html($castpress_theme_typography);
 ?>
 </style>
 <?php
 }
 
 
-function makemeup_home_components(){
+function castpress_home_components(){
 
 	// Get the parts.
 	$template_parts = get_theme_mod( 'home_component' , array( 'components/latest-episode/latest-episode-player', 'components/episodes', 'components/latest-posts' ));

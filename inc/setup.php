@@ -1,7 +1,7 @@
 <?php 
 
 
-if ( ! function_exists( 'makemeup_setup' ) ) :
+if ( ! function_exists( 'castpress_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -9,14 +9,14 @@ if ( ! function_exists( 'makemeup_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function makemeup_setup() {
+	function castpress_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on makemeup, use a find and replace
-		 * to change 'makemeup' to the name of your theme in all the template files.
+		 * If you're building a theme based on castpress, use a find and replace
+		 * to change 'castpress' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'makemeup', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'castpress', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -39,7 +39,7 @@ if ( ! function_exists( 'makemeup_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'primary-menu' => esc_html__( 'Primary', 'makemeup' ),
+				'primary-menu' => esc_html__( 'Primary', 'castpress' ),
 			)
 		);
 
@@ -79,7 +79,7 @@ if ( ! function_exists( 'makemeup_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'makemeup_setup' );
+add_action( 'after_setup_theme', 'castpress_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -88,7 +88,7 @@ add_action( 'after_setup_theme', 'makemeup_setup' );
  *
  * @global int $content_width
  */
-function makemeup_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'makemeup_content_width', 640 );
+function castpress_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'castpress_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'makemeup_content_width', 0 );
+add_action( 'after_setup_theme', 'castpress_content_width', 0 );

@@ -6,9 +6,9 @@
  */
 (function () {
   // Detect
-  let makemeup_clientWindowSize = window.matchMedia("(max-width: 979px)");
-  function makemeup_isMobile(makemeup_clientWindowSize) {
-    if (makemeup_clientWindowSize.matches) {
+  let castpress_clientWindowSize = window.matchMedia("(max-width: 979px)");
+  function castpress_isMobile(castpress_clientWindowSize) {
+    if (castpress_clientWindowSize.matches) {
       // If media query matches
       return true;
     } else {
@@ -16,24 +16,24 @@
     }
   }
 
-  makemeup_isMobile(makemeup_clientWindowSize); // Call listener function at run time
-  makemeup_clientWindowSize.addListener(makemeup_isMobile); // Attach listener function on state changes
+  castpress_isMobile(castpress_clientWindowSize); // Call listener function at run time
+  castpress_clientWindowSize.addListener(castpress_isMobile); // Attach listener function on state changes
 
   // Menu header animation (Based on max-content)
-  let makemeup_isCollapsed = false;
-  function makemeup_slidetoggle() {
+  let castpress_isCollapsed = false;
+  function castpress_slidetoggle() {
     const headerMain = document.querySelector(".js-header__main");
 
     const clientHeight = headerMain.clientHeight;
     const scrollerHeight = headerMain.scrollHeight;
 
-    makemeup_isCollapsed = !makemeup_isCollapsed;
+    castpress_isCollapsed = !castpress_isCollapsed;
     const noHeightSet = !headerMain.style.height;
 
     headerMain.style.height =
-      (makemeup_isCollapsed || noHeightSet ? 0 : scrollerHeight) + "px";
+      (castpress_isCollapsed || noHeightSet ? 0 : scrollerHeight) + "px";
 
-    if (noHeightSet) return makemeup_slidetoggle.call(this);
+    if (noHeightSet) return castpress_slidetoggle.call(this);
   }
 
   const siteNavigation = document.getElementById("site-navigation");
@@ -70,7 +70,7 @@
   button.addEventListener("click", function () {
     siteNavigation.classList.toggle("toggled");
 
-    makemeup_slidetoggle();
+    castpress_slidetoggle();
 
     if (button.getAttribute("aria-expanded") === "true") {
       button.setAttribute("aria-expanded", "false");
@@ -85,10 +85,10 @@
     // if (!isClickInside) {
     //   siteNavigation.classList.remove("toggled");
     //   button.setAttribute("aria-expanded", "false");
-    // if (makemeup_isMobile(makemeup_clientWindowSize) === true) {
-    //   if (makemeup_isCollapsed === true) {
+    // if (castpress_isMobile(castpress_clientWindowSize) === true) {
+    //   if (castpress_isCollapsed === true) {
     //
-    //     makemeup_slidetoggle();
+    //     castpress_slidetoggle();
     //   }
     // }
     // }

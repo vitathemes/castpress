@@ -6,13 +6,13 @@
 
 .wpcf7-response-output {
   text-align: left;
-  color: $makemeup_service_error_color;
+  color: $castpress_service_error_color;
   padding-left: 0px !important;
   font-size: 12px;
   line-height: 10px;
   margin: 0px !important;
   color: $color_background_body;
-  background-color: $makemeup_service_error_color;
+  background-color: $castpress_service_error_color;
   border-radius: 4px;
   padding: 8px 13px !important;
   border: none !important;
@@ -30,7 +30,7 @@
 }
 
 .wpcf7-not-valid-tip {
-  color: $makemeup_service_error_color;
+  color: $castpress_service_error_color;
   font-size: 12px;
   margin-top: 8px;
 }

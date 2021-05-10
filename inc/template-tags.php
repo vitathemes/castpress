@@ -4,23 +4,23 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package makemeup
+ * @package castpress
  */
 
-if ( ! function_exists( 'makemeup_posted_on' ) ) :
+if ( ! function_exists( 'castpress_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function makemeup_posted_on( $makemeup_is_bold = false , $link_class = " " ) {
+	function castpress_posted_on( $castpress_is_bold = false , $link_class = " " ) {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		if( $makemeup_is_bold ) {
-			$makemeup_is_bold = "font--semibold";
+		if( $castpress_is_bold ) {
+			$castpress_is_bold = "font--semibold";
 		} else {
-			$makemeup_is_bold = "font--regular";
+			$castpress_is_bold = "font--regular";
 		}
 
 		$time_string = sprintf(
@@ -33,23 +33,23 @@ if ( ! function_exists( 'makemeup_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html( '%s', 'makemeup' ),
+			esc_html( '%s', 'castpress' ),
 			'<a class="u-link--tertiary" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="c-post__date h5--secondary h5-lh--sm '. esc_html($makemeup_is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="c-post__date h5--secondary h5-lh--sm '. esc_html($castpress_is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
 
-if ( ! function_exists( 'makemeup_posted_by' ) ) :
+if ( ! function_exists( 'castpress_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function makemeup_posted_by() {
+	function castpress_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'By %s', 'post author', 'makemeup' ),
+			esc_html_x( 'By %s', 'post author', 'castpress' ),
 			'<span class="author vcard h5--secondary h5-lh--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -59,25 +59,25 @@ if ( ! function_exists( 'makemeup_posted_by' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'makemeup_entry_footer' ) ) :
+if ( ! function_exists( 'castpress_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function makemeup_entry_footer() {
+	function castpress_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'makemeup' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'makemeup' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'castpress' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'makemeup' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'castpress' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'makemeup' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'castpress' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
@@ -87,7 +87,7 @@ if ( ! function_exists( 'makemeup_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'makemeup' ),
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'castpress' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -104,7 +104,7 @@ if ( ! function_exists( 'makemeup_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'makemeup' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'castpress' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -119,14 +119,14 @@ if ( ! function_exists( 'makemeup_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'makemeup_post_thumbnail' ) ) :
+if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function makemeup_post_thumbnail() {
+	function castpress_post_thumbnail() {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -183,11 +183,11 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 endif;
 
 
-if (! function_exists('makemeup_get_page_name')) :
+if (! function_exists('castpress_get_page_name')) :
 	/**
 	 * get current page name (slug)
 	 */
-	function makemeup_get_page_name() {
+	function castpress_get_page_name() {
 
 		global $post;
 		$post_slug = $post->post_name;
@@ -198,11 +198,11 @@ if (! function_exists('makemeup_get_page_name')) :
 endif;
 
 
-if (! function_exists('makemeup_archive_page_name')) :
+if (! function_exists('castpress_archive_page_name')) :
 	/**
 	  * Get archive page name
 	  */
-	function makemeup_archive_page_name() {
+	function castpress_archive_page_name() {
 		if ( !is_front_page() && is_home() ) {
 			echo "blog";
 		}	
@@ -213,11 +213,11 @@ if (! function_exists('makemeup_archive_page_name')) :
 endif;
 
 
-if (! function_exists('makemeup_get_thumbnail')) :
+if (! function_exists('castpress_get_thumbnail')) :
 	/**
 	 * Return thumbnail if exist
 	 */
-	function makemeup_get_thumbnail() {
+	function castpress_get_thumbnail() {
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail();
 		}
@@ -228,18 +228,18 @@ if (! function_exists('makemeup_get_thumbnail')) :
 endif;
 
 
-if (! function_exists('makemeup_get_single_thumbnail')) :
+if (! function_exists('castpress_get_single_thumbnail')) :
 	/**
 	 * Return thumbnail in single page
 	 */
-	function makemeup_get_single_thumbnail( $makemeup_DefaultThumbnail = true ) {
+	function castpress_get_single_thumbnail( $castpress_DefaultThumbnail = true ) {
 		if ( has_post_thumbnail() ) {
 			echo '<div class="'.esc_attr( 'c-single__thumbnail' ).'"><div class="'.esc_attr( 'c-single__image c-single__image--single' ).'">';
 				the_post_thumbnail();
 			echo '</div></div>';
 		}
 		else{
-			if($makemeup_DefaultThumbnail){
+			if($castpress_DefaultThumbnail){
 				echo '<div class="'.esc_attr( 'c-single__thumbnail' ).'"><div class="'.esc_attr( 'c-single__image c-single__image--single' ).'">';
 					echo '<img src="' . esc_url(get_bloginfo( 'stylesheet_directory' )). '/assets/images/no-thumbnail.png" />';
 				echo '</div></div>';
@@ -249,55 +249,62 @@ if (! function_exists('makemeup_get_single_thumbnail')) :
 endif;
 
 
-if (! function_exists('makemeup_get_tags')) :
+if (! function_exists('castpress_get_tags')) :
 	/**
 	  * Return Post tags
 	  */
-	function makemeup_get_tags( $makemeup_className = 'c-post__tag' ) {
+	function castpress_get_tags( $castpress_className = 'c-post__tag' ) {
 		$post_tags = get_the_tags();
 		if ($post_tags) {
 			foreach($post_tags as $post_tag) {
-				echo '<a class="'.esc_attr( $makemeup_className ).' h4" href="'.  esc_url( get_tag_link( $post_tag->term_id ) ) .'" title="'.  esc_attr( $post_tag->name ) .'">'. esc_html( $post_tag->name ). '</a>';
+				echo '<a class="'.esc_attr( $castpress_className ).' h4" href="'.  esc_url( get_tag_link( $post_tag->term_id ) ) .'" title="'.  esc_attr( $post_tag->name ) .'">'. esc_html( $post_tag->name ). '</a>';
 			}
 		}
 	}
 endif;
 
 
-if (! function_exists('makemeup_get_category')) :
+if (! function_exists('castpress_get_category')) :
 	/**
 	  * Return Post category
 	  */
-	function makemeup_get_category( $makemeup_is_bold = false, $makemeup_have_seprator = false ) {
-		($makemeup_is_bold) ? $makemeup_is_bold = 'h5' : $makemeup_is_bold = 'h5--secondary';
-		($makemeup_have_seprator) ? $makemeup_have_seprator = "<span class='seprator h5 u-link--secondary'> | </span>" : $makemeup_have_seprator = "";
+	function castpress_get_category( $castpress_is_bold = false, $castpress_have_seprator = false ) {
+		($castpress_is_bold) ? $castpress_is_bold = 'h5' : $castpress_is_bold = 'h5--secondary';
+		($castpress_have_seprator) ? $castpress_have_seprator = "<span class='seprator h5 u-link--secondary'> | </span>" : $castpress_have_seprator = "";
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'makemeup' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
 		if ( $categories_list ) {
-			/* translators: 1: $categories_list list of categories. Rendered from category section that client set in categories. $makemeup_is_bold check if should render text bold or not ( Will add class) */
-			echo '<span class="c-episode__category '. esc_attr( $makemeup_is_bold ) .' h5-lh--sm">'. $categories_list .'</span>' . $makemeup_have_seprator;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			/* translators: 1: $categories_list list of categories. Rendered from category section that client set in categories. $castpress_is_bold check if should render text bold or not ( Will add class) */
+			echo '<span class="c-episode__category '. esc_attr( $castpress_is_bold ) .' h5-lh--sm">'. $categories_list .'</span>' . $castpress_have_seprator;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;
 
 
-if (! function_exists('makemeup_get_podcast_audio')) :
+if (! function_exists('castpress_get_podcast_audio')) :
 	/**
 	 * Return Post category
 	 */
-	function makemeup_get_podcast_audio($post , $makemeup_class_name = "") {
+	function castpress_get_podcast_audio($post , $castpress_class_name = "") {
 		
-		$makemeup_podcast_audio = get_post_meta( $post->ID, 'podcast_audio_file', true ); 
-		$makemeup_podcast_audio_shortcode = '[audio mp3="'.$makemeup_podcast_audio.'" ][/audio]';
-		$makemeup_podcast_audio_shortcode = strval( $makemeup_podcast_audio_shortcode);
+		$castpress_podcast_audio = get_post_meta( $post->ID, 'podcast_audio_file', true ); 
+		$castpress_podcast_audio_shortcode = '[audio mp3="'.$castpress_podcast_audio.'" ][/audio]';
+		$castpress_podcast_audio_shortcode = strval( $castpress_podcast_audio_shortcode);
 
 
-		echo '<div class="c-episode__player '.esc_attr( $makemeup_class_name ).'">';
-		echo do_shortcode($makemeup_podcast_audio_shortcode);
+		// if (isset($_POST['secondline_import_embed_player'])) {
+		// 	$castpress_import_embed_player = sanitize_text_field($_POST['secondline_import_embed_player']);
+		
+		// 	update_post_meta($post_id_to_update, 'secondline_import_embed_player', $castpress_import_embed_player);
+		// }
+	
+
+		echo '<div class="c-episode__player '.esc_attr( $castpress_class_name ).'">';
+		echo do_shortcode($castpress_podcast_audio_shortcode);
 		echo '</div>';
 
 		// qa- saniztize aria label and translatable also use sprintf
-		echo '<a class="btn btn--download" aria-label="download button" href="'.esc_attr($makemeup_podcast_audio).'" download="'.esc_attr($makemeup_podcast_audio).'"></a>';
+		echo '<a class="btn btn--download" aria-label="download button" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
 
 
 
@@ -305,11 +312,11 @@ if (! function_exists('makemeup_get_podcast_audio')) :
 endif;
 
 
-if (! function_exists('makemeup_get_category_seperator')) :
+if (! function_exists('castpress_get_category_seperator')) :
 	/**
 	 * Return Post category
 	 */
-	function makemeup_get_category_seperator() {
+	function castpress_get_category_seperator() {
 		
 
 		if( ! empty( get_the_category() ) ){
@@ -328,7 +335,7 @@ if (! function_exists('makemeup_get_category_seperator')) :
 
 					$category_counter++;
 					/* translators: used between list items, there is a space after the comma */
-					$output .= '<a class="c-post__meta__link" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'makemeup' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+					$output .= '<a class="c-post__meta__link" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'castpress' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
 				}
 				echo  wp_kses_post(trim( $output, $separator ));
 			}
@@ -338,11 +345,11 @@ endif;
 
 
 
-if (! function_exists('makemeup_get_default_pagination')) :
+if (! function_exists('castpress_get_default_pagination')) :
 	/**
 	* Show numeric pagination
 	*/
-	function makemeup_get_default_pagination() {
+	function castpress_get_default_pagination() {
 		echo'<div class="c-pagination">' . wp_kses_post(
 			paginate_links(
 				array(
@@ -354,214 +361,214 @@ if (! function_exists('makemeup_get_default_pagination')) :
 endif;
 
 
-if ( ! function_exists( 'makemeup_socials_links' ) ) :
+if ( ! function_exists( 'castpress_socials_links' ) ) :
 	/**
 	 * Display Social Networks
 	 */
-	function makemeup_socials_links() {
-		$makemeup_facebook  = get_theme_mod( 'facebook', "" );
-		$makemeup_twitter   = get_theme_mod( 'twitter', "" );
-		$makemeup_instagram = get_theme_mod( 'instagram', "" );
-		$makemeup_linkedin  = get_theme_mod( 'linkedin', "" );
-		$makemeup_github    = get_theme_mod( 'github', "" );
+	function castpress_socials_links() {
+		$castpress_facebook  = get_theme_mod( 'facebook', "" );
+		$castpress_twitter   = get_theme_mod( 'twitter', "" );
+		$castpress_instagram = get_theme_mod( 'instagram', "" );
+		$castpress_linkedin  = get_theme_mod( 'linkedin', "" );
+		$castpress_github    = get_theme_mod( 'github', "" );
 
-		if ( $makemeup_facebook ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-facebook-alt"></span></a>', esc_url( $makemeup_facebook ), esc_html__( 'Facebook', 'makemeup' ) );
+		if ( $castpress_facebook ) {
+			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-facebook-alt"></span></a>', esc_url( $castpress_facebook ), esc_html__( 'Facebook', 'castpress' ) );
 		}
 
-		if ( $makemeup_twitter ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-twitter"></span></a>', esc_url( $makemeup_twitter ), esc_html__( 'Twitter', 'makemeup' ) );
+		if ( $castpress_twitter ) {
+			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-twitter"></span></a>', esc_url( $castpress_twitter ), esc_html__( 'Twitter', 'castpress' ) );
 		}
 
-		if ( $makemeup_instagram ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-instagram"></span></a>', esc_url( $makemeup_instagram ), esc_html__( 'Instagram', 'makemeup' ) );
+		if ( $castpress_instagram ) {
+			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-instagram"></span></a>', esc_url( $castpress_instagram ), esc_html__( 'Instagram', 'castpress' ) );
 		}
 
-		if ( $makemeup_linkedin ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-linkedin"></span></a>', esc_url( $makemeup_linkedin ), esc_html__( 'Linkedin', 'makemeup' ) );
+		if ( $castpress_linkedin ) {
+			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-linkedin"></span></a>', esc_url( $castpress_linkedin ), esc_html__( 'Linkedin', 'castpress' ) );
 		}
 
-		if ( $makemeup_github ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-share__icon--github"></span></a>', esc_url( $makemeup_github ), esc_html__( 'Github', 'makemeup' ) );
+		if ( $castpress_github ) {
+			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-share__icon--github"></span></a>', esc_url( $castpress_github ), esc_html__( 'Github', 'castpress' ) );
 		}
 	}
 endif;
 
 
-if ( ! function_exists( 'makemeup_share_links' ) ) {
+if ( ! function_exists( 'castpress_share_links' ) ) {
 	/**
 	 * Display Share icons 
 	 */
-	function makemeup_share_links() {
+	function castpress_share_links() {
 		if ( get_theme_mod( 'show_share_icons', true ) ) {
-			$makemeup_linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" . get_permalink() . "&title=" . get_the_title();
-			$makemeup_twitter_url  = "https://twitter.com/intent/tweet?url=" . get_permalink() . "&title=" . get_the_title();
-			$makemeup_facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
+			$castpress_linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" . get_permalink() . "&title=" . get_the_title();
+			$castpress_twitter_url  = "https://twitter.com/intent/tweet?url=" . get_permalink() . "&title=" . get_the_title();
+			$castpress_facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
 
-			echo sprintf( '<span class="c-social-share__title h4 h4-lh--sm">%s</span>', esc_html_e( 'Share:', 'makemeup' ) );
-			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-facebook-alt c-social-share__item__icon"></span></a>', esc_url( $makemeup_facebook_url ) );
-			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-twitter c-social-share__item__icon"></span></a>', esc_url( $makemeup_twitter_url ) );
-			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $makemeup_linkedin_url ) );
+			echo sprintf( '<span class="c-social-share__title h4 h4-lh--sm">%s</span>', esc_html_e( 'Share:', 'castpress' ) );
+			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-facebook-alt c-social-share__item__icon"></span></a>', esc_url( $castpress_facebook_url ) );
+			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-twitter c-social-share__item__icon"></span></a>', esc_url( $castpress_twitter_url ) );
+			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $castpress_linkedin_url ) );
 		}
 	}
 }
 
 
 
-if (! function_exists('makemeup_get_podcast_player_link')) :
+if (! function_exists('castpress_get_podcast_player_link')) :
 	/**
 	  * Get social links
 	  */
-	function makemeup_get_podcast_player_link() {
+	function castpress_get_podcast_player_link() {
 		
-		$makemeup_spotify   		 = get_theme_mod( 'p_spotify_link' );
-		$makemeup_soundcloud   	  	 = get_theme_mod( 'p_soundcloud_link' );
-		$makemeup_apple 	    	 = get_theme_mod( 'p_apple_link' );
-		$makemeup_youtube  	  		 = get_theme_mod( 'p_youtube_link' );
-		$makemeup_stitcher      	 = get_theme_mod( 'p_stitcher_link' );
-		$makemeup_deezer    		 = get_theme_mod( 'p_deezer_link' );
-		$makemeup_google_podcasts    = get_theme_mod( 'p_google_podcasts_link' );
-		$makemeup_iheartradio    	 = get_theme_mod( 'p_iheartradio_link' );
-		$makemeup_overcast    	  	 = get_theme_mod( 'p_overcast_link' );
-		$makemeup_pandora    		 = get_theme_mod( 'p_pandora_link' );
-		$makemeup_pocketcasts    	 = get_theme_mod( 'p_pocketcasts_link' );
-		$makemeup_radiopublic   	 = get_theme_mod( 'p_radiopublic_link' );
-		$makemeup_rss    			 = get_theme_mod( 'p_rss_link' );
-		$makemeup_castro    		 = get_theme_mod( 'p_castro_link' );
-		$makemeup_castbox    		 = get_theme_mod( 'p_castbox_link' );
-		$makemeup_audible    		 = get_theme_mod( 'p_audible_link' );
+		$castpress_spotify   		 = get_theme_mod( 'p_spotify_link' );
+		$castpress_soundcloud   	  	 = get_theme_mod( 'p_soundcloud_link' );
+		$castpress_apple 	    	 = get_theme_mod( 'p_apple_link' );
+		$castpress_youtube  	  		 = get_theme_mod( 'p_youtube_link' );
+		$castpress_stitcher      	 = get_theme_mod( 'p_stitcher_link' );
+		$castpress_deezer    		 = get_theme_mod( 'p_deezer_link' );
+		$castpress_google_podcasts    = get_theme_mod( 'p_google_podcasts_link' );
+		$castpress_iheartradio    	 = get_theme_mod( 'p_iheartradio_link' );
+		$castpress_overcast    	  	 = get_theme_mod( 'p_overcast_link' );
+		$castpress_pandora    		 = get_theme_mod( 'p_pandora_link' );
+		$castpress_pocketcasts    	 = get_theme_mod( 'p_pocketcasts_link' );
+		$castpress_radiopublic   	 = get_theme_mod( 'p_radiopublic_link' );
+		$castpress_rss    			 = get_theme_mod( 'p_rss_link' );
+		$castpress_castro    		 = get_theme_mod( 'p_castro_link' );
+		$castpress_castbox    		 = get_theme_mod( 'p_castbox_link' );
+		$castpress_audible    		 = get_theme_mod( 'p_audible_link' );
 
 
-		$makemeup_all_publishers = array(
-			$makemeup_spotify, $makemeup_soundcloud, $makemeup_apple, $makemeup_youtube, 
-			$makemeup_stitcher, $makemeup_deezer, $makemeup_google_podcasts, $makemeup_iheartradio,
-			$makemeup_overcast, $makemeup_pandora, $makemeup_pocketcasts, $makemeup_radiopublic,
-			$makemeup_rss, $makemeup_castro, $makemeup_castbox, $makemeup_audible
+		$castpress_all_publishers = array(
+			$castpress_spotify, $castpress_soundcloud, $castpress_apple, $castpress_youtube, 
+			$castpress_stitcher, $castpress_deezer, $castpress_google_podcasts, $castpress_iheartradio,
+			$castpress_overcast, $castpress_pandora, $castpress_pocketcasts, $castpress_radiopublic,
+			$castpress_rss, $castpress_castro, $castpress_castbox, $castpress_audible
 		);
 		
-		$makemeup_publisher_flag = 0;		
-		foreach($makemeup_all_publishers as $makemeup_publisher){
-			if(empty($makemeup_publisher)){
+		$castpress_publisher_flag = 0;		
+		foreach($castpress_all_publishers as $castpress_publisher){
+			if(empty($castpress_publisher)){
 			}
 			else{
-				$makemeup_publisher_flag = 1;
+				$castpress_publisher_flag = 1;
 			}
 		}
 				
-		if($makemeup_publisher_flag === 1){
+		if($castpress_publisher_flag === 1){
 		
-			echo sprintf('<div class="c-episodes__share"><span class="c-episode__social-share__title font--semibold">%s</span>' , esc_html__( 'Listen on', 'makemeup' ) );
+			echo sprintf('<div class="c-episodes__share"><span class="c-episode__social-share__title font--semibold">%s</span>' , esc_html__( 'Listen on', 'castpress' ) );
 
 			// Spotify
-			if ( $makemeup_spotify ) { 
+			if ( $castpress_spotify ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="bx-bxl-spotify" data-inline="false"></span>
-				</a>', esc_url( $makemeup_spotify ), esc_html__( 'Spotify', 'makemeup' ) );
+				</a>', esc_url( $castpress_spotify ), esc_html__( 'Spotify', 'castpress' ) );
 			}
 
 			// Soundcloud
-			if ( $makemeup_soundcloud ) { 
+			if ( $castpress_soundcloud ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons c-episodes__social-share__icons--big" data-icon="ion-logo-soundcloud" data-inline="false"></span>
-				</a>', esc_url( $makemeup_soundcloud ), esc_html__( 'Soundcloud', 'makemeup' ) );
+				</a>', esc_url( $castpress_soundcloud ), esc_html__( 'Soundcloud', 'castpress' ) );
 			}
 
 			// Apple Music
-			if ( $makemeup_apple ) { 
+			if ( $castpress_apple ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="ant-design:apple-filled" data-inline="false"></span>
-				</a>', esc_url( $makemeup_apple ), esc_html__( 'Apple Music', 'makemeup' ) );
+				</a>', esc_url( $castpress_apple ), esc_html__( 'Apple Music', 'castpress' ) );
 			}
 
 			// Youtube
-			if ( $makemeup_youtube ) { 
+			if ( $castpress_youtube ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="ant-design:youtube-filled" data-inline="false"></span>
-				</a>', esc_url( $makemeup_youtube ), esc_html__( 'Youtube', 'makemeup' ) );
+				</a>', esc_url( $castpress_youtube ), esc_html__( 'Youtube', 'castpress' ) );
 			}
 
 			// stitcher
-			if ( $makemeup_stitcher ) { 
+			if ( $castpress_stitcher ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:stitcher" data-inline="false"></span>
-				</a>', esc_url( $makemeup_stitcher ), esc_html__( 'stitcher', 'makemeup' ) );
+				</a>', esc_url( $castpress_stitcher ), esc_html__( 'stitcher', 'castpress' ) );
 			}
 
 			// deezer
-			if ( $makemeup_deezer ) { 
+			if ( $castpress_deezer ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="fa-brands:deezer" data-inline="false"></span>
-				</a>', esc_url( $makemeup_deezer ), esc_html__( 'deezer', 'makemeup' ) );
+				</a>', esc_url( $castpress_deezer ), esc_html__( 'deezer', 'castpress' ) );
 			}
 
 			// Google podcast
-			if ( $makemeup_google_podcasts ) { 
+			if ( $castpress_google_podcasts ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib-google-podcasts" data-inline="false"></span>
-				</a>', esc_url( $makemeup_google_podcasts ), esc_html__( 'Google podcast', 'makemeup' ) );
+				</a>', esc_url( $castpress_google_podcasts ), esc_html__( 'Google podcast', 'castpress' ) );
 			}
 
 			// I heart radio
-			if ( $makemeup_iheartradio ) { 
+			if ( $castpress_iheartradio ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:iheartradio" data-inline="false"></span>
-				</a>', esc_url( $makemeup_iheartradio ), esc_html__( 'I heart radio', 'makemeup' ) );
+				</a>', esc_url( $castpress_iheartradio ), esc_html__( 'I heart radio', 'castpress' ) );
 			}
 
 			// Overcast
-			if ( $makemeup_overcast ) { 
+			if ( $castpress_overcast ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib-overcast" data-inline="false"></span>
-				</a>', esc_url( $makemeup_overcast ), esc_html__( 'Overcast', 'makemeup' ) );
+				</a>', esc_url( $castpress_overcast ), esc_html__( 'Overcast', 'castpress' ) );
 			}
 
 			// Pandora
-			if ( $makemeup_pandora ) { 
+			if ( $castpress_pandora ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib-pandora" data-inline="false"></span>
-				</a>', esc_url( $makemeup_pandora ), esc_html__( 'Pandora', 'makemeup' ) );
+				</a>', esc_url( $castpress_pandora ), esc_html__( 'Pandora', 'castpress' ) );
 			}
 
 			// Pocket casts
-			if ( $makemeup_pocketcasts ) { 
+			if ( $castpress_pocketcasts ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:pocketcasts" data-inline="false"></span>
-				</a>', esc_url( $makemeup_pocketcasts ), esc_html__( 'Pocket casts', 'makemeup' ) );
+				</a>', esc_url( $castpress_pocketcasts ), esc_html__( 'Pocket casts', 'castpress' ) );
 			}
 
 			// Radio public
-			if ( $makemeup_radiopublic ) { 
+			if ( $castpress_radiopublic ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib:radiopublic" data-inline="false"></span>
-				</a>', esc_url( $makemeup_radiopublic ), esc_html__( 'Radio public', 'makemeup' ) );
+				</a>', esc_url( $castpress_radiopublic ), esc_html__( 'Radio public', 'castpress' ) );
 			}
 
 			// Rss Feed
-			if ( $makemeup_rss ) { 
+			if ( $castpress_rss ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="ic-baseline-rss-feed" data-inline="false"></span>
-				</a>', esc_url( $makemeup_rss ), esc_html__( 'Rss Feed', 'makemeup' ) );
+				</a>', esc_url( $castpress_rss ), esc_html__( 'Rss Feed', 'castpress' ) );
 			}
 
 			// Castro
-			if ( $makemeup_castro ) { 
+			if ( $castpress_castro ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib-castro" data-inline="false"></span>
-				</a>', esc_url( $makemeup_castro ), esc_html__( 'Castro', 'makemeup' ) );
+				</a>', esc_url( $castpress_castro ), esc_html__( 'Castro', 'castpress' ) );
 			}
 
 			// castbox
-			if ( $makemeup_castbox ) { 
+			if ( $castpress_castbox ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:castbox" data-inline="false"></span>
-				</a>', esc_url( $makemeup_castbox ), esc_html__( 'castbox', 'makemeup' ) );
+				</a>', esc_url( $castpress_castbox ), esc_html__( 'castbox', 'castpress' ) );
 			}
 
 			// audible
-			if ( $makemeup_audible ) { 
+			if ( $castpress_audible ) { 
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="la-audible" data-inline="false"></span>
-				</a>', esc_url( $makemeup_audible ), esc_html__( 'audible', 'makemeup' ) );
+				</a>', esc_url( $castpress_audible ), esc_html__( 'audible', 'castpress' ) );
 			}
 
 			echo '</div>';	
@@ -573,11 +580,11 @@ if (! function_exists('makemeup_get_podcast_player_link')) :
 endif;
 
 
-if ( ! function_exists( 'makemeup_render_newsletter' ) ) {
+if ( ! function_exists( 'castpress_render_newsletter' ) ) {
 	/**
 	 * Display Share icons qa-
 	 */
-	function makemeup_render_newsletter() {
+	function castpress_render_newsletter() {
 	
 
 		echo '<div class="c-footer__widget">

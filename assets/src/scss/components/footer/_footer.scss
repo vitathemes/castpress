@@ -18,7 +18,7 @@
 }
 
 .c-footer__content {
-  border-top: 1px solid $makemeup_neutral_gray_light_second_color;
+  border-top: 1px solid $castpress_neutral_gray_light_second_color;
   width: 100%;
   padding: 0 0px;
   padding-top: 48px;
@@ -41,14 +41,14 @@
 }
 
 .c-footer__context {
-  color: $makemeup_primary_color !important;
+  color: $castpress_primary_color !important;
 }
 
 .c-footer__link {
-  color: $makemeup_third_color !important;
+  color: $castpress_third_color !important;
 
   &:hover {
-    color: $makemeup_primary_color !important;
+    color: $castpress_primary_color !important;
   }
 }
 
@@ -67,7 +67,7 @@
 
 .c-footer__widget {
   width: 100%;
-  color: $makemeup_neutral_dark_gray_color;
+  color: $castpress_neutral_dark_gray_color;
   margin-bottom: 23px;
   position: relative;
   width: 50%;
@@ -87,7 +87,7 @@
       margin-bottom: 16px;
 
       a {
-        color: $makemeup_second_color;
+        color: $castpress_second_color;
         font-size: 14px;
         line-height: 18px;
       }
@@ -122,7 +122,7 @@
 
 .c-footer__widget__desc {
   margin-bottom: 16px;
-  color: $makemeup_second_color !important ;
+  color: $castpress_second_color !important ;
 }
 
 .c-footer__newsletter-submit {

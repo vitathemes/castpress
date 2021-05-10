@@ -6,7 +6,7 @@
  * @package     WordPress
  * @subpackage  Comment_Walker
  */
-class Makemeup_walker_comment extends Walker_Comment
+class Castpress_walker_comment extends Walker_Comment
 {
 	/**
 	 * Output a comment in the HTML5 format. Don't worry, we're
@@ -54,14 +54,14 @@ class Makemeup_walker_comment extends Walker_Comment
 
                 <?php if (!$comment->comment_approved): ?>
                 <p class="comment-awaiting-moderation">
-                    <?php esc_html_e('Your comment is awaiting moderation.', 'makemeup'); ?></p>
+                    <?php esc_html_e('Your comment is awaiting moderation.', 'castpress'); ?></p>
                 <?php endif; ?>
 
                 <?php comment_text(); ?>
 
                 <?php
 					// Output Edit link
-					edit_comment_link(__('Edit', 'makemeup'), '<span class="edit-link">', '</span>');
+					edit_comment_link(__('Edit', 'castpress'), '<span class="edit-link">', '</span>');
 
 					// Output Reply link
 					comment_reply_link([

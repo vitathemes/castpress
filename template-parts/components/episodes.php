@@ -29,7 +29,7 @@
         while ( $wp_query->have_posts() ) : $wp_query->the_post();
             get_template_part( 'template-parts/content', get_post_type() );	
         endwhile;
-            makemeup_get_default_pagination();
+            castpress_get_default_pagination();
         endif;
     ?>
 </div>

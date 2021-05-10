@@ -11,19 +11,19 @@
 /* p */
 p,
 .p {
-  font-family: $makemeup_font_regular;
+  font-family: $castpress_font_regular;
   // font-size: 18px;
   font-size: 16px;
   line-height: 25px;
   margin-top: 0px;
   margin-bottom: 1.5rem;
-  color: $makemeup_second_color;
+  color: $castpress_second_color;
 }
 
 /* span */
 span,
 .span {
-  font-family: $makemeup_font_regular;
+  font-family: $castpress_font_regular;
   font-size: 12px;
   line-height: 15px;
 }
@@ -38,5 +38,5 @@ span,
 }
 
 .seprator {
-  color: $makemeup_third_color !important;
+  color: $castpress_third_color !important;
 }

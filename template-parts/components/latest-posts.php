@@ -1,5 +1,5 @@
 <div class="c-latest-posts">
-    <h1 class="c-latest-posts__title h1-lh--bg"><?php esc_html_e( 'Latest Posts', 'makemeup' ); ?></h1>
+    <h1 class="c-latest-posts__title h1-lh--bg"><?php esc_html_e( 'Latest Posts', 'castpress' ); ?></h1>
     <div class="c-latest-posts__content">
         <?php  
         $args = array(
@@ -20,7 +20,7 @@
     </div>
     <a class="btn btn--blog-more btn--secondary"
         href="<?php echo esc_url(get_permalink( get_option( 'page_for_posts' ) )); ?>">
-        <?php esc_html_e( 'View Blog', 'makemeup' ); ?>
+        <?php esc_html_e( 'View Blog', 'castpress' ); ?>
         <span class="dashicons dashicons-arrow-right-alt2"></span>
     </a>
 </div>

@@ -4,18 +4,18 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package makemeup
+ * @package castpress
  */
 ?>
 
 
-<?php $postNumber = makemeup_deciaml_post_number(); ?>
+<?php $postNumber = castpress_deciaml_post_number(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-episode'); ?>>
 
     <section class="c-episode__header">
 
         <?php 
-            makemeup_get_category();
+            castpress_get_category();
             echo '<span class="seprator h5 u-link--secondary"> | </span>';
             echo '<span class="c-episode__date h5--secondary h5-lh--sm">'.esc_html( get_the_date( "M d, Y" ) ).'</span>'; 
         ?>
@@ -32,13 +32,13 @@
         <a class="c-episode__read-more span font--semibold a--quaternary" href=" <?php esc_url( the_permalink() ) ?> "
             rel="bookmark">
             <span class="c-episode__play"></span>
-            <?php esc_html_e( 'Listen Now', 'makemeup' ); ?>
+            <?php esc_html_e( 'Listen Now', 'castpress' ); ?>
         </a>
 
         <?php
 			wp_link_pages(
 				array(
-					'before' => '<div class="c-episode__page-links">' . esc_html__( 'Pages:', 'makemeup' ),
+					'before' => '<div class="c-episode__page-links">' . esc_html__( 'Pages:', 'castpress' ),
 					'after'  => '</div>',
 				)
 			);

@@ -1,4 +1,4 @@
-=== Makemeup ===
+=== Castpress ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.0
 Tested up to: 5.7.1
@@ -7,11 +7,11 @@ Stable tag: 1.0.0
 License: GPL-3.0-or-later
 License URI: https://opensource.org/licenses/GPL-3.0
 
-Makemeup is a a minimal & mobile-first theme. The best choice for people who want to publish their podcasts.
+Castpress is a a minimal & mobile-first theme. The best choice for people who want to publish their podcasts.
 
 == Description ==
 
-Makemeup is a a minimal & mobile-first theme. The best choice for people who want to publish their podcasts.
+Castpress is a a minimal & mobile-first theme. The best choice for people who want to publish their podcasts.
 
 = Features =
 * Sass for stylesheets
@@ -60,7 +60,7 @@ See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes
 
 == Copyright ==
 
-Makemeup is distributed under the terms of the GNU GPL.
+Castpress is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -72,9 +72,9 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Makemeup is distributed under the terms of the GNU GPL version 3.0
+Castpress is distributed under the terms of the GNU GPL version 3.0
 
-Makemeup bundles the following third-party resources:
+Castpress bundles the following third-party resources:
 
 Dashicons by WordPress
 License: GNU GPLv2, https://www.gnu.org/licenses/old-licenses/gpl-2.0.html

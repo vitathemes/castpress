@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package makemeup
+ * @package castpress
  */
 get_header();
 ?>
@@ -13,7 +13,7 @@ get_header();
         <?php if ( have_posts() ) : ?>
         <header class="c-main__header">
             <h1 class="c-main__entry-title h1-lh--bg">
-                <?php makemeup_archive_page_name() ?>
+                <?php castpress_archive_page_name() ?>
             </h1>
         </header><!-- .-main__content -->
         <?php
@@ -22,7 +22,7 @@ get_header();
 				the_post();
 				get_template_part( 'template-parts/content' );
 			endwhile;
-			   makemeup_get_default_pagination();
+			   castpress_get_default_pagination();
 		else :
 			get_template_part( 'template-parts/content', 'none' );
 		endif;
