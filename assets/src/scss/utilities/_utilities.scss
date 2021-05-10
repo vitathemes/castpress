@@ -1,0 +1,33 @@
+/* Links */
+.u-link--secondary {
+  color: $color_link_secondary; //222222
+
+  &:hover,
+  &:focus {
+    color: $color_link_hover_secondary; //7247ca
+  }
+}
+
+.u-link--tertiary {
+  color: $color_link_third; //979797
+
+  &:hover {
+    color: $color_link_hover_third; //222222
+  }
+}
+
+.a--quaternary {
+  color: $color_link; //7247ca
+
+  &:hover {
+    color: $color_link_secondary; //222222
+  }
+}
+
+.a--quinary {
+  color: $makemeup_main_accent_second_color; //58379b
+
+  &:hover {
+    color: $color_link_secondary; //222222
+  }
+}

@@ -403,7 +403,7 @@ if( function_exists( 'kirki' ) ) {
 		
 		'output'      => [
 			[
-				'element' => array( '.a--secondary' ),
+				'element' => array( '.u-link--secondary' ),
 			],
 		],
 	] );
@@ -423,7 +423,7 @@ if( function_exists( 'kirki' ) ) {
 		
 		'output'      => [
 			[
-				'element' => array( '.a--tertiary' , '.a--fourth' ),
+				'element' => array( '.u-link--tertiary' , '.a--quaternary' ),
 			],
 		],
 	] );

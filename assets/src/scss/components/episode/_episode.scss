@@ -150,7 +150,7 @@
 
 .c-episode__title {
   padding-bottom: 12px;
-  margin-top: 0px;
+  margin-top: 14px;
   display: inline-block;
 
   a {
@@ -194,10 +194,10 @@
   }
 
   &:hover > .c-episode__play::before {
-    background-image: url("../images/play-hover.svg");
+    background-color: $makemeup_main_accent_second_color;
   }
   &:focus > .c-episode__play::before {
-    background-image: url("../images/play-hover.svg");
+    background-color: $makemeup_main_accent_second_color;
   }
 }
 .c-episode__page-links {
@@ -224,16 +224,19 @@
 
 .c-episode__play {
   &::before {
-    display: block;
-    content: " ";
-    transition: 0.5s all;
-    background-image: url("../images/play.svg");
-    background-size: 28px 28px;
-    height: 28px;
-    width: 28px;
-    display: inline-block;
+    transition: 0.2s all;
+    content: "";
+    width: 32px;
+    height: 32px;
+    -webkit-mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16")
+      no-repeat 50% 50%;
+    mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16")
+      no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
     vertical-align: middle;
-    margin-right: 5px;
+    display: inline-block;
+    background-color: $makemeup_fourth_color;
   }
 }
 

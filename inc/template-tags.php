@@ -34,7 +34,7 @@ if ( ! function_exists( 'makemeup_posted_on' ) ) :
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
 			esc_html( '%s', 'makemeup' ),
-			'<a class="a--tertiary" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
+			'<a class="u-link--tertiary" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
 		echo '<span class="c-post__date h5--secondary h5-lh--sm '. esc_html($makemeup_is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -50,7 +50,7 @@ if ( ! function_exists( 'makemeup_posted_by' ) ) :
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'By %s', 'post author', 'makemeup' ),
-			'<span class="author vcard h5--secondary h5-lh--sm"><a class="url fn n c-post__author__link a--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard h5--secondary h5-lh--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 
@@ -270,7 +270,7 @@ if (! function_exists('makemeup_get_category')) :
 	  */
 	function makemeup_get_category( $makemeup_is_bold = false, $makemeup_have_seprator = false ) {
 		($makemeup_is_bold) ? $makemeup_is_bold = 'h5' : $makemeup_is_bold = 'h5--secondary';
-		($makemeup_have_seprator) ? $makemeup_have_seprator = "<span class='seprator h5 a--secondary'> | </span>" : $makemeup_have_seprator = "";
+		($makemeup_have_seprator) ? $makemeup_have_seprator = "<span class='seprator h5 u-link--secondary'> | </span>" : $makemeup_have_seprator = "";
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'makemeup' ) );
 		if ( $categories_list ) {

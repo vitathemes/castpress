@@ -86,6 +86,12 @@ input[type="submit"] {
   color: $makemeup_main_accent_color;
 }
 
+.btn--secondary {
+  .dashicons {
+    width: max-content !important;
+  }
+}
+
 /*------------------------------------*\
   #Button Download
 \*------------------------------------*/

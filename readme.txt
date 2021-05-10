@@ -29,7 +29,7 @@ Makemeup is a a minimal & mobile-first theme. The best choice for people who wan
 * Support 4 level of menus
 * …and much more
 
-See a working example at [demo.vitathemes.com/makemeup](https://demo.vitathemes.com/makemeup/).
+See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes.com/castpress/).
 
 == Installation ==
 
@@ -92,6 +92,6 @@ TGMPA by Thomas Griffin, Gary Jones, Juliette
 License: GNU GPLv2, https://opensource.org/licenses/GPL-2.0
 Source: http://tgmpluginactivation.com/
 
-Image for theme screenshot, Copyright VitaThemes
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://vitathemes.com/theme/makemeup/
+mejs-controls.svg by WordPress ( Edited by VitaThemes ) 
+License: GNU GPLv2, https://opensource.org/licenses/GPL-2.0
+Source: wp-includes/js/mediaelement

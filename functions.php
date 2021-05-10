@@ -267,3 +267,9 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+  * Load TGMPA file
+  */
+  require_once get_template_directory() . '/inc/tgmpa/class-tgm-plugin-activation.php';
+  require_once get_template_directory() . '/inc/tgmpa/tgmpa-config.php';

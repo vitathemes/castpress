@@ -626,6 +626,27 @@ html {
 /*--------------------------------------------------------------
 # utilities
 --------------------------------------------------------------*/
+/* Links */
+.u-link--secondary {
+  color: var(--makemeup_primary-color); }
+  .u-link--secondary:hover, .u-link--secondary:focus {
+    color: #7247ca; }
+
+.u-link--tertiary {
+  color: #979797; }
+  .u-link--tertiary:hover {
+    color: #222222; }
+
+.a--quaternary {
+  color: #7247ca; }
+  .a--quaternary:hover {
+    color: var(--makemeup_primary-color); }
+
+.a--quinary {
+  color: #58379b; }
+  .a--quinary:hover {
+    color: var(--makemeup_primary-color); }
+
 /*--------------------------------------------------------------
 # Objects
 --------------------------------------------------------------*/
@@ -1598,7 +1619,7 @@ img {
 
 .c-episode__title {
   padding-bottom: 12px;
-  margin-top: 0px;
+  margin-top: 14px;
   display: inline-block; }
   .c-episode__title a {
     color: var(--makemeup_primary-color); }
@@ -1632,9 +1653,9 @@ img {
   .c-episode__read-more:hover {
     color: #58379b !important; }
   .c-episode__read-more:hover > .c-episode__play::before {
-    background-image: url("../images/play-hover.svg"); }
+    background-color: #58379b; }
   .c-episode__read-more:focus > .c-episode__play::before {
-    background-image: url("../images/play-hover.svg"); }
+    background-color: #58379b; }
 
 .c-episode__page-links {
   margin: 16px 0px 0px 0px; }
@@ -1654,16 +1675,17 @@ img {
   text-transform: uppercase; }
 
 .c-episode__play::before {
-  display: block;
-  content: " ";
-  transition: 0.5s all;
-  background-image: url("../images/play.svg");
-  background-size: 28px 28px;
-  height: 28px;
-  width: 28px;
-  display: inline-block;
+  transition: 0.2s all;
+  content: "";
+  width: 32px;
+  height: 32px;
+  -webkit-mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16") no-repeat 50% 50%;
+  mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16") no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
   vertical-align: middle;
-  margin-right: 5px; }
+  display: inline-block;
+  background-color: var(--makemeup_fourth-color); }
 
 .c-episodes__share {
   width: 100%;
@@ -2580,29 +2602,6 @@ a,
   .a:focus {
     color: #979797; }
 
-.a--secondary {
-  color: var(--makemeup_primary-color); }
-  .a--secondary:hover {
-    color: #7247ca; }
-
-.a--tertiary {
-  color: #979797; }
-  .a--tertiary:hover {
-    color: #222222; }
-
-.a--fourth {
-  color: #7247ca; }
-  .a--fourth:hover {
-    color: var(--makemeup_primary-color); }
-
-.a--fifth {
-  color: #58379b; }
-  .a--fifth:hover {
-    color: var(--makemeup_primary-color); }
-
-.btn--secondary .dashicons {
-  width: max-content !important; }
-
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -2774,6 +2773,9 @@ input[type="submit"] {
 .btn--play {
   background-color: #f5f5f7;
   color: #7247ca; }
+
+.btn--secondary .dashicons {
+  width: max-content !important; }
 
 /*------------------------------------*\
   #Button Download

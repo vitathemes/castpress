@@ -16,12 +16,12 @@
 
         <?php 
             makemeup_get_category();
-            echo '<span class="seprator h5 a--secondary"> | </span>';
+            echo '<span class="seprator h5 u-link--secondary"> | </span>';
             echo '<span class="c-episode__date h5--secondary h5-lh--sm">'.esc_html( get_the_date( "M d, Y" ) ).'</span>'; 
         ?>
 
         <div class="c-episode__titles">
-            <?php  the_title('<h2 class="c-episode__title"><a class="a--secondary" href="'.esc_url( get_permalink() ).'" rel="bookmark">'.$postNumber.' - ', '</a></h2>' ); ?>
+            <?php  the_title('<h2 class="c-episode__title"><a class="u-link--secondary" href="'.esc_url( get_permalink() ).'" rel="bookmark">'.$postNumber.' - ', '</a></h2>' ); ?>
         </div>
 
 
@@ -29,7 +29,7 @@
             <p class="c-episode__entry-context h4"><?php echo esc_html(get_the_excerpt()); ?></h4>
         </div>
 
-        <a class="c-episode__read-more span font--semibold a--fourth" href=" <?php esc_url( the_permalink() ) ?> "
+        <a class="c-episode__read-more span font--semibold a--quaternary" href=" <?php esc_url( the_permalink() ) ?> "
             rel="bookmark">
             <span class="c-episode__play"></span>
             <?php esc_html_e( 'Listen Now', 'makemeup' ); ?>
