@@ -1,11 +1,11 @@
 === Makemeup ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.0
-Tested up to: 5.7
+Tested up to: 5.7.1
 Requires PHP: 5.6
 Stable tag: 1.0.0
-License: GPL-2.0-or-later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPL-3.0-or-later
+License URI: https://opensource.org/licenses/GPL-3.0
 
 Makemeup is a a minimal & mobile-first theme. The best choice for people who want to publish their podcasts.
 
@@ -24,8 +24,9 @@ Makemeup is a a minimal & mobile-first theme. The best choice for people who wan
 * Developer friendly extendable code
 * Translation ready (with .POT files included)
 * SEO optimized
-* GNU GPL version 2.0 licensed
-* Support 1 level menu
+* GNU GPL version 3.0 licensed
+* Support 10 level of submenus
+* Support 4 level of menus
 * …and much more
 
 See a working example at [demo.vitathemes.com/makemeup](https://demo.vitathemes.com/makemeup/).
@@ -37,6 +38,13 @@ See a working example at [demo.vitathemes.com/makemeup](https://demo.vitathemes.
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.0.2 =
+* Fix submenus ( style support at 10 submenus )
+* Fixed minor style issues
+* Add changelog.md
+* Update wordpress tested on version
+* Update Theme license
 
 = 1.0.1 =
 * Added related posts
@@ -56,7 +64,7 @@ Makemeup is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
+the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,
@@ -64,7 +72,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Makemeup is distributed under the terms of the GNU GPL version 2.0
+Makemeup is distributed under the terms of the GNU GPL version 3.0
 
 Makemeup bundles the following third-party resources:
 
@@ -77,7 +85,7 @@ License: Apache 2.0, http://www.apache.org/licenses/LICENSE-2.0
 Source: https://iconify.design/
 
 Source Serif Pro Font by Frank Grießhammer
-License: Apache, http://www.apache.org/licenses/LICENSE-2.0
+License: Apache 2.0, http://www.apache.org/licenses/LICENSE-2.0
 Source: https://fonts.google.com/specimen/Source+Serif+Pro?query=Source+Serif+Pro#about
 
 TGMPA by Thomas Griffin, Gary Jones, Juliette

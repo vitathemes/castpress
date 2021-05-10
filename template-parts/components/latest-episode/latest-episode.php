@@ -1,14 +1,12 @@
 <?php
 /**
- * Template part for displaying single
+ * Template part for displaying latest episode
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package makemeup
  */
 ?>
-
-
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-single c-single--latest-episode'); ?>>
 
     <div class="c-single__thumbnail">
@@ -25,31 +23,25 @@
 
         <div class="c-single__entry-meta">
             <?php    
-
 				if( $episode_player ){
 					
 					echo "<div class='c-episode__player'>";
 					echo do_shortcode('[audio mp3="https://chtbl.com/track/G2F3EG/api.spreaker.com/download/episode/16457419/suspicion_ep_10_the_final_verdict.mp3" ][/audio]');
 					echo "</div>";
-
+					
 				}
 				else{
+
 					echo "<div class='c-episode__player c-episode__player--button'>";
 					echo "<button> Play </button>";
 					echo "</div>";
+					
 				}
-            
 			?>
 
         </div><!-- .entry-meta -->
 
-        <?php 
-		if ( 'episodes' == get_post_type() ){
-		
-			makemeup_get_podcast_player_link();
-
-		}
-		?>
+        <?php makemeup_get_podcast_player_link(); ?>
 
     </header><!-- .entry-header -->
 

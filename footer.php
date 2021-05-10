@@ -15,46 +15,48 @@
         <?php 
         if ( is_active_sidebar( 'custom-footer-widget' ) ) : ?>
         <div id="footer-widget-area" class="c-footer__widgets" role="complementary">
+
             <?php dynamic_sidebar( 'custom-footer-widget' ); ?>
 
-
-            <?php makemeup_render_newsletter(); //qa- ?>
-
+            <?php //makemeup_render_newsletter(); //qa- ?>
 
             <?php endif; ?>
 
-            <div class="c-footer__site-info">
-                <span class="c-footer__context h5--secondary h5-lh--sm font--regular">
+        </div>
 
-                    <?php
+
+        <div class="c-footer__site-info">
+            <span class="c-footer__context h5--secondary h5-lh--sm font--regular">
+
+                <?php
                         /* translators: %s: Theme creator name by */
                         printf( esc_html__( 'PodcastTheme by', 'makemeup' ), 'makemeup' );
                     ?>
 
-                </span>
+            </span>
 
-                <a class="c-footer__link h5--secondary h5-lh--sm font--regular a--tertiary"
-                    href="<?php echo esc_url( __( 'https://vitathemes.com/', 'makemeup' ) ); ?>">
-                    <?php 
+            <a class="c-footer__link h5--secondary h5-lh--sm font--regular a--tertiary"
+                href="<?php echo esc_url( __( 'https://vitathemes.com/', 'makemeup' ) ); ?>">
+                <?php 
                         /* translators: %s: Vita themes is the creator of the theme */
                         printf( esc_html__( 'VitaThemes', 'makemeup' ) );
                     ?>
-                </a>
+            </a>
 
-                <span class="c-footer__context h5--secondary h5-lh--sm sep a--tertiary"> | </span>
+            <span class="c-footer__context h5--secondary h5-lh--sm sep a--tertiary"> | </span>
 
-                <a class="c-footer__link h5--secondary h5-lh--sm font--regular a--tertiary"
-                    href="<?php echo esc_url( get_privacy_policy_url() ); ?>">
-                    <?php
+            <a class="c-footer__link h5--secondary h5-lh--sm font--regular a--tertiary"
+                href="<?php echo esc_url( get_privacy_policy_url() ); ?>">
+                <?php
                         /* translators: Privacy Policy Link */
                         printf( esc_html__( 'Privacy Policy', 'makemeup' ), 'makemeup');
                     ?>
-                </a>
-            </div><!-- .site-info -->
-            <div class="c-social-share c-social-share--footer">
-                <?php makemeup_socials_links(); ?>
-            </div>
+            </a>
+        </div><!-- .site-info -->
+        <div class="c-social-share c-social-share--footer">
+            <?php makemeup_socials_links(); ?>
         </div>
+
 </footer><!-- #colophon -->
 </div><!-- #page -->
 <?php wp_footer(); ?>

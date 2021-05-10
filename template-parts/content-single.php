@@ -7,19 +7,20 @@
  * @package makemeup
  */
 ?>
-
-
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-single'); ?>>
 
     <?php makemeup_get_single_thumbnail( false ); ?>
 
     <header class="c-single__header">
+
         <?php the_title( '<h1 class="c-single__title c-main__entry-title"><a class="a--secondary h1 h1-lh--bg" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
+
         <div class="c-single__entry-meta">
+
             <?php 
 				if ( 'episodes' == get_post_type() ){
 					makemeup_get_category(false , true);
-				}	
+                }
 			?>
 
             <span class="c-post__date h5--secondary h5-lh--sm posted-on">
@@ -32,25 +33,28 @@
 
             <?php makemeup_posted_by( true ); ?>
 
-            <?php 
-			if ( 'episodes' == get_post_type() ){
-                makemeup_get_audio_podcast( $post );
-			}	
-			?>
+            <div class="c-single__podcast-audio">
+                <?php 
+                    if ( 'episodes' == get_post_type() ){
+                        makemeup_get_podcast_audio( $post , "c-single__audio" );
+                    }	
+			    ?>
+            </div>
 
         </div><!-- .entry-meta -->
 
         <?php 
-		if ( 'episodes' == get_post_type() ){
-            
-            makemeup_get_podcast_player_link();
-            
-		}
+            if ( 'episodes' == get_post_type() ){
+                
+                makemeup_get_podcast_player_link();
+                
+            }
 		?>
 
     </header><!-- .entry-header -->
 
     <div class="c-single__entry-content">
+
         <?php
             the_content(
                 sprintf(
@@ -67,54 +71,31 @@
                 )
             );
 		?>
-        <?php if ( 'episodes' == get_post_type() ) {
-            
-          
-            echo "<br />";
-            echo "<br />";
-            
-            $my_meta1 = get_post_meta( $post->ID, 'podcast_audio_url', true ); 
-            echo $my_meta1;
-            echo "<br />";
-            echo "<br />";
 
-            $my_meta2 = get_post_meta( $post->ID, 'podcast_duration', true ); 
-            echo $my_meta2;
+        <?php if ( 'episodes' == get_post_type() ) :
+          $makemeup_podcast_audio_duratiuon = get_post_meta( $post->ID, 'podcast_duration', true ); 
 
-            echo "<br />";
-            echo "<br />";
-            $my_meta3 = get_post_meta( $post->ID, 'podcast_filesize', true ); 
-            echo $my_meta3;
+          $makemeup_podcast_audio_duratiuon = substr($makemeup_podcast_audio_duratiuon,0,-3);
 
-            echo "<br />";
-            echo "<br />";
-            $my_meta4 = get_post_meta( $post->ID, 'podcast_enclosure', true ); 
-            echo $my_meta4;
-
-            echo "<br />";
-            echo "<br />";
-            $my_meta5 = get_post_meta( $post->ID, 'podcast_author', true ); 
-            echo $my_meta5;
-
-            echo "<br />";
-            echo "<br />";
-            
-            $my_meta6 = get_post_meta( $post->ID, 'podcast_publish_date', true ); 
-            echo $my_meta6;
-
-            echo "<br />";
-            echo "<br />";
-            
         ?>
+
         <div class="c-single__transcript">
 
-            <h2 class="c-single__transcript__title">Listening time: 86 minutes</h2>
+            <h2 class="c-single__transcript__title">
+
+                <?php echo sprintf('%s %s %s' , 
+                esc_html_e( 'Listening time ', 'makemeup' ),
+                esc_html_e( $makemeup_podcast_audio_duratiuon ),
+                esc_html_e( ' minutes', 'makemeup' ));?>
+
+            </h2>
             <span class="c-single__transcript__sep h2">|</span>
-            <a class="c-single__transcript__more js-single__transcript__more h2">View transcript
+            <a class="c-single__transcript__more js-single__transcript__more h2"><?php esc_html_e( 'View transcript', 'makemeup' ); ?>
                 <span class="c-single__transcript__icon dashicons dashicons-arrow-right-alt"></span>
             </a>
 
         </div>
+
         <div class="c-single__transcript__content">
             <div class="c-single__transcript__wrapper" data-simplebar data-simplebar-auto-hide="false">
                 <div class="c-single__transcript__context">
@@ -149,7 +130,7 @@
                 </div>
             </div>
         </div>
-        <?php } ?>
+        <?php endif; ?>
 
         <div class="c-single__tags">
             <?php
@@ -159,14 +140,16 @@
         </div>
 
         <div class="c-social-share c-social-share--single">
-
-            <?php makemeup_share_links(); ?>
-
+            <?php
+                // Get social share Links
+                makemeup_share_links(); 
+            ?>
         </div>
 
         <?php 
+            // Get related posts
             if ( 'episodes' !== get_post_type() ){
-                    get_template_part( 'template-parts/components/related-posts' ); 
+                get_template_part( 'template-parts/components/related-posts' ); 
             }
         ?>
 

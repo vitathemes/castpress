@@ -87,6 +87,47 @@ input[type="submit"] {
 }
 
 /*------------------------------------*\
+  #Button Download
+\*------------------------------------*/
+.btn--download {
+  background-color: transparent;
+  height: max-content;
+  padding: 0px;
+  height: 40px;
+  width: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: transparent;
+
+    &::after {
+      background-color: $makemeup_fourth_color;
+    }
+  }
+
+  &::after {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    content: "";
+    cursor: pointer;
+
+    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
+      no-repeat 50% 50%;
+    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat
+      50% 50%;
+
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-color: $makemeup_primary_color;
+  }
+}
+
+/*------------------------------------*\
   #Button Error
 \*------------------------------------*/
 .btn--error {

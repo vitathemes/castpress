@@ -836,6 +836,9 @@ html {
   box-sizing: border-box; }
 
 /*--------------------------------------------------------------
+# utilities
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 # Objects
 --------------------------------------------------------------*/
 /* block
@@ -973,7 +976,7 @@ img {
 .c-header__search-form {
   display: none;
   position: absolute;
-  right: 140px;
+  right: 155px;
   top: 90px; }
   .c-header__search-form .search-field {
     width: 315px; }
@@ -1056,6 +1059,8 @@ img {
       margin-top: 0px; } }
   .s-nav .heart::before {
     display: inline-block; }
+  .s-nav .menu-item.current-menu-item .menu-item__link {
+    color: var(--makemeup_fourth-color); }
   .s-nav li {
     display: block;
     position: relative;
@@ -1073,21 +1078,17 @@ img {
       margin-bottom: 24px; }
     .s-nav li:focus-within .sub-menu {
       display: block; }
-    .s-nav li:last-child .sub-menu {
-      background-color: lightcyan !important; }
-      .s-nav li:last-child .sub-menu .sub-menu {
-        z-index: 5;
-        background-color: lightcoral !important; }
-        .s-nav li:last-child .sub-menu .sub-menu .sub-menu {
-          background-color: lightblue !important;
-          margin-left: 0px;
-          display: block !important;
-          position: absolute;
-          top: 100%;
-          left: 0% !important;
-          transform: translate(0%, 0%); }
-          .s-nav li:last-child .sub-menu .sub-menu .sub-menu .sub-menu {
-            margin-left: 0px; }
+    .s-nav li:last-child .sub-menu .sub-menu {
+      z-index: 5; }
+      .s-nav li:last-child .sub-menu .sub-menu .sub-menu {
+        margin-left: 0px;
+        display: block !important;
+        position: absolute;
+        top: 100%;
+        left: 0% !important;
+        transform: translate(0%, 0%); }
+        .s-nav li:last-child .sub-menu .sub-menu .sub-menu .sub-menu {
+          margin-left: 0px; }
 
 /*------------------------------------*\
   #Heart icon (Primary menu)
@@ -1194,26 +1195,21 @@ img {
     transform: translate(0%, 0%);
     margin-top: 0px;
     margin-left: 0px;
-    display: none !important;
-    background-color: lightcoral !important; }
+    display: none !important; }
     @media only screen and (min-width: 980px) {
       .sub-menu .sub-menu {
         display: block !important; } }
-    .sub-menu .sub-menu .sub-menu {
-      background-color: darkgoldenrod !important; }
-      .sub-menu .sub-menu .sub-menu .sub-menu {
-        z-index: 5;
-        background-color: lightgreen !important;
-        top: 100% !important;
-        left: 0%;
-        transform: translate(0%, 0%); }
-        .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
-          display: block !important;
-          position: absolute;
-          background-color: lightskyblue !important;
+    .sub-menu .sub-menu .sub-menu .sub-menu {
+      z-index: 5;
+      top: 100% !important;
+      left: 0%;
+      transform: translate(0%, 0%); }
+      .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
+        display: block !important;
+        position: absolute;
+        margin-left: 0px; }
+        .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
           margin-left: 0px; }
-          .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
-            margin-left: 0px; }
 
 /*------------------------------------*\
   #Menu items (li)
@@ -1924,19 +1920,6 @@ img {
   display: flex;
   align-items: center;
   margin-top: 39px; }
-  .c-episode__player::after {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    content: "";
-    cursor: pointer;
-    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
-    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    margin-right: 10px;
-    vertical-align: middle;
-    background-color: var(--makemeup_primary-color); }
 
 .c-episode__player--button {
   justify-content: center;
@@ -2119,6 +2102,14 @@ img {
   @media only screen and (min-width: 980px) {
     .c-single__title {
       margin-bottom: 8px; } }
+
+.c-single__podcast-audio {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center; }
+
+.c-single__audio {
+  width: 95%; }
 
 .c-single__entry-content {
   margin-top: 64px;
@@ -2448,10 +2439,11 @@ h2.c-single__transcript__title {
 .c-footer__site-info {
   text-align: center;
   margin-top: 25px;
-  line-height: 0px; }
+  line-height: 0px;
+  width: 100%; }
   @media only screen and (min-width: 980px) {
     .c-footer__site-info {
-      margin-top: 96px; } }
+      margin-top: 80px; } }
 
 .c-footer__context {
   color: var(--makemeup_primary-color) !important; }
@@ -2465,17 +2457,26 @@ h2.c-single__transcript__title {
   width: 100%;
   padding-top: 48px;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: flex-start;
   padding: 0px 17px; }
   @media only screen and (min-width: 980px) {
     .c-footer__widgets {
       padding: 0px 0px;
-      padding-top: 64px;
-      flex-wrap: nowrap; } }
+      padding-top: 64px; } }
 
 .c-footer__widget {
-  width: 100%; }
+  width: 100%;
+  color: #555555;
+  margin-bottom: 23px;
+  position: relative;
+  width: 50%;
+  max-width: 50%;
+  padding-right: 16px; }
+  @media only screen and (min-width: 980px) {
+    .c-footer__widget {
+      margin-bottom: 0px; } }
+  .c-footer__widget:last-child {
+    padding-right: 0px; }
   .c-footer__widget .menu {
     margin: 0px; }
     .c-footer__widget .menu li {
@@ -2484,6 +2485,10 @@ h2.c-single__transcript__title {
         color: var(--makemeup_second-color);
         font-size: 14px;
         line-height: 18px; }
+  .c-footer__widget .sub-menu {
+    display: none; }
+  .c-footer__widget .mejs-container {
+    min-width: 290px; }
 
 .c-footer__news-letter {
   width: 50%;
@@ -2492,16 +2497,6 @@ h2.c-single__transcript__title {
 
 .c-footer__news-letter__title {
   letter-spacing: 0.16em; }
-
-.c-footer__widget {
-  color: #555555;
-  margin-bottom: 23px;
-  position: relative; }
-  .c-footer__widget .sub-menu {
-    display: none; }
-  @media only screen and (min-width: 980px) {
-    .c-footer__widget {
-      margin-bottom: 0px; } }
 
 .c-footer__widget__title {
   font-size: 16px;
@@ -2991,6 +2986,36 @@ input[type="submit"] {
   color: #7247ca; }
 
 /*------------------------------------*\
+  #Button Download
+\*------------------------------------*/
+.btn--download {
+  background-color: transparent;
+  height: max-content;
+  padding: 0px;
+  height: 40px;
+  width: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .btn--download:hover {
+    background-color: transparent; }
+    .btn--download:hover::after {
+      background-color: var(--makemeup_fourth-color); }
+  .btn--download::after {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    content: "";
+    cursor: pointer;
+    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
+    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-color: var(--makemeup_primary-color); }
+
+/*------------------------------------*\
   #Button Error
 \*------------------------------------*/
 .btn--error {
@@ -3143,3 +3168,15 @@ input[type="submit"] {
 
 .display-name {
   color: #fff; }
+
+/*------------------------------------*\
+  #Calendar block
+\*------------------------------------*/
+.calendar_wrap * {
+  line-height: 24px; }
+
+/*------------------------------------*\
+  #Rss block
+\*------------------------------------*/
+.rss-widget-icon {
+  width: 20px; }

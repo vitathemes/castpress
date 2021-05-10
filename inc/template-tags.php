@@ -268,7 +268,7 @@ if (! function_exists('makemeup_get_category')) :
 	/**
 	  * Return Post category
 	  */
-	function makemeup_get_category( $makemeup_is_bold = false , $makemeup_have_seprator = false ) {
+	function makemeup_get_category( $makemeup_is_bold = false, $makemeup_have_seprator = false ) {
 		($makemeup_is_bold) ? $makemeup_is_bold = 'h5' : $makemeup_is_bold = 'h5--secondary';
 		($makemeup_have_seprator) ? $makemeup_have_seprator = "<span class='seprator h5 a--secondary'> | </span>" : $makemeup_have_seprator = "";
 		/* translators: used between list items, there is a space after the comma */
@@ -281,19 +281,25 @@ if (! function_exists('makemeup_get_category')) :
 endif;
 
 
-if (! function_exists('makemeup_get_audio_podcast')) :
+if (! function_exists('makemeup_get_podcast_audio')) :
 	/**
 	 * Return Post category
 	 */
-	function makemeup_get_audio_podcast($post) {
+	function makemeup_get_podcast_audio($post , $makemeup_class_name = "") {
 		
-		$podcast_audio = get_post_meta( $post->ID, 'podcast_audio_file', true ); 
-		$makemeup_podcast_audio_shortcode = '[audio mp3="'.$podcast_audio.'" ][/audio]';
+		$makemeup_podcast_audio = get_post_meta( $post->ID, 'podcast_audio_file', true ); 
+		$makemeup_podcast_audio_shortcode = '[audio mp3="'.$makemeup_podcast_audio.'" ][/audio]';
 		$makemeup_podcast_audio_shortcode = strval( $makemeup_podcast_audio_shortcode);
 
-		echo "<div class='c-episode__player'>";
+
+		echo '<div class="c-episode__player '.esc_attr( $makemeup_class_name ).'">';
 		echo do_shortcode($makemeup_podcast_audio_shortcode);
-		echo "</div>";
+		echo '</div>';
+
+		// qa- saniztize aria label and translatable also use sprintf
+		echo '<a class="btn btn--download" aria-label="download button" href="'.esc_attr($makemeup_podcast_audio).'" download="'.esc_attr($makemeup_podcast_audio).'"></a>';
+
+
 
 	}
 endif;
@@ -404,186 +410,165 @@ if ( ! function_exists( 'makemeup_share_links' ) ) {
 
 if (! function_exists('makemeup_get_podcast_player_link')) :
 	/**
-	* get social media 
-	*/
+	  * Get social links
+	  */
 	function makemeup_get_podcast_player_link() {
-
-
-		echo '<div class="c-episodes__share"> <span class="c-episode__social-share__title font--semibold">Listen on</span>';
-
-		// Spotify
-		if ( get_theme_mod('p_spotify_link') != null) { 
 		
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_spotify_link')) .'">
-			<span class="iconify c-episodes__social-share__icons" data-icon="bx-bxl-spotify" data-inline="false"></span>
-			</a>';
-			
-		}
+		$makemeup_spotify   		 = get_theme_mod( 'p_spotify_link' );
+		$makemeup_soundcloud   	  	 = get_theme_mod( 'p_soundcloud_link' );
+		$makemeup_apple 	    	 = get_theme_mod( 'p_apple_link' );
+		$makemeup_youtube  	  		 = get_theme_mod( 'p_youtube_link' );
+		$makemeup_stitcher      	 = get_theme_mod( 'p_stitcher_link' );
+		$makemeup_deezer    		 = get_theme_mod( 'p_deezer_link' );
+		$makemeup_google_podcasts    = get_theme_mod( 'p_google_podcasts_link' );
+		$makemeup_iheartradio    	 = get_theme_mod( 'p_iheartradio_link' );
+		$makemeup_overcast    	  	 = get_theme_mod( 'p_overcast_link' );
+		$makemeup_pandora    		 = get_theme_mod( 'p_pandora_link' );
+		$makemeup_pocketcasts    	 = get_theme_mod( 'p_pocketcasts_link' );
+		$makemeup_radiopublic   	 = get_theme_mod( 'p_radiopublic_link' );
+		$makemeup_rss    			 = get_theme_mod( 'p_rss_link' );
+		$makemeup_castro    		 = get_theme_mod( 'p_castro_link' );
+		$makemeup_castbox    		 = get_theme_mod( 'p_castbox_link' );
+		$makemeup_audible    		 = get_theme_mod( 'p_audible_link' );
 
-		// Soundcloud
-		if ( get_theme_mod('p_soundcloud_link') != null) { 
-	
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_soundcloud_link')) .'">
+
+		$makemeup_all_publishers = array(
+			$makemeup_spotify, $makemeup_soundcloud, $makemeup_apple, $makemeup_youtube, 
+			$makemeup_stitcher, $makemeup_deezer, $makemeup_google_podcasts, $makemeup_iheartradio,
+			$makemeup_overcast, $makemeup_pandora, $makemeup_pocketcasts, $makemeup_radiopublic,
+			$makemeup_rss, $makemeup_castro, $makemeup_castbox, $makemeup_audible
+		);
+		
+		$makemeup_publisher_flag = 0;		
+		foreach($makemeup_all_publishers as $makemeup_publisher){
+			if(empty($makemeup_publisher)){
+				echo "<script>console.log('empty')</script>";
+			}
+			else{
+				echo "<script>console.log('no empty')</script>";
+				$makemeup_publisher_flag = 1;
+			}
+		}
+				
+		if($makemeup_publisher_flag === 1){
+		
+			echo sprintf('<div class="c-episodes__share"><span class="c-episode__social-share__title font--semibold">%s</span>' , esc_html__( 'Listen on', 'makemeup' ) );
+
+			// Spotify
+			if ( $makemeup_spotify ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				<span class="iconify c-episodes__social-share__icons" data-icon="bx-bxl-spotify" data-inline="false"></span>
+				</a>', esc_url( $makemeup_spotify ), esc_html__( 'Spotify', 'makemeup' ) );
+			}
+
+			// Soundcloud
+			if ( $makemeup_soundcloud ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons c-episodes__social-share__icons--big" data-icon="ion-logo-soundcloud" data-inline="false"></span>
-			</a>';
-			
-		}
-		
-		// Podcasts (Apple Podcasts)
-		if ( get_theme_mod('p_apple_link') != null) { 
-		
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_apple_link')) .'">
+				</a>', esc_url( $makemeup_soundcloud ), esc_html__( 'Soundcloud', 'makemeup' ) );
+			}
+
+			// Apple Music
+			if ( $makemeup_apple ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="ant-design:apple-filled" data-inline="false"></span>
-			</a>';
-			
-		}
+				</a>', esc_url( $makemeup_apple ), esc_html__( 'Apple Music', 'makemeup' ) );
+			}
 
-		// Youtube
-		if ( get_theme_mod('p_youtube_link') != null) { 
-	
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_youtube_link')) .'">
+			// Youtube
+			if ( $makemeup_youtube ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="ant-design:youtube-filled" data-inline="false"></span>
-			</a>';
-			
-		}
-		
-		
-		// Stitcher
-		if ( get_theme_mod('p_stitcher_link') != null) { 
-		
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_stitcher_link')) .'">
+				</a>', esc_url( $makemeup_youtube ), esc_html__( 'Youtube', 'makemeup' ) );
+			}
+
+			// stitcher
+			if ( $makemeup_stitcher ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:stitcher" data-inline="false"></span>
-			</a>';
-			
-		}
+				</a>', esc_url( $makemeup_stitcher ), esc_html__( 'stitcher', 'makemeup' ) );
+			}
 
-		// Deezer
-		if ( get_theme_mod('p_deezer_link') != null) { 
-	
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_deezer_link')) .'">
+			// deezer
+			if ( $makemeup_deezer ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="fa-brands:deezer" data-inline="false"></span>
-			</a>';
-			
-		}
-		
-		// Google podcasts
-		if ( get_theme_mod('p_google_podcasts_link') != null) { 
-		
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_google_podcasts_link')) .'">
+				</a>', esc_url( $makemeup_deezer ), esc_html__( 'deezer', 'makemeup' ) );
+			}
+
+			// Google podcast
+			if ( $makemeup_google_podcasts ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib-google-podcasts" data-inline="false"></span>
-			</a>';
-			
-		}
+				</a>', esc_url( $makemeup_google_podcasts ), esc_html__( 'Google podcast', 'makemeup' ) );
+			}
 
-		// I heart radio
-		if ( get_theme_mod('p_iheartradio_link') != null) { 
-	
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_iheartradio_link')) .'">
+			// I heart radio
+			if ( $makemeup_iheartradio ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:iheartradio" data-inline="false"></span>
-			</a>';
-			
-		}
-		
-		// Overcast
-		if ( get_theme_mod('p_overcast_link') != null) { 
-		
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_overcast_link')) .'">
+				</a>', esc_url( $makemeup_iheartradio ), esc_html__( 'I heart radio', 'makemeup' ) );
+			}
+
+			// Overcast
+			if ( $makemeup_overcast ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib-overcast" data-inline="false"></span>
-			</a>';
-			
-		}
+				</a>', esc_url( $makemeup_overcast ), esc_html__( 'Overcast', 'makemeup' ) );
+			}
 
-		// Pandora
-		if ( get_theme_mod('p_pandora_link') != null) { 
-	
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_pandora_link')) .'">
+			// Pandora
+			if ( $makemeup_pandora ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib-pandora" data-inline="false"></span>
-			</a>';
-			
-		}
-		
-		// Pocket casts
-		if ( get_theme_mod('p_pocketcasts_link') != null) { 
-		
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_pocketcasts_link')) .'">
+				</a>', esc_url( $makemeup_pandora ), esc_html__( 'Pandora', 'makemeup' ) );
+			}
+
+			// Pocket casts
+			if ( $makemeup_pocketcasts ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:pocketcasts" data-inline="false"></span>
-			</a>';
-			
-		}
+				</a>', esc_url( $makemeup_pocketcasts ), esc_html__( 'Pocket casts', 'makemeup' ) );
+			}
 
-		// Radio public
-		if ( get_theme_mod('p_radiopublic_link') != null) { 
-	
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_radiopublic_link')) .'">
+			// Radio public
+			if ( $makemeup_radiopublic ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib:radiopublic" data-inline="false"></span>
-			</a>';
-			
-		}
+				</a>', esc_url( $makemeup_radiopublic ), esc_html__( 'Radio public', 'makemeup' ) );
+			}
 
-		
-		// Rss Feed
-		if ( get_theme_mod('p_rss_link') != null) { 
-	
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_rss_link')) .'">
+			// Rss Feed
+			if ( $makemeup_rss ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="ic-baseline-rss-feed" data-inline="false"></span>
-			</a>';
-			
-		}
-	
-		// Spreaker
-		if ( get_theme_mod('p_spreaker_link') != null) { 
+				</a>', esc_url( $makemeup_rss ), esc_html__( 'Rss Feed', 'makemeup' ) );
+			}
 
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_spreaker_link')) .'">
-				<span class="iconify c-episodes__social-share__icons" data-icon="cib-spreaker" data-inline="false"></span>
-			</a>';
-			
-		}
-
-		// Audible
-		if ( get_theme_mod('p_castro_link') != null) { 
-
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_castro_link')) .'">
+			// Castro
+			if ( $makemeup_castro ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib-castro" data-inline="false"></span>
-			</a>';
-			
-		}
+				</a>', esc_url( $makemeup_castro ), esc_html__( 'Castro', 'makemeup' ) );
+			}
 
-		// Castbox
-		if ( get_theme_mod('p_castbox_link') != null) { 
-
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_castbox_link')) .'">
+			// castbox
+			if ( $makemeup_castbox ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:castbox" data-inline="false"></span>
-			</a>';
-			
-		}
+				</a>', esc_url( $makemeup_castbox ), esc_html__( 'castbox', 'makemeup' ) );
+			}
 
-		// audible
-		if ( get_theme_mod('p_audible_link') != null) { 
-
-			echo '
-			<a href="'. esc_url(get_theme_mod('p_audible_link')) .'">
+			// audible
+			if ( $makemeup_audible ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="la-audible" data-inline="false"></span>
-			</a>';
-			
-		}
+				</a>', esc_url( $makemeup_audible ), esc_html__( 'audible', 'makemeup' ) );
+			}
 
-		echo '</div>';	
+			echo '</div>';	
+		}
+		
 
 	}
 

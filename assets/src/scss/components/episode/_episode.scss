@@ -292,24 +292,6 @@
   display: flex;
   align-items: center;
   margin-top: 39px;
-  &::after {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    content: "";
-    cursor: pointer;
-
-    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
-      no-repeat 50% 50%;
-    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat
-      50% 50%;
-
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    margin-right: 10px;
-    vertical-align: middle;
-    background-color: $makemeup_primary_color;
-  }
 }
 
 .c-episode__player--button {

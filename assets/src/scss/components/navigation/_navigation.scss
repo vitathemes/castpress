@@ -47,6 +47,12 @@
     }
   }
 
+  .menu-item.current-menu-item {
+    .menu-item__link {
+      color: $makemeup_fourth_color;
+    }
+  }
+
   li {
     display: block;
     position: relative;
@@ -81,12 +87,9 @@
     &:last-child {
       // Edit position of last sub menu items
       .sub-menu {
-        background-color: lightcyan !important;
         .sub-menu {
           z-index: 5;
-          background-color: lightcoral !important;
           .sub-menu {
-            background-color: lightblue !important;
             margin-left: 0px;
             display: block !important;
             position: absolute;
@@ -106,7 +109,6 @@
 /*------------------------------------*\
   #Heart icon (Primary menu)
 \*------------------------------------*/
-
 .heart {
   &::first-letter {
     text-transform: uppercase;
@@ -244,25 +246,19 @@
     margin-left: 0px;
     display: none !important;
 
-    background-color: lightcoral !important;
-
     @include media(tablet) {
       display: block !important;
     }
 
     .sub-menu {
-      background-color: darkgoldenrod !important;
-
       .sub-menu {
         z-index: 5;
-        background-color: lightgreen !important;
         top: 100% !important;
         left: 0%;
         transform: translate(0%, 0%);
         .sub-menu {
           display: block !important;
           position: absolute;
-          background-color: lightskyblue !important;
           margin-left: 0px;
 
           .sub-menu {
