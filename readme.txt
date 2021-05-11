@@ -92,6 +92,11 @@ TGMPA by Thomas Griffin, Gary Jones, Juliette
 License: GNU GPLv2, https://opensource.org/licenses/GPL-2.0
 Source: http://tgmpluginactivation.com/
 
-mejs-controls.svg by WordPress ( Edited by VitaThemes ) 
+mejs-controls.svg (Audio control) by WordPress ( Dark Mode Edited by VitaThemes ) 
 License: GNU GPLv2, https://opensource.org/licenses/GPL-2.0
 Source: wp-includes/js/mediaelement
+
+Image for theme screenshot, Credit pxhere
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1373307

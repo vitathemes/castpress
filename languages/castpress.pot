@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-10 13:46+0430\n"
+"POT-Creation-Date: 2021-05-11 14:00+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -236,7 +236,7 @@ msgid "Home Components"
 msgstr ""
 
 #: inc/customizer.php:122
-msgid "Podcast PLayer Links"
+msgid "Podcast Player Links"
 msgstr ""
 
 #: inc/customizer.php:134
@@ -303,23 +303,23 @@ msgstr ""
 msgid "Link Tertiary"
 msgstr ""
 
-#: inc/customizer.php:436 inc/template-tags.php:369
+#: inc/customizer.php:436 inc/template-tags.php:359
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:444 inc/template-tags.php:373
+#: inc/customizer.php:444 inc/template-tags.php:363
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:452 inc/template-tags.php:377
+#: inc/customizer.php:452 inc/template-tags.php:367
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:460 inc/template-tags.php:381
+#: inc/customizer.php:460 inc/template-tags.php:371
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer.php:468 inc/template-tags.php:385
+#: inc/customizer.php:468 inc/template-tags.php:375
 msgid "Github"
 msgstr ""
 
@@ -335,11 +335,11 @@ msgstr ""
 msgid "Latest posts from blog"
 msgstr ""
 
-#: inc/customizer.php:497 inc/template-tags.php:459
+#: inc/customizer.php:497 inc/template-tags.php:448
 msgid "Spotify"
 msgstr ""
 
-#: inc/customizer.php:506 inc/template-tags.php:466
+#: inc/customizer.php:506 inc/template-tags.php:455
 msgid "Soundcloud"
 msgstr ""
 
@@ -347,7 +347,7 @@ msgstr ""
 msgid "Podcasts (Apple Podcasts)"
 msgstr ""
 
-#: inc/customizer.php:524 inc/template-tags.php:480
+#: inc/customizer.php:524 inc/template-tags.php:469
 msgid "Youtube"
 msgstr ""
 
@@ -363,27 +363,27 @@ msgstr ""
 msgid "Google podcasts"
 msgstr ""
 
-#: inc/customizer.php:560 inc/template-tags.php:508
+#: inc/customizer.php:560 inc/template-tags.php:497
 msgid "I heart radio"
 msgstr ""
 
-#: inc/customizer.php:569 inc/template-tags.php:515
+#: inc/customizer.php:569 inc/template-tags.php:504
 msgid "Overcast"
 msgstr ""
 
-#: inc/customizer.php:578 inc/template-tags.php:522
+#: inc/customizer.php:578 inc/template-tags.php:511
 msgid "Pandora"
 msgstr ""
 
-#: inc/customizer.php:587 inc/template-tags.php:529
+#: inc/customizer.php:587 inc/template-tags.php:518
 msgid "Pocket casts"
 msgstr ""
 
-#: inc/customizer.php:596 inc/template-tags.php:536
+#: inc/customizer.php:596 inc/template-tags.php:525
 msgid "Radio public"
 msgstr ""
 
-#: inc/customizer.php:605 inc/template-tags.php:543
+#: inc/customizer.php:605 inc/template-tags.php:532
 msgid "Rss Feed"
 msgstr ""
 
@@ -391,7 +391,7 @@ msgstr ""
 msgid "Spreaker"
 msgstr ""
 
-#: inc/customizer.php:623 inc/template-tags.php:550
+#: inc/customizer.php:623 inc/template-tags.php:539
 msgid "Castro"
 msgstr ""
 
@@ -413,7 +413,7 @@ msgctxt "post author"
 msgid "By %s"
 msgstr ""
 
-#: inc/template-tags.php:70 inc/template-tags.php:275
+#: inc/template-tags.php:70 inc/template-tags.php:273
 msgid ", "
 msgstr ""
 
@@ -442,40 +442,35 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/template-tags.php:331
-#, php-format
-msgid "View all posts in %s"
-msgstr ""
-
-#: inc/template-tags.php:401
+#: inc/template-tags.php:391
 msgid "Share:"
 msgstr ""
 
-#: inc/template-tags.php:453
+#: inc/template-tags.php:442
 msgid "Listen on"
 msgstr ""
 
-#: inc/template-tags.php:473
+#: inc/template-tags.php:462
 msgid "Apple Music"
 msgstr ""
 
-#: inc/template-tags.php:487
+#: inc/template-tags.php:476
 msgid "stitcher"
 msgstr ""
 
-#: inc/template-tags.php:494
+#: inc/template-tags.php:483
 msgid "deezer"
 msgstr ""
 
-#: inc/template-tags.php:501
+#: inc/template-tags.php:490
 msgid "Google podcast"
 msgstr ""
 
-#: inc/template-tags.php:557
+#: inc/template-tags.php:546
 msgid "castbox"
 msgstr ""
 
-#: inc/template-tags.php:564
+#: inc/template-tags.php:553
 msgid "audible"
 msgstr ""
 
@@ -901,6 +896,10 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
+#: inc/tgmpa/tgmpa-config.php:48
+msgid "Advanced Custom Fields"
+msgstr ""
+
 #: node_modules/node-gyp/gyp/pylib/gyp/easy_xml.py:51
 msgid "\n"
 msgstr ""
@@ -1317,20 +1316,20 @@ msgid ""
 msgstr ""
 
 #: template-parts/content-page.php:26 template-parts/content-single.php:61
-#: template-parts/components/latest-episode/latest-episode.php:43
+#: template-parts/components/latest-episode/latest-episode.php:41
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content-single.php:85
-msgid "Listening time "
+#: template-parts/content-single.php:84
+msgid "Listening time: "
 msgstr ""
 
-#: template-parts/content-single.php:87
+#: template-parts/content-single.php:84
 msgid " minutes"
 msgstr ""
 
-#: template-parts/content-single.php:91
+#: template-parts/content-single.php:88
 msgid "View transcript"
 msgstr ""
 

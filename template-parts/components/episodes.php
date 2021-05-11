@@ -19,8 +19,9 @@
         $args = array (
             "post_status"            => "publish",
             "post_type"              => "episodes",
-            "paged"                  =>  $paged_post,
-            "posts_per_page"         =>  get_option("posts_per_page"),
+            "paged"                  => $paged_post,
+            "posts_per_page"         => get_option("posts_per_page"),
+            "offset"                 => 1
         );
         
         $wp_query->query( $args );

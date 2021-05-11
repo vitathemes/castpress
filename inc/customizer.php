@@ -119,7 +119,7 @@ if( function_exists( 'kirki' ) ) {
 
 	/* Podcast Player Link */
 	Kirki::add_section( 'podcast_player_link', array(
-		'title'    => esc_html__( 'Podcast PLayer Links', 'castpress' ),
+		'title'    => esc_html__( 'Podcast Player Links', 'castpress' ),
 		'panel'    => '',
 		'priority' => 7,
 	) );

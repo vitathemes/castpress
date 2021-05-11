@@ -34,12 +34,10 @@
             <?php castpress_posted_by( true ); ?>
 
             <div class="c-single__podcast-audio">
-
                 <?php 
-
                     if ('episodes' == get_post_type()){
                         castpress_get_podcast_audio( $post , "c-single__audio" );
-                    }	
+                    }
 			    ?>
             </div>
 
@@ -74,8 +72,8 @@
 
         <?php if ( 'episodes' == get_post_type() ) :
           $castpress_podcast_audio_duratiuon = get_post_meta( $post->ID, 'podcast_duration', true ); 
-
           $castpress_podcast_audio_duratiuon = substr($castpress_podcast_audio_duratiuon,0,-3);
+        //   $castpress_podcast_audio_duratiuon = strval( $castpress_podcast_audio_duratiuon );
 
         ?>
 
@@ -83,10 +81,7 @@
 
             <h2 class="c-single__transcript__title">
 
-                <?php echo sprintf('%s %s %s' , 
-                esc_html_e( 'Listening time ', 'castpress' ),
-                esc_html_e( $castpress_podcast_audio_duratiuon ),
-                esc_html_e( ' minutes', 'castpress' ));?>
+                <?php echo sprintf('%s %s' ,esc_html_e( 'Listening time: ', 'castpress' ), esc_html__( $castpress_podcast_audio_duratiuon . ' minutes' , 'castpress'));?>
 
             </h2>
             <span class="c-single__transcript__sep h2">|</span>
@@ -100,31 +95,8 @@
             <div class="c-single__transcript__wrapper" data-simplebar data-simplebar-auto-hide="false">
                 <div class="c-single__transcript__context">
                     <div class="c-single__transcript__row">
-                        <h3 class="font--semibold">Per Axbom</h3>
-                        <p>Hello, I’m Per Axbom.</p>
-                        <h3 class="font--semibold">James Royal-Lawson</h3>
-                        <p>And I’m James Royal-Lawson.</p>
-                    </div>
 
-                    <div class="c-single__transcript__row">
-                        <h3 class="font--semibold">Per Axbom</h3>
-                        <p>
-                            Vivamus et aliquet neque. Mauris feugiat blandit augue a vestibulum. Class aptent taciti
-                            sociosqu ad
-                            litora torquent per conubia nostra, per inceptos himenaeos. Aliquam a luctus magna, a
-                            finibus
-                            massa.
-                            Proin ultricies, arcu ac dignissim sollicitudin, nibh nibh fermentum eros,
-                        </p>
-
-                        <p>
-                            Vivamus et aliquet neque. Mauris feugiat blandit augue a vestibulum. Class aptent taciti
-                            sociosqu ad
-                            litora torquent per conubia nostra, per inceptos himenaeos. Aliquam a luctus magna, a
-                            finibus
-                            massa.
-                            Proin ultricies, arcu ac dignissim sollicitudin, nibh nibh fermentum eros,
-                        </p>
+                        <?php the_field('transcript'); ?>
 
                     </div>
                 </div>

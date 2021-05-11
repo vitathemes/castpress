@@ -78,6 +78,11 @@
 
 .c-header__branding {
   flex-grow: 2;
+
+  img {
+    max-height: 50px;
+    object-fit: contain;
+  }
 }
 
 .c-header__navigation {
@@ -206,4 +211,9 @@
       margin-top: 0px;
     }
   }
+}
+
+/* WordPress Default */
+.custom-logo-link {
+  display: inline-block;
 }
