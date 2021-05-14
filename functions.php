@@ -233,43 +233,171 @@ add_filter('libwp_taxonomy_1_arguments', 'castpress_modify_libwp_taxonomy_argume
 
 
 
+/************************************************************************************************************************/ 
+	// Add transcript meta box
+	function castpress_transcript_meta_box_add() {
+		// Add new meta box
+		add_meta_box( 
+			'_transcript',
+			'Transcript', // Title of meta box  
+			'castpress_render_meta_box',
+			'episodes', // Name of our post type ( get from libwp - modified in theme to episodes)
+			'normal',
+			'default' );
+	}
+	add_action( 'add_meta_boxes', 'castpress_transcript_meta_box_add' );
+
+
+	// Render transcript meta box
+	function castpress_render_meta_box() {
+		
+		global $post;
+		// Get saved meta data
+		$post_note_meta_content = get_post_meta($post->ID, '_transcript', TRUE); 
+		if ( !$post_note_meta_content ) $post_note_meta_content = '';
+		wp_nonce_field( 'post_note'.$post->ID, 'post_note_nonce');
+		// Render editor meta box
+		wp_editor( $post_note_meta_content, 'post_note', array('textarea_rows' => '5'));
+		
+	}
+	// Save transcript meta box
+	function castpress_meta_box_save( $post_id ) {
+		
+		// Bail if we're doing an auto save
+		if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+		
+		// if our nonce isn't there, or we can't verify it, bail
+		if( !isset( $_POST['post_note_nonce'] ) || !wp_verify_nonce( $_POST['post_note_nonce'], 'post_note'.$post_id ) ) return;
+		
+		// if our current user can't edit this post, bail
+		if( !current_user_can( 'edit_post' ) ) return;
+		
+		
+		// Make sure our data is set before trying to save it
+		if( isset( $_POST['post_note'] ) )
+			$result = update_post_meta( $post_id, '_transcript', $_POST['post_note'] );
+			
+	}
+	add_action( 'save_post', 'castpress_meta_box_save' );
+
+
+
+	/**
+	 * Add the Url metabox
+	*/
+
+	function castpress_url_add_metabox() {
+		add_meta_box(
+			'my_url_section',// The HTML id attribute for the metabox section
+			'Podcast audio file link',// The title of your metabox section
+			'castpress_url_metabox_callback',// The metabox callback function (below)
+			'episodes'// Name of our post type ( get from libwp - modified in theme to episodes)
+		);
+	}
+	add_action( 'add_meta_boxes', 'castpress_url_add_metabox' );
+	
+	/**
+	 * Print URL metabox content.
+	*/
+
+	function castpress_url_metabox_callback( $post ) {
+		
+		// Create a nonce field.
+		wp_nonce_field( 'castpress_url_metabox', 'castpress_url_metabox_nonce' );
+
+		// Retrieve a previously saved value, if available.
+		$url = get_post_meta( $post->ID, '_castpress_audio_url', true );
+
+		echo '
+		<p>
+		<label>'.esc_html__( 'Podcast file link URL', 'castpress' ).'</label>
+		<input type="text" name="castpress_url" value="'. esc_url( $url ) .'"size="30" class="regular-text" />
+		</p>';
+		
+	}
+	
+	/**
+	  * Save URL the metabox.
+	  */
+	function castpress_url_save_metabox( $post_id ) {
+		// Check if our nonce is set.
+		if ( ! isset( $_POST['castpress_url_metabox_nonce'] ) ) {
+		return;
+		}
+	
+		$nonce = $_POST['castpress_url_metabox_nonce'];
+	
+		// Verify that the nonce is valid.
+		if ( ! wp_verify_nonce( $nonce, 'castpress_url_metabox' ) ) {
+		return;
+		}
+	
+		// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+		}
+	
+		// Check the user's permissions.
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+		}
+	
+		// Check for and sanitize user input.
+		if ( ! isset( $_POST['castpress_url'] ) ) {
+		return;
+		}
+	
+		$url = esc_url_raw( $_POST['castpress_url'] );
+	
+		// Update the meta fields in the database, or clean up after ourselves.
+		if ( empty( $url ) ) {
+		delete_post_meta( $post_id, '_castpress_audio_url' );
+		} else {
+		update_post_meta( $post_id, '_castpress_audio_url', $url );
+		}
+	}
+	add_action( 'save_post', 'castpress_url_save_metabox' );
+
+
+
+
 /**
- * Theme setup
- */
+  * Theme setup
+  */
 require get_template_directory() . '/inc/setup.php';
 
 /**
- * Implement the Custom Header feature.
- */
+* Implement the Custom Header feature.
+*/
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Nav menu walker
- */
+* Nav menu walker
+*/
 require get_template_directory() . '/classes/class_castpress_walker_nav_menu.php';
 
 /**
- * Comments walker
- */
+* Comments walker
+*/
 require get_template_directory() . '/classes/class_castpress_walker_comment.php';
 
 /**
- * Custom template tags for this theme.
- */
+* Custom template tags for this theme.
+*/
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Functions which enhance the theme by hooking into WordPress.
- */
+* Functions which enhance the theme by hooking into WordPress.
+*/
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
- * Customizer additions.
- */
+* Customizer additions.
+*/
 require get_template_directory() . '/inc/customizer.php';
 
 /**
-  * Load TGMPA file
-  */
-  require_once get_template_directory() . '/inc/tgmpa/class-tgm-plugin-activation.php';
-  require_once get_template_directory() . '/inc/tgmpa/tgmpa-config.php';
+* Load TGMPA file
+*/
+require_once get_template_directory() . '/inc/tgmpa/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/tgmpa/tgmpa-config.php';

@@ -14,9 +14,7 @@
         $episode_player = true;
         echo '<div class="c-latest-episode c-latest-episode--home">';
         while ( $query->have_posts() ) : $query->the_post();			
-        include( locate_template( 'template-parts/components/latest-episode/latest-episode.php', false, false ) ); 
+            get_template_part( 'template-parts/components/latest-episode/latest-episode' );
         endwhile;
         echo '</div>';
     endif;
-    
-?>

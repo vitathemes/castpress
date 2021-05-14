@@ -1,13 +1,13 @@
 /*--------------------------------------*\
   #Detect Element inside other element
 \*--------------------------------------*/
-function cavatina_childFinder(parentElement, childElement) {
-  let result = document
-    .querySelector(parentElement)
-    .getElementsByClassName(childElement)[0]
+function castpress_childFinder(castpress_parentElement, castpress_childElement) {
+  let castpress_result = document
+    .querySelector(castpress_parentElement)
+    .getElementsByClassName(castpress_childElement)[0]
     ? true
     : false;
-  return result;
+  return castpress_result;
 }
 
 /*--------------------------------------*\

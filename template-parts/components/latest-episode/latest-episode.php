@@ -22,7 +22,7 @@
         <div class="c-single__podcast-audio">
             <?php 
                 if ( 'episodes' == get_post_type() ){
-                    castpress_get_podcast_audio( $post , "c-single__audio" );
+                    //castpress_get_podcast_audio( $post , "c-single__audio" );
                 }	
             ?>
         </div>
