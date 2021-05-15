@@ -17,7 +17,7 @@ get_header();
 <main id="primary" class="c-main c-main--blog">
     <div class="c-main__content">
         <header class="c-main__header">
-            <h1 class="c-main__entry-title h1-lh--bg">
+            <h1 class="c-main__entry-title u-heading-1-line-height--bg">
                 <?php castpress_archive_page_name() ?>
             </h1>
         </header>

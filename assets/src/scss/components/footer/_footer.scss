@@ -41,15 +41,7 @@
 }
 
 .c-footer__context {
-  color: $castpress_primary_color !important;
-}
-
-.c-footer__link {
-  color: $castpress_tertiary_color !important;
-
-  &:hover {
-    color: $castpress_primary_color !important;
-  }
+  color: $castpress_primary_color;
 }
 
 .c-footer__widgets {

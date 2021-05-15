@@ -650,6 +650,29 @@ html {
   .u-link--quaternary:visited {
     text-decoration: none; }
 
+/* Line heights */
+.u-heading-1-line-height--bg {
+  line-height: 33px !important; }
+
+.u-heading-1-line-height--sm {
+  line-height: 25px !important; }
+
+.u-heading-4-line-height--bg {
+  line-height: 27px !important; }
+
+.u-heading-4-line-height--sm {
+  line-height: 20px !important; }
+
+.u-heading-5-line-height--sm {
+  line-height: 18px !important; }
+
+/* font weight */
+.font--regular {
+  font-family: "SourceSerifPro-regular"; }
+
+.font--semibold {
+  font-family: "SourceSerifPro-semibold"; }
+
 /* Accessibility
 --------------------------------------------- */
 /* Text meant only for screen readers. */
@@ -2332,12 +2355,7 @@ h2.c-single__transcript__title {
       margin-top: 80px; } }
 
 .c-footer__context {
-  color: var(--castpress_primary-color) !important; }
-
-.c-footer__link {
-  color: var(--castpress_tertiary-color) !important; }
-  .c-footer__link:hover {
-    color: var(--castpress_primary-color) !important; }
+  color: var(--castpress_primary-color); }
 
 .c-footer__widgets {
   width: 100%;
@@ -2496,12 +2514,6 @@ h1,
   font-size: 26px;
   line-height: 32px; }
 
-.h1-lh--bg {
-  line-height: 33px !important; }
-
-.h1-lh--sm {
-  line-height: 25px !important; }
-
 /* H2 */
 h2,
 .h2 {
@@ -2531,12 +2543,6 @@ h4,
   line-height: 25px;
   margin-bottom: 10px; }
 
-.h4-lh--bg {
-  line-height: 27px !important; }
-
-.h4-lh--sm {
-  line-height: 20px !important; }
-
 /* H5 */
 h5,
 .h5 {
@@ -2549,22 +2555,12 @@ h5,
   font-size: 14px;
   line-height: 25px; }
 
-.h5-lh--sm {
-  line-height: 18px !important; }
-
 /* H6 */
 h6,
 .h6 {
   font-family: "SourceSerifPro-semibold";
   font-size: 12px;
   letter-spacing: 0.16em; }
-
-/* Remove qa- */
-.font--regular {
-  font-family: "SourceSerifPro-regular"; }
-
-.font--semibold {
-  font-family: "SourceSerifPro-semibold"; }
 
 /*------------------------------------*\
   #Copy

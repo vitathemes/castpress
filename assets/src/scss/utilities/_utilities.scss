@@ -30,3 +30,34 @@
     text-decoration: none;
   }
 }
+
+/* Line heights */
+
+.u-heading-1-line-height--bg {
+  line-height: 33px !important;
+}
+
+.u-heading-1-line-height--sm {
+  line-height: 25px !important;
+}
+
+.u-heading-4-line-height--bg {
+  line-height: 27px !important;
+}
+
+.u-heading-4-line-height--sm {
+  line-height: 20px !important;
+}
+
+.u-heading-5-line-height--sm {
+  line-height: 18px !important;
+}
+
+/* font weight */
+.font--regular {
+  font-family: "SourceSerifPro-regular";
+}
+
+.font--semibold {
+  font-family: "SourceSerifPro-semibold";
+}

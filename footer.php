@@ -26,7 +26,7 @@
 
 
         <div class="c-footer__site-info">
-            <span class="c-footer__context h5--secondary h5-lh--sm font--regular">
+            <span class="c-footer__context h5--secondary u-heading-5-line-height--sm font--regular">
 
                 <?php
                         /* translators: %s: Theme creator name by */
@@ -35,7 +35,7 @@
 
             </span>
 
-            <a class="c-footer__link h5--secondary h5-lh--sm font--regular u-link--tertiary"
+            <a class="c-footer__link h5--secondary u-heading-5-line-height--sm font--regular u-link--tertiary"
                 href="<?php echo esc_url( __( 'https://vitathemes.com/', 'castpress' ) ); ?>">
                 <?php 
                         /* translators: %s: Vita themes is the creator of the theme */
@@ -43,9 +43,9 @@
                     ?>
             </a>
 
-            <span class="c-footer__context h5--secondary h5-lh--sm sep u-link--tertiary"> | </span>
+            <span class="c-footer__context h5--secondary u-heading-5-line-height--sm sep u-link--tertiary"> | </span>
 
-            <a class="c-footer__link h5--secondary h5-lh--sm font--regular u-link--tertiary"
+            <a class="c-footer__link h5--secondary u-heading-5-line-height--sm font--regular u-link--tertiary"
                 href="<?php echo esc_url( get_privacy_policy_url() ); ?>">
                 <?php
                         /* translators: Privacy Policy Link */

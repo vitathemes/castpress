@@ -13,7 +13,7 @@
 
     <header class="c-single__header">
 
-        <?php the_title( '<h1 class="c-single__title c-main__entry-title"><a class="u-link--secondary h1 h1-lh--bg" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
+        <?php the_title( '<h1 class="c-single__title c-main__entry-title"><a class="u-link--secondary h1 u-heading-1-line-height--bg" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
 
         <div class="c-single__entry-meta">
 
@@ -23,7 +23,7 @@
                 }
 			?>
 
-            <span class="c-post__date h5--secondary h5-lh--sm posted-on">
+            <span class="c-post__date h5--secondary u-heading-5-line-height--sm posted-on">
                 <a class="u-link--tertiary" href="<?php esc_url( the_permalink() ) ?>">
                     <?php echo esc_html( get_the_date( "M d, Y" ) ) ?>
                 </a>

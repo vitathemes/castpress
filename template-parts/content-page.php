@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <header class="c-post__header c-post__header--page">
-        <?php the_title('<h1 class="c-main__entry-title h1-lh--bg">','</h1>'); ?>
+        <?php the_title('<h1 class="c-main__entry-title u-heading-1-line-height--bg">','</h1>'); ?>
     </header><!-- .entry-header -->
 
     <?php castpress_post_thumbnail(); ?>

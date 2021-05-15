@@ -37,7 +37,7 @@ if ( ! function_exists( 'castpress_posted_on' ) ) :
 			'<a class="u-link--tertiary" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="c-post__date h5--secondary h5-lh--sm '. esc_html($castpress_is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="c-post__date h5--secondary u-heading-5-line-height--sm '. esc_html($castpress_is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -50,11 +50,11 @@ if ( ! function_exists( 'castpress_posted_by' ) ) :
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'By %s', 'post author', 'castpress' ),
-			'<span class="author vcard h5--secondary h5-lh--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard h5--secondary u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 
-		echo '<span class="byline h5--secondary h5-lh--sm c-post__author "> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="byline h5--secondary u-heading-5-line-height--sm c-post__author "> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -273,7 +273,7 @@ if (! function_exists('castpress_get_category')) :
 		$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
 		if ( $categories_list ) {
 			/* translators: 1: $categories_list list of categories. Rendered from category section that client set in categories. $castpress_is_bold check if should render text bold or not ( Will add class) */
-			echo '<span class="c-episode__category  '. esc_attr( $castpress_is_bold ) .' h5-lh--sm">'. $categories_list .'</span>' . $castpress_have_seprator;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<span class="c-episode__category  '. esc_attr( $castpress_is_bold ) .' u-heading-5-line-height--sm">'. $categories_list .'</span>' . $castpress_have_seprator;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;
@@ -389,7 +389,7 @@ if ( ! function_exists( 'castpress_share_links' ) ) {
 			$castpress_twitter_url  = "https://twitter.com/intent/tweet?url=" . get_permalink() . "&title=" . get_the_title();
 			$castpress_facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
 
-			echo sprintf( '<span class="c-social-share__title h4 h4-lh--sm">%s</span>', esc_html_e( 'Share:', 'castpress' ) );
+			echo sprintf( '<span class="c-social-share__title h4 u-heading-4-line-height--sm">%s</span>', esc_html_e( 'Share:', 'castpress' ) );
 			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-facebook-alt c-social-share__item__icon"></span></a>', esc_url( $castpress_facebook_url ) );
 			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-twitter c-social-share__item__icon"></span></a>', esc_url( $castpress_twitter_url ) );
 			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $castpress_linkedin_url ) );

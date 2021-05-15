@@ -14,7 +14,7 @@ get_header();
     <div class="c-main__content">
         <?php if ( have_posts() ) : ?>
         <header class="c-main__header">
-            <h1 class="c-main__entry-title h1-lh--bg">
+            <h1 class="c-main__entry-title u-heading-1-line-height--bg">
                 <?php esc_html_e( 'Search Result', 'castpress' ); ?>
             </h1>
         </header><!-- .entry-header -->

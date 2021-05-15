@@ -20,7 +20,7 @@
                 
     if( $loop->have_posts() ) { ?>
     <div class="c-related-posts">
-        <h1 class="h1-lh--sm"><?php esc_html_e( 'Related Posts', 'castpress' ); ?></h1>
+        <h1 class="u-heading-1-line-height--sm"><?php esc_html_e( 'Related Posts', 'castpress' ); ?></h1>
         <?php 
                 while( $loop->have_posts() ) {
                     $loop->the_post();

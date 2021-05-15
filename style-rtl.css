@@ -3346,11 +3346,11 @@ h1,
   line-height: 32px;
 }
 
-.h1-lh--bg {
+.u-heading-1-line-height--bg {
   line-height: 33px !important;
 }
 
-.h1-lh--sm {
+.u-heading-1-line-height--sm {
   line-height: 25px !important;
 }
 
@@ -3400,11 +3400,11 @@ h4,
   margin-bottom: 10px;
 }
 
-.h4-lh--bg {
+.u-heading-4-line-height--bg {
   line-height: 27px !important;
 }
 
-.h4-lh--sm {
+.u-heading-4-line-height--sm {
   line-height: 20px !important;
 }
 
@@ -3422,7 +3422,7 @@ h5,
   line-height: 25px;
 }
 
-.h5-lh--sm {
+.u-heading-5-line-height--sm {
   line-height: 18px !important;
 }
 

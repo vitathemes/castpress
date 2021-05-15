@@ -1,5 +1,5 @@
 <div class="c-latest-posts">
-    <h1 class="c-latest-posts__title h1-lh--bg"><?php esc_html_e( 'Latest Posts', 'castpress' ); ?></h1>
+    <h1 class="c-latest-posts__title u-heading-1-line-height--bg"><?php esc_html_e( 'Latest Posts', 'castpress' ); ?></h1>
     <div class="c-latest-posts__content">
         <?php  
         $args = array(

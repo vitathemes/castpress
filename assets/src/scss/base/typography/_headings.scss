@@ -21,13 +21,6 @@ h1,
   line-height: 32px;
 }
 
-.h1-lh--bg {
-  line-height: 33px !important;
-}
-.h1-lh--sm {
-  line-height: 25px !important;
-}
-
 /* H2 */
 h2,
 .h2 {
@@ -45,8 +38,6 @@ h3,
   margin-bottom: 10px; // Paragraph Spacing
 }
 
-
-
 /* H4 */
 h4,
 .h4 {
@@ -63,14 +54,6 @@ h4,
   margin-bottom: 10px; // Paragraph Spacing
 }
 
-.h4-lh--bg {
-  line-height: 27px !important;
-}
-
-.h4-lh--sm {
-  line-height: 20px !important;
-}
-
 /* H5 */
 h5,
 .h5 {
@@ -85,24 +68,10 @@ h5,
   line-height: 25px;
 }
 
-.h5-lh--sm {
-  line-height: 18px !important;
-}
-
 /* H6 */
 h6,
 .h6 {
   font-family: $castpress_font_semibold;
   font-size: 12px;
   letter-spacing: 0.16em;
-}
-
-
-/* Remove qa- */
-.font--regular {
-  font-family: "SourceSerifPro-regular";
-}
-
-.font--semibold {
-  font-family: "SourceSerifPro-semibold";
 }
