@@ -22,7 +22,10 @@ const sassTask = (cb) => {
 
 const cssConcatTask = (cb) => {
   return gulp
-    .src(["./node_modules/simplebar/dist/simplebar.css", "assets/src/css/*.css"])
+    .src([
+      "./node_modules/simplebar/dist/simplebar.css",
+      "assets/src/css/*.css",
+    ])
     .pipe(concat("main.css"))
     .pipe(gulp.dest("assets/css"))
     .pipe(browserSync.stream());
@@ -64,7 +67,7 @@ exports.default = () =>
 
 const browserSyncTask = (cb) => {
   browserSync.init({
-    proxy: "localhost/",
+    proxy: "castpress.local/",
   });
   cb();
 };

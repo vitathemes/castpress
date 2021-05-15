@@ -52,34 +52,39 @@ function castpress_branding() {
 function castpress_typography() {
 	
 
+	// Headings Color
 	if ( get_theme_mod( 'typography_headings_color' ) == "" ) {
 		$castpress_headings_color = "#222222";
 	} else {
 		$castpress_headings_color = get_theme_mod( 'typography_headings_color' );
 	}
 
+	// Primary Color 
 	if ( get_theme_mod( 'typography_primary_color' ) == "" ) {
 		$castpress_primary_color = "#222222";
 	} else {
 		$castpress_primary_color = get_theme_mod( 'typography_primary_color' );
 	}
 
+	// Secondary Color 
 	if ( get_theme_mod( 'typography_secondary_color' ) == "" ) {
 		$castpress_second_color = "#555555";
 	} else {
 		$castpress_second_color = get_theme_mod( 'typography_secondary_color' );
 	}
 	
-	if ( get_theme_mod( 'typography_third_color' ) == "" ) {
-		$castpress_third_color = "#979797";
+	// Tertiary Color 
+	if ( get_theme_mod( 'typography_tertiary_color' ) == "" ) {
+		$castpress_tertiary_color = "#979797";
 	} else {
-		$castpress_third_color = get_theme_mod( 'typography_third_color' );
+		$castpress_tertiary_color = get_theme_mod( 'typography_tertiary_color' );
 	}
 
-	if ( get_theme_mod( 'typography_fourth_color' ) == "" ) {
-		$castpress_fourth_color = "#7247ca";
+	// quaternary Color 
+	if ( get_theme_mod( 'typography_quaternary_color' ) == "" ) {
+		$castpress_quaternary_color = "#7247ca";
 	} else {
-		$castpress_fourth_color = get_theme_mod( 'typography_fourth_color' );
+		$castpress_quaternary_color = get_theme_mod( 'typography_quaternary_color' );
 	}
 	
 	
@@ -87,8 +92,8 @@ function castpress_typography() {
 				--castpress_headings-color: ' . $castpress_headings_color . ';
 				--castpress_primary-color: '. $castpress_primary_color .';
 	            --castpress_second-color: ' . $castpress_second_color . ';
-				--castpress_third-color: ' . $castpress_third_color . ';
-				--castpress_fourth-color: ' . $castpress_fourth_color . ';
+				--castpress_tertiary-color: ' . $castpress_tertiary_color . ';
+				--castpress_quaternary-color: ' . $castpress_quaternary_color . ';
 			}';
 						
 	return $html;

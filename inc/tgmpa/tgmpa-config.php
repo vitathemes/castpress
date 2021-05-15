@@ -40,17 +40,17 @@ function castpress_register_required_plugins() {
 	 */
 	$plugins = array(
 		array(
-			'name'      => 'Kirki Customizer Framework',
+			'name'      => __( 'Kirki Customizer Framework', 'castpress' ),
 			'slug'      => 'kirki',
 			'required'  => false,
 		),
 		array(
-			'name'      =>  __( 'Advanced Custom Fields', 'cavatina' ),
+			'name'      =>  __( 'Advanced Custom Fields', 'castpress' ),
 			'slug'      => 'advanced-custom-fields',
 			'required'  => false,
 		),
 		array(
-			'name'      => 'LibWp',
+			'name'      => __( 'LibWp', 'castpress' ),
 			'slug'      => 'libwp',
 			'required'  => false,
 		)

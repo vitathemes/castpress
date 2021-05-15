@@ -18,7 +18,7 @@
 }
 
 .c-comments__desc {
-  color: $castpress_third_color !important; //qa-
+  color: $castpress_tertiary_color !important; //qa-
   margin-bottom: 24px;
 
   @include media(tablet) {
@@ -103,7 +103,7 @@
 
 .comment-reply-link {
   padding-top: 16px;
-  color: $castpress_third_color;
+  color: $castpress_tertiary_color;
 
   font-size: 14px;
   line-height: 18px;
@@ -169,7 +169,7 @@
 }
 
 .time {
-  color: $castpress_third_color;
+  color: $castpress_tertiary_color;
   display: block;
 
   @include media(tablet) {
@@ -179,9 +179,18 @@
 
 .logged-in-as {
   a {
-    color: $castpress_third_color !important; //qa-
+    color: $castpress_tertiary_color; //qa-
     font-size: 14px; //qa-
     line-height: 18px; //qa-
+
+    &:hover {
+      color: $castpress_primary_color;
+      text-decoration: none;
+    }
+
+    &:visited {
+      text-decoration: none;
+    }
   }
 }
 

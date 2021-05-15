@@ -8,7 +8,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: none;
-  background-color: $castpress_fourth_color; //7247ca
+  background-color: $castpress_quaternary_color; //7247ca
   color: $castpress_neutral_gray_light_color !important;
   border-radius: 4px;
   cursor: pointer;
@@ -20,7 +20,12 @@ input[type="submit"] {
 
   &:hover {
     background-color: $castpress_main_accent_second_color;
+    text-decoration: none;
     color: #f5f5f7;
+  }
+
+  &:visited {
+    text-decoration: none;
   }
 }
 
@@ -121,13 +126,13 @@ input[type="submit"] {
   width: 10%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   &:hover {
     background-color: transparent;
 
     &::after {
-      background-color: $castpress_fourth_color;
+      background-color: $castpress_quaternary_color;
     }
   }
 
@@ -140,8 +145,8 @@ input[type="submit"] {
 
     -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
       no-repeat 50% 50%;
-    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat
-      50% 50%;
+    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
+      no-repeat 50% 50%;
 
     -webkit-mask-size: cover;
     mask-size: cover;

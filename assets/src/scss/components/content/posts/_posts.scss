@@ -24,7 +24,7 @@
 }
 
 .c-post__date {
-  color: $castpress_third_color !important;
+  color: $castpress_tertiary_color !important;
 }
 
 .c-post__header--home {
@@ -47,7 +47,7 @@
 }
 
 .c-post__author {
-  color: $castpress_third_color !important;
+  color: $castpress_tertiary_color !important;
 
   &:first {
     text-transform: uppercase;
@@ -111,10 +111,10 @@
 }
 
 .c-post__read-more {
-  color: $castpress_fourth_color !important;
+  color: $castpress_quaternary_color !important;
 
   &:hover {
-    color: $castpress_fourth_color !important;
+    color: $castpress_quaternary_color !important;
     text-decoration: underline;
   }
 }

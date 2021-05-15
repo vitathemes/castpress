@@ -60,7 +60,7 @@ Edit `functions.php` to enable or disable theme features, setup navigation menus
 ## Theme development
 
 - Run `npm install` from the theme directory to install dependencies
-- Change browserSyncTask from `localhost/` to whatever address that your project folder is
+- Change browserSyncTask from `castpress.local/` to whatever address that your project folder is
 - Run `gulp` from the root of theme directory and it's starting to watch any changes in scss files from the `sass` folder
 
 ## Changelog

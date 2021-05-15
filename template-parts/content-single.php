@@ -73,7 +73,6 @@
         <?php if ( 'episodes' == get_post_type() ) :
           $castpress_podcast_audio_duratiuon = get_post_meta( $post->ID, 'podcast_duration', true ); 
           $castpress_podcast_audio_duratiuon = substr($castpress_podcast_audio_duratiuon,0,-3);
-        //   $castpress_podcast_audio_duratiuon = strval( $castpress_podcast_audio_duratiuon );
 
         ?>
 
@@ -96,7 +95,7 @@
                 <div class="c-single__transcript__context">
                     <div class="c-single__transcript__row">
 
-                        <?php the_field('transcript'); ?>
+                        <?php echo get_post_meta($post->ID, '_transcript', true); ?>
 
                     </div>
                 </div>

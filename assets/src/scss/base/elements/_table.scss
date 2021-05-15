@@ -1,0 +1,9 @@
+table{
+    background-color: $castpress_neutral_gray_light_color;
+    margin-bottom: 16px;
+}
+tr{
+    &:nth-child(even){
+        background-color: $castpress_neutral_gray_light_second_color;
+    }
+}

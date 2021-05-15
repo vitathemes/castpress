@@ -1,8 +1,8 @@
 // kirki variables
 $castpress_primary_color: var(--castpress_primary-color); //222222
 $castpress_second_color: var(--castpress_second-color); //555555
-$castpress_third_color: var(--castpress_third-color); //979797
-$castpress_fourth_color: var(--castpress_fourth-color); //7247ca
+$castpress_tertiary_color: var(--castpress_tertiary-color); //979797
+$castpress_quaternary_color: var(--castpress_quaternary-color); //7247ca
 
 $castpress_headings_color: var(--castpress_headings-color); //222222
 
@@ -34,18 +34,19 @@ $color_text_input_focus: rgb(65, 65, 65);
 // link
 $color_link: $castpress_main_accent_color; //7247ca
 $color_link_secondary: $castpress_primary_color; //222222
-$color_link_third: $castpress_neutral_gray_color; //979797
+$color_link_tertiary: $castpress_tertiary_color; //979797
 
 // link hover
 $color_link_visited: $castpress_main_accent_color;
-$color_link_hover: $castpress_neutral_gray_color;
-$color_link_hover_secondary: $castpress_main_accent_color;
-$color_link_hover_third: $castpress_main_primary_color;
+
+$color_link_hover: $castpress_quaternary_color;
+$color_link_hover_secondary: $castpress_quaternary_color;
+$color_link_hover_tertiary: $castpress_quaternary_color;
 
 // button color
-$castpress_button_primary_color: $castpress_fourth_color;
+$castpress_button_primary_color: $castpress_quaternary_color;
 $castpress_button_second_color: $castpress_neutral_gray_light_color;
 
 // button hover color
 $castpress_button_primary_hover_color: $castpress_neutral_gray_light_color;
-$castpress_button_second_hover_color: $castpress_fourth_color;
+$castpress_button_second_hover_color: $castpress_quaternary_color;

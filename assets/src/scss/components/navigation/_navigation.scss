@@ -49,7 +49,7 @@
 
   .menu-item.current-menu-item {
     .menu-item__link {
-      color: $castpress_fourth_color;
+      color: $castpress_quaternary_color;
     }
   }
 
@@ -116,7 +116,7 @@
 
   &:hover {
     &:before {
-      background-color: $castpress_fourth_color;
+      background-color: $castpress_quaternary_color;
     }
   }
 
@@ -200,7 +200,7 @@
     }
 
     a {
-      color: $castpress_third_color;
+      color: $castpress_tertiary_color;
       @include media(tablet) {
         color: $castpress_primary_color;
       }
@@ -273,7 +273,6 @@
 /*------------------------------------*\
   #Menu items (li)
 \*------------------------------------*/
-
 .menu-item {
   position: relative;
   list-style-type: none;
@@ -285,13 +284,13 @@
   &:hover {
     a {
       &:hover {
-        color: $castpress_fourth_color;
+        color: $castpress_quaternary_color;
       }
     }
 
     .c-nav__arrow {
       &::before {
-        color: $castpress_fourth_color !important;
+        color: $castpress_quaternary_color !important;
         content: "\f343";
 
         @include media(tablet) {
@@ -317,19 +316,23 @@
 .menu-item__link {
   text-decoration: none;
   color: $castpress_primary_color;
-  font-family: $castpress_font_semibold;
   letter-spacing: 0.16em;
-
-  font-size: 14px !important;
+  font-size: 14px;
   line-height: 18px !important;
-
+  font-weight: 600;
   @include media(tablet) {
-    font-size: 12px !important;
+    font-size: 12px;
     line-height: 15px !important;
     letter-spacing: 0.1em;
   }
 
-  &:hover {
-    color: $castpress_fourth_color;
+  &:hover,
+  &:focus {
+    color: $castpress_quaternary_color;
+    text-decoration: none;
+  }
+
+  &:visited {
+    text-decoration: none;
   }
 }

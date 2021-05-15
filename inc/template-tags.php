@@ -273,7 +273,7 @@ if (! function_exists('castpress_get_category')) :
 		$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
 		if ( $categories_list ) {
 			/* translators: 1: $categories_list list of categories. Rendered from category section that client set in categories. $castpress_is_bold check if should render text bold or not ( Will add class) */
-			echo '<span class="c-episode__category '. esc_attr( $castpress_is_bold ) .' h5-lh--sm">'. $categories_list .'</span>' . $castpress_have_seprator;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<span class="c-episode__category  '. esc_attr( $castpress_is_bold ) .' h5-lh--sm">'. $categories_list .'</span>' . $castpress_have_seprator;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;
@@ -284,34 +284,35 @@ if (! function_exists('castpress_get_podcast_audio')) :
 	 * Return Podcast Audio and update Custom field
 	 */
 	function castpress_get_podcast_audio($post , $castpress_class_name = "") {
-		
+				
+		// Get audio link from importer plugin
 		$castpress_podcast_audio = get_post_meta( $post->ID, 'podcast_audio_file', true ); 
+
+		if( empty(get_post_meta( $post->ID, '_castpress_audio_url', true ))  && !empty($castpress_podcast_audio) ){
 		
-		if( !empty($castpress_podcast_audio) ){
-		
-			// Update Acf link field
-			update_field('podcast_audio', $castpress_podcast_audio);
-
-			$castpress_acf_podcasl_url = get_field('podcast_audio');
-
-			// Fill variable to display in front part
-			$castpress_podcast_audio_shortcode = '[audio mp3="'.$castpress_acf_podcasl_url.'" ][/audio]';
-			$castpress_podcast_audio_shortcode = strval( $castpress_podcast_audio_shortcode);
-
-
+			// Update Custom field link
+			update_post_meta( $post->ID , '_castpress_audio_url', sanitize_text_field( $castpress_podcast_audio ) );
+			
+			$castpress_podcast_audio = get_post_meta( $post->ID, '_castpress_audio_url', true );
 
 		}
-		elseif( get_field('podcast_audio') ){
-			$castpress_acf_podcasl_url = get_field('podcast_audio');
+		elseif( !empty(get_post_meta( $post->ID, '_castpress_audio_url', true )) ){
+
+			$castpress_podcast_audio = get_post_meta($post->ID, '_castpress_audio_url', true);
+						
 		}
 		else{
-			$castpress_podcast_audio = null;	
+			$castpress_podcast_audio = null;
 		}
 
-		// if (isset($_POST['secondline_import_embed_player'])) {
-			// 	$castpress_import_embed_player = sanitize_text_field($_POST['secondline_import_embed_player']);
-			// 	update_post_meta($post_id_to_update, 'secondline_import_embed_player', $castpress_import_embed_player);
-		// }
+			// Fill variable to display in front part
+			$castpress_podcast_audio_shortcode = '[audio mp3="'.$castpress_podcast_audio.'" ][/audio]';
+			$castpress_podcast_audio_shortcode = strval( $castpress_podcast_audio_shortcode);
+
+			// if (isset($_POST['secondline_import_embed_player'])) {
+				// 	$castpress_import_embed_player = sanitize_text_field($_POST['secondline_import_embed_player']);
+				// 	update_post_meta($post_id_to_update, 'secondline_import_embed_player', $castpress_import_embed_player);
+			// }
 		
 		if( !empty($castpress_podcast_audio) ){
 			// Display the result

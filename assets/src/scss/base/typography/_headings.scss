@@ -1,7 +1,6 @@
 /*------------------------------------*\
   #Headings
 \*------------------------------------*/
-
 h1,
 h2,
 h3,
@@ -22,12 +21,6 @@ h1,
   line-height: 32px;
 }
 
-.h1--secondary {
-  font-family: $castpress_font_regular;
-  font-size: 26px;
-  line-height: 32px;
-}
-
 .h1-lh--bg {
   line-height: 33px !important;
 }
@@ -43,12 +36,6 @@ h2,
   line-height: 25px;
 }
 
-.h2--secondary {
-  font-family: $castpress_font_regular;
-  font-size: 21px;
-  line-height: 25px;
-}
-
 /* H3 */
 h3,
 .h3 {
@@ -58,12 +45,7 @@ h3,
   margin-bottom: 10px; // Paragraph Spacing
 }
 
-.h3--secondary {
-  font-family: $castpress_font_semibold;
-  font-size: 18px;
-  line-height: 25px;
-  margin-bottom: 10px; // Paragraph Spacing
-}
+
 
 /* H4 */
 h4,
@@ -115,12 +97,8 @@ h6,
   letter-spacing: 0.16em;
 }
 
-.h6--secondary {
-  font-family: $castpress_font_regular;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-}
 
+/* Remove qa- */
 .font--regular {
   font-family: "SourceSerifPro-regular";
 }

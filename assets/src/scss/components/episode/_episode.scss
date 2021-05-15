@@ -70,22 +70,28 @@
 
 .c-episode__category {
   padding-bottom: 8px;
-  color: $castpress_third_color !important;
+  color: $castpress_tertiary_color !important;
 
   &:hover {
     color: $castpress_primary_color;
   }
+
   a {
-    color: $castpress_third_color;
+    color: $castpress_tertiary_color;
 
     &:hover {
       color: $castpress_primary_color;
+      text-decoration: none;
+    }
+
+    &:visited {
+      text-decoration: none;
     }
   }
 }
 
 .c-episode__date {
-  color: $castpress_third_color !important;
+  color: $castpress_tertiary_color !important;
 }
 
 .c-episode__entry-context {
@@ -112,7 +118,7 @@
 }
 
 .c-episode__author {
-  color: $castpress_third_color;
+  color: $castpress_tertiary_color;
 }
 
 .c-episode__author__link {
@@ -183,7 +189,7 @@
 }
 
 .c-episode__read-more {
-  color: $castpress_fourth_color !important;
+  color: $castpress_quaternary_color !important;
   font-family: $castpress_font_semibold !important;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -236,7 +242,7 @@
     mask-size: cover;
     vertical-align: middle;
     display: inline-block;
-    background-color: $castpress_fourth_color;
+    background-color: $castpress_quaternary_color;
   }
 }
 

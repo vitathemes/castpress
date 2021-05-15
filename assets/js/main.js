@@ -2730,13 +2730,16 @@ if (typeof exports === 'object') {
 /*--------------------------------------*\
   #Detect Element inside other element
 \*--------------------------------------*/
-function cavatina_childFinder(parentElement, childElement) {
-  let result = document
-    .querySelector(parentElement)
-    .getElementsByClassName(childElement)[0]
+function castpress_childFinder(
+  castpress_parentElement,
+  castpress_childElement
+) {
+  let castpress_result = document
+    .querySelector(castpress_parentElement)
+    .getElementsByClassName(castpress_childElement)[0]
     ? true
     : false;
-  return result;
+  return castpress_result;
 }
 
 /*--------------------------------------*\
@@ -2757,7 +2760,9 @@ document.addEventListener("keydown", function (e) {
   #Toggle Header Class
 \*--------------------------------------*/
 const castpress_headerSearch = document.querySelector(".js-header__search");
-const castpress_headerSearchIcon = document.querySelector(".js-header__search-icon");
+const castpress_headerSearchIcon = document.querySelector(
+  ".js-header__search-icon"
+);
 
 castpress_headerSearchIcon.addEventListener("click", function () {
   castpress_headerSearch.classList.toggle("toggled");
@@ -2787,11 +2792,15 @@ castpress_headerSearchIcon.addEventListener("click", function () {
 /*--------------------------------------*\
   #Toggle Transcript
 \*--------------------------------------*/
-const castpress_transcript = document.querySelector(".js-single__transcript__more");
-const castpress_transcriptBlock = document.querySelector(
-  ".c-single__transcript__content"
-);
+if (castpress_childFinder("body", "js-single__transcript__more")) {
+  const castpress_transcript = document.querySelector(
+    ".js-single__transcript__more"
+  );
+  const castpress_transcriptBlock = document.querySelector(
+    ".c-single__transcript__content"
+  );
 
-castpress_transcript.addEventListener("click", function () {
-  castpress_transcriptBlock.classList.toggle("is-open");
-});
+  castpress_transcript.addEventListener("click", function () {
+    castpress_transcriptBlock.classList.toggle("is-open");
+  });
+}

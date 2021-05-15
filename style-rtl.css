@@ -975,10 +975,10 @@ html {
   color: #222222;
 }
 
-.a--quaternary {
+..u-link--quaternary {
   color: #7247ca;
 }
-.a--quaternary:hover {
+..u-link--quaternary:hover {
   color: var(--castpress_primary-color);
 }
 
@@ -1313,7 +1313,7 @@ img {
   display: inline-block;
 }
 .s-nav .menu-item.current-menu-item .menu-item__link {
-  color: var(--castpress_fourth-color);
+  color: var(--castpress_quaternary-color);
 }
 .s-nav li {
   display: block;
@@ -1364,7 +1364,7 @@ img {
 }
 
 .heart:hover:before {
-  background-color: var(--castpress_fourth-color);
+  background-color: var(--castpress_quaternary-color);
 }
 
 .heart::before {
@@ -1445,7 +1445,7 @@ img {
   }
 }
 .sub-menu li a {
-  color: var(--castpress_third-color);
+  color: var(--castpress_tertiary-color);
 }
 @media only screen and (min-width: 980px) {
   .sub-menu li a {
@@ -1519,10 +1519,10 @@ img {
   text-transform: uppercase;
 }
 .menu-item:hover a:hover {
-  color: var(--castpress_fourth-color);
+  color: var(--castpress_quaternary-color);
 }
 .menu-item:hover .c-nav__arrow::before {
-  color: var(--castpress_fourth-color) !important;
+  color: var(--castpress_quaternary-color) !important;
   content: "\f343";
 }
 @media only screen and (min-width: 980px) {
@@ -1556,7 +1556,7 @@ img {
   }
 }
 .menu-item__link:hover {
-  color: var(--castpress_fourth-color);
+  color: var(--castpress_quaternary-color);
 }
 
 /*--------------------------------------------------------------
@@ -1959,7 +1959,7 @@ img {
   background-color: #eaeaee !important;
 }
 .page-numbers:hover .dashicons::before {
-  color: var(--castpress_third-color) !important;
+  color: var(--castpress_tertiary-color) !important;
 }
 .page-numbers .dashicons {
   display: flex;
@@ -2192,20 +2192,20 @@ img {
 
 .c-episode__category {
   padding-bottom: 8px;
-  color: var(--castpress_third-color) !important;
+  color: var(--castpress_tertiary-color) !important;
 }
 .c-episode__category:hover {
   color: var(--castpress_primary-color);
 }
 .c-episode__category a {
-  color: var(--castpress_third-color);
+  color: var(--castpress_tertiary-color);
 }
 .c-episode__category a:hover {
   color: var(--castpress_primary-color);
 }
 
 .c-episode__date {
-  color: var(--castpress_third-color) !important;
+  color: var(--castpress_tertiary-color) !important;
 }
 
 .c-episode__entry-context {
@@ -2232,7 +2232,7 @@ img {
 }
 
 .c-episode__author {
-  color: var(--castpress_third-color);
+  color: var(--castpress_tertiary-color);
 }
 
 .c-episode__author__link::first-letter {
@@ -2299,7 +2299,7 @@ img {
 }
 
 .c-episode__read-more {
-  color: var(--castpress_fourth-color) !important;
+  color: var(--castpress_quaternary-color) !important;
   font-family: "SourceSerifPro-semibold" !important;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -2349,7 +2349,7 @@ img {
   mask-size: cover;
   vertical-align: middle;
   display: inline-block;
-  background-color: var(--castpress_fourth-color);
+  background-color: var(--castpress_quaternary-color);
 }
 
 .c-episodes__share {
@@ -2500,7 +2500,7 @@ img {
 }
 
 .c-post__date {
-  color: var(--castpress_third-color) !important;
+  color: var(--castpress_tertiary-color) !important;
 }
 
 .c-post__header--home {
@@ -2523,7 +2523,7 @@ img {
 }
 
 .c-post__author {
-  color: var(--castpress_third-color) !important;
+  color: var(--castpress_tertiary-color) !important;
 }
 .c-post__author:first {
   text-transform: uppercase;
@@ -2583,10 +2583,10 @@ img {
 }
 
 .c-post__read-more {
-  color: var(--castpress_fourth-color) !important;
+  color: var(--castpress_quaternary-color) !important;
 }
 .c-post__read-more:hover {
-  color: var(--castpress_fourth-color) !important;
+  color: var(--castpress_quaternary-color) !important;
   text-decoration: underline;
 }
 
@@ -2870,7 +2870,7 @@ h2.c-single__transcript__title {
 }
 
 .c-comments__desc {
-  color: var(--castpress_third-color) !important;
+  color: var(--castpress_tertiary-color) !important;
   margin-bottom: 24px;
 }
 @media only screen and (min-width: 980px) {
@@ -2955,7 +2955,7 @@ h2.c-single__transcript__title {
 
 .comment-reply-link {
   padding-top: 16px;
-  color: var(--castpress_third-color);
+  color: var(--castpress_tertiary-color);
   font-size: 14px;
   line-height: 18px;
 }
@@ -3017,7 +3017,7 @@ h2.c-single__transcript__title {
 }
 
 .time {
-  color: var(--castpress_third-color);
+  color: var(--castpress_tertiary-color);
   display: block;
 }
 @media only screen and (min-width: 980px) {
@@ -3027,7 +3027,7 @@ h2.c-single__transcript__title {
 }
 
 .logged-in-as a {
-  color: var(--castpress_third-color) !important;
+  color: var(--castpress_tertiary-color) !important;
   font-size: 14px;
   line-height: 18px;
 }
@@ -3109,7 +3109,7 @@ h2.c-single__transcript__title {
 }
 
 .c-footer__link {
-  color: var(--castpress_third-color) !important;
+  color: var(--castpress_tertiary-color) !important;
 }
 .c-footer__link:hover {
   color: var(--castpress_primary-color) !important;
@@ -3306,12 +3306,14 @@ h2.c-single__transcript__title {
   font-family: "SourceSerifPro-regular";
   src: url("../../assets/fonts/source-serif-pro-v10-latin-regular.woff2")
       format("woff2"),
-    url("../../assets/fonts/source-serif-pro-v10-latin-regular.woff") format("woff");
+    url("../../assets/fonts/source-serif-pro-v10-latin-regular.woff")
+      format("woff");
 }
 
 @font-face {
   font-family: "SourceSerifPro-semibold";
-  src: url("../../assets/fonts/source-serif-pro-v10-latin-600.woff2") format("woff2"),
+  src: url("../../assets/fonts/source-serif-pro-v10-latin-600.woff2")
+      format("woff2"),
     url("../../assets/fonts/source-serif-pro-v10-latin-600.woff") format("woff");
 }
 
@@ -3485,7 +3487,7 @@ span,
 }
 
 .seprator {
-  color: var(--castpress_third-color) !important;
+  color: var(--castpress_tertiary-color) !important;
 }
 
 /*--------------------------------------------------------------
@@ -3649,7 +3651,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: none;
-  background-color: var(--castpress_fourth-color);
+  background-color: var(--castpress_quaternary-color);
   color: #f5f5f7 !important;
   border-radius: 4px;
   cursor: pointer;
@@ -3748,7 +3750,7 @@ input[type="submit"]:hover {
   background-color: transparent;
 }
 .btn--download:hover::after {
-  background-color: var(--castpress_fourth-color);
+  background-color: var(--castpress_quaternary-color);
 }
 .btn--download::after {
   width: 20px;
@@ -3758,8 +3760,8 @@ input[type="submit"]:hover {
   cursor: pointer;
   -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
     no-repeat 50% 50%;
-  mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50%
-    50%;
+  mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
+    no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
   margin-left: 10px;

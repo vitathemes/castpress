@@ -12,7 +12,6 @@
 p,
 .p {
   font-family: $castpress_font_regular;
-  // font-size: 18px;
   font-size: 16px;
   line-height: 25px;
   margin-top: 0px;
@@ -38,5 +37,27 @@ span,
 }
 
 .seprator {
-  color: $castpress_third_color !important;
+  color: $castpress_tertiary_color !important;
+}
+
+address { 
+  color: $castpress_second_color;
+}
+
+pre { 
+  background-color: $castpress_neutral_gray_light_color;
+  padding: 8px;
+}
+
+dl{
+  margin-bottom: 16px;
+  color: $castpress_second_color;
+}
+dt { 
+  margin-bottom: 16px;
+}
+
+dd{
+  margin-bottom: 16px;
+  line-height: 27px;
 }

@@ -4,30 +4,29 @@
 
   &:hover,
   &:focus {
+    text-decoration: none;
     color: $color_link_hover_secondary; //7247ca
   }
 }
 
 .u-link--tertiary {
-  color: $color_link_third; //979797
+  color: $color_link_tertiary; //979797
 
   &:hover {
-    color: $color_link_hover_third; //222222
+    text-decoration: none;
+    color: $castpress_primary_color; //222222
   }
 }
 
-.a--quaternary {
+.u-link--quaternary {
   color: $color_link; //7247ca
 
   &:hover {
+    text-decoration: none;
     color: $color_link_secondary; //222222
   }
-}
 
-.a--quinary {
-  color: $castpress_main_accent_second_color; //58379b
-
-  &:hover {
-    color: $color_link_secondary; //222222
+  &:visited {
+    text-decoration: none;
   }
 }

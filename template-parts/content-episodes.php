@@ -29,7 +29,7 @@
             <p class="c-episode__entry-context h4"><?php echo esc_html(get_the_excerpt()); ?></h4>
         </div>
 
-        <a class="c-episode__read-more span font--semibold a--quaternary" href=" <?php esc_url( the_permalink() ) ?> "
+        <a class="c-episode__read-more span font--semibold u-link--quaternary" href=" <?php esc_url( the_permalink() ) ?> "
             rel="bookmark">
             <span class="c-episode__play"></span>
             <?php esc_html_e( 'Listen Now', 'castpress' ); ?>

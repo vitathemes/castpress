@@ -6,6 +6,7 @@
   height: 50px;
   display: flex;
   justify-content: center;
+  color: $castpress_primary_color;
 }
 
 .c-social-share--single {
@@ -27,6 +28,7 @@
 .c-social-share__item {
   min-height: 15px;
   margin: 0px 11.5px;
+  cursor: pointer;
 
   .dashicons {
     padding-left: 0px;
@@ -36,20 +38,22 @@
   }
 
   &:hover {
+    text-decoration: none;
     .dashicons {
       padding-left: 0px;
       &::before {
         color: $castpress_main_accent_color;
       }
     }
-  }
 
-  cursor: pointer;
-  &:hover {
     path {
       fill: $castpress_main_accent_color;
       cursor: pointer;
     }
+  }
+
+  &:visited {
+    text-decoration: none;
   }
 }
 
