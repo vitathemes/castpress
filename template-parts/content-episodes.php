@@ -17,7 +17,7 @@
         <?php 
             castpress_get_category();
             echo '<span class="seprator h5 u-link--secondary"> | </span>';
-            echo '<span class="c-episode__date h5--secondary u-heading-5-line-height--sm">'.esc_html( get_the_date( "M d, Y" ) ).'</span>'; 
+            echo '<span class="c-episode__date h5  u-font--regular  u-heading-5-line-height--sm">'.esc_html( get_the_date( "M d, Y" ) ).'</span>'; 
         ?>
 
         <div class="c-episode__titles">
@@ -29,7 +29,7 @@
             <p class="c-episode__entry-context h4"><?php echo esc_html(get_the_excerpt()); ?></h4>
         </div>
 
-        <a class="c-episode__read-more span font--semibold u-link--quaternary" href=" <?php esc_url( the_permalink() ) ?> "
+        <a class="c-episode__read-more span u-font--semi-bold u-link--quaternary" href=" <?php esc_url( the_permalink() ) ?> "
             rel="bookmark">
             <span class="c-episode__play"></span>
             <?php esc_html_e( 'Listen Now', 'castpress' ); ?>

@@ -39,7 +39,7 @@
 			// Change the title of send button
 			'label_submit' => __( 'Submit', 'castpress'),
 			// Change the title of the reply section
-			'title_reply' => '<p class="c-comments__title h4 u-heading-4-line-height--sm font--semibold">'. __( 'Leave a Reply' , 'castpress') .'</p>',
+			'title_reply' => '<p class="c-comments__title h4 u-heading-4-line-height--sm u-font--semi-bold">'. __( 'Leave a Reply' , 'castpress') .'</p>',
 			// Change the title of the reply section
 			'title_reply_to' =>  __( 'Reply' , 'castpress'),
 			//Cancel Reply Text
@@ -47,7 +47,7 @@
 			// Redefine your own textarea (the comment body).
 			'comment_field' => '<p class="comment-form-comment h4 u-heading-4-line-height--bg">Comment *<br /><textarea id="comment" name="comment" aria-required="true" ></textarea></p>',
 			//Message Before Comment
-			'comment_notes_before' =>'<p class="c-comments__desc h5--secondary u-heading-5-line-height--sm font--regular">'. __( 'Required fields are marked *' , 'castpress') .'</p>',
+			'comment_notes_before' =>'<p class="c-comments__desc h5  u-font--regular  u-heading-5-line-height--sm u-font--regular">'. __( 'Required fields are marked *' , 'castpress') .'</p>',
 			// Remove "Text or HTML to be displayed after the set of comment fields".
 			'comment_notes_after' => '',
 			//Submit Button ID
@@ -60,7 +60,7 @@
 		if ( have_comments() ) :
 ?>
 
-    <h2 class="comments-title h4--secondary u-heading-4-line-height--sm">
+    <h2 class="comments-title h4 u-heading-4-line-height--sm u-font--semi-bold">
         <?php
 			$castpress_comment_count = get_comments_number();
 			if ( '1' === $castpress_comment_count ) {

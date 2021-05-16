@@ -343,9 +343,22 @@
 /*--------------------------------------------------------------
 # Variables
 --------------------------------------------------------------*/
-/*-------------------------------------*\
-  #Fonts
-\*-------------------------------------*/
+@font-face {
+  font-family: "SourceSerifPro-regular";
+  src: url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff2") format("woff2"), url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff") format("woff");
+  src: url("../../assets/fonts/source-serif-pro-v11-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../../assets/fonts/source-serif-pro-v11-latin-regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff2") format("woff2"), url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff") format("woff"), url("../../assets/fonts/source-serif-pro-v11-latin-regular.ttf") format("truetype"), url("../../assets/fonts/source-serif-pro-v11-latin-regular.svg#RedHatDisplay") format("svg");
+  /* Legacy iOS */ }
+
+@font-face {
+  font-family: "SourceSerifPro-semibold";
+  src: url("../../assets/fonts/source-serif-pro-v11-latin-600.woff2") format("woff2"), url("../../assets/fonts/source-serif-pro-v11-latin-600.woff") format("woff");
+  src: url("../../assets/fonts/source-serif-pro-v11-latin-600.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../../assets/fonts/source-serif-pro-v11-latin-600.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/source-serif-pro-v11-latin-600.woff2") format("woff2"), url("../../assets/fonts/source-serif-pro-v11-latin-600.woff") format("woff"), url("../../assets/fonts/source-serif-pro-v11-latin-600.ttf") format("truetype"), url("../../assets/fonts/source-serif-pro-v11-latin-600.svg#RedHatDisplay") format("svg");
+  /* Legacy iOS */ }
+
 /**
  * Root Media Query Variables
  */
@@ -879,10 +892,10 @@ html {
   line-height: 18px !important; }
 
 /* font weight */
-.font--regular {
+.u-font--regular {
   font-family: "SourceSerifPro-regular"; }
 
-.font--semibold {
+.u-font--semi-bold {
   font-family: "SourceSerifPro-semibold"; }
 
 /* Accessibility
@@ -971,7 +984,7 @@ img {
   padding: 0px 16px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   overflow: hidden;
   transition: height 0.5s;
@@ -989,7 +1002,8 @@ img {
   width: max-content;
   min-width: 0px;
   height: max-content;
-  padding: 8px 12px; }
+  padding: 8px 12px;
+  margin-top: 5px; }
   .c-header__menu::before {
     height: 5px;
     border-bottom: 1px solid #000;
@@ -1030,13 +1044,16 @@ img {
       visibility: visible;
       opacity: 1;
       display: block;
-      width: max-content; } }
+      width: max-content;
+      margin-top: 10px; } }
 
 .c-header__title a {
   color: var(--castpress_primary-color); }
   .c-header__title a:hover {
     text-decoration: none;
     color: var(--castpress_quaternary-color); }
+  .c-header__title a:focus {
+    text-decoration: none; }
 
 .c-header__search {
   background-color: transparent;
@@ -1098,6 +1115,9 @@ img {
 .c-header__main.toggled .c-header__navigation {
   display: block; }
 
+.c-header__main.toggled .c-nav {
+  display: block; }
+
 .c-header__search.toggled .c-header__search-form {
   display: block;
   animation: fadeInDown;
@@ -1126,13 +1146,15 @@ img {
   #navigation component
 \*------------------------------------*/
 .c-nav {
-  width: 100%; }
+  width: 100%;
+  display: none; }
   @media only screen and (min-width: 980px) {
     .c-nav {
       display: block; } }
 
 .c-nav__arrow {
-  margin-top: 5px; }
+  margin-top: 5px;
+  font-size: 14px !important; }
   .c-nav__arrow:hover {
     background-color: transparent !important; }
 
@@ -1176,14 +1198,13 @@ img {
     .s-nav li:focus-within .sub-menu {
       display: block; }
     .s-nav li:last-child .sub-menu .sub-menu {
-      z-index: 5; }
+      z-index: 5;
+      position: absolute;
+      top: 100%;
+      left: 0% !important;
+      transform: translate(0%, 0%); }
       .s-nav li:last-child .sub-menu .sub-menu .sub-menu {
-        margin-left: 0px;
-        display: block !important;
-        position: absolute;
-        top: 100%;
-        left: 0% !important;
-        transform: translate(0%, 0%); }
+        margin-left: 0px; }
         .s-nav li:last-child .sub-menu .sub-menu .sub-menu .sub-menu {
           margin-left: 0px; }
 
@@ -1296,17 +1317,18 @@ img {
     @media only screen and (min-width: 980px) {
       .sub-menu .sub-menu {
         display: block !important; } }
-    .sub-menu .sub-menu .sub-menu .sub-menu {
-      z-index: 5;
+    .sub-menu .sub-menu .sub-menu {
       top: 100% !important;
-      left: 0%;
+      left: 0% !important;
       transform: translate(0%, 0%); }
-      .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
-        display: block !important;
-        position: absolute;
-        margin-left: 0px; }
-        .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
+      .sub-menu .sub-menu .sub-menu .sub-menu {
+        z-index: 5; }
+        .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
+          display: block !important;
+          position: absolute;
           margin-left: 0px; }
+          .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
+            margin-left: 0px; }
 
 /*------------------------------------*\
   #Menu items (li)
@@ -1338,7 +1360,7 @@ img {
   letter-spacing: 0.16em;
   font-size: 14px;
   line-height: 18px !important;
-  font-weight: 600; }
+  font-family: "SourceSerifPro-semibold"; }
   @media only screen and (min-width: 980px) {
     .menu-item__link {
       font-size: 12px;
@@ -1671,9 +1693,12 @@ img {
   font-size: 12px !important;
   line-height: 15px !important; }
   .page-numbers:hover {
-    background-color: #eaeaee !important; }
+    background-color: #eaeaee !important;
+    text-decoration: none; }
     .page-numbers:hover .dashicons::before {
       color: var(--castpress_tertiary-color) !important; }
+    .page-numbers:hover:focus {
+      text-decoration: none; }
   .page-numbers .dashicons {
     display: flex;
     align-items: center;
@@ -1717,7 +1742,7 @@ img {
   font-family: dashicons;
   display: inline-block;
   line-height: 1;
-  font-weight: 400;
+  font-family: "SourceSerifPro-regular";
   font-style: normal;
   speak: never;
   text-decoration: inherit;
@@ -1874,9 +1899,6 @@ img {
 .c-episode__date {
   color: var(--castpress_tertiary-color) !important; }
 
-.c-episode__entry-context {
-  color: var(--castpress_second-color) !important; }
-
 .c-episode__header {
   width: 100%;
   color: var(--castpress_primary-color); }
@@ -1934,6 +1956,7 @@ img {
   height: 145px; }
 
 .c-episode__entry-context {
+  color: var(--castpress_second-color) !important;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
   overflow: hidden;
@@ -1945,7 +1968,8 @@ img {
 
 .c-episode__read-more {
   color: var(--castpress_quaternary-color) !important;
-  font-family: "SourceSerifPro-semibold" !important;
+  font-family: "SourceSerifPro-regular" !important;
+  font-family: "SourceSerifPro-semibold";
   letter-spacing: 0.16em;
   text-transform: uppercase;
   transition: 0.5s all; }
@@ -2126,19 +2150,19 @@ img {
 .author::first-letter {
   text-transform: uppercase; }
 
-.c-post__content {
+.s-post-content {
   font-size: 18px;
   color: #555555; }
-  .c-post__content li {
+  .s-post-content li {
     margin-bottom: 8px; }
-  .c-post__content h1,
-  .c-post__content h2,
-  .c-post__content h3,
-  .c-post__content h4,
-  .c-post__content h5,
-  .c-post__content h6 {
+  .s-post-content h1,
+  .s-post-content h2,
+  .s-post-content h3,
+  .s-post-content h4,
+  .s-post-content h5,
+  .s-post-content h6 {
     margin-bottom: 24px; }
-  .c-post__content p {
+  .s-post-content p {
     margin-bottom: 39px; }
 
 .c-post__title {
@@ -2690,22 +2714,6 @@ h2.c-single__transcript__title {
 # Typography
 --------------------------------------------------------------*/
 /*------------------------------------*\
-  #Default Theme fonts 
-*-------------------------------------*/
-/*
-*   Source Serif Pro
-*   https://fonts.google.com/specimen/Source+Serif+Pro?query=Source+Serif+Pro&preview.text_type=custom#about
-*
-*/
-@font-face {
-  font-family: "SourceSerifPro-regular";
-  src: url("../../assets/fonts/source-serif-pro-v10-latin-regular.woff2") format("woff2"), url("../../assets/fonts/source-serif-pro-v10-latin-regular.woff") format("woff"); }
-
-@font-face {
-  font-family: "SourceSerifPro-semibold";
-  src: url("../../assets/fonts/source-serif-pro-v10-latin-600.woff2") format("woff2"), url("../../assets/fonts/source-serif-pro-v10-latin-600.woff") format("woff"); }
-
-/*------------------------------------*\
   #Headings
 \*------------------------------------*/
 h1,
@@ -2749,21 +2757,10 @@ h4,
   line-height: 25px;
   margin-bottom: 10px; }
 
-.h4--secondary {
-  font-family: "SourceSerifPro-semibold";
-  font-size: 16px;
-  line-height: 25px;
-  margin-bottom: 10px; }
-
 /* H5 */
 h5,
 .h5 {
   font-family: "SourceSerifPro-semibold";
-  font-size: 14px;
-  line-height: 25px; }
-
-.h5--secondary {
-  font-family: "SourceSerifPro-regular";
   font-size: 14px;
   line-height: 25px; }
 
@@ -2828,6 +2825,9 @@ dd {
   margin-bottom: 16px;
   line-height: 27px; }
 
+figcaption {
+  color: var(--castpress_second-color); }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -2855,6 +2855,9 @@ a,
   .a:focus {
     color: var(--castpress_quaternary-color);
     text-decoration: underline; }
+  a:visited,
+  .a:visited {
+    text-decoration: none; }
 
 input[type="text"],
 input[type="email"],
@@ -2905,7 +2908,7 @@ textarea {
     opacity: 1;
     font-size: 12px;
     line-height: 27px !important;
-    font-weight: 400 !important; }
+    font-family: "SourceSerifPro-regular"; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -2989,12 +2992,17 @@ input[type="submit"] {
     background-color: #58379b;
     text-decoration: none;
     color: #f5f5f7; }
-  button:visited,
+  button:visited, button:focus,
   .wp-block-button__link:visited,
+  .wp-block-button__link:focus,
   .btn:visited,
+  .btn:focus,
   input[type="button"]:visited,
+  input[type="button"]:focus,
   input[type="reset"]:visited,
-  input[type="submit"]:visited {
+  input[type="reset"]:focus,
+  input[type="submit"]:visited,
+  input[type="submit"]:focus {
     text-decoration: none; }
 
 /*------------------------------------*\

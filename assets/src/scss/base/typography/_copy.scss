@@ -40,24 +40,28 @@ span,
   color: $castpress_tertiary_color !important;
 }
 
-address { 
+address {
   color: $castpress_second_color;
 }
 
-pre { 
+pre {
   background-color: $castpress_neutral_gray_light_color;
   padding: 8px;
 }
 
-dl{
+dl {
   margin-bottom: 16px;
   color: $castpress_second_color;
 }
-dt { 
+dt {
   margin-bottom: 16px;
 }
 
-dd{
+dd {
   margin-bottom: 16px;
   line-height: 27px;
+}
+
+figcaption {
+  color: $castpress_second_color;
 }

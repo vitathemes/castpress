@@ -66,16 +66,21 @@
   align-items: center;
   justify-content: center;
   background-color: $castpress_neutral_gray_light_color;
-
   font-size: 12px !important;
   line-height: 15px !important;
+
   &:hover {
     background-color: $castpress_neutral_gray_light_second_color !important;
 
+    text-decoration: none;
     .dashicons {
       &::before {
         color: $castpress_tertiary_color !important;
       }
+    }
+
+    &:focus {
+      text-decoration: none;
     }
   }
 
@@ -137,7 +142,7 @@
   font-family: dashicons;
   display: inline-block;
   line-height: 1;
-  font-weight: 400;
+  font-family: $castpress_font_regular;
   font-style: normal;
   speak: never;
   text-decoration: inherit;

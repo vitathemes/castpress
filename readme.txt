@@ -39,17 +39,6 @@ See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes
 
 == Changelog ==
 
-= 1.0.2 =
-* Fix submenus ( style support at 10 submenus )
-* Fixed minor style issues
-* Add changelog.md
-* Update wordpress tested on version
-* Update Theme license
-
-= 1.0.1 =
-* Added related posts
-* Fixed minor style issues
-
 = 1.0.0 =
 * Initial version
 

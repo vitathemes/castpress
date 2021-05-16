@@ -15,4 +15,8 @@ a,
     color: $color_link_hover;
     text-decoration: underline;
   }
+
+  &:visited {
+    text-decoration: none;
+  }
 }

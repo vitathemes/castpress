@@ -18,9 +18,9 @@ if ( ! function_exists( 'castpress_posted_on' ) ) :
 		}
 
 		if( $castpress_is_bold ) {
-			$castpress_is_bold = "font--semibold";
+			$castpress_is_bold = "u-font--semi-bold";
 		} else {
-			$castpress_is_bold = "font--regular";
+			$castpress_is_bold = "u-font--regular";
 		}
 
 		$time_string = sprintf(
@@ -37,7 +37,7 @@ if ( ! function_exists( 'castpress_posted_on' ) ) :
 			'<a class="u-link--tertiary" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="c-post__date h5--secondary u-heading-5-line-height--sm '. esc_html($castpress_is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="c-post__date h5  u-font--regular  u-heading-5-line-height--sm '. esc_html($castpress_is_bold) .' posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -50,11 +50,11 @@ if ( ! function_exists( 'castpress_posted_by' ) ) :
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'By %s', 'post author', 'castpress' ),
-			'<span class="author vcard h5--secondary u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard h5  u-font--regular  u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 
-		echo '<span class="byline h5--secondary u-heading-5-line-height--sm c-post__author "> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="byline h5  u-font--regular  u-heading-5-line-height--sm c-post__author "> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -267,7 +267,7 @@ if (! function_exists('castpress_get_category')) :
 	  * Return Post category
 	  */
 	function castpress_get_category( $castpress_is_bold = false, $castpress_have_seprator = false ) {
-		($castpress_is_bold) ? $castpress_is_bold = 'h5' : $castpress_is_bold = 'h5--secondary';
+		($castpress_is_bold) ? $castpress_is_bold = 'h5' : $castpress_is_bold = 'h5  u-font--regular ';
 		($castpress_have_seprator) ? $castpress_have_seprator = "<span class='seprator h5 u-link--secondary'> | </span>" : $castpress_have_seprator = "";
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
@@ -440,7 +440,7 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 				
 		if($castpress_publisher_flag === 1){
 		
-			echo sprintf('<div class="c-episodes__share"><span class="c-episode__social-share__title font--semibold">%s</span>' , esc_html__( 'Listen on', 'castpress' ) );
+			echo sprintf('<div class="c-episodes__share"><span class="c-episode__social-share__title u-font--semi-bold">%s</span>' , esc_html__( 'Listen on', 'castpress' ) );
 
 			// Spotify
 			if ( $castpress_spotify ) { 

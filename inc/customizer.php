@@ -337,9 +337,9 @@ if( function_exists( 'kirki' ) ) {
 		'section'     => 'typography_fonts',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '12px',
+			'font-size'          => '16px',
 			'line-height'     	 => '25px',
-			'variant'         	 => '600',
+			'variant'         	 => 'regular',
 			
 		],
 		'priority'    => 18,

@@ -32,7 +32,6 @@
 }
 
 /* Line heights */
-
 .u-heading-1-line-height--bg {
   line-height: 33px !important;
 }
@@ -54,10 +53,10 @@
 }
 
 /* font weight */
-.font--regular {
-  font-family: "SourceSerifPro-regular";
+.u-font--regular {
+  font-family: $castpress_font_regular;
 }
 
-.font--semibold {
-  font-family: "SourceSerifPro-semibold";
+.u-font--semi-bold {
+  font-family: $castpress_font_semi-bold;
 }

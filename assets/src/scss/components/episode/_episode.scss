@@ -95,10 +95,6 @@
   color: $castpress_tertiary_color !important;
 }
 
-.c-episode__entry-context {
-  color: $castpress_second_color !important;
-}
-
 .c-episode__header {
   width: 100%;
   color: $castpress_primary_color;
@@ -179,6 +175,7 @@
 }
 
 .c-episode__entry-context {
+  color: $castpress_second_color !important;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
 
@@ -191,7 +188,8 @@
 
 .c-episode__read-more {
   color: $castpress_quaternary_color !important;
-  font-family: $castpress_font_semibold !important;
+  font-family: $castpress_font_regular !important;
+  font-family: $castpress_font_semi-bold;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   transition: 0.5s all;

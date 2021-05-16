@@ -2015,7 +2015,7 @@ img {
   font-family: dashicons;
   display: inline-block;
   line-height: 1;
-  font-weight: 400;
+  font-family: $castpress_font_regular;;
   font-style: normal;
   speak: never;
   text-decoration: inherit;
@@ -2534,22 +2534,22 @@ img {
   text-transform: uppercase;
 }
 
-.c-post__content {
+.s-post-content {
   font-size: 18px;
   color: #555555;
 }
-.c-post__content li {
+.s-post-content li {
   margin-bottom: 8px;
 }
-.c-post__content h1,
-.c-post__content h2,
-.c-post__content h3,
-.c-post__content h4,
-.c-post__content h5,
-.c-post__content h6 {
+.s-post-content h1,
+.s-post-content h2,
+.s-post-content h3,
+.s-post-content h4,
+.s-post-content h5,
+.s-post-content h6 {
   margin-bottom: 24px;
 }
-.c-post__content p {
+.s-post-content p {
   margin-bottom: 39px;
 }
 
@@ -3416,7 +3416,7 @@ h5,
   line-height: 25px;
 }
 
-.h5--secondary {
+. u-font--regular {
   font-family: "SourceSerifPro-regular";
   font-size: 14px;
   line-height: 25px;
@@ -3440,11 +3440,11 @@ h6,
   letter-spacing: 0.16em;
 }
 
-.font--regular {
+.u-font--regular {
   font-family: "SourceSerifPro-regular";
 }
 
-.font--semibold {
+.u-font--semi-bold {
   font-family: "SourceSerifPro-semibold";
 }
 
@@ -3573,7 +3573,7 @@ textarea::placeholder {
   opacity: 1;
   font-size: 12px;
   line-height: 27px !important;
-  font-weight: 400 !important;
+  font-family: $castpress_font_regular; !important;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,

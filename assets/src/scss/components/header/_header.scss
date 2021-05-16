@@ -22,7 +22,7 @@
   padding: 0px 16px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   overflow: hidden;
   transition: height 0.5s;
@@ -43,6 +43,7 @@
   min-width: 0px;
   height: max-content;
   padding: 8px 12px;
+  margin-top: 5px;
 
   &::before {
     height: 5px;
@@ -94,6 +95,7 @@
     opacity: 1;
     display: block;
     width: max-content;
+    margin-top: 10px;
   }
 }
 
@@ -103,6 +105,10 @@
     &:hover {
       text-decoration: none;
       color: $castpress_quaternary_color;
+    }
+
+    &:focus {
+      text-decoration: none;
     }
   }
 }
@@ -189,6 +195,10 @@
   }
 
   .c-header__navigation {
+    display: block;
+  }
+
+  .c-nav {
     display: block;
   }
 }

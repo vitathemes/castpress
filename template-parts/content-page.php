@@ -17,7 +17,7 @@
 
     <?php castpress_post_thumbnail(); ?>
 
-    <div class="c-post__content">
+    <div class="s-post-content">
         <?php
 			the_content(
 				sprintf(

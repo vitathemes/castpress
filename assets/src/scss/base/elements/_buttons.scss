@@ -24,7 +24,8 @@ input[type="submit"] {
     color: #f5f5f7;
   }
 
-  &:visited {
+  &:visited,
+  &:focus {
     text-decoration: none;
   }
 }

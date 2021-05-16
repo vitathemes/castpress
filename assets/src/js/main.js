@@ -16,6 +16,7 @@ function castpress_childFinder(
 /*--------------------------------------*\
   #Detect keyboard navigation action
 \*--------------------------------------*/
+
 let castpress_IsBackward;
 document.addEventListener("keydown", function (e) {
   if (e.shiftKey && e.keyCode == 9) {
@@ -28,7 +29,7 @@ document.addEventListener("keydown", function (e) {
 });
 
 /*--------------------------------------*\
-  #Toggle Header Class
+  #Toggle Header Search Class
 \*--------------------------------------*/
 const castpress_headerSearch = document.querySelector(".js-header__search");
 const castpress_headerSearchIcon = document.querySelector(
@@ -59,6 +60,53 @@ castpress_headerSearchIcon.addEventListener("click", function () {
     });
   }
 });
+
+/*--------------------------------------*\
+  #Menu Trap focus ( Mobile )
+\*--------------------------------------*/
+if (castpress_childFinder("body", "s-nav")) {
+  let castpress_mainHeader = document.querySelector(".js-header__main");
+  let castpress_menuToggle = document.querySelector(".js-header__menu");
+
+  let castpress_menu = document.querySelector(".s-nav");
+
+  let castpress_menuListItems = castpress_menu.querySelectorAll("li");
+  let castpress_menuLinks = castpress_menu.querySelectorAll(".menu-item__link");
+
+  let firstMenuItem = document.querySelector(".menu-item__link");
+
+  const lastMenuItem = document.querySelector(
+    ".s-nav > .menu-item:last-child > .sub-menu > .menu-item:first-child > .menu-item__link"
+  );
+
+  lastMenuItem.style.backgroundColor = "red";
+
+  let castpress_lastIndex = castpress_menuListItems.length - 1;
+  let castpress_isBackward;
+
+  document.addEventListener("keydown", function (e) {
+    if (e.shiftKey && e.keyCode == 9) {
+      castpress_isBackward = true;
+    } else {
+      castpress_isBackward = false;
+    }
+  });
+
+  castpress_menuToggle.addEventListener("blur", function (e) {
+    if (castpress_mainHeader.classList.contains("toggled")) {
+      if (castpress_isBackward === true) {
+        firstMenuItem.focus();
+      }
+    }
+  });
+
+  lastMenuItem.addEventListener("blur", function () {
+    console.log("blured");
+    if (castpress_IsBackward === false) {
+      castpress_menuToggle.focus();
+    }
+  });
+}
 
 /*--------------------------------------*\
   #Toggle Transcript
