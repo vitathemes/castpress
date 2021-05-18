@@ -847,7 +847,7 @@ html {
     color: var(--castpress_primary-color); }
 
 .u-link--quaternary {
-  color: #7247ca; }
+  color: var(--castpress_quaternary-color); }
   .u-link--quaternary:hover {
     text-decoration: none;
     color: var(--castpress_primary-color); }
@@ -862,7 +862,7 @@ html {
   line-height: 25px; }
 
 .u-heading-4-line-height--bg {
-  line-height: 27px !important; }
+  line-height: 27px; }
 
 .u-heading-4-line-height--sm {
   line-height: 20px; }
@@ -2806,7 +2806,7 @@ body.admin-bar .c-header__search-form {
 a,
 .a {
   text-decoration: none;
-  color: #7247ca; }
+  color: var(--castpress_quaternary-color); }
   a:hover,
   .a:hover {
     color: var(--castpress_quaternary-color);
