@@ -247,23 +247,34 @@ if (! function_exists('castpress_get_podcast_audio')) :
 	  * Return Podcast Audio and Update Custom Field
 	  */
 	function castpress_get_podcast_audio($post , $castpress_class_name = "") {
-				
+			
+
+		if(class_exists('ACF')){
+			$castpress_acf_podcast_audio_field = get_field('podcast_audio_file'); 
+		}
+		else{
+			$castpress_acf_podcast_audio_field = null;
+		}
+
 		// Get audio link from importer plugin
 		$castpress_podcast_audio = get_post_meta( $post->ID, 'podcast_audio_file', true );
 
-		if( get_field('podcast_audio_file')  && !empty($castpress_podcast_audio) ){
+		if( empty($castpress_acf_podcast_audio_field) && !empty($castpress_podcast_audio) ){
 
-			// Update Custom field link
-			update_field( 'podcast_audio_file' , $castpress_podcast_audio );
-
-			// Sync global variable to acf field
-			$castpress_podcast_audio = get_field('podcast_audio_file');
-
+			if(class_exists('ACF') &&  empty($castpress_acf_podcast_audio_field) ){
+				// Update Custom field link
+				update_field( 'podcast_audio_file' , $castpress_podcast_audio );
+			}
+			else{
+				// Reset the global variable 
+				$castpress_podcast_audio = get_post_meta( $post->ID, 'podcast_audio_file', true );
+			}
+			
 		}
-		elseif( !empty(get_field('podcast_audio_file')) ){
+		elseif( !empty($castpress_acf_podcast_audio_field) ){
 
 			// if acf field was not empty ,read from field
-			$castpress_podcast_audio = get_field('podcast_audio_file');
+			$castpress_podcast_audio = $castpress_acf_podcast_audio_field;
 
 		}
 		else{

@@ -74,9 +74,9 @@
         <?php if ( 'episodes' == get_post_type() ) :
           $castpress_podcast_audio_duratiuon = get_post_meta( $post->ID, 'podcast_duration', true ); 
           $castpress_podcast_audio_duratiuon = substr($castpress_podcast_audio_duratiuon,0,-3);
-        ?>
 
-        <?php if (get_field('transcript')) : ?>
+          if (class_exists('ACF') && get_field('transcript')) :
+        ?>
         <div class="c-single__transcript">
 
             <h2 class="c-single__transcript__title">
