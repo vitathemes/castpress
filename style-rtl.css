@@ -1,24 +1,3 @@
-/*!
-Theme Name: Castpress
-Theme URI: https://vitathemes.com/theme/castpress/
-Author: VitaThemes
-Author URI: https://vitathemes.com
-Description: A minimal & mobile-first theme. The best choice for people who want to publish their podcasts.
-Version: 1.0.0
-Tested up to: 5.7.1
-Requires PHP: 5.6
-License: GPL-3.0-or-later
-License URI: https://opensource.org/licenses/GPL-3.0
-Text Domain: castpress
-Tags: custom-logo, custom-menu, featured-images, threaded-comments
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-Castpress is based on Underscores https://underscores.me/, (C) 2012-2021 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-*/
-
 [data-simplebar] {
   position: relative;
   flex-direction: column;
@@ -232,20 +211,250 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 /*--------------------------------------------------------------
-  # Global
-  --------------------------------------------------------------*/
+# Global
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
-  # Abstracts
-  --------------------------------------------------------------*/
+# Abstracts
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
-  # Mixins
-  --------------------------------------------------------------*/
+# Externals
+--------------------------------------------------------------*/
+#podcasts-player-container .wpb_raw_html {
+  max-height: 145px;
+  /* This is a fix for iPhone/Safari gap */
+}
+
+#podcasts-player-container .wpb_wrapper {
+  line-height: 0;
+}
+
+#podcasts-player-container {
+  zoom: 0.69;
+  /* Fix for mobiles */
+}
+
+.styles__episodeFeed___3mOKz {
+  position: relative;
+  overflow-y: auto;
+  background-color: #54595e;
+  max-height: 417px;
+  padding: 11px;
+  margin-bottom: 70px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  display: none;
+  color: #fff;
+}
+
+.styles__episodeFeedItem___1U6E2 {
+  min-height: 106px;
+  color: #292f36;
+  background: #fff;
+  border-radius: 4px;
+  padding: 14px 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.styles__episodeFeedItem___1U6E2 a {
+  color: inherit;
+  text-decoration: none;
+  text-align: right;
+}
+
+.styles__episodeFeedItem___1U6E2 .styles__episodeImage___tMifW {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+  float: right;
+  margin: 0 0 10px 6px;
+  position: relative;
+  width: 47px;
+  height: 47px;
+}
+
+.styles__circle___1g-9u {
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.styles__white___372tQ {
+  background: #fff;
+}
+
+.styles__episodeFeedItem___1U6E2 .styles__episodeImage___tMifW img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.styles__playButton___1Ivi4 {
+  cursor: pointer;
+  text-align: center;
+  padding: 0;
+}
+
+.styles__playButton___1uaGA {
+  z-index: 0;
+}
+
+.styles__playButton___1Ivi4 svg {
+  overflow: visible;
+}
+
+.styles__episodeFeedItem___1U6E2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.styles__episodeFeedItem___1U6E2 .styles__episodeHeading___29q7v {
+  font-weight: 700;
+  font-size: 15px;
+  color: #292f36;
+}
+
+.styles__episodeFeedItem___1U6E2 .styles__episodeDescription___C3oZg,
+.styles__episodeFeedItem___1U6E2 p {
+  color: rgba(41, 47, 54, 0.7);
+  font-size: 13px;
+  line-height: 14px;
+}
+
+.styles__episodeFeedItem___1U6E2 .styles__episodeDescription___C3oZg {
+  clear: right;
+  padding-left: 2px;
+  text-align: right;
+}
+
+.styles__episodeFeedItem___1U6E2 .styles__episodeDescription___C3oZg,
+.styles__episodeFeedItem___1U6E2 p {
+  color: rgba(41, 47, 54, 0.7);
+  font-size: 13px;
+  line-height: 14px;
+}
+
+.styles__episodeFeedItem___1U6E2 .styles__episodeCreated___1zP5p,
+.styles__episodeFeedItem___1U6E2 .styles__episodeDuration___2I0Qb {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 13px;
+  color: #c9cbcd;
+}
+
+.styles__episodeFeedItem___1U6E2 .styles__episodeDuration___2I0Qb {
+  float: left;
+}
+
+.styles__episodeFeedItem___1U6E2 .styles__episodeCreated___1zP5p,
+.styles__episodeFeedItem___1U6E2 .styles__episodeDuration___2I0Qb {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 13px;
+  color: #c9cbcd;
+}
+
+.styles__episodeFeedItem___1U6E2 .styles__episodeCreated___1zP5p {
+  float: right;
+}
+
+.styles__episodeFeed___3mOKz {
+  margin-bottom: 73px;
+}
+
+.styles__episodeFeed___3mOKz {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .styles__episodeFeedItem___1U6E2 {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .styles__episodeFeed___3mOKz {
+    padding: 35px;
+  }
+  .styles__episodeFeedItem___1U6E2 {
+    padding: 25px 22px;
+  }
+  .styles__episodeFeed___3mOKz > div {
+    margin-bottom: 23px;
+  }
+  .styles__episodeFeedItem___1U6E2 .styles__episodeImage___tMifW {
+    width: 56px;
+    height: 56px;
+    margin-left: 22px;
+    margin-bottom: 0;
+  }
+  .styles__episodeFeedItem___1U6E2 .styles__episodeHeading___29q7v {
+    font-weight: 700;
+    font-size: 18px;
+    color: #292f36;
+    margin-bottom: 4px;
+    width: 365px;
+  }
+  .styles__episodeFeedItem___1U6E2 .styles__episodeDescription___C3oZg,
+  .styles__episodeFeedItem___1U6E2 p {
+    font-size: 16px;
+    line-height: 18px;
+    color: #7f8287;
+  }
+  .styles__episodeFeedItem___1U6E2 .styles__episodeDescription___C3oZg {
+    clear: none;
+    width: 465px;
+    margin-right: 78px;
+  }
+  .styles__episodeFeedItem___1U6E2 .styles__episodeDescription___C3oZg,
+  .styles__episodeFeedItem___1U6E2 p {
+    font-size: 16px;
+    line-height: 18px;
+    color: #7f8287;
+  }
+  .styles__episodeFeedItem___1U6E2 .styles__episodeCreated___1zP5p,
+  .styles__episodeFeedItem___1U6E2 .styles__episodeDuration___2I0Qb {
+    margin: 0;
+    float: none;
+    position: absolute;
+    font-size: 13px;
+    line-height: 15px;
+  }
+  .styles__episodeFeedItem___1U6E2 .styles__episodeDuration___2I0Qb {
+    bottom: 12px;
+    left: 22px;
+  }
+  .styles__episodeFeedItem___1U6E2 .styles__episodeCreated___1zP5p {
+    top: 25px;
+    left: 22px;
+  }
+  .styles__episodeFeedItem___1U6E2 .styles__episodeCreated___1zP5p,
+  .styles__episodeFeedItem___1U6E2 .styles__episodeDuration___2I0Qb {
+    margin: 0;
+    float: none;
+    position: absolute;
+    font-size: 13px;
+    line-height: 15px;
+  }
+}
+
 /*--------------------------------------------------------------
-  # animations
-  --------------------------------------------------------------*/
+# Mixins
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# animations
+--------------------------------------------------------------*/
 /*------------------------------------*\
-    #Animations
-  \*------------------------------------*/
+  #Animations
+\*------------------------------------*/
 /* Menu Animation  */
 @keyframes menuOpen {
   0% {
@@ -407,11 +616,39 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 /*--------------------------------------------------------------
-  # Variables
-  --------------------------------------------------------------*/
+# Variables
+--------------------------------------------------------------*/
+@font-face {
+  font-family: "SourceSerifPro-regular";
+  src: url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff2") format("woff2"),
+    url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff") format("woff");
+  src: url("../../assets/fonts/source-serif-pro-v11-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../../assets/fonts/source-serif-pro-v11-latin-regular.eot?#iefix") format("embedded-opentype"),
+    url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff2") format("woff2"),
+    url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff") format("woff"),
+    url("../../assets/fonts/source-serif-pro-v11-latin-regular.ttf") format("truetype"),
+    url("../../assets/fonts/source-serif-pro-v11-latin-regular.svg#RedHatDisplay") format("svg");
+  /* Legacy iOS */
+}
+
+@font-face {
+  font-family: "SourceSerifPro-semibold";
+  src: url("../../assets/fonts/source-serif-pro-v11-latin-600.woff2") format("woff2"),
+    url("../../assets/fonts/source-serif-pro-v11-latin-600.woff") format("woff");
+  src: url("../../assets/fonts/source-serif-pro-v11-latin-600.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../../assets/fonts/source-serif-pro-v11-latin-600.eot?#iefix") format("embedded-opentype"),
+    url("../../assets/fonts/source-serif-pro-v11-latin-600.woff2") format("woff2"),
+    url("../../assets/fonts/source-serif-pro-v11-latin-600.woff") format("woff"),
+    url("../../assets/fonts/source-serif-pro-v11-latin-600.ttf") format("truetype"),
+    url("../../assets/fonts/source-serif-pro-v11-latin-600.svg#RedHatDisplay") format("svg");
+  /* Legacy iOS */
+}
+
 /**
-   * Root Media Query Variables
-   */
+ * Root Media Query Variables
+ */
 :root {
   --global--spacing-unit: 20px;
   --global--spacing-horizontal: 15px;
@@ -419,101 +656,59 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   --responsive--aligndefault-width: 100%;
   --responsive--alignwide-width: 100%;
   --responsive--alignfull-width: 100%;
-  --responsive--alignwide-width-multiplier: calc(
-    16 * var(--global--spacing-horizontal)
-  );
+  --responsive--alignwide-width-multiplier: calc(16 * var(--global--spacing-horizontal));
   --responsive--alignright-margin: var(--global--spacing-horizontal);
   --responsive--alignleft-margin: var(--global--spacing-horizontal);
 }
 
 @media only screen and (min-width: 720px) {
   :root {
-    --responsive--aligndefault-width: calc(
-      720px - var(--responsive--spacing-horizontal)
-    );
-    --responsive--alignwide-width: calc(
-      720px - var(--responsive--spacing-horizontal)
-    );
-    --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
-    --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+    --responsive--aligndefault-width: calc(720px - var(--responsive--spacing-horizontal));
+    --responsive--alignwide-width: calc(720px - var(--responsive--spacing-horizontal));
+    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
   }
 }
 
 @media only screen and (min-width: 980px) {
   :root {
-    --responsive--aligndefault-width: calc(
-      980px - var(--responsive--spacing-horizontal)
-    );
-    --responsive--alignwide-width: calc(
-      1140px - var(--responsive--spacing-horizontal)
-    );
-    --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
-    --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+    --responsive--aligndefault-width: calc(980px - var(--responsive--spacing-horizontal));
+    --responsive--alignwide-width: calc(1140px - var(--responsive--spacing-horizontal));
+    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
   }
 }
 
 @media only screen and (min-width: 1140px) {
   :root {
-    --responsive--aligndefault-width: calc(
-      980px - var(--responsive--spacing-horizontal)
-    );
-    --responsive--alignwide-width: calc(
-      1140px - var(--responsive--spacing-horizontal)
-    );
-    --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
-    --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+    --responsive--aligndefault-width: calc(980px - var(--responsive--spacing-horizontal));
+    --responsive--alignwide-width: calc(1140px - var(--responsive--spacing-horizontal));
+    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
   }
 }
 
 @media only screen and (min-width: 1200px) {
   :root {
-    --responsive--aligndefault-width: calc(
-      1140px - var(--responsive--spacing-horizontal)
-    );
-    --responsive--alignwide-width: calc(
-      1200px - var(--responsive--spacing-horizontal)
-    );
-    --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
-    --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+    --responsive--aligndefault-width: calc(1140px - var(--responsive--spacing-horizontal));
+    --responsive--alignwide-width: calc(1200px - var(--responsive--spacing-horizontal));
+    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
   }
 }
 
 @media only screen and (min-width: 1400px) {
   :root {
-    --responsive--aligndefault-width: calc(
-      1140px - var(--responsive--spacing-horizontal)
-    );
-    --responsive--alignwide-width: calc(
-      1200px - var(--responsive--spacing-horizontal)
-    );
-    --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
-    --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+    --responsive--aligndefault-width: calc(1140px - var(--responsive--spacing-horizontal));
+    --responsive--alignwide-width: calc(1200px - var(--responsive--spacing-horizontal));
+    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
   }
 }
 
 /**
-   * Extends
-   */
+ * Extends
+ */
 .default-max-width {
   max-width: var(--responsive--aligndefault-width);
   margin-right: auto;
@@ -600,18 +795,18 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 /**
-   * Output
-   */
+ * Output
+ */
 /*--------------------------------------------------------------
-  # Generic
-  --------------------------------------------------------------*/
+# Generic
+--------------------------------------------------------------*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * 1. Correct the line height in all browsers.
-   * 2. Prevent adjustments of font size after orientation changes in iOS.
-   */
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
 html {
   line-height: 1.15;
   /* 1 */
@@ -620,36 +815,36 @@ html {
 }
 
 /* Sections
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Remove the margin in all browsers.
-   */
+ * Remove the margin in all browsers.
+ */
 body {
   margin: 0;
 }
 
 /**
-   * Render the `main` element consistently in IE.
-   */
+ * Render the `main` element consistently in IE.
+ */
 main {
   display: block;
 }
 
 /**
-   * Correct the font size and margin on `h1` elements within `section` and
-   * `article` contexts in Chrome, Firefox, and Safari.
-   */
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
 /* Grouping content
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * 1. Add the correct box sizing in Firefox.
-   * 2. Show the overflow in Edge and IE.
-   */
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
 hr {
   box-sizing: content-box;
   /* 1 */
@@ -660,9 +855,9 @@ hr {
 }
 
 /**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
 pre {
   font-family: monospace, monospace;
   /* 1 */
@@ -671,18 +866,18 @@ pre {
 }
 
 /* Text-level semantics
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Remove the gray background on active links in IE 10.
-   */
+ * Remove the gray background on active links in IE 10.
+ */
 a {
   background-color: transparent;
 }
 
 /**
-   * 1. Remove the bottom border in Chrome 57-
-   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-   */
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -693,17 +888,17 @@ abbr[title] {
 }
 
 /**
-   * Add the correct font weight in Chrome, Edge, and Safari.
-   */
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
 b,
 strong {
   font-weight: bolder;
 }
 
 /**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
 code,
 kbd,
 samp {
@@ -714,16 +909,16 @@ samp {
 }
 
 /**
-   * Add the correct font size in all browsers.
-   */
+ * Add the correct font size in all browsers.
+ */
 small {
   font-size: 80%;
 }
 
 /**
-   * Prevent `sub` and `sup` elements from affecting the line height in
-   * all browsers.
-   */
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
 sub,
 sup {
   font-size: 75%;
@@ -741,20 +936,20 @@ sup {
 }
 
 /* Embedded content
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Remove the border on images inside links in IE 10.
-   */
+ * Remove the border on images inside links in IE 10.
+ */
 img {
   border-style: none;
 }
 
 /* Forms
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * 1. Change the font styles in all browsers.
-   * 2. Remove the margin in Firefox and Safari.
-   */
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
 button,
 input,
 optgroup,
@@ -771,9 +966,9 @@ textarea {
 }
 
 /**
-   * Show the overflow in IE.
-   * 1. Show the overflow in Edge.
-   */
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
 button,
 input {
   /* 1 */
@@ -781,9 +976,9 @@ input {
 }
 
 /**
-   * Remove the inheritance of text transform in Edge, Firefox, and IE.
-   * 1. Remove the inheritance of text transform in Firefox.
-   */
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
 button,
 select {
   /* 1 */
@@ -791,8 +986,8 @@ select {
 }
 
 /**
-   * Correct the inability to style clickable types in iOS and Safari.
-   */
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
 button,
 [type="button"],
 [type="reset"],
@@ -801,8 +996,8 @@ button,
 }
 
 /**
-   * Remove the inner border and padding in Firefox.
-   */
+ * Remove the inner border and padding in Firefox.
+ */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -812,8 +1007,8 @@ button::-moz-focus-inner,
 }
 
 /**
-   * Restore the focus styles unset by the previous rule.
-   */
+ * Restore the focus styles unset by the previous rule.
+ */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -822,18 +1017,18 @@ button:-moz-focusring,
 }
 
 /**
-   * Correct the padding in Firefox.
-   */
+ * Correct the padding in Firefox.
+ */
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
 /**
-   * 1. Correct the text wrapping in Edge and IE.
-   * 2. Correct the color inheritance from `fieldset` elements in IE.
-   * 3. Remove the padding so developers are not caught out when they zero out
-   *    `fieldset` elements in all browsers.
-   */
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
 legend {
   box-sizing: border-box;
   /* 1 */
@@ -850,23 +1045,23 @@ legend {
 }
 
 /**
-   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
-   */
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
 progress {
   vertical-align: baseline;
 }
 
 /**
-   * Remove the default vertical scrollbar in IE 10+.
-   */
+ * Remove the default vertical scrollbar in IE 10+.
+ */
 textarea {
   overflow: auto;
 }
 
 /**
-   * 1. Add the correct box sizing in IE 10.
-   * 2. Remove the padding in IE 10.
-   */
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
@@ -876,17 +1071,17 @@ textarea {
 }
 
 /**
-   * Correct the cursor style of increment and decrement buttons in Chrome.
-   */
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
-   * 1. Correct the odd appearance in Chrome and Safari.
-   * 2. Correct the outline style in Safari.
-   */
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -895,16 +1090,16 @@ textarea {
 }
 
 /**
-   * Remove the inner padding in Chrome and Safari on macOS.
-   */
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 /**
-   * 1. Correct the inability to style clickable types in iOS and Safari.
-   * 2. Change font properties to `inherit` in Safari.
-   */
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   /* 1 */
@@ -913,39 +1108,39 @@ textarea {
 }
 
 /* Interactive
-     ========================================================================== */
+   ========================================================================== */
 /*
-   * Add the correct display in Edge, IE 10+, and Firefox.
-   */
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
 details {
   display: block;
 }
 
 /*
-   * Add the correct display in all browsers.
-   */
+ * Add the correct display in all browsers.
+ */
 summary {
   display: list-item;
 }
 
 /* Misc
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Add the correct display in IE 10+.
-   */
+ * Add the correct display in IE 10+.
+ */
 template {
   display: none;
 }
 
 /**
-   * Add the correct display in IE 10.
-   */
+ * Add the correct display in IE 10.
+ */
 [hidden] {
   display: none;
 }
 
 /* Inherit box-sizing to more easily change it's value on a component level.
-  @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
 *::before,
 *::after {
@@ -957,40 +1152,69 @@ html {
 }
 
 /*--------------------------------------------------------------
-  # utilities
-  --------------------------------------------------------------*/
+# utilities
+--------------------------------------------------------------*/
 /* Links */
 .u-link--secondary {
   color: var(--castpress_primary-color);
 }
 .u-link--secondary:hover,
 .u-link--secondary:focus {
-  color: #7247ca;
+  text-decoration: none;
+  color: var(--castpress_quaternary-color);
 }
 
 .u-link--tertiary {
-  color: #979797;
+  color: var(--castpress_tertiary-color);
 }
 .u-link--tertiary:hover {
-  color: #222222;
-}
-
-..u-link--quaternary {
-  color: #7247ca;
-}
-..u-link--quaternary:hover {
+  text-decoration: none;
   color: var(--castpress_primary-color);
 }
 
-.a--quinary {
-  color: #58379b;
+.u-link--quaternary {
+  color: var(--castpress_quaternary-color);
 }
-.a--quinary:hover {
+.u-link--quaternary:hover {
+  text-decoration: none;
   color: var(--castpress_primary-color);
+}
+.u-link--quaternary:visited {
+  text-decoration: none;
+}
+
+/* Line heights */
+.u-heading-1-line-height--bg {
+  line-height: 33px;
+}
+
+.u-heading-1-line-height--sm {
+  line-height: 25px;
+}
+
+.u-heading-4-line-height--bg {
+  line-height: 27px;
+}
+
+.u-heading-4-line-height--sm {
+  line-height: 20px;
+}
+
+.u-heading-5-line-height--sm {
+  line-height: 18px;
+}
+
+/* font weight */
+.u-font--regular {
+  font-family: "SourceSerifPro-regular";
+}
+
+.u-font--semi-bold {
+  font-family: "SourceSerifPro-semibold";
 }
 
 /* Accessibility
-  --------------------------------------------- */
+--------------------------------------------- */
 /* Text meant only for screen readers. */
 .screen-reader-text {
   border: 0;
@@ -1030,10 +1254,10 @@ html {
 }
 
 /*--------------------------------------------------------------
-  # Objects
-  --------------------------------------------------------------*/
+# Objects
+--------------------------------------------------------------*/
 /* block
-  --------------------------------------------- */
+--------------------------------------------- */
 .o-page {
   display: flex;
   flex-direction: column;
@@ -1041,9 +1265,9 @@ html {
 }
 
 /* layout
-  --------------------------------------------- */
+--------------------------------------------- */
 /* Images
-  --------------------------------------------- */
+--------------------------------------------- */
 img {
   width: 100%;
   height: 100%;
@@ -1054,14 +1278,14 @@ img {
 }
 
 /*--------------------------------------------------------------
-  # components
-  --------------------------------------------------------------*/
+# components
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
-  # components
-  --------------------------------------------------------------*/
+# components
+--------------------------------------------------------------*/
 /*------------------------------------*\
-    #Header
-  \*------------------------------------*/
+  #Header
+\*------------------------------------*/
 .c-header {
   width: 100%;
   padding-top: 23px;
@@ -1083,7 +1307,7 @@ img {
   padding: 0px 16px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   overflow: hidden;
   transition: height 0.5s;
@@ -1105,6 +1329,7 @@ img {
   min-width: 0px;
   height: max-content;
   padding: 8px 12px;
+  margin-top: 5px;
 }
 .c-header__menu::before {
   height: 5px;
@@ -1155,19 +1380,24 @@ img {
     opacity: 1;
     display: block;
     width: max-content;
+    margin-top: 2px;
   }
 }
 
 .c-header__title a {
-  color: #222222;
+  color: var(--castpress_primary-color);
 }
 .c-header__title a:hover {
-  color: #7247ca;
+  text-decoration: none;
+  color: var(--castpress_quaternary-color);
+}
+.c-header__title a:focus {
+  text-decoration: none;
 }
 
 .c-header__search {
   background-color: transparent;
-  padding-right: 16px !important;
+  padding-right: 39px;
   display: none;
 }
 .c-header__search:hover {
@@ -1181,14 +1411,20 @@ img {
 
 .c-header__search-icon {
   background-color: transparent;
+  padding-top: 0px;
 }
 .c-header__search-icon::before {
-  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.331 11.0715L15.8859 14.6313C16.0447 14.8079 16.0368 15.0783 15.8681 15.2454L15.246 15.8684C15.1626 15.9526 15.049 16 14.9305 16C14.812 16 14.6985 15.9526 14.615 15.8684L11.0601 12.3085C10.9618 12.21 10.8726 12.1028 10.7935 11.9881L10.127 11.0982C9.02413 11.9801 7.6546 12.4602 6.24327 12.4598C3.33502 12.4699 0.807867 10.461 0.157951 7.62231C-0.491966 4.78365 0.90881 1.87288 3.53098 0.613257C6.15315 -0.646363 9.29689 0.0813446 11.101 2.36555C12.9052 4.64977 12.8882 7.88086 11.0601 10.1459L11.9489 10.76C12.0877 10.849 12.2159 10.9535 12.331 11.0715ZM1.79968 6.23008C1.79968 8.68763 3.78915 10.6799 6.24329 10.6799C7.42181 10.6799 8.55206 10.2111 9.3854 9.37656C10.2187 8.54206 10.6869 7.41024 10.6869 6.23008C10.6869 3.77252 8.69743 1.78027 6.24329 1.78027C3.78915 1.78027 1.79968 3.77252 1.79968 6.23008Z' fill='%23222222'/%3E%3C/svg%3E%0A");
-  cursor: pointer;
+  content: " ";
   width: 20px;
   height: 20px;
   display: block;
-  background-size: 21px 21px;
+  cursor: pointer;
+  -webkit-mask: url(https://api.iconify.design/bx:bx-search-alt-2.svg) no-repeat 50% 50%;
+  mask: url(https://api.iconify.design/bx:bx-search-alt-2.svg) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  vertical-align: middle;
+  background-color: var(--castpress_primary-color);
   margin-top: 5px;
 }
 .c-header__search-icon:hover {
@@ -1200,6 +1436,9 @@ img {
   position: absolute;
   left: 155px;
   top: 90px;
+  width: max-content !important;
+  display: flex;
+  justify-content: flex-start;
 }
 .c-header__search-form .search-field {
   width: 315px;
@@ -1222,8 +1461,8 @@ img {
 }
 
 /*------------------------------------*\
-    #toggle
-  \*------------------------------------*/
+  #toggle
+\*------------------------------------*/
 .c-header__main.toggled .c-header__menu::before {
   transform: rotate(-45deg) translate(5px, -15px);
 }
@@ -1236,12 +1475,23 @@ img {
   display: block;
 }
 
+.c-header__main.toggled .c-nav {
+  display: block;
+}
+
 .c-header__search.toggled .c-header__search-form {
   display: block;
   animation: fadeInDown;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  text-align: left;
+}
+
+.c-header__search-form {
+  display: none;
+  position: absolute;
+  left: 200px !important;
+  right: unset !important;
+  top: 90px;
 }
 
 .c-header__search.toggled .c-header__search-icon::before {
@@ -1250,10 +1500,8 @@ img {
   display: inline-block;
   content: " ";
   cursor: pointer;
-  -webkit-mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16)
-    no-repeat 50% 50%;
-  mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16)
-    no-repeat 50% 50%;
+  -webkit-mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat 50% 50%;
+  mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
   vertical-align: middle;
@@ -1267,10 +1515,11 @@ img {
 }
 
 /*------------------------------------*\
-    #navigation component
-  \*------------------------------------*/
+  #navigation component
+\*------------------------------------*/
 .c-nav {
   width: 100%;
+  display: none;
 }
 @media only screen and (min-width: 980px) {
   .c-nav {
@@ -1280,6 +1529,7 @@ img {
 
 .c-nav__arrow {
   margin-top: 5px;
+  font-size: 14px !important;
 }
 .c-nav__arrow:hover {
   background-color: transparent !important;
@@ -1296,8 +1546,8 @@ img {
 }
 
 /*------------------------------------*\
-    #navigation scope
-  \*------------------------------------*/
+  #navigation scope
+\*------------------------------------*/
 .s-nav {
   padding: 0px;
   margin: 0px;
@@ -1320,15 +1570,13 @@ img {
   position: relative;
   margin-bottom: 39px;
   text-transform: uppercase;
-
-  margin-left: 10px !important;
-  margin-right: 10px !important ;
 }
 @media only screen and (min-width: 980px) {
   .s-nav li {
     display: inline-block;
     margin-right: 39px;
     margin-bottom: 0px;
+    margin-left: 0px !important;
   }
   .s-nav li:hover .sub-menu {
     display: block;
@@ -1343,30 +1591,27 @@ img {
 }
 .s-nav li:last-child .sub-menu .sub-menu {
   z-index: 5;
-}
-.s-nav li:last-child .sub-menu .sub-menu .sub-menu {
-  margin-right: 0px;
-  display: block !important;
   position: absolute;
   top: 100%;
   right: 0% !important;
   transform: translate(0%, 0%);
+}
+.s-nav li:last-child .sub-menu .sub-menu .sub-menu {
+  margin-right: 0px;
 }
 .s-nav li:last-child .sub-menu .sub-menu .sub-menu .sub-menu {
   margin-right: 0px;
 }
 
 /*------------------------------------*\
-    #Heart icon (Primary menu)
-  \*------------------------------------*/
-.heart::first-letter {
-  text-transform: uppercase;
+  #Heart icon (Primary menu)
+\*------------------------------------*/
+.heart {
+  text-transform: capitalize;
 }
-
 .heart:hover:before {
   background-color: var(--castpress_quaternary-color);
 }
-
 .heart::before {
   content: "";
   width: 15px;
@@ -1384,8 +1629,8 @@ img {
 }
 
 /*------------------------------------*\
-    #Sub menus
-  \*------------------------------------*/
+  #Sub menus
+\*------------------------------------*/
 .sub-menu {
   display: none;
   height: max-content;
@@ -1425,6 +1670,7 @@ img {
   display: block;
   line-height: 0px;
   margin-bottom: 16px;
+  text-transform: capitalize;
 }
 @media only screen and (min-width: 980px) {
   .sub-menu li {
@@ -1452,9 +1698,6 @@ img {
     color: var(--castpress_primary-color);
   }
 }
-.sub-menu li::first-letter {
-  text-transform: uppercase;
-}
 .sub-menu li .menu-item__link {
   font-size: 14px !important;
   line-height: 18px !important;
@@ -1468,9 +1711,7 @@ img {
 }
 .sub-menu .menu-item__link {
   text-transform: none;
-}
-.sub-menu .menu-item__link:first-letter {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .sub-menu .c-nav__arrow {
   display: none;
@@ -1493,11 +1734,13 @@ img {
     display: block !important;
   }
 }
+.sub-menu .sub-menu .sub-menu {
+  top: 100% !important;
+  right: 0% !important;
+  transform: translate(0%, 0%);
+}
 .sub-menu .sub-menu .sub-menu .sub-menu {
   z-index: 5;
-  top: 100% !important;
-  right: 0%;
-  transform: translate(0%, 0%);
 }
 .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
   display: block !important;
@@ -1509,14 +1752,12 @@ img {
 }
 
 /*------------------------------------*\
-    #Menu items (li)
-  \*------------------------------------*/
+  #Menu items (li)
+\*------------------------------------*/
 .menu-item {
   position: relative;
   list-style-type: none;
-}
-.menu-item::first-letter {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .menu-item:hover a:hover {
   color: var(--castpress_quaternary-color);
@@ -1543,28 +1784,33 @@ img {
 .menu-item__link {
   text-decoration: none;
   color: var(--castpress_primary-color);
-  font-family: "SourceSerifPro-semibold";
   letter-spacing: 0.16em;
-  font-size: 14px !important;
+  font-size: 14px;
   line-height: 18px !important;
+  font-family: "SourceSerifPro-semibold";
 }
 @media only screen and (min-width: 980px) {
   .menu-item__link {
-    font-size: 12px !important;
+    font-size: 12px;
     line-height: 15px !important;
     letter-spacing: 0.1em;
   }
 }
-.menu-item__link:hover {
+.menu-item__link:hover,
+.menu-item__link:focus {
   color: var(--castpress_quaternary-color);
+  text-decoration: none;
+}
+.menu-item__link:visited {
+  text-decoration: none;
 }
 
 /*--------------------------------------------------------------
-  # Main
-  --------------------------------------------------------------*/
+# Main
+--------------------------------------------------------------*/
 /*------------------------------------*\
-    #Main
-  \*------------------------------------*/
+  #Main
+\*------------------------------------*/
 .c-main {
   min-height: 100%;
   height: max-content;
@@ -1579,8 +1825,8 @@ img {
 }
 
 /*------------------------------------*\
-    #Main Home
-  \*------------------------------------*/
+  #Main Home
+\*------------------------------------*/
 .c-main--home {
   margin-bottom: 16px;
   padding-bottom: 0px;
@@ -1623,8 +1869,8 @@ img {
 }
 
 /*------------------------------------*\
-    #Main Content
-  \*------------------------------------*/
+  #Main Content
+\*------------------------------------*/
 .c-main__header {
   margin-bottom: 40px;
 }
@@ -1675,10 +1921,10 @@ img {
 }
 
 /*------------------------------------*\
-    #Main Featured Episode
-  \*------------------------------------*/
-.c-main__entry-title::first-letter {
-  text-transform: uppercase;
+  #Main Featured Episode
+\*------------------------------------*/
+.c-main__entry-title {
+  text-transform: capitalize;
 }
 
 .dashicons {
@@ -1688,8 +1934,8 @@ img {
 }
 
 /*------------------------------------*\
-    #Main Error
-  \*------------------------------------*/
+  #Main Error
+\*------------------------------------*/
 .c-main__error {
   text-align: center;
   display: flex;
@@ -1734,19 +1980,20 @@ img {
 }
 
 /*--------------------------------------------------------------
-  # SideBar
-  --------------------------------------------------------------*/
+# SideBar
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
-  # Social Share
-  --------------------------------------------------------------*/
+# Social Share
+--------------------------------------------------------------*/
 /*------------------------------------*\
-    #Social Share
-  \*------------------------------------*/
+  #Social Share
+\*------------------------------------*/
 .c-social-share {
   width: 100%;
   height: 50px;
   display: flex;
   justify-content: center;
+  color: var(--castpress_primary-color);
 }
 
 .c-social-share--single {
@@ -1763,6 +2010,7 @@ img {
 
 .c-social-share__title {
   vertical-align: top;
+  display: inline-block;
 }
 
 .c-social-share__item {
@@ -1776,6 +2024,9 @@ img {
 .c-social-share__item .dashicons::before {
   color: var(--castpress_primary-color);
 }
+.c-social-share__item:hover {
+  text-decoration: none;
+}
 .c-social-share__item:hover .dashicons {
   padding-right: 0px;
 }
@@ -1786,10 +2037,13 @@ img {
   fill: #7247ca;
   cursor: pointer;
 }
+.c-social-share__item:visited {
+  text-decoration: none;
+}
 
 /*------------------------------------*\
-    #Social share custom github icon
-  \*------------------------------------*/
+  #Social share custom github icon
+\*------------------------------------*/
 .c-social-share__icon--github {
   vertical-align: top;
 }
@@ -1813,12 +2067,11 @@ img {
 }
 
 /*--------------------------------------------------------------
-  # Search form
-  --------------------------------------------------------------*/
+# Search form
+--------------------------------------------------------------*/
 .search-form {
   position: relative;
   width: max-content !important;
-  display: inline-block !important;
 }
 
 .c-search-form {
@@ -1845,11 +2098,6 @@ img {
   font-size: 12px;
 }
 
-.search-form .c-search-form__submit {
-  left: 5px !important;
-  right: unset !important;
-}
-
 .c-search-form__submit {
   width: 36px;
   height: 36px;
@@ -1861,7 +2109,8 @@ img {
   color: #fff;
   border-radius: 3px !important;
   position: absolute;
-  left: 5px !important;
+  left: 5px;
+  right: unset !important;
   top: 5px;
   cursor: pointer;
 }
@@ -1882,11 +2131,11 @@ img {
 }
 
 /*--------------------------------------------------------------
-  # Pagination
-  --------------------------------------------------------------*/
+# Pagination
+--------------------------------------------------------------*/
 /*------------------------------------*\
-    #Pagination
-  \*------------------------------------*/
+  #Pagination
+\*------------------------------------*/
 .c-pagination {
   width: 100%;
   display: flex;
@@ -1912,8 +2161,7 @@ img {
   cursor: pointer;
   text-transform: uppercase;
   padding: 10px 0;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
-    color 0.3s ease-in-out;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
 @media only screen and (min-width: 980px) {
@@ -1923,8 +2171,8 @@ img {
 }
 
 /*------------------------------------*\
-    #Page Numbers (WordPress pagination)
-  \*------------------------------------*/
+  #Page Numbers (Word Press pagination)
+\*------------------------------------*/
 .nav-links {
   display: none !important;
 }
@@ -1955,11 +2203,18 @@ img {
   font-size: 12px !important;
   line-height: 15px !important;
 }
+.page-numbers .dashicons {
+  direction: ltr !important;
+}
 .page-numbers:hover {
   background-color: #eaeaee !important;
+  text-decoration: none;
 }
 .page-numbers:hover .dashicons::before {
   color: var(--castpress_tertiary-color) !important;
+}
+.page-numbers:hover:focus {
+  text-decoration: none;
 }
 .page-numbers .dashicons {
   display: flex;
@@ -2015,7 +2270,7 @@ img {
   font-family: dashicons;
   display: inline-block;
   line-height: 1;
-  font-family: $castpress_font_regular;;
+  font-family: "SourceSerifPro-regular";
   font-style: normal;
   speak: never;
   text-decoration: inherit;
@@ -2032,8 +2287,8 @@ img {
 }
 
 /*--------------------------------------------------------------
-  # Latest posts
-  --------------------------------------------------------------*/
+# Latest posts
+--------------------------------------------------------------*/
 @media only screen and (min-width: 980px) {
   .c-latest-posts__content {
     padding-bottom: 24px;
@@ -2050,11 +2305,11 @@ img {
 }
 
 /*--------------------------------------------------------------
-  # Latest Episodes
-  --------------------------------------------------------------*/
+# Latest Episodes
+--------------------------------------------------------------*/
 /*------------------------------------*\
-    #Latest Episode
-  \*------------------------------------*/
+  #Latest Episode
+\*------------------------------------*/
 .c-latest-episode {
   padding-top: 16px;
 }
@@ -2065,8 +2320,8 @@ img {
 }
 
 /*------------------------------------*\
-    #Latest EpisodeS
-  \*------------------------------------*/
+  #Latest EpisodeS
+\*------------------------------------*/
 .c-latest-episodes {
   padding-top: 24px;
 }
@@ -2105,8 +2360,8 @@ img {
 }
 
 /*--------------------------------------------------------------
-  # Related Posts
-  --------------------------------------------------------------*/
+# Related Posts
+--------------------------------------------------------------*/
 .c-related-posts {
   border-top: 1px solid #eaeaee;
   padding-top: 48px;
@@ -2117,8 +2372,8 @@ img {
 }
 
 /*------------------------------------*\
-    #Episodes
-  \*------------------------------------*/
+  #Episodes
+\*------------------------------------*/
 .c-episode {
   width: 100%;
   display: flex;
@@ -2193,6 +2448,7 @@ img {
 .c-episode__category {
   padding-bottom: 8px;
   color: var(--castpress_tertiary-color) !important;
+  display: inline-block;
 }
 .c-episode__category:hover {
   color: var(--castpress_primary-color);
@@ -2202,22 +2458,21 @@ img {
 }
 .c-episode__category a:hover {
   color: var(--castpress_primary-color);
+  text-decoration: none;
+}
+.c-episode__category a:visited {
+  text-decoration: none;
 }
 
 .c-episode__date {
   color: var(--castpress_tertiary-color) !important;
-}
-
-.c-episode__entry-context {
-  color: var(--castpress_second-color) !important;
+  display: inline-block;
 }
 
 .c-episode__header {
   width: 100%;
   color: var(--castpress_primary-color);
-}
-.c-episode__header::first-letter {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 @media only screen and (min-width: 980px) {
   .c-episode__header {
@@ -2235,16 +2490,14 @@ img {
   color: var(--castpress_tertiary-color);
 }
 
-.c-episode__author__link::first-letter {
-  text-transform: uppercase;
+.c-episode__author__link {
+  text-transform: capitalize;
 }
 
 .c-episode__header {
   width: 100%;
   color: var(--castpress_primary-color);
-}
-.c-episode__header::first-letter {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 @media only screen and (min-width: 980px) {
   .c-episode__header {
@@ -2288,6 +2541,7 @@ img {
 }
 
 .c-episode__entry-context {
+  color: var(--castpress_second-color) !important;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
   overflow: hidden;
@@ -2300,7 +2554,8 @@ img {
 
 .c-episode__read-more {
   color: var(--castpress_quaternary-color) !important;
-  font-family: "SourceSerifPro-semibold" !important;
+  font-family: "SourceSerifPro-regular" !important;
+  font-family: "SourceSerifPro-semibold";
   letter-spacing: 0.16em;
   text-transform: uppercase;
   transition: 0.5s all;
@@ -2334,6 +2589,7 @@ img {
   color: var(--castpress_primary-color) !important;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .c-episode__play::before {
@@ -2341,10 +2597,8 @@ img {
   content: "";
   width: 32px;
   height: 32px;
-  -webkit-mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16")
-    no-repeat 50% 50%;
-  mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16")
-    no-repeat 50% 50%;
+  -webkit-mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16") no-repeat 50% 50%;
+  mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16") no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
   vertical-align: middle;
@@ -2355,7 +2609,7 @@ img {
 .c-episodes__share {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 12px;
@@ -2417,54 +2671,27 @@ img {
   display: none;
 }
 
-.tnp-widget form {
+/* Custom widget (For demo) */
+.c-widget__custom-item form {
   position: relative;
 }
 
-.tnp-field-button {
-  position: absolute;
-  top: 2.5px;
-  left: 40px;
-}
-@media only screen and (min-width: 980px) {
-  .tnp-field-button {
-    left: 60px;
-  }
-}
-
-.tnp-widget input[type="email"] {
+.c-widget__custom-item input[type="email"] {
   border: none !important;
   padding: 12px !important;
 }
 
-.tnp-submit {
-  min-width: 36px !important;
-  height: 36px !important;
-  background-color: #7247ca !important;
-}
-.tnp-submit::before {
-  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.331 11.0715L15.8859 14.6313C16.0447 14.8079 16.0368 15.0783 15.8681 15.2454L15.246 15.8684C15.1626 15.9526 15.049 16 14.9305 16C14.812 16 14.6985 15.9526 14.615 15.8684L11.0601 12.3085C10.9618 12.21 10.8726 12.1028 10.7935 11.9881L10.127 11.0982C9.02413 11.9801 7.6546 12.4602 6.24327 12.4598C3.33502 12.4699 0.807867 10.461 0.157951 7.62231C-0.491966 4.78365 0.90881 1.87288 3.53098 0.613257C6.15315 -0.646363 9.29689 0.0813446 11.101 2.36555C12.9052 4.64977 12.8882 7.88086 11.0601 10.1459L11.9489 10.76C12.0877 10.849 12.2159 10.9535 12.331 11.0715ZM1.79968 6.23008C1.79968 8.68763 3.78915 10.6799 6.24329 10.6799C7.42181 10.6799 8.55206 10.2111 9.3854 9.37656C10.2187 8.54206 10.6869 7.41024 10.6869 6.23008C10.6869 3.77252 8.69743 1.78027 6.24329 1.78027C3.78915 1.78027 1.79968 3.77252 1.79968 6.23008Z' fill='%23222222'/%3E%3C/svg%3E%0A");
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  background-size: 21px 21px;
-}
-.tnp-submit:hover {
-  background-color: #7247ca !important;
-}
-
-.tnp-email {
+.c-widget__custom-email {
   min-height: 42px;
   width: 100% !important;
 }
 @media only screen and (min-width: 980px) {
-  .tnp-email {
+  .c-widget__custom-email {
     width: 315px !important;
     height: 42px !important;
   }
 }
-.tnp-email::before {
+.c-widget__custom-email::before {
   content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.331 11.0715L15.8859 14.6313C16.0447 14.8079 16.0368 15.0783 15.8681 15.2454L15.246 15.8684C15.1626 15.9526 15.049 16 14.9305 16C14.812 16 14.6985 15.9526 14.615 15.8684L11.0601 12.3085C10.9618 12.21 10.8726 12.1028 10.7935 11.9881L10.127 11.0982C9.02413 11.9801 7.6546 12.4602 6.24327 12.4598C3.33502 12.4699 0.807867 10.461 0.157951 7.62231C-0.491966 4.78365 0.90881 1.87288 3.53098 0.613257C6.15315 -0.646363 9.29689 0.0813446 11.101 2.36555C12.9052 4.64977 12.8882 7.88086 11.0601 10.1459L11.9489 10.76C12.0877 10.849 12.2159 10.9535 12.331 11.0715ZM1.79968 6.23008C1.79968 8.68763 3.78915 10.6799 6.24329 10.6799C7.42181 10.6799 8.55206 10.2111 9.3854 9.37656C10.2187 8.54206 10.6869 7.41024 10.6869 6.23008C10.6869 3.77252 8.69743 1.78027 6.24329 1.78027C3.78915 1.78027 1.79968 3.77252 1.79968 6.23008Z' fill='%23222222'/%3E%3C/svg%3E%0A");
   cursor: pointer;
   width: 20px;
@@ -2488,9 +2715,7 @@ img {
 .c-post__header {
   width: 100%;
   color: var(--castpress_primary-color);
-}
-.c-post__header::first-letter {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 @media only screen and (min-width: 980px) {
   .c-post__header {
@@ -2501,14 +2726,13 @@ img {
 
 .c-post__date {
   color: var(--castpress_tertiary-color) !important;
+  display: inline-block;
 }
 
 .c-post__header--home {
   width: 100%;
   color: var(--castpress_primary-color);
-}
-.c-post__header--home::first-letter {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 @media only screen and (min-width: 980px) {
   .c-post__header--home {
@@ -2523,15 +2747,17 @@ img {
 }
 
 .c-post__author {
+  display: inline-block;
   color: var(--castpress_tertiary-color) !important;
 }
 .c-post__author:first {
   text-transform: uppercase;
 }
 
-.c-post__author__link::first-letter,
-.author::first-letter {
-  text-transform: uppercase;
+.c-post__author__link,
+.author {
+  display: inline-block;
+  text-transform: capitalize;
 }
 
 .s-post-content {
@@ -2603,8 +2829,8 @@ img {
 }
 
 /*------------------------------------*\
-    #Single
-  \*------------------------------------*/
+  #Single
+\*------------------------------------*/
 .c-single {
   width: 100%;
   display: flex;
@@ -2617,7 +2843,7 @@ img {
 }
 @media only screen and (min-width: 980px) {
   .c-single--latest-episode {
-    margin-bottom: 72px;
+    margin-bottom: 55px;
   }
 }
 
@@ -2655,7 +2881,7 @@ img {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  flex-direction: row-reverse !important;
+  direction: ltr !important;
 }
 
 .c-single__audio {
@@ -2738,6 +2964,7 @@ h2.c-single__transcript__title {
 }
 .c-single__transcript__more:hover {
   color: var(--castpress_primary-color) !important;
+  text-decoration-line: none;
 }
 .c-single__transcript__more:hover .c-single__transcript__icon::before {
   color: var(--castpress_primary-color) !important;
@@ -2751,7 +2978,6 @@ h2.c-single__transcript__title {
 
 .c-single__transcript__icon {
   padding-right: 5px;
-  display: none !important;
 }
 .c-single__transcript__icon:hover::before {
   color: var(--castpress_primary-color) !important;
@@ -2773,6 +2999,7 @@ h2.c-single__transcript__title {
   transform-origin: top;
   height: 0px;
   max-height: 0px;
+  margin-bottom: 48px;
   border-right: 1px solid #eaeaee;
   border-left: 1px solid #eaeaee;
   border-bottom: 1px solid transparent;
@@ -2837,21 +3064,21 @@ h2.c-single__transcript__title {
   visibility: visible;
 }
 
-.c-single__tags {
-  padding-top: 48px;
-}
-
 .c-single__tag {
   padding-left: 24px;
-  color: #555555 !important;
+  color: #555555;
 }
 .c-single__tag:hover {
-  color: #7247ca !important;
+  text-decoration: none;
+  color: var(--castpress_primary-color);
+}
+.c-single__tag:visited {
+  text-decoration: none;
 }
 
 /*------------------------------------*\
-    #Comments Form 
-  \*------------------------------------*/
+  #Comments Form 
+\*------------------------------------*/
 .comments-area {
   border-top: 1px solid #eaeaee;
 }
@@ -2904,8 +3131,8 @@ h2.c-single__transcript__title {
 }
 
 /*------------------------------------*\
-    #Comments List
-  \*------------------------------------*/
+  #Comments List
+\*------------------------------------*/
 .comment-list .comment-respond {
   margin-bottom: 48px;
 }
@@ -3003,17 +3230,23 @@ h2.c-single__transcript__title {
   padding-left: 16px;
   margin-bottom: 8px;
   color: var(--castpress_second-color);
+  text-transform: capitalize;
 }
 @media only screen and (min-width: 980px) {
   .comment-author {
     margin-bottom: 0px;
   }
 }
-.comment-author::first-letter {
-  text-transform: uppercase;
-}
 .comment-author a {
   color: var(--castpress_second-color);
+}
+.comment-author a:hover,
+.comment-author a:focus {
+  text-decoration: none;
+}
+
+.comment-date {
+  color: var(--castpress_tertiary-color);
 }
 
 .time {
@@ -3027,9 +3260,16 @@ h2.c-single__transcript__title {
 }
 
 .logged-in-as a {
-  color: var(--castpress_tertiary-color) !important;
+  color: var(--castpress_tertiary-color);
   font-size: 14px;
   line-height: 18px;
+}
+.logged-in-as a:hover {
+  color: var(--castpress_primary-color);
+  text-decoration: none;
+}
+.logged-in-as a:visited {
+  text-decoration: none;
 }
 
 .comment-form-comment,
@@ -3049,7 +3289,6 @@ h2.c-single__transcript__title {
   font-size: 11px;
   padding-top: 4px;
   height: 0px !important;
-  display: none !important;
 }
 .comment-form-arrow .dashicons::before {
   color: #ffffff;
@@ -3105,14 +3344,8 @@ h2.c-single__transcript__title {
 }
 
 .c-footer__context {
-  color: var(--castpress_primary-color) !important;
-}
-
-.c-footer__link {
-  color: var(--castpress_tertiary-color) !important;
-}
-.c-footer__link:hover {
-  color: var(--castpress_primary-color) !important;
+  color: var(--castpress_primary-color);
+  display: inline-block;
 }
 
 .c-footer__widgets {
@@ -3188,47 +3421,12 @@ h2.c-single__transcript__title {
   color: var(--castpress_second-color) !important;
 }
 
-.c-footer__newsletter-submit {
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  border-radius: 3px !important;
-  position: absolute;
-  left: 3px;
-  top: 50%;
-  cursor: pointer;
-  right: 98%;
-  transform: translate(100%, -40%);
-}
-.c-footer__newsletter-submit::before {
-  content: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3536 4.35355C10.5488 4.15829 10.5488 3.84171 10.3536 3.64645L7.17157 0.464466C6.97631 0.269204 6.65973 0.269204 6.46447 0.464466C6.2692 0.659728 6.2692 0.976311 6.46447 1.17157L9.29289 4L6.46447 6.82843C6.2692 7.02369 6.2692 7.34027 6.46447 7.53553C6.65973 7.7308 6.97631 7.7308 7.17157 7.53553L10.3536 4.35355ZM0 4.5H10V3.5H0V4.5Z' fill='white'/%3E%3C/svg%3E%0A");
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  display: block;
-  background-size: 21px 21px;
-  position: absolute;
-  top: 9px;
-  animation-name: arrowRightBack;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
-}
-.c-footer__newsletter-submit:hover::before {
-  animation-name: arrowRight;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
-}
-
 /*--------------------------------------------------------------
-  # External
+# External
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+  # Custom Simplebar
   --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-    # Custom Simplebar
-    --------------------------------------------------------------*/
 .simplebar-track {
   z-index: 1;
   position: absolute;
@@ -3289,37 +3487,14 @@ h2.c-single__transcript__title {
 }
 
 /*--------------------------------------------------------------
-  # Base
-  --------------------------------------------------------------*/
+# Base
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
-  # Typography
-  --------------------------------------------------------------*/
+# Typography
+--------------------------------------------------------------*/
 /*------------------------------------*\
-    #Default Theme fonts 
-  *-------------------------------------*/
-/*
-  *   Source Serif Pro
-  *   https://fonts.google.com/specimen/Source+Serif+Pro?query=Source+Serif+Pro&preview.text_type=custom#about
-  *
-  */
-@font-face {
-  font-family: "SourceSerifPro-regular";
-  src: url("../../assets/fonts/source-serif-pro-v10-latin-regular.woff2")
-      format("woff2"),
-    url("../../assets/fonts/source-serif-pro-v10-latin-regular.woff")
-      format("woff");
-}
-
-@font-face {
-  font-family: "SourceSerifPro-semibold";
-  src: url("../../assets/fonts/source-serif-pro-v10-latin-600.woff2")
-      format("woff2"),
-    url("../../assets/fonts/source-serif-pro-v10-latin-600.woff") format("woff");
-}
-
-/*------------------------------------*\
-    #Headings
-  \*------------------------------------*/
+  #Headings
+\*------------------------------------*/
 h1,
 h2,
 h3,
@@ -3340,20 +3515,6 @@ h1,
   line-height: 32px;
 }
 
-.h1--secondary {
-  font-family: "SourceSerifPro-regular";
-  font-size: 26px;
-  line-height: 32px;
-}
-
-.u-heading-1-line-height--bg {
-  line-height: 33px !important;
-}
-
-.u-heading-1-line-height--sm {
-  line-height: 25px !important;
-}
-
 /* H2 */
 h2,
 .h2 {
@@ -3362,23 +3523,10 @@ h2,
   line-height: 25px;
 }
 
-.h2--secondary {
-  font-family: "SourceSerifPro-regular";
-  font-size: 21px;
-  line-height: 25px;
-}
-
 /* H3 */
 h3,
 .h3 {
   font-family: "SourceSerifPro-regular";
-  font-size: 18px;
-  line-height: 25px;
-  margin-bottom: 10px;
-}
-
-.h3--secondary {
-  font-family: "SourceSerifPro-semibold";
   font-size: 18px;
   line-height: 25px;
   margin-bottom: 10px;
@@ -3393,37 +3541,12 @@ h4,
   margin-bottom: 10px;
 }
 
-.h4--secondary {
-  font-family: "SourceSerifPro-semibold";
-  font-size: 16px;
-  line-height: 25px;
-  margin-bottom: 10px;
-}
-
-.u-heading-4-line-height--bg {
-  line-height: 27px !important;
-}
-
-.u-heading-4-line-height--sm {
-  line-height: 20px !important;
-}
-
 /* H5 */
 h5,
 .h5 {
   font-family: "SourceSerifPro-semibold";
   font-size: 14px;
   line-height: 25px;
-}
-
-. u-font--regular {
-  font-family: "SourceSerifPro-regular";
-  font-size: 14px;
-  line-height: 25px;
-}
-
-.u-heading-5-line-height--sm {
-  line-height: 18px !important;
 }
 
 /* H6 */
@@ -3434,23 +3557,9 @@ h6,
   letter-spacing: 0.16em;
 }
 
-.h6--secondary {
-  font-family: "SourceSerifPro-regular";
-  font-size: 12px;
-  letter-spacing: 0.16em;
-}
-
-.u-font--regular {
-  font-family: "SourceSerifPro-regular";
-}
-
-.u-font--semi-bold {
-  font-family: "SourceSerifPro-semibold";
-}
-
 /*------------------------------------*\
-    #Copy
-  \*------------------------------------*/
+  #Copy
+\*------------------------------------*/
 /* All */
 * {
   word-wrap: break-word;
@@ -3490,9 +3599,36 @@ span,
   color: var(--castpress_tertiary-color) !important;
 }
 
+address {
+  color: var(--castpress_second-color);
+}
+
+pre {
+  background-color: #f5f5f7;
+  padding: 8px;
+}
+
+dl {
+  margin-bottom: 16px;
+  color: var(--castpress_second-color);
+}
+
+dt {
+  margin-bottom: 16px;
+}
+
+dd {
+  margin-bottom: 16px;
+  line-height: 27px;
+}
+
+figcaption {
+  color: var(--castpress_second-color);
+}
+
 /*--------------------------------------------------------------
-  # Elements
-  --------------------------------------------------------------*/
+# Elements
+--------------------------------------------------------------*/
 body {
   font-family: "SourceSerifPro-regular";
   height: 100vh;
@@ -3500,27 +3636,32 @@ body {
 }
 
 body.admin-bar .c-header__search-form {
-  right: 0;
-  top: 150px !important;
-  margin-top: 30px;
-  left: 200px !important;
+  /* left: 0px !important; */
+  top: 100px !important;
+  width: max-content !important;
 }
 
 /*------------------------------------*\
-    #Links
-  \*------------------------------------*/
+  #Links
+\*------------------------------------*/
 a,
 .a {
   text-decoration: none;
-  color: #7247ca;
+  color: var(--castpress_quaternary-color);
 }
 a:hover,
 .a:hover {
-  color: #979797;
+  color: var(--castpress_quaternary-color);
+  text-decoration: underline;
 }
 a:focus,
 .a:focus {
-  color: #979797;
+  color: var(--castpress_quaternary-color);
+  text-decoration: underline;
+}
+a:visited,
+.a:visited {
+  text-decoration: none;
 }
 
 input[type="text"],
@@ -3573,7 +3714,7 @@ textarea::placeholder {
   opacity: 1;
   font-size: 12px;
   line-height: 27px !important;
-  font-family: $castpress_font_regular; !important;
+  font-family: "SourceSerifPro-regular";
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -3642,8 +3783,8 @@ ol {
 }
 
 /*------------------------------------*\
-    #Button ( Primary )
-  \*------------------------------------*/
+  #Button ( Primary )
+\*------------------------------------*/
 button,
 .wp-block-button__link,
 .btn,
@@ -3668,12 +3809,27 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
   background-color: #58379b;
+  text-decoration: none;
   color: #f5f5f7;
+}
+button:visited,
+button:focus,
+.wp-block-button__link:visited,
+.wp-block-button__link:focus,
+.btn:visited,
+.btn:focus,
+input[type="button"]:visited,
+input[type="button"]:focus,
+input[type="reset"]:visited,
+input[type="reset"]:focus,
+input[type="submit"]:visited,
+input[type="submit"]:focus {
+  text-decoration: none;
 }
 
 /*------------------------------------*\
-    #Button Secondary 
-  \*------------------------------------*/
+  #Button Text whit arrow 
+\*------------------------------------*/
 .btn--arrows-small {
   background-color: #f5f5f7;
   color: #7247ca !important;
@@ -3693,37 +3849,47 @@ input[type="submit"]:hover {
   color: #f5f5f7 !important;
 }
 
-/*------------------------------------*\
-    #Button With Arrow
+/*------------------------------------*\s
+  #Button Arrow
 \*------------------------------------*/
 .btn--arrow {
-  padding-bottom: 6px;
-  left: 13% !important;
-  right: unset !important;
-}
-.btn--arrow .dashicons {
-  padding-right: 4px;
-  width: max-content !important;
-  font-size: 11px;
-  padding-top: 4px;
-}
-.btn--arrow .dashicons:before {
-  color: #ffffff;
-  width: max-content !important;
-}
-.btn--arrow:hover .dashicons::before {
-  color: #f5f5f7;
-}
-
-.btn--arrow {
-  transform: rotate(180deg) !important;
-  top: 29% !important;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 3px !important;
+  position: absolute;
   left: 5px !important;
+  top: 28% !important;
+  cursor: pointer;
+  right: unset !important;
+  transform: rotate(180deg) !important;
+}
+.btn--arrow::before {
+  content: url("https://api.iconify.design/heroicons-solid:arrow-narrow-right.svg?color=%23fff");
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-size: 21px 21px;
+  position: absolute;
+  top: 9px;
+  animation-name: arrowRightBack;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+.btn--arrow:hover::before {
+  animation-name: arrowRight;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
 }
 
 /*------------------------------------*\
-    #Button Play
-  \*------------------------------------*/
+  #Button Play
+\*------------------------------------*/
 .btn--play {
   background-color: #f5f5f7;
   color: #7247ca;
@@ -3734,8 +3900,8 @@ input[type="submit"]:hover {
 }
 
 /*------------------------------------*\
-    #Button Download
-  \*------------------------------------*/
+  #Button Download
+\*------------------------------------*/
 .btn--download {
   background-color: transparent;
   height: max-content;
@@ -3758,10 +3924,8 @@ input[type="submit"]:hover {
   display: inline-block;
   content: "";
   cursor: pointer;
-  -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
-    no-repeat 50% 50%;
-  mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
-    no-repeat 50% 50%;
+  -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
+  mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
   margin-left: 10px;
@@ -3770,8 +3934,8 @@ input[type="submit"]:hover {
 }
 
 /*------------------------------------*\
-    #Button Error
-  \*------------------------------------*/
+  #Button Error
+\*------------------------------------*/
 .btn--error {
   padding: 11px 22px;
 }
@@ -3789,6 +3953,9 @@ input[type="submit"]:hover {
   color: #f5f5f7 !important;
 }
 
+/*------------------------------------*\
+  #Arrow with Text 
+\*------------------------------------*/
 .btn--text-arrow {
   transition: 0.3s all;
 }
@@ -3798,7 +3965,6 @@ input[type="submit"]:hover {
   font-size: 11px;
   padding-top: 5px;
   transition: 0.2s all;
-  display: none;
 }
 .btn--text-arrow .dashicons::before {
   width: max-content !important;
@@ -3806,25 +3972,21 @@ input[type="submit"]:hover {
 }
 
 /*------------------------------------*\
-    #Button Size
-  \*------------------------------------*/
+  #Button Size
+\*------------------------------------*/
 .btn--sm {
   padding: 8px 14px;
 }
 
 /*------------------------------------------*\
-    #Wordpress default Player (Default classes)
-  \*------------------------------------------*/
+  #Wordpress default Player (Default classes)
+\*------------------------------------------*/
 .mejs-play > button {
   min-width: max-content;
 }
 
 .mejs-horizontal-volume-slider {
   min-width: max-content;
-}
-
-.mejs-controls {
-  direction: ltr !important;
 }
 
 .mejs-controls * {
@@ -3911,6 +4073,15 @@ input[type="submit"]:hover {
   padding-top: 14px;
 }
 
+table {
+  background-color: #f5f5f7;
+  margin-bottom: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #eaeaee;
+}
+
 .wp-block-gallery {
   width: 100%;
   margin-right: 0px;
@@ -3967,15 +4138,15 @@ input[type="submit"]:hover {
 }
 
 /*------------------------------------*\
-    #Calendar block
-  \*------------------------------------*/
+  #Calendar block
+\*------------------------------------*/
 .calendar_wrap * {
   line-height: 24px;
 }
 
 /*------------------------------------*\
-    #Rss block
-  \*------------------------------------*/
+  #Rss block
+\*------------------------------------*/
 .rss-widget-icon {
   width: 20px;
 }
