@@ -121,7 +121,7 @@ if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 			<?php
 			}
 			else {
-				echo '<img src="' . esc_url(get_bloginfo( 'stylesheet_directory' )). '/assets/images/no-thumbnail.png" />';
+				echo '<img src="' . esc_url( get_stylesheet_directory_uri() ). '/assets/images/no-thumbnail.png" />';
 			}
 		
 		endif; // End is_singular().
@@ -181,7 +181,7 @@ if ( ! function_exists('castpress_get_thumbnail')) :
 			the_post_thumbnail();
 		}
 		else{
-			echo '<img src="' . esc_url(get_bloginfo( 'stylesheet_directory' )). '/assets/images/no-thumbnail.png" />';
+			echo '<img src="' . esc_url(get_stylesheet_directory_uri()). '/assets/images/no-thumbnail.png" />';
 		}
 }
 endif;
@@ -200,7 +200,7 @@ if (! function_exists('castpress_get_single_thumbnail')) :
 		else{
 			if($castpress_DefaultThumbnail){
 				echo '<div class="'.esc_attr( 'c-single__thumbnail' ).'"><div class="'.esc_attr( 'c-single__image c-single__image--single' ).'">';
-					echo '<img src="' . esc_url(get_bloginfo( 'stylesheet_directory' )). '/assets/images/no-thumbnail.png" />';
+					echo '<img src="' . esc_url(get_stylesheet_directory_uri()). '/assets/images/no-thumbnail.png" />';
 				echo '</div></div>';
 			}
 		}

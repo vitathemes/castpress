@@ -81,8 +81,11 @@
 
             <h2 class="c-single__transcript__title">
 
-                <?php echo sprintf('%s %s' ,esc_html_e( 'Listening time: ', 'castpress' ), esc_html__( $castpress_podcast_audio_duratiuon . ' minutes' , 'castpress'));?>
-
+                <?php
+                    echo esc_html__('Listening time: ','castpress' );
+                    echo esc_html( $castpress_podcast_audio_duratiuon );
+                    echo esc_html__( ' minutes', 'castpress' );
+                ?>
             </h2>
             <span class="c-single__transcript__sep h2">|</span>
             <a class="c-single__transcript__more js-single__transcript__more h2"><?php esc_html_e( 'View transcript', 'castpress' ); ?>
