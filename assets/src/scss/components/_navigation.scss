@@ -114,9 +114,7 @@
   #Heart icon (Primary menu)
 \*------------------------------------*/
 .heart {
-  &::first-letter {
-    text-transform: uppercase;
-  }
+  text-transform: capitalize;
 
   &:hover {
     &:before {
@@ -183,6 +181,7 @@
     display: block;
     line-height: 0px;
     margin-bottom: 16px;
+    text-transform: capitalize;
 
     @include media(tablet) {
       padding-top: 16px;
@@ -210,10 +209,6 @@
       }
     }
 
-    &::first-letter {
-      text-transform: uppercase;
-    }
-
     .menu-item__link {
       font-size: 14px !important; //qa-
       line-height: 18px !important; //qa
@@ -228,10 +223,7 @@
 
   .menu-item__link {
     text-transform: none;
-
-    &:first-letter {
-      text-transform: uppercase;
-    }
+    text-transform: capitalize;
   }
 
   .c-nav__arrow {
@@ -282,10 +274,7 @@
 .menu-item {
   position: relative;
   list-style-type: none;
-
-  &::first-letter {
-    text-transform: uppercase;
-  }
+  text-transform: capitalize;
 
   &:hover {
     a {

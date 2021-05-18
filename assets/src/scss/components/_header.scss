@@ -95,7 +95,7 @@
     opacity: 1;
     display: block;
     width: max-content;
-    margin-top: 10px;
+    margin-top: 2px;
   }
 }
 
@@ -129,17 +129,15 @@
 
 .c-header__search-icon {
   background-color: transparent;
-
+  padding-top: 0px;
   &::before {
     content: " ";
     width: 20px;
     height: 20px;
     display: block;
     cursor: pointer;
-    -webkit-mask: url(https://api.iconify.design/bx:bx-search-alt-2.svg)
-      no-repeat 50% 50%;
-    mask: url(https://api.iconify.design/bx:bx-search-alt-2.svg) no-repeat 50%
-      50%;
+    -webkit-mask: url(https://api.iconify.design/bx:bx-search-alt-2.svg) no-repeat 50% 50%;
+    mask: url(https://api.iconify.design/bx:bx-search-alt-2.svg) no-repeat 50% 50%;
     -webkit-mask-size: cover;
     mask-size: cover;
     vertical-align: middle;
@@ -219,10 +217,8 @@
       display: inline-block;
       content: " ";
       cursor: pointer;
-      -webkit-mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16)
-        no-repeat 50% 50%;
-      mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16)
-        no-repeat 50% 50%;
+      -webkit-mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat 50% 50%;
+      mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat 50% 50%;
       -webkit-mask-size: cover;
       mask-size: cover;
       vertical-align: middle;

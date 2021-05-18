@@ -31,9 +31,9 @@ input[type="submit"] {
 }
 
 /*------------------------------------*\
-  #Button Secondary 
+  #Button Text whit arrow 
 \*------------------------------------*/
-.btn--secondary {
+.btn--arrows-small {
   background-color: $castpress_neutral_gray_light_color;
   color: $castpress_main_accent_color !important;
 
@@ -58,7 +58,7 @@ input[type="submit"] {
 }
 
 /*------------------------------------*\
-  #Button With Arrow
+  #Button Arrow
 \*------------------------------------*/
 .btn--arrow {
   width: 36px;
@@ -77,7 +77,7 @@ input[type="submit"] {
   transform: translate(-100%, -40%);
 
   &::before {
-    content: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3536 4.35355C10.5488 4.15829 10.5488 3.84171 10.3536 3.64645L7.17157 0.464466C6.97631 0.269204 6.65973 0.269204 6.46447 0.464466C6.2692 0.659728 6.2692 0.976311 6.46447 1.17157L9.29289 4L6.46447 6.82843C6.2692 7.02369 6.2692 7.34027 6.46447 7.53553C6.65973 7.7308 6.97631 7.7308 7.17157 7.53553L10.3536 4.35355ZM0 4.5H10V3.5H0V4.5Z' fill='white'/%3E%3C/svg%3E%0A");
+    content: url("https://api.iconify.design/heroicons-solid:arrow-narrow-right.svg?color=%23fff");
     cursor: pointer;
     width: 20px;
     height: 20px;
@@ -104,18 +104,16 @@ input[type="submit"] {
 /*------------------------------------*\
   #Button Play
 \*------------------------------------*/
-// qa-
 .btn--play {
   background-color: $castpress_neutral_gray_light_color;
   color: $castpress_main_accent_color;
 }
 
-.btn--secondary {
+.btn--arrows-small {
   .dashicons {
     width: max-content !important;
   }
 }
-
 /*------------------------------------*\
   #Button Download
 \*------------------------------------*/
@@ -144,10 +142,8 @@ input[type="submit"] {
     content: "";
     cursor: pointer;
 
-    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
-      no-repeat 50% 50%;
-    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
-      no-repeat 50% 50%;
+    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
+    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
 
     -webkit-mask-size: cover;
     mask-size: cover;
@@ -183,15 +179,19 @@ input[type="submit"] {
   }
 }
 
-.btn--blog-more {
+/*------------------------------------*\
+  #Arrow with Text 
+\*------------------------------------*/
+.btn--text-arrow {
   transition: 0.3s all;
+
   .dashicons {
     padding-left: 4px;
     width: max-content !important;
     font-size: 11px;
     padding-top: 5px;
-
     transition: 0.2s all;
+
     &::before {
       width: max-content !important;
       transition: 0.2s all;

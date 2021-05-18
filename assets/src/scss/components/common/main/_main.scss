@@ -107,9 +107,7 @@
 \*------------------------------------*/
 
 .c-main__entry-title {
-  &::first-letter {
-    text-transform: uppercase;
-  }
+  text-transform: capitalize;
 }
 
 .dashicons {

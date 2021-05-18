@@ -1,12 +1,12 @@
 /*--------------------------------------------------------------
 # components
 --------------------------------------------------------------*/
-@import "header/header";
-@import "navigation/navigation";
+@import "header";
+@import "navigation";
 @import "common/common";
-@import "episode/episode";
-@import "widgets/widgets";
+@import "episode";
+@import "widgets";
 @import "content/posts/posts";
 @import "content/single/single";
-@import "comments/comments";
-@import "footer/footer";
+@import "comments";
+@import "footer";

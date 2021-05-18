@@ -22,9 +22,9 @@
         <?php the_title( '<h2 class="c-post__title c-main__entry-title"><a class="u-link--secondary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 
         <div class="c-post__entry-meta">
-            <span class="c-post__date h5  u-font--regular  u-link--tertiary u-heading-5-line-height--sm posted-on">
+            <h5 class="c-post__date u-font--regular  u-link--tertiary u-heading-5-line-height--sm posted-on">
                 <?php echo esc_html( get_the_date( "M d, Y" ) ) ?>
-            </span>
+            </h5>
         </div><!-- .entry-meta -->
 
         <a class="c-post__read-more h5" href=" <?php esc_url( the_permalink() )  ?> " rel="bookmark">

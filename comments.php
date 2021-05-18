@@ -28,26 +28,26 @@
 			//Define Fields
 			'fields' => array(
 				//Author field
-				'author' => '<p class="comment-form-author h4 u-heading-4-line-height--bg">Name*<br /><input type="text" id="author" name="author" aria-required="true" ></input></p>',
+				'author' => '<h4 class="comment-form-author u-heading-4-line-height--bg">Name*<br /><input type="text" id="author" name="author" aria-required="true" ></input></h4>',
 				//Email Field
-				'email' => '<p class="comment-form-email h4 u-heading-4-line-height--bg">Email*<br /><input type="email" id="email" name="email" ></input></p>',
+				'email' => '<h4 class="comment-form-email u-heading-4-line-height--bg">Email*<br /><input type="email" id="email" name="email" ></input></h4>',
 				//URL Field
-				'url' => '<p class="comment-form-url h4 u-heading-4-line-height--bg">Website<br /><input type="url" id="url" name="url" ></input></p>',
+				'url' => '<h4 class="comment-form-url u-heading-4-line-height--bg">Website<br /><input type="url" id="url" name="url" ></input></h4>',
 				//Cookies
 				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'castpress' ) .'</span></div>',
 			),
 			// Change the title of send button
 			'label_submit' => __( 'Submit', 'castpress'),
 			// Change the title of the reply section
-			'title_reply' => '<p class="c-comments__title h4 u-heading-4-line-height--sm u-font--semi-bold">'. __( 'Leave a Reply' , 'castpress') .'</p>',
+			'title_reply' => '<h4 class="c-comments__title u-heading-4-line-height--sm u-font--semi-bold">'. __( 'Leave a Reply' , 'castpress') .'</h4>',
 			// Change the title of the reply section
 			'title_reply_to' =>  __( 'Reply' , 'castpress'),
 			//Cancel Reply Text
 			'cancel_reply_link' =>  __( 'Cancel Reply', 'castpress' ),
 			// Redefine your own textarea (the comment body).
-			'comment_field' => '<p class="comment-form-comment h4 u-heading-4-line-height--bg">Comment *<br /><textarea id="comment" name="comment" aria-required="true" ></textarea></p>',
+			'comment_field' => '<h4 class="comment-form-comment u-heading-4-line-height--bg">Comment *<br /><textarea id="comment" name="comment" aria-required="true" ></textarea></p>',
 			//Message Before Comment
-			'comment_notes_before' =>'<p class="c-comments__desc h5  u-font--regular  u-heading-5-line-height--sm u-font--regular">'. __( 'Required fields are marked *' , 'castpress') .'</p>',
+			'comment_notes_before' =>'<h5 class="c-comments__desc u-heading-5-line-height--sm u-font--regular">'. __( 'Required fields are marked *' , 'castpress') .'</h5>',
 			// Remove "Text or HTML to be displayed after the set of comment fields".
 			'comment_notes_after' => '',
 			//Submit Button ID
@@ -60,7 +60,7 @@
 		if ( have_comments() ) :
 ?>
 
-    <h2 class="comments-title h4 u-heading-4-line-height--sm u-font--semi-bold">
+    <h4 class="comments-title u-heading-4-line-height--sm u-font--semi-bold">
         <?php
 			$castpress_comment_count = get_comments_number();
 			if ( '1' === $castpress_comment_count ) {
@@ -77,8 +77,8 @@
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			}
-			?>
-    </h2><!-- .comments-title -->
+		?>
+    </h4><!-- .comments-title -->
 
     <?php the_comments_navigation(); ?>
 

@@ -26,32 +26,36 @@
 
 
         <div class="c-footer__site-info">
-            <span class="c-footer__context h5  u-font--regular  u-heading-5-line-height--sm u-font--regular">
+            <h5 class="c-footer__context u-font--regular  u-heading-5-line-height--sm u-font--regular">
 
                 <?php
                         /* translators: %s: Theme creator name by */
                         printf( esc_html__( 'PodcastTheme by', 'castpress' ), 'castpress' );
                     ?>
 
-            </span>
+            </h5>
 
-            <a class="c-footer__link h5  u-font--regular  u-heading-5-line-height--sm u-font--regular u-link--tertiary"
-                href="<?php echo esc_url( __( 'https://vitathemes.com/', 'castpress' ) ); ?>">
-                <?php 
-                        /* translators: %s: Vita themes is the creator of the theme */
-                        printf( esc_html__( 'VitaThemes', 'castpress' ) );
-                    ?>
-            </a>
+            <h5 class="c-footer__context u-heading-5-line-height--sm u-font--regular u-font--regular">
+                <a class="c-footer__link u-link--tertiary"
+                    href="<?php echo esc_url( __( 'https://vitathemes.com/', 'castpress' ) ); ?>">
+                    <?php 
+                            /* translators: %s: Vita themes is the creator of the theme */
+                            printf( esc_html__( 'VitaThemes', 'castpress' ) );
+                        ?>
+                </a>
+            </h5>
 
-            <span class="c-footer__context h5  u-font--regular  u-heading-5-line-height--sm sep u-link--tertiary"> | </span>
+            <h5 class="c-footer__context u-font--regular u-heading-5-line-height--sm sep u-link--tertiary"> | </h5>
 
-            <a class="c-footer__link h5  u-font--regular  u-heading-5-line-height--sm u-font--regular u-link--tertiary"
-                href="<?php echo esc_url( get_privacy_policy_url() ); ?>">
-                <?php
-                        /* translators: Privacy Policy Link */
-                        printf( esc_html__( 'Privacy Policy', 'castpress' ), 'castpress');
-                    ?>
-            </a>
+            <h5 class="c-footer__context u-heading-5-line-height--sm u-font--regular u-font--regular">
+                <a class="c-footer__link u-link--tertiary"
+                    href="<?php echo esc_url( get_privacy_policy_url() ); ?>">
+                    <?php
+                            /* translators: Privacy Policy Link */
+                            printf( esc_html__( 'Privacy Policy', 'castpress' ), 'castpress');
+                        ?>
+                </a>
+            </h5>
         </div><!-- .site-info -->
         <div class="c-social-share c-social-share--footer">
             <?php castpress_socials_links(); ?>

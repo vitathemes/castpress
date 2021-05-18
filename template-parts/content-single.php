@@ -13,7 +13,7 @@
 
     <header class="c-single__header">
 
-        <?php the_title( '<h1 class="c-single__title c-main__entry-title"><a class="u-link--secondary h1 u-heading-1-line-height--bg" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
+        <?php the_title( '<h1 class="c-single__title c-main__entry-title u-heading-1-line-height--bg"><a class="u-link--secondary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
 
         <div class="c-single__entry-meta">
 
@@ -23,11 +23,11 @@
                 }
 			?>
 
-            <span class="c-post__date h5  u-font--regular  u-heading-5-line-height--sm posted-on">
+            <h5 class="c-post__date u-font--regular  u-heading-5-line-height--sm posted-on">
                 <a class="u-link--tertiary" href="<?php esc_url( the_permalink() ) ?>">
                     <?php echo esc_html( get_the_date( "M d, Y" ) ) ?>
                 </a>
-            </span>
+            </h5>
 
             <span class="seprator h5 u-link--secondary"> | </span>
 
@@ -41,17 +41,18 @@
 			    ?>
             </div>
 
+            <?php 
+                if ( 'episodes' == get_post_type() ){
+                    castpress_get_podcast_player_link();
+                }
+		    ?>
+
         </div><!-- .entry-meta -->
 
-        <?php 
-            if ( 'episodes' == get_post_type() ){
-                castpress_get_podcast_player_link();
-            }
-		?>
 
     </header><!-- .entry-header -->
 
-    <div class="c-single__entry-content">
+    <div class="s-single__entry-content">
 
         <?php
             the_content(
@@ -73,9 +74,9 @@
         <?php if ( 'episodes' == get_post_type() ) :
           $castpress_podcast_audio_duratiuon = get_post_meta( $post->ID, 'podcast_duration', true ); 
           $castpress_podcast_audio_duratiuon = substr($castpress_podcast_audio_duratiuon,0,-3);
-
         ?>
 
+        <?php if (get_field('transcript')) : ?>
         <div class="c-single__transcript">
 
             <h2 class="c-single__transcript__title">
@@ -95,20 +96,21 @@
                 <div class="c-single__transcript__context">
                     <div class="c-single__transcript__row">
 
-                        <?php echo get_post_meta($post->ID, '_transcript', true); ?>
+                        <?php the_field('transcript'); ?>
 
                     </div>
                 </div>
             </div>
         </div>
-        <?php endif; ?>
 
-        <div class="c-single__tags">
+        <?php endif; // check get fields is exist  ?>
+        <?php endif; // check post type is episodes ?>
+
+        
             <?php
 			    // Show post tags 
 			    castpress_get_tags('c-single__tag');  
 		    ?>
-        </div>
 
         <div class="c-social-share c-social-share--single">
             <?php

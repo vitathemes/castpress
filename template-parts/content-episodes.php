@@ -15,9 +15,9 @@
     <section class="c-episode__header">
 
         <?php 
-            castpress_get_category();
+            castpress_get_category(false);
             echo '<span class="seprator h5 u-link--secondary"> | </span>';
-            echo '<span class="c-episode__date h5  u-font--regular  u-heading-5-line-height--sm">'.esc_html( get_the_date( "M d, Y" ) ).'</span>'; 
+            echo '<h5 class="c-episode__date u-font--regular u-heading-5-line-height--sm">'.esc_html( get_the_date( "M d, Y" ) ).'</h5>'; 
         ?>
 
         <div class="c-episode__titles">

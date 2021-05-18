@@ -2071,7 +2071,7 @@ img {
   padding-top: 24px;
 }
 
-.c-latest-episode--home .c-single__entry-content {
+.c-latest-episode--home .s-single__entry-content {
   display: none;
 }
 
@@ -2662,31 +2662,31 @@ img {
   width: 95%;
 }
 
-.c-single__entry-content {
+.s-single__entry-content {
   margin-top: 64px;
   width: 100%;
 }
 @media only screen and (min-width: 980px) {
-  .c-single__entry-content {
+  .s-single__entry-content {
     margin-top: 55px;
   }
 }
-.c-single__entry-content h1,
-.c-single__entry-content h2,
-.c-single__entry-content h3,
-.c-single__entry-content h4,
-.c-single__entry-content h5,
-.c-single__entry-content h6 {
+.s-single__entry-content h1,
+.s-single__entry-content h2,
+.s-single__entry-content h3,
+.s-single__entry-content h4,
+.s-single__entry-content h5,
+.s-single__entry-content h6 {
   margin-bottom: 24px;
 }
-.c-single__entry-content p {
+.s-single__entry-content p {
   margin-bottom: 39px;
 }
-.c-single__entry-content figure {
+.s-single__entry-content figure {
   max-width: 100%;
   width: auto !important;
 }
-.c-single__entry-content .mejs-container {
+.s-single__entry-content .mejs-container {
   display: none;
 }
 
@@ -3674,22 +3674,22 @@ input[type="submit"]:hover {
 /*------------------------------------*\
     #Button Secondary 
   \*------------------------------------*/
-.btn--secondary {
+.btn--arrows-small {
   background-color: #f5f5f7;
   color: #7247ca !important;
 }
-.btn--secondary .dashicons {
+.btn--arrows-small .dashicons {
   padding-right: 0px;
   width: max-content;
 }
-.btn--secondary .dashicons::before {
+.btn--arrows-small .dashicons::before {
   color: #7247ca;
 }
-.btn--secondary:hover {
+.btn--arrows-small:hover {
   background-color: #7247ca;
   color: #f5f5f7 !important;
 }
-.btn--secondary:hover .dashicons::before {
+.btn--arrows-small:hover .dashicons::before {
   color: #f5f5f7 !important;
 }
 
@@ -3729,7 +3729,7 @@ input[type="submit"]:hover {
   color: #7247ca;
 }
 
-.btn--secondary .dashicons {
+.btn--arrows-small .dashicons {
   width: max-content !important;
 }
 
@@ -3789,10 +3789,10 @@ input[type="submit"]:hover {
   color: #f5f5f7 !important;
 }
 
-.btn--blog-more {
+.btn--text-arrow {
   transition: 0.3s all;
 }
-.btn--blog-more .dashicons {
+.btn--text-arrow .dashicons {
   padding-right: 4px;
   width: max-content !important;
   font-size: 11px;
@@ -3800,7 +3800,7 @@ input[type="submit"]:hover {
   transition: 0.2s all;
   display: none;
 }
-.btn--blog-more .dashicons::before {
+.btn--text-arrow .dashicons::before {
   width: max-content !important;
   transition: 0.2s all;
 }

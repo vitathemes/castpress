@@ -154,18 +154,24 @@
   padding-right: 16px;
   margin-bottom: 8px;
   color: $castpress_second_color;
+  text-transform: capitalize;
 
   @include media(tablet) {
     margin-bottom: 0px;
   }
 
-  &::first-letter {
-    text-transform: uppercase;
-  }
-
   a {
     color: $castpress_second_color;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
   }
+}
+
+.comment-date {
+  color: $castpress_tertiary_color;
 }
 
 .time {

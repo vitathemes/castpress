@@ -1,9 +1,9 @@
 {
-    "key": "group_609a033c58431",
-    "title": "Custom Fields",
+    "key": "group_60a1e89a90a7b",
+    "title": "Episodes Options",
     "fields": [
         {
-            "key": "field_609a036841a7d",
+            "key": "field_60a1e8a2c6a4d",
             "label": "Transcript",
             "name": "transcript",
             "type": "wysiwyg",
@@ -22,11 +22,11 @@
             "delay": 0
         },
         {
-            "key": "field_609a039041a7e",
-            "label": "Podcast Audio Link",
-            "name": "podcast_audio",
+            "key": "field_60a1e8b6c6a4e",
+            "label": "Podcast audio file",
+            "name": "podcast_audio_file",
             "type": "url",
-            "instructions": "",
+            "instructions": "You can add your audio file using this field. This will change podcast audio file with the download file.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -55,5 +55,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1620707254
+    "modified": 1621225221
 }

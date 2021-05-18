@@ -12,10 +12,7 @@
 .c-post__header {
   width: 100%;
   color: $castpress_primary_color;
-
-  &::first-letter {
-    text-transform: uppercase;
-  }
+  text-transform: capitalize;
 
   @include media(tablet) {
     width: calc(100% - 180px);
@@ -25,15 +22,13 @@
 
 .c-post__date {
   color: $castpress_tertiary_color !important;
+  display: inline-block;
 }
 
 .c-post__header--home {
   width: 100%;
   color: $castpress_primary_color;
-
-  &::first-letter {
-    text-transform: uppercase;
-  }
+  text-transform: capitalize;
 
   @include media(tablet) {
     width: 100%;
@@ -47,6 +42,7 @@
 }
 
 .c-post__author {
+  display: inline-block;
   color: $castpress_tertiary_color !important;
 
   &:first {
@@ -56,9 +52,8 @@
 
 .c-post__author__link,
 .author {
-  &::first-letter {
-    text-transform: uppercase;
-  }
+  display: inline-block;
+  text-transform: capitalize;
 }
 
 .s-post-content {

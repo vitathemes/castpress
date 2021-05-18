@@ -5,7 +5,7 @@
  * 
  * The main template file for home page
  *
- * If this page doesn't exists index.php will show ( recommended for using as home page )
+ * If this page doesn't exists index.php will show ( Recommended for using as home page )
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *

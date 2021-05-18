@@ -109,9 +109,9 @@
   }
 
   // Toggle focus each time a menu link with children receive a touch event.
-  for (const link of linksWithChildren) {
-    link.addEventListener("touchstart", toggleFocus, false);
-  }
+  // for (const link of linksWithChildren) {
+  //   link.addEventListener("touchstart", toggleFocus, false);
+  // }
 
   /**
    * Sets or removes .focus class on an element.
@@ -129,15 +129,15 @@
       }
     }
 
-    if (event.type === "touchstart") {
-      const menuItem = this.parentNode;
-      event.preventDefault();
-      for (const link of menuItem.parentNode.children) {
-        if (menuItem !== link) {
-          link.classList.remove("focus");
-        }
-      }
-      menuItem.classList.toggle("focus");
-    }
+    // if (event.type === "touchstart") {
+    //   const menuItem = this.parentNode;
+    //   event.preventDefault();
+    //   for (const link of menuItem.parentNode.children) {
+    //     if (menuItem !== link) {
+    //       link.classList.remove("focus");
+    //     }
+    //   }
+    //   menuItem.classList.toggle("focus");
+    // }
   }
 })();

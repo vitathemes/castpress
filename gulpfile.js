@@ -22,10 +22,7 @@ const sassTask = (cb) => {
 
 const cssConcatTask = (cb) => {
   return gulp
-    .src([
-      "./node_modules/simplebar/dist/simplebar.css",
-      "assets/src/css/*.css",
-    ])
+    .src(["./node_modules/simplebar/dist/simplebar.css", "assets/src/css/*.css"])
     .pipe(concat("main.css"))
     .pipe(gulp.dest("assets/css"))
     .pipe(browserSync.stream());
@@ -42,28 +39,18 @@ const cleanCssTask = (cb) => {
 
 const concatVendorJs = (cb) => {
   return gulp
-    .src([
-      "./assets/src/js/iconify.js",
-      "./node_modules/simplebar/dist/simplebar.js",
-    ])
+    .src(["./assets/src/js/iconify.js", "./node_modules/simplebar/dist/simplebar.js"])
     .pipe(concat("vendor.js"))
     .pipe(gulp.dest("assets/js"));
   cb();
 };
 
 const concatJs = (cb) => {
-  return gulp
-    .src(["./assets/src/js/*.js"])
-    .pipe(concat("main.js"))
-    .pipe(gulp.dest("assets/js"));
+  return gulp.src(["./assets/src/js/*.js"]).pipe(concat("main.js")).pipe(gulp.dest("assets/js"));
   cb();
 };
 
-exports.default = () =>
-  gulp
-    .src("assets/src/images/**/*")
-    .pipe(imagemin())
-    .pipe(gulp.dest("assets/images/dist"));
+exports.default = () => gulp.src("assets/src/images/**/*").pipe(imagemin()).pipe(gulp.dest("assets/images/dist"));
 
 const browserSyncTask = (cb) => {
   browserSync.init({

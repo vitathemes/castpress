@@ -1,10 +1,7 @@
 /*--------------------------------------*\
   #Detect Element inside other element
 \*--------------------------------------*/
-function castpress_childFinder(
-  castpress_parentElement,
-  castpress_childElement
-) {
+function castpress_childFinder(castpress_parentElement, castpress_childElement) {
   let castpress_result = document
     .querySelector(castpress_parentElement)
     .getElementsByClassName(castpress_childElement)[0]
@@ -16,7 +13,6 @@ function castpress_childFinder(
 /*--------------------------------------*\
   #Detect keyboard navigation action
 \*--------------------------------------*/
-
 let castpress_IsBackward;
 document.addEventListener("keydown", function (e) {
   if (e.shiftKey && e.keyCode == 9) {
@@ -32,9 +28,7 @@ document.addEventListener("keydown", function (e) {
   #Toggle Header Search Class
 \*--------------------------------------*/
 const castpress_headerSearch = document.querySelector(".js-header__search");
-const castpress_headerSearchIcon = document.querySelector(
-  ".js-header__search-icon"
-);
+const castpress_headerSearchIcon = document.querySelector(".js-header__search-icon");
 
 castpress_headerSearchIcon.addEventListener("click", function () {
   castpress_headerSearch.classList.toggle("toggled");
@@ -49,11 +43,8 @@ castpress_headerSearchIcon.addEventListener("click", function () {
       }
     });
     // Forward
-    const castpress_headerSearchButton = document.querySelector(
-      ".c-search-form__submit"
-    );
+    const castpress_headerSearchButton = document.querySelector(".c-search-form__submit");
     castpress_headerSearchButton.addEventListener("blur", function (e) {
-      console.log(castpress_IsBackward);
       if (castpress_IsBackward === false) {
         castpress_headerSearchIcon.focus();
       }
@@ -64,22 +55,20 @@ castpress_headerSearchIcon.addEventListener("click", function () {
 /*--------------------------------------*\
   #Menu Trap focus ( Mobile )
 \*--------------------------------------*/
+let castpress_mainHeader = document.querySelector(".js-header__main");
+let castpress_menuToggle = document.querySelector(".js-header__menu");
+const lastMenuItem = document.querySelector(
+  ".s-nav > .menu-item:last-child > .sub-menu > .menu-item:first-child > .menu-item__link"
+);
+let castpress_menu = document.querySelector(".s-nav");
+
 if (castpress_childFinder("body", "s-nav")) {
-  let castpress_mainHeader = document.querySelector(".js-header__main");
-  let castpress_menuToggle = document.querySelector(".js-header__menu");
-
-  let castpress_menu = document.querySelector(".s-nav");
-
   let castpress_menuListItems = castpress_menu.querySelectorAll("li");
   let castpress_menuLinks = castpress_menu.querySelectorAll(".menu-item__link");
 
   let firstMenuItem = document.querySelector(".menu-item__link");
 
-  const lastMenuItem = document.querySelector(
-    ".s-nav > .menu-item:last-child > .sub-menu > .menu-item:first-child > .menu-item__link"
-  );
-
-  lastMenuItem.style.backgroundColor = "red";
+  // lastMenuItem.style.backgroundColor = "red";
 
   let castpress_lastIndex = castpress_menuListItems.length - 1;
   let castpress_isBackward;
@@ -101,25 +90,59 @@ if (castpress_childFinder("body", "s-nav")) {
   });
 
   lastMenuItem.addEventListener("blur", function () {
-    console.log("blured");
     if (castpress_IsBackward === false) {
       castpress_menuToggle.focus();
     }
   });
 }
 
+/*--------------------------------------------*\
+  #Increse height of header when submenu focus
+\*--------------------------------------------*/
+const castpress_submenus = document.querySelectorAll(".s-nav > .menu-item");
+if (castpress_isMobile() == true) {
+  for (let i = 0; i < castpress_submenus.length; i++) {
+    castpress_submenus[i].addEventListener("touchstart", function () {
+      let castpress_currentSubMenuHeight;
+      const castpress_orginalMenuSize = castpress_mainHeader.scrollHeight;
+
+      setTimeout(() => {
+        castpress_currentSubMenuHeight = castpress_submenus[i].querySelector(".sub-menu").offsetHeight;
+        castpress_mainHeader.style.height = castpress_orginalMenuSize + castpress_currentSubMenuHeight + "px";
+      }, 400);
+    });
+
+    // Focus
+    castpress_submenus[i].addEventListener("focusin", function () {
+      let castpress_currentSubMenuHeight;
+      const castpress_orginalMenuSize = castpress_mainHeader.scrollHeight;
+
+      setTimeout(() => {
+        castpress_currentSubMenuHeight = castpress_submenus[i].querySelector(".sub-menu").offsetHeight;
+        castpress_mainHeader.style.height = castpress_orginalMenuSize + castpress_currentSubMenuHeight + "px";
+      }, 400);
+    });
+  }
+}
 /*--------------------------------------*\
   #Toggle Transcript
 \*--------------------------------------*/
 if (castpress_childFinder("body", "js-single__transcript__more")) {
-  const castpress_transcript = document.querySelector(
-    ".js-single__transcript__more"
-  );
-  const castpress_transcriptBlock = document.querySelector(
-    ".c-single__transcript__content"
-  );
+  const castpress_transcript = document.querySelector(".js-single__transcript__more");
+  const castpress_transcriptBlock = document.querySelector(".c-single__transcript__content");
 
   castpress_transcript.addEventListener("click", function () {
     castpress_transcriptBlock.classList.toggle("is-open");
   });
 }
+
+/*--------------------------------------*\
+  #Detect Screen Size
+\*--------------------------------------*/
+function castpress_isMobile() {
+  // Get the dimensions of the viewport
+  let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  return width <= 980 ? true : false;
+}
+window.onload = castpress_isMobile; // When the page first loads
+window.onresize = castpress_isMobile; // When the browser changes size

@@ -72,7 +72,7 @@
 .c-episode__category {
   padding-bottom: 8px;
   color: $castpress_tertiary_color !important;
-
+  display: inline-block;
   &:hover {
     color: $castpress_primary_color;
   }
@@ -93,15 +93,13 @@
 
 .c-episode__date {
   color: $castpress_tertiary_color !important;
+  display: inline-block;
 }
 
 .c-episode__header {
   width: 100%;
   color: $castpress_primary_color;
-
-  &::first-letter {
-    text-transform: uppercase;
-  }
+  text-transform: capitalize;
 
   @include media(tablet) {
     width: calc(100% - 180px);
@@ -119,18 +117,13 @@
 }
 
 .c-episode__author__link {
-  &::first-letter {
-    text-transform: uppercase;
-  }
+  text-transform: capitalize;
 }
 
 .c-episode__header {
   width: 100%;
   color: $castpress_primary_color;
-
-  &::first-letter {
-    text-transform: uppercase;
-  }
+  text-transform: capitalize;
 
   @include media(tablet) {
     width: 100%;
@@ -225,6 +218,7 @@
   color: $castpress_primary_color !important;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .c-episode__play {
@@ -233,10 +227,8 @@
     content: "";
     width: 32px;
     height: 32px;
-    -webkit-mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16")
-      no-repeat 50% 50%;
-    mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16")
-      no-repeat 50% 50%;
+    -webkit-mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16") no-repeat 50% 50%;
+    mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16") no-repeat 50% 50%;
     -webkit-mask-size: cover;
     mask-size: cover;
     vertical-align: middle;
