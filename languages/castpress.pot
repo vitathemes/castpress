@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-11 14:00+0430\n"
+"POT-Creation-Date: 2021-05-18 11:54+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgid ""
 " Save my name, email, and website in this browser for the next time I comment"
 msgstr ""
 
-#: comments.php:40
+#: comments.php:40 inc/template-functions.php:141
 msgid "Submit"
 msgstr ""
 
@@ -94,81 +94,16 @@ msgstr ""
 msgid "PodcastTheme by"
 msgstr ""
 
-#: footer.php:39
+#: footer.php:40
 msgid "https://vitathemes.com/"
 msgstr ""
 
-#: footer.php:42
+#: footer.php:43
 msgid "VitaThemes"
 msgstr ""
 
-#: footer.php:52
+#: footer.php:55
 msgid "Privacy Policy"
-msgstr ""
-
-#: functions.php:179
-msgctxt "Post type general name"
-msgid "Episodes"
-msgstr ""
-
-#: functions.php:180
-msgctxt "Post type singular name"
-msgid "Episode"
-msgstr ""
-
-#: functions.php:181
-msgctxt "Admin Menu text"
-msgid "Episodes"
-msgstr ""
-
-#: functions.php:182
-msgid "Add New"
-msgstr ""
-
-#: functions.php:183
-msgid "Edit Episode"
-msgstr ""
-
-#: functions.php:184
-msgid "View Episode"
-msgstr ""
-
-#: functions.php:185
-msgid "All Episodes"
-msgstr ""
-
-#: functions.php:219
-msgctxt "taxonomy general name"
-msgid "Episode Categories"
-msgstr ""
-
-#: functions.php:220
-msgctxt "taxonomy singular name"
-msgid "Episode Category"
-msgstr ""
-
-#: functions.php:221
-msgid "Search Episode Categories"
-msgstr ""
-
-#: functions.php:222
-msgid "All Episode Categories"
-msgstr ""
-
-#: functions.php:223
-msgid "Edit Episode Category"
-msgstr ""
-
-#: functions.php:224
-msgid "Add New Episode Category"
-msgstr ""
-
-#: functions.php:225
-msgid "New Episode Category Name"
-msgstr ""
-
-#: functions.php:226
-msgid "Episode Categories"
 msgstr ""
 
 #: header.php:24
@@ -195,11 +130,11 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: classes/class_castpress_walker_comment.php:57
+#: classes/class_castpress_walker_comment.php:60
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: classes/class_castpress_walker_comment.php:64
+#: classes/class_castpress_walker_comment.php:67
 msgid "Edit"
 msgstr ""
 
@@ -211,195 +146,183 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer.php:91
+#: inc/customizer.php:87
 msgid "Typography Setting"
 msgstr ""
 
-#: inc/customizer.php:92
-msgid "Change Typography color and customize them."
+#: inc/customizer.php:96
+msgid "Typography Colors"
 msgstr ""
 
-#: inc/customizer.php:99
-msgid "Pagination"
+#: inc/customizer.php:97
+msgid "Change Typography color."
 msgstr ""
 
-#: inc/customizer.php:100
-msgid "You can add load more button to page that you want."
+#: inc/customizer.php:104
+msgid "Typography Fonts"
 msgstr ""
 
-#: inc/customizer.php:107
+#: inc/customizer.php:105
+msgid "Change Typography Fonts and sizes."
+msgstr ""
+
+#: inc/customizer.php:112
 msgid "Socials"
 msgstr ""
 
-#: inc/customizer.php:114 inc/customizer.php:477
+#: inc/customizer.php:119 inc/customizer.php:401
 msgid "Home Components"
 msgstr ""
 
-#: inc/customizer.php:122
+#: inc/customizer.php:126
 msgid "Podcast Player Links"
 msgstr ""
 
-#: inc/customizer.php:134
+#: inc/customizer.php:139
 msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer.php:145
+#: inc/customizer.php:149
 msgid "Secondary Color"
 msgstr ""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:159
 msgid "Tertiary Color"
 msgstr ""
 
-#: inc/customizer.php:165
+#: inc/customizer.php:169
 msgid "Quaternary Color"
 msgstr ""
 
-#: inc/customizer.php:175
-msgid "Typography Headings Color"
+#: inc/customizer.php:179
+msgid "Headings Color"
 msgstr ""
 
-#: inc/customizer.php:191
+#: inc/customizer.php:199
 msgid "H1"
 msgstr ""
 
-#: inc/customizer.php:214
+#: inc/customizer.php:222
 msgid "H2"
 msgstr ""
 
-#: inc/customizer.php:237
+#: inc/customizer.php:245
 msgid "H3"
 msgstr ""
 
-#: inc/customizer.php:259
+#: inc/customizer.php:267
 msgid "H4"
 msgstr ""
 
-#: inc/customizer.php:282
+#: inc/customizer.php:290
 msgid "H5"
 msgstr ""
 
-#: inc/customizer.php:305
+#: inc/customizer.php:313
 msgid "H6"
 msgstr ""
 
-#: inc/customizer.php:328
+#: inc/customizer.php:336
 msgid "Paragraph"
 msgstr ""
 
-#: inc/customizer.php:352
-msgid "Span Color"
-msgstr ""
-
-#: inc/customizer.php:376
-msgid "Link Primary"
-msgstr ""
-
-#: inc/customizer.php:396
-msgid "Link Secondary"
-msgstr ""
-
-#: inc/customizer.php:416
-msgid "Link Tertiary"
-msgstr ""
-
-#: inc/customizer.php:436 inc/template-tags.php:359
+#: inc/customizer.php:359 inc/template-tags.php:334
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:444 inc/template-tags.php:363
+#: inc/customizer.php:367 inc/template-tags.php:338
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:452 inc/template-tags.php:367
+#: inc/customizer.php:375 inc/template-tags.php:342
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:460 inc/template-tags.php:371
+#: inc/customizer.php:383 inc/template-tags.php:346
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer.php:468 inc/template-tags.php:375
+#: inc/customizer.php:391 inc/template-tags.php:350
 msgid "Github"
 msgstr ""
 
-#: inc/customizer.php:485
+#: inc/customizer.php:409
 msgid "Latest Episode with player"
 msgstr ""
 
-#: inc/customizer.php:486
+#: inc/customizer.php:410
 msgid "Latest Episodes"
 msgstr ""
 
-#: inc/customizer.php:487
+#: inc/customizer.php:411
 msgid "Latest posts from blog"
 msgstr ""
 
-#: inc/customizer.php:497 inc/template-tags.php:448
+#: inc/customizer.php:421 inc/template-tags.php:422
 msgid "Spotify"
 msgstr ""
 
-#: inc/customizer.php:506 inc/template-tags.php:455
+#: inc/customizer.php:430 inc/template-tags.php:429
 msgid "Soundcloud"
 msgstr ""
 
-#: inc/customizer.php:515
+#: inc/customizer.php:439
 msgid "Podcasts (Apple Podcasts)"
 msgstr ""
 
-#: inc/customizer.php:524 inc/template-tags.php:469
+#: inc/customizer.php:448 inc/template-tags.php:443
 msgid "Youtube"
 msgstr ""
 
-#: inc/customizer.php:533
+#: inc/customizer.php:457
 msgid "Stitcher"
 msgstr ""
 
-#: inc/customizer.php:542
+#: inc/customizer.php:466
 msgid "Deezer"
 msgstr ""
 
-#: inc/customizer.php:551
+#: inc/customizer.php:475
 msgid "Google podcasts"
 msgstr ""
 
-#: inc/customizer.php:560 inc/template-tags.php:497
+#: inc/customizer.php:484 inc/template-tags.php:471
 msgid "I heart radio"
 msgstr ""
 
-#: inc/customizer.php:569 inc/template-tags.php:504
+#: inc/customizer.php:493 inc/template-tags.php:478
 msgid "Overcast"
 msgstr ""
 
-#: inc/customizer.php:578 inc/template-tags.php:511
+#: inc/customizer.php:502 inc/template-tags.php:485
 msgid "Pandora"
 msgstr ""
 
-#: inc/customizer.php:587 inc/template-tags.php:518
+#: inc/customizer.php:511 inc/template-tags.php:492
 msgid "Pocket casts"
 msgstr ""
 
-#: inc/customizer.php:596 inc/template-tags.php:525
+#: inc/customizer.php:520 inc/template-tags.php:499
 msgid "Radio public"
 msgstr ""
 
-#: inc/customizer.php:605 inc/template-tags.php:532
+#: inc/customizer.php:529 inc/template-tags.php:506
 msgid "Rss Feed"
 msgstr ""
 
-#: inc/customizer.php:614
+#: inc/customizer.php:538
 msgid "Spreaker"
 msgstr ""
 
-#: inc/customizer.php:623 inc/template-tags.php:539
+#: inc/customizer.php:547 inc/template-tags.php:513
 msgid "Castro"
 msgstr ""
 
-#: inc/customizer.php:633
+#: inc/customizer.php:557
 msgid "Audible"
 msgstr ""
 
-#: inc/customizer.php:642
+#: inc/customizer.php:566
 msgid "Castbox"
 msgstr ""
 
@@ -407,70 +330,135 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: inc/template-tags.php:52
+#: inc/template-functions.php:182
+msgctxt "Post type general name"
+msgid "Episodes"
+msgstr ""
+
+#: inc/template-functions.php:183
+msgctxt "Post type singular name"
+msgid "Episode"
+msgstr ""
+
+#: inc/template-functions.php:184
+msgctxt "Admin Menu text"
+msgid "Episodes"
+msgstr ""
+
+#: inc/template-functions.php:185
+msgid "Add New"
+msgstr ""
+
+#: inc/template-functions.php:186
+msgid "Edit Episode"
+msgstr ""
+
+#: inc/template-functions.php:187
+msgid "View Episode"
+msgstr ""
+
+#: inc/template-functions.php:188
+msgid "All Episodes"
+msgstr ""
+
+#: inc/template-functions.php:223
+msgctxt "taxonomy general name"
+msgid "Episode Categories"
+msgstr ""
+
+#: inc/template-functions.php:224
+msgctxt "taxonomy singular name"
+msgid "Episode Category"
+msgstr ""
+
+#: inc/template-functions.php:225
+msgid "Search Episode Categories"
+msgstr ""
+
+#: inc/template-functions.php:226
+msgid "All Episode Categories"
+msgstr ""
+
+#: inc/template-functions.php:227
+msgid "Edit Episode Category"
+msgstr ""
+
+#: inc/template-functions.php:228
+msgid "Add New Episode Category"
+msgstr ""
+
+#: inc/template-functions.php:229
+msgid "New Episode Category Name"
+msgstr ""
+
+#: inc/template-functions.php:230
+msgid "Episode Categories"
+msgstr ""
+
+#: inc/template-tags.php:18
 #, php-format
 msgctxt "post author"
 msgid "By %s"
 msgstr ""
 
-#: inc/template-tags.php:70 inc/template-tags.php:273
+#: inc/template-tags.php:35 inc/template-tags.php:235
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:73
+#: inc/template-tags.php:38
 #, php-format
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:77
+#: inc/template-tags.php:42
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:80
+#: inc/template-tags.php:45
 #, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:90
+#: inc/template-tags.php:55
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#: inc/template-tags.php:107 template-parts/content-page.php:53
+#: inc/template-tags.php:72 template-parts/content-page.php:53
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/template-tags.php:391
+#: inc/template-tags.php:366
 msgid "Share:"
 msgstr ""
 
-#: inc/template-tags.php:442
+#: inc/template-tags.php:416
 msgid "Listen on"
 msgstr ""
 
-#: inc/template-tags.php:462
+#: inc/template-tags.php:436
 msgid "Apple Music"
 msgstr ""
 
-#: inc/template-tags.php:476
+#: inc/template-tags.php:450
 msgid "stitcher"
 msgstr ""
 
-#: inc/template-tags.php:483
+#: inc/template-tags.php:457
 msgid "deezer"
 msgstr ""
 
-#: inc/template-tags.php:490
+#: inc/template-tags.php:464
 msgid "Google podcast"
 msgstr ""
 
-#: inc/template-tags.php:546
+#: inc/template-tags.php:520
 msgid "castbox"
 msgstr ""
 
-#: inc/template-tags.php:553
+#: inc/template-tags.php:527
 msgid "audible"
 msgstr ""
 
@@ -896,8 +884,16 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
+#: inc/tgmpa/tgmpa-config.php:43
+msgid "Kirki Customizer Framework"
+msgstr ""
+
 #: inc/tgmpa/tgmpa-config.php:48
 msgid "Advanced Custom Fields"
+msgstr ""
+
+#: inc/tgmpa/tgmpa-config.php:53
+msgid "LibWp"
 msgstr ""
 
 #: node_modules/node-gyp/gyp/pylib/gyp/easy_xml.py:51
@@ -1315,7 +1311,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:26 template-parts/content-single.php:61
+#: template-parts/content-page.php:26 template-parts/content-single.php:62
 #: template-parts/components/latest-episode/latest-episode.php:41
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
