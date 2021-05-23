@@ -97,7 +97,7 @@ if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 
 			echo '<div class="post-thumbnail">';
-			echo the_post_thumbnail();
+		    	the_post_thumbnail();
 			echo '</div><!-- .post-thumbnail -->';
 		
  		else :
@@ -163,10 +163,10 @@ if ( ! function_exists('castpress_archive_page_name')) :
 	  */
 	function castpress_archive_page_name() {
 		if ( !is_front_page() && is_home() ) {
-			echo "blog";
+			echo esc_html__( 'blog', 'castpress' );
 		}	
 		if( is_archive() ){
-			echo "archives";
+			echo esc_html__( 'archives', 'castpress' );
 		}
 	}
 endif;
@@ -219,7 +219,7 @@ if (! function_exists('castpress_get_tags')) :
 			foreach($post_tags as $post_tag) {
 				$castpress_tags .= '<a class="'.esc_attr( $castpress_className ).' h4" href="'.  esc_url( get_tag_link( $post_tag->term_id ) ) .'" title="'.  esc_attr( $post_tag->name ) .'">'. esc_html( $post_tag->name ). '</a>';
 			}
-			echo sprintf('<div class="c-single__tags">%s</div>' , $castpress_tags);
+			echo wp_kses_post(sprintf('<div class="c-single__tags">%s</div>' ,  $castpress_tags));
 		}
 	}
 endif;
@@ -234,17 +234,19 @@ if (! function_exists('castpress_get_category')) :
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
 		if ( $categories_list ) {
-			/* translators: 1: $categories_list list of categories. Rendered from category section that client set in categories. $castpress_is_bold check if should render text bold or not ( Will add class) */
-			echo '<h5 class="c-episode__category u-font--regular  u-heading-5-line-height--sm">'. $categories_list .'</h5>' . $castpress_have_seprator;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			/* $categories_list list of categories. Rendered from category section that client set in categories.*/
+			echo '<h5 class="c-episode__category u-font--regular u-heading-5-line-height--sm">'.  wp_kses_post($categories_list) .'</h5>' . esc_html($castpress_have_seprator) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;
 
 
-if (! function_exists('castpress_get_podcast_audio')) :
+if ( ! function_exists('castpress_get_podcast_audio')) :
 
 	/**
 	  * Return Podcast Audio and Update Custom Field
+	  *
+	  * -qa TODO ( This section is under develope from podcast importer plugin )
 	  */
 	function castpress_get_podcast_audio($post , $castpress_class_name = "") {
 			
@@ -303,6 +305,7 @@ if (! function_exists('castpress_get_podcast_audio')) :
 		
 		if( !empty($castpress_podcast_audio) ){
 			// Display the result
+			/* translators: %s: class name . translator 2 %s : audio short code  */
 			echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_audio_shortcode));
 			// Download button
 			echo '<a class="btn btn--download" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
@@ -540,7 +543,6 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 
 			echo '</div>';	
 		}
-		
 
 	}
 

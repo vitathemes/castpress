@@ -151,7 +151,7 @@ add_filter('comment_form_defaults', 'castpress_comment_button');
 
 function castpress_add_custom_types( $query ) {
 	/**
-	 *	Add custom post type into default wordpress archives
+	 *	Add custom post type into default WordPress archives
 	 *
 	 * @link https://css-tricks.com/snippets/wordpress/make-archives-php-include-custom-post-types/
 	 */
