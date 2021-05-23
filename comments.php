@@ -28,11 +28,11 @@
 			//Define Fields
 			'fields' => array(
 				//Author field
-				'author' => '<h4 class="comment-form-author u-heading-4-line-height--bg">Name*<br /><input type="text" id="author" name="author" aria-required="true" ></input></h4>',
+				'author' => '<h4 class="comment-form-author u-heading-4-line-height--bg">'. __( 'Name*', 'wp-indigo' ).'<br /><input type="text" id="author" name="author" aria-required="true" ></input></h4>',
 				//Email Field
-				'email' => '<h4 class="comment-form-email u-heading-4-line-height--bg">Email*<br /><input type="email" id="email" name="email" ></input></h4>',
+				'email' => '<h4 class="comment-form-email u-heading-4-line-height--bg">'. __( 'Email*', 'wp-indigo' ).'<br /><input type="email" id="email" name="email" ></input></h4>',
 				//URL Field
-				'url' => '<h4 class="comment-form-url u-heading-4-line-height--bg">Website<br /><input type="url" id="url" name="url" ></input></h4>',
+				'url' => '<h4 class="comment-form-url u-heading-4-line-height--bg">'. __( 'Website', 'wp-indigo' ).'<br /><input type="url" id="url" name="url" ></input></h4>',
 				//Cookies
 				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'castpress' ) .'</span></div>',
 			),
@@ -45,7 +45,7 @@
 			//Cancel Reply Text
 			'cancel_reply_link' =>  __( 'Cancel Reply', 'castpress' ),
 			// Redefine your own textarea (the comment body).
-			'comment_field' => '<h4 class="comment-form-comment u-heading-4-line-height--bg">Comment *<br /><textarea id="comment" name="comment" aria-required="true" ></textarea></p>',
+			'comment_field' => '<h4 class="comment-form-comment u-heading-4-line-height--bg">'. __( 'Comment*', 'wp-indigo' ).'<br /><textarea id="comment" name="comment" aria-required="true" ></textarea></p>',
 			//Message Before Comment
 			'comment_notes_before' =>'<h5 class="c-comments__desc u-heading-5-line-height--sm u-font--regular">'. __( 'Required fields are marked *' , 'castpress') .'</h5>',
 			// Remove "Text or HTML to be displayed after the set of comment fields".
