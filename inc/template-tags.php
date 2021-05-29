@@ -257,10 +257,6 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 		// Get embeded aufio file
 		$castpress_podcast_embedfile = get_post_meta( $post->ID, 'podcast_importer_external_embed', true);
 
-		// get src of embeded link 
-		preg_match('/src="(.+?)"/', $castpress_podcast_embedfile, $matches);
-		$castpress_audio_src = $matches[1];
-
 
 		if(class_exists('ACF')){
 			// Get imported audio link if acf existed
@@ -295,7 +291,7 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 
 		if( !empty($castpress_podcast_audio) ){
 			if(strpos($tagname, 'iframe') !== false) {
-
+				
 				// Return just the custom player 
 				/* translators: %s: class name . translator 2 %s : audio short code  */
 				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile));
