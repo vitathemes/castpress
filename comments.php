@@ -23,6 +23,8 @@
 <div id="comments" class="comments-area">
 
     <?php
+	
+
 		//Custom comment form 
 		$comments_args = array(
 			//Define Fields
@@ -38,8 +40,6 @@
 			),
 			// Change the title of send button
 			'label_submit' => __( 'Submit', 'castpress'),
-			// Change the title of the reply section
-			'title_reply' => '<h4 class="c-comments__title u-heading-4-line-height--sm h4--semibold">'. __( 'Leave a Reply' , 'castpress') .'</h4>',
 			// Change the title of the reply section
 			'title_reply_to' =>  __( 'Reply' , 'castpress'),
 			//Cancel Reply Text

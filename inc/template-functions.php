@@ -29,7 +29,7 @@ function castpress_footer_widgets_init() {
 	 * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
 	 */
    register_sidebar( array(
-	   'name'          => 'Footer Widget',
+	   'name'          => esc_html__( 'Footer Widget' , 'castpress'),
 	   'id'            => 'custom-footer-widget',
 	   'before_widget' => '<div class="c-footer__widget">',
 	   'after_widget'  => '</div>',
