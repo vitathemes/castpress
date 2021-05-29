@@ -23,9 +23,7 @@
   let castpress_isCollapsed = false;
   function castpress_slidetoggle() {
     const headerMain = document.querySelector(".js-header__main");
-
-    const clientHeight = headerMain.clientHeight;
-    const scrollerHeight = headerMain.scrollHeight;
+    let scrollerHeight = headerMain.scrollHeight;
 
     castpress_isCollapsed = !castpress_isCollapsed;
     const noHeightSet = !headerMain.style.height;

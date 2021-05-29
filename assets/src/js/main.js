@@ -57,18 +57,16 @@ castpress_headerSearchIcon.addEventListener("click", function () {
 \*--------------------------------------*/
 let castpress_mainHeader = document.querySelector(".js-header__main");
 let castpress_menuToggle = document.querySelector(".js-header__menu");
-const lastMenuItem = document.querySelector(
-  ".s-nav > .menu-item:last-child > .sub-menu > .menu-item:first-child > .menu-item__link"
-);
 let castpress_menu = document.querySelector(".s-nav");
+let castpress_lastMenuItem = document.querySelector(
+  ".s-nav > .menu-item:last-child > .menu-item__link"
+);
+const lastMenuItemWithSubmenu = document.querySelector(
+  ".s-nav > .menu-item:last-child > .sub-menu > .menu-item:last-child > .menu-item__link"
+);
 
 if (castpress_childFinder("body", "s-nav")) {
-  let castpress_menuListItems = castpress_menu.querySelectorAll("li");
-  let castpress_menuLinks = castpress_menu.querySelectorAll(".menu-item__link");
-
   let firstMenuItem = document.querySelector(".menu-item__link");
-
-  let castpress_lastIndex = castpress_menuListItems.length - 1;
   let castpress_isBackward;
 
   document.addEventListener("keydown", function (e) {
@@ -91,17 +89,20 @@ if (castpress_childFinder("body", "s-nav")) {
     }
   });
 
-  lastMenuItem.addEventListener("blur", function () {
-    if (castpress_IsBackward === false) {
-      castpress_menuToggle.focus();
-    }
-  });
+  if (castpress_childFinder("body", "sub-menu")) {
+    lastMenuItemWithSubmenu.addEventListener("blur", function () {
+      if (castpress_IsBackward === false) {
+        castpress_menuToggle.focus();
+      }
+    });
+  } else {
+    castpress_lastMenuItem.addEventListener("blur", function () {
+      if (castpress_IsBackward === false) {
+        castpress_menuToggle.focus();
+      }
+    });
+  }
 }
-
-/*---------------------------------------------*\
-  #Increse height of header when submenu focus
-\*---------------------------------------------*/
-let castpress_menuItems = document.querySelectorAll(".s-nav > .menu-item");
 
 /*--------------------------------------*\
   #Toggle Transcript
