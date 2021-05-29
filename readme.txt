@@ -36,6 +36,10 @@ See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
+4. Active Recommended plugins at the top of dashboard ( `Kirki Customizer Framework` , `Advanced Custom Fields` , `LibWp` , `Podcast importer`).
+5. After libWp plugin activated go to `Settings > Permalink` and select `Post name` (*this option is recommended) radio button and save the changes.
+6. For importing podcasts you have to activate `Podcast importer` plugin and go to `Tools > Podcast importer` and insert your Rss feed that contains podcasts. Or you can manually add new episode.
+7. For adding custom page-templates (Like Home) go to pages on the WordPress dashboard click on `Pages` create new page and in `Page Atrributes` panel select page template that you want. 
 
 == Changelog ==
 

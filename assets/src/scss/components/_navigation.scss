@@ -96,7 +96,7 @@
           position: absolute;
           top: 100%;
           left: 0% !important;
-          transform: translate(0%, 0%);
+          transform: translate(0%, 98%);
           .sub-menu {
             margin-left: 0px;
 
@@ -314,7 +314,7 @@
   letter-spacing: 0.16em;
   font-size: 14px;
   line-height: 18px !important;
-  font-family: $castpress_font_semi-bold;
+  font-family: $castpress_font_semi_bold;
   @include media(tablet) {
     font-size: 12px;
     line-height: 15px !important;

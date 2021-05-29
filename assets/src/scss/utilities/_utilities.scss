@@ -54,9 +54,9 @@
 
 /* font weight */
 .u-font--regular {
-  font-family: $castpress_font_regular;
+  font-family: var(--castpress_font_style);
 }
 
 .u-font--semi-bold {
-  font-family: $castpress_font_semi-bold;
+  font-family: var(--castpress_font_second_style);
 }

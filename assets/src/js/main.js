@@ -68,8 +68,6 @@ if (castpress_childFinder("body", "s-nav")) {
 
   let firstMenuItem = document.querySelector(".menu-item__link");
 
-  // lastMenuItem.style.backgroundColor = "red";
-
   let castpress_lastIndex = castpress_menuListItems.length - 1;
   let castpress_isBackward;
 
@@ -83,6 +81,10 @@ if (castpress_childFinder("body", "s-nav")) {
 
   castpress_menuToggle.addEventListener("blur", function (e) {
     if (castpress_mainHeader.classList.contains("toggled")) {
+      const castpress_defaultHeaderSize = castpress_mainHeader.scrollHeight;
+
+      castpress_mainHeader.style.height = castpress_defaultHeaderSize + "px";
+
       if (castpress_isBackward === true) {
         firstMenuItem.focus();
       }
@@ -96,40 +98,19 @@ if (castpress_childFinder("body", "s-nav")) {
   });
 }
 
-/*--------------------------------------------*\
+/*---------------------------------------------*\
   #Increse height of header when submenu focus
-\*--------------------------------------------*/
-const castpress_submenus = document.querySelectorAll(".s-nav > .menu-item");
-if (castpress_isMobile() == true) {
-  for (let i = 0; i < castpress_submenus.length; i++) {
-    castpress_submenus[i].addEventListener("touchstart", function () {
-      let castpress_currentSubMenuHeight;
-      const castpress_orginalMenuSize = castpress_mainHeader.scrollHeight;
+\*---------------------------------------------*/
+let castpress_menuItems = document.querySelectorAll(".s-nav > .menu-item");
 
-      setTimeout(() => {
-        castpress_currentSubMenuHeight = castpress_submenus[i].querySelector(".sub-menu").offsetHeight;
-        castpress_mainHeader.style.height = castpress_orginalMenuSize + castpress_currentSubMenuHeight + "px";
-      }, 400);
-    });
-
-    // Focus
-    castpress_submenus[i].addEventListener("focusin", function () {
-      let castpress_currentSubMenuHeight;
-      const castpress_orginalMenuSize = castpress_mainHeader.scrollHeight;
-
-      setTimeout(() => {
-        castpress_currentSubMenuHeight = castpress_submenus[i].querySelector(".sub-menu").offsetHeight;
-        castpress_mainHeader.style.height = castpress_orginalMenuSize + castpress_currentSubMenuHeight + "px";
-      }, 400);
-    });
-  }
-}
 /*--------------------------------------*\
   #Toggle Transcript
 \*--------------------------------------*/
 if (castpress_childFinder("body", "js-single__transcript__more")) {
   const castpress_transcript = document.querySelector(".js-single__transcript__more");
-  const castpress_transcriptBlock = document.querySelector(".c-single__transcript__content");
+  const castpress_transcriptBlock = document.querySelector(
+    ".c-single__transcript__content"
+  );
 
   castpress_transcript.addEventListener("click", function () {
     castpress_transcriptBlock.classList.toggle("is-open");
@@ -141,7 +122,10 @@ if (castpress_childFinder("body", "js-single__transcript__more")) {
 \*--------------------------------------*/
 function castpress_isMobile() {
   // Get the dimensions of the viewport
-  let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  let width =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
   return width <= 980 ? true : false;
 }
 window.onload = castpress_isMobile; // When the page first loads

@@ -22,7 +22,7 @@
         <?php the_title( '<h2 class="c-post__title c-main__entry-title"><a class="u-link--secondary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 
         <div class="c-post__entry-meta">
-            <h5 class="c-post__date u-font--regular  u-link--tertiary u-heading-5-line-height--sm posted-on">
+            <h5 class="c-post__date h5--secondary u-link--tertiary u-heading-5-line-height--sm posted-on">
                 <?php echo esc_html( get_the_date( "M d, Y" ) ) ?>
             </h5>
         </div><!-- .entry-meta -->

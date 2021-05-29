@@ -1084,10 +1084,10 @@ html {
 
 /* font weight */
 .u-font--regular {
-  font-family: "SourceSerifPro-regular"; }
+  font-family: var(--castpress_font_style); }
 
 .u-font--semi-bold {
-  font-family: "SourceSerifPro-semibold"; }
+  font-family: var(--castpress_font_second_style); }
 
 /* Accessibility
 --------------------------------------------- */
@@ -1430,7 +1430,7 @@ img {
       position: absolute;
       top: 100%;
       left: 0% !important;
-      transform: translate(0%, 0%); }
+      transform: translate(0%, 98%); }
       .s-nav li:last-child .sub-menu .sub-menu .sub-menu {
         margin-left: 0px; }
         .s-nav li:last-child .sub-menu .sub-menu .sub-menu .sub-menu {
@@ -3020,6 +3020,9 @@ h4,
   line-height: 25px;
   margin-bottom: 10px; }
 
+.h4--semibold {
+  font-family: "SourceSerifPro-semibold"; }
+
 /* H5 */
 h5,
 .h5 {
@@ -3027,12 +3030,19 @@ h5,
   font-size: 14px;
   line-height: 25px; }
 
+.h5--regular {
+  font-family: "SourceSerifPro-regular"; }
+
 /* H6 */
 h6,
 .h6 {
   font-family: "SourceSerifPro-semibold";
   font-size: 12px;
+  line-height: 25px;
   letter-spacing: 0.16em; }
+
+.h6--regular {
+  font-family: "SourceSerifPro-regular"; }
 
 /*------------------------------------*\
   #Copy

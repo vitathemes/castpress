@@ -46,11 +46,18 @@ const concatVendorJs = (cb) => {
 };
 
 const concatJs = (cb) => {
-  return gulp.src(["./assets/src/js/*.js"]).pipe(concat("main.js")).pipe(gulp.dest("assets/js"));
+  return gulp
+    .src(["./assets/src/js/main.js"])
+    .pipe(concat("main.js"))
+    .pipe(gulp.dest("assets/js"));
   cb();
 };
 
-exports.default = () => gulp.src("assets/src/images/**/*").pipe(imagemin()).pipe(gulp.dest("assets/images/dist"));
+exports.default = () =>
+  gulp
+    .src("assets/src/images/**/*")
+    .pipe(imagemin())
+    .pipe(gulp.dest("assets/images/dist"));
 
 const browserSyncTask = (cb) => {
   browserSync.init({

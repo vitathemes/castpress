@@ -305,6 +305,16 @@ function castpress_typography() {
 		$castpress_quaternary_color = get_theme_mod( 'typography_quaternary_color' );
 	}
 	
+	// Custom Font
+	if( function_exists( 'kirki' ) ){
+		$castpress_font_style = "SourceSerifPro-regular";
+		$castpress_font_second_style = "SourceSerifPro-regular";
+	}
+	else{
+		$castpress_font_style = "SourceSerifPro-regular";
+		$castpress_font_second_style = "SourceSerifPro-semibold";
+	}
+
 	
 	$html = ':root {	
 				--castpress_headings-color: ' . $castpress_headings_color . ';
@@ -312,6 +322,10 @@ function castpress_typography() {
 	            --castpress_second-color: ' . $castpress_second_color . ';
 				--castpress_tertiary-color: ' . $castpress_tertiary_color . ';
 				--castpress_quaternary-color: ' . $castpress_quaternary_color . ';
+
+				--castpress_font_style: ' . $castpress_font_style . ';
+				--castpress_font_second_style: ' . $castpress_font_second_style . ';
+
 			}';
 						
 	return $html;

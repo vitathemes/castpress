@@ -12,48 +12,47 @@
 ?>
 <footer id="colophon" class="c-footer">
     <div class="c-footer__content">
-        <?php 
-        if ( is_active_sidebar( 'custom-footer-widget' ) ) : ?>
+
+        <?php if ( is_active_sidebar( 'custom-footer-widget' ) ) : ?>
+
         <div id="footer-widget-area" class="c-footer__widgets" role="complementary">
 
-            <?php dynamic_sidebar( 'custom-footer-widget' ); ?>
+            <?php dynamic_sidebar( 'custom-footer-widget' );
 
-            <?php //castpress_render_newsletter(); //qa- ?>
-
-            <?php endif; ?>
+         endif; ?>
 
         </div>
 
 
         <div class="c-footer__site-info">
-            <h5 class="c-footer__context u-font--regular  u-heading-5-line-height--sm u-font--regular">
+            <h5 class="c-footer__context u-heading-5-line-height--sm h5--secondary">
 
                 <?php
-                        /* translators: %s: Theme creator name by */
-                        printf( esc_html__( 'PodcastTheme by', 'castpress' ), 'castpress' );
-                    ?>
+                    /* translators: %s: Theme creator name by */
+                    printf( esc_html__( 'PodcastTheme by', 'castpress' ), 'castpress' );
+                ?>
 
             </h5>
 
-            <h5 class="c-footer__context u-heading-5-line-height--sm u-font--regular u-font--regular">
+            <h5 class="c-footer__context u-heading-5-line-height--sm h5--secondary">
                 <a class="c-footer__link u-link--tertiary"
                     href="<?php echo esc_url( __( 'https://vitathemes.com/', 'castpress' ) ); ?>">
                     <?php 
-                            /* translators: %s: Vita themes is the creator of the theme */
-                            printf( esc_html__( 'VitaThemes', 'castpress' ) );
-                        ?>
+                        /* translators: %s: Vita themes is the creator of the theme */
+                        printf( esc_html__( 'VitaThemes', 'castpress' ) );
+                    ?>
                 </a>
             </h5>
 
-            <h5 class="c-footer__context u-font--regular u-heading-5-line-height--sm sep u-link--tertiary"> | </h5>
+            <h5 class="c-footer__context h5--secondary u-heading-5-line-height--sm sep u-link--tertiary"> | </h5>
 
-            <h5 class="c-footer__context u-heading-5-line-height--sm u-font--regular u-font--regular">
+            <h5 class="c-footer__context u-heading-5-line-height--sm h5--secondary">
                 <a class="c-footer__link u-link--tertiary"
                     href="<?php echo esc_url( get_privacy_policy_url() ); ?>">
                     <?php
                             /* translators: Privacy Policy Link */
                             printf( esc_html__( 'Privacy Policy', 'castpress' ), 'castpress');
-                        ?>
+                    ?>
                 </a>
             </h5>
         </div><!-- .site-info -->

@@ -79,21 +79,6 @@
     }
   });
 
-  // Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
-  document.addEventListener("click", function (event) {
-    // const isClickInside = siteNavigation.contains(event.target);
-    // if (!isClickInside) {
-    //   siteNavigation.classList.remove("toggled");
-    //   button.setAttribute("aria-expanded", "false");
-    // if (castpress_isMobile(castpress_clientWindowSize) === true) {
-    //   if (castpress_isCollapsed === true) {
-    //
-    //     castpress_slidetoggle();
-    //   }
-    // }
-    // }
-  });
-
   // Get all the link elements within the menu.
   const links = menu.getElementsByTagName("a");
 
@@ -107,11 +92,6 @@
     link.addEventListener("focus", toggleFocus, true);
     link.addEventListener("blur", toggleFocus, true);
   }
-
-  // Toggle focus each time a menu link with children receive a touch event.
-  // for (const link of linksWithChildren) {
-  //   link.addEventListener("touchstart", toggleFocus, false);
-  // }
 
   /**
    * Sets or removes .focus class on an element.
@@ -128,16 +108,5 @@
         self = self.parentNode;
       }
     }
-
-    // if (event.type === "touchstart") {
-    //   const menuItem = this.parentNode;
-    //   event.preventDefault();
-    //   for (const link of menuItem.parentNode.children) {
-    //     if (menuItem !== link) {
-    //       link.classList.remove("focus");
-    //     }
-    //   }
-    //   menuItem.classList.toggle("focus");
-    // }
   }
 })();

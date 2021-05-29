@@ -23,7 +23,7 @@
                 }
 			?>
 
-            <h5 class="c-post__date u-font--regular  u-heading-5-line-height--sm posted-on">
+            <h5 class="c-post__date h5--secondary u-heading-5-line-height--sm posted-on">
                 <a class="u-link--tertiary" href="<?php esc_url( the_permalink() ) ?>">
                     <?php echo esc_html( get_the_date( "M d, Y" ) ) ?>
                 </a>
@@ -46,14 +46,11 @@
                     castpress_get_podcast_player_link();
                 }
 		    ?>
-
         </div><!-- .entry-meta -->
-
 
     </header><!-- .entry-header -->
 
     <div class="s-single__entry-content">
-
         <?php
             the_content(
                 sprintf(
@@ -71,55 +68,51 @@
             );
 		?>
 
-        <?php if ( 'episodes' == get_post_type() ) :
+        <?php 
+        if ( 'episodes' == get_post_type() ) :
           $castpress_podcast_audio_duratiuon = get_post_meta( $post->ID, 'podcast_duration', true ); 
-          $castpress_podcast_audio_duratiuon = substr($castpress_podcast_audio_duratiuon,0,-3);
-
-          if (class_exists('ACF') && get_field('transcript')) :
+          $castpress_podcast_audio_duratiuon = substr($castpress_podcast_audio_duratiuon,0,-3);          
         ?>
+
         <div class="c-single__transcript">
-
             <h2 class="c-single__transcript__title">
-
                 <?php
                     echo esc_html__('Listening time: ','castpress' );
                     echo esc_html( $castpress_podcast_audio_duratiuon );
+                
                     echo esc_html__( ' minutes', 'castpress' );
                 ?>
             </h2>
-            <span class="c-single__transcript__sep h2">|</span>
-            <a class="c-single__transcript__more js-single__transcript__more h2"><?php esc_html_e( 'View transcript', 'castpress' ); ?>
-                <span class="c-single__transcript__icon dashicons dashicons-arrow-right-alt"></span>
-            </a>
+
+            <?php if ( class_exists('ACF') && get_field('transcript') ) { ?>
+                <span class="c-single__transcript__sep h2">|</span>
+                <a class="c-single__transcript__more js-single__transcript__more h2"><?php esc_html_e( 'View transcript', 'castpress' ); ?>
+                    <span class="c-single__transcript__icon dashicons dashicons-arrow-right-alt"></span>
+                </a>
+            <?php } // check Acf fields is exist  ?>
 
         </div>
 
-        <div class="c-single__transcript__content">
-            <div class="c-single__transcript__wrapper" data-simplebar data-simplebar-auto-hide="false">
-                <div class="c-single__transcript__context">
-                    <div class="c-single__transcript__row">
-
-                        <?php the_field('transcript'); ?>
-
+        <?php if ( class_exists('ACF') && get_field('transcript') ) { ?>
+            <div class="c-single__transcript__content">
+                <div class="c-single__transcript__wrapper" data-simplebar data-simplebar-auto-hide="false">
+                    <div class="c-single__transcript__context">
+                        <div class="c-single__transcript__row">
+                            <?php the_field('transcript'); ?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php } // check Acf fields is exist  ?>
 
-        <?php endif; // check get fields is exist  ?>
-        <?php endif; // check post type is episodes ?>
+        <?php             
+            endif; // check post type is episodes 
 
-        
-            <?php
-			    // Show post tags 
-			    castpress_get_tags('c-single__tag');  
-		    ?>
+            castpress_get_tags('c-single__tag');  // Show post tags 
+        ?>
 
         <div class="c-social-share c-social-share--single">
-            <?php
-                // Get social share Links
-                castpress_share_links(); 
-            ?>
+            <?php castpress_share_links(); // Get social share Links ?>
         </div>
 
         <?php 
