@@ -14,16 +14,13 @@
 
     <section class="c-episode__header">
 
-        <?php 
-            castpress_get_category(false);
-            echo '<span class="seprator h5 u-link--secondary"> | </span>';
-            echo '<h5 class="c-episode__date h5--secondary u-heading-5-line-height--sm">'.esc_html( get_the_date( "M d, Y" ) ).'</h5>'; 
-        ?>
+        <?php castpress_get_category(false); // Get category ?>
+        <span class="seprator h5 u-link--secondary"> | </span> <!-- * This part does not need to be translated it's a seprator -->
+        <?php echo '<h5 class="c-episode__date h5--secondary u-heading-5-line-height--sm">'.esc_html( get_the_date( "M d, Y" ) ).'</h5>';// Display date ?>
 
         <div class="c-episode__titles">
-            <?php  the_title('<h2 class="c-episode__title"><a class="u-link--secondary" href="'.esc_url( get_permalink() ).'" rel="bookmark">'.$postNumber.' - ', '</a></h2>' ); ?>
+            <?php  the_title('<h2 class="c-episode__title"><a class="u-link--secondary" href="'.esc_url( get_permalink() ).'" rel="bookmark">'. esc_html($postNumber).' - ', '</a></h2>' ); ?>
         </div>
-
 
         <div class="c-episode__entry-content h4">
             <p class="c-episode__entry-context h4"><?php echo esc_html(get_the_excerpt()); ?></h4>

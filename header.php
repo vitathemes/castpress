@@ -22,7 +22,7 @@
     <div id="page" class="o-page">
         <a class="skip-link screen-reader-text" href="#primary">
             <?php esc_html_e( 'Skip to content', 'castpress' ); ?>
-        </a>
+        </a><!-- .skip-link screen-reader-text -->
 
         <header id="masthead" class="c-header site-header">
             <div class="c-header__main js-header__main" id="site-navigation">
@@ -33,7 +33,7 @@
                 <button class="c-header__menu js-header__menu"
                     aria-label="<?php esc_attr_e('Primary menu', 'castpress'); ?>" aria-controls="primary-menu"
                     aria-expanded="false">
-                </button>
+                </button><!-- .c-header__menu -->
 
                 <nav class="c-header__navigation">
                     <?php
@@ -52,14 +52,17 @@
                 </nav><!-- #site-navigation -->
 
                 <div class="c-header__search js-header__search">
+
                     <button class="c-header__search-icon js-header__search-icon"
                         aria-label="<?php esc_attr_e('Toggle Search', 'castpress'); ?>" aria-controls="primary-menu"
                         aria-expanded="false">
                     </button>
+                    
                     <div class="c-header__search-form">
                         <?php get_search_form(); ?>
                     </div>
-                </div>
+
+                </div><!-- .c-header__search -->
 
             </div>
         </header><!-- #masthead -->
