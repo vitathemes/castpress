@@ -16,7 +16,7 @@ Castpress is a minimal & mobile-first theme. The best choice for people who want
 - Developer friendly extendable code
 - Translation ready (with .POT files included)
 - SEO optimized
-- GNU GPL version 2.0 licensed
+- GNU GPL version 3.0 licensed
 - Support 1 level menu
 - …and much more
 
