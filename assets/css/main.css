@@ -1918,7 +1918,8 @@ img {
   justify-content: center;
   background-color: #f5f5f7;
   font-size: 12px !important;
-  line-height: 15px !important; }
+  line-height: 15px !important;
+  text-decoration: none !important; }
   .page-numbers:hover {
     background-color: #eaeaee !important;
     text-decoration: none; }
@@ -2583,7 +2584,8 @@ img {
 .c-post__author__link,
 .author {
   display: inline-block;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  margin-left: 1px; }
 
 .s-post-content {
   font-size: 18px;

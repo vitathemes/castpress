@@ -15,8 +15,8 @@ if ( ! function_exists( 'castpress_posted_by' ) ) :
 	function castpress_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'By %s', 'post author', 'castpress' ),
-			'<h5 class="author vcard h5--secondary u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></h5>'
+			esc_html__( 'By  %s', ' post author', 'castpress' ),
+			'<h5 class="author vcard h5--secondary u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"> ' . esc_html(get_the_author()) . ' </a></h5>'
 		);
 
 		echo '<h5 class="byline h5--secondary u-heading-5-line-height--sm c-post__author "> ' . $byline  . '</h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -410,6 +410,7 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 		$castpress_castro    		 = get_theme_mod( 'p_castro_link' );
 		$castpress_castbox    		 = get_theme_mod( 'p_castbox_link' );
 		$castpress_audible    		 = get_theme_mod( 'p_audible_link' );
+		$castpress_spreaker    		 = get_theme_mod( 'p_spreaker_link' );
 
 
 		$castpress_all_publishers = array(
@@ -541,6 +542,13 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="la-audible" data-inline="false"></span>
 				</a>', esc_url( $castpress_audible ), esc_html__( 'audible', 'castpress' ) );
+			}
+
+			// spreaker
+			if ( $castpress_spreaker ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				<span class="iconify c-episodes__social-share__icons" data-icon="cib:spreaker" data-inline="false"></span>
+				</a>', esc_url( $castpress_spreaker ), esc_html__( 'spreaker', 'castpress' ) );
 			}
 
 			echo '</div>';	
