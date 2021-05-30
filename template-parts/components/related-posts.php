@@ -22,12 +22,12 @@
     <div class="c-related-posts">
         <h1 class="u-heading-1-line-height--sm"><?php esc_html_e( 'Related Posts', 'castpress' ); ?></h1>
         <?php 
-                while( $castpress_loop->have_posts() ) {
-                    $castpress_loop->the_post();
-                                get_template_part( 'template-parts/content' ); //Show Content.php
-                            }
-                        }
-                    }
-                    wp_reset_postdata(); 
-                ?>
+            while( $castpress_loop->have_posts() ) {
+                $castpress_loop->the_post();
+                get_template_part( 'template-parts/content' ); //Show Content.php
+            }
+        }
+    }
+            wp_reset_postdata(); 
+    ?>
     </div>

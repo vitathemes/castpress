@@ -1,18 +1,21 @@
 <div class="c-latest-posts">
-    <h1 class="c-latest-posts__title u-heading-1-line-height--bg"><?php esc_html_e( 'Latest Posts', 'castpress' ); ?></h1>
+    <h1 class="c-latest-posts__title u-heading-1-line-height--bg">
+        <?php esc_html_e( 'Latest Posts', 'castpress' ); ?>
+    </h1>
+
     <div class="c-latest-posts__content">
         <?php  
-        $args = array(
-            'posts_per_page' => 2,
+        $castpress_args = array(
+            'posts_per_page' => 2, // Recommended for design 
             'offset' => 0,
             'orderby' => 'post_date',
             'order' => 'DESC',
             'post_type' => 'post', 
             'post_status' => 'publish',
         );
-        $query = new WP_Query($args);
-            if ($query->have_posts()) :
-                while ($query->have_posts()) : $query->the_post();
+        $castpress_latest_posts = new WP_Query($castpress_args);
+            if ($castpress_latest_posts->have_posts()) :
+                while ($castpress_latest_posts->have_posts()) : $castpress_latest_posts->the_post();
                     get_template_part( 'template-parts/content', get_post_type() );
                 endwhile; 
             endif;
