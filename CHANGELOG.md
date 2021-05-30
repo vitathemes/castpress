@@ -1,9 +1,7 @@
-## 1.0.0
+## commit c84b4a69fc76c54b344e279d1cab6009be550541
 
-May 8, 2021
+May 30, 2021
 
-- Fix submenus ( style support at 10 submenus )
-- Fixed minor style issues
-- Add changelog.md
-- Update wordpress tested on version
-- Update Theme license
+- Fix prefix naming
+- Fix minor style issues
+- Improve query loop in episodes
