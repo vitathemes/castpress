@@ -30,6 +30,11 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/classes/class_castpress_walker_nav_menu.php';
 
 /**
+* Nav menu footer walker
+*/
+require get_template_directory() . '/classes/class_castpress_walker_nav_footer_menu.php';
+
+/**
 * Comments walker
 */
 require get_template_directory() . '/classes/class_castpress_walker_comment.php';

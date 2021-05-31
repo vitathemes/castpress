@@ -3353,6 +3353,18 @@ h2.c-single__transcript__title {
   margin-bottom: 16px;
   color: var(--castpress_second-color) !important; }
 
+.c-footer__nav {
+  text-align: center;
+  margin: 0px;
+  margin-top: 32px; }
+
+.c-footer__nav__item {
+  display: inline-block; }
+
+.c-footer__nav__item--dynamic::before {
+  content: " | ";
+  color: var(--castpress_primary-color); }
+
 /*--------------------------------------------------------------
 # External
 --------------------------------------------------------------*/
