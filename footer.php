@@ -29,14 +29,14 @@
 
                 <?php
                     /* translators: %s: Theme creator name by */
-                    printf( esc_html__( 'PodcastTheme by', 'castpress' ), 'castpress' );
+                    printf( esc_html__( 'Castpress Theme by ', 'castpress' ), 'castpress' );
                 ?>
 
             </h5>
 
             <h5 class="c-footer__context u-heading-5-line-height--sm h5--secondary">
                 <a class="c-footer__link u-link--tertiary"
-                    href="<?php echo esc_url( __( 'https://vitathemes.com/', 'castpress' ) ); ?>">
+                    href="<?php echo esc_url('https://vitathemes.com/'); ?>">
                     <?php 
                         /* translators: %s: Vita themes is the creator of the theme */
                         printf( esc_html__( 'VitaThemes', 'castpress' ) );
@@ -51,7 +51,7 @@
                     href="<?php echo esc_url( get_privacy_policy_url() ); ?>">
                     <?php
                             /* translators: Privacy Policy Link */
-                            printf( esc_html__( 'Privacy Policy', 'castpress' ), 'castpress');
+                             esc_html_e( 'Privacy Policy', 'castpress' );
                     ?>
                 </a>
             </h5>

@@ -6,10 +6,8 @@
  *
  * @package castpress
  */
-
 get_header();
 ?>
-
 <main id="primary" class="c-main c-main--episode">
     <div class="c-main__content">
         <header class="c-post__header c-post__header--page">

@@ -363,3 +363,30 @@ function castpress_home_components() {
 	}
 	
 }
+
+function castpress_archive_title( ) {
+	/**
+	 *
+	 * Custom archive title
+	 *
+	 * 
+	 * @link https://developer.wordpress.org/reference/hooks/get_the_archive_title/
+	 * 
+	 **/
+
+    if ( is_category() ) {
+        $castpress_title =  esc_html__( 'Category : ' , 'castpress' ).single_cat_title( '', false );
+    } elseif ( is_tag() ) {
+        $castpress_title =  esc_html__( 'Tag : ' , 'castpress' ).single_tag_title( '', false );
+    } elseif ( is_author() ) {
+        $castpress_title =  esc_html__( 'Author : ' , 'castpress' ). get_the_author();
+    } elseif ( is_post_type_archive() ) {
+        $castpress_title =  esc_html__( 'Archives : ' , 'castpress' ).post_type_archive_title( '', false );
+    } elseif ( is_tax() ) {
+        $castpress_title =  esc_html__( 'Taxonomy : ' , 'castpress' ). single_term_title( '', false );
+    }
+  
+    return $castpress_title;
+}
+ 
+add_filter( 'get_the_archive_title', 'castpress_archive_title' );

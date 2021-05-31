@@ -3,7 +3,7 @@
 \*------------------------------------*/
 button,
 .wp-block-button__link,
-.btn,
+.c-btn,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -31,9 +31,22 @@ input[type="submit"] {
 }
 
 /*------------------------------------*\
+  #Button Modifier 
+\*------------------------------------*/
+.dashicons--white {
+  height: max-content;
+  font-size: 15px;
+  vertical-align: middle;
+  &::before {
+    color: $color_background_body !important;
+    font-size: 15px;
+  }
+}
+
+/*------------------------------------*\
   #Button Text whit arrow 
 \*------------------------------------*/
-.btn--arrows-small {
+.c-btn--arrows-small {
   background-color: $castpress_neutral_gray_light_color;
   color: $castpress_main_accent_color !important;
 
@@ -60,7 +73,7 @@ input[type="submit"] {
 /*------------------------------------*\
   #Button Arrow
 \*------------------------------------*/
-.btn--arrow {
+.c-btn--arrow {
   width: 36px;
   height: 36px;
   padding: 0;
@@ -104,12 +117,12 @@ input[type="submit"] {
 /*------------------------------------*\
   #Button Play
 \*------------------------------------*/
-.btn--play {
+.c-btn--play {
   background-color: $castpress_neutral_gray_light_color;
   color: $castpress_main_accent_color;
 }
 
-.btn--arrows-small {
+.c-btn--arrows-small {
   .dashicons {
     width: max-content !important;
   }
@@ -117,7 +130,7 @@ input[type="submit"] {
 /*------------------------------------*\
   #Button Download
 \*------------------------------------*/
-.btn--download {
+.c-btn--download {
   background-color: transparent;
   height: max-content;
   padding: 0px;
@@ -142,8 +155,10 @@ input[type="submit"] {
     content: "";
     cursor: pointer;
 
-    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
-    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
+    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
+      no-repeat 50% 50%;
+    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50%
+      50%;
 
     -webkit-mask-size: cover;
     mask-size: cover;
@@ -156,7 +171,7 @@ input[type="submit"] {
 /*------------------------------------*\
   #Button Error
 \*------------------------------------*/
-.btn--error {
+.c-btn--error {
   padding: 11px 22px;
   .c-main__button-arrow {
     font-size: 15px !important;
@@ -182,7 +197,7 @@ input[type="submit"] {
 /*------------------------------------*\
   #Arrow with Text 
 \*------------------------------------*/
-.btn--text-arrow {
+.c-btn--text-arrow {
   transition: 0.3s all;
 
   .dashicons {
@@ -202,7 +217,7 @@ input[type="submit"] {
 /*------------------------------------*\
   #Button Size
 \*------------------------------------*/
-.btn--sm {
+.c-btn--sm {
   padding: 8px 14px;
 }
 

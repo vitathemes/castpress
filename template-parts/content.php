@@ -23,7 +23,7 @@
 
         <div class="c-post__entry-meta">
             <h5 class="c-post__date h5--secondary u-link--tertiary u-heading-5-line-height--sm posted-on">
-                <?php echo esc_html( get_the_date( "M d, Y" ) ) ?>
+                <?php echo esc_html( get_the_date() ) ?>
             </h5>
         </div><!-- .entry-meta -->
 

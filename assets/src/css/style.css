@@ -1523,6 +1523,265 @@ img {
   max-width: 90%; }
 
 /*--------------------------------------------------------------
+# Pagination
+--------------------------------------------------------------*/
+/*------------------------------------*\
+  #Button ( Primary )
+\*------------------------------------*/
+button,
+.wp-block-button__link,
+.c-btn,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: none;
+  background-color: var(--castpress_quaternary-color);
+  color: #f5f5f7 !important;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  font-family: "SourceSerifPro-regular";
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 18px; }
+  button:hover,
+  .wp-block-button__link:hover,
+  .c-btn:hover,
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover {
+    background-color: #58379b;
+    text-decoration: none;
+    color: #f5f5f7; }
+  button:visited, button:focus,
+  .wp-block-button__link:visited,
+  .wp-block-button__link:focus,
+  .c-btn:visited,
+  .c-btn:focus,
+  input[type="button"]:visited,
+  input[type="button"]:focus,
+  input[type="reset"]:visited,
+  input[type="reset"]:focus,
+  input[type="submit"]:visited,
+  input[type="submit"]:focus {
+    text-decoration: none; }
+
+/*------------------------------------*\
+  #Button Modifier 
+\*------------------------------------*/
+.dashicons--white {
+  height: max-content;
+  font-size: 15px;
+  vertical-align: middle; }
+  .dashicons--white::before {
+    color: #ffffff !important;
+    font-size: 15px; }
+
+/*------------------------------------*\
+  #Button Text whit arrow 
+\*------------------------------------*/
+.c-btn--arrows-small {
+  background-color: #f5f5f7;
+  color: #7247ca !important; }
+  .c-btn--arrows-small .dashicons {
+    padding-left: 0px;
+    width: max-content; }
+    .c-btn--arrows-small .dashicons::before {
+      color: #7247ca; }
+  .c-btn--arrows-small:hover {
+    background-color: #7247ca;
+    color: #f5f5f7 !important; }
+    .c-btn--arrows-small:hover .dashicons::before {
+      color: #f5f5f7 !important; }
+
+/*------------------------------------*\
+  #Button Arrow
+\*------------------------------------*/
+.c-btn--arrow {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 3px !important;
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  cursor: pointer;
+  left: 98%;
+  transform: translate(-100%, -40%); }
+  .c-btn--arrow::before {
+    content: url("https://api.iconify.design/heroicons-solid:arrow-narrow-right.svg?color=%23fff");
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-size: 21px 21px;
+    position: absolute;
+    top: 9px;
+    animation-name: arrowRightBack;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards; }
+  .c-btn--arrow:hover::before {
+    animation-name: arrowRight;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards; }
+
+/*------------------------------------*\
+  #Button Play
+\*------------------------------------*/
+.c-btn--play {
+  background-color: #f5f5f7;
+  color: #7247ca; }
+
+.c-btn--arrows-small .dashicons {
+  width: max-content !important; }
+
+/*------------------------------------*\
+  #Button Download
+\*------------------------------------*/
+.c-btn--download {
+  background-color: transparent;
+  height: max-content;
+  padding: 0px;
+  height: 40px;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+  .c-btn--download:hover {
+    background-color: transparent; }
+    .c-btn--download:hover::after {
+      background-color: var(--castpress_quaternary-color); }
+  .c-btn--download::after {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    content: "";
+    cursor: pointer;
+    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
+    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-color: var(--castpress_primary-color); }
+
+/*------------------------------------*\
+  #Button Error
+\*------------------------------------*/
+.c-btn--error {
+  padding: 11px 22px; }
+  .c-btn--error .c-main__button-arrow {
+    font-size: 15px !important;
+    padding-left: 0px;
+    padding-bottom: 21px !important;
+    width: max-content !important;
+    vertical-align: bottom; }
+    .c-btn--error .c-main__button-arrow::before {
+      color: #ffffff; }
+  .c-btn--error:hover .c-main__button-arrow::before {
+    color: #f5f5f7 !important; }
+
+/*------------------------------------*\
+  #Arrow with Text 
+\*------------------------------------*/
+.c-btn--text-arrow {
+  transition: 0.3s all; }
+  .c-btn--text-arrow .dashicons {
+    padding-left: 4px;
+    width: max-content !important;
+    font-size: 11px;
+    padding-top: 5px;
+    transition: 0.2s all; }
+    .c-btn--text-arrow .dashicons::before {
+      width: max-content !important;
+      transition: 0.2s all; }
+
+/*------------------------------------*\
+  #Button Size
+\*------------------------------------*/
+.c-btn--sm {
+  padding: 8px 14px; }
+
+/*------------------------------------------*\
+  #Wordpress default Player (Default classes)
+\*------------------------------------------*/
+.mejs-play > button {
+  min-width: max-content; }
+
+.mejs-horizontal-volume-slider {
+  min-width: max-content; }
+
+.mejs-controls * {
+  min-width: max-content !important; }
+
+.mejs-controls .mejs-time-rail .mejs-time-current {
+  background: #222222 !important; }
+
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background: #222222 !important; }
+
+.mejs-controls .mejs-time-rail .mejs-time-total {
+  background: #f5f5f7 !important;
+  border-radius: 2px; }
+
+.mejs-currenttime,
+.mejs-duration {
+  color: #222222 !important; }
+
+.mejs-container,
+.mejs-container .mejs-controls,
+.mejs-embed,
+.mejs-embed body {
+  background-color: rgba(133, 133, 133, 0) !important; }
+  .mejs-container:focus,
+  .mejs-container .mejs-controls:focus,
+  .mejs-embed:focus,
+  .mejs-embed body:focus {
+    border: 1px solid #000; }
+
+.asi-player-icon {
+  text-shadow: 1px 1px 1px black; }
+
+.asi-player-icon {
+  color: black !important; }
+
+.mejs-button > button {
+  background-color: transparent;
+  background-image: url("../images/mejs-controls.svg") !important; }
+
+.wp-playlist-dark button:hover,
+.wp-playlist-dark button:focus {
+  background-color: transparent;
+  background-image: url("../images/mejs-controls.svg") !important; }
+
+.wp-playlist-dark .mejs-controls .mejs-button button:focus {
+  outline: 1px solid white; }
+
+.wp-playlist-dark .mejs-fullscreen-button > button {
+  background-position: -80px 0; }
+
+.wp-playlist-dark .mejs-unfullscreen > button {
+  background-position: -100px 0; }
+
+.wp-playlist-dark .mejs-mute > button {
+  background-position: -60px 0; }
+
+.wp-playlist-dark .mejs-unmute > button {
+  background-position: -40px 0; }
+
+.wp-playlist-dark .mejs-pause > button {
+  background-position: -20px 0; }
+
+.mejs-time.mejs-currenttime-container,
+.mejs-time.mejs-duration-container {
+  padding-top: 14px; }
+
+/*--------------------------------------------------------------
 # SideBar
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -2369,8 +2628,7 @@ img {
   .c-post__author:first {
     text-transform: uppercase; }
 
-.c-post__author__link,
-.author {
+.c-post__author__link {
   display: inline-block;
   text-transform: capitalize;
   margin-left: 1px; }
@@ -3206,251 +3464,6 @@ li {
 
 ol {
   color: var(--castpress_second-color); }
-
-/*------------------------------------*\
-  #Button ( Primary )
-\*------------------------------------*/
-button,
-.wp-block-button__link,
-.btn,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  border: none;
-  background-color: var(--castpress_quaternary-color);
-  color: #f5f5f7 !important;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 300ms ease-in-out;
-  font-family: "SourceSerifPro-regular";
-  padding: 8px 16px;
-  font-size: 14px;
-  line-height: 18px; }
-  button:hover,
-  .wp-block-button__link:hover,
-  .btn:hover,
-  input[type="button"]:hover,
-  input[type="reset"]:hover,
-  input[type="submit"]:hover {
-    background-color: #58379b;
-    text-decoration: none;
-    color: #f5f5f7; }
-  button:visited, button:focus,
-  .wp-block-button__link:visited,
-  .wp-block-button__link:focus,
-  .btn:visited,
-  .btn:focus,
-  input[type="button"]:visited,
-  input[type="button"]:focus,
-  input[type="reset"]:visited,
-  input[type="reset"]:focus,
-  input[type="submit"]:visited,
-  input[type="submit"]:focus {
-    text-decoration: none; }
-
-/*------------------------------------*\
-  #Button Text whit arrow 
-\*------------------------------------*/
-.btn--arrows-small {
-  background-color: #f5f5f7;
-  color: #7247ca !important; }
-  .btn--arrows-small .dashicons {
-    padding-left: 0px;
-    width: max-content; }
-    .btn--arrows-small .dashicons::before {
-      color: #7247ca; }
-  .btn--arrows-small:hover {
-    background-color: #7247ca;
-    color: #f5f5f7 !important; }
-    .btn--arrows-small:hover .dashicons::before {
-      color: #f5f5f7 !important; }
-
-/*------------------------------------*\
-  #Button Arrow
-\*------------------------------------*/
-.btn--arrow {
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  border-radius: 3px !important;
-  position: absolute;
-  right: 3px;
-  top: 50%;
-  cursor: pointer;
-  left: 98%;
-  transform: translate(-100%, -40%); }
-  .btn--arrow::before {
-    content: url("https://api.iconify.design/heroicons-solid:arrow-narrow-right.svg?color=%23fff");
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    display: block;
-    background-size: 21px 21px;
-    position: absolute;
-    top: 9px;
-    animation-name: arrowRightBack;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards; }
-  .btn--arrow:hover::before {
-    animation-name: arrowRight;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards; }
-
-/*------------------------------------*\
-  #Button Play
-\*------------------------------------*/
-.btn--play {
-  background-color: #f5f5f7;
-  color: #7247ca; }
-
-.btn--arrows-small .dashicons {
-  width: max-content !important; }
-
-/*------------------------------------*\
-  #Button Download
-\*------------------------------------*/
-.btn--download {
-  background-color: transparent;
-  height: max-content;
-  padding: 0px;
-  height: 40px;
-  width: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; }
-  .btn--download:hover {
-    background-color: transparent; }
-    .btn--download:hover::after {
-      background-color: var(--castpress_quaternary-color); }
-  .btn--download::after {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    content: "";
-    cursor: pointer;
-    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
-    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    margin-right: 10px;
-    vertical-align: middle;
-    background-color: var(--castpress_primary-color); }
-
-/*------------------------------------*\
-  #Button Error
-\*------------------------------------*/
-.btn--error {
-  padding: 11px 22px; }
-  .btn--error .c-main__button-arrow {
-    font-size: 15px !important;
-    padding-left: 0px;
-    padding-bottom: 21px !important;
-    width: max-content !important;
-    vertical-align: bottom; }
-    .btn--error .c-main__button-arrow::before {
-      color: #ffffff; }
-  .btn--error:hover .c-main__button-arrow::before {
-    color: #f5f5f7 !important; }
-
-/*------------------------------------*\
-  #Arrow with Text 
-\*------------------------------------*/
-.btn--text-arrow {
-  transition: 0.3s all; }
-  .btn--text-arrow .dashicons {
-    padding-left: 4px;
-    width: max-content !important;
-    font-size: 11px;
-    padding-top: 5px;
-    transition: 0.2s all; }
-    .btn--text-arrow .dashicons::before {
-      width: max-content !important;
-      transition: 0.2s all; }
-
-/*------------------------------------*\
-  #Button Size
-\*------------------------------------*/
-.btn--sm {
-  padding: 8px 14px; }
-
-/*------------------------------------------*\
-  #Wordpress default Player (Default classes)
-\*------------------------------------------*/
-.mejs-play > button {
-  min-width: max-content; }
-
-.mejs-horizontal-volume-slider {
-  min-width: max-content; }
-
-.mejs-controls * {
-  min-width: max-content !important; }
-
-.mejs-controls .mejs-time-rail .mejs-time-current {
-  background: #222222 !important; }
-
-.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
-.mejs-controls .mejs-time-rail .mejs-time-loaded {
-  background: #222222 !important; }
-
-.mejs-controls .mejs-time-rail .mejs-time-total {
-  background: #f5f5f7 !important;
-  border-radius: 2px; }
-
-.mejs-currenttime,
-.mejs-duration {
-  color: #222222 !important; }
-
-.mejs-container,
-.mejs-container .mejs-controls,
-.mejs-embed,
-.mejs-embed body {
-  background-color: rgba(133, 133, 133, 0) !important; }
-  .mejs-container:focus,
-  .mejs-container .mejs-controls:focus,
-  .mejs-embed:focus,
-  .mejs-embed body:focus {
-    border: 1px solid #000; }
-
-.asi-player-icon {
-  text-shadow: 1px 1px 1px black; }
-
-.asi-player-icon {
-  color: black !important; }
-
-.mejs-button > button {
-  background-color: transparent;
-  background-image: url("../images/mejs-controls.svg") !important; }
-
-.wp-playlist-dark button:hover,
-.wp-playlist-dark button:focus {
-  background-color: transparent;
-  background-image: url("../images/mejs-controls.svg") !important; }
-
-.wp-playlist-dark .mejs-controls .mejs-button button:focus {
-  outline: 1px solid white; }
-
-.wp-playlist-dark .mejs-fullscreen-button > button {
-  background-position: -80px 0; }
-
-.wp-playlist-dark .mejs-unfullscreen > button {
-  background-position: -100px 0; }
-
-.wp-playlist-dark .mejs-mute > button {
-  background-position: -60px 0; }
-
-.wp-playlist-dark .mejs-unmute > button {
-  background-position: -40px 0; }
-
-.wp-playlist-dark .mejs-pause > button {
-  background-position: -20px 0; }
-
-.mejs-time.mejs-currenttime-container,
-.mejs-time.mejs-duration-container {
-  padding-top: 14px; }
 
 table {
   background-color: #f5f5f7;

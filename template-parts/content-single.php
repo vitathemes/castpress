@@ -25,13 +25,13 @@
 
             <h5 class="c-post__date h5--secondary u-heading-5-line-height--sm posted-on">
                 <a class="u-link--tertiary" href="<?php esc_url( the_permalink() ) ?>">
-                    <?php echo esc_html( get_the_date( "M d, Y" ) ) ?>
+                    <?php echo esc_html( get_the_date() ) ?>
                 </a>
             </h5>
 
             <span class="seprator h5 u-link--secondary"> | </span><!-- * This part does not need to be translated it's a seprator -->
 
-            <?php castpress_posted_by( true ); ?>
+            <?php castpress_posted_by(); ?>
 
             <div class="c-single__podcast-audio">
                 <?php 

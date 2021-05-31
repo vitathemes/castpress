@@ -13,7 +13,7 @@
             title="<?php echo esc_attr( 'Search for:', 'castpress' ) ?>" />
     </label>
     <button aria-label="<?php esc_attr_e('Search', 'castpress'); ?>" type="submit"
-        class="c-search-form__submit search-submit btn--sm">
+        class="c-search-form__submit search-submit c-btn--sm">
 
     </button>
 </form>
