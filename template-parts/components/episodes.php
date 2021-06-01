@@ -14,11 +14,16 @@
 
         $castpress_paged_post = ( get_query_var("paged") ) ? get_query_var("paged") : 1;
         
+        // Select last Episode
+        $castpress_latest_episode = get_posts("post_type=episodes&numberposts=1");
+        $castpress_latest_episode = $castpress_latest_episode[0]->ID;
+
         $castpress_args = array (
             "post_status"            => "publish",
             "post_type"              => "episodes",
-            "paged"                  =>  $castpress_paged_post,
-            "posts_per_page"         =>  get_option("posts_per_page"),
+            'post__not_in'           => array($castpress_latest_episode),//Can't use offset because it will break pagination. @link https://wordpress.org/support/topic/pagination-with-offset-not-working/
+            "paged"                  => $castpress_paged_post,
+            "posts_per_page"         => get_option("posts_per_page"),
         );
         
         global $castpress_query;

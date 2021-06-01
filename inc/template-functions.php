@@ -102,7 +102,7 @@ function castpress_get_inverse_post_number(){
     $posts_per_page 	= get_option('posts_per_page');
 	$paged          	= (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$offset         	= ($paged - 1) * $posts_per_page;
-	$loop           	= $wp_query->current_post + 1;
+	$loop           	= $wp_query->current_post + 2;
 	$posts_in_page	    = $offset + $loop;
 	$total_post_numbers = castpress_total_post_types(false) + 1;
 	$posts_counter 	    = $total_post_numbers - $posts_in_page;
