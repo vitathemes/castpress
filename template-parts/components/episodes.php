@@ -21,7 +21,7 @@
         $castpress_args = array (
             "post_status"            => "publish",
             "post_type"              => "episodes",
-            'post__not_in'           => array($castpress_latest_episode),//Can't use offset because it will break pagination. @link https://wordpress.org/support/topic/pagination-with-offset-not-working/
+            'post__not_in'           => array($castpress_latest_episode),
             "paged"                  => $castpress_paged_post,
             "posts_per_page"         => get_option("posts_per_page"),
         );
