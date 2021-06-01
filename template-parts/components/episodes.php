@@ -19,6 +19,7 @@
             "post_type"              => "episodes",
             "paged"                  =>  $castpress_paged_post,
             "posts_per_page"         =>  get_option("posts_per_page"),
+            "offset"                 =>  1
         );
         
         global $castpress_query;
