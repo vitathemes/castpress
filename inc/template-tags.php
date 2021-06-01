@@ -15,7 +15,7 @@ if ( ! function_exists( 'castpress_posted_by' ) ) :
 	function castpress_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html__( 'By  %s', ' post author', 'castpress' ),
+			esc_html__( 'By  %s', 'castpress' ),
 			'<h5 class="c-post__author vcard u-font--regular u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"> ' . esc_html(get_the_author()) . ' </a></h5>'
 		);
 
@@ -516,7 +516,7 @@ if ( ! function_exists( 'castpress_get_archives_header' ) ) :
 	 * Get Archives header
 	 */
 	function castpress_get_archives_header() {
-		echo sprintf('<header class="c-main__header"><h1 class="c-main__entry-title u-heading-1-line-height--bg">%s</h1></header><!-- .-main__content -->', get_the_archive_title() );
+		echo sprintf('<header class="c-main__header"><h1 class="c-main__entry-title u-heading-1-line-height--bg">%s</h1></header><!-- .-main__content -->', wp_kses_post(get_the_archive_title()) );
 	}
 	
 endif;
