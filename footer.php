@@ -23,38 +23,38 @@
 
         </div>
         
-        <ul class="c-footer__nav">
-                <li class="c-footer__nav__item">
-                    <h5 class="c-footer__context u-heading-5-line-height--sm h5--secondary">
-                        <?php esc_html_e( 'Castpress Theme by ', 'cavatina' ); ?>
-                    </h5>
-                </li>
+        <div class="c-footer__copy">
 
-                <li class="c-footer__nav__item">
-                    <h5 class="c-footer__context u-heading-5-line-height--sm h5--secondary">
-                        <a class="c-footer__link u-link--tertiary"
-                            href="<?php echo esc_url('https://vitathemes.com/'); ?>">
-                            <?php 
-                                /* translators: %s: Vita themes is the creator of the theme */
-                                printf( esc_html__( 'VitaThemes', 'castpress' ) );
-                            ?>
-                        </a>
-                    </h5>
-                </li>
+            <div class="c-footer__copy-text">
+                <h5 class="c-footer__context u-heading-5-line-height--sm h5--regular">
+                    
+                    <?php echo esc_html(get_theme_mod( 'copytext' , esc_html( 'Castpress Theme by', 'castpress' ) )); ?>
 
-                <?php
-                    if ( has_nav_menu( 'primary-footer' ) ) {        
-                        wp_nav_menu(
-                                array(
-                                    'walker'          => new Castpress_walker_nav_footer_menu(),
-                                    'theme_location' => 'primary-footer',
-                                    'menu_id'        => 'primary-footer-registered',
-                                    'container'      => "c-footer__nav",
-                                    'items_wrap'     => '%3$s'
-                                ));
-                    }
-                ?>
-            </ul>
+                </h5>
+
+                <h5 class="c-footer__context u-heading-5-line-height--sm h5--regular">
+                    <a class="c-footer__link u-link--tertiary"
+                        href="<?php echo esc_url( get_theme_mod( 'copylink', esc_url('http://vitathemes.com/') ) ); ?>">
+                     
+                        <?php echo esc_html(get_theme_mod( 'copylink_text', esc_html( 'VitaThemes', 'castpress' ) )); ?>
+
+                    </a>
+                </h5>
+            </div>
+
+            <?php
+                if ( has_nav_menu( 'primary-footer' ) ) {
+                    wp_nav_menu(
+                            array(
+                                'theme_location'  => 'primary-footer',
+                                'menu_id'         => 'primary-footer',
+                                "menu_class"      => "s-footer__nav nav-menu",
+                                "container_class" => "c-footer__nav",
+                            ));
+                }
+            ?>
+    
+        </div>
 
         <div class="c-social-share c-social-share--footer">
             <?php castpress_socials_links(); ?>

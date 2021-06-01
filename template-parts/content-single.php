@@ -23,7 +23,7 @@
                 }
 			?>
 
-            <h5 class="c-post__date h5--secondary u-heading-5-line-height--sm posted-on">
+            <h5 class="c-post__date h5--regular u-heading-5-line-height--sm posted-on">
                 <a class="u-link--tertiary" href="<?php esc_url( the_permalink() ) ?>">
                     <?php echo esc_html( get_the_date() ) ?>
                 </a>

@@ -52,11 +52,6 @@
   line-height: 18px;
 }
 
-/* font weight */
-.u-font--regular {
-  font-family: var(--castpress_font_style);
-}
-
-.u-font--semi-bold {
-  font-family: var(--castpress_font_second_style);
+.u-line-height--sm {
+  line-height: 15px;
 }

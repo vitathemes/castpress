@@ -36,7 +36,7 @@
 				//URL Field
 				'url' => '<h4 class="comment-form-url u-heading-4-line-height--bg">'. __( 'Website', 'castpress' ).'<br /><input type="url" id="url" name="url" ></input></h4>',
 				//Cookies
-				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'castpress' ) .'</span></div>',
+				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="h6 h6--regular u-line-height--sm c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'castpress' ) .'</span></div>',
 			),
 			// Change the title of send button
 			'label_submit' => __( 'Submit', 'castpress'),
@@ -47,7 +47,7 @@
 			// Redefine your own textarea (the comment body).
 			'comment_field' => '<h4 class="comment-form-comment u-heading-4-line-height--bg">'. __( 'Comment*', 'castpress' ).'<br /><textarea id="comment" name="comment" aria-required="true" ></textarea></p>',
 			//Message Before Comment
-			'comment_notes_before' =>'<h5 class="c-comments__desc u-heading-5-line-height--sm h5--secondary">'. __( 'Required fields are marked *' , 'castpress') .'</h5>',
+			'comment_notes_before' =>'<h5 class="c-comments__desc u-heading-5-line-height--sm h5--regular">'. __( 'Required fields are marked *' , 'castpress') .'</h5>',
 			// Remove "Text or HTML to be displayed after the set of comment fields".
 			'comment_notes_after' => '',
 			//Submit Button ID

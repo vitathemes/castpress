@@ -102,13 +102,14 @@
 }
 .c-comments__title {
   color: $castpress_primary_color;
-  font-family: "SourceSerifPro-semibold" !important; //qa-
+  font-family: $castpress_font !important;
 }
 
 .comment-reply-link {
   padding-top: 16px;
   color: $castpress_tertiary_color;
 
+  text-decoration: none !important;
   font-size: 14px;
   line-height: 18px;
 

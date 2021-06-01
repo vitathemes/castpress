@@ -16,7 +16,7 @@ input[type="color"],
 textarea {
   width: 100%;
   margin-top: 8px;
-  color: $castpress_neutral_dark_gray_color;
+  color: $castpress_primary_color;
   border: none;
   border-radius: $global-radius;
   background-color: $castpress_neutral_gray_light_color;
@@ -32,15 +32,16 @@ textarea {
   position: relative;
 
   &::placeholder {
-    color: $castpress_neutral_gray_color;
+    color: $castpress_primary_color;
     opacity: 1;
     font-size: 12px;
     line-height: 27px !important;
-    font-family: $castpress_font_regular;
+    font-family: $castpress_font;
+    font-weight: 400;
   }
 
   &:focus {
-    color: $castpress_neutral_gray_color;
+    color: $castpress_primary_color;
     outline: $castpress_neutral_gray_color solid 2px;
   }
 }

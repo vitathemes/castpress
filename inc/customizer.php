@@ -114,6 +114,13 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 6,
 	) );
 
+	/* Copy text */
+	Kirki::add_section( 'copyrights', array(
+		'title'    => esc_html__( 'Copy right Texts', 'castpress' ),
+		'panel'    => 'footer',
+		'priority' => 7,
+	) );
+
 	/* Home Components */
 	Kirki::add_section( 'home_components', array(
 		'title'    => esc_html__( 'Home Components', 'castpress' ),
@@ -192,6 +199,27 @@ if( function_exists( 'kirki' ) ) {
 
 	/* Typography fonts */
 	
+	// Headings typography body
+	Kirki::add_field( 'castpress_theme', [
+		'type'        => 'typography',
+		'settings'    => 'typography_body',
+		'label'       => esc_html__( 'H1', 'castpress' ),
+		'section'     => 'typography_fonts',
+		'default'     => [
+			'font-family'   	 => 'Source Serif Pro',
+			'font-size'          => '14px',
+			'line-height'     	 => '18px',
+			
+		],
+		'priority'    => 11,
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => array( 'body'),
+			],
+		],
+	] );
+
 	// Headings typography h1
 	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
@@ -568,4 +596,33 @@ if( function_exists( 'kirki' ) ) {
 		'default'  => '',
 		'priority' => 24,
 	] );
+
+
+	Kirki::add_field( 'castpress', [
+		'type'     => 'text',
+		'settings' => 'copytext',
+		'label'    => esc_html__( 'Copyright text', 'castpress' ),
+		'section'  => 'copyrights',
+		'default'  => esc_html__( 'Castpress Theme by', 'castpress' ),
+		'priority' => 10,
+	] );
+
+	Kirki::add_field( 'castpress', [
+		'type'     => 'text',
+		'settings' => 'copylink_text',
+		'label'    => __( 'Copyright link text (like your company name)', 'castpress' ),
+		'default'  => esc_html__( 'VitaThemes', 'castpress' ),
+		'section'  => 'copyrights',
+		'priority' => 11,
+	] );
+
+	Kirki::add_field( 'castpress', [
+		'type'     => 'link',
+		'settings' => 'copylink',
+		'label'    => __( 'Copyright link text', 'castpress' ),
+		'section'  => 'copyrights',
+		'default'  => esc_url('http://vitathemes.com/'),
+		'priority' => 12,
+	] );
+
 }

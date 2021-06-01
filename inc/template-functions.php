@@ -138,7 +138,7 @@ function castpress_comment_button($castpress_defaults) {
 	  */
 
    	// Edit button 
-	$button = '<button name="%1$s" type="submit" id="%2$s" class="%3$s comment-form-arrow" value="%4$s"> '.esc_html__( 'Submit', 'castpress' ).' <span class="dashicons dashicons-arrow-right-alt2"></span></button>';
+	$button = '<button name="%1$s" type="submit" id="%2$s" class="%3$s comment-form-arrow" value="%4$s"> '.esc_html__( 'Submit', 'castpress' ).' <span class="dashicons dashicons-arrow-right-alt2"></]></button>';
 
     // Override the default submit button:
     $castpress_defaults['submit_button'] = $button;
@@ -257,11 +257,8 @@ function castpress_branding() {
 	else {	
 
 		// Display the Text title with link 
-		echo '<h1 class="c-header__title site-title">';
-			echo '<a href="'. esc_attr(esc_url(home_url( '/' ))) .'" rel="home">';
-				echo esc_html(bloginfo( 'name' ));
-			echo '</a>';
-		echo '</h1>';
+		/** translator %s : link of main page. translator %s 2: Site title  */
+		echo sprintf('<h1 class="c-header__title site-title"><a href="%s" rel="home">%s</a></h1>' , esc_attr(esc_url( home_url( '/' ))),  esc_html(get_bloginfo( 'name' )) );
 
 		}
 	}
@@ -305,27 +302,13 @@ function castpress_typography() {
 		$castpress_quaternary_color = get_theme_mod( 'typography_quaternary_color' );
 	}
 	
-	// Custom Font
-	if( function_exists( 'kirki' ) ){
-		$castpress_font_style = "SourceSerifPro-regular";
-		$castpress_font_second_style = "SourceSerifPro-regular";
-	}
-	else{
-		$castpress_font_style = "SourceSerifPro-regular";
-		$castpress_font_second_style = "SourceSerifPro-semibold";
-	}
 
-	
 	$html = ':root {	
 				--castpress_headings-color: ' . $castpress_headings_color . ';
 				--castpress_primary-color: '. $castpress_primary_color .';
 	            --castpress_second-color: ' . $castpress_second_color . ';
 				--castpress_tertiary-color: ' . $castpress_tertiary_color . ';
 				--castpress_quaternary-color: ' . $castpress_quaternary_color . ';
-
-				--castpress_font_style: ' . $castpress_font_style . ';
-				--castpress_font_second_style: ' . $castpress_font_second_style . ';
-
 			}';
 						
 	return $html;
@@ -348,7 +331,7 @@ function castpress_theme_settings() {
 
 
 function castpress_home_components() {
-
+	
 	/**
 	 *
 	 * Display Home Components and make them customizable from Kirki  
@@ -363,30 +346,3 @@ function castpress_home_components() {
 	}
 	
 }
-
-function castpress_archive_title( ) {
-	/**
-	 *
-	 * Custom archive title
-	 *
-	 * 
-	 * @link https://developer.wordpress.org/reference/hooks/get_the_archive_title/
-	 * 
-	 **/
-
-    if ( is_category() ) {
-        $castpress_title =  esc_html__( 'Category : ' , 'castpress' ).single_cat_title( '', false );
-    } elseif ( is_tag() ) {
-        $castpress_title =  esc_html__( 'Tag : ' , 'castpress' ).single_tag_title( '', false );
-    } elseif ( is_author() ) {
-        $castpress_title =  esc_html__( 'Author : ' , 'castpress' ). get_the_author();
-    } elseif ( is_post_type_archive() ) {
-        $castpress_title =  esc_html__( 'Archives : ' , 'castpress' ).post_type_archive_title( '', false );
-    } elseif ( is_tax() ) {
-        $castpress_title =  esc_html__( 'Taxonomy : ' , 'castpress' ). single_term_title( '', false );
-    }
-  
-    return $castpress_title;
-}
- 
-add_filter( 'get_the_archive_title', 'castpress_archive_title' );
