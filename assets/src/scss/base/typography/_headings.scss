@@ -10,30 +10,30 @@ h5,
 h6 {
   clear: both;
   margin: 0px;
-  font-weight: normal;
   color: $castpress_headings_color;
+  font-family: $castpress_font;
 }
 
 /* H1 */
 h1,
 .h1 {
-  font-family: $castpress_font_semi_bold;
   font-size: 26px;
   line-height: 32px;
+  font-weight: 600;
 }
 
 /* H2 */
 h2,
 .h2 {
-  font-family: $castpress_font_semi_bold;
   font-size: 21px;
   line-height: 25px;
+  font-weight: 600;
 }
 
 /* H3 */
 h3,
 .h3 {
-  font-family: $castpress_font_regular;
+  font-weight: 400;
   font-size: 18px;
   line-height: 25px;
   margin-bottom: 10px; // Paragraph Spacing
@@ -42,37 +42,24 @@ h3,
 /* H4 */
 h4,
 .h4 {
-  font-family: $castpress_font_regular;
+  font-weight: 400;
   font-size: 16px;
   line-height: 25px;
   margin-bottom: 10px; // Paragraph Spacing
 }
 
-.h4--semibold {
-  font-family: $castpress_font_semi_bold;
-}
-
 /* H5 */
 h5,
 .h5 {
-  font-family: $castpress_font_semi_bold;
+  font-weight: 600;
   font-size: 14px;
   line-height: 25px;
-}
-
-.h5--regular {
-  font-family: $castpress_font_regular;
 }
 
 /* H6 */
 h6,
 .h6 {
-  font-family: $castpress_font_semi_bold;
+  font-weight: 600;
   font-size: 12px;
   line-height: 25px;
-  letter-spacing: 0.16em;
-}
-
-.h6--regular {
-  font-family: $castpress_font_regular;
 }

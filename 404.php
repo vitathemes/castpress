@@ -35,7 +35,7 @@ get_header();
             </div>
 
             <a href=<?php echo esc_url( home_url() ); ?>>
-                <button class="btn btn--error h5  h5--secondary ">
+                <button class="c-btn c-btn--error h5 u-font--regular">
                     <?php esc_html_e( 'HOMEPAGE', 'castpress' ); ?>
                     <span class="c-main__button-arrow dashicons dashicons-arrow-right-alt2"></span>
                 </button>

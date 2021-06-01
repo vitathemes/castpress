@@ -319,7 +319,9 @@
   letter-spacing: 0.16em;
   font-size: 14px;
   line-height: 18px !important;
-  font-family: $castpress_font_semi_bold;
+  font-family: $castpress_font;
+  font-weight: 600;
+
   @include media(tablet) {
     font-size: 12px;
     line-height: 15px !important;

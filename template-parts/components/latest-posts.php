@@ -21,7 +21,7 @@
             endif;
         ?>
     </div>
-    <a class="btn btn--text-arrow btn--arrows-small"
+    <a class="c-btn c-btn--text-arrow c-btn--arrows-small"
         href="<?php echo esc_url(get_permalink( get_option( 'page_for_posts' ) )); ?>">
         <?php esc_html_e( 'View Blog', 'castpress' ); ?>
         <span class="dashicons dashicons-arrow-right-alt2"></span>

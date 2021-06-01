@@ -3,7 +3,7 @@
 \*------------------------------------*/
 button,
 .wp-block-button__link,
-.btn,
+.c-btn,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -13,7 +13,8 @@ input[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
   transition: $global-transition;
-  font-family: $castpress_font_regular;
+  font-family: $castpress_font;
+  font-weight: 400;
   padding: 8px 16px;
   font-size: 14px;
   line-height: 18px;
@@ -31,11 +32,26 @@ input[type="submit"] {
 }
 
 /*------------------------------------*\
+  #Button Modifier 
+\*------------------------------------*/
+.dashicons--white {
+  height: max-content;
+  font-size: 15px !important;
+  vertical-align: middle !important;
+  height: max-content !important;
+  font-size: 14px !important;
+  &::before {
+    color: $color_background_body !important;
+    font-size: 15px;
+  }
+}
+
+/*------------------------------------*\
   #Button Text whit arrow 
 \*------------------------------------*/
-.btn--arrows-small {
+.c-btn--arrows-small {
   background-color: $castpress_neutral_gray_light_color;
-  color: $castpress_main_accent_color !important;
+  color: $castpress_quaternary_color !important;
 
   .dashicons {
     padding-left: 0px;
@@ -60,7 +76,7 @@ input[type="submit"] {
 /*------------------------------------*\
   #Button Arrow
 \*------------------------------------*/
-.btn--arrow {
+.c-btn--arrow {
   width: 36px;
   height: 36px;
   padding: 0;
@@ -104,12 +120,12 @@ input[type="submit"] {
 /*------------------------------------*\
   #Button Play
 \*------------------------------------*/
-.btn--play {
+.c-btn--play {
   background-color: $castpress_neutral_gray_light_color;
   color: $castpress_main_accent_color;
 }
 
-.btn--arrows-small {
+.c-btn--arrows-small {
   .dashicons {
     width: max-content !important;
   }
@@ -117,7 +133,7 @@ input[type="submit"] {
 /*------------------------------------*\
   #Button Download
 \*------------------------------------*/
-.btn--download {
+.c-btn--download {
   background-color: transparent;
   height: max-content;
   padding: 0px;
@@ -142,8 +158,10 @@ input[type="submit"] {
     content: "";
     cursor: pointer;
 
-    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
-    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
+    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
+      no-repeat 50% 50%;
+    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50%
+      50%;
 
     -webkit-mask-size: cover;
     mask-size: cover;
@@ -156,12 +174,12 @@ input[type="submit"] {
 /*------------------------------------*\
   #Button Error
 \*------------------------------------*/
-.btn--error {
+.c-btn--error {
   padding: 11px 22px;
   .c-main__button-arrow {
     font-size: 15px !important;
     padding-left: 0px;
-    padding-bottom: 21px !important;
+    padding-bottom: 25px !important;
     width: max-content !important;
     vertical-align: bottom;
     &::before {
@@ -182,7 +200,7 @@ input[type="submit"] {
 /*------------------------------------*\
   #Arrow with Text 
 \*------------------------------------*/
-.btn--text-arrow {
+.c-btn--text-arrow {
   transition: 0.3s all;
 
   .dashicons {
@@ -202,7 +220,7 @@ input[type="submit"] {
 /*------------------------------------*\
   #Button Size
 \*------------------------------------*/
-.btn--sm {
+.c-btn--sm {
   padding: 8px 14px;
 }
 
@@ -227,8 +245,15 @@ input[type="submit"] {
   background: #222222 !important;
 }
 
-.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
 .mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background: $castpress_neutral_gray_color !important;
+}
+
+.mejs-horizontal-volume-total {
+  background: #f5f5f7 !important;
+}
+
+.mejs-horizontal-volume-current {
   background: #222222 !important;
 }
 

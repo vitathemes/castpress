@@ -24,7 +24,7 @@ Castpress is a a minimal & mobile-first theme. The best choice for people who wa
 * Translation ready (with .POT files included)
 * SEO optimized
 * GNU GPL version 3.0 licensed
-* Support 10 level of submenus
+* Support 1 level of submenus
 * Support 4 level of menus
 * …and much more
 

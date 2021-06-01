@@ -8,24 +8,22 @@
  */
 get_header();
 ?>
-<main id="primary" class="c-main">
+<main id="primary" class="c-main <?php castpress_get_main_class(); ?>">
     <div class="c-main__content">
-        <?php if ( have_posts() ) : ?>
-        <header class="c-main__header">
-            <h1 class="c-main__entry-title u-heading-1-line-height--bg">
-                <?php castpress_archive_page_name() ?>
-            </h1>
-        </header><!-- .-main__content -->
+
+		<?php castpress_get_archives_header(); ?>
+
         <?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/content' );
-			endwhile;
-			   castpress_get_default_pagination();
-		else :
-			get_template_part( 'template-parts/content', 'none' );
-		endif;
+			if ( have_posts() ) :
+				/* Start the Loop */
+				while ( have_posts() ) :
+					the_post();
+					get_template_part( 'template-parts/content' , get_post_type() );
+				endwhile;
+				castpress_get_default_pagination();
+			else :
+				get_template_part( 'template-parts/content', 'none' );
+			endif;
 		?>
     </div>
 </main><!-- #main -->

@@ -9,8 +9,8 @@
 
 if ( ! defined( 'CASTPRESS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	$CASTPRESS_theme_data = wp_get_theme();
-	define( 'CASTPRESS_VERSION', $CASTPRESS_theme_data->get( 'Version' ));
+	$castpress_theme_data = wp_get_theme();
+	define( 'CASTPRESS_VERSION', $castpress_theme_data->get( 'Version' ));
 }
 
 

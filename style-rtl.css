@@ -644,11 +644,14 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff") format("woff");
   src: url("../../assets/fonts/source-serif-pro-v11-latin-regular.eot");
   /* IE9 Compat Modes */
-  src: local(""), url("../../assets/fonts/source-serif-pro-v11-latin-regular.eot?#iefix") format("embedded-opentype"),
+  src: local(""),
+    url("../../assets/fonts/source-serif-pro-v11-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
     url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff2") format("woff2"),
     url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff") format("woff"),
     url("../../assets/fonts/source-serif-pro-v11-latin-regular.ttf") format("truetype"),
-    url("../../assets/fonts/source-serif-pro-v11-latin-regular.svg#RedHatDisplay") format("svg");
+    url("../../assets/fonts/source-serif-pro-v11-latin-regular.svg#RedHatDisplay")
+      format("svg");
   /* Legacy iOS */
 }
 
@@ -658,11 +661,14 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     url("../../assets/fonts/source-serif-pro-v11-latin-600.woff") format("woff");
   src: url("../../assets/fonts/source-serif-pro-v11-latin-600.eot");
   /* IE9 Compat Modes */
-  src: local(""), url("../../assets/fonts/source-serif-pro-v11-latin-600.eot?#iefix") format("embedded-opentype"),
+  src: local(""),
+    url("../../assets/fonts/source-serif-pro-v11-latin-600.eot?#iefix")
+      format("embedded-opentype"),
     url("../../assets/fonts/source-serif-pro-v11-latin-600.woff2") format("woff2"),
     url("../../assets/fonts/source-serif-pro-v11-latin-600.woff") format("woff"),
     url("../../assets/fonts/source-serif-pro-v11-latin-600.ttf") format("truetype"),
-    url("../../assets/fonts/source-serif-pro-v11-latin-600.svg#RedHatDisplay") format("svg");
+    url("../../assets/fonts/source-serif-pro-v11-latin-600.svg#RedHatDisplay")
+      format("svg");
   /* Legacy iOS */
 }
 
@@ -685,8 +691,12 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   :root {
     --responsive--aligndefault-width: calc(720px - var(--responsive--spacing-horizontal));
     --responsive--alignwide-width: calc(720px - var(--responsive--spacing-horizontal));
-    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
-    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignright-margin: calc(
+      0.5 * (100vw - var(--responsive--aligndefault-width))
+    );
+    --responsive--alignleft-margin: calc(
+      0.5 * (100vw - var(--responsive--aligndefault-width))
+    );
   }
 }
 
@@ -694,8 +704,12 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   :root {
     --responsive--aligndefault-width: calc(980px - var(--responsive--spacing-horizontal));
     --responsive--alignwide-width: calc(1140px - var(--responsive--spacing-horizontal));
-    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
-    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignright-margin: calc(
+      0.5 * (100vw - var(--responsive--aligndefault-width))
+    );
+    --responsive--alignleft-margin: calc(
+      0.5 * (100vw - var(--responsive--aligndefault-width))
+    );
   }
 }
 
@@ -703,26 +717,42 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   :root {
     --responsive--aligndefault-width: calc(980px - var(--responsive--spacing-horizontal));
     --responsive--alignwide-width: calc(1140px - var(--responsive--spacing-horizontal));
-    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
-    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignright-margin: calc(
+      0.5 * (100vw - var(--responsive--aligndefault-width))
+    );
+    --responsive--alignleft-margin: calc(
+      0.5 * (100vw - var(--responsive--aligndefault-width))
+    );
   }
 }
 
 @media only screen and (min-width: 1200px) {
   :root {
-    --responsive--aligndefault-width: calc(1140px - var(--responsive--spacing-horizontal));
+    --responsive--aligndefault-width: calc(
+      1140px - var(--responsive--spacing-horizontal)
+    );
     --responsive--alignwide-width: calc(1200px - var(--responsive--spacing-horizontal));
-    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
-    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignright-margin: calc(
+      0.5 * (100vw - var(--responsive--aligndefault-width))
+    );
+    --responsive--alignleft-margin: calc(
+      0.5 * (100vw - var(--responsive--aligndefault-width))
+    );
   }
 }
 
 @media only screen and (min-width: 1400px) {
   :root {
-    --responsive--aligndefault-width: calc(1140px - var(--responsive--spacing-horizontal));
+    --responsive--aligndefault-width: calc(
+      1140px - var(--responsive--spacing-horizontal)
+    );
     --responsive--alignwide-width: calc(1200px - var(--responsive--spacing-horizontal));
-    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
-    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignright-margin: calc(
+      0.5 * (100vw - var(--responsive--aligndefault-width))
+    );
+    --responsive--alignleft-margin: calc(
+      0.5 * (100vw - var(--responsive--aligndefault-width))
+    );
   }
 }
 
@@ -1520,8 +1550,10 @@ img {
   display: inline-block;
   content: " ";
   cursor: pointer;
-  -webkit-mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat 50% 50%;
-  mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat 50% 50%;
+  -webkit-mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16)
+    no-repeat 50% 50%;
+  mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat
+    50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
   vertical-align: middle;
@@ -2181,7 +2213,8 @@ img {
   cursor: pointer;
   text-transform: uppercase;
   padding: 10px 0;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+    color 0.3s ease-in-out;
 }
 
 @media only screen and (min-width: 980px) {
@@ -2617,8 +2650,10 @@ img {
   content: "";
   width: 32px;
   height: 32px;
-  -webkit-mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16") no-repeat 50% 50%;
-  mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16") no-repeat 50% 50%;
+  -webkit-mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16")
+    no-repeat 50% 50%;
+  mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16")
+    no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
   vertical-align: middle;
@@ -3850,29 +3885,29 @@ input[type="submit"]:focus {
 /*------------------------------------*\
   #Button Text whit arrow 
 \*------------------------------------*/
-.btn--arrows-small {
+.c-btn--arrows-small {
   background-color: #f5f5f7;
   color: #7247ca !important;
 }
-.btn--arrows-small .dashicons {
+.c-btn--arrows-small .dashicons {
   padding-right: 0px;
   width: max-content;
 }
-.btn--arrows-small .dashicons::before {
+.c-btn--arrows-small .dashicons::before {
   color: #7247ca;
 }
-.btn--arrows-small:hover {
+.c-btn--arrows-small:hover {
   background-color: #7247ca;
   color: #f5f5f7 !important;
 }
-.btn--arrows-small:hover .dashicons::before {
+.c-btn--arrows-small:hover .dashicons::before {
   color: #f5f5f7 !important;
 }
 
 /*------------------------------------*\s
   #Button Arrow
 \*------------------------------------*/
-.btn--arrow {
+.c-btn--arrow {
   width: 36px;
   height: 36px;
   padding: 0;
@@ -3888,7 +3923,7 @@ input[type="submit"]:focus {
   right: unset !important;
   transform: rotate(180deg) !important;
 }
-.btn--arrow::before {
+.c-btn--arrow::before {
   content: url("https://api.iconify.design/heroicons-solid:arrow-narrow-right.svg?color=%23fff");
   cursor: pointer;
   width: 20px;
@@ -3901,7 +3936,7 @@ input[type="submit"]:focus {
   animation-duration: 0.2s;
   animation-fill-mode: forwards;
 }
-.btn--arrow:hover::before {
+.c-btn--arrow:hover::before {
   animation-name: arrowRight;
   animation-duration: 0.2s;
   animation-fill-mode: forwards;
@@ -3910,19 +3945,19 @@ input[type="submit"]:focus {
 /*------------------------------------*\
   #Button Play
 \*------------------------------------*/
-.btn--play {
+.c-btn--play {
   background-color: #f5f5f7;
   color: #7247ca;
 }
 
-.btn--arrows-small .dashicons {
+.c-btn--arrows-small .dashicons {
   width: max-content !important;
 }
 
 /*------------------------------------*\
   #Button Download
 \*------------------------------------*/
-.btn--download {
+.c-btn--download {
   background-color: transparent;
   height: max-content;
   padding: 0px;
@@ -3932,19 +3967,20 @@ input[type="submit"]:focus {
   align-items: center;
   justify-content: flex-start;
 }
-.btn--download:hover {
+.c-btn--download:hover {
   background-color: transparent;
 }
-.btn--download:hover::after {
+.c-btn--download:hover::after {
   background-color: var(--castpress_quaternary-color);
 }
-.btn--download::after {
+.c-btn--download::after {
   width: 20px;
   height: 20px;
   display: inline-block;
   content: "";
   cursor: pointer;
-  -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
+  -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat
+    50% 50%;
   mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
@@ -3956,37 +3992,37 @@ input[type="submit"]:focus {
 /*------------------------------------*\
   #Button Error
 \*------------------------------------*/
-.btn--error {
+.c-btn--error {
   padding: 11px 22px;
 }
-.btn--error .c-main__button-arrow {
+.c-btn--error .c-main__button-arrow {
   font-size: 15px !important;
   padding-right: 0px;
   padding-bottom: 21px !important;
   width: max-content !important;
   vertical-align: bottom;
 }
-.btn--error .c-main__button-arrow::before {
+.c-btn--error .c-main__button-arrow::before {
   color: #ffffff;
 }
-.btn--error:hover .c-main__button-arrow::before {
+.c-btn--error:hover .c-main__button-arrow::before {
   color: #f5f5f7 !important;
 }
 
 /*------------------------------------*\
   #Arrow with Text 
 \*------------------------------------*/
-.btn--text-arrow {
+.c-btn--text-arrow {
   transition: 0.3s all;
 }
-.btn--text-arrow .dashicons {
+.c-btn--text-arrow .dashicons {
   padding-right: 4px;
   width: max-content !important;
   font-size: 11px;
   padding-top: 5px;
   transition: 0.2s all;
 }
-.btn--text-arrow .dashicons::before {
+.c-btn--text-arrow .dashicons::before {
   width: max-content !important;
   transition: 0.2s all;
 }
@@ -3994,7 +4030,7 @@ input[type="submit"]:focus {
 /*------------------------------------*\
   #Button Size
 \*------------------------------------*/
-.btn--sm {
+.c-btn--sm {
   padding: 8px 14px;
 }
 

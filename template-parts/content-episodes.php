@@ -16,8 +16,8 @@
 
         <?php 
             castpress_get_category(false);
-            echo '<span class="seprator h5 u-link--secondary"> | </span>';
-            echo '<h5 class="c-episode__date u-font--regular u-heading-5-line-height--sm">'.esc_html( get_the_date( "M d, Y" ) ).'</h5>'; 
+            echo '<span class="seprator h5 u-link--secondary"> | </span>'; // No need to translate or sanitize it's a seprator
+            echo '<h5 class="c-episode__date u-font--regular u-heading-5-line-height--sm">'.esc_html( get_the_date() ).'</h5>'; 
         ?>
 
         <div class="c-episode__titles">
@@ -29,7 +29,7 @@
             <p class="c-episode__entry-context h4"><?php echo esc_html(get_the_excerpt()); ?></h4>
         </div>
 
-        <a class="c-episode__read-more span u-font--semi-bold u-link--quaternary" href=" <?php esc_url( the_permalink() ) ?> "
+        <a class="c-episode__read-more h6 u-line-height--sm u-link--quaternary" href=" <?php esc_url( the_permalink() ) ?> "
             rel="bookmark">
             <span class="c-episode__play"></span>
             <?php esc_html_e( 'Listen Now', 'castpress' ); ?>

@@ -217,8 +217,10 @@
       display: inline-block;
       content: " ";
       cursor: pointer;
-      -webkit-mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat 50% 50%;
-      mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat 50% 50%;
+      -webkit-mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16)
+        no-repeat 50% 50%;
+      mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16)
+        no-repeat 50% 50%;
       -webkit-mask-size: cover;
       mask-size: cover;
       vertical-align: middle;

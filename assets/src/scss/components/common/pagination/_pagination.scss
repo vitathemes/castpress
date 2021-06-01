@@ -68,6 +68,7 @@
   background-color: $castpress_neutral_gray_light_color;
   font-size: 12px !important;
   line-height: 15px !important;
+  text-decoration: none !important;
 
   &:hover {
     background-color: $castpress_neutral_gray_light_second_color !important;
@@ -125,7 +126,7 @@
   }
 
   .dashicons {
-    color: $castpress_neutral_dark_gray_color;
+    color: $castpress_second_color;
     &:hover {
       background: transparent;
       color: $castpress_neutral_gray_color !important;
@@ -142,7 +143,8 @@
   font-family: dashicons;
   display: inline-block;
   line-height: 1;
-  font-family: $castpress_font_regular;
+  font-family: $castpress_font;
+  font-weight: 400;
   font-style: normal;
   speak: never;
   text-decoration: inherit;

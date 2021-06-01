@@ -22,40 +22,40 @@
          endif; ?>
 
         </div>
+        
+        <div class="c-footer__copy">
 
+            <div class="c-footer__copy-text">
+                <h5 class="c-footer__context u-heading-5-line-height--sm u-font--regular">
+                    
+                    <?php echo esc_html(get_theme_mod( 'copytext' , esc_html( 'Castpress Theme by', 'castpress' ) )); ?>
 
-        <div class="c-footer__site-info">
-            <h5 class="c-footer__context u-heading-5-line-height--sm h5--secondary">
+                </h5>
 
-                <?php
-                    /* translators: %s: Theme creator name by */
-                    printf( esc_html__( 'PodcastTheme by', 'castpress' ), 'castpress' );
-                ?>
+                <h5 class="c-footer__context u-heading-5-line-height--sm u-font--regular">
+                    <a class="c-footer__link u-link--tertiary"
+                        href="<?php echo esc_url( get_theme_mod( 'copylink', esc_url('http://vitathemes.com/') ) ); ?>">
+                     
+                        <?php echo esc_html(get_theme_mod( 'copylink_text', esc_html( 'VitaThemes', 'castpress' ) )); ?>
 
-            </h5>
+                    </a>
+                </h5>
+            </div>
 
-            <h5 class="c-footer__context u-heading-5-line-height--sm h5--secondary">
-                <a class="c-footer__link u-link--tertiary"
-                    href="<?php echo esc_url( __( 'https://vitathemes.com/', 'castpress' ) ); ?>">
-                    <?php 
-                        /* translators: %s: Vita themes is the creator of the theme */
-                        printf( esc_html__( 'VitaThemes', 'castpress' ) );
-                    ?>
-                </a>
-            </h5>
+            <?php
+                if ( has_nav_menu( 'primary-footer' ) ) {
+                    wp_nav_menu(
+                            array(
+                                'theme_location'  => 'primary-footer',
+                                'menu_id'         => 'primary-footer',
+                                "menu_class"      => "s-footer__nav nav-menu",
+                                "container_class" => "c-footer__nav",
+                            ));
+                }
+            ?>
+    
+        </div>
 
-            <h5 class="c-footer__context h5--secondary u-heading-5-line-height--sm sep u-link--tertiary"> | </h5>
-
-            <h5 class="c-footer__context u-heading-5-line-height--sm h5--secondary">
-                <a class="c-footer__link u-link--tertiary"
-                    href="<?php echo esc_url( get_privacy_policy_url() ); ?>">
-                    <?php
-                            /* translators: Privacy Policy Link */
-                            printf( esc_html__( 'Privacy Policy', 'castpress' ), 'castpress');
-                    ?>
-                </a>
-            </h5>
-        </div><!-- .site-info -->
         <div class="c-social-share c-social-share--footer">
             <?php castpress_socials_links(); ?>
         </div>

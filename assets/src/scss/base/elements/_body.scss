@@ -1,5 +1,10 @@
 body {
-  font-family: $castpress_font_regular; //Fallback for when companion plugin not installed
+  font-family: $castpress_font; //Fallback for when companion plugin not installed
+  font-weight: 400;
+
+  font-size: 14px;
+  line-height: 18px;
+
   height: 100vh;
   background-color: $color_background_body;
 }

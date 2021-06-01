@@ -15,74 +15,15 @@ if ( ! function_exists( 'castpress_posted_by' ) ) :
 	function castpress_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'By %s', 'post author', 'castpress' ),
-			'<h5 class="author vcard h5--secondary u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></h5>'
+			esc_html__( 'By  %s', 'castpress' ),
+			'<h5 class="c-post__author vcard u-font--regular u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"> ' . esc_html(get_the_author()) . ' </a></h5>'
 		);
 
-		echo '<h5 class="byline h5--secondary u-heading-5-line-height--sm c-post__author "> ' . $byline  . '</h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<h5 class="byline u-font--regular u-heading-5-line-height--sm c-post__author "> ' . $byline  . '</h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
 
-if ( ! function_exists( 'castpress_entry_footer' ) ) :
-	/**
-	 * Prints HTML with meta information for the categories, tags and comments.
-	 */
-	function castpress_entry_footer() {
-		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'castpress' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
-
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'castpress' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'castpress' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
-		}
-
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'castpress' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				)
-			);
-			echo '</span>';
-		}
-
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'castpress' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
-	}
-endif;
 
 if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 	/**
@@ -166,7 +107,7 @@ if ( ! function_exists('castpress_archive_page_name')) :
 			echo esc_html__( 'blog', 'castpress' );
 		}	
 		if( is_archive() ){
-			echo esc_html__( 'archives', 'castpress' );
+			echo wp_kses_post( castpress_archive_title() );
 		}
 	}
 endif;
@@ -235,7 +176,7 @@ if (! function_exists('castpress_get_category')) :
 		$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
 		if ( $categories_list ) {
 			/* $categories_list list of categories. Rendered from category section that client set in categories.*/
-			echo '<h5 class="c-episode__category h5--secondary u-heading-5-line-height--sm">'.  wp_kses_post($categories_list) .'</h5>' . wp_kses_post($castpress_have_seprator) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<h5 class="c-episode__category u-font--regular u-heading-5-line-height--sm">'.  wp_kses_post($categories_list) .'</h5>' . wp_kses_post($castpress_have_seprator) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;
@@ -311,7 +252,7 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile));
 				
 				// Download button
-				echo '<a class="btn btn--download" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
+				echo '<a class="c-btn c-btn--download" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
 
 			}
 		}	
@@ -380,9 +321,9 @@ if ( ! function_exists( 'castpress_share_links' ) ) {
 			$castpress_facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
 
 			echo sprintf( '<h4 class="c-social-share__title u-heading-4-line-height--sm">%s</h4>', esc_html__( 'Share:', 'castpress' ) );
-			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-facebook-alt c-social-share__item__icon"></span></a>', esc_url( $castpress_facebook_url ) );
-			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-twitter c-social-share__item__icon"></span></a>', esc_url( $castpress_twitter_url ) );
-			echo sprintf( '<a class="c-social-share__item" target="_blank" href="%s"><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $castpress_linkedin_url ) );
+			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-facebook-alt c-social-share__item__icon"></span></a>', esc_url( $castpress_facebook_url ), esc_html__( "facebook" , "castpress" ) );
+			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-twitter c-social-share__item__icon"></span></a>', esc_url( $castpress_twitter_url ), esc_html__( "twitter" , "castpress" ) );
+			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $castpress_linkedin_url ), esc_html__( "linkedin" , "castpress" ) );
 		}
 	}
 }
@@ -410,6 +351,7 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 		$castpress_castro    		 = get_theme_mod( 'p_castro_link' );
 		$castpress_castbox    		 = get_theme_mod( 'p_castbox_link' );
 		$castpress_audible    		 = get_theme_mod( 'p_audible_link' );
+		$castpress_spreaker    		 = get_theme_mod( 'p_spreaker_link' );
 
 
 		$castpress_all_publishers = array(
@@ -429,7 +371,7 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 				
 		if($castpress_publisher_flag === 1){
 		
-			echo sprintf('<div class="c-episodes__share"><span class="c-episode__social-share__title u-font--semi-bold">%s</span>' , esc_html__( 'Listen on', 'castpress' ) );
+			echo sprintf('<div class="c-episodes__share"><span class="c-episode__social-share__title h6 u-line-height--sm">%s</span>' , esc_html__( 'Listen on', 'castpress' ) );
 
 			// Spotify
 			if ( $castpress_spotify ) { 
@@ -543,9 +485,38 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 				</a>', esc_url( $castpress_audible ), esc_html__( 'audible', 'castpress' ) );
 			}
 
+			// spreaker
+			if ( $castpress_spreaker ) { 
+				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				<span class="iconify c-episodes__social-share__icons" data-icon="cib:spreaker" data-inline="false"></span>
+				</a>', esc_url( $castpress_spreaker ), esc_html__( 'spreaker', 'castpress' ) );
+			}
+
 			echo '</div>';	
 		}
 
 	}
 
+endif;
+
+if ( ! function_exists( 'castpress_get_main_class' ) ) :
+	/**
+	 * Get Main section class
+	 */
+	function castpress_get_main_class() {
+		if( 'episodes' === get_post_type() ){
+			echo esc_attr( "c-main--episode" );
+		}
+	}
+endif;
+
+
+if ( ! function_exists( 'castpress_get_archives_header' ) ) :
+	/**
+	 * Get Archives header
+	 */
+	function castpress_get_archives_header() {
+		echo sprintf('<header class="c-main__header"><h1 class="c-main__entry-title u-heading-1-line-height--bg">%s</h1></header><!-- .-main__content -->', wp_kses_post(get_the_archive_title()) );
+	}
+	
 endif;

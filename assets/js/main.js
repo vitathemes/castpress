@@ -1,4 +1,20 @@
 /*--------------------------------------*\
+  #Detect screen size
+\*--------------------------------------*/
+let castpress_clientWindowSize = window.matchMedia("(max-width: 979px)");
+function castpress_isMobile(castpress_clientWindowSize) {
+  if (castpress_clientWindowSize.matches) {
+    // If media query matches
+    return true;
+  } else {
+    return false;
+  }
+}
+
+castpress_isMobile(castpress_clientWindowSize); // Call listener function at run time
+castpress_clientWindowSize.addListener(castpress_isMobile); // Attach listener function on state changes
+
+/*--------------------------------------*\
   #Detect Element inside other element
 \*--------------------------------------*/
 function castpress_childFinder(castpress_parentElement, castpress_childElement) {
@@ -90,11 +106,22 @@ if (castpress_childFinder("body", "s-nav")) {
   });
 
   if (castpress_childFinder("body", "sub-menu")) {
-    lastMenuItemWithSubmenu.addEventListener("blur", function () {
-      if (castpress_IsBackward === false) {
-        castpress_menuToggle.focus();
+    if (castpress_isMobile() === true) {
+      if (lastMenuItemWithSubmenu === true) {
+        lastMenuItemWithSubmenu.addEventListener("blur", function () {
+          console.log("tets");
+          if (castpress_IsBackward === false) {
+            castpress_menuToggle.focus();
+          }
+        });
+      } else {
+        castpress_lastMenuItem.addEventListener("blur", function () {
+          if (castpress_IsBackward === false) {
+            castpress_menuToggle.focus();
+          }
+        });
       }
-    });
+    }
   } else {
     castpress_lastMenuItem.addEventListener("blur", function () {
       if (castpress_IsBackward === false) {
