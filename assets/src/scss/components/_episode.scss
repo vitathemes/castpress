@@ -132,8 +132,8 @@
 }
 
 .c-episode__content {
-  font-size: 18px;
-  color: $castpress_neutral_dark_gray_color;
+  // font-size: 18px;
+  color: $castpress_second_color;
 
   li {
     margin-bottom: 8px;
@@ -204,7 +204,7 @@
 
 .c-episode__tags {
   padding-right: 24px;
-  color: $castpress_neutral_dark_gray_color !important;
+  color: $castpress_second_color !important;
 
   &:hover {
     color: $castpress_main_accent_color !important;

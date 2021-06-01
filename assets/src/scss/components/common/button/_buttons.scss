@@ -245,8 +245,15 @@ input[type="submit"] {
   background: #222222 !important;
 }
 
-.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
 .mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background: $castpress_neutral_gray_color !important;
+}
+
+.mejs-horizontal-volume-total {
+  background: #f5f5f7 !important;
+}
+
+.mejs-horizontal-volume-current {
   background: #222222 !important;
 }
 

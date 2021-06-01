@@ -1892,8 +1892,13 @@ input[type="submit"] {
 .mejs-controls .mejs-time-rail .mejs-time-current {
   background: #222222 !important; }
 
-.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
 .mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background: #979797 !important; }
+
+.mejs-horizontal-volume-total {
+  background: #f5f5f7 !important; }
+
+.mejs-horizontal-volume-current {
   background: #222222 !important; }
 
 .mejs-controls .mejs-time-rail .mejs-time-total {
@@ -2072,7 +2077,7 @@ input[type="submit"] {
 
 .search-field {
   margin-top: 0px !important;
-  color: #555555 !important; }
+  color: var(--castpress_second-color) !important; }
 
 /*--------------------------------------------------------------
 # Pagination
@@ -2175,7 +2180,7 @@ input[type="submit"] {
     background-color: transparent !important; }
   .next.page-numbers .dashicons,
   .prev.page-numbers .dashicons {
-    color: #555555; }
+    color: var(--castpress_second-color); }
     .next.page-numbers .dashicons:hover,
     .prev.page-numbers .dashicons:hover {
       background: transparent;
@@ -2605,8 +2610,7 @@ input[type="submit"] {
       padding-left: 0px; } }
 
 .c-episode__content {
-  font-size: 18px;
-  color: #555555; }
+  color: var(--castpress_second-color); }
   .c-episode__content li {
     margin-bottom: 8px; }
 
@@ -2659,7 +2663,7 @@ input[type="submit"] {
 
 .c-episode__tags {
   padding-right: 24px;
-  color: #555555 !important; }
+  color: var(--castpress_second-color) !important; }
   .c-episode__tags:hover {
     color: #7247ca !important; }
 
@@ -2807,8 +2811,7 @@ input[type="submit"] {
   margin-left: 1px; }
 
 .s-post-content {
-  font-size: 18px;
-  color: #555555; }
+  color: var(--castpress_second-color); }
   .s-post-content li {
     margin-bottom: 8px; }
   .s-post-content h1,
@@ -2853,7 +2856,7 @@ input[type="submit"] {
 
 .c-post__tag {
   padding-right: 24px;
-  color: #555555 !important; }
+  color: var(--castpress_second-color) !important; }
   .c-post__tag:hover {
     color: #7247ca !important; }
 
@@ -3275,7 +3278,7 @@ h2.c-single__transcript__title {
 
 .c-footer__widget {
   width: 100%;
-  color: #555555;
+  color: var(--castpress_second-color);
   margin-bottom: 23px;
   position: relative;
   padding-right: 16px; }

@@ -57,8 +57,7 @@
 }
 
 .s-post-content {
-  font-size: 18px;
-  color: $castpress_neutral_dark_gray_color;
+  color: $castpress_second_color;
 
   li {
     margin-bottom: 8px;
@@ -120,7 +119,7 @@
 .c-post__tag {
   padding-right: 24px;
 
-  color: $castpress_neutral_dark_gray_color !important;
+  color: $castpress_second_color !important;
 
   &:hover {
     color: $castpress_main_accent_color !important;
