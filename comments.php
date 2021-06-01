@@ -47,7 +47,7 @@
 			// Redefine your own textarea (the comment body).
 			'comment_field' => '<h4 class="comment-form-comment u-heading-4-line-height--bg">'. __( 'Comment*', 'castpress' ).'<br /><textarea id="comment" name="comment" aria-required="true" ></textarea></p>',
 			//Message Before Comment
-			'comment_notes_before' =>'<h5 class="c-comments__desc u-heading-5-line-height--sm h5--regular">'. __( 'Required fields are marked *' , 'castpress') .'</h5>',
+			'comment_notes_before' =>'<h5 class="c-comments__desc u-heading-5-line-height--sm u-font--regular">'. __( 'Required fields are marked *' , 'castpress') .'</h5>',
 			// Remove "Text or HTML to be displayed after the set of comment fields".
 			'comment_notes_after' => '',
 			//Submit Button ID
@@ -60,7 +60,7 @@
 		if ( have_comments() ) :
 ?>
 
-    <h4 class="comments-title u-heading-4-line-height--sm h4--semibold">
+    <h4 class="comments-title u-heading-4-line-height--sm u-font--semibold">
         <?php
 			$castpress_comment_count = get_comments_number();
 			if ( '1' === $castpress_comment_count ) {

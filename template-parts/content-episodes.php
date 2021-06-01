@@ -17,7 +17,7 @@
         <?php 
             castpress_get_category(false);
             echo '<span class="seprator h5 u-link--secondary"> | </span>'; // No need to translate or sanitize it's a seprator
-            echo '<h5 class="c-episode__date h5--regular u-heading-5-line-height--sm">'.esc_html( get_the_date() ).'</h5>'; 
+            echo '<h5 class="c-episode__date u-font--regular u-heading-5-line-height--sm">'.esc_html( get_the_date() ).'</h5>'; 
         ?>
 
         <div class="c-episode__titles">

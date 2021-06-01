@@ -48,10 +48,6 @@ h4,
   margin-bottom: 10px; // Paragraph Spacing
 }
 
-.h4--semibold {
-  font-weight: 600;
-}
-
 /* H5 */
 h5,
 .h5 {
@@ -60,18 +56,10 @@ h5,
   line-height: 25px;
 }
 
-.h5--regular {
-  font-weight: 400;
-}
-
 /* H6 */
 h6,
 .h6 {
   font-weight: 600;
   font-size: 12px;
   line-height: 25px;
-}
-
-.h6--regular {
-  font-weight: 400;
 }

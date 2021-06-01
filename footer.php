@@ -26,13 +26,13 @@
         <div class="c-footer__copy">
 
             <div class="c-footer__copy-text">
-                <h5 class="c-footer__context u-heading-5-line-height--sm h5--regular">
+                <h5 class="c-footer__context u-heading-5-line-height--sm u-font--regular">
                     
                     <?php echo esc_html(get_theme_mod( 'copytext' , esc_html( 'Castpress Theme by', 'castpress' ) )); ?>
 
                 </h5>
 
-                <h5 class="c-footer__context u-heading-5-line-height--sm h5--regular">
+                <h5 class="c-footer__context u-heading-5-line-height--sm u-font--regular">
                     <a class="c-footer__link u-link--tertiary"
                         href="<?php echo esc_url( get_theme_mod( 'copylink', esc_url('http://vitathemes.com/') ) ); ?>">
                      

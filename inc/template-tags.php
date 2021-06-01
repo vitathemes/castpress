@@ -16,10 +16,10 @@ if ( ! function_exists( 'castpress_posted_by' ) ) :
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html__( 'By  %s', ' post author', 'castpress' ),
-			'<h5 class="c-post__author vcard h5--regular u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"> ' . esc_html(get_the_author()) . ' </a></h5>'
+			'<h5 class="c-post__author vcard u-font--regular u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"> ' . esc_html(get_the_author()) . ' </a></h5>'
 		);
 
-		echo '<h5 class="byline h5--regular u-heading-5-line-height--sm c-post__author "> ' . $byline  . '</h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<h5 class="byline u-font--regular u-heading-5-line-height--sm c-post__author "> ' . $byline  . '</h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -176,7 +176,7 @@ if (! function_exists('castpress_get_category')) :
 		$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
 		if ( $categories_list ) {
 			/* $categories_list list of categories. Rendered from category section that client set in categories.*/
-			echo '<h5 class="c-episode__category h5--regular u-heading-5-line-height--sm">'.  wp_kses_post($categories_list) .'</h5>' . wp_kses_post($castpress_have_seprator) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<h5 class="c-episode__category u-font--regular u-heading-5-line-height--sm">'.  wp_kses_post($categories_list) .'</h5>' . wp_kses_post($castpress_have_seprator) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;

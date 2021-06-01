@@ -3237,9 +3237,6 @@ h4,
   line-height: 25px;
   margin-bottom: 10px; }
 
-.h4--semibold {
-  font-weight: 600; }
-
 /* H5 */
 h5,
 .h5 {
@@ -3247,18 +3244,12 @@ h5,
   font-size: 14px;
   line-height: 25px; }
 
-.h5--regular {
-  font-weight: 400; }
-
 /* H6 */
 h6,
 .h6 {
   font-weight: 600;
   font-size: 12px;
   line-height: 25px; }
-
-.h6--regular {
-  font-weight: 400; }
 
 /*------------------------------------*\
   #Copy
@@ -3556,3 +3547,10 @@ tr:nth-child(even) {
 
 .u-line-height--sm {
   line-height: 15px; }
+
+/* Font Weights  */
+.u-font--semibold {
+  font-weight: 600; }
+
+.u-font--regular {
+  font-weight: 400; }
