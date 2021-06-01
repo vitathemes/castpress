@@ -1220,7 +1220,9 @@ img {
 
 .c-header__navigation {
   width: 100%;
-  display: block; }
+  display: block;
+  max-height: 100%;
+  overflow-y: scroll; }
   @media only screen and (min-width: 980px) {
     .c-header__navigation {
       visibility: visible;
@@ -1753,7 +1755,7 @@ input[type="submit"] {
 \*------------------------------------*/
 .c-btn--arrows-small {
   background-color: #f5f5f7;
-  color: #7247ca !important; }
+  color: var(--castpress_quaternary-color) !important; }
   .c-btn--arrows-small .dashicons {
     padding-left: 0px;
     width: max-content; }
@@ -3036,7 +3038,7 @@ h2.c-single__transcript__title {
 
 .c-single__tag {
   padding-right: 24px;
-  color: #555555; }
+  color: var(--castpress_second-color); }
   .c-single__tag:hover {
     text-decoration: none;
     color: var(--castpress_primary-color); }

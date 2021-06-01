@@ -89,6 +89,8 @@
 .c-header__navigation {
   width: 100%;
   display: block;
+  max-height: 100%;
+  overflow-y: scroll;
 
   @include media(tablet) {
     visibility: visible;
@@ -217,8 +219,10 @@
       display: inline-block;
       content: " ";
       cursor: pointer;
-      -webkit-mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat 50% 50%;
-      mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat 50% 50%;
+      -webkit-mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16)
+        no-repeat 50% 50%;
+      mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16)
+        no-repeat 50% 50%;
       -webkit-mask-size: cover;
       mask-size: cover;
       vertical-align: middle;
