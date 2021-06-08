@@ -9,7 +9,7 @@
 ?>
 
 
-<?php $postNumber = castpress_deciaml_post_number(); ?>
+<?php $castpress_postNumber = castpress_deciaml_post_number(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-episode'); ?>>
 
     <section class="c-episode__header">
@@ -21,7 +21,7 @@
         ?>
 
         <div class="c-episode__titles">
-            <?php  the_title('<h2 class="c-episode__title"><a class="u-link--secondary" href="'.esc_url( get_permalink() ).'" rel="bookmark">'.esc_html($postNumber).' - ', '</a></h2>' ); ?>
+            <?php  the_title('<h2 class="c-episode__title"><a class="u-link--secondary" href="'.esc_url( get_permalink() ).'" rel="bookmark">'.esc_html($castpress_postNumber).' - ', '</a></h2>' ); ?>
         </div>
 
 

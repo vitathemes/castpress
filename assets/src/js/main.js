@@ -15,6 +15,49 @@ castpress_isMobile(castpress_clientWindowSize); // Call listener function at run
 castpress_clientWindowSize.addListener(castpress_isMobile); // Attach listener function on state changes
 
 /*--------------------------------------*\
+  #Detect Screen Size
+\*--------------------------------------*/
+function castpress_isMobile() {
+  // Get the dimensions of the viewport
+  let width =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+  return width <= 980 ? true : false;
+}
+window.onload = castpress_isMobile; // When the page first loads
+window.onresize = castpress_isMobile; // When the browser changes size
+
+/*------------------------------------*\
+  #Fade Out Vanilla JS
+\*------------------------------------*/
+function castpress_fadeOut(el) {
+  el.style.opacity = 1;
+  (function fade() {
+    if ((el.style.opacity -= 0.04) < 0) {
+      el.style.display = "none";
+    } else {
+      requestAnimationFrame(fade);
+    }
+  })();
+}
+
+/*------------------------------------*\
+  #Fade In Vanilla JS
+\*------------------------------------*/
+function castpress_fadeIn(el, display) {
+  el.style.opacity = 0;
+  el.style.display = display || "block";
+  (function fade() {
+    let val = parseFloat(el.style.opacity);
+    if (!((val += 0.01) > 1)) {
+      el.style.opacity = val;
+      requestAnimationFrame(fade);
+    }
+  })();
+}
+
+/*--------------------------------------*\
   #Detect Element inside other element
 \*--------------------------------------*/
 function castpress_childFinder(castpress_parentElement, castpress_childElement) {
@@ -146,15 +189,19 @@ if (castpress_childFinder("body", "js-single__transcript__more")) {
 }
 
 /*--------------------------------------*\
-  #Detect Screen Size
+  #Display Audio player 
 \*--------------------------------------*/
-function castpress_isMobile() {
-  // Get the dimensions of the viewport
-  let width =
-    window.innerWidth ||
-    document.documentElement.clientWidth ||
-    document.body.clientWidth;
-  return width <= 980 ? true : false;
+const castpress_audioPlayer = document.querySelector(".js-single__audio");
+const castpress_audioPlayerButton = document.querySelector(".js-btn--play");
+const castpress_audioPlayerDownloadButton = document.querySelector(".js-btn--download");
+
+if (castpress_childFinder("body", "js-btn--play")) {
+  castpress_audioPlayerButton.addEventListener("click", function () {
+    castpress_fadeOut(castpress_audioPlayerButton);
+
+    setTimeout(() => {
+      castpress_fadeIn(castpress_audioPlayer, "inline-block");
+      castpress_fadeIn(castpress_audioPlayerDownloadButton, "flex");
+    }, 500);
+  });
 }
-window.onload = castpress_isMobile; // When the page first loads
-window.onresize = castpress_isMobile; // When the browser changes size

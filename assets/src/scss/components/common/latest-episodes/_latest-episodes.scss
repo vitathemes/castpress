@@ -24,10 +24,10 @@
 .c-latest-episodes--row {
   padding-top: 16px;
   margin-bottom: 0px;
+
   .c-episode {
     min-height: 145px;
     margin-bottom: 0px;
-    padding: 16px;
     border-radius: 4px;
   }
 
@@ -46,8 +46,8 @@
   .c-episode {
     background-color: $castpress_neutral_gray_light_color;
     min-height: 145px;
-    margin-bottom: 0px;
     padding: 16px;
+    margin-bottom: 0px;
     border-radius: 4px;
   }
 

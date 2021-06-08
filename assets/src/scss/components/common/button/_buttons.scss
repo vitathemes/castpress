@@ -122,7 +122,33 @@ input[type="submit"] {
 \*------------------------------------*/
 .c-btn--play {
   background-color: $castpress_neutral_gray_light_color;
-  color: $castpress_main_accent_color;
+  color: $castpress_quaternary_color !important;
+  text-transform: uppercase;
+  transition: 0.3s all;
+  letter-spacing: 0.05em;
+  &:hover {
+    color: $castpress_neutral_gray_light_color !important;
+
+    &::before {
+      background-color: $castpress_neutral_gray_light_color;
+    }
+  }
+
+  &::before {
+    transition: 0.2s all;
+    content: "";
+    width: 10px;
+    height: 12px;
+    -webkit-mask: url("../images/icons/play.svg") no-repeat 50% 50%;
+    mask: url("../images/icons/play.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    vertical-align: middle;
+    display: inline-block;
+    background-color: $castpress_quaternary_color;
+    margin-bottom: 3px;
+    margin-right: 5px;
+  }
 }
 
 .c-btn--arrows-small {
@@ -222,6 +248,13 @@ input[type="submit"] {
 \*------------------------------------*/
 .c-btn--sm {
   padding: 8px 14px;
+}
+
+/*------------------------------------*\
+  #Hided button
+\*------------------------------------*/
+.c-btn--hidden {
+  display: none;
 }
 
 /*------------------------------------------*\

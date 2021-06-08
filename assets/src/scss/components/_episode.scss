@@ -48,6 +48,18 @@
   }
 }
 
+.c-episode__entry-content {
+  width: 100%;
+}
+
+.c-episode__entry-meta--bg {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  padding-bottom: 8px;
+  padding-left: 24px;
+}
+
 .c-episode__context {
   width: 100%;
   height: 100%;
@@ -147,6 +159,10 @@
   margin-top: 14px;
 }
 
+.c-episode__titles--sm {
+  margin-top: 2px;
+}
+
 .c-episode__title {
   padding-bottom: 12px;
   display: inline-block;
@@ -188,6 +204,8 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   transition: 0.5s all;
+
+  text-decoration: none !important;
 
   &:hover {
     color: $castpress_main_accent_second_color !important; //qa-

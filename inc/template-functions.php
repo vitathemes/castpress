@@ -242,7 +242,6 @@ function castpress_custom_post_author_archive($query) {
 	 * Include custom post type in author archives page 
 	 *
 	 **/
-	
     if ($query->is_author)
         $query->set( 'post_type', array('episodes', 'post') );
     remove_action( 'pre_get_posts', 'castpress_custom_post_author_archive' );
@@ -269,48 +268,23 @@ function castpress_branding() {
 
 // Kirki color variables
 function castpress_typography() {
-	
-	// Headings Color
-	if ( get_theme_mod( 'typography_headings_color' ) == "" ) {
-		$castpress_headings_color = "#222222";
-	} else {
-		$castpress_headings_color = get_theme_mod( 'typography_headings_color' );
-	}
 
-	// Primary Color 
-	if ( get_theme_mod( 'typography_primary_color' ) == "" ) {
-		$castpress_primary_color = "#222222";
-	} else {
-		$castpress_primary_color = get_theme_mod( 'typography_primary_color' );
-	}
+	(get_theme_mod( 'typography_headings_color' ) == "" ) ? $castpress_headings_color = "#222222" : $castpress_headings_color = get_theme_mod( 'typography_headings_color' ); 
 
-	// Secondary Color 
-	if ( get_theme_mod( 'typography_secondary_color' ) == "" ) {
-		$castpress_second_color = "#555555";
-	} else {
-		$castpress_second_color = get_theme_mod( 'typography_secondary_color' );
-	}
-	
-	// Tertiary Color 
-	if ( get_theme_mod( 'typography_tertiary_color' ) == "" ) {
-		$castpress_tertiary_color = "#979797";
-	} else {
-		$castpress_tertiary_color = get_theme_mod( 'typography_tertiary_color' );
-	}
+	(get_theme_mod( 'typography_primary_color' ) == "" ) ? $castpress_primary_color = "#222222" : $castpress_primary_color = get_theme_mod( 'typography_primary_color' ); 
 
-	// quaternary Color 
-	if ( get_theme_mod( 'typography_quaternary_color' ) == "" ) {
-		$castpress_quaternary_color = "#7247ca";
-	} else {
-		$castpress_quaternary_color = get_theme_mod( 'typography_quaternary_color' );
-	}
-	
+	(get_theme_mod( 'typography_secondary_color' ) == "" ) ? $castpress_second_color = "#555555" : $castpress_second_color = get_theme_mod( 'typography_secondary_color' ); 
+
+	(get_theme_mod( 'typography_tertiary_color' ) == "" ) ? $castpress_tertiary_color = "#979797" : $castpress_tertiary_color = get_theme_mod( 'typography_tertiary_color' ); 
+
+	(get_theme_mod( 'typography_quaternary_color' ) == "" ) ? $castpress_quaternary_color = "#7247ca" : $castpress_quaternary_color = get_theme_mod( 'typography_quaternary_color' ); 
+
 
 	$html = ':root {	
-				--castpress_headings-color: ' . $castpress_headings_color . ';
-				--castpress_primary-color: '. $castpress_primary_color .';
-	            --castpress_second-color: ' . $castpress_second_color . ';
-				--castpress_tertiary-color: ' . $castpress_tertiary_color . ';
+				--castpress_headings-color:   ' . $castpress_headings_color . ';
+				--castpress_primary-color:    ' . $castpress_primary_color .';
+	            --castpress_second-color:     ' . $castpress_second_color . ';
+				--castpress_tertiary-color:   ' . $castpress_tertiary_color . ';
 				--castpress_quaternary-color: ' . $castpress_quaternary_color . ';
 			}';
 						
@@ -334,11 +308,12 @@ function castpress_theme_settings() {
 
 
 function castpress_home_components() {
+
 	/**
-	 *
-	 * Display Home Components and make them customizable from Kirki  
-	 *
-	 **/
+      *
+	  * Display Home Components and make them customizable from Kirki  
+	  *
+	  **/
 
 	// Get the parts.
 	$template_parts = get_theme_mod( 'home_component' , array( 'components/latest-episode/latest-episode', 'components/episodes', 'components/latest-posts' ) );
@@ -346,5 +321,6 @@ function castpress_home_components() {
 	foreach ( $template_parts as $template_part ) {
 		get_template_part( 'template-parts/' . $template_part );
 	}
+
 }
 

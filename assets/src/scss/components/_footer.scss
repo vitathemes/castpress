@@ -61,6 +61,10 @@
     padding-top: 64px;
     flex-wrap: nowrap;
   }
+
+  a {
+    text-decoration: none !important;
+  }
 }
 
 .c-footer__widget {
@@ -121,6 +125,10 @@
 .c-footer__widget__desc {
   margin-bottom: 16px;
   color: $castpress_second_color !important ;
+}
+
+.c-footer__link {
+  text-decoration: none !important;
 }
 
 .c-footer__nav {
