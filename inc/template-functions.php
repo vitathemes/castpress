@@ -188,15 +188,15 @@ function castpress_modify_post_type_argument($castpress_postTypeArguments){
         'all_items'     => __('All Episodes', 'castpress'),
     ];
     $castpress_postTypeArguments['rewrite']['slug'] 	  = 'episodes';
-	$castpress_postTypeArguments['menu_position'] 	  = 5;
-	$castpress_postTypeArguments['taxonomies']	      = array('category' , 'post_tag');
-	$castpress_postTypeArguments['show_in_admin_bar']   = true;
-	$castpress_postTypeArguments['show_in_admin_bar']   = true;
+	$castpress_postTypeArguments['menu_position'] 	  	  = 5;
+	$castpress_postTypeArguments['taxonomies']	      	  = array('category' , 'post_tag');
+	$castpress_postTypeArguments['show_in_admin_bar']     = true;
+	$castpress_postTypeArguments['show_in_admin_bar']     = true;
 	$castpress_postTypeArguments['hierarchical'] 		  = true;
-	$castpress_postTypeArguments['can_export'] 		  = true;
+	$castpress_postTypeArguments['can_export'] 		  	  = true;
 	$castpress_postTypeArguments['has_archive'] 		  = true;
-	$castpress_postTypeArguments['exclude_from_search'] = false;
-	$castpress_postTypeArguments['publicly_queryable']  = true;
+	$castpress_postTypeArguments['exclude_from_search']   = false;
+	$castpress_postTypeArguments['publicly_queryable']    = true;
 	$castpress_postTypeArguments['capability_type'] 	  = 'post';
 	$castpress_postTypeArguments['show_in_rest'] 		  = true;
 	$castpress_postTypeArguments['supports'] 			  = array('title', 'editor' , 'comments', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' ) ;	
@@ -236,15 +236,18 @@ function castpress_modify_libwp_taxonomy_arguments($castpress_taxonomyArguments)
 add_filter('libwp_taxonomy_1_arguments', 'castpress_modify_libwp_taxonomy_arguments');
 
 
-function castpress_pingback_header() {
+function castpress_custom_post_author_archive($query) {
 	/**
-	 * Add a pingback url auto-discovery header for single posts, pages, or attachments.
-	 */
-	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
-	}
+	 *
+	 * Include custom post type in author archives page 
+	 *
+	 **/
+	
+    if ($query->is_author)
+        $query->set( 'post_type', array('episodes', 'post') );
+    remove_action( 'pre_get_posts', 'castpress_custom_post_author_archive' );
 }
-add_action( 'wp_head', 'castpress_pingback_header' );
+add_action('pre_get_posts', 'castpress_custom_post_author_archive');
 
 
 function castpress_branding() { 
@@ -257,7 +260,7 @@ function castpress_branding() {
 	else {	
 
 		// Display the Text title with link 
-		/** translator %s : link of main page. translator %s 2: Site title  */
+		/* translator %s : link of main page. translator %s 2: Site title  */
 		echo sprintf('<h1 class="c-header__title site-title"><a href="%s" rel="home">%s</a></h1>' , esc_attr(esc_url( home_url( '/' ))),  esc_html(get_bloginfo( 'name' )) );
 
 		}
@@ -331,7 +334,6 @@ function castpress_theme_settings() {
 
 
 function castpress_home_components() {
-	
 	/**
 	 *
 	 * Display Home Components and make them customizable from Kirki  
@@ -339,10 +341,10 @@ function castpress_home_components() {
 	 **/
 
 	// Get the parts.
-	$template_parts = get_theme_mod( 'home_component' , array( 'components/latest-episode/latest-episode-player', 'components/episodes', 'components/latest-posts' ) );
+	$template_parts = get_theme_mod( 'home_component' , array( 'components/latest-episode/latest-episode', 'components/episodes', 'components/latest-posts' ) );
 	// Loop parts.
 	foreach ( $template_parts as $template_part ) {
 		get_template_part( 'template-parts/' . $template_part );
 	}
-	
 }
+

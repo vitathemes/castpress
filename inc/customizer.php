@@ -422,19 +422,20 @@ if( function_exists( 'kirki' ) ) {
 	] );
 
 	
-	// -- Home components --
+	// -- Home Components --
+
 	Kirki::add_field( 'castpress', [
 		'type'        => 'sortable',
 		'settings'    => 'home_component',
 		'label'       => esc_html__( 'Home Components', 'castpress' ),
 		'section'     => 'home_components',
 		'default'     => [
-			'components/latest-episode/latest-episode-player',
+			'components/latest-episode/latest-episode',
 			'components/episodes',
 			'components/latest-posts'
 		],
 		'choices'     => [
-			'components/latest-episode/latest-episode-player' => esc_html__( 'Latest Episode with player', 'castpress' ),
+			'components/latest-episode/latest-episode' => esc_html__( 'Single Latest Episode', 'castpress' ),
 			'components/episodes' => esc_html__( 'Latest Episodes', 'castpress' ),
 			'components/latest-posts' => esc_html__( 'Latest posts from blog', 'castpress' ),
 		],
@@ -624,5 +625,6 @@ if( function_exists( 'kirki' ) ) {
 		'default'  => esc_url('http://vitathemes.com/'),
 		'priority' => 12,
 	] );
+
 
 }

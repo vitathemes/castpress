@@ -33,7 +33,7 @@
 
         if ( $castpress_query->have_posts() ) :
         while ( $castpress_query->have_posts() ) : $castpress_query->the_post();
-            get_template_part( 'template-parts/content', get_post_type() );	
+            get_template_part( 'template-parts/components/latest-episode/latest-episode-column' );	
         endwhile;
             castpress_get_default_pagination();
         endif;

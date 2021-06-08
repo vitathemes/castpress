@@ -1495,7 +1495,7 @@ input[type="submit"] {
   color: #f5f5f7 !important;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 300ms ease-in-out;
+  transition: all 0.1s;
   font-family: "SourceSerifPro";
   font-weight: 400;
   padding: 8px 16px;
@@ -1609,7 +1609,7 @@ input[type="submit"] {
   width: 10%;
   display: flex;
   align-items: center;
-  justify-content: flex-start; }
+  justify-content: center; }
   .c-btn--download:hover {
     background-color: transparent; }
     .c-btn--download:hover::after {
@@ -1674,8 +1674,10 @@ input[type="submit"] {
 .mejs-horizontal-volume-slider {
   min-width: max-content; }
 
-.mejs-controls * {
-  min-width: max-content !important; }
+.mejs-controls {
+  padding: 0px !important; }
+  .mejs-controls * {
+    min-width: max-content !important; }
 
 .mejs-controls .mejs-time-rail .mejs-time-current {
   background: #222222 !important; }
@@ -1952,7 +1954,7 @@ input[type="submit"] {
   font-family: dashicons !important; }
   .dashicons::before {
     color: var(--castpress_second-color);
-    transition: all 300ms ease-in-out; }
+    transition: all 0.1s; }
 
 .next.page-numbers .dashicons {
   height: 30px;
@@ -2024,7 +2026,7 @@ input[type="submit"] {
       padding-top: 24px; } }
 
 /*------------------------------------*\
-  #Latest EpisodeS
+  #Other templates
 \*------------------------------------*/
 .c-latest-episodes {
   padding-top: 24px; }
@@ -2033,17 +2035,32 @@ input[type="submit"] {
   display: none; }
 
 .c-latest-episodes--row {
-  margin: 60px 0px 0px 0px; }
+  padding-top: 16px;
+  margin-bottom: 0px; }
   .c-latest-episodes--row .c-episode {
-    background-color: #f5f5f7;
     min-height: 145px;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
     padding: 16px;
     border-radius: 4px; }
   .c-latest-episodes--row .c-episode__head {
     max-height: max-content; }
     @media only screen and (min-width: 980px) {
       .c-latest-episodes--row .c-episode__head {
+        height: 145px; } }
+
+.c-latest-episodes--row-bg {
+  padding-top: 16px;
+  margin-bottom: 0px; }
+  .c-latest-episodes--row-bg .c-episode {
+    background-color: #f5f5f7;
+    min-height: 145px;
+    margin-bottom: 0px;
+    padding: 16px;
+    border-radius: 4px; }
+  .c-latest-episodes--row-bg .c-episode__head {
+    max-height: max-content; }
+    @media only screen and (min-width: 980px) {
+      .c-latest-episodes--row-bg .c-episode__head {
         height: 145px; } }
 
 .c-latest-episodes--column {
@@ -2305,7 +2322,8 @@ input[type="submit"] {
       margin-bottom: 64px; } }
 
 .c-episode__featured {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 32px; }
 
 .c-episode__head {
   width: 100%;
@@ -2349,7 +2367,8 @@ input[type="submit"] {
   position: relative;
   height: max-content;
   display: flex;
-  justify-content: center; }
+  justify-content: space-around;
+  align-items: flex-end; }
 
 .c-episode__category {
   padding-bottom: 8px;
@@ -2403,11 +2422,11 @@ input[type="submit"] {
     margin-bottom: 8px; }
 
 .c-episode__titles {
-  width: 100%; }
+  width: 100%;
+  margin-top: 14px; }
 
 .c-episode__title {
   padding-bottom: 12px;
-  margin-top: 14px;
   display: inline-block; }
   .c-episode__title a {
     color: var(--castpress_primary-color); }
@@ -2488,9 +2507,21 @@ input[type="submit"] {
     transition: 0.2s all;
     color: var(--castpress_primary-color); }
 
+@media only screen and (min-width: 980px) {
+  .c-episode__social-share--sm {
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 55%; } }
+
+@media only screen and (min-width: 980px) {
+  .c-episode__social-share--sm .c-episode__social-share__title {
+    display: inline-block;
+    width: max-content;
+    margin-bottom: 0px; } }
+
 .c-episodes__social-share__icons {
   display: inline-block;
-  margin: 0px 15px 32px 15px;
+  margin: 0px 15px 0px 15px;
   vertical-align: middle;
   font-size: 32px; }
   .c-episodes__social-share__icons:hover {
@@ -2499,7 +2530,8 @@ input[type="submit"] {
       fill: #7247ca; }
 
 .c-episodes__social-share__icons--big {
-  font-size: 45px; }
+  font-size: 45px;
+  margin-bottom: -5px; }
 
 .icon--md {
   width: 30px;
@@ -3261,7 +3293,7 @@ h6,
 * {
   word-wrap: break-word;
   white-space: normal;
-  transition: all 300ms ease-in-out; }
+  transition: all 0.1s; }
 
 /* p */
 p,

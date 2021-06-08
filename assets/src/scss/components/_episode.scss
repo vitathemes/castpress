@@ -15,6 +15,7 @@
 //
 .c-episode__featured {
   width: 100%;
+  margin-bottom: 32px;
 }
 
 .c-episode__head {
@@ -66,7 +67,8 @@
   position: relative;
   height: max-content;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 
 .c-episode__category {
@@ -142,11 +144,11 @@
 
 .c-episode__titles {
   width: 100%;
+  margin-top: 14px;
 }
 
 .c-episode__title {
   padding-bottom: 12px;
-  margin-top: 14px;
   display: inline-block;
 
   a {
@@ -253,9 +255,25 @@
   }
 }
 
+.c-episode__social-share--sm {
+  @include media(tablet) {
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 55%;
+  }
+
+  .c-episode__social-share__title {
+    @include media(tablet) {
+      display: inline-block;
+      width: max-content;
+      margin-bottom: 0px;
+    }
+  }
+}
+
 .c-episodes__social-share__icons {
   display: inline-block;
-  margin: 0px 15px 32px 15px;
+  margin: 0px 15px 0px 15px;
   vertical-align: middle;
   font-size: 32px;
 
@@ -270,6 +288,7 @@
 
 .c-episodes__social-share__icons--big {
   font-size: 45px;
+  margin-bottom: -5px;
 }
 
 .icon--md {

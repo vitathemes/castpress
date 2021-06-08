@@ -28,7 +28,7 @@
             <div class="c-footer__copy-text">
                 <h5 class="c-footer__context u-heading-5-line-height--sm u-font--regular">
                     
-                    <?php echo esc_html(get_theme_mod( 'copytext' , esc_html( 'Castpress Theme by', 'castpress' ) )); ?>
+                    <?php echo esc_html(get_theme_mod( 'copytext' , esc_html__( 'Castpress Theme by', 'castpress' ) )); ?>
 
                 </h5>
 
@@ -36,7 +36,7 @@
                     <a class="c-footer__link u-link--tertiary"
                         href="<?php echo esc_url( get_theme_mod( 'copylink', esc_url('http://vitathemes.com/') ) ); ?>">
                      
-                        <?php echo esc_html(get_theme_mod( 'copylink_text', esc_html( 'VitaThemes', 'castpress' ) )); ?>
+                        <?php echo esc_html(get_theme_mod( 'copylink_text', esc_html( 'VitaThemes' ) )); ?>
 
                     </a>
                 </h5>

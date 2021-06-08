@@ -1,6 +1,6 @@
 # Castpress - [Demo](https://demo.vitathemes.com/castpress/)
 
-Castpress is a minimal & mobile-first theme. The best choice for people who want to introduce their projects.
+Castpress is a a minimal & mobile-first theme. The best choice for people who want to publish their podcasts.
 
 ![Home Page](screenshot.png)
 

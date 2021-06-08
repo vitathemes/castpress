@@ -141,7 +141,7 @@ input[type="submit"] {
   width: 10%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 
   &:hover {
     background-color: transparent;
@@ -236,6 +236,7 @@ input[type="submit"] {
 }
 
 .mejs-controls {
+  padding: 0px !important;
   * {
     min-width: max-content !important;
   }

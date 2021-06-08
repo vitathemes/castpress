@@ -9,7 +9,7 @@
 }
 
 /*------------------------------------*\
-  #Latest EpisodeS
+  #Other templates
 \*------------------------------------*/
 .c-latest-episodes {
   padding-top: 24px;
@@ -22,12 +22,31 @@
 }
 
 .c-latest-episodes--row {
-  margin: 60px 0px 0px 0px;
+  padding-top: 16px;
+  margin-bottom: 0px;
+  .c-episode {
+    min-height: 145px;
+    margin-bottom: 0px;
+    padding: 16px;
+    border-radius: 4px;
+  }
 
+  .c-episode__head {
+    max-height: max-content;
+
+    @include media(tablet) {
+      height: 145px;
+    }
+  }
+}
+
+.c-latest-episodes--row-bg {
+  padding-top: 16px;
+  margin-bottom: 0px;
   .c-episode {
     background-color: $castpress_neutral_gray_light_color;
     min-height: 145px;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
     padding: 16px;
     border-radius: 4px;
   }

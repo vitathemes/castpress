@@ -19,7 +19,7 @@
 
             <?php 
 				if ( 'episodes' == get_post_type() ){
-					castpress_get_category(false , true);
+					castpress_get_category(true);
                 }
 			?>
 
