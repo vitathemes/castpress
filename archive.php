@@ -19,7 +19,7 @@ get_header();
 				while ( have_posts() ) :
 					the_post();
 
-					if(is_author()){
+					if(is_author() || is_tag() || is_category() ){
 						get_template_part( 'template-parts/content');
 					}
 					else{

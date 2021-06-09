@@ -87,6 +87,7 @@
   padding-bottom: 8px;
   color: $castpress_tertiary_color !important;
   display: inline-block;
+  text-decoration: none !important;
   &:hover {
     color: $castpress_primary_color;
   }
@@ -101,6 +102,9 @@
 
     &:visited {
       text-decoration: none;
+    }
+    &:focus {
+      text-decoration: none !important;
     }
   }
 }

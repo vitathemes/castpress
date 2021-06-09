@@ -23,6 +23,7 @@
 .c-post__date {
   color: $castpress_tertiary_color !important;
   display: inline-block;
+  text-decoration: none !important;
 }
 
 .c-post__header--home {
@@ -44,6 +45,7 @@
 .c-post__author {
   display: inline-block;
   color: $castpress_tertiary_color !important;
+  text-decoration: none !important;
   &:first {
     text-transform: uppercase;
   }

@@ -90,6 +90,7 @@
 }
 
 .c-single__tags {
+  padding-top: 48px;
   a {
     &::before {
       content: "#";
@@ -178,7 +179,6 @@ h2.c-single__transcript__title {
   transform-origin: top;
   height: 0px;
   max-height: 0px;
-  margin-bottom: 48px;
   border-left: 1px solid $color_background_hr;
   border-right: 1px solid $color_background_hr;
   border-bottom: 1px solid transparent;
@@ -251,6 +251,7 @@ h2.c-single__transcript__title {
 
 .c-single__tag {
   padding-right: 24px;
+  margin-top: 48px;
   color: $castpress_second_color;
 
   &:hover {
