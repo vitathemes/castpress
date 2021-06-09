@@ -59,6 +59,7 @@
         <div class="c-social-share c-social-share--footer">
             <?php castpress_socials_links(); ?>
         </div>
+    </div>
 
 </footer><!-- #colophon -->
 </div><!-- #page -->

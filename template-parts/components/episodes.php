@@ -16,7 +16,12 @@
         
         // Select last Episode
         $castpress_latest_episode = get_posts("post_type=episodes&numberposts=1");
-        $castpress_latest_episode = $castpress_latest_episode[0]->ID;
+
+        if( !empty ( $castpress_latest_episode ) ) {
+            $castpress_latest_episode = $castpress_latest_episode[0]->ID;
+        }
+
+    
 
         $castpress_args = array (
             "post_status"            => "publish",

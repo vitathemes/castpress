@@ -194,14 +194,19 @@ if (castpress_childFinder("body", "js-single__transcript__more")) {
 const castpress_audioPlayer = document.querySelector(".js-single__audio");
 const castpress_audioPlayerButton = document.querySelector(".js-btn--play");
 const castpress_audioPlayerDownloadButton = document.querySelector(".js-btn--download");
+const castpress_externalAudio = document.querySelector(".js-episode__player--embed");
 
 if (castpress_childFinder("body", "js-btn--play")) {
   castpress_audioPlayerButton.addEventListener("click", function () {
     castpress_fadeOut(castpress_audioPlayerButton);
 
     setTimeout(() => {
-      castpress_fadeIn(castpress_audioPlayer, "inline-block");
-      castpress_fadeIn(castpress_audioPlayerDownloadButton, "flex");
+      if (castpress_externalAudio !== null) {
+        castpress_fadeIn(castpress_audioPlayer, "inline-block");
+      } else {
+        castpress_fadeIn(castpress_audioPlayerDownloadButton, "flex");
+        castpress_fadeIn(castpress_audioPlayer, "inline-block");
+      }
     }, 500);
   });
 }
