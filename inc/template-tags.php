@@ -16,7 +16,7 @@ if ( ! function_exists( 'castpress_posted_by' ) ) :
 
 		/* translators: %s: post author. */
 		$byline = sprintf(
-			'<h5 class="c-post__author vcard u-font--regular u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"> %s ' . esc_html(get_the_author()) . ' </a></h5>' , esc_html__( 'By', 'castpress' )
+			'<span class="c-post__author vcard u-font--regular  u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"> %s ' . esc_html(get_the_author()) . ' </a></span>' , esc_html__( 'By', 'castpress' )
 		);
 
 		echo '<h5 class="byline u-font--regular u-heading-5-line-height--sm c-post__author "> ' . $byline  . '</h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

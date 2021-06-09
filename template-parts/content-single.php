@@ -116,5 +116,6 @@
                 get_template_part( 'template-parts/components/related-posts' ); 
             }
         ?>
+    </div>
 
 </article><!-- #post-<?php the_ID(); ?> -->

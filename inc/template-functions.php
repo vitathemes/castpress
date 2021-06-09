@@ -138,7 +138,7 @@ function castpress_comment_button($castpress_defaults) {
 	  */
 
    	// Edit button 
-	$button = '<button name="%1$s" type="submit" id="%2$s" class="%3$s comment-form-arrow" value="%4$s"> '.esc_html__( 'Submit', 'castpress' ).' <span class="dashicons dashicons-arrow-right-alt2"></]></button>';
+	$button = '<button name="%1$s" type="submit" id="%2$s" class="%3$s comment-form-arrow" value="%4$s"> '.esc_html__( 'Submit', 'castpress' ).' <span class="dashicons dashicons-arrow-right-alt2"></span></button>';
 
     // Override the default submit button:
     $castpress_defaults['submit_button'] = $button;

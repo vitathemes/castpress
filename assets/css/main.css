@@ -2580,7 +2580,7 @@ input[type="submit"] {
   margin-bottom: 52px; }
   @media only screen and (min-width: 980px) {
     .c-episode {
-      margin-bottom: 64px; } }
+      margin-bottom: 50px; } }
 
 .c-episode__featured {
   width: 100%;
