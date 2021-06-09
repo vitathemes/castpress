@@ -191,10 +191,8 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 		
 		// Get audio link from importer plugin
 		$castpress_podcast_audio_link = get_post_meta( $post->ID, 'podcast_audio_url', true );
-
 		// Get audio file from importer plugin
 		$castpress_podcast_audio = get_post_meta( $post->ID, 'podcast_audio_file', true );
-
 		// Get embeded aufio file
 		$castpress_podcast_embedfile = get_post_meta( $post->ID, 'podcast_importer_external_embed', true);
 
@@ -235,26 +233,46 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 				
 				// Return just the custom player 
 				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile));
+				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
 
 			}
 			elseif(strpos($tagname, 'audio') !== false) {
 
+				// Get src attribute from embeded file
+				$castpress_podcast_embedfile_link = $castpress_podcast_embedfile;
+				$castpress_audio_src_array = array();
+				preg_match( '/src="([^"]*)"/i', $castpress_podcast_embedfile_link, $castpress_audio_src_array ) ;
 
-				if( class_exists('ACF') &&  get_field('podcast_audio_file') !== $castpress_podcast_audio_link ){
-
-					$castpress_podcast_updated_field = get_field('podcast_audio_file');
-					$castpress_podcast_embedfile = '[audio mp3="'.$castpress_podcast_updated_field.'" ][/audio]';
-
-				}
+				$castpress_attributes = array(
+					'src'      => esc_url( $castpress_audio_src_array[1] ),
+					'loop'     => '',
+					'autoplay' => '',
+					'preload'  => 'auto'
+				);
+				$castpress_podcast_embedfile = wp_audio_shortcode( $castpress_attributes );
 
 				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile));
+				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
 				
 				// Download button
 				echo '<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
 
 			}
+			elseif( class_exists('ACF') &&  get_field('podcast_audio_file') !== $castpress_podcast_audio_link ){
+					
+				$castpress_podcast_updated_field = get_field('podcast_audio_file');
+				$castpress_podcast_embedfile = '[audio preload="metadata" mp3="'.$castpress_podcast_updated_field.'" ][/audio]';
+
+				/* translators: %s: class name . translator 2 %s : audio short code  */
+				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
+		
+				// Download button
+				echo '<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
+
+
+
+			}
+		
 		}	
 	}
 endif;
@@ -265,13 +283,15 @@ if (! function_exists('castpress_get_default_pagination')) :
 	  * Show numeric pagination
 	  */
 	function castpress_get_default_pagination() {
-		echo'<div class="c-pagination">' . wp_kses_post(
-			paginate_links(
-				array(
-				'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
-				'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
-				)
-		)) .'</div>';
+		if(paginate_links()) {
+			echo'<div class="c-pagination">' . wp_kses_post(
+				paginate_links(
+					array(
+					'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
+					'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
+					)
+			)) .'</div>';
+		}
 	}
 endif;
 
@@ -523,12 +543,20 @@ if ( ! function_exists( 'castpress_get_archives_header' ) ) :
 endif;
 
 
-if ( ! function_exists( 'castpress_get_archives_header' ) ) :
+if ( ! function_exists( 'castpress_get_latest_episodes_class_name' ) ) :
 	/**
-	 * Get Archives header
+	 * Get Episodes ( Row template ) class name - For handling style from kirki 
 	 */
-	function castpress_get_archives_header() {
-		echo sprintf('<header class="c-main__header"><h1 class="c-main__entry-title u-heading-1-line-height--bg">%s</h1></header><!-- .-main__content -->', wp_kses_post(get_the_archive_title()) );
+	function castpress_get_latest_episodes_class_name() {
+
+		if(get_theme_mod( 'latest_episodes_style' , 'style-1') == 'style-2'){
+			echo esc_attr( 'c-latest-episodes--row-bg' );
+		}
+		elseif(get_theme_mod( 'latest_episodes_style' , 'style-1') == 'style-3'){
+			echo esc_attr( 'c-latest-episodes--row' );
+		}
+
+
 	}
 	
 endif;

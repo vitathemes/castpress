@@ -1,6 +1,6 @@
 
 <?php $postNumber = castpress_deciaml_post_number(); ?>
-<div class="c-latest-episodes <?php castpress_get_latest_episodes_class_name(); ?>">
+<div class="c-latest-episodes c-latest-episodes--row-bg">
 <div class="c-episode">
 
     <div class="c-episode__head">

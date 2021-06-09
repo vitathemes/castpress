@@ -36,7 +36,7 @@
 				//URL Field
 				'url' => '<h4 class="comment-form-url u-heading-4-line-height--bg">'. __( 'Website', 'castpress' ).'<br /><input type="url" id="url" name="url" ></input></h4>',
 				//Cookies
-				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="h6 h6--regular u-line-height--sm c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'castpress' ) .'</span></div>',
+				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="h6 h6--regular u-line-height--sm u-font--regular c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'castpress' ) .'</span></div>',
 			),
 			// Change the title of send button
 			'label_submit' => __( 'Submit', 'castpress'),

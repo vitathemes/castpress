@@ -93,7 +93,7 @@ input[type="submit"] {
   transform: translate(-100%, -40%);
 
   &::before {
-    content: url("https://api.iconify.design/heroicons-solid:arrow-narrow-right.svg?color=%23fff");
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='1em' height='1em' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3E%3Cg fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.293 5.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-2.293-2.293a1 1 0 0 1 0-1.414z' fill='%23626262'/%3E%3C/g%3E%3C/svg%3E%0A");
     cursor: pointer;
     width: 20px;
     height: 20px;
@@ -139,8 +139,10 @@ input[type="submit"] {
     content: "";
     width: 10px;
     height: 12px;
-    -webkit-mask: url("../images/icons/play.svg") no-repeat 50% 50%;
-    mask: url("../images/icons/play.svg") no-repeat 50% 50%;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='0.88em' height='1em' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 448 512'%3E%3Cpath d='M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z' fill='%23626262'/%3E%3C/svg%3E%0A")
+      no-repeat 50% 50%;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='0.88em' height='1em' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 448 512'%3E%3Cpath d='M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z' fill='%23626262'/%3E%3C/svg%3E%0A")
+      no-repeat 50% 50%;
     -webkit-mask-size: cover;
     mask-size: cover;
     vertical-align: middle;
@@ -184,10 +186,10 @@ input[type="submit"] {
     content: "";
     cursor: pointer;
 
-    -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24")
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='1em' height='1em' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3E%3Cpath d='M19 9h-4V3H9v6H5l7 8zM4 19h16v2H4z' fill='%23626262'/%3E%3C/svg%3E%0A")
       no-repeat 50% 50%;
-    mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50%
-      50%;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='1em' height='1em' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3E%3Cpath d='M19 9h-4V3H9v6H5l7 8zM4 19h16v2H4z' fill='%23626262'/%3E%3C/svg%3E%0A")
+      no-repeat 50% 50%;
 
     -webkit-mask-size: cover;
     mask-size: cover;
@@ -240,6 +242,27 @@ input[type="submit"] {
       width: max-content !important;
       transition: 0.2s all;
     }
+  }
+}
+
+.c-btn--text-arrow-secondary {
+  transition: 0.3s all;
+
+  &::after {
+    transition: 0.2s all;
+    content: "";
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='1em' height='1em' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3E%3Cpath d='M9.005 4l8 8l-8 8L7 18l6.005-6L7 6z' fill='%23626262' fill-rule='evenodd'/%3E%3C/svg%3E")
+      no-repeat 50% 50%;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='1em' height='1em' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3E%3Cpath d='M9.005 4l8 8l-8 8L7 18l6.005-6L7 6z' fill='%23626262' fill-rule='evenodd'/%3E%3C/svg%3E")
+      no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    vertical-align: middle;
+    display: inline-block;
+    background-color: $castpress_neutral_gray_light_color;
   }
 }
 

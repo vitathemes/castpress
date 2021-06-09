@@ -27,8 +27,12 @@
 
   .c-episode {
     min-height: 145px;
-    margin-bottom: 0px;
+    margin-bottom: 32px;
     border-radius: 4px;
+
+    &:nth-last-child() {
+      margin-bottom: 0px;
+    }
   }
 
   .c-episode__head {

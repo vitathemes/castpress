@@ -17,11 +17,7 @@
 
         <div class="c-single__entry-meta">
 
-            <?php 
-				if ( 'episodes' == get_post_type() ){
-					castpress_get_category(true);
-                }
-			?>
+            <?php castpress_get_category(true); ?>
 
             <h5 class="c-post__date u-font--regular u-heading-5-line-height--sm posted-on">
                 <a class="u-link--tertiary" href="<?php esc_url( the_permalink() ) ?>">

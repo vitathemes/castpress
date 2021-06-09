@@ -17,15 +17,15 @@
 
         while ( $query->have_posts() ) : $query->the_post();
 
-            if( get_theme_mod( 'homepage_header_single' , 'style-1') == 'style-1'){
-                get_template_part( 'template-parts/components/latest-episode/latest-episode-player');
-            }
-            elseif(get_theme_mod( 'homepage_header_single' , 'style-1') == 'style-2' ){
-                get_template_part( 'template-parts/components/latest-episode/latest-episode-player-bg');
-            }
-            else{
-                get_template_part( 'template-parts/components/latest-episode/latest-episode-player');
-            }
+        if( get_theme_mod( 'homepage_header_single' , 'style-1') == 'style-1'){
+            get_template_part( 'template-parts/components/latest-episode/latest-episode-player');
+        }
+        elseif(get_theme_mod( 'homepage_header_single' , 'style-1') == 'style-2' ){
+            get_template_part( 'template-parts/components/latest-episode/latest-episode-player-bg');
+        }
+        else{
+            get_template_part( 'template-parts/components/latest-episode/latest-episode-player');
+        }
 
 
         endwhile;

@@ -34,17 +34,13 @@
         if ( $castpress_query->have_posts() ) :
         while ( $castpress_query->have_posts() ) : $castpress_query->the_post();
 
-            if( get_theme_mod( 'homepage_header_single' , 'style-1') == 'style-1') {
+            if( get_theme_mod( 'latest_episodes_style' , 'style-1') == 'style-1') {
                 get_template_part( 'template-parts/content', get_post_type() );	
-            }
-            elseif(get_theme_mod( 'homepage_header_single' , 'style-1') == 'style-2') {
-                get_template_part( 'template-parts/components/latest-episode/latest-episode-player');
             }
             else{
-                get_template_part( 'template-parts/content', get_post_type() );	
+                get_template_part( 'template-parts/components/latest-episode/latest-episodes-row' );	
             }
 
-            get_template_part( 'template-parts/components/latest-episode/latest-episodes-row' );	
 
         endwhile;
             castpress_get_default_pagination();

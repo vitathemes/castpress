@@ -14,16 +14,13 @@
 
     <section class="c-episode__header">
 
-        <?php 
-            castpress_get_category();
-            echo '<span class="seprator h5 u-link--secondary"> | </span>'; // No need to translate or sanitize it's a seprator
-            echo '<h5 class="c-episode__date u-font--regular u-heading-5-line-height--sm">'.esc_html( get_the_date() ).'</h5>'; 
-        ?>
+        <?php castpress_get_category(); ?>
+        <span class="seprator h5 u-link--secondary"> | </span> <!-- // No need to translate or sanitize it's a seprator --> 
+        <?php echo '<h5 class="c-episode__date u-font--regular u-heading-5-line-height--sm">'.esc_html( get_the_date() ).'</h5>'; ?>
 
         <div class="c-episode__titles">
             <?php  the_title('<h2 class="c-episode__title"><a class="u-link--secondary" href="'.esc_url( get_permalink() ).'" rel="bookmark">'.esc_html($castpress_postNumber).' - ', '</a></h2>' ); ?>
         </div>
-
 
         <div class="c-episode__entry-content h4">
             <p class="c-episode__entry-context h4"><?php echo esc_html(get_the_excerpt()); ?></h4>
