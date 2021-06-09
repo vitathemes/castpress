@@ -426,14 +426,14 @@ if( function_exists( 'kirki' ) ) {
 	Kirki::add_field( 'castpress', [
 		'type'        => 'radio-buttonset',
 		'settings'    => 'homepage_header_single',
-		'label'       => esc_html__( 'Home Page Header Style', 'kirki' ),
+		'label'       => esc_html__( 'Home Page Header Style', 'castpress' ),
 		'section'     => 'home_components',
 		'default'     => 'style-1',
 		'priority'    => 10,
 		'choices'     => [
-			'style-1'   => esc_html__( 'Header Style 1', 'kirki' ),
-			'style-2' => esc_html__( 'Header Style 2', 'kirki' ),
-			'style-3' => esc_html__( 'Header Style 3', 'kirki' ),
+			'style-1'   => esc_html__( 'Header Style 1', 'castpress' ),
+			'style-2' => esc_html__( 'Header Style 2', 'castpress' ),
+			'style-3' => esc_html__( 'Header Style 3', 'castpress' ),
 		],
 	] );
 
@@ -441,14 +441,14 @@ if( function_exists( 'kirki' ) ) {
 	Kirki::add_field( 'castpress', [
 		'type'        => 'radio-buttonset',
 		'settings'    => 'latest_episodes_style',
-		'label'       => esc_html__( 'Latest Episodes Style', 'kirki' ),
+		'label'       => esc_html__( 'Latest Episodes Style', 'castpress' ),
 		'section'     => 'home_components',
 		'default'     => 'style-1',
 		'priority'    => 10,
 		'choices'     => [
-			'style-1'   => esc_html__( 'Episodes Style 1', 'kirki' ),
-			'style-2' => esc_html__( 'Episodes Style 2', 'kirki' ),
-			'style-3' => esc_html__( 'Episodes Style 3', 'kirki' ),
+			'style-1'   => esc_html__( 'Episodes Style 1', 'castpress' ),
+			'style-2' => esc_html__( 'Episodes Style 2', 'castpress' ),
+			'style-3' => esc_html__( 'Episodes Style 3', 'castpress' ),
 		],
 	] );
 

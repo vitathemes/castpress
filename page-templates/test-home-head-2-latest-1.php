@@ -35,7 +35,7 @@ get_header();
    
                    while ( $query->have_posts() ) : $query->the_post();
                        echo '<div class="c-latest-episode c-latest-episode--home">';
-                    //    get_template_part( 'page-templates/test-latest-episodes-2');
+                       get_template_part( 'page-templates/test-latest-episodes-2');
                    endwhile;
                        echo '</div>';
                endif;
