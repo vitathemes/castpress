@@ -2,7 +2,7 @@
 <div class="c-episode__featured">
     <div class="c-episode__head">
         <div class="c-episode__image">
-            <?php castpress_get_thumbnail(); ?>
+            <?php castpress_get_thumbnail('medium'); ?>
         </div>
 
         <div class="c-episode__context">

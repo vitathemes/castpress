@@ -9,7 +9,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-single'); ?>>
 
-    <?php castpress_get_single_thumbnail( false ); ?>
+    <?php castpress_get_single_thumbnail( false , 'medium' ); ?>
 
     <header class="c-single__header">
 

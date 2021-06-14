@@ -22,15 +22,15 @@ function castpress_body_classes( $castpress_classes ) {
 add_filter( 'body_class', 'castpress_body_classes' );
 
 
-function castpress_footer_widgets_init() {
+function castpress_footer_widgets_left_init() {
 	/**
-	 * Register widget area.
+	 * Register widget area left side.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
 	 */
    register_sidebar( array(
-	   'name'          => esc_html__( 'Footer Widget' , 'castpress'),
-	   'id'            => 'custom-footer-widget',
+	   'name'          => esc_html__( 'Footer Widget Left Side' , 'castpress'),
+	   'id'            => 'castpress-custom-footer-widget-left',
 	   'before_widget' => '<div class="c-footer__widget">',
 	   'after_widget'  => '</div>',
 	   'before_title'  => '<h2 class="c-footer__widget__title">',
@@ -38,7 +38,26 @@ function castpress_footer_widgets_init() {
    ) );
 
 }
-add_action( 'widgets_init', 'castpress_footer_widgets_init' );
+add_action( 'widgets_init', 'castpress_footer_widgets_left_init' );
+
+
+function castpress_footer_widgets_right_init() {
+	/**
+	 * Register widget area right side.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+	 */
+   register_sidebar( array(
+	   'name'          => esc_html__( 'Footer Widget Right Side' , 'castpress'),
+	   'id'            => 'castpress-custom-footer-widget-right',
+	   'before_widget' => '<div class="c-footer__widget">',
+	   'after_widget'  => '</div>',
+	   'before_title'  => '<h2 class="c-footer__widget__title">',
+	   'after_title'   => '</h2>',
+   ) );
+
+}
+add_action( 'widgets_init', 'castpress_footer_widgets_right_init' );
 
 
 function castpress_scripts() {
@@ -51,7 +70,6 @@ function castpress_scripts() {
 
 	wp_enqueue_style( 'castpress-style', get_stylesheet_uri(), array(), CASTPRESS_VERSION );
 	wp_style_add_data( 'castpress-style', 'rtl', 'replace' );
-
 	// enqueue css
 	wp_enqueue_style( 'castpress-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), CASTPRESS_VERSION );
 	// enqueue js
@@ -199,7 +217,7 @@ function castpress_modify_post_type_argument($castpress_postTypeArguments){
 	$castpress_postTypeArguments['publicly_queryable']    = true;
 	$castpress_postTypeArguments['capability_type'] 	  = 'post';
 	$castpress_postTypeArguments['show_in_rest'] 		  = true;
-	$castpress_postTypeArguments['supports'] 			  = array('title', 'editor' , 'comments', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' ) ;	
+	$castpress_postTypeArguments['supports'] 			  = array('title', 'editor' , 'comments', 'excerpt', 'author', 'medium', 'revisions', 'custom-fields' ) ;	
     return $castpress_postTypeArguments;
 }
 add_filter('libwp_post_type_1_arguments', 'castpress_modify_post_type_argument');
@@ -308,7 +326,6 @@ function castpress_theme_settings() {
 
 
 function castpress_home_components() {
-
 	/**
       *
 	  * Display Home Components and make them customizable from Kirki  
@@ -324,3 +341,17 @@ function castpress_home_components() {
 
 }
 
+function castpress_modify_archive_title( $castpress_title ) {
+
+	if(get_theme_mod( 'post_type_archive_custom_title' , 'Episodes')){
+		$castpress_title = get_theme_mod( 'post_type_archive_custom_title' , 'Episodes');
+	}
+	else{
+		if( is_post_type_archive() ) {
+			$castpress_title = "episodes";	
+		}
+	}
+	return $castpress_title;
+
+}
+add_filter( 'get_the_archive_title', 'castpress_modify_archive_title');

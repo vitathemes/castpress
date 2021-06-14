@@ -19,11 +19,25 @@ get_header();
 				while ( have_posts() ) :
 					the_post();
 
-					if(is_author() || is_tag() || is_category() ){
+					if(is_author() || is_tag() || is_category()){
 						get_template_part( 'template-parts/content');
 					}
 					else{
-						get_template_part( 'template-parts/content', get_post_type());
+
+						if( is_post_type_archive('episodes') ){
+
+							if( get_theme_mod( 'home_page_latest_episodes' , 'style-1') == 'style-1') {
+								get_template_part( 'template-parts/content', get_post_type() );	
+							}
+							else{
+								get_template_part( 'template-parts/components/latest-episode/latest-episodes-row' );	
+							}
+					
+						}
+						else{
+							get_template_part( 'template-parts/content', get_post_type());
+						}
+
 					}
 				endwhile;
 				castpress_get_default_pagination();

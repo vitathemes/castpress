@@ -62,7 +62,7 @@ if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 			<?php
 			}
 			else {
-				echo '<img src="' . esc_url( get_stylesheet_directory_uri() ). '/assets/images/no-thumbnail.png" />';
+				echo '<img alt="'.esc_attr__( 'no thumbnail', 'castpress' ).'" src="' . esc_url( get_template_directory_uri() ). '/assets/images/no-thumbnail.png" />';
 			}
 		
 		endif; // End is_singular().
@@ -117,12 +117,12 @@ if ( ! function_exists('castpress_get_thumbnail')) :
 	/**
 	 * Return thumbnail if exist
 	 */
-	function castpress_get_thumbnail() {
+	function castpress_get_thumbnail( $castpress_image_size = "full" ) {
 		if ( has_post_thumbnail() ) {
-			the_post_thumbnail();
+			the_post_thumbnail( $castpress_image_size );
 		}
 		else{
-			echo '<img src="' . esc_url(get_stylesheet_directory_uri()). '/assets/images/no-thumbnail.png" />';
+			echo '<img alt="'.esc_attr__( 'no thumbnail', 'castpress' ).'" src="' . esc_url(get_template_directory_uri()). '/assets/images/no-thumbnail.png" />';
 		}
 }
 endif;
@@ -132,16 +132,16 @@ if (! function_exists('castpress_get_single_thumbnail')) :
 	/**
 	 * Return thumbnail in single page
 	 */
-	function castpress_get_single_thumbnail( $castpress_DefaultThumbnail = true ) {
+	function castpress_get_single_thumbnail( $castpress_DefaultThumbnail = true, $castpress_image_size = "full" ) {
 		if ( has_post_thumbnail() ) {
 			echo '<div class="'.esc_attr( 'c-single__thumbnail' ).'"><div class="'.esc_attr( 'c-single__image c-single__image--single' ).'">';
-				the_post_thumbnail();
+				the_post_thumbnail($castpress_image_size);
 			echo '</div></div>';
 		}
 		else{
 			if($castpress_DefaultThumbnail){
 				echo '<div class="'.esc_attr( 'c-single__thumbnail' ).'"><div class="'.esc_attr( 'c-single__image c-single__image--single' ).'">';
-					echo '<img src="' . esc_url(get_stylesheet_directory_uri()). '/assets/images/no-thumbnail.png" />';
+					echo '<img alt="'.esc_attr__( 'no thumbnail', 'castpress' ).'" src="' . esc_url(get_template_directory_uri()). '/assets/images/no-thumbnail.png" />';
 				echo '</div></div>';
 			}
 		}
@@ -537,26 +537,30 @@ if ( ! function_exists( 'castpress_get_archives_header' ) ) :
 	 * Get Archives header
 	 */
 	function castpress_get_archives_header() {
+
 		echo sprintf('<header class="c-main__header"><h1 class="c-main__entry-title u-heading-1-line-height--bg">%s</h1></header><!-- .-main__content -->', wp_kses_post(get_the_archive_title()) );
+
 	}
 	
 endif;
 
 
 if ( ! function_exists( 'castpress_get_latest_episodes_class_name' ) ) :
+	
 	/**
 	 * Get Episodes ( Row template ) class name - For handling style from kirki 
 	 */
+
 	function castpress_get_latest_episodes_class_name() {
 
-		if(get_theme_mod( 'latest_episodes_style' , 'style-1') == 'style-2'){
+		if(get_theme_mod( 'home_page_latest_episodes' , 'style-1') == 'style-2'){
 			echo esc_attr( 'c-latest-episodes--row-bg' );
 		}
-		elseif(get_theme_mod( 'latest_episodes_style' , 'style-1') == 'style-3'){
+		elseif(get_theme_mod( 'home_page_latest_episodes' , 'style-1') == 'style-3'){
 			echo esc_attr( 'c-latest-episodes--row' );
 		}
-
-
+		
 	}
 	
 endif;
+

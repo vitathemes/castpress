@@ -18,7 +18,7 @@ get_header();
     <div class="c-main__content">
         <header class="c-main__header">
             <h1 class="c-main__entry-title u-heading-1-line-height--bg">
-                <?php castpress_archive_page_name() ?>
+                <?php echo esc_html(get_the_title( get_option('page_for_posts', true) )); ?>
             </h1>
         </header>
         <!-- .entry-header -->

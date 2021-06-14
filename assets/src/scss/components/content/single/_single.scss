@@ -91,6 +91,8 @@
 
 .c-single__tags {
   padding-top: 48px;
+  width: 100%;
+  display: inline-block;
   a {
     &::before {
       content: "#";

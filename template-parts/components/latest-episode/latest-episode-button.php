@@ -13,7 +13,7 @@
     <div class="c-single__thumbnail">
         <div class="c-single__image">
             <a href="<?php esc_url( the_permalink() ) ?>">
-                <?php castpress_get_thumbnail(); ?>
+                <?php castpress_get_thumbnail('medium'); ?>
             </a>
         </div>
     </div>

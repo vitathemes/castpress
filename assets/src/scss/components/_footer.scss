@@ -30,6 +30,9 @@
   @include media(tablet) {
     width: 670px;
     padding: 0px;
+
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -59,7 +62,10 @@
   @include media(tablet) {
     padding: 0px 0px;
     padding-top: 64px;
-    flex-wrap: nowrap;
+    width: 50%;
+
+    height: max-content;
+    align-content: flex-start;
   }
 
   a {
@@ -74,9 +80,7 @@
   position: relative;
   padding-right: 16px;
   @include media(tablet) {
-    margin-bottom: 0px;
-    width: 50%;
-    max-width: 50%;
+    max-width: 100%;
   }
 
   &:last-child {
@@ -167,5 +171,9 @@
         color: $castpress_primary_color;
       }
     }
+  }
+
+  .sub-menu {
+    display: none;
   }
 }

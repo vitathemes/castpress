@@ -11,8 +11,8 @@
 
     <div class="c-single__thumbnail">
         <div class="c-single__image">
-            <a href="<?php esc_url( the_permalink() ) ?>">
-                <?php castpress_get_thumbnail(); ?>
+            <a href="<?php esc_url( the_permalink() ) ?>" aria-label="<?php esc_attr__( 'Last episode', 'castpress')?>" >
+                <?php castpress_get_thumbnail('medium'); ?>
             </a>
         </div>
     </div>
@@ -23,7 +23,7 @@
 
             <?php 
                 if ( 'episodes' == get_post_type() ){
-                    if(get_theme_mod( 'homepage_header_single' , 'style-1') == 'style-3'){
+                    if(get_theme_mod( 'homepage_last_ep_single' , 'style-1') == 'style-3'){
                 
                      /* translator %s : aria label play button , translator 2 %s: aria control, translator 3 %s: Play text  */
                      echo sprintf("<div class='c-episode__player c-episode__player--button'><button class='c-btn c-btn--play js-btn--play' aria-label='%s' >%s</button></div>" , esc_html__( 'Play button' , 'castpress' ) , esc_html__( 'Play', 'castpress' ));

@@ -1,5 +1,6 @@
 <div class="c-latest-episodes">
     <?php
+
         // Show latest episodes in home page 
         if( get_query_var( 'paged' ) )
             $castpress_paged = get_query_var( 'paged' );
@@ -21,8 +22,6 @@
             $castpress_latest_episode = $castpress_latest_episode[0]->ID;
         }
 
-    
-
         $castpress_args = array (
             "post_status"            => "publish",
             "post_type"              => "episodes",
@@ -39,14 +38,13 @@
         if ( $castpress_query->have_posts() ) :
         while ( $castpress_query->have_posts() ) : $castpress_query->the_post();
 
-            if( get_theme_mod( 'latest_episodes_style' , 'style-1') == 'style-1') {
+            if( get_theme_mod( 'home_page_latest_episodes' , 'style-1') == 'style-1') {
                 get_template_part( 'template-parts/content', get_post_type() );	
             }
             else{
                 get_template_part( 'template-parts/components/latest-episode/latest-episodes-row' );	
             }
-
-
+            
         endwhile;
             castpress_get_default_pagination();
         endif;
