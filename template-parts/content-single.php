@@ -13,13 +13,13 @@
 
     <header class="c-single__header">
 
-        <?php the_title( '<h1 class="c-single__title c-main__entry-title u-heading-1-line-height--bg"><a class="u-link--secondary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
+        <?php the_title( '<h1 class="c-single__title c-main__entry-title"><a class="u-link--secondary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
 
         <div class="c-single__entry-meta">
 
             <?php castpress_get_category(true); ?>
 
-            <h5 class="c-post__date u-font--regular u-heading-5-line-height--sm posted-on">
+            <h5 class="c-post__date u-font--regular posted-on">
                 <a class="u-link--tertiary" href="<?php esc_url( the_permalink() ) ?>">
                     <?php echo esc_html( get_the_date() ) ?>
                 </a>

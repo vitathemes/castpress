@@ -1,5 +1,5 @@
 <div class="c-latest-posts">
-    <h1 class="c-latest-posts__title u-heading-1-line-height--bg">
+    <h1 class="c-latest-posts__title">
         <?php esc_html_e( 'Latest Posts', 'castpress' ); ?>
     </h1>
 

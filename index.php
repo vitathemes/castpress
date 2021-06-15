@@ -17,7 +17,7 @@ get_header();
 <main id="primary" class="c-main c-main--blog">
     <div class="c-main__content">
         <header class="c-main__header">
-            <h1 class="c-main__entry-title u-heading-1-line-height--bg">
+            <h1 class="c-main__entry-title">
                 <?php  castpress_get_index_title();  ?>
             </h1>
         </header>

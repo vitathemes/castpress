@@ -16,10 +16,10 @@ if ( ! function_exists( 'castpress_posted_by' ) ) :
 
 		/* translators: %s: post author. */
 		$byline = sprintf(
-			'<span class="c-post__author vcard u-font--regular  u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"> %s ' . esc_html(get_the_author()) . ' </a></span>' , esc_html__( 'By', 'castpress' )
+			'<span class="c-post__author vcard u-font--regular "><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"> %s ' . esc_html(get_the_author()) . ' </a></span>' , esc_html__( 'By', 'castpress' )
 		);
 
-		echo '<h5 class="byline u-font--regular u-heading-5-line-height--sm c-post__author "> ' . $byline  . '</h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<h5 class="byline u-font--regular c-post__author "> ' . $byline  . '</h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -144,7 +144,7 @@ if (! function_exists('castpress_get_category')) :
 		$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
 		if ( $categories_list ) {
 			/* $categories_list list of categories. Rendered from category section that client set in categories.*/
-			echo '<h5 class="c-episode__category u-font--regular u-heading-5-line-height--sm">'.  wp_kses_post($categories_list) .'</h5>' . wp_kses_post($castpress_have_seprator) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<h5 class="c-episode__category u-font--regular">'.  wp_kses_post($categories_list) .'</h5>' . wp_kses_post($castpress_have_seprator) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;
@@ -312,7 +312,7 @@ if ( ! function_exists( 'castpress_share_links' ) ) {
 			$castpress_twitter_url  = "https://twitter.com/intent/tweet?url=" . get_permalink() . "&title=" . get_the_title();
 			$castpress_facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
 
-			echo sprintf( '<h4 class="c-social-share__title u-heading-4-line-height--sm">%s</h4>', esc_html__( 'Share:', 'castpress' ) );
+			echo sprintf( '<h4 class="c-social-share__title">%s</h4>', esc_html__( 'Share:', 'castpress' ) );
 			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-facebook-alt c-social-share__item__icon"></span></a>', esc_url( $castpress_facebook_url ), esc_html__( "facebook" , "castpress" ) );
 			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-twitter c-social-share__item__icon"></span></a>', esc_url( $castpress_twitter_url ), esc_html__( "twitter" , "castpress" ) );
 			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $castpress_linkedin_url ), esc_html__( "linkedin" , "castpress" ) );
@@ -364,7 +364,7 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 		if($castpress_publisher_flag === 1){
 		
 			/* Translator %s : title class name , translator 2 %s : The title  */
-			echo sprintf('<div class="c-episodes__share %s"><span class="c-episode__social-share__title h6 u-line-height--sm">%s</span>' , esc_attr($castpress_class_name) , esc_html__( 'Listen on', 'castpress' ) );
+			echo sprintf('<div class="c-episodes__share %s"><span class="c-episode__social-share__title h6">%s</span>' , esc_attr($castpress_class_name) , esc_html__( 'Listen on', 'castpress' ) );
 
 			// Spotify
 			if ( $castpress_spotify ) { 
@@ -511,7 +511,7 @@ if ( ! function_exists( 'castpress_get_archives_header' ) ) :
 	 */
 	function castpress_get_archives_header() {
 
-		echo sprintf('<header class="c-main__header"><h1 class="c-main__entry-title u-heading-1-line-height--bg">%s</h1></header><!-- .-main__content -->', wp_kses_post(get_the_archive_title()) );
+		echo sprintf('<header class="c-main__header"><h1 class="c-main__entry-title">%s</h1></header><!-- .-main__content -->', wp_kses_post(get_the_archive_title()) );
 
 	}
 	

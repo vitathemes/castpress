@@ -188,26 +188,27 @@ if( function_exists( 'kirki' ) ) {
 
 	/* Typography Fonts */
 	
-	// Headings typography body
+	// Paragraph tag
 	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
-		'settings'    => 'typography_body',
-		'label'       => esc_html__( 'Body', 'castpress' ),
+		'settings'    => 'typography_p',
+		'label'       => esc_html__( 'Base', 'castpress' ),
 		'section'     => 'typography_fonts',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '14px',
-			'line-height'     	 => '18px',
+			'font-size'          => '16px',
+			'line-height'     	 => '25px',
+			'variant'         	 => 'regular',
 			
 		],
 		'priority'    => 11,
 		'transport'   => 'auto',
 		'output'      => [
 			[
-				'element' => array( 'body'),
+				'element' => array( 'p' , '.p'),
 			],
 		],
-	] );
+	]);
 
 	// Headings typography h1
 	Kirki::add_field( 'castpress_theme', [
@@ -346,27 +347,7 @@ if( function_exists( 'kirki' ) ) {
 	] );
 
 
-	// Paragraph tag
-	Kirki::add_field( 'castpress_theme', [
-		'type'        => 'typography',
-		'settings'    => 'typography_p',
-		'label'       => esc_html__( 'Paragraph', 'castpress' ),
-		'section'     => 'typography_fonts',
-		'default'     => [
-			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '16px',
-			'line-height'     	 => '25px',
-			'variant'         	 => 'regular',
-			
-		],
-		'priority'    => 18,
-		'transport'   => 'auto',
-		'output'      => [
-			[
-				'element' => array( 'p' , '.p'),
-			],
-		],
-	] );
+
 	
 
 	// -- Socials --

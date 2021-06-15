@@ -28,11 +28,11 @@
         <div class="c-footer__copy">
 
             <div class="c-footer__copy-text">
-                <h5 class="c-footer__context u-heading-5-line-height--sm u-font--regular">
+                <h5 class="c-footer__context u-font--regular">
                     <?php echo esc_html__( 'Castpress Theme by', 'castpress' ) ?>
                 </h5>
 
-                <h5 class="c-footer__context u-heading-5-line-height--sm u-font--regular">
+                <h5 class="c-footer__context u-font--regular">
                     <a class="c-footer__link u-link--tertiary" href="<?php echo esc_url('http://vitathemes.com/'); ?>">
                         <?php echo esc_html__( 'VitaThemes', 'castpress' ) ?>
                     </a>

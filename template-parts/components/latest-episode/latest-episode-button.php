@@ -19,7 +19,7 @@
     </div>
 
     <header class="c-single__header">
-        <?php the_title( '<h1 class="c-single__title c-single__title--sm c-main__entry-title u-heading-1-line-height--bg"><a class="u-link--secondary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );?>
+        <?php the_title( '<h1 class="c-single__title c-single__title--sm c-main__entry-title"><a class="u-link--secondary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );?>
         <div class="c-single__podcast-audio">
             <?php 
                 if ( 'episodes' == get_post_type() ){

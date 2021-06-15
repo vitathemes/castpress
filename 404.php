@@ -18,7 +18,7 @@ get_header();
         </header><!-- .page-header -->
         
         <div class="c-main__page-content">
-            <h1 class="c-main__title u-heading-1-line-height--sm">
+            <h1 class="c-main__title">
                 <?php esc_html_e( 'Page not found!', 'castpress' ); ?>
             </h1>
 
