@@ -209,7 +209,11 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 				// Get src attribute from embeded file
 				$castpress_podcast_embedfile_link = $castpress_podcast_embedfile;
 				$castpress_audio_src_array = array();
-				preg_match( '/src="([^"]*)"/i', $castpress_podcast_embedfile_link, $castpress_audio_src_array );
+				preg_match( '/src="([^"]*)"/i', $castpress_podcast_embedfile_link, $castpress_audio_src_array ) ;
+
+				if( class_exists('ACF') &&  get_field('podcast_audio_file') !== $castpress_audio_src_array[1] ){
+					$castpress_audio_src_array[1] = get_field('podcast_audio_file');
+				}
 
 				$castpress_attributes = array(
 					'src'      => esc_url( $castpress_audio_src_array[1] ),
