@@ -148,6 +148,11 @@ if( function_exists( 'kirki' ) ) {
 		'section'  => 'typography_colors',
 		'default'  => '#222222',
 		'priority' => 9,
+		'output'      => [
+			[
+				'element' => array('h1' , 'h2' ,'h3' ,'h4' ,'h5' ,'h6'),
+			],
+		],
 		
 	] );
 	
@@ -178,21 +183,6 @@ if( function_exists( 'kirki' ) ) {
 		'section'  => 'typography_colors',
 		'default'  => '#7247ca',
 		'priority' => 11,
-		
-	] );
-	
-	Kirki::add_field( 'castpress', [
-		'type'     => 'color',
-		'settings' => 'typography_headings_color',
-		'label'    => __( 'Posts Headings Color', 'castpress' ),
-		'section'  => 'typography_colors',
-		'default'  => '#222222',
-		'priority' => 11.5,
-		'output'      => [
-			[
-				'element' => array('h1' , 'h2' ,'h3' ,'h4' ,'h5' ,'h6'),
-			],
-		],
 		
 	] );
 

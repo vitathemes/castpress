@@ -287,8 +287,6 @@ function castpress_branding() {
 // Kirki color variables
 function castpress_typography() {
 
-	(get_theme_mod( 'typography_headings_color' ) == "" ) ? $castpress_headings_color = "#222222" : $castpress_headings_color = get_theme_mod( 'typography_headings_color' ); 
-
 	(get_theme_mod( 'typography_primary_color' ) == "" ) ? $castpress_primary_color = "#222222" : $castpress_primary_color = get_theme_mod( 'typography_primary_color' ); 
 
 	(get_theme_mod( 'typography_secondary_color' ) == "" ) ? $castpress_second_color = "#555555" : $castpress_second_color = get_theme_mod( 'typography_secondary_color' ); 
@@ -299,7 +297,7 @@ function castpress_typography() {
 
 
 	$html = ':root {	
-				--castpress_headings-color:   ' . $castpress_headings_color . ';
+				--castpress_headings-color:   ' . $castpress_primary_color . ';
 				--castpress_primary-color:    ' . $castpress_primary_color .';
 	            --castpress_second-color:     ' . $castpress_second_color . ';
 				--castpress_tertiary-color:   ' . $castpress_tertiary_color . ';
