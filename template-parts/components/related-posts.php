@@ -25,9 +25,13 @@
             while( $castpress_loop->have_posts() ) {
                 $castpress_loop->the_post();
                 get_template_part( 'template-parts/content' ); //Show Content.php
-            }
+            }?>
+    </div><!-- c-related-posts -->
+    <?php
         }
     }
-            wp_reset_postdata(); 
+    wp_reset_postdata(); 
     ?>
-    </div>
+    
+   
+    

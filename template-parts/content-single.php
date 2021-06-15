@@ -46,7 +46,7 @@
 
     </header><!-- .entry-header -->
 
-    <div class="s-single__entry-content">
+    <section class="s-single__entry-content">
         <?php
             the_content(
                 sprintf(
@@ -108,7 +108,7 @@
 
         <div class="c-social-share c-social-share--single">
             <?php castpress_share_links(); // Get social share Links ?>
-        </div>
+        </div><!-- s-single__entry-content -->
 
         <?php 
             // Get related posts
@@ -116,6 +116,6 @@
                 get_template_part( 'template-parts/components/related-posts' ); 
             }
         ?>
-    </div>
+    </section>
 
 </article><!-- #post-<?php the_ID(); ?> -->
