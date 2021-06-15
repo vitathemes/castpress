@@ -341,17 +341,25 @@ function castpress_home_components() {
 
 }
 
+
 function castpress_modify_archive_title( $castpress_title ) {
+	/**
+	 * Modify Archive title 
+	 */
 
-	if(get_theme_mod( 'post_type_archive_custom_title' , 'Episodes')){
-		$castpress_title = get_theme_mod( 'post_type_archive_custom_title' , 'Episodes');
-	}
-	else{
-		if( is_post_type_archive() ) {
-			$castpress_title = "episodes";	
+	
+    if(is_post_type_archive('episodes')){
+
+		if(get_theme_mod( 'post_type_archive_custom_title' , 'Episodes')){
+			return get_theme_mod( 'post_type_archive_custom_title' , 'Episodes');
 		}
-	}
-	return $castpress_title;
+		else{
+			return 'episodes';
+		}
 
+	}
+
+    return $castpress_title;
 }
-add_filter( 'get_the_archive_title', 'castpress_modify_archive_title');
+add_filter( 'wp_title', 'castpress_modify_archive_title' );
+add_filter( 'get_the_archive_title', 'castpress_modify_archive_title' );
