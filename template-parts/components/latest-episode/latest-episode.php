@@ -1,5 +1,5 @@
 <?php 
-    $args = array(
+    $castpress_args = array(
         'posts_per_page' => 1, 
         'offset' => 0,
         'orderby' => 'post_date',
@@ -8,27 +8,28 @@
         'post_status' => 'publish'
     );
 
-    $query = new WP_Query($args);
+    $castpress_query = new WP_Query($castpress_args);
    
 
-    if ($query->have_posts()) :
+    if ($castpress_query->have_posts()) :
 
         echo '<div class="c-latest-episode c-latest-episode--home">';
 
-        while ( $query->have_posts() ) : $query->the_post();
+        while ( $castpress_query->have_posts() ) : $castpress_query->the_post();
 
-        if( get_theme_mod( 'homepage_last_ep_single' , 'style-1') == 'style-1'){
-            get_template_part( 'template-parts/components/latest-episode/latest-episode-player');
-        }
-        elseif(get_theme_mod( 'homepage_last_ep_single' , 'style-1') == 'style-2' ){
-            get_template_part( 'template-parts/components/latest-episode/latest-episode-player-bg');
-        }
-        else{
-            get_template_part( 'template-parts/components/latest-episode/latest-episode-player');
-        }
-
+            if( get_theme_mod( 'homepage_last_ep_single' , 'style-1') == 'style-1'){
+                get_template_part( 'template-parts/components/latest-episode/latest-episode-player');
+            }
+            elseif(get_theme_mod( 'homepage_last_ep_single' , 'style-1') == 'style-2' ){
+                get_template_part( 'template-parts/components/latest-episode/latest-episode-player-bg');
+            }
+            else{
+                get_template_part( 'template-parts/components/latest-episode/latest-episode-player');
+            }
 
         endwhile;
+
+        wp_reset_postdata();
 
         echo '</div>';
         

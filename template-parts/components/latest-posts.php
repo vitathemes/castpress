@@ -18,6 +18,8 @@
                 while ($castpress_latest_posts->have_posts()) : $castpress_latest_posts->the_post();
                     get_template_part( 'template-parts/content', get_post_type() );
                 endwhile; 
+
+                wp_reset_postdata();
             endif;
         ?>
     </div>

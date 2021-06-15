@@ -32,20 +32,20 @@
                 </div><!-- .c-header__branding -->
 
                 <button class="c-header__menu js-header__menu"
-                    aria-label="<?php esc_attr_e('Primary menu', 'castpress'); ?>" aria-controls="primary-menu"
+                    aria-label="<?php esc_attr_e('Primary menu', 'castpress'); ?>" aria-controls="castpress-primary-menu"
                     aria-expanded="false">
                 </button><!-- .c-header__menu -->
 
                 <nav class="c-header__navigation">
                     <?php
-                        if ( has_nav_menu( 'primary-menu' ) ) {
+                        if ( has_nav_menu( 'castpress-primary-menu' ) ) {
                             wp_nav_menu(
                                 array(
                                     'walker'          => new Castpress_walker_nav_menu(),
-                                    'theme_location'  => 'primary-menu',
-                                    'menu_id'         => 'primary-menu',
-                                    "menu_class"      => "s-nav nav-menu",
-                                    "container_class" => "c-nav",
+                                    'theme_location'  => 'castpress-primary-menu',
+                                    'menu_id'         => 'castpress-primary-menu',
+                                    'menu_class'      => 's-nav nav-menu',
+                                    'container_class' => 'c-nav',
                                 )
                             );
                         }
@@ -55,7 +55,7 @@
                 <div class="c-header__search js-header__search">
 
                     <button class="c-header__search-icon js-header__search-icon"
-                        aria-label="<?php esc_attr_e('Toggle Search', 'castpress'); ?>" aria-controls="primary-menu"
+                        aria-label="<?php esc_attr_e('Toggle Search', 'castpress'); ?>" aria-controls="castpress-primary-menu"
                         aria-expanded="false">
                     </button>
                     

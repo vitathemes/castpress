@@ -25,7 +25,7 @@
                 </a>
             </h5>
 
-            <span class="seprator h5 u-link--secondary"> | </span><!-- * This part does not need to be translated it's a seprator -->
+            <span class="seprator h5 u-link--secondary"> <?php echo esc_html( " | " ) ?> </span><!-- Simple Seprator -->
 
             <?php castpress_posted_by(); ?>
 
@@ -80,7 +80,7 @@
             </h2>
 
             <?php if ( class_exists('ACF') && get_field('transcript') ) { ?>
-                <span class="c-single__transcript__sep h2">|</span> <!-- * This part does not need to be translated it's a seprator -->
+                <span class="c-single__transcript__sep h2"><?php echo esc_html( " | " ) ?></span> <!-- * Simple seprator -->
                 <a class="c-single__transcript__more js-single__transcript__more h2"><?php esc_html_e( 'View transcript', 'castpress' ); ?>
                     <span class="c-single__transcript__icon dashicons dashicons-arrow-right-alt"></span>
                 </a>

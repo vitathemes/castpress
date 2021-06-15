@@ -15,18 +15,17 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-		if ( post_password_required() ) {
-			return;
-		}		
-		$castpress_comment_counter = get_comments_number();
+	if ( post_password_required() ) {
+		return;
+	}		
+	$castpress_comment_counter = get_comments_number();
 ?>
+
 <div id="comments" class="comments-area">
 
     <?php
-	
-
 		//Custom comment form 
-		$comments_args = array(
+		$castpress_comments_args = array(
 			//Define Fields
 			'fields' => array(
 				//Author field
@@ -54,11 +53,11 @@
 			'id_submit' =>  __( 'comment-submit' , 'castpress'),
 			'class_submit' =>  __( 'castpress-comment-submit' , 'castpress'),
 		);
-		comment_form( $comments_args );
+		comment_form( $castpress_comments_args );
 
 		// You can start editing here -- including this comment!
 		if ( have_comments() ) :
-?>
+	?>
 
     <h4 class="comments-title u-heading-4-line-height--sm u-font--semibold">
         <?php

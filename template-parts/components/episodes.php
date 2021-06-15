@@ -38,7 +38,7 @@
         if ( $castpress_query->have_posts() ) :
         while ( $castpress_query->have_posts() ) : $castpress_query->the_post();
 
-            if( get_theme_mod( 'home_page_latest_episodes' , 'style-1') == 'style-1') {
+            if( get_theme_mod( 'latest_episodes' , 'style-1') == 'style-1') {
                 get_template_part( 'template-parts/content', get_post_type() );	
             }
             else{
@@ -47,6 +47,8 @@
             
         endwhile;
             castpress_get_default_pagination();
+
+            wp_reset_postdata();
         endif;
     ?>
 </div>

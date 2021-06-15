@@ -1158,9 +1158,9 @@ img {
     .s-nav li:last-child .sub-menu .sub-menu {
       z-index: 5;
       position: absolute;
-      top: 100%;
+      top: 0%;
       left: 0% !important;
-      transform: translate(0%, 0%); }
+      transform: translate(60%, 95%); }
       .s-nav li:last-child .sub-menu .sub-menu .sub-menu {
         margin-left: 0px; }
         .s-nav li:last-child .sub-menu .sub-menu .sub-menu .sub-menu {

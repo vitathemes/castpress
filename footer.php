@@ -14,7 +14,7 @@
     <div class="c-footer__content">
 
         <?php if ( is_active_sidebar( 'castpress-custom-footer-widget-left' ) ) : ?>
-        <div id="footer-widget-area" class="c-footer__widgets  c-footer__widgets--left" role="complementary">
+        <div id="footer-widget-area" class="c-footer__widgets c-footer__widgets--left" role="complementary">
             <?php dynamic_sidebar( 'castpress-custom-footer-widget-left' ); ?>
         </div>
         <?php endif; ?>
@@ -40,13 +40,13 @@
             </div>
 
             <?php
-                if ( has_nav_menu( 'primary-footer' ) ) {
+                if ( has_nav_menu( 'castpress-primary-footer' ) ) {
                     wp_nav_menu(
                         array(
-                            'theme_location'  => 'primary-footer',
-                            'menu_id'         => 'primary-footer',
-                            "menu_class"      => "s-footer__nav nav-menu",
-                            "container_class" => "c-footer__nav",
+                            'theme_location'  => 'castpress-primary-footer',
+                            'menu_id'         => 'castpress-primary-footer',
+                            'menu_class'      => 's-footer__nav nav-menu',
+                            'container_class' => 'c-footer__nav',
                         )
                     );
                 }

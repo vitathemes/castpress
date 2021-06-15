@@ -625,7 +625,7 @@ if( function_exists( 'kirki' ) ) {
 	// Episodes template part
 	Kirki::add_field( 'castpress', [
 		'type'        => 'radio-buttonset',
-		'settings'    => 'home_page_latest_episodes',
+		'settings'    => 'latest_episodes',
 		'label'       => esc_html__( 'Latest Episodes Style', 'castpress' ),
 		'section'     => 'episodes_page',
 		'default'     => 'style-1',

@@ -19,14 +19,14 @@
                 </div>
 
                 <?php 
-                if(get_theme_mod( 'home_page_latest_episodes' , 'style-1') == 'style-2'){  ?>
+                if(get_theme_mod( 'latest_episodes' , 'style-1') == 'style-2'){  ?>
                     <div class="c-episode__entry-content h4">
                         <p class="c-episode__entry-context h4"><?php echo esc_html(get_the_excerpt()); ?></p>
                     </div>
                 <?php } ?>
             </div>
 
-            <?php if(get_theme_mod( 'home_page_latest_episodes' , 'style-1') !== 'style-2'){  ?>
+            <?php if(get_theme_mod( 'latest_episodes' , 'style-1') !== 'style-2'){  ?>
                 <a class="c-episode__read-more h6 u-line-height--sm u-link--quaternary" href=" <?php esc_url( the_permalink() ) ?> "
                     rel="bookmark">
                     <span class="c-episode__play"></span>

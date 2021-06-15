@@ -26,7 +26,7 @@ get_header();
 
 						if( is_post_type_archive('episodes') ){
 
-							if( get_theme_mod( 'home_page_latest_episodes' , 'style-1') == 'style-1') {
+							if( get_theme_mod( 'latest_episodes' , 'style-1') == 'style-1') {
 								get_template_part( 'template-parts/content', get_post_type() );	
 							}
 							else{
@@ -40,7 +40,9 @@ get_header();
 
 					}
 				endwhile;
+
 				castpress_get_default_pagination();
+
 			else :
 				get_template_part( 'template-parts/content', 'none' );
 			endif;

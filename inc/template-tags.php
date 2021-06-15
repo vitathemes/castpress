@@ -29,12 +29,9 @@ if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
 	 */
 	function castpress_post_thumbnail() {
-		
-
+	
 		if ( is_singular() ) :
 
 			echo '<div class="post-thumbnail">';
@@ -46,16 +43,17 @@ if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 			if ( has_post_thumbnail() ) { ?>
 			<a class="post-thumbnail" href="<?php echo esc_attr( the_permalink() ); ?> " aria-hidden="true" tabindex="-1">
 
-			<?php		the_post_thumbnail(
-							'post-thumbnail',
+			<?php		
+				the_post_thumbnail(
+					'post-thumbnail',
+					array(
+						'alt' => the_title_attribute(
 							array(
-								'alt' => the_title_attribute(
-									array(
-										'echo' => false,
-									)
-								),
+								'echo' => false,
 							)
-						);
+						),
+					)
+				);
 			?>		
 			</a>
 
@@ -83,36 +81,6 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 endif;
 
 
-if ( !function_exists('castpress_get_page_name')) :
-	/**
-	 * get current page name (slug)
-	 */
-	function castpress_get_page_name() {
-
-		global $post;
-		$post_slug = $post->post_name;
-		$post_slug = str_replace("-", " ", $post_slug);
-		echo esc_html(esc_html($post_slug));
-		
-	}
-endif;
-
-
-if ( ! function_exists('castpress_archive_page_name')) :
-	/**
-	  * Get archive page name
-	  */
-	function castpress_archive_page_name() {
-		if ( !is_front_page() && is_home() ) {
-			echo esc_html__( 'blog', 'castpress' );
-		}	
-		if( is_archive() ){
-			echo wp_kses_post( castpress_archive_title() );
-		}
-	}
-endif;
-
-
 if ( ! function_exists('castpress_get_thumbnail')) :
 	/**
 	 * Return thumbnail if exist
@@ -130,8 +98,8 @@ endif;
 
 if (! function_exists('castpress_get_single_thumbnail')) :
 	/**
-	 * Return thumbnail in single page
-	 */
+	  * Return thumbnail in single page
+	  */
 	function castpress_get_single_thumbnail( $castpress_DefaultThumbnail = true, $castpress_image_size = "full" ) {
 		if ( has_post_thumbnail() ) {
 			echo '<div class="'.esc_attr( 'c-single__thumbnail' ).'"><div class="'.esc_attr( 'c-single__image c-single__image--single' ).'">';
@@ -171,7 +139,7 @@ if (! function_exists('castpress_get_category')) :
 	  * Return Post category
 	  */
 	function castpress_get_category( $castpress_have_seprator = false ) {
-		($castpress_have_seprator) ? $castpress_have_seprator = "<span class='seprator h5 u-link--secondary'> | </span>" : $castpress_have_seprator = "";
+		($castpress_have_seprator) ? $castpress_have_seprator = "<span class='seprator h5 u-link--secondary'> ".esc_html( " | " )." </span>" : $castpress_have_seprator = "";
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
 		if ( $categories_list ) {
@@ -233,7 +201,7 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 				
 				// Return just the custom player 
 				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo sprintf('<div class="c-episode__player js-episode__player--embed %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
+				echo wp_kses_post(sprintf('<div class="c-episode__player js-episode__player--embed %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) ));
 
 			}
 			elseif(strpos($tagname, 'audio') !== false) {
@@ -241,7 +209,7 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 				// Get src attribute from embeded file
 				$castpress_podcast_embedfile_link = $castpress_podcast_embedfile;
 				$castpress_audio_src_array = array();
-				preg_match( '/src="([^"]*)"/i', $castpress_podcast_embedfile_link, $castpress_audio_src_array ) ;
+				preg_match( '/src="([^"]*)"/i', $castpress_podcast_embedfile_link, $castpress_audio_src_array );
 
 				$castpress_attributes = array(
 					'src'      => esc_url( $castpress_audio_src_array[1] ),
@@ -252,10 +220,10 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 				$castpress_podcast_embedfile = wp_audio_shortcode( $castpress_attributes );
 
 				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
+				echo wp_kses_post(sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) ));
 				
 				// Download button
-				echo '<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
+				echo wp_kses_post('<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>');
 
 			}
 			elseif( class_exists('ACF') &&  get_field('podcast_audio_file') !== $castpress_podcast_audio_link ){
@@ -264,10 +232,10 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 				$castpress_podcast_embedfile = '[audio preload="metadata" mp3="'.$castpress_podcast_updated_field.'" ][/audio]';
 
 				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
+				echo wp_kses_post(sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) ));
 		
 				// Download button
-				echo '<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
+				echo wp_kses_post('<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>');
 
 
 
@@ -378,7 +346,7 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 			$castpress_spotify, $castpress_soundcloud, $castpress_apple, $castpress_youtube, 
 			$castpress_stitcher, $castpress_deezer, $castpress_google_podcasts, $castpress_iheartradio,
 			$castpress_overcast, $castpress_pandora, $castpress_pocketcasts, $castpress_radiopublic,
-			$castpress_rss, $castpress_castro, $castpress_castbox, $castpress_audible
+			$castpress_rss, $castpress_castro, $castpress_castbox, $castpress_audible,$castpress_spreaker 
 		);
 		
 		$castpress_publisher_flag = 0;		
@@ -520,6 +488,7 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 
 endif;
 
+
 if ( ! function_exists( 'castpress_get_main_class' ) ) :
 	/**
 	 * Get Main section class
@@ -553,10 +522,10 @@ if ( ! function_exists( 'castpress_get_latest_episodes_class_name' ) ) :
 
 	function castpress_get_latest_episodes_class_name() {
 
-		if(get_theme_mod( 'home_page_latest_episodes' , 'style-1') == 'style-2'){
+		if(get_theme_mod( 'latest_episodes' , 'style-1') == 'style-2'){
 			echo esc_attr( 'c-latest-episodes--row-bg' );
 		}
-		elseif(get_theme_mod( 'home_page_latest_episodes' , 'style-1') == 'style-3'){
+		elseif(get_theme_mod( 'latest_episodes' , 'style-1') == 'style-3'){
 			echo esc_attr( 'c-latest-episodes--row' );
 		}
 		

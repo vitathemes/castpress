@@ -142,11 +142,11 @@ function castpress_deciaml_post_number(){
     if($postNumber >= 10){
         $decimalCounter = "";
 		$postNumber = $postNumber;
-		return $postNumber;
+		return $postNumber;// Output will scape when it use eg. $castpress_postNumber in content-episodes
     }
     else{
 		$postNumber = $decimalCounter.$postNumber;
-		return $postNumber;
+		return $postNumber;// Output will scape when it use eg. $castpress_postNumber in content-episodes
 	}
 }
 
@@ -257,7 +257,7 @@ add_filter('libwp_taxonomy_1_arguments', 'castpress_modify_libwp_taxonomy_argume
 function castpress_custom_post_author_archive($query) {
 	/**
 	 *
-	 * Include custom post type in author archives page 
+	 * Include custom post type in author author page 
 	 *
 	 **/
     if ($query->is_author)
