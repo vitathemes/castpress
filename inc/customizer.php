@@ -166,7 +166,7 @@ if( function_exists( 'kirki' ) ) {
 		'settings' => 'typography_tertiary_color',
 		'label'    => __( 'Secondary Texts Color', 'castpress' ),
 		'section'  => 'typography_colors',
-		'default'  => '#979797',
+		'default'  => '#707070',
 		'priority' => 10,
 		
 	] );

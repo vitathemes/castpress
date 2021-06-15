@@ -293,7 +293,7 @@ function castpress_typography() {
 
 	(get_theme_mod( 'typography_secondary_color' ) == "" ) ? $castpress_second_color = "#555555" : $castpress_second_color = get_theme_mod( 'typography_secondary_color' ); 
 
-	(get_theme_mod( 'typography_tertiary_color' ) == "" ) ? $castpress_tertiary_color = "#979797" : $castpress_tertiary_color = get_theme_mod( 'typography_tertiary_color' ); 
+	(get_theme_mod( 'typography_tertiary_color' ) == "" ) ? $castpress_tertiary_color = "#707070" : $castpress_tertiary_color = get_theme_mod( 'typography_tertiary_color' ); 
 
 	(get_theme_mod( 'typography_quaternary_color' ) == "" ) ? $castpress_quaternary_color = "#7247ca" : $castpress_quaternary_color = get_theme_mod( 'typography_quaternary_color' ); 
 
@@ -347,18 +347,15 @@ function castpress_modify_archive_title( $castpress_title ) {
 	 * Modify Archive title 
 	 */
 
-	
     if(is_post_type_archive('episodes')){
-
 		if(get_theme_mod( 'post_type_archive_custom_title' , 'Episodes')){
 			return get_theme_mod( 'post_type_archive_custom_title' , 'Episodes');
 		}
 		else{
 			return 'episodes';
 		}
-
 	}
-
+	
     return $castpress_title;
 }
 add_filter( 'wp_title', 'castpress_modify_archive_title' );

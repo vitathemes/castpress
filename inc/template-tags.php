@@ -517,8 +517,8 @@ endif;
 if ( ! function_exists( 'castpress_get_latest_episodes_class_name' ) ) :
 	
 	/**
-	 * Get Episodes ( Row template ) class name - For handling style from kirki 
-	 */
+	  * Get Episodes archives title
+	  */
 
 	function castpress_get_latest_episodes_class_name() {
 
@@ -533,3 +533,21 @@ if ( ! function_exists( 'castpress_get_latest_episodes_class_name' ) ) :
 	
 endif;
 
+
+if ( ! function_exists( 'castpress_get_index_title' ) ) :
+	
+	/**
+	  * Get index.php Title 
+	  */
+	function castpress_get_index_title() {
+		if (is_home()) {
+			if (get_option('page_for_posts')) {
+				echo get_the_title(get_option('page_for_posts'));
+			}
+			else{
+				echo esc_html__( "Blog" , "castpress" );
+			}
+		} 
+	}
+	
+endif;
