@@ -201,7 +201,7 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 				
 				// Return just the custom player 
 				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo wp_kses_post(sprintf('<div class="c-episode__player js-episode__player--embed %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) ));
+				echo sprintf('<div class="c-episode__player js-episode__player--embed %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
 
 			}
 			elseif(strpos($tagname, 'audio') !== false) {
@@ -220,10 +220,10 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 				$castpress_podcast_embedfile = wp_audio_shortcode( $castpress_attributes );
 
 				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo wp_kses_post(sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) ));
+				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
 				
 				// Download button
-				echo wp_kses_post('<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>');
+				echo '<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
 
 			}
 			elseif( class_exists('ACF') &&  get_field('podcast_audio_file') !== $castpress_podcast_audio_link ){
@@ -232,10 +232,10 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 				$castpress_podcast_embedfile = '[audio preload="metadata" mp3="'.$castpress_podcast_updated_field.'" ][/audio]';
 
 				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo wp_kses_post(sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) ));
+				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
 		
 				// Download button
-				echo wp_kses_post('<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>');
+				echo '<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
 
 
 

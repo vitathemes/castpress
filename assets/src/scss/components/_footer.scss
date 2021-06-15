@@ -70,6 +70,10 @@
 
   a {
     text-decoration: none !important;
+
+    &:hover {
+      color: $castpress_primary_color;
+    }
   }
 }
 

@@ -99,3 +99,12 @@ blockquote.has-text-align-right {
 blockquote.is-style-large {
   margin-bottom: 32px !important;
 }
+
+.wp-block-search {
+  .wp-block-search__button {
+    background-color: $castpress_quaternary_color;
+    height: max-content;
+    padding: 13px;
+    margin-top: 8px;
+  }
+}

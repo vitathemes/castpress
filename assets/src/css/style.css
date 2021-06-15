@@ -3221,6 +3221,8 @@ h2.c-single__transcript__title {
       align-content: flex-start; } }
   .c-footer__widgets a {
     text-decoration: none !important; }
+    .c-footer__widgets a:hover {
+      color: var(--castpress_primary-color); }
 
 .c-footer__widget {
   width: 100%;
@@ -3709,6 +3711,12 @@ blockquote.has-text-align-right {
 
 blockquote.is-style-large {
   margin-bottom: 32px !important; }
+
+.wp-block-search .wp-block-search__button {
+  background-color: var(--castpress_quaternary-color);
+  height: max-content;
+  padding: 13px;
+  margin-top: 8px; }
 
 /*--------------------------------------------------------------
 # utilities
