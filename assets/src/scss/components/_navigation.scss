@@ -316,6 +316,27 @@
   padding: 0px;
 }
 
+.s-nav > .menu-item > .sub-menu > .menu-item > .sub-menu > .menu-item > .sub-menu {
+  transform: translate(30%, 0%);
+
+  .sub-menu {
+    transform: translate(30%, 0%);
+  }
+}
+
+.s-nav
+  > .menu-item:last-child
+  > .sub-menu
+  > .menu-item
+  > .sub-menu
+  > .menu-item
+  > .sub-menu {
+  transform: translate(0%, 0%);
+  .sub-menu {
+    transform: translate(0%, 0%);
+  }
+}
+
 .menu-item__link {
   text-decoration: none;
   color: $castpress_primary_color;
