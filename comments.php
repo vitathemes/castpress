@@ -15,28 +15,28 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-		if ( post_password_required() ) {
-			return;
-		}		
-		$castpress_comment_counter = get_comments_number();
+
+	if ( post_password_required() ) {
+		return;
+	}		
+	$castpress_comment_counter = get_comments_number();
 ?>
+
 <div id="comments" class="comments-area">
 
     <?php
-	
-
 		//Custom comment form 
-		$comments_args = array(
+		$castpress_comments_args = array(
 			//Define Fields
 			'fields' => array(
 				//Author field
-				'author' => '<h4 class="comment-form-author u-heading-4-line-height--bg">'. __( 'Name*', 'castpress' ).'<br /><input type="text" id="author" name="author" aria-required="true" ></input></h4>',
+				'author' => '<h4 class="comment-form-author">'. __( 'Name*', 'castpress' ).'<br /><input type="text" id="author" name="author" aria-required="true" /></h4>',
 				//Email Field
-				'email' => '<h4 class="comment-form-email u-heading-4-line-height--bg">'. __( 'Email*', 'castpress' ).'<br /><input type="email" id="email" name="email" ></input></h4>',
+				'email' => '<h4 class="comment-form-email">'. __( 'Email*', 'castpress' ).'<br /><input type="email" id="email" name="email" /></h4>',
 				//URL Field
-				'url' => '<h4 class="comment-form-url u-heading-4-line-height--bg">'. __( 'Website', 'castpress' ).'<br /><input type="url" id="url" name="url" ></input></h4>',
+				'url' => '<h4 class="comment-form-url">'. __( 'Website', 'castpress' ).'<br /><input type="url" id="url" name="url" /></h4>',
 				//Cookies
-				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="h6 h6--regular u-line-height--sm c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'castpress' ) .'</span></div>',
+				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="h6 h6--regular u-font--regular c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'castpress' ) .'</span></div>',
 			),
 			// Change the title of send button
 			'label_submit' => __( 'Submit', 'castpress'),
@@ -45,22 +45,22 @@
 			//Cancel Reply Text
 			'cancel_reply_link' =>  __( 'Cancel Reply', 'castpress' ),
 			// Redefine your own textarea (the comment body).
-			'comment_field' => '<h4 class="comment-form-comment u-heading-4-line-height--bg">'. __( 'Comment*', 'castpress' ).'<br /><textarea id="comment" name="comment" aria-required="true" ></textarea></p>',
+			'comment_field' => '<h4 class="comment-form-comment">'. __( 'Comment*', 'castpress' ).'<br /><textarea id="comment" name="comment" aria-required="true" ></textarea></h4>',
 			//Message Before Comment
-			'comment_notes_before' =>'<h5 class="c-comments__desc u-heading-5-line-height--sm u-font--regular">'. __( 'Required fields are marked *' , 'castpress') .'</h5>',
+			'comment_notes_before' =>'<h5 class="c-comments__desc u-font--regular">'. __( 'Required fields are marked *' , 'castpress') .'</h5>',
 			// Remove "Text or HTML to be displayed after the set of comment fields".
 			'comment_notes_after' => '',
 			//Submit Button ID
 			'id_submit' =>  __( 'comment-submit' , 'castpress'),
 			'class_submit' =>  __( 'castpress-comment-submit' , 'castpress'),
 		);
-		comment_form( $comments_args );
+		comment_form( $castpress_comments_args );
 
 		// You can start editing here -- including this comment!
 		if ( have_comments() ) :
-?>
+	?>
 
-    <h4 class="comments-title u-heading-4-line-height--sm u-font--semibold">
+    <h4 class="comments-title u-font--semibold">
         <?php
 			$castpress_comment_count = get_comments_number();
 			if ( '1' === $castpress_comment_count ) {

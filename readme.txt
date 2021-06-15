@@ -1,12 +1,11 @@
 === Castpress ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.0
-Tested up to: 5.7.2
+Tested up to: 5.7
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPL-3.0-or-later
 License URI: https://opensource.org/licenses/GPL-3.0
-
 
 == Description ==
 
@@ -25,7 +24,7 @@ Castpress is a a minimal & mobile-first theme. The best choice for people who wa
 * SEO optimized
 * GNU GPL version 3.0 licensed
 * Support 1 level of submenus
-* Support 4 level of menus
+* Support 3 level of menus
 * …and much more
 
 See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes.com/castpress/).

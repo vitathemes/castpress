@@ -39,13 +39,13 @@ if ( ! function_exists( 'castpress_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'primary-menu' => esc_html__( 'Primary', 'castpress' ),
+				'castpress-primary-menu' => esc_html__( 'Primary', 'castpress' ),
 			)
 		);
 
 		register_nav_menus(
 			array(
-				'primary-footer' => esc_html__( 'Footer', 'castpress' ),
+				'castpress-primary-footer' => esc_html__( 'Footer', 'castpress' ),
 			)
 		);
 

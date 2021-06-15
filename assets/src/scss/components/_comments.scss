@@ -50,6 +50,7 @@
 
 #cancel-comment-reply-link {
   margin-left: 8px;
+  text-decoration: none !important;
 }
 
 /*------------------------------------*\
@@ -190,6 +191,11 @@
   @include media(tablet) {
     display: inline-block;
   }
+}
+
+.c-comments__cookie {
+  line-height: 16px !important;
+  font-weight: 400 !important;
 }
 
 .logged-in-as {

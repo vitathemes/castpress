@@ -49,3 +49,15 @@ dd {
 figcaption {
   color: $castpress_second_color;
 }
+
+blockquote {
+  border-left: 1px solid $castpress_quaternary_color;
+  padding-left: 16px;
+  margin-bottom: 64px;
+  margin: 0px;
+}
+
+code {
+  background-color: $castpress_neutral_gray_light_color;
+  padding: 0px;
+}

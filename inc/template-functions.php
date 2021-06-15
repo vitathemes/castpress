@@ -22,15 +22,15 @@ function castpress_body_classes( $castpress_classes ) {
 add_filter( 'body_class', 'castpress_body_classes' );
 
 
-function castpress_footer_widgets_init() {
+function castpress_footer_widgets_left_init() {
 	/**
-	 * Register widget area.
+	 * Register widget area left side.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
 	 */
    register_sidebar( array(
-	   'name'          => esc_html__( 'Footer Widget' , 'castpress'),
-	   'id'            => 'custom-footer-widget',
+	   'name'          => esc_html__( 'Footer Widget Left Side' , 'castpress'),
+	   'id'            => 'castpress-custom-footer-widget-left',
 	   'before_widget' => '<div class="c-footer__widget">',
 	   'after_widget'  => '</div>',
 	   'before_title'  => '<h2 class="c-footer__widget__title">',
@@ -38,7 +38,26 @@ function castpress_footer_widgets_init() {
    ) );
 
 }
-add_action( 'widgets_init', 'castpress_footer_widgets_init' );
+add_action( 'widgets_init', 'castpress_footer_widgets_left_init' );
+
+
+function castpress_footer_widgets_right_init() {
+	/**
+	 * Register widget area right side.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+	 */
+   register_sidebar( array(
+	   'name'          => esc_html__( 'Footer Widget Right Side' , 'castpress'),
+	   'id'            => 'castpress-custom-footer-widget-right',
+	   'before_widget' => '<div class="c-footer__widget">',
+	   'after_widget'  => '</div>',
+	   'before_title'  => '<h2 class="c-footer__widget__title">',
+	   'after_title'   => '</h2>',
+   ) );
+
+}
+add_action( 'widgets_init', 'castpress_footer_widgets_right_init' );
 
 
 function castpress_scripts() {
@@ -51,7 +70,6 @@ function castpress_scripts() {
 
 	wp_enqueue_style( 'castpress-style', get_stylesheet_uri(), array(), CASTPRESS_VERSION );
 	wp_style_add_data( 'castpress-style', 'rtl', 'replace' );
-
 	// enqueue css
 	wp_enqueue_style( 'castpress-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), CASTPRESS_VERSION );
 	// enqueue js
@@ -124,11 +142,11 @@ function castpress_deciaml_post_number(){
     if($postNumber >= 10){
         $decimalCounter = "";
 		$postNumber = $postNumber;
-		return $postNumber;
+		return $postNumber;// Output will scape when it use eg. $castpress_postNumber in content-episodes
     }
     else{
 		$postNumber = $decimalCounter.$postNumber;
-		return $postNumber;
+		return $postNumber;// Output will scape when it use eg. $castpress_postNumber in content-episodes
 	}
 }
 
@@ -138,7 +156,7 @@ function castpress_comment_button($castpress_defaults) {
 	  */
 
    	// Edit button 
-	$button = '<button name="%1$s" type="submit" id="%2$s" class="%3$s comment-form-arrow" value="%4$s"> '.esc_html__( 'Submit', 'castpress' ).' <span class="dashicons dashicons-arrow-right-alt2"></]></button>';
+	$button = '<button name="%1$s" type="submit" id="%2$s" class="%3$s comment-form-arrow" value="%4$s"> '.esc_html__( 'Submit', 'castpress' ).' <span class="dashicons dashicons-arrow-right-alt2"></span></button>';
 
     // Override the default submit button:
     $castpress_defaults['submit_button'] = $button;
@@ -188,18 +206,18 @@ function castpress_modify_post_type_argument($castpress_postTypeArguments){
         'all_items'     => __('All Episodes', 'castpress'),
     ];
     $castpress_postTypeArguments['rewrite']['slug'] 	  = 'episodes';
-	$castpress_postTypeArguments['menu_position'] 	  = 5;
-	$castpress_postTypeArguments['taxonomies']	      = array('category' , 'post_tag');
-	$castpress_postTypeArguments['show_in_admin_bar']   = true;
-	$castpress_postTypeArguments['show_in_admin_bar']   = true;
+	$castpress_postTypeArguments['menu_position'] 	  	  = 5;
+	$castpress_postTypeArguments['taxonomies']	      	  = array('category' , 'post_tag');
+	$castpress_postTypeArguments['show_in_admin_bar']     = true;
+	$castpress_postTypeArguments['show_in_admin_bar']     = true;
 	$castpress_postTypeArguments['hierarchical'] 		  = true;
-	$castpress_postTypeArguments['can_export'] 		  = true;
+	$castpress_postTypeArguments['can_export'] 		  	  = true;
 	$castpress_postTypeArguments['has_archive'] 		  = true;
-	$castpress_postTypeArguments['exclude_from_search'] = false;
-	$castpress_postTypeArguments['publicly_queryable']  = true;
+	$castpress_postTypeArguments['exclude_from_search']   = false;
+	$castpress_postTypeArguments['publicly_queryable']    = true;
 	$castpress_postTypeArguments['capability_type'] 	  = 'post';
 	$castpress_postTypeArguments['show_in_rest'] 		  = true;
-	$castpress_postTypeArguments['supports'] 			  = array('title', 'editor' , 'comments', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' ) ;	
+	$castpress_postTypeArguments['supports'] 			  = array('title', 'editor' , 'comments', 'excerpt', 'author', 'medium', 'revisions', 'custom-fields' ) ;	
     return $castpress_postTypeArguments;
 }
 add_filter('libwp_post_type_1_arguments', 'castpress_modify_post_type_argument');
@@ -236,15 +254,17 @@ function castpress_modify_libwp_taxonomy_arguments($castpress_taxonomyArguments)
 add_filter('libwp_taxonomy_1_arguments', 'castpress_modify_libwp_taxonomy_arguments');
 
 
-function castpress_pingback_header() {
+function castpress_custom_post_author_archive($query) {
 	/**
-	 * Add a pingback url auto-discovery header for single posts, pages, or attachments.
-	 */
-	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
-	}
+	 *
+	 * Include custom post type in author author page 
+	 *
+	 **/
+    if ($query->is_author)
+        $query->set( 'post_type', array('episodes', 'post') );
+    remove_action( 'pre_get_posts', 'castpress_custom_post_author_archive' );
 }
-add_action( 'wp_head', 'castpress_pingback_header' );
+add_action('pre_get_posts', 'castpress_custom_post_author_archive');
 
 
 function castpress_branding() { 
@@ -257,7 +277,7 @@ function castpress_branding() {
 	else {	
 
 		// Display the Text title with link 
-		/** translator %s : link of main page. translator %s 2: Site title  */
+		/* translator %s : link of main page. translator %s 2: Site title  */
 		echo sprintf('<h1 class="c-header__title site-title"><a href="%s" rel="home">%s</a></h1>' , esc_attr(esc_url( home_url( '/' ))),  esc_html(get_bloginfo( 'name' )) );
 
 		}
@@ -266,48 +286,21 @@ function castpress_branding() {
 
 // Kirki color variables
 function castpress_typography() {
-	
-	// Headings Color
-	if ( get_theme_mod( 'typography_headings_color' ) == "" ) {
-		$castpress_headings_color = "#222222";
-	} else {
-		$castpress_headings_color = get_theme_mod( 'typography_headings_color' );
-	}
 
-	// Primary Color 
-	if ( get_theme_mod( 'typography_primary_color' ) == "" ) {
-		$castpress_primary_color = "#222222";
-	} else {
-		$castpress_primary_color = get_theme_mod( 'typography_primary_color' );
-	}
+	(get_theme_mod( 'typography_primary_color' ) == "" ) ? $castpress_primary_color = "#222222" : $castpress_primary_color = get_theme_mod( 'typography_primary_color' ); 
 
-	// Secondary Color 
-	if ( get_theme_mod( 'typography_secondary_color' ) == "" ) {
-		$castpress_second_color = "#555555";
-	} else {
-		$castpress_second_color = get_theme_mod( 'typography_secondary_color' );
-	}
-	
-	// Tertiary Color 
-	if ( get_theme_mod( 'typography_tertiary_color' ) == "" ) {
-		$castpress_tertiary_color = "#979797";
-	} else {
-		$castpress_tertiary_color = get_theme_mod( 'typography_tertiary_color' );
-	}
+	(get_theme_mod( 'typography_secondary_color' ) == "" ) ? $castpress_second_color = "#555555" : $castpress_second_color = get_theme_mod( 'typography_secondary_color' ); 
 
-	// quaternary Color 
-	if ( get_theme_mod( 'typography_quaternary_color' ) == "" ) {
-		$castpress_quaternary_color = "#7247ca";
-	} else {
-		$castpress_quaternary_color = get_theme_mod( 'typography_quaternary_color' );
-	}
-	
+	(get_theme_mod( 'typography_tertiary_color' ) == "" ) ? $castpress_tertiary_color = "#707070" : $castpress_tertiary_color = get_theme_mod( 'typography_tertiary_color' ); 
+
+	(get_theme_mod( 'typography_quaternary_color' ) == "" ) ? $castpress_quaternary_color = "#7247ca" : $castpress_quaternary_color = get_theme_mod( 'typography_quaternary_color' ); 
+
 
 	$html = ':root {	
-				--castpress_headings-color: ' . $castpress_headings_color . ';
-				--castpress_primary-color: '. $castpress_primary_color .';
-	            --castpress_second-color: ' . $castpress_second_color . ';
-				--castpress_tertiary-color: ' . $castpress_tertiary_color . ';
+				--castpress_headings-color:   ' . $castpress_primary_color . ';
+				--castpress_primary-color:    ' . $castpress_primary_color .';
+	            --castpress_second-color:     ' . $castpress_second_color . ';
+				--castpress_tertiary-color:   ' . $castpress_tertiary_color . ';
 				--castpress_quaternary-color: ' . $castpress_quaternary_color . ';
 			}';
 						
@@ -331,18 +324,37 @@ function castpress_theme_settings() {
 
 
 function castpress_home_components() {
-	
 	/**
-	 *
-	 * Display Home Components and make them customizable from Kirki  
-	 *
-	 **/
+      *
+	  * Display Home Components and make them customizable from Kirki  
+	  *
+	  **/
 
 	// Get the parts.
-	$template_parts = get_theme_mod( 'home_component' , array( 'components/latest-episode/latest-episode-player', 'components/episodes', 'components/latest-posts' ) );
+	$template_parts = get_theme_mod( 'home_component' , array( 'components/latest-episode/latest-episode', 'components/episodes', 'components/latest-posts' ) );
 	// Loop parts.
 	foreach ( $template_parts as $template_part ) {
 		get_template_part( 'template-parts/' . $template_part );
 	}
-	
+
 }
+
+
+function castpress_modify_archive_title( $castpress_title ) {
+	/**
+	 * Modify Archive title 
+	 */
+
+    if(is_post_type_archive('episodes')){
+		if(get_theme_mod( 'post_type_archive_custom_title' , 'Episodes')){
+			return get_theme_mod( 'post_type_archive_custom_title' , 'Episodes');
+		}
+		else{
+			return 'episodes';
+		}
+	}
+	
+    return $castpress_title;
+}
+add_filter( 'wp_title', 'castpress_modify_archive_title' );
+add_filter( 'get_the_archive_title', 'castpress_modify_archive_title' );

@@ -1,5 +1,5 @@
 <div class="c-latest-posts">
-    <h1 class="c-latest-posts__title u-heading-1-line-height--bg">
+    <h1 class="c-latest-posts__title">
         <?php esc_html_e( 'Latest Posts', 'castpress' ); ?>
     </h1>
 
@@ -18,10 +18,12 @@
                 while ($castpress_latest_posts->have_posts()) : $castpress_latest_posts->the_post();
                     get_template_part( 'template-parts/content', get_post_type() );
                 endwhile; 
+
+                wp_reset_postdata();
             endif;
         ?>
     </div>
-    <a class="c-btn c-btn--text-arrow c-btn--arrows-small"
+    <a class="c-btn c-btn--text-arrow c-btn--arrows-small" aria-label="<?php esc_attr__( 'View Blog', 'castpress' ); ?>"
         href="<?php echo esc_url(get_permalink( get_option( 'page_for_posts' ) )); ?>">
         <?php esc_html_e( 'View Blog', 'castpress' ); ?>
         <span class="dashicons dashicons-arrow-right-alt2"></span>

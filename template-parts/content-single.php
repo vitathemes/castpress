@@ -9,27 +9,23 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-single'); ?>>
 
-    <?php castpress_get_single_thumbnail( false ); ?>
+    <?php castpress_get_single_thumbnail( false , 'medium' ); ?>
 
     <header class="c-single__header">
 
-        <?php the_title( '<h1 class="c-single__title c-main__entry-title u-heading-1-line-height--bg"><a class="u-link--secondary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
+        <?php the_title( '<h1 class="c-single__title c-main__entry-title"><a class="u-link--secondary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
 
         <div class="c-single__entry-meta">
 
-            <?php 
-				if ( 'episodes' == get_post_type() ){
-					castpress_get_category(false , true);
-                }
-			?>
+            <?php castpress_get_category(true); ?>
 
-            <h5 class="c-post__date u-font--regular u-heading-5-line-height--sm posted-on">
+            <h5 class="c-post__date u-font--regular posted-on">
                 <a class="u-link--tertiary" href="<?php esc_url( the_permalink() ) ?>">
                     <?php echo esc_html( get_the_date() ) ?>
                 </a>
             </h5>
 
-            <span class="seprator h5 u-link--secondary"> | </span><!-- * This part does not need to be translated it's a seprator -->
+            <span class="seprator h5 u-link--secondary"> <?php echo esc_html( " | " ) ?> </span><!-- Simple Seprator -->
 
             <?php castpress_posted_by(); ?>
 
@@ -50,7 +46,7 @@
 
     </header><!-- .entry-header -->
 
-    <div class="s-single__entry-content">
+    <section class="s-single__entry-content">
         <?php
             the_content(
                 sprintf(
@@ -84,7 +80,7 @@
             </h2>
 
             <?php if ( class_exists('ACF') && get_field('transcript') ) { ?>
-                <span class="c-single__transcript__sep h2">|</span> <!-- * This part does not need to be translated it's a seprator -->
+                <span class="c-single__transcript__sep h2"><?php echo esc_html( " | " ) ?></span> <!-- * Simple seprator -->
                 <a class="c-single__transcript__more js-single__transcript__more h2"><?php esc_html_e( 'View transcript', 'castpress' ); ?>
                     <span class="c-single__transcript__icon dashicons dashicons-arrow-right-alt"></span>
                 </a>
@@ -112,7 +108,7 @@
 
         <div class="c-social-share c-social-share--single">
             <?php castpress_share_links(); // Get social share Links ?>
-        </div>
+        </div><!-- s-single__entry-content -->
 
         <?php 
             // Get related posts
@@ -120,5 +116,6 @@
                 get_template_part( 'template-parts/components/related-posts' ); 
             }
         ?>
+    </section>
 
 </article><!-- #post-<?php the_ID(); ?> -->

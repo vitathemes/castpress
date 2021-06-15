@@ -1,55 +1,36 @@
-<?php
-/**
- * Template part for displaying latest episode
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package castpress
- */
-?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('c-single c-single--latest-episode'); ?>>
+<?php 
+    $castpress_args = array(
+        'posts_per_page' => 1, 
+        'offset' => 0,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_type' => 'episodes', 
+        'post_status' => 'publish'
+    );
 
-    <div class="c-single__thumbnail">
-        <div class="c-single__image">
-            <a href="<?php esc_url( the_permalink() ) ?>">
-                <?php castpress_get_thumbnail(); ?>
-            </a>
-        </div>
-    </div>
+    $castpress_query = new WP_Query($castpress_args);
+   
 
-    <header class="c-single__header">
-        <?php the_title( '<h1 class="c-single__title c-single__title--sm c-main__entry-title u-heading-1-line-height--bg"><a class="u-link--secondary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );?>
-        <div class="c-single__podcast-audio">
-            <?php 
-                if ( 'episodes' == get_post_type() ){
-                    castpress_get_podcast_audio( $post , "c-single__audio" );
-                }	
-            ?>
-        </div>
+    if ($castpress_query->have_posts()) :
 
-        <?php castpress_get_podcast_player_link(); ?>
+        echo '<div class="c-latest-episode c-latest-episode--home">';
 
-    </header><!-- .entry-header -->
+        while ( $castpress_query->have_posts() ) : $castpress_query->the_post();
 
-    <div class="s-single__entry-content">
+            if( get_theme_mod( 'homepage_last_ep_single' , 'style-1') == 'style-1'){
+                get_template_part( 'template-parts/components/latest-episode/latest-episode-player');
+            }
+            elseif(get_theme_mod( 'homepage_last_ep_single' , 'style-1') == 'style-2' ){
+                get_template_part( 'template-parts/components/latest-episode/latest-episode-player-bg');
+            }
+            else{
+                get_template_part( 'template-parts/components/latest-episode/latest-episode-player');
+            }
 
-        <?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'castpress' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-		?>
+        endwhile;
 
-    </div><!-- .entry-content -->
+        wp_reset_postdata();
 
-</article><!-- #post-<?php the_ID(); ?> -->
+        echo '</div>';
+        
+    endif;

@@ -13,13 +13,13 @@ if ( ! function_exists( 'castpress_posted_by' ) ) :
 	 * Prints HTML with meta information for the current author.
 	 */
 	function castpress_posted_by() {
+
+		/* translators: %s: post author. */
 		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html__( 'By  %s', 'castpress' ),
-			'<h5 class="c-post__author vcard u-font--regular u-heading-5-line-height--sm"><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"> ' . esc_html(get_the_author()) . ' </a></h5>'
+			'<span class="c-post__author vcard u-font--regular "><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"> %s ' . esc_html(get_the_author()) . ' </a></span>' , esc_html__( 'By', 'castpress' )
 		);
 
-		echo '<h5 class="byline u-font--regular u-heading-5-line-height--sm c-post__author "> ' . $byline  . '</h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<h5 class="byline u-font--regular c-post__author "> ' . $byline  . '</h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -29,12 +29,9 @@ if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
 	 */
 	function castpress_post_thumbnail() {
-		
-
+	
 		if ( is_singular() ) :
 
 			echo '<div class="post-thumbnail">';
@@ -46,23 +43,24 @@ if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 			if ( has_post_thumbnail() ) { ?>
 			<a class="post-thumbnail" href="<?php echo esc_attr( the_permalink() ); ?> " aria-hidden="true" tabindex="-1">
 
-			<?php		the_post_thumbnail(
-							'post-thumbnail',
+			<?php		
+				the_post_thumbnail(
+					'post-thumbnail',
+					array(
+						'alt' => the_title_attribute(
 							array(
-								'alt' => the_title_attribute(
-									array(
-										'echo' => false,
-									)
-								),
+								'echo' => false,
 							)
-						);
+						),
+					)
+				);
 			?>		
 			</a>
 
 			<?php
 			}
 			else {
-				echo '<img src="' . esc_url( get_stylesheet_directory_uri() ). '/assets/images/no-thumbnail.png" />';
+				echo '<img alt="'.esc_attr__( 'no thumbnail', 'castpress' ).'" src="' . esc_url( get_template_directory_uri() ). '/assets/images/no-thumbnail.png" />';
 			}
 		
 		endif; // End is_singular().
@@ -83,46 +81,16 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 endif;
 
 
-if ( !function_exists('castpress_get_page_name')) :
-	/**
-	 * get current page name (slug)
-	 */
-	function castpress_get_page_name() {
-
-		global $post;
-		$post_slug = $post->post_name;
-		$post_slug = str_replace("-", " ", $post_slug);
-		echo esc_html(esc_html($post_slug));
-		
-	}
-endif;
-
-
-if ( ! function_exists('castpress_archive_page_name')) :
-	/**
-	  * Get archive page name
-	  */
-	function castpress_archive_page_name() {
-		if ( !is_front_page() && is_home() ) {
-			echo esc_html__( 'blog', 'castpress' );
-		}	
-		if( is_archive() ){
-			echo wp_kses_post( castpress_archive_title() );
-		}
-	}
-endif;
-
-
 if ( ! function_exists('castpress_get_thumbnail')) :
 	/**
 	 * Return thumbnail if exist
 	 */
-	function castpress_get_thumbnail() {
+	function castpress_get_thumbnail( $castpress_image_size = "full" ) {
 		if ( has_post_thumbnail() ) {
-			the_post_thumbnail();
+			the_post_thumbnail( $castpress_image_size );
 		}
 		else{
-			echo '<img src="' . esc_url(get_stylesheet_directory_uri()). '/assets/images/no-thumbnail.png" />';
+			echo '<img alt="'.esc_attr__( 'no thumbnail', 'castpress' ).'" src="' . esc_url(get_template_directory_uri()). '/assets/images/no-thumbnail.png" />';
 		}
 }
 endif;
@@ -130,18 +98,18 @@ endif;
 
 if (! function_exists('castpress_get_single_thumbnail')) :
 	/**
-	 * Return thumbnail in single page
-	 */
-	function castpress_get_single_thumbnail( $castpress_DefaultThumbnail = true ) {
+	  * Return thumbnail in single page
+	  */
+	function castpress_get_single_thumbnail( $castpress_DefaultThumbnail = true, $castpress_image_size = "full" ) {
 		if ( has_post_thumbnail() ) {
 			echo '<div class="'.esc_attr( 'c-single__thumbnail' ).'"><div class="'.esc_attr( 'c-single__image c-single__image--single' ).'">';
-				the_post_thumbnail();
+				the_post_thumbnail($castpress_image_size);
 			echo '</div></div>';
 		}
 		else{
 			if($castpress_DefaultThumbnail){
 				echo '<div class="'.esc_attr( 'c-single__thumbnail' ).'"><div class="'.esc_attr( 'c-single__image c-single__image--single' ).'">';
-					echo '<img src="' . esc_url(get_stylesheet_directory_uri()). '/assets/images/no-thumbnail.png" />';
+					echo '<img alt="'.esc_attr__( 'no thumbnail', 'castpress' ).'" src="' . esc_url(get_template_directory_uri()). '/assets/images/no-thumbnail.png" />';
 				echo '</div></div>';
 			}
 		}
@@ -170,13 +138,13 @@ if (! function_exists('castpress_get_category')) :
 	/**
 	  * Return Post category
 	  */
-	function castpress_get_category( $castpress_is_bold = false, $castpress_have_seprator = false ) {
-		($castpress_have_seprator) ? $castpress_have_seprator = "<span class='seprator h5 u-link--secondary'> | </span>" : $castpress_have_seprator = "";
+	function castpress_get_category( $castpress_have_seprator = false ) {
+		($castpress_have_seprator) ? $castpress_have_seprator = "<span class='seprator h5 u-link--secondary'> ".esc_html( " | " )." </span>" : $castpress_have_seprator = "";
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
 		if ( $categories_list ) {
 			/* $categories_list list of categories. Rendered from category section that client set in categories.*/
-			echo '<h5 class="c-episode__category u-font--regular u-heading-5-line-height--sm">'.  wp_kses_post($categories_list) .'</h5>' . wp_kses_post($castpress_have_seprator) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<h5 class="c-episode__category u-font--regular">'.  wp_kses_post($categories_list) .'</h5>' . wp_kses_post($castpress_have_seprator) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;
@@ -187,14 +155,12 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 	/**
 	  * Return Podcast Audio and Update Custom Field
 	  */
-	function castpress_get_podcast_audio($post , $castpress_class_name = "") {
+	function castpress_get_podcast_audio($post , $castpress_class_name = "",  $castpress_button_class_name = "" ) {
 		
 		// Get audio link from importer plugin
 		$castpress_podcast_audio_link = get_post_meta( $post->ID, 'podcast_audio_url', true );
-
 		// Get audio file from importer plugin
 		$castpress_podcast_audio = get_post_meta( $post->ID, 'podcast_audio_file', true );
-
 		// Get embeded aufio file
 		$castpress_podcast_embedfile = get_post_meta( $post->ID, 'podcast_importer_external_embed', true);
 
@@ -235,26 +201,50 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 				
 				// Return just the custom player 
 				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile));
+				echo sprintf('<div class="c-episode__player js-episode__player--embed %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
 
 			}
 			elseif(strpos($tagname, 'audio') !== false) {
 
+				// Get src attribute from embeded file
+				$castpress_podcast_embedfile_link = $castpress_podcast_embedfile;
+				$castpress_audio_src_array = array();
+				preg_match( '/src="([^"]*)"/i', $castpress_podcast_embedfile_link, $castpress_audio_src_array ) ;
 
-				if( class_exists('ACF') &&  get_field('podcast_audio_file') !== $castpress_podcast_audio_link ){
-
-					$castpress_podcast_updated_field = get_field('podcast_audio_file');
-					$castpress_podcast_embedfile = '[audio mp3="'.$castpress_podcast_updated_field.'" ][/audio]';
-
+				if( class_exists('ACF') &&  get_field('podcast_audio_file') !== $castpress_audio_src_array[1] ){
+					$castpress_audio_src_array[1] = get_field('podcast_audio_file');
 				}
 
+				$castpress_attributes = array(
+					'src'      => esc_url( $castpress_audio_src_array[1] ),
+					'loop'     => '',
+					'autoplay' => '',
+					'preload'  => 'auto'
+				);
+				$castpress_podcast_embedfile = wp_audio_shortcode( $castpress_attributes );
+
 				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile));
+				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
 				
 				// Download button
-				echo '<a class="c-btn c-btn--download" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
+				echo '<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
 
 			}
+			elseif( class_exists('ACF') &&  get_field('podcast_audio_file') !== $castpress_podcast_audio_link ){
+					
+				$castpress_podcast_updated_field = get_field('podcast_audio_file');
+				$castpress_podcast_embedfile = '[audio preload="metadata" mp3="'.$castpress_podcast_updated_field.'" ][/audio]';
+
+				/* translators: %s: class name . translator 2 %s : audio short code  */
+				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
+		
+				// Download button
+				echo '<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr('Download button' , 'castpress') .'" href="'.esc_attr($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
+
+
+
+			}
+		
 		}	
 	}
 endif;
@@ -265,13 +255,15 @@ if (! function_exists('castpress_get_default_pagination')) :
 	  * Show numeric pagination
 	  */
 	function castpress_get_default_pagination() {
-		echo'<div class="c-pagination">' . wp_kses_post(
-			paginate_links(
-				array(
-				'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
-				'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
-				)
-		)) .'</div>';
+		if(paginate_links()) {
+			echo'<div class="c-pagination">' . wp_kses_post(
+				paginate_links(
+					array(
+					'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
+					'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>'
+					)
+			)) .'</div>';
+		}
 	}
 endif;
 
@@ -320,7 +312,7 @@ if ( ! function_exists( 'castpress_share_links' ) ) {
 			$castpress_twitter_url  = "https://twitter.com/intent/tweet?url=" . get_permalink() . "&title=" . get_the_title();
 			$castpress_facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
 
-			echo sprintf( '<h4 class="c-social-share__title u-heading-4-line-height--sm">%s</h4>', esc_html__( 'Share:', 'castpress' ) );
+			echo sprintf( '<h4 class="c-social-share__title">%s</h4>', esc_html__( 'Share:', 'castpress' ) );
 			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-facebook-alt c-social-share__item__icon"></span></a>', esc_url( $castpress_facebook_url ), esc_html__( "facebook" , "castpress" ) );
 			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-twitter c-social-share__item__icon"></span></a>', esc_url( $castpress_twitter_url ), esc_html__( "twitter" , "castpress" ) );
 			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $castpress_linkedin_url ), esc_html__( "linkedin" , "castpress" ) );
@@ -333,7 +325,7 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 	/**
 	  * Get publishers link from kirki 
 	  */
-	function castpress_get_podcast_player_link() {
+	function castpress_get_podcast_player_link( $castpress_class_name = "" ) {
 		
 		$castpress_spotify   		 = get_theme_mod( 'p_spotify_link' );
 		$castpress_soundcloud   	 = get_theme_mod( 'p_soundcloud_link' );
@@ -358,7 +350,7 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 			$castpress_spotify, $castpress_soundcloud, $castpress_apple, $castpress_youtube, 
 			$castpress_stitcher, $castpress_deezer, $castpress_google_podcasts, $castpress_iheartradio,
 			$castpress_overcast, $castpress_pandora, $castpress_pocketcasts, $castpress_radiopublic,
-			$castpress_rss, $castpress_castro, $castpress_castbox, $castpress_audible
+			$castpress_rss, $castpress_castro, $castpress_castbox, $castpress_audible,$castpress_spreaker 
 		);
 		
 		$castpress_publisher_flag = 0;		
@@ -371,123 +363,124 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 				
 		if($castpress_publisher_flag === 1){
 		
-			echo sprintf('<div class="c-episodes__share"><span class="c-episode__social-share__title h6 u-line-height--sm">%s</span>' , esc_html__( 'Listen on', 'castpress' ) );
+			/* Translator %s : title class name , translator 2 %s : The title  */
+			echo sprintf('<div class="c-episodes__share %s"><span class="c-episode__social-share__title h6">%s</span>' , esc_attr($castpress_class_name) , esc_html__( 'Listen on', 'castpress' ) );
 
 			// Spotify
 			if ( $castpress_spotify ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="bx-bxl-spotify" data-inline="false"></span>
 				</a>', esc_url( $castpress_spotify ), esc_html__( 'Spotify', 'castpress' ) );
 			}
 
 			// Soundcloud
 			if ( $castpress_soundcloud ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
-				<span class="iconify c-episodes__social-share__icons c-episodes__social-share__icons--big" data-icon="ion-logo-soundcloud" data-inline="false"></span>
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
+				<span class="iconify c-episodes__social-share__icons c-episodes__social-share__icons--big" data-icon="akar-icons:soundcloud-fill" data-inline="false"></span>
 				</a>', esc_url( $castpress_soundcloud ), esc_html__( 'Soundcloud', 'castpress' ) );
 			}
 
 			// Apple Music
 			if ( $castpress_apple ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="ant-design:apple-filled" data-inline="false"></span>
 				</a>', esc_url( $castpress_apple ), esc_html__( 'Apple Music', 'castpress' ) );
 			}
 
 			// Youtube
 			if ( $castpress_youtube ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="ant-design:youtube-filled" data-inline="false"></span>
 				</a>', esc_url( $castpress_youtube ), esc_html__( 'Youtube', 'castpress' ) );
 			}
 
 			// stitcher
 			if ( $castpress_stitcher ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:stitcher" data-inline="false"></span>
 				</a>', esc_url( $castpress_stitcher ), esc_html__( 'stitcher', 'castpress' ) );
 			}
 
 			// deezer
 			if ( $castpress_deezer ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="fa-brands:deezer" data-inline="false"></span>
 				</a>', esc_url( $castpress_deezer ), esc_html__( 'deezer', 'castpress' ) );
 			}
 
 			// Google podcast
 			if ( $castpress_google_podcasts ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib-google-podcasts" data-inline="false"></span>
 				</a>', esc_url( $castpress_google_podcasts ), esc_html__( 'Google podcast', 'castpress' ) );
 			}
 
 			// I heart radio
 			if ( $castpress_iheartradio ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:iheartradio" data-inline="false"></span>
 				</a>', esc_url( $castpress_iheartradio ), esc_html__( 'I heart radio', 'castpress' ) );
 			}
 
 			// Overcast
 			if ( $castpress_overcast ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib-overcast" data-inline="false"></span>
 				</a>', esc_url( $castpress_overcast ), esc_html__( 'Overcast', 'castpress' ) );
 			}
 
 			// Pandora
 			if ( $castpress_pandora ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib-pandora" data-inline="false"></span>
 				</a>', esc_url( $castpress_pandora ), esc_html__( 'Pandora', 'castpress' ) );
 			}
 
 			// Pocket casts
 			if ( $castpress_pocketcasts ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:pocketcasts" data-inline="false"></span>
 				</a>', esc_url( $castpress_pocketcasts ), esc_html__( 'Pocket casts', 'castpress' ) );
 			}
 
 			// Radio public
 			if ( $castpress_radiopublic ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib:radiopublic" data-inline="false"></span>
 				</a>', esc_url( $castpress_radiopublic ), esc_html__( 'Radio public', 'castpress' ) );
 			}
 
 			// Rss Feed
 			if ( $castpress_rss ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="ic-baseline-rss-feed" data-inline="false"></span>
 				</a>', esc_url( $castpress_rss ), esc_html__( 'Rss Feed', 'castpress' ) );
 			}
 
 			// Castro
 			if ( $castpress_castro ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib-castro" data-inline="false"></span>
 				</a>', esc_url( $castpress_castro ), esc_html__( 'Castro', 'castpress' ) );
 			}
 
 			// castbox
 			if ( $castpress_castbox ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="simple-icons:castbox" data-inline="false"></span>
 				</a>', esc_url( $castpress_castbox ), esc_html__( 'castbox', 'castpress' ) );
 			}
 
 			// audible
 			if ( $castpress_audible ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="la-audible" data-inline="false"></span>
 				</a>', esc_url( $castpress_audible ), esc_html__( 'audible', 'castpress' ) );
 			}
 
 			// spreaker
 			if ( $castpress_spreaker ) { 
-				echo sprintf( '<a href="%s" aria-label="%s" target="_blank">
+				echo sprintf( '<a class="c-episodes__social-share__link" href="%s" aria-label="%s" target="_blank">
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib:spreaker" data-inline="false"></span>
 				</a>', esc_url( $castpress_spreaker ), esc_html__( 'spreaker', 'castpress' ) );
 			}
@@ -498,6 +491,7 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 	}
 
 endif;
+
 
 if ( ! function_exists( 'castpress_get_main_class' ) ) :
 	/**
@@ -516,7 +510,48 @@ if ( ! function_exists( 'castpress_get_archives_header' ) ) :
 	 * Get Archives header
 	 */
 	function castpress_get_archives_header() {
-		echo sprintf('<header class="c-main__header"><h1 class="c-main__entry-title u-heading-1-line-height--bg">%s</h1></header><!-- .-main__content -->', wp_kses_post(get_the_archive_title()) );
+
+		echo sprintf('<header class="c-main__header"><h1 class="c-main__entry-title">%s</h1></header><!-- .-main__content -->', wp_kses_post(get_the_archive_title()) );
+
+	}
+	
+endif;
+
+
+if ( ! function_exists( 'castpress_get_latest_episodes_class_name' ) ) :
+	
+	/**
+	  * Get Episodes archives title
+	  */
+
+	function castpress_get_latest_episodes_class_name() {
+
+		if(get_theme_mod( 'latest_episodes' , 'style-1') == 'style-2'){
+			echo esc_attr( 'c-latest-episodes--row-bg' );
+		}
+		elseif(get_theme_mod( 'latest_episodes' , 'style-1') == 'style-3'){
+			echo esc_attr( 'c-latest-episodes--row' );
+		}
+		
+	}
+	
+endif;
+
+
+if ( ! function_exists( 'castpress_get_index_title' ) ) :
+	
+	/**
+	  * Get index.php Title 
+	  */
+	function castpress_get_index_title() {
+		if (is_home()) {
+			if (get_option('page_for_posts')) {
+				echo get_the_title(get_option('page_for_posts'));
+			}
+			else{
+				echo esc_html__( "Blog" , "castpress" );
+			}
+		} 
 	}
 	
 endif;

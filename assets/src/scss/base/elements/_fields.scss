@@ -1,3 +1,7 @@
+/*------------------------------------*\
+  #Fields 
+\*------------------------------------*/
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -67,10 +71,20 @@ input[type="checkbox"] {
 }
 
 .search-field {
-  padding: 10px 30px 10px 14px !important;
+  padding: 10px 30px 8px 14px !important;
 }
 
-//qa-
-.c-contact-form_title {
-  color: #555555 !important;
+/*------------------------------------*\
+  #Newsletter plugin form
+\*------------------------------------*/
+
+.tnp-field.tnp-field-email {
+  label {
+    line-height: 14px !important;
+    margin-bottom: 14px;
+  }
+}
+
+.tnp-email {
+  padding: 12px !important;
 }

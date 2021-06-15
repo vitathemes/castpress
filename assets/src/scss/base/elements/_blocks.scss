@@ -73,3 +73,38 @@
 .wp-block-image {
   position: relative;
 }
+
+/*------------------------------------*\
+  #quote block
+\*------------------------------------*/
+
+.wp-block-quote {
+  border-left: 1px solid $castpress_quaternary_color;
+  padding-left: 16px;
+  margin-bottom: 16px;
+}
+
+.has-text-color.has-light-gray-color {
+  background-color: $color_background_screen;
+  padding: 16px;
+}
+
+blockquote.has-text-align-right {
+  border-left: none;
+  border-right: 1px solid $castpress_quaternary_color;
+  padding-left: 0px;
+  padding-right: 16px;
+}
+
+blockquote.is-style-large {
+  margin-bottom: 32px !important;
+}
+
+.wp-block-search {
+  .wp-block-search__button {
+    background-color: $castpress_quaternary_color;
+    height: max-content;
+    padding: 13px;
+    margin-top: 8px;
+  }
+}

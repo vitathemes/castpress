@@ -1,6 +1,6 @@
 # Castpress - [Demo](https://demo.vitathemes.com/castpress/)
 
-Castpress is a minimal & mobile-first theme. The best choice for people who want to introduce their projects.
+Castpress is a a minimal & mobile-first theme. The best choice for people who want to publish their podcasts.
 
 ![Home Page](screenshot.png)
 
@@ -8,6 +8,7 @@ Castpress is a minimal & mobile-first theme. The best choice for people who want
 
 - Sass for stylesheets
 - Compatible with [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
+- Compatible with [Newsletter](https://wordpress.org/plugins/newsletter/)
 - Theme options built directly into WordPress native live theme customizer
 - Responsive design
 - Cross-browser compatibility
@@ -17,7 +18,7 @@ Castpress is a minimal & mobile-first theme. The best choice for people who want
 - Translation ready (with .POT files included)
 - SEO optimized
 - GNU GPL version 3.0 licensed
-- Support 10 level sub-menu
+- Support 3 level sub-menu
 - …and much more
 
 See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes.com/castpress/).

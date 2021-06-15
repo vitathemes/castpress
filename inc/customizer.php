@@ -83,7 +83,7 @@ if( function_exists( 'kirki' ) ) {
 	) );
 
 	Kirki::add_panel( 'typography_setting', array(
-		'priority' => 180,
+		'priority' => 8,
 		'title'    => esc_html__( 'Typography Setting', 'castpress' ),
 	) );
 
@@ -91,43 +91,20 @@ if( function_exists( 'kirki' ) ) {
 	 *	Kirki -> Sections
 	 */
 
-	/* Typography Settings */
-	Kirki::add_section( 'typography_colors', array(
-		'title'          => esc_html__( 'Typography Colors', 'castpress' ),
-		'description'    => esc_html__( 'Change Typography color.', 'castpress' ),
-		'panel'          => 'typography_setting',
-		'priority'       => 160,
-	) );
-
-	/* Typography Fonts */
-	Kirki::add_section( 'typography_fonts', array(
-		'title'          => esc_html__( 'Typography Fonts', 'castpress' ),
-		'description'    => esc_html__( 'Change Typography Fonts and sizes.', 'castpress' ),
-		'panel'          => 'typography_setting',
-		'priority'       => 160,
-	) );
-	
-	/* Social medias */
-	Kirki::add_section( 'socials', array(
-		'title'    => esc_html__( 'Socials', 'castpress' ),
-		'panel'    => 'footer',
-		'priority' => 6,
-	) );
-
-	/* Copy text */
-	Kirki::add_section( 'copyrights', array(
-		'title'    => esc_html__( 'Copy right Texts', 'castpress' ),
-		'panel'    => 'footer',
-		'priority' => 7,
-	) );
-
 	/* Home Components */
 	Kirki::add_section( 'home_components', array(
 		'title'    => esc_html__( 'Home Components', 'castpress' ),
 		'panel'    => '',
+		'priority' => 5,
+	) );
+
+	/* Episodes Page  */
+	Kirki::add_section( 'episodes_page', array(
+		'title'    => esc_html__( 'Episodes Options', 'castpress' ),
+		'panel'    => '',
 		'priority' => 6,
 	) );
-	
+
 	/* Podcast Player Link */
 	Kirki::add_section( 'podcast_player_link' , array(
 		'title'    => esc_html__( 'Podcast Player Links', 'castpress' ),
@@ -135,25 +112,54 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 7,
 	) );
 
+	/* Typography colors */
+	Kirki::add_section( 'typography_colors', array(
+		'title'          => esc_html__( 'Typography Colors', 'castpress' ),
+		'description'    => esc_html__( 'Change Typography color.', 'castpress' ),
+		'panel'          => 'typography_setting',
+		'priority'       => 8,
+	) );
+
+	/* Typography Fonts */
+	Kirki::add_section( 'typography_fonts', array(
+		'title'          => esc_html__( 'Typography Fonts', 'castpress' ),
+		'description'    => esc_html__( 'Change Typography Fonts and sizes.', 'castpress' ),
+		'panel'          => 'typography_setting',
+		'priority'       => 9,
+	) );
+	
+	/* Footer Social medias */
+	Kirki::add_section( 'socials', array(
+		'title'    => esc_html__( 'Socials', 'castpress' ),
+		'panel'    => 'footer',
+		'priority' => 6,
+	) );
+
+
     /*
-    *	Kirki -> fields
-	*/
+     *	Kirki -> fields
+	 */
 
 	/* Typography Colors */
 	Kirki::add_field( 'castpress', [
 		'type'     => 'color',
 		'settings' => 'typography_primary_color',
-		'label'    => __( 'Primary Color', 'castpress' ),
+		'label'    => __( 'Theme Headings Color', 'castpress' ),
 		'section'  => 'typography_colors',
 		'default'  => '#222222',
 		'priority' => 9,
+		'output'      => [
+			[
+				'element' => array('h1' , 'h2' ,'h3' ,'h4' ,'h5' ,'h6'),
+			],
+		],
 		
 	] );
 	
 	Kirki::add_field( 'castpress', [
 		'type'     => 'color',
 		'settings' => 'typography_secondary_color',
-		'label'    => __( 'Secondary Color', 'castpress' ),
+		'label'    => __( 'Primary Texts Color', 'castpress' ),
 		'section'  => 'typography_colors',
 		'default'  => '#555555',
 		'priority' => 9,
@@ -163,9 +169,9 @@ if( function_exists( 'kirki' ) ) {
 	Kirki::add_field( 'castpress', [
 		'type'     => 'color',
 		'settings' => 'typography_tertiary_color',
-		'label'    => __( 'Tertiary Color', 'castpress' ),
+		'label'    => __( 'Secondary Texts Color', 'castpress' ),
 		'section'  => 'typography_colors',
-		'default'  => '#979797',
+		'default'  => '#707070',
 		'priority' => 10,
 		
 	] );
@@ -173,52 +179,36 @@ if( function_exists( 'kirki' ) ) {
 	Kirki::add_field( 'castpress', [
 		'type'     => 'color',
 		'settings' => 'typography_quaternary_color',
-		'label'    => __( 'Quaternary Color', 'castpress' ),
+		'label'    => __( 'Links & hovers Color', 'castpress' ),
 		'section'  => 'typography_colors',
 		'default'  => '#7247ca',
 		'priority' => 11,
 		
 	] );
-	
-	Kirki::add_field( 'castpress', [
-		'type'     => 'color',
-		'settings' => 'typography_headings_color',
-		'label'    => __( 'Headings Color', 'castpress' ),
-		'section'  => 'typography_colors',
-		'default'  => '#222222',
-		'priority' => 11.5,
-		'output'      => [
-			[
-				'element' => array('h1' , 'h2' ,'h3' ,'h4' ,'h5' ,'h6'),
-			],
-		],
-		
-	] );
 
+	/* Typography Fonts */
 	
-
-	/* Typography fonts */
-	
-	// Headings typography body
+	// Paragraph tag
 	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
-		'settings'    => 'typography_body',
-		'label'       => esc_html__( 'H1', 'castpress' ),
+		'settings'    => 'typography_p',
+		'label'       => esc_html__( 'Base', 'castpress' ),
 		'section'     => 'typography_fonts',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '14px',
-			'line-height'     	 => '18px',
+			'font-size'          => '16px',
+			'line-height'     	 => '25px',
+			'variant'         	 => 'regular',
 			
 		],
 		'priority'    => 11,
 		'transport'   => 'auto',
 		'output'      => [
 			[
-				'element' => array( 'body'),
+				'element' => array( 'p' , '.p'),
 			],
 		],
-	] );
+	]);
 
 	// Headings typography h1
 	Kirki::add_field( 'castpress_theme', [
@@ -357,27 +347,7 @@ if( function_exists( 'kirki' ) ) {
 	] );
 
 
-	// Paragraph tag
-	Kirki::add_field( 'castpress_theme', [
-		'type'        => 'typography',
-		'settings'    => 'typography_p',
-		'label'       => esc_html__( 'Paragraph', 'castpress' ),
-		'section'     => 'typography_fonts',
-		'default'     => [
-			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '16px',
-			'line-height'     	 => '25px',
-			'variant'         	 => 'regular',
-			
-		],
-		'priority'    => 18,
-		'transport'   => 'auto',
-		'output'      => [
-			[
-				'element' => array( 'p' , '.p'),
-			],
-		],
-	] );
+
 	
 
 	// -- Socials --
@@ -422,19 +392,34 @@ if( function_exists( 'kirki' ) ) {
 	] );
 
 	
-	// -- Home components --
+	// -- Home Components --
+	Kirki::add_field( 'castpress', [
+		'type'        => 'radio-buttonset',
+		'settings'    => 'homepage_last_ep_single',
+		'label'       => esc_html__( 'Last Episode Style', 'castpress' ),
+		'section'     => 'home_components',
+		'default'     => 'style-1',
+		'priority'    => 10,
+		'choices'     => [
+			'style-1'   => esc_html__( 'Last Episode Style 1', 'castpress' ),
+			'style-2' => esc_html__( 'Last Episode Style 2', 'castpress' ),
+			'style-3' => esc_html__( 'Last Episode Style 3', 'castpress' ),
+		],
+	] );
+
+
 	Kirki::add_field( 'castpress', [
 		'type'        => 'sortable',
 		'settings'    => 'home_component',
-		'label'       => esc_html__( 'Home Components', 'castpress' ),
+		'label'       => esc_html__( 'Home Components Order', 'castpress' ),
 		'section'     => 'home_components',
 		'default'     => [
-			'components/latest-episode/latest-episode-player',
+			'components/latest-episode/latest-episode',
 			'components/episodes',
 			'components/latest-posts'
 		],
 		'choices'     => [
-			'components/latest-episode/latest-episode-player' => esc_html__( 'Latest Episode with player', 'castpress' ),
+			'components/latest-episode/latest-episode' => esc_html__( 'Single Latest Episode', 'castpress' ),
 			'components/episodes' => esc_html__( 'Latest Episodes', 'castpress' ),
 			'components/latest-posts' => esc_html__( 'Latest posts from blog', 'castpress' ),
 		],
@@ -597,32 +582,31 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 24,
 	] );
 
+	// -- Episodes Page options --
 
+	// Archives title
 	Kirki::add_field( 'castpress', [
 		'type'     => 'text',
-		'settings' => 'copytext',
-		'label'    => esc_html__( 'Copyright text', 'castpress' ),
-		'section'  => 'copyrights',
-		'default'  => esc_html__( 'Castpress Theme by', 'castpress' ),
+		'settings' => 'post_type_archive_custom_title',
+		'label'    => esc_html__( 'Post Type Archive title', 'castpress' ),
+		'section'  => 'episodes_page',
 		'priority' => 10,
 	] );
 
+	// Episodes template part
 	Kirki::add_field( 'castpress', [
-		'type'     => 'text',
-		'settings' => 'copylink_text',
-		'label'    => __( 'Copyright link text (like your company name)', 'castpress' ),
-		'default'  => esc_html__( 'VitaThemes', 'castpress' ),
-		'section'  => 'copyrights',
-		'priority' => 11,
+		'type'        => 'radio-buttonset',
+		'settings'    => 'latest_episodes',
+		'label'       => esc_html__( 'Latest Episodes Style', 'castpress' ),
+		'section'     => 'episodes_page',
+		'default'     => 'style-1',
+		'priority'    => 10,
+		'choices'     => [
+			'style-1' => esc_html__( 'Episodes Style 1', 'castpress' ),
+			'style-2' => esc_html__( 'Episodes Style 2', 'castpress' ),
+			'style-3' => esc_html__( 'Episodes Style 3', 'castpress' ),
+		],
 	] );
 
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'copylink',
-		'label'    => __( 'Copyright link text', 'castpress' ),
-		'section'  => 'copyrights',
-		'default'  => esc_url('http://vitathemes.com/'),
-		'priority' => 12,
-	] );
 
 }

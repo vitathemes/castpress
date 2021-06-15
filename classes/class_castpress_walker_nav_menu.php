@@ -7,9 +7,8 @@ class Castpress_walker_nav_menu extends Walker_Nav_Menu {
 		$description = $item->description;
 		$permalink   = $item->url;
 
-
 		$output .= "<li class='" . implode( " ", $item->classes ) . "'>";
-
+		
 		//Add SPAN if no Permalink
 		if ( $permalink ) {
 			$output .= '<a class="menu-item__link" href="' . $permalink . '">';

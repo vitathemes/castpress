@@ -37,16 +37,16 @@ class Castpress_walker_comment extends Walker_Comment
                 <div class="comment-header">
                     <?php
                         if (get_comment_author_url($comment) != "") {
-	                        printf('<h5 class="comment-author u-font--regular u-heading-5-line-height--sm"><a href="%s">%s</a></h5>', esc_html(esc_url(get_comment_author_url($comment))), esc_html(esc_html(get_comment_author($comment))));
+	                        printf('<h5 class="comment-author u-font--regular"><a href="%s">%s</a></h5>', esc_html(esc_url(get_comment_author_url($comment))), esc_html(esc_html(get_comment_author($comment))));
                         } else {
-	                        printf('<h5 class="comment-author u-font--regular u-heading-5-line-height--sm">%s</h5>', esc_html(get_comment_author($comment)));
+	                        printf('<h5 class="comment-author u-font--regular">%s</h5>', esc_html(get_comment_author($comment)));
                         }
 	                    ?>
 
                     <div class="time">
                         <time datetime="<?php comment_time('c'); ?>">
 
-						<h5 class="comment-date u-font--regular u-heading-5-line-height--sm">
+						<h5 class="comment-date u-font--regular">
                             <?php
 			                    printf('%1$s', esc_html(get_comment_date('M d.Y', $comment)));
 			                    ?>
