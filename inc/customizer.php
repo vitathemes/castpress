@@ -82,7 +82,12 @@ if( function_exists( 'kirki' ) ) {
 		'title'    => esc_html__( 'Footer', 'castpress' ),
 	) );
 
-
+	// Typography Settings
+	Kirki::add_panel( 'typography_setting', array(
+		'priority' => 180,
+		'title'    => esc_html__( 'Typography Settings', 'castpress' ),
+	) );
+	
 
 	/*
 	 *	Kirki -> Sections
