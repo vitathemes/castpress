@@ -289,7 +289,7 @@ function castpress_typography() {
 
 	(get_theme_mod( 'typography_primary_color' ) == "" ) ? $castpress_primary_color = "#7247ca" : $castpress_primary_color = get_theme_mod( 'typography_primary_color' ); 
 
-	(get_theme_mod( 'typography_primary_accent_color' ) == "" ) ? $castpress_primary_accent_color = "$castpress_primary_accent_color" : $castpress_primary_accent_color = get_theme_mod( 'typography_primary_accent_color' ); 
+	(get_theme_mod( 'typography_primary_accent_color' ) == "" ) ? $castpress_primary_accent_color = "#58379B" : $castpress_primary_accent_color = get_theme_mod( 'typography_primary_accent_color' ); 
 
 	(get_theme_mod( 'typography_headings_color' ) == "" ) ? $castpress_headingss_color = "#222222" : $castpress_headingss_color = get_theme_mod( 'typography_headings_color' ); 
 

@@ -1722,7 +1722,7 @@ input[type="submit"] {
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    background-color: var(--castpress_primary_accent-color);
+    background-color: #58379b;
     text-decoration: none;
     color: #f5f5f7; }
   button:visited, button:focus,
@@ -2787,11 +2787,11 @@ input[type="submit"] {
   transition: 0.5s all;
   text-decoration: none !important; }
   .c-episode__read-more:hover {
-    color: var(--castpress_primary_accent-color) !important; }
+    color: #58379b !important; }
   .c-episode__read-more:hover > .c-episode__play::before {
-    background-color: var(--castpress_primary_accent-color); }
+    background-color: #58379b; }
   .c-episode__read-more:focus > .c-episode__play::before {
-    background-color: var(--castpress_primary_accent-color); }
+    background-color: #58379b; }
 
 .c-episode__page-links {
   margin: 16px 0px 0px 0px; }
@@ -3116,7 +3116,7 @@ h2.c-single__transcript__title {
 
 .c-single__transcript__more {
   cursor: pointer;
-  color: var(--castpress_primary_accent-color) !important; }
+  color: #58379b !important; }
   .c-single__transcript__more:hover {
     color: var(--castpress_headings-color) !important;
     text-decoration-line: none; }
@@ -3125,7 +3125,7 @@ h2.c-single__transcript__title {
   .c-single__transcript__more .c-single__transcript__icon {
     vertical-align: middle; }
     .c-single__transcript__more .c-single__transcript__icon::before {
-      color: var(--castpress_primary_accent-color) !important; }
+      color: #58379b !important; }
 
 .c-single__transcript__icon {
   padding-left: 5px; }
