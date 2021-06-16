@@ -27,7 +27,7 @@
             </h5>
         </div><!-- .entry-meta -->
 
-        <a class="c-post__read-more h5" href=" <?php esc_url( the_permalink() )  ?> " aria-label=" <?php esc_attr__( 'Read More', 'castpress' ); ?>" rel="bookmark">
+        <a class="c-post__read-more h5" href=" <?php esc_url( the_permalink() )  ?> " aria-label=" <?php echo esc_attr( get_the_title() ) ?>" rel="bookmark">
             <?php esc_html_e( 'Read More', 'castpress' ); ?>
         </a><!-- .c-post__read-more -->
 
