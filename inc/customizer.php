@@ -88,7 +88,6 @@ if( function_exists( 'kirki' ) ) {
 		'title'    => esc_html__( 'Typography Settings', 'castpress' ),
 	) );
 	
-
 	/*
 	 *	Kirki -> Sections
 	 */
@@ -114,7 +113,7 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 7,
 	) );
 
-	/* Typography colors */
+	/* Typography Colors */
 	Kirki::add_section( 'colors', array(
 		'title'          => esc_html__( 'Theme Colors', 'castpress' ),
 		'description'    => esc_html__( 'Change Theme color and customize them.', 'castpress' ),
