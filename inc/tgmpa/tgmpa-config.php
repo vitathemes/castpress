@@ -53,6 +53,11 @@ function castpress_register_required_plugins() {
 			'name'      => __( 'LibWp', 'castpress' ),
 			'slug'      => 'libwp',
 			'required'  => false,
+		),
+		array(
+			'name'      => __( 'Podcast Importer', 'castpress' ),
+			'slug'      => 'podcast-importer',
+			'required'  => false,
 		)
 	);
 

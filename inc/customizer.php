@@ -192,7 +192,7 @@ if( function_exists( 'kirki' ) ) {
 	Kirki::add_field( 'castpress_theme', [
 		'type'        => 'typography',
 		'settings'    => 'typography_p',
-		'label'       => esc_html__( 'Base', 'castpress' ),
+		'label'       => esc_html__( 'Base Font', 'castpress' ),
 		'section'     => 'typography_fonts',
 		'default'     => [
 			'font-family'   	 => 'Source Serif Pro',
@@ -318,7 +318,7 @@ if( function_exists( 'kirki' ) ) {
 		'transport'   => 'auto',
 		'output'      => [
 			[
-				'element' => array( 'h5' , '.h5'),
+				'element' => array('h5' , '.h5'),
 			],
 		],
 	] );

@@ -14,6 +14,7 @@ Castpress is a a minimal & mobile-first theme. The best choice for people who wa
 = Features =
 * Sass for stylesheets
 * Compatible with [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
+* Compatible with [Newsletter](https://wordpress.org/plugins/newsletter/)
 * Theme options built directly into WordPress native live theme customizer
 * Responsive design
 * Cross-browser compatibility

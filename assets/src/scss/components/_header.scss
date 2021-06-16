@@ -100,6 +100,7 @@
 }
 
 .c-header__title {
+  line-height: 32px !important;
   a {
     color: $castpress_primary_color;
     &:hover {
