@@ -82,15 +82,12 @@ if( function_exists( 'kirki' ) ) {
 		'title'    => esc_html__( 'Footer', 'castpress' ),
 	) );
 
-	Kirki::add_panel( 'typography_setting', array(
-		'priority' => 8,
-		'title'    => esc_html__( 'Typography Setting', 'castpress' ),
-	) );
+
 
 	/*
 	 *	Kirki -> Sections
 	 */
-
+	
 	/* Home Components */
 	Kirki::add_section( 'home_components', array(
 		'title'    => esc_html__( 'Home Components', 'castpress' ),
@@ -113,10 +110,10 @@ if( function_exists( 'kirki' ) ) {
 	) );
 
 	/* Typography colors */
-	Kirki::add_section( 'typography_colors', array(
-		'title'          => esc_html__( 'Typography Colors', 'castpress' ),
-		'description'    => esc_html__( 'Change Typography color.', 'castpress' ),
-		'panel'          => 'typography_setting',
+	Kirki::add_section( 'colors', array(
+		'title'          => esc_html__( 'Theme Colors', 'castpress' ),
+		'description'    => esc_html__( 'Change Theme color and customize them.', 'castpress' ),
+		'panel'          => '',
 		'priority'       => 8,
 	) );
 
@@ -135,17 +132,36 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 6,
 	) );
 
-
     /*
-     *	Kirki -> fields
+	 *	Kirki -> fields
 	 */
 
 	/* Typography Colors */
 	Kirki::add_field( 'castpress', [
 		'type'     => 'color',
 		'settings' => 'typography_primary_color',
+		'label'    => __( 'Primary Color', 'castpress' ),
+		'section'  => 'colors',
+		'default'  => '#7247ca',
+		'priority' => 7,
+		
+	] );
+
+	Kirki::add_field( 'castpress', [
+		'type'     => 'color',
+		'settings' => 'typography_primary_accent_color',
+		'label'    => __( 'Primary Accent Color', 'castpress' ),
+		'section'  => 'colors',
+		'default'  => '#58379b',
+		'priority' => 8,
+		
+	] );
+
+	Kirki::add_field( 'castpress', [
+		'type'     => 'color',
+		'settings' => 'typography_headings_color',
 		'label'    => __( 'Theme Headings Color', 'castpress' ),
-		'section'  => 'typography_colors',
+		'section'  => 'colors',
 		'default'  => '#222222',
 		'priority' => 9,
 		'output'      => [
@@ -154,13 +170,13 @@ if( function_exists( 'kirki' ) ) {
 			],
 		],
 		
-	] );
+	]);
 	
 	Kirki::add_field( 'castpress', [
 		'type'     => 'color',
 		'settings' => 'typography_secondary_color',
 		'label'    => __( 'Primary Texts Color', 'castpress' ),
-		'section'  => 'typography_colors',
+		'section'  => 'colors',
 		'default'  => '#555555',
 		'priority' => 9,
 		
@@ -170,19 +186,9 @@ if( function_exists( 'kirki' ) ) {
 		'type'     => 'color',
 		'settings' => 'typography_tertiary_color',
 		'label'    => __( 'Secondary Texts Color', 'castpress' ),
-		'section'  => 'typography_colors',
+		'section'  => 'colors',
 		'default'  => '#707070',
 		'priority' => 10,
-		
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'color',
-		'settings' => 'typography_quaternary_color',
-		'label'    => __( 'Links & hovers Color', 'castpress' ),
-		'section'  => 'typography_colors',
-		'default'  => '#7247ca',
-		'priority' => 11,
 		
 	] );
 

@@ -20,7 +20,7 @@ input[type="color"],
 textarea {
   width: 100%;
   margin-top: 8px;
-  color: $castpress_primary_color;
+  color: $castpress_heading_color;
   border: none;
   border-radius: $global-radius;
   background-color: $castpress_neutral_gray_light_color;
@@ -36,7 +36,7 @@ textarea {
   position: relative;
 
   &::placeholder {
-    color: $castpress_primary_color;
+    color: $castpress_heading_color;
     opacity: 1;
     font-size: 12px;
     line-height: 27px !important;
@@ -45,7 +45,7 @@ textarea {
   }
 
   &:focus {
-    color: $castpress_primary_color;
+    color: $castpress_heading_color;
     outline: $castpress_neutral_gray_color solid 2px;
   }
 }

@@ -89,14 +89,14 @@
   display: inline-block;
   text-decoration: none !important;
   &:hover {
-    color: $castpress_primary_color;
+    color: $castpress_heading_color;
   }
 
   a {
     color: $castpress_tertiary_color;
 
     &:hover {
-      color: $castpress_primary_color;
+      color: $castpress_heading_color;
       text-decoration: none;
     }
 
@@ -116,7 +116,7 @@
 
 .c-episode__header {
   width: 100%;
-  color: $castpress_primary_color;
+  color: $castpress_heading_color;
   text-transform: capitalize;
 
   @include media(tablet) {
@@ -140,7 +140,7 @@
 
 .c-episode__header {
   width: 100%;
-  color: $castpress_primary_color;
+  color: $castpress_heading_color;
   text-transform: capitalize;
 
   @include media(tablet) {
@@ -172,7 +172,7 @@
   display: inline-block;
 
   a {
-    color: $castpress_primary_color;
+    color: $castpress_heading_color;
   }
 }
 
@@ -202,7 +202,7 @@
 }
 
 .c-episode__read-more {
-  color: $castpress_quaternary_color !important;
+  color: $castpress_primary_color !important;
   font-weight: 600 !important;
 
   letter-spacing: 0.16em;
@@ -231,7 +231,7 @@
   color: $castpress_second_color !important;
 
   &:hover {
-    color: $castpress_main_accent_color !important;
+    color: $castpress_primary_color !important;
   }
 }
 
@@ -239,7 +239,7 @@
   margin-top: 39px;
   margin-bottom: 12px;
   width: 100%;
-  color: $castpress_primary_color !important;
+  color: $castpress_heading_color !important;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   text-align: center;
@@ -259,7 +259,7 @@
     mask-size: cover;
     vertical-align: middle;
     display: inline-block;
-    background-color: $castpress_quaternary_color;
+    background-color: $castpress_primary_color;
   }
 }
 
@@ -273,7 +273,7 @@
 
   a {
     transition: 0.2s all;
-    color: $castpress_primary_color;
+    color: $castpress_heading_color;
   }
 }
 
@@ -303,10 +303,10 @@
   font-size: 32px;
 
   &:hover {
-    color: $castpress_main_accent_color;
+    color: $castpress_primary_color;
 
     path {
-      fill: $castpress_main_accent_color;
+      fill: $castpress_primary_color;
     }
   }
 }

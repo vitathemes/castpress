@@ -139,11 +139,11 @@ h2.c-single__transcript__title {
   color: $castpress_main_accent_second_color !important;
 
   &:hover {
-    color: $castpress_primary_color !important;
+    color: $castpress_heading_color !important;
     text-decoration-line: none;
     .c-single__transcript__icon {
       &::before {
-        color: $castpress_primary_color !important;
+        color: $castpress_heading_color !important;
       }
     }
   }
@@ -161,12 +161,12 @@ h2.c-single__transcript__title {
 
   &:hover {
     &::before {
-      color: $castpress_primary_color !important;
+      color: $castpress_heading_color !important;
     }
   }
 }
 .c-single__transcript__more:hover + .c-single__transcript__icon::before {
-  color: $castpress_primary_color !important;
+  color: $castpress_heading_color !important;
 }
 
 .c-single__transcript__more.h2 {
@@ -258,7 +258,7 @@ h2.c-single__transcript__title {
 
   &:hover {
     text-decoration: none;
-    color: $castpress_primary_color;
+    color: $castpress_heading_color;
   }
 
   &:visited {

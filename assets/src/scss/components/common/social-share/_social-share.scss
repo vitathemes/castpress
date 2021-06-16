@@ -6,7 +6,7 @@
   height: 50px;
   display: flex;
   justify-content: center;
-  color: $castpress_primary_color;
+  color: $castpress_heading_color;
 }
 
 .c-social-share--single {
@@ -34,7 +34,7 @@
   .dashicons {
     padding-left: 0px;
     &::before {
-      color: $castpress_primary_color;
+      color: $castpress_heading_color;
     }
   }
 
@@ -43,12 +43,12 @@
     .dashicons {
       padding-left: 0px;
       &::before {
-        color: $castpress_main_accent_color;
+        color: $castpress_primary_color;
       }
     }
 
     path {
-      fill: $castpress_main_accent_color;
+      fill: $castpress_primary_color;
       cursor: pointer;
     }
   }
@@ -76,13 +76,13 @@
     -webkit-mask-size: cover;
     mask-size: cover;
     vertical-align: middle;
-    background-color: $castpress_primary_color;
+    background-color: $castpress_heading_color;
     transition: 0.5s all;
   }
 
   &:hover {
     &::before {
-      background-color: $castpress_main_accent_color;
+      background-color: $castpress_primary_color;
     }
   }
 }

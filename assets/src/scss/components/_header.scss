@@ -102,10 +102,10 @@
 .c-header__title {
   line-height: 32px !important;
   a {
-    color: $castpress_primary_color;
+    color: $castpress_heading_color;
     &:hover {
       text-decoration: none;
-      color: $castpress_quaternary_color;
+      color: $castpress_primary_color;
     }
 
     &:focus {
@@ -144,7 +144,7 @@
     -webkit-mask-size: cover;
     mask-size: cover;
     vertical-align: middle;
-    background-color: $castpress_primary_color;
+    background-color: $castpress_heading_color;
     margin-top: 5px;
   }
 
@@ -227,7 +227,7 @@
       -webkit-mask-size: cover;
       mask-size: cover;
       vertical-align: middle;
-      background-color: $castpress_primary_color;
+      background-color: $castpress_heading_color;
       margin-top: 0px;
     }
   }

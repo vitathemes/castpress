@@ -2614,13 +2614,13 @@ img {
   transition: 0.5s all;
 }
 .c-episode__read-more:hover {
-  color: #58379b !important;
+  color: $castpress_primary_accent_color !important;
 }
 .c-episode__read-more:hover > .c-episode__play::before {
-  background-color: #58379b;
+  background-color: $castpress_primary_accent_color;
 }
 .c-episode__read-more:focus > .c-episode__play::before {
-  background-color: #58379b;
+  background-color: $castpress_primary_accent_color;
 }
 
 .c-episode__page-links {
@@ -3015,7 +3015,7 @@ h2.c-single__transcript__title {
 
 .c-single__transcript__more {
   cursor: pointer;
-  color: #58379b !important;
+  color: $castpress_primary_accent_color !important;
 }
 .c-single__transcript__more:hover {
   color: var(--castpress_primary-color) !important;
@@ -3028,7 +3028,7 @@ h2.c-single__transcript__title {
   vertical-align: middle;
 }
 .c-single__transcript__more .c-single__transcript__icon::before {
-  color: #58379b !important;
+  color: $castpress_primary_accent_color !important;
 }
 
 .c-single__transcript__icon {
@@ -3863,7 +3863,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  background-color: #58379b;
+  background-color: $castpress_primary_accent_color;
   text-decoration: none;
   color: #f5f5f7;
 }

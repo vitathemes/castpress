@@ -102,7 +102,7 @@
   }
 }
 .c-comments__title {
-  color: $castpress_primary_color;
+  color: $castpress_heading_color;
   font-family: $castpress_font !important;
 }
 
@@ -115,7 +115,7 @@
   line-height: 18px;
 
   &:hover {
-    color: $castpress_primary_color;
+    color: $castpress_heading_color;
   }
 
   &::before {
@@ -205,7 +205,7 @@
     line-height: 18px; //qa-
 
     &:hover {
-      color: $castpress_primary_color;
+      color: $castpress_heading_color;
       text-decoration: none;
     }
 
