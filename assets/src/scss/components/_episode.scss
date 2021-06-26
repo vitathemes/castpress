@@ -57,7 +57,12 @@
   flex-wrap: wrap;
   align-content: space-between;
   padding-bottom: 8px;
-  padding-left: 24px;
+  justify-content: center;
+
+  @include media(tablet) {
+    padding-left: 24px;
+    justify-content: normal;
+  }
 }
 
 .c-episode__context {
