@@ -281,7 +281,7 @@ function castpress_branding() {
 		echo sprintf('<h1 class="c-header__title site-title"><a href="%s" rel="home">%s</a></h1>' , esc_attr(esc_url( home_url( '/' ))),  esc_html(get_bloginfo( 'name' )) );
 
 		}
-	}
+}
 
 
 // Kirki color variables

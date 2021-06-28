@@ -201,6 +201,9 @@ h2.c-single__transcript__title {
   transition-delay: 0s;
   padding: 10px;
 
+  max-height: 310px;
+  overflow-y: scroll;
+
   @include media(tablet) {
     padding: 0px;
   }
