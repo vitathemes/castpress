@@ -2951,11 +2951,12 @@ h2.c-single__transcript__title {
   opacity: 0;
   transition-delay: 0s;
   padding: 10px;
-  max-height: 310px;
-  overflow-y: scroll; }
+  max-height: 335px; }
   @media only screen and (min-width: 980px) {
     .c-single__transcript__context {
-      padding: 0px; } }
+      max-height: 310px;
+      padding: 0px;
+      padding-right: 5px; } }
 
 .c-single__transcript__row h1,
 .c-single__transcript__row h2,
@@ -2969,8 +2970,7 @@ h2.c-single__transcript__title {
   margin-bottom: 24px; }
 
 .c-single__transcript__wrapper {
-  max-height: 100%;
-  padding-right: 15px; }
+  max-height: 100%; }
 
 .c-single__transcript__content.is-open {
   height: 352px;

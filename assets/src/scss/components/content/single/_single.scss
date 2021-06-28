@@ -201,11 +201,12 @@ h2.c-single__transcript__title {
   transition-delay: 0s;
   padding: 10px;
 
-  max-height: 310px;
-  overflow-y: scroll;
+  max-height: 335px;
 
   @include media(tablet) {
+    max-height: 310px;
     padding: 0px;
+    padding-right: 5px;
   }
 }
 
@@ -226,7 +227,6 @@ h2.c-single__transcript__title {
 
 .c-single__transcript__wrapper {
   max-height: 100%;
-  padding-right: 15px;
 }
 
 .c-single__transcript__content.is-open {
