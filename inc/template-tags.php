@@ -13,14 +13,11 @@ if ( ! function_exists( 'castpress_posted_by' ) ) :
 	 * Prints HTML with meta information for the current author.
 	 */
 	function castpress_posted_by() {
-
 		/* translators: %s: post author. */
 		$byline = sprintf(
 			'<span class="c-post__author vcard u-font--regular "><a class="url fn n c-post__author__link u-link--tertiary" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"> %s ' . esc_html(get_the_author()) . ' </a></span>' , esc_html__( 'By', 'castpress' )
 		);
-
 		echo '<h5 class="byline u-font--regular c-post__author "> ' . $byline  . '</h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
 	}
 endif;
 
@@ -233,7 +230,7 @@ if ( ! function_exists('castpress_get_podcast_audio')) :
 			elseif( class_exists('ACF') &&  get_field('podcast_audio_file') !== $castpress_podcast_audio_link ){
 					
 				$castpress_podcast_updated_field = get_field('podcast_audio_file');
-				$castpress_podcast_embedfile = '[audio preload="metadata" mp3="'.$castpress_podcast_updated_field.'" ][/audio]';
+				$castpress_podcast_embedfile = '[audio preload="metadata" mp3="'.esc_attr($castpress_podcast_updated_field).'" ][/audio]';
 
 				/* translators: %s: class name . translator 2 %s : audio short code  */
 				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
@@ -539,14 +536,13 @@ endif;
 
 
 if ( ! function_exists( 'castpress_get_index_title' ) ) :
-	
 	/**
 	  * Get index.php Title 
 	  */
 	function castpress_get_index_title() {
 		if (is_home()) {
 			if (get_option('page_for_posts')) {
-				echo get_the_title(get_option('page_for_posts'));
+				echo esc_html(get_the_title(get_option('page_for_posts')));
 			}
 			else{
 				echo esc_html__( "Blog" , "castpress" );

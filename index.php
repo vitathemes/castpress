@@ -18,7 +18,7 @@ get_header();
     <div class="c-main__content">
         <header class="c-main__header">
             <h1 class="c-main__entry-title">
-                <?php  castpress_get_index_title();  ?>
+                <?php castpress_get_index_title();  ?>
             </h1>
         </header>
         <!-- .entry-header -->

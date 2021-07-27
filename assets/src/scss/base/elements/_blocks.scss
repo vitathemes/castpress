@@ -79,7 +79,7 @@
 \*------------------------------------*/
 
 .wp-block-quote {
-  border-left: 1px solid $castpress_quaternary_color;
+  border-left: 1px solid $castpress_primary_color;
   padding-left: 16px;
   margin-bottom: 16px;
 }
@@ -91,7 +91,7 @@
 
 blockquote.has-text-align-right {
   border-left: none;
-  border-right: 1px solid $castpress_quaternary_color;
+  border-right: 1px solid $castpress_primary_color;
   padding-left: 0px;
   padding-right: 16px;
 }
@@ -102,7 +102,7 @@ blockquote.is-style-large {
 
 .wp-block-search {
   .wp-block-search__button {
-    background-color: $castpress_quaternary_color;
+    background-color: $castpress_primary_color;
     height: max-content;
     padding: 13px;
     margin-top: 8px;

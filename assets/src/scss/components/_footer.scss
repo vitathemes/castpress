@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   justify-content: center;
   color: white;
-  line-height: 50px;
   width: 100%;
   margin-bottom: 24px;
   padding-top: 48px;
@@ -47,7 +46,7 @@
 }
 
 .c-footer__context {
-  color: $castpress_primary_color;
+  color: $castpress_heading_color;
   display: inline-block;
 }
 
@@ -72,7 +71,7 @@
     text-decoration: none !important;
 
     &:hover {
-      color: $castpress_primary_color;
+      color: $castpress_heading_color;
     }
   }
 
@@ -156,7 +155,7 @@
 .c-footer__nav__item--dynamic {
   &::before {
     content: " | ";
-    color: $castpress_primary_color;
+    color: $castpress_heading_color;
   }
 }
 
@@ -168,7 +167,7 @@
 
     &::before {
       content: " | ";
-      color: $castpress_primary_color;
+      color: $castpress_heading_color;
     }
 
     a {
@@ -176,7 +175,7 @@
       text-decoration: none;
 
       &:hover {
-        color: $castpress_primary_color;
+        color: $castpress_heading_color;
       }
     }
   }

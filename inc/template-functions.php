@@ -281,27 +281,30 @@ function castpress_branding() {
 		echo sprintf('<h1 class="c-header__title site-title"><a href="%s" rel="home">%s</a></h1>' , esc_attr(esc_url( home_url( '/' ))),  esc_html(get_bloginfo( 'name' )) );
 
 		}
-	}
+}
 
 
 // Kirki color variables
 function castpress_typography() {
 
-	(get_theme_mod( 'typography_primary_color' ) == "" ) ? $castpress_primary_color = "#222222" : $castpress_primary_color = get_theme_mod( 'typography_primary_color' ); 
+	(get_theme_mod( 'typography_primary_color' ) == "" ) ? $castpress_primary_color = "#7247ca" : $castpress_primary_color = get_theme_mod( 'typography_primary_color' ); 
+
+	(get_theme_mod( 'typography_primary_accent_color' ) == "" ) ? $castpress_primary_accent_color = "#58379B" : $castpress_primary_accent_color = get_theme_mod( 'typography_primary_accent_color' ); 
+
+	(get_theme_mod( 'typography_headings_color' ) == "" ) ? $castpress_headingss_color = "#222222" : $castpress_headingss_color = get_theme_mod( 'typography_headings_color' ); 
 
 	(get_theme_mod( 'typography_secondary_color' ) == "" ) ? $castpress_second_color = "#555555" : $castpress_second_color = get_theme_mod( 'typography_secondary_color' ); 
 
 	(get_theme_mod( 'typography_tertiary_color' ) == "" ) ? $castpress_tertiary_color = "#707070" : $castpress_tertiary_color = get_theme_mod( 'typography_tertiary_color' ); 
 
-	(get_theme_mod( 'typography_quaternary_color' ) == "" ) ? $castpress_quaternary_color = "#7247ca" : $castpress_quaternary_color = get_theme_mod( 'typography_quaternary_color' ); 
-
 
 	$html = ':root {	
-				--castpress_headings-color:   ' . $castpress_primary_color . ';
-				--castpress_primary-color:    ' . $castpress_primary_color .';
-	            --castpress_second-color:     ' . $castpress_second_color . ';
-				--castpress_tertiary-color:   ' . $castpress_tertiary_color . ';
-				--castpress_quaternary-color: ' . $castpress_quaternary_color . ';
+				--castpress_primary-color: 			' . $castpress_primary_color . ';
+				--castpress_primary_accent-color: 	' . $castpress_primary_accent_color . ';
+				--castpress_headings-color:   		' . $castpress_headingss_color . ';
+				--castpress_headings-color:    		' . $castpress_headingss_color .';
+	            --castpress_second-color:     		' . $castpress_second_color . ';
+				--castpress_tertiary-color:   		' . $castpress_tertiary_color . ';
 			}';
 						
 	return $html;

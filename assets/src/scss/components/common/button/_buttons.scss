@@ -8,7 +8,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: none;
-  background-color: $castpress_quaternary_color; //7247ca
+  background-color: $castpress_primary_color; //7247ca
   color: $castpress_neutral_gray_light_color !important;
   border-radius: 4px;
   cursor: pointer;
@@ -51,18 +51,18 @@ input[type="submit"] {
 \*------------------------------------*/
 .c-btn--arrows-small {
   background-color: $castpress_neutral_gray_light_color;
-  color: $castpress_quaternary_color !important;
+  color: $castpress_primary_color !important;
 
   .dashicons {
     padding-left: 0px;
     width: max-content;
     &::before {
-      color: $castpress_main_accent_color;
+      color: $castpress_primary_color;
     }
   }
 
   &:hover {
-    background-color: $castpress_main_accent_color;
+    background-color: $castpress_primary_color;
     color: $castpress_neutral_gray_light_color !important;
 
     .dashicons {
@@ -120,7 +120,7 @@ input[type="submit"] {
 \*------------------------------------*/
 .c-btn--play {
   background-color: $castpress_neutral_gray_light_color;
-  color: $castpress_quaternary_color !important;
+  color: $castpress_primary_color !important;
   text-transform: uppercase;
   transition: 0.3s all;
   letter-spacing: 0.05em;
@@ -145,7 +145,7 @@ input[type="submit"] {
     mask-size: cover;
     vertical-align: middle;
     display: inline-block;
-    background-color: $castpress_quaternary_color;
+    background-color: $castpress_primary_color;
     margin-bottom: 3px;
     margin-right: 5px;
   }
@@ -173,7 +173,7 @@ input[type="submit"] {
     background-color: transparent;
 
     &::after {
-      background-color: $castpress_quaternary_color;
+      background-color: $castpress_primary_color;
     }
   }
 
@@ -193,7 +193,7 @@ input[type="submit"] {
     mask-size: cover;
     margin-right: 10px;
     vertical-align: middle;
-    background-color: $castpress_primary_color;
+    background-color: $castpress_headings_color;
   }
 }
 
@@ -389,17 +389,16 @@ input[type="submit"] {
 }
 
 .tnp-submit {
-  right: 4px !important;
-  bottom: -6px !important;
-  background-color: $castpress_quaternary_color !important;
-  width: 35px !important;
-  height: 35px !important;
+  background-color: $castpress_primary_color !important;
+  position: absolute;
+  bottom: 6px !important;
+  right: 5px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 3px !important;
 
-  &::after {
-    content: " K ";
-    width: 100%;
-    height: 100%;
-    background-color: red !important;
+  &:hover {
+    background-color: $castpress_primary_accent_color !important;
   }
 }
 
@@ -428,7 +427,6 @@ input[type="submit"] {
     right: 13px;
     bottom: 4px;
     z-index: 80;
-
     animation-name: arrowRightBack;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;

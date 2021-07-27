@@ -14,7 +14,7 @@
     <section class="c-episode__header">
 
         <?php castpress_get_category(); ?>
-        <span class="seprator h5 u-link--secondary"><?php esc_html_e(" | ") ?> </span> 
+        <span class="seprator h5 u-link--secondary"><?php echo esc_html(" | ") ?> </span> 
         <?php echo '<h5 class="c-episode__date u-font--regular">'.esc_html( get_the_date() ).'</h5>'; ?>
 
         <div class="c-episode__titles">

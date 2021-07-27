@@ -17,8 +17,6 @@ get_header();
 
     <div class="c-main__content">
         <?php castpress_home_components(); ?>
-
-
     </div>
 
 </main><!-- #main -->

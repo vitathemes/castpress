@@ -19,7 +19,7 @@
     </div><!-- .c-post__thumbnail -->
 
     <header class="c-post__header">
-        <?php the_title( '<h2 class="c-post__title c-main__entry-title"><a class="u-link--secondary" aria-label="' . esc_url( get_permalink() ) . '" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+        <?php the_title( '<h2 class="c-post__title c-main__entry-title"><a class="u-link--secondary" aria-label="' . esc_attr( get_the_title() ) . '" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 
         <div class="c-post__entry-meta">
             <h5 class="c-post__date u-font--regular u-link--tertiary posted-on">
@@ -27,7 +27,7 @@
             </h5>
         </div><!-- .entry-meta -->
 
-        <a class="c-post__read-more h5" href=" <?php esc_url( the_permalink() )  ?> " aria-label=" <?php esc_attr__( 'Read More', 'castpress' ); ?>" rel="bookmark">
+        <a class="c-post__read-more h5" href="<?php esc_url( the_permalink() )  ?>" aria-label="<?php echo esc_attr( get_the_title() ) ?>" rel="bookmark">
             <?php esc_html_e( 'Read More', 'castpress' ); ?>
         </a><!-- .c-post__read-more -->
 

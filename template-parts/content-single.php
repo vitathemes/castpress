@@ -90,8 +90,8 @@
 
         <?php if ( class_exists('ACF') && get_field('transcript') ) { ?>
             <div class="c-single__transcript__content">
-                <div class="c-single__transcript__wrapper" data-simplebar data-simplebar-auto-hide="false">
-                    <div class="c-single__transcript__context">
+                <div class="c-single__transcript__wrapper" >
+                    <div class="c-single__transcript__context" data-simplebar data-simplebar-auto-hide="false">
                         <div class="c-single__transcript__row">
                             <?php the_field('transcript'); ?>
                         </div>
