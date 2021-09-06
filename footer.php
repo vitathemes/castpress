@@ -13,15 +13,15 @@
 <footer id="colophon" class="c-footer">
     <div class="c-footer__content">
 
-        <?php if ( is_active_sidebar( 'castpress-custom-footer-widget-left' ) ) : ?>
+        <?php if ( is_active_sidebar( 'custom-footer-widget-left' ) ) : ?>
         <div id="footer-widget-area" class="c-footer__widgets c-footer__widgets--left" role="complementary">
-            <?php dynamic_sidebar( 'castpress-custom-footer-widget-left' ); ?>
+            <?php dynamic_sidebar( 'custom-footer-widget-left' ); ?>
         </div>
         <?php endif; ?>
 
-        <?php if ( is_active_sidebar( 'castpress-custom-footer-widget-right' ) ) : ?>
-        <div id="footer-widget-area" class="c-footer__widgets c-footer__widgets--right" role="complementary">
-            <?php dynamic_sidebar( 'castpress-custom-footer-widget-right' ); ?>
+        <?php if ( is_active_sidebar( 'custom-footer-widget-right' ) ) : ?>
+        <div id="footer-second-widget-area" class="c-footer__widgets c-footer__widgets--right" role="complementary">
+            <?php dynamic_sidebar( 'custom-footer-widget-right' ); ?>
         </div>
         <?php endif; ?>
         

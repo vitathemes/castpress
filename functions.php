@@ -13,7 +13,6 @@ if ( ! defined( 'CASTPRESS_VERSION' ) ) {
 	define( 'CASTPRESS_VERSION', $castpress_theme_data->get( 'Version' ));
 }
 
-
 /**
   * Theme setup
   */
