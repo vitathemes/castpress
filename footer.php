@@ -40,11 +40,11 @@
             </div>
 
             <?php
-                if ( has_nav_menu( 'castpress-primary-footer' ) ) {
+                if ( has_nav_menu( 'primary-footer' ) ) {
                     wp_nav_menu(
                         array(
-                            'theme_location'  => 'castpress-primary-footer',
-                            'menu_id'         => 'castpress-primary-footer',
+                            'theme_location'  => 'primary-footer',
+                            'menu_id'         => 'primary-footer',
                             'menu_class'      => 's-footer__nav nav-menu',
                             'container_class' => 'c-footer__nav',
                         )
