@@ -30,7 +30,7 @@ function castpress_footer_widgets_left_init() {
 	 */
    register_sidebar( array(
 	   'name'          => esc_html__( 'Footer Widget Left Side' , 'castpress'),
-	   'id'            => 'castpress-custom-footer-widget-left',
+	   'id'            => 'custom-footer-widget-left',
 	   'before_widget' => '<div class="c-footer__widget">',
 	   'after_widget'  => '</div>',
 	   'before_title'  => '<h2 class="c-footer__widget__title">',
@@ -49,7 +49,7 @@ function castpress_footer_widgets_right_init() {
 	 */
    register_sidebar( array(
 	   'name'          => esc_html__( 'Footer Widget Right Side' , 'castpress'),
-	   'id'            => 'castpress-custom-footer-widget-right',
+	   'id'            => 'custom-footer-widget-right',
 	   'before_widget' => '<div class="c-footer__widget">',
 	   'after_widget'  => '</div>',
 	   'before_title'  => '<h2 class="c-footer__widget__title">',
