@@ -5,7 +5,7 @@ Author: VitaThemes
 Author URI: https://vitathemes.com
 Description: A minimal & mobile-first theme. The best choice for people who want to publish their podcasts.
 Version: 1.0.0
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 5.6
 License: GPL-3.0-or-later
 License URI: https://opensource.org/licenses/GPL-3.0
@@ -644,14 +644,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff") format("woff");
   src: url("../../assets/fonts/source-serif-pro-v11-latin-regular.eot");
   /* IE9 Compat Modes */
-  src: local(""),
-    url("../../assets/fonts/source-serif-pro-v11-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
+  src: local(""), url("../../assets/fonts/source-serif-pro-v11-latin-regular.eot?#iefix") format("embedded-opentype"),
     url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff2") format("woff2"),
     url("../../assets/fonts/source-serif-pro-v11-latin-regular.woff") format("woff"),
     url("../../assets/fonts/source-serif-pro-v11-latin-regular.ttf") format("truetype"),
-    url("../../assets/fonts/source-serif-pro-v11-latin-regular.svg#RedHatDisplay")
-      format("svg");
+    url("../../assets/fonts/source-serif-pro-v11-latin-regular.svg#RedHatDisplay") format("svg");
   /* Legacy iOS */
 }
 
@@ -661,14 +658,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     url("../../assets/fonts/source-serif-pro-v11-latin-600.woff") format("woff");
   src: url("../../assets/fonts/source-serif-pro-v11-latin-600.eot");
   /* IE9 Compat Modes */
-  src: local(""),
-    url("../../assets/fonts/source-serif-pro-v11-latin-600.eot?#iefix")
-      format("embedded-opentype"),
+  src: local(""), url("../../assets/fonts/source-serif-pro-v11-latin-600.eot?#iefix") format("embedded-opentype"),
     url("../../assets/fonts/source-serif-pro-v11-latin-600.woff2") format("woff2"),
     url("../../assets/fonts/source-serif-pro-v11-latin-600.woff") format("woff"),
     url("../../assets/fonts/source-serif-pro-v11-latin-600.ttf") format("truetype"),
-    url("../../assets/fonts/source-serif-pro-v11-latin-600.svg#RedHatDisplay")
-      format("svg");
+    url("../../assets/fonts/source-serif-pro-v11-latin-600.svg#RedHatDisplay") format("svg");
   /* Legacy iOS */
 }
 
@@ -691,12 +685,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   :root {
     --responsive--aligndefault-width: calc(720px - var(--responsive--spacing-horizontal));
     --responsive--alignwide-width: calc(720px - var(--responsive--spacing-horizontal));
-    --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
-    --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
   }
 }
 
@@ -704,12 +694,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   :root {
     --responsive--aligndefault-width: calc(980px - var(--responsive--spacing-horizontal));
     --responsive--alignwide-width: calc(1140px - var(--responsive--spacing-horizontal));
-    --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
-    --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
   }
 }
 
@@ -717,42 +703,26 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   :root {
     --responsive--aligndefault-width: calc(980px - var(--responsive--spacing-horizontal));
     --responsive--alignwide-width: calc(1140px - var(--responsive--spacing-horizontal));
-    --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
-    --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
   }
 }
 
 @media only screen and (min-width: 1200px) {
   :root {
-    --responsive--aligndefault-width: calc(
-      1140px - var(--responsive--spacing-horizontal)
-    );
+    --responsive--aligndefault-width: calc(1140px - var(--responsive--spacing-horizontal));
     --responsive--alignwide-width: calc(1200px - var(--responsive--spacing-horizontal));
-    --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
-    --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
   }
 }
 
 @media only screen and (min-width: 1400px) {
   :root {
-    --responsive--aligndefault-width: calc(
-      1140px - var(--responsive--spacing-horizontal)
-    );
+    --responsive--aligndefault-width: calc(1140px - var(--responsive--spacing-horizontal));
     --responsive--alignwide-width: calc(1200px - var(--responsive--spacing-horizontal));
-    --responsive--alignright-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
-    --responsive--alignleft-margin: calc(
-      0.5 * (100vw - var(--responsive--aligndefault-width))
-    );
+    --responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
   }
 }
 
@@ -1550,10 +1520,8 @@ img {
   display: inline-block;
   content: " ";
   cursor: pointer;
-  -webkit-mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16)
-    no-repeat 50% 50%;
-  mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat
-    50% 50%;
+  -webkit-mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat 50% 50%;
+  mask: url(https://api.iconify.design/clarity:window-close-line.svg?height=16) no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
   vertical-align: middle;
@@ -2213,8 +2181,7 @@ img {
   cursor: pointer;
   text-transform: uppercase;
   padding: 10px 0;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
-    color 0.3s ease-in-out;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
 @media only screen and (min-width: 980px) {
@@ -2650,10 +2617,8 @@ img {
   content: "";
   width: 32px;
   height: 32px;
-  -webkit-mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16")
-    no-repeat 50% 50%;
-  mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16")
-    no-repeat 50% 50%;
+  -webkit-mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16") no-repeat 50% 50%;
+  mask: url("https://api.iconify.design/ant-design:play-circle-filled.svg?height=16") no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
   vertical-align: middle;
@@ -3979,8 +3944,7 @@ input[type="submit"]:focus {
   display: inline-block;
   content: "";
   cursor: pointer;
-  -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat
-    50% 50%;
+  -webkit-mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
   mask: url("https://api.iconify.design/bx:bxs-download.svg?height=24") no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
