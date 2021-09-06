@@ -55,10 +55,14 @@ function castpress_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => __( 'Podcast Importer', 'castpress' ),
-			'slug'      => 'podcast-importer',
-			'required'  => false,
-		)
+			'name'               => __( 'Podcast Importer', 'castpress' ),
+			'slug'               => 'podcast-importer-master', 
+			'source'             => 'https://github.com/veronalabs/podcast-importer/archive/refs/heads/master.zip',
+			'required'           => false,
+			'force_activation'   => false, 
+			'force_deactivation' => false, 
+			'external_url'       => 'https://github.com/veronalabs/podcast-importer', 
+		),
 	);
 
 	/*

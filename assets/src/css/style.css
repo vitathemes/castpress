@@ -3736,6 +3736,9 @@ blockquote.is-style-large {
   padding: 13px;
   margin-top: 8px; }
 
+.wp-block-latest-comments {
+  padding-left: 0px; }
+
 /*--------------------------------------------------------------
 # utilities
 --------------------------------------------------------------*/
