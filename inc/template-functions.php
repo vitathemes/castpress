@@ -217,7 +217,7 @@ function castpress_modify_post_type_argument($castpress_postTypeArguments){
 	$castpress_postTypeArguments['publicly_queryable']    = true;
 	$castpress_postTypeArguments['capability_type'] 	  = 'post';
 	$castpress_postTypeArguments['show_in_rest'] 		  = true;
-	$castpress_postTypeArguments['supports'] 			  = array('title', 'editor' , 'comments', 'excerpt', 'author', 'medium', 'revisions', 'custom-fields' ) ;	
+	$castpress_postTypeArguments['supports'] 			  = array('title','thumbnail' , 'editor' , 'comments', 'excerpt', 'author', 'medium', 'revisions', 'custom-fields' ) ;	
     return $castpress_postTypeArguments;
 }
 add_filter('libwp_post_type_1_arguments', 'castpress_modify_post_type_argument');

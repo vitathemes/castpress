@@ -23,16 +23,9 @@
 
             <?php 
                 if ( 'episodes' == get_post_type() ){
-                    if(get_theme_mod( 'homepage_last_ep_single' , 'style-1') == 'style-3'){
-                
-                     /* translator %s : aria label play button , translator 2 %s: aria control, translator 3 %s: Play text  */
-                     echo sprintf("<div class='c-episode__player c-episode__player--button'><button class='c-btn c-btn--play js-btn--play' aria-label='%s' >%s</button></div>" , esc_html__( 'Play button' , 'castpress' ) , esc_html__( 'Play', 'castpress' ));
-
-                     castpress_get_podcast_audio( $post , "c-single__audio c-single__audio--hidden js-single__audio" , "c-btn--hidden js-btn--download");
-                    }
-                    else{
-                        castpress_get_podcast_audio( $post , "c-single__audio" );
-                    }
+                    /* translator %s : aria label play button , translator 2 %s: aria control, translator 3 %s: Play text  */
+                    echo sprintf("<div class='c-episode__player c-episode__player--button'><a href='%s' class='c-btn c-btn--play js-btn--play' aria-label='%s' >%s</a></div>" , esc_url( get_permalink() ), esc_attr__( 'Play button' , 'castpress' ) , esc_html__( 'Episode page', 'castpress' ));
+                    
                 }	
             ?>
         </div>
@@ -41,25 +34,6 @@
 
     </header><!-- .entry-header -->
 
-    <div class="s-single__entry-content">
-
-        <?php
-        the_content(
-            sprintf(
-                wp_kses(
-                    /* translators: %s: Name of current post. Only visible to screen readers */
-                    __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'castpress' ),
-                    array(
-                        'span' => array(
-                            'class' => array(),
-                        ),
-                    )
-                ),
-                wp_kses_post( get_the_title() )
-            )
-        );
-        ?>
-        
-    </div><!-- .entry-content -->
+    
 
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -121,7 +121,7 @@ input[type="submit"] {
 .c-btn--play {
   background-color: $castpress_neutral_gray_light_color;
   color: $castpress_primary_color !important;
-  text-transform: uppercase;
+  text-transform: capitalize;
   transition: 0.3s all;
   letter-spacing: 0.05em;
   &:hover {

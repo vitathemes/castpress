@@ -29,14 +29,6 @@
 
             <?php castpress_posted_by(); ?>
 
-            <div class="c-single__podcast-audio">
-                <?php 
-                    if ('episodes' == get_post_type()){
-                        castpress_get_podcast_audio( $post , "c-single__audio" );
-                    }
-			    ?>
-            </div>
-
             <?php 
                 if ( 'episodes' == get_post_type() ){
                     castpress_get_podcast_player_link();
@@ -70,23 +62,13 @@
           $castpress_podcast_audio_duratiuon = substr($castpress_podcast_audio_duratiuon,0,-3);          
         ?>
 
+        <?php if ( class_exists('ACF') && get_field('transcript') ) { ?>
         <div class="c-single__transcript">
-            <h2 class="c-single__transcript__title">
-                <?php
-                    echo esc_html__('Listening time: ','castpress' );
-                    echo esc_html( $castpress_podcast_audio_duratiuon ); // Dynamic number (show episode duration) 
-                    echo esc_html__( ' minutes', 'castpress' );
-                ?>
-            </h2>
-
-            <?php if ( class_exists('ACF') && get_field('transcript') ) { ?>
-                <span class="c-single__transcript__sep h2"><?php echo esc_html( " | " ) ?></span> <!-- * Simple seprator -->
                 <a class="c-single__transcript__more js-single__transcript__more h2"><?php esc_html_e( 'View transcript', 'castpress' ); ?>
                     <span class="c-single__transcript__icon dashicons dashicons-arrow-right-alt"></span>
                 </a>
-            <?php } // check Acf fields is exist  ?>
-
-        </div>
+            </div>    
+        <?php } // check Acf fields is exist  ?>
 
         <?php if ( class_exists('ACF') && get_field('transcript') ) { ?>
             <div class="c-single__transcript__content">

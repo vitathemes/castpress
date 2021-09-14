@@ -1809,7 +1809,7 @@ input[type="submit"] {
 .c-btn--play {
   background-color: #f5f5f7;
   color: var(--castpress_primary-color) !important;
-  text-transform: uppercase;
+  text-transform: capitalize;
   transition: 0.3s all;
   letter-spacing: 0.05em; }
   .c-btn--play:hover {
@@ -2335,9 +2335,6 @@ input[type="submit"] {
 \*------------------------------------*/
 .c-latest-episodes {
   padding-top: 24px; }
-
-.c-latest-episode--home .s-single__entry-content {
-  display: none; }
 
 .c-latest-episodes--row {
   padding-top: 16px;
@@ -2894,6 +2891,14 @@ input[type="submit"] {
     content: "";
     display: none; }
 
+.c-episode__player--button-left {
+  justify-content: flex-start;
+  margin-top: 0px;
+  margin-bottom: 16px; }
+  .c-episode__player--button-left::after {
+    content: "";
+    display: none; }
+
 /* Custom widget (For demo) */
 .c-widget__custom-item form {
   position: relative; }
@@ -3045,7 +3050,12 @@ input[type="submit"] {
   text-align: center; }
 
 .c-single__title {
-  margin-bottom: 14px; }
+  margin-bottom: 14px;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; }
   @media only screen and (min-width: 980px) {
     .c-single__title {
       margin-bottom: 8px; } }
@@ -3082,7 +3092,7 @@ input[type="submit"] {
   .s-single__entry-content figure {
     max-width: 100%; }
   .s-single__entry-content .mejs-container {
-    display: none; }
+    margin-bottom: 16px; }
 
 .c-single__tags {
   padding-top: 48px;
@@ -3098,7 +3108,7 @@ input[type="submit"] {
   height: max-content; }
   @media only screen and (min-width: 980px) {
     .c-single__transcript {
-      padding: 24px 24px 0px 24px; } }
+      padding: 24px 24px 24px 24px; } }
 
 @media only screen and (max-width: 719px) {
   .c-single__transcript__sep {
