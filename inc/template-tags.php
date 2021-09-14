@@ -147,106 +147,6 @@ if (! function_exists('castpress_get_category')) :
 endif;
 
 
-if ( ! function_exists('castpress_get_podcast_audio')) :
-
-	/**
-	  * Return Podcast Audio and Update Custom Field
-	  */
-	function castpress_get_podcast_audio($post , $castpress_class_name = "",  $castpress_button_class_name = "" ) {
-		
-		// Get audio link from importer plugin
-		$castpress_podcast_audio_link = get_post_meta( $post->ID, 'podcast_audio_url', true );
-		// Get audio file from importer plugin
-		$castpress_podcast_audio = get_post_meta( $post->ID, 'podcast_audio_file', true );
-		// Get embeded aufio file
-		$castpress_podcast_embedfile = get_post_meta( $post->ID, 'podcast_importer_external_embed', true);
-
-
-		if(class_exists('ACF')){
-			// Get imported audio link if acf existed
-			$castpress_acf_podcast_audio_field = get_field('podcast_audio_file'); 
-		}
-		else{
-			$castpress_acf_podcast_audio_field = null;
-		}
-
-	
-		if( empty($castpress_acf_podcast_audio_field) && !empty($castpress_podcast_audio) ){
-
-			if( class_exists('ACF') &&  empty($castpress_acf_podcast_audio_field) ){
-				// Update Custom field link
-				update_field( 'podcast_audio_file' , $castpress_podcast_audio );
-			}
-			else{
-				// Reset the global variable 
-				$castpress_podcast_audio = get_post_meta( $post->ID, 'podcast_audio_file', true );
-			}
-			
-		}
-		elseif ( !empty($castpress_acf_podcast_audio_field) ) {
-			// if acf field was not empty ,read from field
-			$castpress_podcast_audio = $castpress_acf_podcast_audio_field;
-		}
-		else {
-			$castpress_podcast_audio = null;
-		}
-
-		$tagname = substr($castpress_podcast_embedfile ,0 , 7);
-
-		if( !empty($castpress_podcast_audio) ){
-			if(strpos($tagname, 'iframe') !== false) {
-				
-				// Return just the custom player 
-				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo sprintf('<div class="c-episode__player js-episode__player--embed %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
-
-			}
-			elseif(strpos($tagname, 'audio') !== false) {
-
-				// Get src attribute from embeded file
-				$castpress_podcast_embedfile_link = $castpress_podcast_embedfile;
-				$castpress_audio_src_array = array();
-				preg_match( '/src="([^"]*)"/i', $castpress_podcast_embedfile_link, $castpress_audio_src_array ) ;
-
-				if( class_exists('ACF') &&  get_field('podcast_audio_file') !== $castpress_audio_src_array[1] ){
-					$castpress_audio_src_array[1] = get_field('podcast_audio_file');
-				}
-
-				$castpress_attributes = array(
-					'src'      => esc_url( $castpress_audio_src_array[1] ),
-					'loop'     => '',
-					'autoplay' => '',
-					'preload'  => 'auto'
-				);
-				$castpress_podcast_embedfile = wp_audio_shortcode( $castpress_attributes );
-
-				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
-				
-				// Download button
-				echo '<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr__('Download button' , 'castpress') .'" href="'.esc_url($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
-
-			}
-			elseif( class_exists('ACF') &&  get_field('podcast_audio_file') !== $castpress_podcast_audio_link ){
-					
-				$castpress_podcast_updated_field = get_field('podcast_audio_file');
-				$castpress_podcast_embedfile = '[audio preload="metadata" mp3="'.esc_attr($castpress_podcast_updated_field).'" ][/audio]';
-
-				/* translators: %s: class name . translator 2 %s : audio short code  */
-				echo sprintf('<div class="c-episode__player %s">%s</div>' , esc_attr( $castpress_class_name ) , do_shortcode($castpress_podcast_embedfile) );
-		
-				// Download button
-				echo '<a class="c-btn c-btn--download '.esc_attr( $castpress_button_class_name ).'" aria-label="'. esc_attr__('Download button' , 'castpress') .'" href="'.esc_url($castpress_podcast_audio).'" download="'.esc_attr($castpress_podcast_audio).'"></a>';
-
-
-
-			}
-		
-		}	
-	}
-endif;
-
-
 if (! function_exists('castpress_get_default_pagination')) :
 	/**
 	  * Show numeric pagination
@@ -549,5 +449,4 @@ if ( ! function_exists( 'castpress_get_index_title' ) ) :
 			}
 		} 
 	}
-	
 endif;

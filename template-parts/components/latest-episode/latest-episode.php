@@ -10,7 +10,6 @@
 
     $castpress_query = new WP_Query($castpress_args);
    
-
     if ($castpress_query->have_posts()) :
 
         echo '<div class="c-latest-episode c-latest-episode--home">';

@@ -413,7 +413,6 @@ if( function_exists( 'kirki' ) ) {
 		'choices'     => [
 			'style-1'   => esc_html__( 'Last Episode Style 1', 'castpress' ),
 			'style-2' => esc_html__( 'Last Episode Style 2', 'castpress' ),
-			'style-3' => esc_html__( 'Last Episode Style 3', 'castpress' ),
 		],
 	] );
 

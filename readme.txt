@@ -1,9 +1,9 @@
 === Castpress ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
-Requires at least: 5.0
-Tested up to: 5.7
+Requires at least: 5.6
+Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-3.0-or-later
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -44,6 +44,13 @@ See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes
 8. If you want to add a heart icon before WordPress menu navigation ( Like Demo ) go to `Appearance > Menus` and at the top select `Screen Options` and check `CSS Classes`. after that in menu item that you want, simply write a `heart` in CSS Classes input box.
 
 == Changelog ==
+
+= 1.0.1 =
+* Fix escaping issue for all aria-labels
+* Remove recommended github plugin from TGMPA
+* Recommend new podcast importer plugin in TGMPA
+* Change design (Remove audio player feature in custom locations)
+* Update screenshot
 
 = 1.0.0 =
 * Initial version

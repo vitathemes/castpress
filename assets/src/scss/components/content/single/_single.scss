@@ -36,6 +36,11 @@
 
 .c-single__title {
   margin-bottom: 14px;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 
   @include media(tablet) {
     margin-bottom: 8px;
@@ -85,7 +90,7 @@
   }
 
   .mejs-container {
-    display: none;
+    margin-bottom: 16px;
   }
 }
 
@@ -106,7 +111,7 @@
   padding: 24px 11px 24px 16px;
   height: max-content;
   @include media(tablet) {
-    padding: 24px 24px 0px 24px;
+    padding: 24px 24px 24px 24px;
   }
 }
 
