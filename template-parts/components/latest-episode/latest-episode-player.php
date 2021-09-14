@@ -26,7 +26,7 @@
                     if(get_theme_mod( 'homepage_last_ep_single' , 'style-1') == 'style-3'){
                 
                      /* translator %s : aria label play button , translator 2 %s: aria control, translator 3 %s: Play text  */
-                     echo sprintf("<div class='c-episode__player c-episode__player--button'><button class='c-btn c-btn--play js-btn--play' aria-label='%s' >%s</button></div>" , esc_html__( 'Play button' , 'castpress' ) , esc_html__( 'Play', 'castpress' ));
+                     echo sprintf("<div class='c-episode__player c-episode__player--button'><button class='c-btn c-btn--play js-btn--play' aria-label='%s' >%s</button></div>" , esc_attr__( 'Play button' , 'castpress' ) , esc_html__( 'Play', 'castpress' ));
 
                      castpress_get_podcast_audio( $post , "c-single__audio c-single__audio--hidden js-single__audio" , "c-btn--hidden js-btn--download");
                     }
