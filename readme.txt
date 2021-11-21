@@ -45,6 +45,9 @@ See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes
 
 == Changelog ==
 
+= 1.0.2 =
+* Fix image width issue
+
 = 1.0.1 =
 * Fix escaping issue for all aria-labels
 * Remove recommended github plugin from TGMPA

@@ -1,10 +1,10 @@
 img {
-  width: 100%;
-  height: 100%;
-  border-radius: $global-radius;
+    height: 100%;
+    max-width: 100%;
+    border-radius: $global-radius;
 
-  object-fit: cover;
-  object-position: center;
+    object-fit: cover;
+    object-position: center;
 
-  transition: 1s all;
+    transition: 1s all;
 }
