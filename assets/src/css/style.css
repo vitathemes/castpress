@@ -3253,6 +3253,10 @@ h2.c-single__transcript__title {
   .c-footer__widgets .gallery-item {
     margin: 0px; }
 
+@media only screen and (min-width: 980px) {
+  .c-footer__widgets--left {
+    padding-right: 8px; } }
+
 .c-footer__widget {
   width: 100%;
   color: var(--castpress_second-color);
