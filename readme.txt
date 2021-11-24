@@ -47,6 +47,7 @@ See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes
 
 = 1.0.3 =
 * Fix Pluggable funtions
+* Add new plugin function
 
 = 1.0.2 =
 * Fix image width issue

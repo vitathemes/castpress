@@ -385,3 +385,11 @@ if ( ! function_exists( 'castpress_modify_archive_title' )) {
 	add_filter( 'get_the_archive_title', 'castpress_modify_archive_title' );
 	
 }
+
+if ( ! function_exists( 'castpress_enable_podcast_post_type' ) ) {
+	function castpress_enable_podcast_post_type( $postTypes ) {
+		$postTypes[] = 'episodes';
+		return $postTypes;
+	}
+	add_filter( 'podcast_importer_secondline_supported_post_types', 'castpress_enable_podcast_post_type' , 10, 2 );
+}
