@@ -1,77 +1,77 @@
 .wp-block-gallery {
-  width: 100%;
-  margin-left: 0px;
-  max-width: 100%;
+    width: 100%;
+    margin-left: 0px;
+    max-width: 100%;
 }
 
 .wpcf7-response-output {
-  text-align: left;
-  color: $castpress_service_error_color;
-  padding-left: 0px !important;
-  font-size: 12px;
-  line-height: 10px;
-  margin: 0px !important;
-  color: $color_background_body;
-  background-color: $castpress_service_error_color;
-  border-radius: 4px;
-  padding: 8px 13px !important;
-  border: none !important;
-  letter-spacing: 0.1em;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  max-width: max-content;
+    text-align: left;
+    color: $castpress_service_error_color;
+    padding-left: 0px !important;
+    font-size: 12px;
+    line-height: 10px;
+    margin: 0px !important;
+    color: $color_background_body;
+    background-color: $castpress_service_error_color;
+    border-radius: 4px;
+    padding: 8px 13px !important;
+    border: none !important;
+    letter-spacing: 0.1em;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    max-width: max-content;
 
-  @include media(mobile-only) {
-    line-height: 20px;
-    min-height: max-content;
-    padding: 26px 13px !important;
-  }
+    @include media(mobile-only) {
+        line-height: 20px;
+        min-height: max-content;
+        padding: 26px 13px !important;
+    }
 }
 
 .wpcf7-not-valid-tip {
-  color: $castpress_service_error_color;
-  font-size: 12px;
-  margin-top: 8px;
+    color: $castpress_service_error_color;
+    font-size: 12px;
+    margin-top: 8px;
 }
 
 .c-spacer__blog {
-  margin-top: 39;
+    margin-top: 39;
 
-  @include media(tablet) {
-    margin-top: 64px;
-  }
+    @include media(tablet) {
+        margin-top: 64px;
+    }
 }
 
 .c-spacer--md {
-  margin-top: 48px;
+    margin-top: 48px;
 }
 
 .display-name {
-  color: #fff;
+    color: #fff;
 }
 
 /*------------------------------------*\
   #Calendar block
 \*------------------------------------*/
 .calendar_wrap {
-  * {
-    line-height: 24px;
-  }
+    * {
+        line-height: 24px;
+    }
 }
 
 /*------------------------------------*\
   #Rss block
 \*------------------------------------*/
 .rss-widget-icon {
-  width: 20px;
+    width: 20px;
 }
 
 /*------------------------------------*\
   #Image block
 \*------------------------------------*/
 .wp-block-image {
-  position: relative;
+    position: relative;
 }
 
 /*------------------------------------*\
@@ -79,36 +79,42 @@
 \*------------------------------------*/
 
 .wp-block-quote {
-  border-left: 1px solid $castpress_primary_color;
-  padding-left: 16px;
-  margin-bottom: 16px;
+    border-left: 1px solid $castpress_primary_color;
+    padding-left: 16px;
+    margin-bottom: 16px;
 }
 
 .has-text-color.has-light-gray-color {
-  background-color: $color_background_screen;
-  padding: 16px;
+    background-color: $color_background_screen;
+    padding: 16px;
 }
 
 blockquote.has-text-align-right {
-  border-left: none;
-  border-right: 1px solid $castpress_primary_color;
-  padding-left: 0px;
-  padding-right: 16px;
+    border-left: none;
+    border-right: 1px solid $castpress_primary_color;
+    padding-left: 0px;
+    padding-right: 16px;
 }
 
 blockquote.is-style-large {
-  margin-bottom: 32px !important;
+    margin-bottom: 32px !important;
 }
 
 .wp-block-search {
-  .wp-block-search__button {
-    background-color: $castpress_primary_color;
-    height: max-content;
-    padding: 13px;
-    margin-top: 8px;
-  }
+    .wp-block-search__button {
+        background-color: $castpress_primary_color;
+        height: max-content;
+        padding: 13px;
+        margin-top: 8px;
+    }
 }
 
 .wp-block-latest-comments {
-  padding-left: 0px;
+    padding-left: 0px;
+}
+
+.wp-block-media-text__content {
+    .has-large-font-size {
+        line-height: 39px;
+    }
 }

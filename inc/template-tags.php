@@ -32,29 +32,26 @@ if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 
 			echo '<div class="post-thumbnail">';
-		    	the_post_thumbnail();
+				the_post_thumbnail();
 			echo '</div><!-- .post-thumbnail -->';
 		
  		else :
-
 			if ( has_post_thumbnail() ) { ?>
-			<a class="post-thumbnail" href="<?php echo esc_attr( the_permalink() ); ?> " aria-hidden="true" tabindex="-1">
-
-			<?php		
-				the_post_thumbnail(
-					'post-thumbnail',
-					array(
-						'alt' => the_title_attribute(
+				<a class="post-thumbnail" href="<?php echo esc_attr( the_permalink() ); ?> " aria-hidden="true" tabindex="-1">
+					<?php		
+						the_post_thumbnail(
+							'post-thumbnail',
 							array(
-								'echo' => false,
+								'alt' => the_title_attribute(
+									array(
+										'echo' => false,
+									)
+								),
 							)
-						),
-					)
-				);
-			?>		
-			</a>
-
-			<?php
+						);
+					?>
+				</a>
+		<?php
 			}
 			else {
 				echo '<img alt="'.esc_attr__( 'no thumbnail', 'castpress' ).'" src="' . esc_url( get_template_directory_uri() ). '/assets/images/no-thumbnail.png" />';
@@ -381,12 +378,9 @@ if (! function_exists('castpress_get_podcast_player_link')) :
 				<span class="iconify c-episodes__social-share__icons" data-icon="cib:spreaker" data-inline="false"></span>
 				</a>', esc_url( $castpress_spreaker ), esc_attr__( 'spreaker', 'castpress' ) );
 			}
-
 			echo '</div>';	
 		}
-
 	}
-
 endif;
 
 
@@ -407,20 +401,15 @@ if ( ! function_exists( 'castpress_get_archives_header' ) ) :
 	 * Get Archives header
 	 */
 	function castpress_get_archives_header() {
-
 		echo sprintf('<header class="c-main__header"><h1 class="c-main__entry-title">%s</h1></header><!-- .-main__content -->', wp_kses_post(get_the_archive_title()) );
-
 	}
-	
 endif;
 
 
 if ( ! function_exists( 'castpress_get_latest_episodes_class_name' ) ) :
-	
 	/**
 	  * Get Episodes archives title
 	  */
-
 	function castpress_get_latest_episodes_class_name() {
 
 		if(get_theme_mod( 'latest_episodes' , 'style-1') == 'style-2'){
@@ -429,9 +418,7 @@ if ( ! function_exists( 'castpress_get_latest_episodes_class_name' ) ) :
 		elseif(get_theme_mod( 'latest_episodes' , 'style-1') == 'style-3'){
 			echo esc_attr( 'c-latest-episodes--row' );
 		}
-		
 	}
-	
 endif;
 
 
