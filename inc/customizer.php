@@ -63,7 +63,6 @@ add_action( 'customize_preview_init', 'castpress_customize_preview_js' );
 
 
 if( function_exists( 'kirki' ) ) {
-
 	/*
 	 *	Kirki - Config
 	 */

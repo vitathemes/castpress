@@ -71,6 +71,7 @@ if ( ! function_exists( 'castpress_scripts' ) ) {
 		wp_enqueue_script('jquery');
 
 		wp_enqueue_style( 'castpress-style', get_stylesheet_uri(), array(), CASTPRESS_VERSION );
+		
 		wp_style_add_data( 'castpress-style', 'rtl', 'replace' );
 		// enqueue css
 		wp_enqueue_style( 'castpress-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), CASTPRESS_VERSION );
@@ -387,9 +388,9 @@ if ( ! function_exists( 'castpress_modify_archive_title' )) {
 }
 
 if ( ! function_exists( 'castpress_enable_podcast_post_type' ) ) {
-	function castpress_enable_podcast_post_type( $postTypes ) {
-		$postTypes[] = 'episodes';
-		return $postTypes;
+	function castpress_enable_podcast_post_type( $castpress_postTypes ) {
+		$castpress_postTypes[] = 'episodes';
+		return $castpress_postTypes;
 	}
 	add_filter( 'podcast_importer_secondline_supported_post_types', 'castpress_enable_podcast_post_type' , 10, 2 );
 }

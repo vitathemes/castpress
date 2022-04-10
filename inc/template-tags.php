@@ -37,8 +37,8 @@ if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 		
  		else :
 			if ( has_post_thumbnail() ) { ?>
-				<a class="post-thumbnail" href="<?php echo esc_attr( the_permalink() ); ?> " aria-hidden="true" tabindex="-1">
-					<?php		
+<a class="post-thumbnail" href="<?php echo esc_attr( the_permalink() ); ?> " aria-hidden="true" tabindex="-1">
+    <?php		
 						the_post_thumbnail(
 							'post-thumbnail',
 							array(
@@ -50,8 +50,8 @@ if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 							)
 						);
 					?>
-				</a>
-		<?php
+</a>
+<?php
 			}
 			else {
 				echo '<img alt="'.esc_attr__( 'no thumbnail', 'castpress' ).'" src="' . esc_url( get_template_directory_uri() ). '/assets/images/no-thumbnail.png" />';
