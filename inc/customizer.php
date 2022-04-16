@@ -63,299 +63,310 @@ add_action( 'customize_preview_init', 'castpress_customize_preview_js' );
 
 
 if( function_exists( 'kirki' ) ) {
-	/*
-	 *	Kirki - Config
-	 */
-	Kirki::add_config( 'castpress_theme', array(
-		'capability'    => 'edit_theme_options',
-		'option_type'   => 'theme_mod',
-	) );
 
-	/*
-	 *	Kirki -> Panels
-	 */
 
+	/*------------------------------------*\
+      ############# Panels ###############
+	\*------------------------------------*/
 	// Footer
-	Kirki::add_panel( 'footer', array(
-		'priority' => 180,
-		'title'    => esc_html__( 'Footer', 'castpress' ),
-	) );
+	new \Kirki\Panel(
+		'footer',
+		[
+			'priority' => 180,
+			'title'    => esc_html__( 'Footer', 'castpress' ),
+		]
+	);
 
 	// Typography Settings
-	Kirki::add_panel( 'typography_setting', array(
-		'priority' => 180,
-		'title'    => esc_html__( 'Typography Settings', 'castpress' ),
-	) );
+	new \Kirki\Panel(
+		'typography_setting',
+		[
+			'priority' => 190,
+			'title'    => esc_html__( 'Typography Settings', 'castpress' ),
+		]
+	);
 	
-	/*
-	 *	Kirki -> Sections
-	 */
-	
+	/*------------------------------------*\
+      ############# Sections #############
+	\*------------------------------------*/
 	/* Home Components */
-	Kirki::add_section( 'home_components', array(
-		'title'    => esc_html__( 'Home Components', 'castpress' ),
-		'panel'    => '',
-		'priority' => 5,
-	) );
+	new \Kirki\Section(
+		'home_components',
+		[
+			'title'          => esc_html__( 'Home Components', 'castpress' ),
+			'panel'          => '',
+			'priority'       => 5,
+		]
+	);
 
 	/* Episodes Page  */
-	Kirki::add_section( 'episodes_page', array(
-		'title'    => esc_html__( 'Episodes Options', 'castpress' ),
-		'panel'    => '',
-		'priority' => 6,
-	) );
+	new \Kirki\Section(
+		'episodes_page',
+		[
+			'title'          => esc_html__( 'Episodes Options', 'castpress' ),
+			'panel'          => '',
+			'priority'       => 6,
+		]
+	);
 
 	/* Podcast Player Link */
-	Kirki::add_section( 'podcast_player_link' , array(
-		'title'    => esc_html__( 'Podcast Player Links', 'castpress' ),
-		'panel'    => '',
-		'priority' => 7,
-	) );
+	new \Kirki\Section(
+		'podcast_player_link',
+		[
+			'title'          => esc_html__( 'Podcast Player Links', 'castpress' ),
+			'panel'          => '',
+			'priority'       => 7,
+		]
+	);
 
 	/* Typography Colors */
-	Kirki::add_section( 'colors', array(
-		'title'          => esc_html__( 'Theme Colors', 'castpress' ),
-		'description'    => esc_html__( 'Change Theme color and customize them.', 'castpress' ),
-		'panel'          => '',
-		'priority'       => 8,
-	) );
+	new \Kirki\Section(
+		'colors',
+		[
+			'title'          => esc_html__( 'Theme Colors', 'castpress' ),
+			'description'    => esc_html__( 'Change Theme color and customize them.', 'castpress' ),
+			'panel'          => '',
+			'priority'       => 8,
+		]
+	);
+
 
 	/* Typography Fonts */
-	Kirki::add_section( 'typography_fonts', array(
-		'title'          => esc_html__( 'Typography Fonts', 'castpress' ),
-		'description'    => esc_html__( 'Change Typography Fonts and sizes.', 'castpress' ),
-		'panel'          => 'typography_setting',
-		'priority'       => 9,
-	) );
+	new \Kirki\Section(
+		'typography_fonts',
+		[
+			'title'          => esc_html__( 'Typography Fonts', 'castpress' ),
+			'description'    => esc_html__( 'Change Typography Fonts and sizes.', 'castpress' ),
+			'panel'          => 'typography_setting',
+			'priority'       => 9,
+		]
+	);
 	
 	/* Footer Social medias */
-	Kirki::add_section( 'socials', array(
-		'title'    => esc_html__( 'Socials', 'castpress' ),
-		'panel'    => 'footer',
-		'priority' => 6,
-	) );
+	new \Kirki\Section(
+		'socials',
+		[
+			'title'          => esc_html__( 'Socials', 'castpress' ),
+			'panel'          => 'footer',
+			'priority'       => 6,
+		]
+	);
 
-    /*
-	 *	Kirki -> fields
-	 */
-
+	/*------------------------------------*\
+      ############# Fields #############
+	\*------------------------------------*/
 	/* Typography Colors */
-	Kirki::add_field( 'castpress', [
-		'type'     => 'color',
-		'settings' => 'typography_primary_color',
-		'label'    => __( 'Primary Color', 'castpress' ),
-		'section'  => 'colors',
-		'default'  => '#7247ca',
-		'priority' => 7,
-		
-	] );
+	new \Kirki\Field\Color(
+		[
+			'settings' => 'typography_primary_color',
+			'label'    => __( 'Primary Color', 'castpress' ),
+			'section'  => 'colors',
+			'default'  => '#7247ca',
+			'priority' => 7,
+		]
+	);
 
-	Kirki::add_field( 'castpress', [
-		'type'     => 'color',
-		'settings' => 'typography_primary_accent_color',
-		'label'    => __( 'Primary Accent Color', 'castpress' ),
-		'section'  => 'colors',
-		'default'  => '#58379b',
-		'priority' => 8,
-		
-	] );
+	new \Kirki\Field\Color(
+		[
+			'settings' => 'typography_primary_accent_color',
+			'label'    => __( 'Primary Accent Color', 'castpress' ),
+			'section'  => 'colors',
+			'default'  => '#58379b',
+			'priority' => 8,
+		]
+	);
 
-	Kirki::add_field( 'castpress', [
-		'type'     => 'color',
-		'settings' => 'typography_headings_color',
-		'label'    => __( 'Theme Headings Color', 'castpress' ),
-		'section'  => 'colors',
-		'default'  => '#222222',
-		'priority' => 9,
-		'output'      => [
-			[
-				'element' => array('h1' , 'h2' ,'h3' ,'h4' ,'h5' ,'h6'),
+	new \Kirki\Field\Color(
+		[
+			'settings' => 'typography_headings_color',
+			'label'    => __( 'Theme Headings Color', 'castpress' ),
+			'section'  => 'colors',
+			'default'  => '#222222',
+			'priority' => 9,
+			'output'      => [
+				[
+					'element' => array('h1' , 'h2' ,'h3' ,'h4' ,'h5' ,'h6'),
+				],
 			],
-		],
-		
-	]);
-	
-	Kirki::add_field( 'castpress', [
-		'type'     => 'color',
-		'settings' => 'typography_secondary_color',
-		'label'    => __( 'Primary Texts Color', 'castpress' ),
-		'section'  => 'colors',
-		'default'  => '#555555',
-		'priority' => 9,
-		
-	] );
+		]
+	);
 
-	Kirki::add_field( 'castpress', [
-		'type'     => 'color',
-		'settings' => 'typography_tertiary_color',
-		'label'    => __( 'Secondary Texts Color', 'castpress' ),
-		'section'  => 'colors',
-		'default'  => '#707070',
-		'priority' => 10,
-		
-	] );
+	new \Kirki\Field\Color(
+		[
+			'settings' => 'typography_secondary_color',
+			'label'    => __( 'Primary Texts Color', 'castpress' ),
+			'section'  => 'colors',
+			'default'  => '#555555',
+			'priority' => 10,
+		]
+	);
+
+	new \Kirki\Field\Color(
+		[
+			'settings' => 'typography_tertiary_color',
+			'label'    => __( 'Secondary Texts Color', 'castpress' ),
+			'section'  => 'colors',
+			'default'  => '#707070',
+			'priority' => 11,
+		]
+	);
 
 	/* Typography Fonts */
 	
 	// Paragraph tag
-	Kirki::add_field( 'castpress_theme', [
-		'type'        => 'typography',
-		'settings'    => 'typography_p',
-		'label'       => esc_html__( 'Base Font', 'castpress' ),
-		'section'     => 'typography_fonts',
-		'default'     => [
-			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '16px',
-			'line-height'     	 => '25px',
-			'variant'         	 => 'regular',
-			
-		],
-		'priority'    => 11,
-		'transport'   => 'auto',
-		'output'      => [
-			[
-				'element' => array( 'p' , '.p'),
+	new \Kirki\Field\Typography(
+		[
+			'settings'    => 'typography_p',
+			'label'       => esc_html__( 'Base Font', 'castpress' ),
+			'section'     => 'typography_fonts',
+			'default'     => [
+				'font-family'   	 => 'Source Serif Pro',
+				'font-size'          => '16px',
+				'line-height'     	 => '25px',
+				'variant'         	 => 'regular',
 			],
-		],
-	]);
+			'priority'    => 11,
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element' => array( 'p' , '.p'),
+				],
+			],
+		]
+	);
 
 	// Headings typography h1
-	Kirki::add_field( 'castpress_theme', [
-		'type'        => 'typography',
-		'settings'    => 'typography_h1',
-		'label'       => esc_html__( 'H1', 'castpress' ),
-		'section'     => 'typography_fonts',
-		'default'     => [
-			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '26px',
-			'line-height'     	 => '32px',
-			'variant'         	 => '600',
-			
-		],
-		'priority'    => 12,
-		'transport'   => 'auto',
-		'output'      => [
-			[
-				'element' => array( 'h1' , '.h1'),
+	new \Kirki\Field\Typography(
+		[
+			'settings'    => 'typography_h1',
+			'label'       => esc_html__( 'H1', 'castpress' ),
+			'section'     => 'typography_fonts',
+			'default'     => [
+				'font-family'   	 => 'Source Serif Pro',
+				'font-size'          => '26px',
+				'line-height'     	 => '32px',
+				'variant'         	 => '600',
 			],
-		],
-	] );
+			'priority'    => 12,
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element' => array( 'h1' , '.h1'),
+				],
+			],
+		]
+	);
 
-	
 	// Headings typography h2
-	Kirki::add_field( 'castpress_theme', [
-		'type'        => 'typography',
-		'settings'    => 'typography_h2',
-		'label'       => esc_html__( 'H2', 'castpress' ),
-		'section'     => 'typography_fonts',
-		'default'     => [
-			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '21px',
-			'line-height'     	 => '25px',
-			'variant'         	 => '600',
-			
-		],
-		'priority'    => 13,
-		'transport'   => 'auto',
-		'output'      => [
-			[
-				'element' => array( 'h2' , '.h2'),
+	new \Kirki\Field\Typography(
+		[
+			'settings'    => 'typography_h2',
+			'label'       => esc_html__( 'H2', 'castpress' ),
+			'section'     => 'typography_fonts',
+			'default'     => [
+				'font-family'   	 => 'Source Serif Pro',
+				'font-size'          => '21px',
+				'line-height'     	 => '25px',
+				'variant'         	 => '600',
 			],
-		],
-	] );
-
+			'priority'    => 13,
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element' => array( 'h2' , '.h2'),
+				],
+			],
+		]
+	);
 	
 	// Headings typography h3
-	Kirki::add_field( 'castpress_theme', [
-		'type'        => 'typography',
-		'settings'    => 'typography_h3',
-		'label'       => esc_html__( 'H3', 'castpress' ),
-		'section'     => 'typography_fonts',
-		'default'     => [
-			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '18px',
-			'line-height'     	 => '25px',
-			'variant'         	 => 'regular',
-		],
-		'priority'    => 14,
-		'transport'   => 'auto',
-		'output'      => [
-			[
-				'element' => array( 'h3' , '.h3'),
+	new \Kirki\Field\Typography(
+		[
+			'settings'    => 'typography_h3',
+			'label'       => esc_html__( 'H3', 'castpress' ),
+			'section'     => 'typography_fonts',
+			'default'     => [
+				'font-family'   	 => 'Source Serif Pro',
+				'font-size'          => '18px',
+				'line-height'     	 => '25px',
+				'variant'         	 => 'regular',
 			],
-		],
-	] );
-
+			'priority'    => 14,
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element' => array( 'h3' , '.h3'),
+				],
+			],
+		]
+	);
 
 	// Headings typography h4
-	Kirki::add_field( 'castpress_theme', [
-		'type'        => 'typography',
-		'settings'    => 'typography_h4',
-		'label'       => esc_html__( 'H4', 'castpress' ),
-		'section'     => 'typography_fonts',
-		'default'     => [
-			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '16px',
-			'line-height'     	 => '25px',
-			'variant'         	 => 'regular',
-			
-		],
-		'priority'    => 15,
-		'transport'   => 'auto',
-		'output'      => [
-			[
-				'element' => array( 'h4' , '.h4'),
+	new \Kirki\Field\Typography(
+		[
+			'settings'    => 'typography_h4',
+			'label'       => esc_html__( 'H4', 'castpress' ),
+			'section'     => 'typography_fonts',
+			'default'     => [
+				'font-family'   	 => 'Source Serif Pro',
+				'font-size'          => '16px',
+				'line-height'     	 => '25px',
+				'variant'         	 => 'regular',
 			],
-		],
-	] );
-
+			'priority'    => 15,
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element' => array( 'h4' , '.h4'),
+				],
+			],
+		]
+	);
 
 	// Headings typography h5
-	Kirki::add_field( 'castpress_theme', [
-		'type'        => 'typography',
-		'settings'    => 'typography_h5',
-		'label'       => esc_html__( 'H5', 'castpress' ),
-		'section'     => 'typography_fonts',
-		'default'     => [
-			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '14px',
-			'line-height'     	 => '25px',
-			'variant'         	 => '600',
-			
-		],
-		'priority'    => 16,
-		'transport'   => 'auto',
-		'output'      => [
-			[
-				'element' => array('h5' , '.h5'),
+	new \Kirki\Field\Typography(
+		[
+			'settings'    => 'typography_h5',
+			'label'       => esc_html__( 'H5', 'castpress' ),
+			'section'     => 'typography_fonts',
+			'default'     => [
+				'font-family'   	 => 'Source Serif Pro',
+				'font-size'          => '14px',
+				'line-height'     	 => '25px',
+				'variant'         	 => '600',
 			],
-		],
-	] );
+			'priority'    => 16,
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element' => array('h5' , '.h5'),
+				],
+			],
+		]
+	);
 
 	
 	// Headings typography h6
-	Kirki::add_field( 'castpress_theme', [
-		'type'        => 'typography',
-		'settings'    => 'typography_h6',
-		'label'       => esc_html__( 'H6', 'castpress' ),
-		'section'     => 'typography_fonts',
-		'default'     => [
-			'font-family'   	 => 'Source Serif Pro',
-			'font-size'          => '12px',
-			'line-height'     	 => '25px',
-			'variant'         	 => '600',
-			
-		],
-		'priority'    => 17,
-		'transport'   => 'auto',
-		'output'      => [
-			[
-				'element' => array( 'h6' , '.h6' , '.menu-item__link'),
+	new \Kirki\Field\Typography(
+		[
+			'settings'    => 'typography_h6',
+			'label'       => esc_html__( 'H6', 'castpress' ),
+			'section'     => 'typography_fonts',
+			'default'     => [
+				'font-family'   	 => 'Source Serif Pro',
+				'font-size'          => '12px',
+				'line-height'     	 => '25px',
+				'variant'         	 => '600',
 			],
-		],
-	] );
-
-
+			'priority'    => 17,
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element' => array( 'h6' , '.h6' , '.menu-item__link'),
+				],
+			],
+		]
+	);
 
 	
 
