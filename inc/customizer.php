@@ -368,14 +368,13 @@ if( function_exists( 'kirki' ) ) {
 		]
 	);
 
-	
 
 	// -- Socials --
 	new \Kirki\Field\URL(
 		[
 			'settings' => 'linkedin',
 			'label'    => esc_html__( 'Linkedin', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 10,
 		]
 	);
@@ -384,7 +383,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'facebook',
 			'label'    => esc_html__( 'Facebook', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 20,
 		]
 	);
@@ -393,7 +392,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'github',
 			'label'    => esc_html__( 'Github', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 30,
 		]
 	);
@@ -402,7 +401,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'twitter',
 			'label'    => esc_html__( 'Twitter', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 40,
 		]
 	);
@@ -411,7 +410,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'instagram',
 			'label'    => esc_html__( 'Instagram', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 50,
 		]
 	);
@@ -420,7 +419,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'mail',
 			'label'    => esc_html__( 'Email', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 60,
 		]
 	);
@@ -429,7 +428,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'pinterest',
 			'label'    => esc_html__( 'Pinterest', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 60,
 		]
 	);
@@ -438,7 +437,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'youtube',
 			'label'    => esc_html__( 'Youtube', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 70,
 		]
 	);
@@ -447,7 +446,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'spotify',
 			'label'    => esc_html__( 'Spotify', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 80,
 		]
 	);
@@ -456,7 +455,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'gitlab',
 			'label'    => esc_html__( 'Gitlab', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 90,
 		]
 	);
@@ -465,7 +464,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'lastfm',
 			'label'    => esc_html__( 'Lastfm', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 100,
 		]
 	);
@@ -474,7 +473,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'stackoverflow',
 			'label'    => esc_html__( 'Stackoverflow', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 110,
 		]
 	);
@@ -483,7 +482,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'quora',
 			'label'    => esc_html__( 'Quora', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 120,
 		]
 	);
@@ -492,7 +491,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'reddit',
 			'label'    => esc_html__( 'Reddit', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 130,
 		]
 	);
@@ -501,7 +500,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'medium',
 			'label'    => esc_html__( 'Medium', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 140,
 		]
 	);
@@ -510,7 +509,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'vimeo',
 			'label'    => esc_html__( 'Vimeo', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 150,
 		]
 	);
@@ -519,7 +518,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'lanyrd',
 			'label'    => esc_html__( 'Lanyrd', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 160,
 		]
 	);
@@ -528,7 +527,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'dribbble',
 			'label'    => esc_html__( 'Dribbble', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 170,
 		]
 	);
@@ -537,7 +536,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'behance',
 			'label'    => esc_html__( 'Behance', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 280,
 		]
 	);
@@ -546,7 +545,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'codepen',
 			'label'    => esc_html__( 'Codepen', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 290,
 		]
 	);
@@ -555,7 +554,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'telegram',
 			'label'    => esc_html__( 'Telegram', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 300,
 		]
 	);
@@ -564,7 +563,7 @@ if( function_exists( 'kirki' ) ) {
 		[
 			'settings' => 'phone_number',
 			'label'    => esc_html__( 'Phone Number', 'castpress' ),
-			'section'  => 'social_media',
+			'section'  => 'socials',
 			'priority' => 310,
 		]
 	);
