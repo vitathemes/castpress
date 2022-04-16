@@ -30,5 +30,5 @@ if ( ! function_exists( 'castpress_filter_login_head' )) {
         <?php
         endif;
     }
-    add_action( 'login_head', 'castpress_filter_login_head', 100 );
 }
+add_action( 'login_head', 'castpress_filter_login_head', 100 );

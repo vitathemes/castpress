@@ -371,45 +371,204 @@ if( function_exists( 'kirki' ) ) {
 	
 
 	// -- Socials --
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'facebook',
-		'label'    => esc_html__( 'Facebook', 'castpress' ),
-		'section'  => 'socials',
-		'priority' => 10,
-	] );
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'linkedin',
+			'label'    => esc_html__( 'Linkedin', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 10,
+		]
+	);
 
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'twitter',
-		'label'    => esc_html__( 'Twitter', 'castpress' ),
-		'section'  => 'socials',
-		'priority' => 10,
-	] );
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'facebook',
+			'label'    => esc_html__( 'Facebook', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 20,
+		]
+	);
 
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'instagram',
-		'label'    => esc_html__( 'Instagram', 'castpress' ),
-		'section'  => 'socials',
-		'priority' => 10,
-	] );
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'github',
+			'label'    => esc_html__( 'Github', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 30,
+		]
+	);
 
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'linkedin',
-		'label'    => esc_html__( 'Linkedin', 'castpress' ),
-		'section'  => 'socials',
-		'priority' => 10,
-	] );
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'twitter',
+			'label'    => esc_html__( 'Twitter', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 40,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'instagram',
+			'label'    => esc_html__( 'Instagram', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 50,
+		]
+	);
+
+	new \Kirki\Field\Text(
+		[
+			'settings' => 'mail',
+			'label'    => esc_html__( 'Email', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 60,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'pinterest',
+			'label'    => esc_html__( 'Pinterest', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 60,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'youtube',
+			'label'    => esc_html__( 'Youtube', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 70,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'spotify',
+			'label'    => esc_html__( 'Spotify', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 80,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'gitlab',
+			'label'    => esc_html__( 'Gitlab', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 90,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'lastfm',
+			'label'    => esc_html__( 'Lastfm', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 100,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'stackoverflow',
+			'label'    => esc_html__( 'Stackoverflow', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 110,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'quora',
+			'label'    => esc_html__( 'Quora', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 120,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'reddit',
+			'label'    => esc_html__( 'Reddit', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 130,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'medium',
+			'label'    => esc_html__( 'Medium', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 140,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'vimeo',
+			'label'    => esc_html__( 'Vimeo', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 150,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'lanyrd',
+			'label'    => esc_html__( 'Lanyrd', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 160,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'dribbble',
+			'label'    => esc_html__( 'Dribbble', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 170,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'behance',
+			'label'    => esc_html__( 'Behance', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 280,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'codepen',
+			'label'    => esc_html__( 'Codepen', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 290,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'telegram',
+			'label'    => esc_html__( 'Telegram', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 300,
+		]
+	);
+
+	new \Kirki\Field\Text(
+		[
+			'settings' => 'phone_number',
+			'label'    => esc_html__( 'Phone Number', 'castpress' ),
+			'section'  => 'social_media',
+			'priority' => 310,
+		]
+	);
 	
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'github',
-		'label'    => esc_html__( 'Github', 'castpress' ),
-		'section'  => 'socials',
-		'priority' => 10,
-	] );
 
 	
 	// -- Home Components --
