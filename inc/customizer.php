@@ -34,26 +34,32 @@ function castpress_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'castpress_customize_register' );
 
-/**
- * Render the site title for the selective refresh partial.
- *
- * @return void
- */
-function castpress_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
+
+if( ! function_exists('castpress_customize_partial_blogname') ) : 
+	/**
+	 * Render the site title for the selective refresh partial.
+	 *
+	 * @return void
+	 */
+	function castpress_customize_partial_blogname() {
+		bloginfo( 'name' );
+	}
+endif;
+
+
+if( ! function_exists('castpress_customize_partial_blogdescription') ) : 
+	/**
+	 * Render the site tagline for the selective refresh partial.
+	 *
+	 * @return void
+	 */
+	function castpress_customize_partial_blogdescription() {
+		bloginfo( 'description' );
+	}
+endif;
 
 /**
- * Render the site tagline for the selective refresh partial.
- *
- * @return void
- */
-function castpress_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously. Core Function
  */
 function castpress_customize_preview_js() {
 	wp_enqueue_script( 'castpress-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), CASTPRESS_VERSION, true );
@@ -61,9 +67,7 @@ function castpress_customize_preview_js() {
 add_action( 'customize_preview_init', 'castpress_customize_preview_js' );
 
 
-
 if( function_exists( 'kirki' ) ) {
-
 
 	/*------------------------------------*\
       ############# Panels ###############
@@ -568,222 +572,237 @@ if( function_exists( 'kirki' ) ) {
 		]
 	);
 	
-
 	
 	// -- Home Components --
-	Kirki::add_field( 'castpress', [
-		'type'        => 'radio-buttonset',
-		'settings'    => 'homepage_last_ep_single',
-		'label'       => esc_html__( 'Last Episode Style', 'castpress' ),
-		'section'     => 'home_components',
-		'default'     => 'style-1',
-		'priority'    => 10,
-		'choices'     => [
-			'style-1'   => esc_html__( 'Last Episode Style 1', 'castpress' ),
-			'style-2' => esc_html__( 'Last Episode Style 2', 'castpress' ),
-		],
-	] );
+	new \Kirki\Field\Radio_Buttonset(
+		[
+			'settings'    => 'homepage_last_ep_single',
+			'label'       => esc_html__( 'Last Episode Style', 'castpress' ),
+			'section'     => 'home_components',
+			'default'     => 'style-1',
+			'priority'    => 10,
+			'choices'     => [
+				'style-1'   => esc_html__( 'Last Episode Style 1', 'castpress' ),
+				'style-2' => esc_html__( 'Last Episode Style 2', 'castpress' ),
+			],
+		]
+	);
 
-
-	Kirki::add_field( 'castpress', [
-		'type'        => 'sortable',
-		'settings'    => 'home_component',
-		'label'       => esc_html__( 'Home Components Order', 'castpress' ),
-		'section'     => 'home_components',
-		'default'     => [
-			'components/latest-episode/latest-episode',
-			'components/episodes',
-			'components/latest-posts'
-		],
-		'choices'     => [
-			'components/latest-episode/latest-episode' => esc_html__( 'Single Latest Episode', 'castpress' ),
-			'components/episodes' => esc_html__( 'Latest Episodes', 'castpress' ),
-			'components/latest-posts' => esc_html__( 'Latest posts from blog', 'castpress' ),
-		],
-		'priority'    => 10,
-	] );
-
+	new \Kirki\Field\Sortable(
+		[
+			'settings' => 'home_component',
+			'label'    => __( 'Home Components Order', 'castpress' ),
+			'section'  => 'home_components',
+			'default'     => [
+				'components/latest-episode/latest-episode',
+				'components/episodes',
+				'components/latest-posts'
+			],
+			'choices'     => [
+				'components/latest-episode/latest-episode' => esc_html__( 'Single Latest Episode', 'castpress' ),
+				'components/episodes' => esc_html__( 'Latest Episodes', 'castpress' ),
+				'components/latest-posts' => esc_html__( 'Latest posts from blog', 'castpress' ),
+			],
+			'priority' => 10,
+		]
+	);
 	
 	// -- Podcast Player Links --
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_spotify_link',
-		'label'    => __( 'Spotify', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 12,
-	] );
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_spotify_link',
+			'label'    => esc_html__( 'Spotify', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 12,
+		]
+	);
 
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_soundcloud_link',
-		'label'    => __( 'Soundcloud', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 13,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_apple_link',
-		'label'    => __( 'Podcasts (Apple Podcasts)', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 14,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_youtube_link',
-		'label'    => __( 'Youtube', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 15,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_stitcher_link',
-		'label'    => __( 'Stitcher', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 16,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_deezer_link',
-		'label'    => __( 'Deezer', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 17,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_google_podcasts_link',
-		'label'    => __( 'Google podcasts', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 18,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_iheartradio_link',
-		'label'    => __( 'I heart radio', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 19,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_overcast_link',
-		'label'    => __( 'Overcast', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 20,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_pandora_link',
-		'label'    => __( 'Pandora', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 21,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_pocketcasts_link',
-		'label'    => __( 'Pocket casts', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 22,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_radiopublic_link',
-		'label'    => __( 'Radio public', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 23,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_rss_link',
-		'label'    => __( 'Rss Feed', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 24,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_spreaker_link',
-		'label'    => __( 'Spreaker', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 24,
-	] );
-
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_castro_link',
-		'label'    => __( 'Castro', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 24,
-	] );
-
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_soundcloud_link',
+			'label'    => esc_html__( 'Soundcloud', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 13,
+		]
+	);
 	
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_audible_link',
-		'label'    => __( 'Audible', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 24,
-	] );
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_apple_link',
+			'label'    => esc_html__( 'Podcasts (Apple Podcasts)', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 14,
+		]
+	);
 
-	Kirki::add_field( 'castpress', [
-		'type'     => 'link',
-		'settings' => 'p_castbox_link',
-		'label'    => __( 'Castbox', 'castpress' ),
-		'section'  => 'podcast_player_link',
-		'default'  => '',
-		'priority' => 24,
-	] );
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_youtube_link',
+			'label'    => esc_html__( 'Youtube', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 15,
+		]
+	);
 
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_stitcher_link',
+			'label'    => esc_html__( 'Stitcher', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 16,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_deezer_link',
+			'label'    => esc_html__( 'Deezer', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 17,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_google_podcasts_link',
+			'label'    => esc_html__( 'Google podcasts', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 18,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_iheartradio_link',
+			'label'    => esc_html__( 'I heart radio', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 19,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_overcast_link',
+			'label'    => esc_html__( 'Overcast', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 20,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_pandora_link',
+			'label'    => esc_html__( 'Pandora', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 21,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_pocketcasts_link',
+			'label'    => esc_html__( 'Pocket casts', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 22,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_radiopublic_link',
+			'label'    => esc_html__( 'Radio public', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 23,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_rss_link',
+			'label'    => esc_html__( 'Rss Feed', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 24,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_spreaker_link',
+			'label'    => esc_html__( 'Spreaker', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 25,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_castro_link',
+			'label'    => esc_html__( 'Castro', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 26,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_audible_link',
+			'label'    => esc_html__( 'Audible', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 27,
+		]
+	);
+
+	new \Kirki\Field\URL(
+		[
+			'settings' => 'p_castbox_link',
+			'label'    => esc_html__( 'Castbox', 'castpress' ),
+			'section'  => 'podcast_player_link',
+			'default'  => '',
+			'priority' => 28,
+		]
+	);
 	// -- Episodes Page options --
 
 	// Archives title
-	Kirki::add_field( 'castpress', [
-		'type'     => 'text',
-		'settings' => 'post_type_archive_custom_title',
-		'label'    => esc_html__( 'Post Type Archive title', 'castpress' ),
-		'section'  => 'episodes_page',
-		'priority' => 10,
-	] );
+	new \Kirki\Field\Text(
+		[
+			'settings' => 'post_type_archive_custom_title',
+			'label'    => esc_html__( 'Post Type Archive title', 'castpress' ),
+			'section'  => 'episodes_page',
+			'priority' => 10,
+		]
+	);
 
 	// Episodes template part
-	Kirki::add_field( 'castpress', [
-		'type'        => 'radio-buttonset',
-		'settings'    => 'latest_episodes',
-		'label'       => esc_html__( 'Latest Episodes Style', 'castpress' ),
-		'section'     => 'episodes_page',
-		'default'     => 'style-1',
-		'priority'    => 10,
-		'choices'     => [
-			'style-1' => esc_html__( 'Episodes Style 1', 'castpress' ),
-			'style-2' => esc_html__( 'Episodes Style 2', 'castpress' ),
-			'style-3' => esc_html__( 'Episodes Style 3', 'castpress' ),
-		],
-	] );
-
+	new \Kirki\Field\Radio_Buttonset(
+		[
+			'settings'    => 'latest_episodes',
+			'label'       => esc_html__( 'Latest Episodes Style', 'castpress' ),
+			'section'     => 'episodes_page',
+			'default'     => 'style-1',
+			'priority'    => 10,
+			'choices'     => [
+				'style-1' => esc_html__( 'Episodes Style 1', 'castpress' ),
+				'style-2' => esc_html__( 'Episodes Style 2', 'castpress' ),
+				'style-3' => esc_html__( 'Episodes Style 3', 'castpress' ),
+			],
+		]
+	);
 
 }
