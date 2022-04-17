@@ -24,6 +24,7 @@ if ( ! function_exists( 'castpress_body_classes' ) ) {
 }
 add_filter( 'body_class', 'castpress_body_classes' );
 
+
 if ( ! function_exists( 'castpress_footer_widgets_left_init' ) ) {
 	function castpress_footer_widgets_left_init() {
 		/**

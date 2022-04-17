@@ -90,7 +90,7 @@ if ( ! function_exists('castpress_get_thumbnail')) :
 endif;
 
 
-if (! function_exists('castpress_get_single_thumbnail')) :
+if ( ! function_exists('castpress_get_single_thumbnail')) :
 	/**
 	  * Return thumbnail in single page
 	  */
@@ -111,7 +111,7 @@ if (! function_exists('castpress_get_single_thumbnail')) :
 endif;
 
 
-if (! function_exists('castpress_get_tags')) :
+if ( ! function_exists('castpress_get_tags')) :
 	/**
 	  * Return Post tags
 	  */
@@ -128,7 +128,7 @@ if (! function_exists('castpress_get_tags')) :
 endif;
 
 
-if (! function_exists('castpress_get_category')) :
+if ( ! function_exists('castpress_get_category')) :
 	/**
 	  * Return Post category
 	  */
@@ -144,7 +144,7 @@ if (! function_exists('castpress_get_category')) :
 endif;
 
 
-if (! function_exists('castpress_get_default_pagination')) :
+if ( ! function_exists('castpress_get_default_pagination')) :
 	/**
 	  * Show numeric pagination
 	  */
@@ -322,7 +322,7 @@ if ( ! function_exists( 'castpress_share_links' ) ) {
 }
 
 
-if (! function_exists('castpress_get_podcast_player_link')) :
+if ( ! function_exists('castpress_get_podcast_player_link')) :
 	/**
 	  * Get publishers link from kirki 
 	  */
