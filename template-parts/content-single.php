@@ -64,22 +64,22 @@
 
         <?php if ( class_exists('ACF') && get_field('transcript') ) { ?>
         <div class="c-single__transcript">
-                <a class="c-single__transcript__more js-single__transcript__more h2"><?php esc_html_e( 'View transcript', 'castpress' ); ?>
-                    <span class="c-single__transcript__icon dashicons dashicons-arrow-right-alt"></span>
-                </a>
-            </div>    
+            <a class="c-single__transcript__more js-single__transcript__more h2"><?php esc_html_e( 'View transcript', 'castpress' ); ?>
+                <span class="c-single__transcript__icon dashicons dashicons-arrow-right-alt"></span>
+            </a>
+        </div>
         <?php } // check Acf fields is exist  ?>
 
         <?php if ( class_exists('ACF') && get_field('transcript') ) { ?>
-            <div class="c-single__transcript__content">
-                <div class="c-single__transcript__wrapper" >
-                    <div class="c-single__transcript__context" data-simplebar data-simplebar-auto-hide="false">
-                        <div class="c-single__transcript__row">
-                            <?php the_field('transcript'); ?>
-                        </div>
+        <div class="c-single__transcript__content">
+            <div class="c-single__transcript__wrapper">
+                <div class="c-single__transcript__context" data-simplebar data-simplebar-auto-hide="false">
+                    <div class="c-single__transcript__row">
+                        <?php the_field('transcript'); ?>
                     </div>
                 </div>
             </div>
+        </div>
         <?php } // check Acf fields is exist  ?>
 
         <?php             
