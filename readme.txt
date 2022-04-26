@@ -48,6 +48,7 @@ See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes
 = 1.0.4 =
 * Fix Pluggable functions
 * Add new customizer features
+* Add Kirki Customizer version handler
 
 = 1.0.3 =
 * Fix Pluggable functions
