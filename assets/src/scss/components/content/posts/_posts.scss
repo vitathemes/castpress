@@ -1,128 +1,128 @@
 .c-post {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 39px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 39px;
 
-  @include media(tablet) {
-    margin-bottom: 24px;
-  }
+    @include media(tablet) {
+        margin-bottom: 24px;
+    }
 }
 
 .c-post__header {
-  width: 100%;
-  color: $castpress_heading_color;
-  text-transform: capitalize;
+    width: 100%;
+    color: $castpress_heading_color;
+    text-transform: capitalize;
 
-  @include media(tablet) {
-    width: calc(100% - 180px);
-    padding-left: 39px;
-  }
+    @include media(tablet) {
+        width: calc(100% - 180px);
+        padding-left: 39px;
+    }
 }
 
 .c-post__date {
-  color: $castpress_tertiary_color !important;
-  display: inline-block;
-  text-decoration: none !important;
+    color: $castpress_tertiary_color !important;
+    display: inline-block;
+    text-decoration: none !important;
 }
 
 .c-post__header--home {
-  width: 100%;
-  color: $castpress_heading_color;
-  text-transform: capitalize;
-
-  @include media(tablet) {
     width: 100%;
-    padding-left: 0px;
-  }
+    color: $castpress_heading_color;
+    text-transform: capitalize;
+
+    @include media(tablet) {
+        width: 100%;
+        padding-left: 0px;
+    }
 }
 
 .c-post__header--page {
-  padding-left: 0px;
-  margin-bottom: 40px; //qa-
+    padding-left: 0px;
+    margin-bottom: 40px; //qa-
 }
 
 .c-post__author {
-  display: inline-block;
-  color: $castpress_tertiary_color !important;
-  text-decoration: none !important;
-  &:first {
-    text-transform: uppercase;
-  }
+    display: inline-block;
+    color: $castpress_tertiary_color !important;
+    text-decoration: none !important;
+    &:first {
+        text-transform: uppercase;
+    }
 }
 
 .c-post__author__link {
-  display: inline-block;
-  text-transform: capitalize;
-  margin-left: 1px;
+    display: inline-block;
+    text-transform: capitalize;
+    margin-left: 1px;
 }
 
 .s-post-content {
-  color: $castpress_second_color;
+    color: $castpress_second_color;
 
-  li {
-    margin-bottom: 8px;
-  }
+    li {
+        margin-bottom: 8px;
+    }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-bottom: 24px;
-  }
-  p {
-    margin-bottom: 39px;
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 24px;
+    }
+    p {
+        margin-bottom: 39px;
+    }
 }
 
 .c-post__title {
-  padding-bottom: 16px;
+    padding-bottom: 16px;
 
-  a {
-    color: $castpress_heading_color;
-  }
+    a {
+        color: $castpress_heading_color;
+    }
 }
 
 .c-post__entry-meta {
-  padding-bottom: 16px;
+    padding-bottom: 16px;
 
-  @include media(tablet) {
-    padding-bottom: 39px;
-  }
+    @include media(tablet) {
+        padding-bottom: 39px;
+    }
 }
 
 .c-post__thumbnail {
-  width: 180px;
-  height: 180px;
-  max-height: 180px;
-  margin-bottom: 16px;
-  border-radius: 4px;
+    width: 180px;
+    height: 180px;
+    max-height: 180px;
+    margin-bottom: 16px;
+    border-radius: 4px;
 
-  @include media(tablet) {
-    margin-bottom: 0px;
-  }
+    @include media(tablet) {
+        margin-bottom: 0px;
+    }
 }
 
 .c-post__read-more {
-  color: $castpress_primary_color !important;
-
-  &:hover {
     color: $castpress_primary_color !important;
-    text-decoration: underline;
-  }
+
+    &:hover {
+        color: $castpress_primary_color !important;
+        text-decoration: underline;
+    }
 }
 .c-post__page-links {
-  margin: 16px 0px 0px 0px;
+    margin: 16px 0px 0px 0px;
 }
 
 .c-post__tag {
-  padding-right: 24px;
+    padding-right: 24px;
 
-  color: $castpress_second_color !important;
+    color: $castpress_second_color !important;
 
-  &:hover {
-    color: $castpress_primary_color !important;
-  }
+    &:hover {
+        color: $castpress_primary_color !important;
+    }
 }

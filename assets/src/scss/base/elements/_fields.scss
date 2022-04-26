@@ -1,7 +1,6 @@
 /*------------------------------------*\
   #Fields 
 \*------------------------------------*/
-
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -18,60 +17,60 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  width: 100%;
-  margin-top: 8px;
-  color: $castpress_heading_color;
-  border: none;
-  border-radius: $global-radius;
-  background-color: $castpress_neutral_gray_light_color;
-
-  padding-right: 8px;
-  padding-left: 14px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-
-  font-size: 0.75rem;
-  line-height: 27px;
-
-  position: relative;
-
-  &::placeholder {
+    width: 100%;
+    margin-top: 8px;
     color: $castpress_heading_color;
-    opacity: 1;
-    font-size: 12px;
-    line-height: 27px !important;
-    font-family: $castpress_font;
-    font-weight: 400;
-  }
+    border: none;
+    border-radius: $global-radius;
+    background-color: $castpress_neutral_gray_light_color;
 
-  &:focus {
-    color: $castpress_heading_color;
-    outline: $castpress_neutral_gray_color solid 2px;
-  }
+    padding-right: 8px;
+    padding-left: 14px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+
+    font-size: 0.75rem;
+    line-height: 27px;
+
+    position: relative;
+
+    &::placeholder {
+        color: $castpress_heading_color;
+        opacity: 1;
+        font-size: 12px;
+        line-height: 27px !important;
+        font-family: $castpress_font;
+        font-weight: 400;
+    }
+
+    &:focus {
+        color: $castpress_heading_color;
+        outline: $castpress_neutral_gray_color solid 2px;
+    }
 }
 
 select {
-  border: none;
-  border-radius: $global-radius;
-  padding: 10px 14px;
+    border: none;
+    border-radius: $global-radius;
+    padding: 10px 14px;
 }
 
 textarea {
-  width: 100%;
-  min-height: 150px;
-  max-width: 100%;
+    width: 100%;
+    min-height: 150px;
+    max-width: 100%;
 }
 
 input[type="checkbox"] {
-  margin: 0px 8px 0px 0px;
-
-  @include media(tablet) {
     margin: 0px 8px 0px 0px;
-  }
+
+    @include media(tablet) {
+        margin: 0px 8px 0px 0px;
+    }
 }
 
 .search-field {
-  padding: 10px 30px 8px 14px !important;
+    padding: 10px 30px 8px 14px !important;
 }
 
 /*------------------------------------*\
@@ -79,12 +78,12 @@ input[type="checkbox"] {
 \*------------------------------------*/
 
 .tnp-field.tnp-field-email {
-  label {
-    line-height: 14px !important;
-    margin-bottom: 14px;
-  }
+    label {
+        line-height: 14px !important;
+        margin-bottom: 14px;
+    }
 }
 
 .tnp-email {
-  padding: 12px !important;
+    padding: 12px !important;
 }

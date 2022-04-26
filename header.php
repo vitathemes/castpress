@@ -20,7 +20,7 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <div id="page" class="o-page">
-    
+
         <a class="skip-link screen-reader-text" href="#primary">
             <?php esc_html_e( 'Skip to content', 'castpress' ); ?>
         </a><!-- .skip-link screen-reader-text -->
@@ -49,7 +49,7 @@
                                 )
                             );
                         }
-                        ?>
+                    ?>
                 </nav><!-- #site-navigation -->
 
                 <div class="c-header__search js-header__search">
@@ -58,7 +58,7 @@
                         aria-label="<?php esc_attr_e('Toggle Search', 'castpress'); ?>" aria-controls="primary-menu"
                         aria-expanded="false">
                     </button>
-                    
+
                     <div class="c-header__search-form">
                         <?php get_search_form(); ?>
                     </div>

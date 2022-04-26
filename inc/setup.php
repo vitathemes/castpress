@@ -99,5 +99,5 @@ if ( ! function_exists( 'castpress_content_width' )) {
 	function castpress_content_width() {
 		$GLOBALS['content_width'] = apply_filters( 'castpress_content_width', 640 );
 	}
-	add_action( 'after_setup_theme', 'castpress_content_width', 0 );
 }
+add_action( 'after_setup_theme', 'castpress_content_width', 0 );

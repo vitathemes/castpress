@@ -45,8 +45,13 @@ See a working example at [demo.vitathemes.com/castpress](https://demo.vitathemes
 
 == Changelog ==
 
+= 1.0.4 =
+* Fix Pluggable functions
+* Add new customizer features
+* Add Kirki Customizer version handler
+
 = 1.0.3 =
-* Fix Pluggable funtions
+* Fix Pluggable functions
 * Add new plugin function
 
 = 1.0.2 =

@@ -1864,34 +1864,34 @@ input[type="submit"] {
   margin-top: 24px; }
 
 .c-social-share--footer {
-  margin-top: 24px; }
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap; }
 
 .c-social-share__title {
   vertical-align: top;
   display: inline-block; }
 
 .c-social-share__item {
-  min-height: 15px;
   margin: 0px 11.5px;
-  cursor: pointer; }
-  .c-social-share__item .dashicons {
-    padding-left: 0px; }
-    .c-social-share__item .dashicons::before {
-      color: var(--castpress_headings-color); }
+  cursor: pointer;
+  height: max-content; }
   .c-social-share__item:hover {
     text-decoration: none; }
-    .c-social-share__item:hover .dashicons {
-      padding-left: 0px; }
-      .c-social-share__item:hover .dashicons::before {
-        color: var(--castpress_primary-color); }
     .c-social-share__item:hover path {
       fill: var(--castpress_primary-color);
       cursor: pointer; }
   .c-social-share__item:visited {
     text-decoration: none; }
 
+.c-social-media__icon {
+  font-size: 21px;
+  color: var(--castpress_headings-color); }
+  .c-social-media__icon:hover, .c-social-media__icon:focus, .c-social-media__icon:visited {
+    color: var(--castpress_primary-color); }
+
 /*------------------------------------*\
-  #Social share custom github icon
+  #Social share custom github icon  
 \*------------------------------------*/
 .c-social-share__icon--github {
   vertical-align: top; }

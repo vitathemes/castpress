@@ -37,8 +37,8 @@ if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 		
  		else :
 			if ( has_post_thumbnail() ) { ?>
-				<a class="post-thumbnail" href="<?php echo esc_attr( the_permalink() ); ?> " aria-hidden="true" tabindex="-1">
-					<?php		
+<a class="post-thumbnail" href="<?php echo esc_attr( the_permalink() ); ?> " aria-hidden="true" tabindex="-1">
+    <?php		
 						the_post_thumbnail(
 							'post-thumbnail',
 							array(
@@ -50,8 +50,8 @@ if ( ! function_exists( 'castpress_post_thumbnail' ) ) :
 							)
 						);
 					?>
-				</a>
-		<?php
+</a>
+<?php
 			}
 			else {
 				echo '<img alt="'.esc_attr__( 'no thumbnail', 'castpress' ).'" src="' . esc_url( get_template_directory_uri() ). '/assets/images/no-thumbnail.png" />';
@@ -90,7 +90,7 @@ if ( ! function_exists('castpress_get_thumbnail')) :
 endif;
 
 
-if (! function_exists('castpress_get_single_thumbnail')) :
+if ( ! function_exists('castpress_get_single_thumbnail')) :
 	/**
 	  * Return thumbnail in single page
 	  */
@@ -111,7 +111,7 @@ if (! function_exists('castpress_get_single_thumbnail')) :
 endif;
 
 
-if (! function_exists('castpress_get_tags')) :
+if ( ! function_exists('castpress_get_tags')) :
 	/**
 	  * Return Post tags
 	  */
@@ -128,7 +128,7 @@ if (! function_exists('castpress_get_tags')) :
 endif;
 
 
-if (! function_exists('castpress_get_category')) :
+if ( ! function_exists('castpress_get_category')) :
 	/**
 	  * Return Post category
 	  */
@@ -144,7 +144,7 @@ if (! function_exists('castpress_get_category')) :
 endif;
 
 
-if (! function_exists('castpress_get_default_pagination')) :
+if ( ! function_exists('castpress_get_default_pagination')) :
 	/**
 	  * Show numeric pagination
 	  */
@@ -164,33 +164,140 @@ endif;
 
 if ( ! function_exists( 'castpress_socials_links' ) ) :
 	/**
-	 * Display Social Networks
-	 */
+	  * Display Social Networks
+	  */
 	function castpress_socials_links() {
-		$castpress_facebook  = get_theme_mod( 'facebook', "" );
-		$castpress_twitter   = get_theme_mod( 'twitter', "" );
-		$castpress_instagram = get_theme_mod( 'instagram', "" );
-		$castpress_linkedin  = get_theme_mod( 'linkedin', "" );
-		$castpress_github    = get_theme_mod( 'github', "" );
+		
+		$castpress_facebook  		=  get_theme_mod( 'facebook', "" );
+		$castpress_twitter   		=  get_theme_mod( 'twitter', "" );
+		$castpress_instagram 		=  get_theme_mod( 'instagram', "" );
+		$castpress_linkedin  		=  get_theme_mod( 'linkedin', "" );
+		$castpress_github    		=  get_theme_mod( 'github', "" );
+		$castpress_mail   			=  get_theme_mod( 'mail', "" );
+		$castpress_pinterest    	=  get_theme_mod( 'pinterest', "" );
+		$castpress_youtube    		=  get_theme_mod( 'youtube', "" );
+		$castpress_spotify    		=  get_theme_mod( 'spotify', "" );
+		$castpress_gitlab    		=  get_theme_mod( 'gitlab', "" );
+		$castpress_lastfm    		=  get_theme_mod( 'lastfm', "" );
+		$castpress_stackoverflow    =  get_theme_mod( 'stackoverflow', "" );
+		$castpress_quora    		=  get_theme_mod( 'quora', "" );
+		$castpress_reddit    		=  get_theme_mod( 'reddit', "" );
+		$castpress_medium    		=  get_theme_mod( 'medium', "" );
+		$castpress_vimeo    		=  get_theme_mod( 'vimeo', "" );
+		$castpress_lanyrd    		=  get_theme_mod( 'lanyrd', "" );
+		$castpress_dribbble    		=  get_theme_mod( 'dribbble', "" );
+		$castpress_behance    		=  get_theme_mod( 'behance', "" );
+		$castpress_codepen    		=  get_theme_mod( 'codepen', "" );
+		$castpress_telegram    		=  get_theme_mod( 'telegram', "" );
+		$castpress_phone_number    	=  get_theme_mod( 'phone_number', "" );
 
-		if ( $castpress_facebook ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-facebook-alt"></span></a>', esc_attr( $castpress_facebook ), esc_html__( 'Facebook', 'castpress' ) );
+
+		// If variable was not empty will display the icons
+		$castpress_social_variables  = array($castpress_facebook,$castpress_twitter,$castpress_instagram,$castpress_linkedin,$castpress_github,
+		$castpress_mail, $castpress_pinterest ,$castpress_youtube ,$castpress_spotify , $castpress_gitlab,$castpress_lastfm ,$castpress_stackoverflow ,$castpress_quora ,$castpress_reddit ,$castpress_medium ,
+		$castpress_vimeo, $castpress_lanyrd,$castpress_dribbble ,$castpress_behance,$castpress_codepen,$castpress_telegram,$castpress_phone_number
+		);
+
+		// Check if one of the variables are not empty 
+		$castpress_social_variable_flag = 0;		
+		foreach($castpress_social_variables as $castpress_social){
+			if( !empty($castpress_social)){
+				$castpress_social_variable_flag = 1;
+				break;
+			}
 		}
 
-		if ( $castpress_twitter ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-twitter"></span></a>', esc_attr( $castpress_twitter ), esc_html__( 'Twitter', 'castpress' ) );
-		}
+		// Display the icons here 
+		if( $castpress_social_variable_flag === 1 ) {
 
-		if ( $castpress_instagram ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-instagram"></span></a>', esc_attr( $castpress_instagram ), esc_html__( 'Instagram', 'castpress' ) );
-		}
+			if ( $castpress_facebook ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="dashicons:facebook-alt"></span></a>', esc_url( $castpress_facebook ), esc_html__( 'Facebook', 'castpress' ) );
+			}
 
-		if ( $castpress_linkedin ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="dashicons dashicons-linkedin"></span></a>', esc_attr( $castpress_linkedin ), esc_html__( 'Linkedin', 'castpress' ) );
-		}
+			if ( $castpress_twitter ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="akar-icons:twitter-fill"></span></a>', esc_url( $castpress_twitter ), esc_html__( 'Twitter', 'castpress' ) );
+			}
 
-		if ( $castpress_github ) {
-			echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-share__icon--github"></span></a>', esc_attr( $castpress_github ), esc_html__( 'Github', 'castpress' ) );
+			if ( $castpress_instagram ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="akar-icons:instagram-fill"></span></a>', esc_url( $castpress_instagram ), esc_html__( 'Instagram', 'castpress' ) );
+			}
+
+			if ( $castpress_linkedin ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="akar-icons:linkedin-box-fill"></span></a>', esc_url( $castpress_linkedin ), esc_html__( 'Linkedin', 'castpress' ) );
+			}
+
+			if ( $castpress_github ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="ant-design:github-filled" data-inline="false"></span></a>', esc_url( $castpress_github ), esc_html__( 'Github', 'castpress' ) );
+			}
+
+			if ( $castpress_mail ) {
+				echo sprintf( '<a href="mailto:%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="ant-design:mail-outlined" data-inline="false"></span></a>', esc_attr(sanitize_email( $castpress_mail)), esc_html__( 'Mail', 'castpress' ) );
+			}
+			
+			if ( $castpress_pinterest ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="bx:bxl-pinterest" data-inline="false"></span></a>', esc_url( $castpress_pinterest ), esc_html__( 'pinterest', 'castpress' ) );
+			}
+
+			if ( $castpress_youtube ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="akar-icons:youtube-fill" data-inline="false"></span></a>', esc_url( $castpress_youtube ), esc_html__( 'youtube', 'castpress' ) );
+			}
+			
+			if ( $castpress_spotify ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="bx:bxl-spotify" data-inline="false"></span></a>', esc_url( $castpress_spotify ), esc_html__( 'spotify', 'castpress' ) );
+			}
+			
+			if ( $castpress_lastfm ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="brandico:lastfm-rect" data-inline="false"></span></a>', esc_url( $castpress_lastfm ), esc_html__( 'lastfm', 'castpress' ) );
+			}
+
+			if ( $castpress_gitlab ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="ion:logo-gitlab" data-inline="false"></span></a>', esc_url( $castpress_gitlab ), esc_html__( 'gitlab', 'castpress' ) );
+			}
+			
+			if ( $castpress_stackoverflow ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="cib:stackoverflow" data-inline="false"></span></a>', esc_url( $castpress_stackoverflow ), esc_html__( 'stackoverflow', 'castpress' ) );
+			}
+
+			if ( $castpress_reddit ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="akar-icons:reddit-fill" data-inline="false"></span></a>', esc_url( $castpress_reddit ), esc_html__( 'reddit', 'castpress' ) );
+			}
+			
+			if ( $castpress_quora ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="bx:bxl-quora" data-inline="false"></span></a>', esc_url( $castpress_quora ), esc_html__( 'quora', 'castpress' ) );
+			}
+
+			if ( $castpress_medium ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="ant-design:medium-circle-filled" data-inline="false"></span></a>', esc_url( $castpress_medium ), esc_html__( 'medium', 'castpress' ) );
+			}			
+
+			if ( $castpress_vimeo ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="brandico:vimeo-rect" data-inline="false"></span></a>', esc_url( $castpress_vimeo ), esc_html__( 'vimeo', 'castpress' ) );
+			}
+
+			if ( $castpress_dribbble ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="akar-icons:dribbble-fill" data-inline="false"></span></a>', esc_url( $castpress_dribbble ), esc_html__( 'dribbble', 'castpress' ) );
+			}
+
+			if ( $castpress_behance ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="ant-design:behance-outlined" data-inline="false"></span></a>', esc_url( $castpress_behance ), esc_html__( 'behance', 'castpress' ) );
+			}
+
+			if ( $castpress_lanyrd ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="cib:lanyrd" data-inline="false"></span></a>', esc_url( $castpress_lanyrd ), esc_html__( 'lanyrd', 'castpress' ) );
+			}
+
+			if ( $castpress_codepen ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify" data-icon="bx:bxl-codepen"></span></a>', esc_url( $castpress_codepen ), esc_html__( 'codepen', 'castpress' ) );
+			}
+			
+			if ( $castpress_telegram ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify"  data-icon="akar-icons:telegram-fill" ></span></a>', esc_url( $castpress_telegram ), esc_html__( 'codepen', 'castpress' ) );
+			}
+
+			if ( $castpress_phone_number ) {
+				echo sprintf( '<a href="tel:%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class="c-social-media__icon iconify"  data-icon="bx:bxs-phone" ></span></a>', esc_html( $castpress_phone_number ), esc_html__( 'Phone Number', 'castpress' ) );
+			}
+
 		}
 	}
 endif;
@@ -215,7 +322,7 @@ if ( ! function_exists( 'castpress_share_links' ) ) {
 }
 
 
-if (! function_exists('castpress_get_podcast_player_link')) :
+if ( ! function_exists('castpress_get_podcast_player_link')) :
 	/**
 	  * Get publishers link from kirki 
 	  */

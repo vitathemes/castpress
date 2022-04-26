@@ -19,6 +19,9 @@
 
 .c-social-share--footer {
   margin-top: 24px;
+
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .c-social-share__title {
@@ -27,25 +30,12 @@
 }
 
 .c-social-share__item {
-  min-height: 15px;
   margin: 0px 11.5px;
   cursor: pointer;
-
-  .dashicons {
-    padding-left: 0px;
-    &::before {
-      color: $castpress_heading_color;
-    }
-  }
+  height: max-content;
 
   &:hover {
     text-decoration: none;
-    .dashicons {
-      padding-left: 0px;
-      &::before {
-        color: $castpress_primary_color;
-      }
-    }
 
     path {
       fill: $castpress_primary_color;
@@ -58,8 +48,19 @@
   }
 }
 
+.c-social-media__icon {
+  font-size: 21px;
+  color: $castpress_heading_color;
+
+  &:hover,
+  &:focus,
+  &:visited {
+    color: $castpress_primary_color;
+  }
+}
+
 /*------------------------------------*\
-  #Social share custom github icon
+  #Social share custom github icon  
 \*------------------------------------*/
 
 .c-social-share__icon--github {
